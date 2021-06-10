@@ -37,10 +37,11 @@ var deletecustom = function()
 
 function createCookie(name, value, days) {
 	var expires = "";
-	if (days != -1) {
+	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
-		expires = "; expires="+date.toGMTString();
+        if (days != -1) expires = "; expires=" + date.toGMTString();
+        else expires = "; expires=Sat, 04 Nov 2000 00:00:00 UTC";
 	}
 	document.cookie = name+"="+value+expires+"; path=/";
 }
