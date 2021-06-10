@@ -40,10 +40,10 @@ function createCookie(name, value, days) {
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
-        if (days != -1) expires = "; expires=" + date.toGMTString();
-        else expires = "; expires=Sat, 04 Nov 2000 00:00:00 UTC";
+        expires = "; expires=" + date.toGMTString();
 	}
-	document.cookie = name+"="+value+expires+"; path=/";
+    document.cookie = name + "=" + value + expires + "; path=/NCP-VGC-Damage-Calculator";
+    // !!! CHANGE PATH IF YOU TAKE THE CODE, OTHERWISE COOKIES WON'T BE PROPERLY DELETED !!!
 }
 
 function readCookie(name) {
