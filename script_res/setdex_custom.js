@@ -1,4 +1,3 @@
-var SETDEX_CUSTOM = {};
 var showdownFormes = [["Kyurem-White", "Kyurem-W"],
 ["Kyurem-Black", "Kyurem-B"],
 ["Rotom-Wash", "Rotom-W"],
