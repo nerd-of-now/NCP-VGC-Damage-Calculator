@@ -35,13 +35,13 @@ var deletecustom = function()
     reloadXYScript()
 }
 
-function createCookie(name,value,days) {
-	if (days) {
+function createCookie(name, value, days) {
+	var expires = "";
+	if (days != -1) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
+		expires = "; expires="+date.toGMTString();
 	}
-	else expires = "";
 	document.cookie = name+"="+value+expires+"; path=/";
 }
 
