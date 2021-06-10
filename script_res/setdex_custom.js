@@ -26,7 +26,8 @@ var showdownFormes = [["Kyurem-White", "Kyurem-W"],
     ["Calyrex-Ice", "Calyrex-Ice Rider"],
     ["Calyrex-Ghost", "Calyrex-Ghost Rider"],];
 if(readCookie("custom") != null){
-	var SETDEX_CUSTOM = JSON.parse(readCookie("custom"))
+    SETDEX_CUSTOM = JSON.parse(readCookie("custom"));
+    reloadXYScript();
 }
 var deletecustom = function()
 {
@@ -41,7 +42,7 @@ function createCookie(name,value,days) {
 		date.setTime(date.getTime()+(days*24*60*60*1000));
 		var expires = "; expires="+date.toGMTString();
 	}
-	else var expires = "";
+	else expires = "";
 	document.cookie = name+"="+value+expires+"; path=/";
 }
 
