@@ -32,6 +32,9 @@ var SETDEX_VGC2021 = {
                 "sd": 4,
                 "sp": 252
             },
+            "ivs": {
+                "at": 0
+            },
             "nature": "Timid",
             "ability": "",
             "item": "",
@@ -169,6 +172,9 @@ var SETDEX_VGC2021 = {
                 "sa": 252,
                 "sd": 4,
                 "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Timid",
             "ability": "Overgrow",
@@ -746,28 +752,6 @@ var SETDEX_VGC2021 = {
             ]
         }
     },
-    "Maractus": {
-        "Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 252,
-                "sa": 4,
-                "sd": 0,
-                "sp": 0
-            },
-            "nature": "Bold",
-            "ability": "Storm Drain",
-            "item": "Leftovers",
-            "moves": [
-                "Giga Drain",
-                "Solar Beam",
-                "Weather Ball",
-                "Sucker Punch"
-            ]
-        }
-    },
     "Alakazam": {
         "Default Set": {
             "level": 50,
@@ -969,6 +953,9 @@ var SETDEX_VGC2021 = {
                 "sa": 76,
                 "sd": 92,
                 "sp": 4
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Bold",
             "ability": "Levitate",
@@ -1389,23 +1376,23 @@ var SETDEX_VGC2021 = {
         "Default Set": {
             "level": 50,
             "evs": {
-                "hp": 252,
+                "hp": 4,
                 "at": 0,
                 "df": 0,
-                "sa": 4,
-                "sd": 252,
-                "sp": 0
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
             },
             "ivs": {
                 "at": 0,
             },
-            "nature": "Calm",
-            "ability": "",
-            "item": "",
+            "nature": "Timid",
+            "ability": "Magic Guard",
+            "item": "Life Orb",
             "moves": [
                 "Psyshock",
                 "Air Slash",
-                "Psychic",
+                "Flash Cannon",
                 "Heat Wave"
             ]
         }
@@ -1527,31 +1514,6 @@ var SETDEX_VGC2021 = {
                 "Scald",
                 "Psychic",
                 "Meteor Beam"
-            ]
-        }
-    },
-    "Tangrowth": {
-        "Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 0,
-                "sa": 4,
-                "sd": 252,
-                "sp": 0
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Calm",
-            "ability": "",
-            "item": "",
-            "moves": [
-                "Giga Drain",
-                "Leaf Storm",
-                "Focus Blast",
-                "Sludge Bomb"
             ]
         }
     },
@@ -2063,6 +2025,9 @@ var SETDEX_VGC2021 = {
                 "sd": 0,
                 "sp": 252
             },
+            "ivs": {
+                "at": 0
+            },
             "nature": "Modest",
             "ability": "Chlorophyll",
             "item": "Life Orb",
@@ -2083,6 +2048,9 @@ var SETDEX_VGC2021 = {
                 "sd": 12,
                 "sp": 4
             },
+            "ivs": {
+                "at": 0
+            },
             "nature": "Modest",
             "ability": "Chlorophyll",
             "item": "Coba Berry",
@@ -2098,20 +2066,23 @@ var SETDEX_VGC2021 = {
         "Default Set": {
             "level": 50,
             "evs": {
-                "hp": 248,
+                "hp": 4,
                 "at": 0,
                 "df": 0,
                 "sa": 252,
-                "sd": 8,
-                "sp": 0
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Modest",
             "ability": "Torrent",
-            "item": "",
+            "item": "Mystic Water",
             "moves": [
-                "Aura Sphere",
-                "Ice Beam",
                 "Water Spout",
+                "Blizzard",
+                "Hydro Cannon",
                 "Dark Pulse"
             ]
         }
@@ -2239,6 +2210,9 @@ var SETDEX_VGC2021 = {
                 "sa": 252,
                 "sd": 4,
                 "sp": 0
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Modest",
             "ability": "",
@@ -2424,6 +2398,9 @@ var SETDEX_VGC2021 = {
                 "sa": 252,
                 "sd": 4,
                 "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Timid",
             "ability": "Levitate",
@@ -2845,6 +2822,9 @@ var SETDEX_VGC2021 = {
                 "sa": 0,
                 "sd": 252,
                 "sp": 0
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Calm",
             "ability": "Levitate",
@@ -3552,11 +3532,11 @@ var SETDEX_VGC2021 = {
         "Default Set": {
             "level": 50,
             "evs": {
-                "hp": 248,
+                "hp": 252,
                 "at": 252,
                 "df": 0,
                 "sa": 0,
-                "sd": 8,
+                "sd": 4,
                 "sp": 0
             },
             "nature": "Adamant",
@@ -3665,6 +3645,9 @@ var SETDEX_VGC2021 = {
                 "sd": 76,
                 "sp": 0
             },
+            "ivs": {
+                "at": 0
+            },
             "nature": "Calm",
             "ability": "",
             "item": "Sitrus Berry",
@@ -3686,7 +3669,7 @@ var SETDEX_VGC2021 = {
                 "sd": 252,
                 "sp": 0
             },
-            "nature": "Calm",
+            "nature": "Careful",
             "ability": "",
             "item": "",
             "moves": [
@@ -4320,12 +4303,15 @@ var SETDEX_VGC2021 = {
                 "sd": 4,
                 "sp": 0
             },
+            "ivs": {
+                "at": 0
+            },
             "nature": "Bold",
             "ability": "",
             "item": "Leftovers",
             "moves": [
                 "Seismic Toss",
-                "Charge Beam",
+                "Icy Wind",
                 "Flamethrower",
                 "Shadow Ball"
             ]
@@ -4403,6 +4389,9 @@ var SETDEX_VGC2021 = {
                 "sa": 252,
                 "sd": 0,
                 "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Modest",
             "ability": "Drizzle",
@@ -4537,22 +4526,20 @@ var SETDEX_VGC2021 = {
             "evs": {
                 "hp": 252,
                 "at": 0,
-                "df": 196,
+                "df": 252,
                 "sa": 0,
-                "sd": 56,
+                "sd": 4,
                 "sp": 0
             },
             "ivs": {
                 "at": 0,
             },
-            "nature": "Bold",
+            "nature": "Relaxed",
             "ability": "",
-            "item": "Sitrus Berry",
+            "item": "Babiri Berry",
             "moves": [
                 "Moonblast",
                 "Dazzling Gleam",
-                "Draining Kiss",
-                "Energy Ball"
             ]
         }
     },
@@ -4638,6 +4625,9 @@ var SETDEX_VGC2021 = {
                 "sa": 252,
                 "sd": 4,
                 "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Timid",
             "ability": "",
@@ -4752,6 +4742,9 @@ var SETDEX_VGC2021 = {
                 "sd": 0,
                 "sp": 252
             },
+            "ivs": {
+                "at": 0
+            },
             "nature": "Timid",
             "ability": "Volt Absorb",
             "item": "Life Orb",
@@ -4815,6 +4808,9 @@ var SETDEX_VGC2021 = {
                 "sa": 4,
                 "sd": 0,
                 "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Timid",
             "ability": "",
@@ -6536,6 +6532,9 @@ var SETDEX_VGC2021 = {
                 "sa": 252,
                 "sd": 0,
                 "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Timid",
             "ability": "Snow Warning",
