@@ -75,8 +75,8 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-            <p>VGC 2021 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerdofnowVGC">@nerdofnowVGC</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboyVGC">@squirrelboyVGC</a>). The current focus for this calculator is optimizing for <b>Series 9 VGC</b>.</p>
-            <p>For any issues with this version of the Damage Calculator, contact Alex on <a href="https://github.com/nerd-of-now/VGC-Damage-Calculator/issues" target="_blank">Github</a>. Jake White has also hosts <a href="https://jake-white.github.io/VGC-Damage-Calculator/" target="_blank">his own version</a> of the damage calculator.</p>
+            <p>VGC 2021 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerdofnowVGC">@nerdofnowVGC</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboyVGC">@squirrelboyVGC</a>). The current focus for this calculator is optimizing for <b>Series 10 VGC</b>.</p>
+            <p>For any issues with or suggestions for this version of the Damage Calculator, contact Alex on <a href="https://github.com/nerd-of-now/VGC-Damage-Calculator/issues" target="_blank">Github</a> or <a href="https://twitter.com/nerdofnowVGC">Twitter</a>. Jake White has also hosts <a href="https://jake-white.github.io/VGC-Damage-Calculator/" target="_blank">his own version</a> of the damage calculator.</p>
             <!-- OLD NUGGETBRIDGE ADS -->
             <!-- ALSO OLD TRAINER TOWER ADS -->
             <!-- <div class="banner"><script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
@@ -215,6 +215,11 @@
                         <select class="move-hits calc-trigger hide"><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option></select>
                         <select class="move-double calc-trigger hide"><option value="0">Normal BP</option><option value="1">Doubled</option></select>
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
+                    </div>
+                    <div class="info-group">
+                        <input type="text" id="setName1" style="width: 25%" value="My Calc Set">
+                        <button type="button" onclick="savecalc1()">Save Calc Set</button>
+                        <button type="button" onclick="exportset1()">Export Set</button>
                     </div>
                 </div>
             </div>
@@ -540,6 +545,9 @@
                         <select class="move-double calc-trigger hide"><option value="0">Normal BP</option><option value="1">Doubled</option></select>
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                     </div>
+                    <input type="text" id="setName2" style="width: 25%" value="My Calc Set">
+                    <button type="button" onclick="savecalc2()">Save Calc Set</button>
+                    <button type="button" onclick="exportset2()">Export Set</button>
                 </div>
             </div>
             <div class="footer">
