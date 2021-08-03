@@ -1,4 +1,4 @@
-var showdownFormes = [["Kyurem-White", "Kyurem-W"],
+var showdownToCalcFormes = [["Kyurem-White", "Kyurem-W"],
 ["Kyurem-Black", "Kyurem-B"],
 ["Rotom-Wash", "Rotom-W"],
 ["Rotom-Heat", "Rotom-H"],
@@ -23,7 +23,37 @@ var showdownFormes = [["Kyurem-White", "Kyurem-W"],
     ["Urshifu", "Urshifu-Single Strike"],
     ["Urshifu-Rapid-Strike", "Urshifu-Rapid Strike"],
     ["Calyrex-Ice", "Calyrex-Ice Rider"],
-    ["Calyrex-Ghost", "Calyrex-Ghost Rider"],];
+    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],];
+
+var calcToShowdownFormes = [["Kyurem-White", "Kyurem-W"],
+["Kyurem-Black", "Kyurem-B"],
+["Rotom-Wash", "Rotom-W"],
+["Rotom-Heat", "Rotom-H"],
+["Rotom-Frost", "Rotom-F"],
+["Rotom-Mow", "Rotom-C"],
+["Rotom-Fan", "Rotom-S"],
+["Giratina-Origin", "Giratina-O"],
+["Landorus-Therian", "Landorus-T"],
+["Thundurus-Therian", "Thundurus-T"],
+["Tornadus-Therian", "Tornadus-T"],
+["Floette-Eternal", "Floette-E"],
+["Pumpkaboo", "Pumpkaboo-Average"],
+["Gourgeist", "Gourgeist-Average"],
+["Wormadan-Sandy", "Wormadan-G"],
+["Wormadan-Trash", "Wormadan-S"],
+["Urshifu", "Urshifu-Single Strike"],
+["Urshifu-Rapid-Strike", "Urshifu-Rapid Strike"],
+["Calyrex-Ice", "Calyrex-Ice Rider"],
+    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],];
+
+var saveToCalcFormes = [["Darmanitan-Z", "Darmanitan"],
+["Darmanitan-Z-Galar", "Darmanitan-Galar"],
+["Zygarde 50%", "Zygarde"],
+["Zygarde 10%", "Zygarde"],
+["Zygarde Complete", "Zygarde"],
+["Zacian-Crowned", "Zacian"],
+["Zamazenta-Crowned", "Zamazenta"],];
+
 if(readCookie("custom") != null){
     SETDEX_CUSTOM = JSON.parse(readCookie("custom"));
     reloadXYScript();
@@ -67,178 +97,331 @@ var savecustom = function()
 	var string = document.getElementById('customMon').value
 	var spreadName = document.getElementById('spreadName').value
 	if(spreadName == '')
-		spreadName = "My Custom Set";
-	var lines = string.split('\n')
-	var species = "";
-	var item = "";
-	var ability = ""
-	var level = "50";
-	var EVs = [0,0,0,0,0,0];
-	var IVs = [31,31,31,31,31,31]
-	var nature = "Serious"
-	var moves = []
+        spreadName = "My Custom Set";
 
-	/*	Pokemon Showdown Export Format
-0	Nickname (Species) @ Item
-1	Ability: Name
-2	Level: #
-3	EVs: # Stat / # Stat / # Stat
-4	Serious Nature
-5	IVs: # Stat
-6	- Move Name
-7	- Move Name
-8	- Move Name
-9	- Move Name
-	*/
+    //numPokemon separates individual Pokemon so user can add multiple Pokemon at once under the same set name
+    var numPokemon = string.split('\n\n')
+    numPokemon = numPokemon.filter(element => element)
 
-	//geting rid of gender identities (lel)
-	if(lines[0].indexOf('(M)') != -1)
-	{
-		lines[0] = lines[0].substring(0, lines[0].indexOf('(M)') - 1) + 
-		lines[0].substring(lines[0].indexOf('(M)') + 3, lines[0].length);
-	}
-	else if(lines[0].indexOf('(F)') != -1)
-	{
-		lines[0] = lines[0].substring(0, lines[0].indexOf('(F)')) + 
-		lines[0].substring(lines[0].indexOf('(F)') + 3, lines[0].length);
-	}
-	if(lines[0].indexOf('(') != -1)
-	{
-		firstParenth = lines[0].lastIndexOf('(');
-		lastParenth = lines[0].lastIndexOf(')');
-		species = lines[0].substring(firstParenth + 1, lastParenth).trim();
-	}
-	else
-        species = lines[0].split('@')[0].trim(); //species is always first
+    for (var a = 0; a < numPokemon.length; a++) {
+        var lines = numPokemon[a].split('\n')
+        var species = "";
+        var item = "";
+        var ability = ""
+        var level = 50;
+        var EVs = [0, 0, 0, 0, 0, 0];
+        var IVs = [31, 31, 31, 31, 31, 31]
+        var nature = "Serious"
+        var moves = []
 
-    checkGmax = species.indexOf("-Gmax", 0)
-    if (checkGmax != -1)
-        species = species.substring(0, checkGmax);
-	for(var i = 0; i < showdownFormes.length; ++i)
-	{
-		if(species == showdownFormes[i][0])
-			species = showdownFormes[i][1]
-	}
-	
-	if(lines[0].indexOf('@') != -1)
-		item = lines[0].substring(lines[0].indexOf('@')+1).trim(); //item is always after @
-	ability = lines[1].substring(lines[1].indexOf(' ')+1).trim(); //ability is always second
-	if(lines.length > 2){
-		for(var i = 2; i < lines.length; ++i){
-			if(lines[i].indexOf("Level") != -1){
-				level = lines[2].split(' ')[1].trim(); //level is sometimes third but uh not always
-			}
-			if(lines[i].indexOf("EVs") != -1) //if EVs are in this line
-			{
-				evList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
-				for(var j = 0; j < evList.length; ++j){
-					evList[j] = evList[j].trim();
-					evListElements = evList[j].split(' ');
-					if(evListElements[1] == "HP")
-						EVs[0] = parseInt(evListElements[0])
-					else if(evListElements[1] == "Atk")
-						EVs[1] = parseInt(evListElements[0])
-					else if(evListElements[1] == "Def")
-						EVs[2] = parseInt(evListElements[0])
-					else if(evListElements[1] == "SpA")
-						EVs[3] = parseInt(evListElements[0])
-					else if(evListElements[1] == "SpD")
-						EVs[4] = parseInt(evListElements[0])
-					else if(evListElements[1] == "Spe")
-						EVs[5] = parseInt(evListElements[0])
-				}
+        /*	Pokemon Showdown Export Format
+    0	Nickname (Species) @ Item
+    1	Ability: Name
+    2	Level: #
+    3	EVs: # Stat / # Stat / # Stat
+    4	Serious Nature
+    5	IVs: # Stat
+    6	- Move Name
+    7	- Move Name
+    8	- Move Name
+    9	- Move Name
+        */
 
-			}
-			if(lines[i].indexOf("IVs") != -1) //if EVs are in this line
-			{
-				ivList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
-				for(var j = 0; j < ivList.length; ++j){
-					ivList[j] = ivList[j].trim();
-					ivListElements = ivList[j].split(' ');
-					if(ivListElements[1] == "HP")
-						IVs[0] = parseInt(ivListElements[0])
-					else if(ivListElements[1] == "Atk")
-						IVs[1] = parseInt(ivListElements[0])
-					else if(ivListElements[1] == "Def")
-						IVs[2] = parseInt(ivListElements[0])
-					else if(ivListElements[1] == "SpA")
-						IVs[3] = parseInt(ivListElements[0])
-					else if(ivListElements[1] == "SpD")
-						IVs[4] = parseInt(ivListElements[0])
-					else if(ivListElements[1] == "Spe")
-						IVs[5] = parseInt(ivListElements[0])
-				}
+        //geting rid of gender identities (lel)
+        if (lines[0].indexOf('(M)') != -1) {
+            lines[0] = lines[0].substring(0, lines[0].indexOf('(M)') - 1) +
+                lines[0].substring(lines[0].indexOf('(M)') + 3, lines[0].length);
+        }
+        else if (lines[0].indexOf('(F)') != -1) {
+            lines[0] = lines[0].substring(0, lines[0].indexOf('(F)')) +
+                lines[0].substring(lines[0].indexOf('(F)') + 3, lines[0].length);
+        }
+        if (lines[0].indexOf('(') != -1) {
+            firstParenth = lines[0].lastIndexOf('(');
+            lastParenth = lines[0].lastIndexOf(')');
+            species = lines[0].substring(firstParenth + 1, lastParenth).trim();
+        }
+        else
+            species = lines[0].split('@')[0].trim(); //species is always first
 
-			}
-			if(lines[i].indexOf("Nature") != -1) //if nature is in this line
-			{
-				nature = lines[i].split(' ')[0].trim()
-			}
-			if(lines[i].indexOf("- ") != -1){ //if there is a move in this line
-				var nextMove = lines[i].substring(lines[i].indexOf(' ') + 1).trim()
-				nextMove = nextMove.replace('[', '')
-				nextMove = nextMove.replace(']', '')
-				moves.push(nextMove)
-			}
+        checkGmax = species.indexOf("-Gmax", 0)
+        if (checkGmax != -1)
+            species = species.substring(0, checkGmax);
+        for (var i = 0; i < showdownToCalcFormes.length; ++i) {
+            if (species == showdownToCalcFormes[i][0])
+                species = showdownToCalcFormes[i][1]
+        }
 
-		}
-	}
+        if (lines[0].indexOf('@') != -1)
+            item = lines[0].substring(lines[0].indexOf('@') + 1).trim(); //item is always after @
+        ability = lines[1].substring(lines[1].indexOf(' ') + 1).trim(); //ability is always second
+        if (lines.length > 2) {
+            for (var i = 2; i < lines.length; ++i) {
+                if (lines[i].indexOf("Level") != -1) {
+                    level = lines[2].split(' ')[1].trim(); //level is sometimes third but uh not always
+                }
+                if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
+                {
+                    evList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
+                    for (var j = 0; j < evList.length; ++j) {
+                        evList[j] = evList[j].trim();
+                        evListElements = evList[j].split(' ');
+                        if (evListElements[1] == "HP")
+                            EVs[0] = parseInt(evListElements[0])
+                        else if (evListElements[1] == "Atk")
+                            EVs[1] = parseInt(evListElements[0])
+                        else if (evListElements[1] == "Def")
+                            EVs[2] = parseInt(evListElements[0])
+                        else if (evListElements[1] == "SpA")
+                            EVs[3] = parseInt(evListElements[0])
+                        else if (evListElements[1] == "SpD")
+                            EVs[4] = parseInt(evListElements[0])
+                        else if (evListElements[1] == "Spe")
+                            EVs[5] = parseInt(evListElements[0])
+                    }
 
-	//now, to save it
-	/* Sample Calculator Format:
-  "Yanmega": {
-    "Common Showdown": {
-      "level": 50,
-      "evs": {
-        "hp": 0,
-        "at": 0,
-        "df": 0,
-        "sa": 252,
-        "sd": 4,
-        "sp": 252
-      },
-      "nature": "Modest",
-      "ability": "",
-      "item": "",
-      "moves": [
-        "Air Slash",
-        "Bug Buzz",
-        "Giga Drain",
-        "Hidden Power Ice"
-      ]
+                }
+                if (lines[i].indexOf("IVs") != -1) //if EVs are in this line
+                {
+                    ivList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
+                    for (var j = 0; j < ivList.length; ++j) {
+                        ivList[j] = ivList[j].trim();
+                        ivListElements = ivList[j].split(' ');
+                        if (ivListElements[1] == "HP")
+                            IVs[0] = parseInt(ivListElements[0])
+                        else if (ivListElements[1] == "Atk")
+                            IVs[1] = parseInt(ivListElements[0])
+                        else if (ivListElements[1] == "Def")
+                            IVs[2] = parseInt(ivListElements[0])
+                        else if (ivListElements[1] == "SpA")
+                            IVs[3] = parseInt(ivListElements[0])
+                        else if (ivListElements[1] == "SpD")
+                            IVs[4] = parseInt(ivListElements[0])
+                        else if (ivListElements[1] == "Spe")
+                            IVs[5] = parseInt(ivListElements[0])
+                    }
+
+                }
+                if (lines[i].indexOf("Nature") != -1) //if nature is in this line
+                {
+                    nature = lines[i].split(' ')[0].trim()
+                }
+                if (lines[i].indexOf("- ") != -1) { //if there is a move in this line
+                    var nextMove = lines[i].substring(lines[i].indexOf(' ') + 1).trim()
+                    nextMove = nextMove.replace('[', '')
+                    nextMove = nextMove.replace(']', '')
+                    moves.push(nextMove)
+                }
+
+            }
+        }
+
+        //now, to save it
+        /* Sample Calculator Format:
+      "Yanmega": {
+        "Common Showdown": {
+          "level": 50,
+          "evs": {
+            "hp": 0,
+            "at": 0,
+            "df": 0,
+            "sa": 252,
+            "sd": 4,
+            "sp": 252
+          },
+          "nature": "Modest",
+          "ability": "",
+          "item": "",
+          "moves": [
+            "Air Slash",
+            "Bug Buzz",
+            "Giga Drain",
+            "Hidden Power Ice"
+          ]
+        }
+      }
+      */
+
+
+        customFormat = {
+            "level": level,
+            "evs": {
+                "hp": EVs[0],
+                "at": EVs[1],
+                "df": EVs[2],
+                "sa": EVs[3],
+                "sd": EVs[4],
+                "sp": EVs[5],
+            },
+            "ivs": {
+                "hp": IVs[0],
+                "at": IVs[1],
+                "df": IVs[2],
+                "sa": IVs[3],
+                "sd": IVs[4],
+                "sp": IVs[5],
+            },
+            "nature": nature,
+            "ability": ability,
+            "item": item,
+            "moves": moves,
+        }
+        if (SETDEX_CUSTOM[species] == null)
+            SETDEX_CUSTOM[species] = {}
+        SETDEX_CUSTOM[species][spreadName] = customFormat
+        document.cookie = "custom=" + JSON.stringify(SETDEX_CUSTOM)
     }
-  }
-  */
-
-  	
-  	customFormat = {
-  			"level": level, 
-  			"evs": {
-  				"hp": EVs[0],
-  				"at": EVs[1],
-  				"df": EVs[2],
-  				"sa": EVs[3],
-  				"sd": EVs[4],
-  				"sp": EVs[5],
-  			},
-  			"ivs": {
-  				"hp": IVs[0],
-  				"at": IVs[1],
-  				"df": IVs[2],
-  				"sa": IVs[3],
-  				"sd": IVs[4],
-  				"sp": IVs[5],
-  			},
-  			"nature": nature,
-  			"ability": ability,
-  			"item": item,
-  			"moves": moves,
-  		}
-  	if(SETDEX_CUSTOM[species] == null)
-  		SETDEX_CUSTOM[species] = {}
-  	SETDEX_CUSTOM[species][spreadName] = customFormat
-    document.cookie = "custom="+JSON.stringify(SETDEX_CUSTOM)
     reloadXYScript()
+    document.getElementById("customMon").value = ""
+
+}
 
 
+//Saves a custom set from within the calc
+var savecalc = function (set, spreadName, accessIVs) {
+    var moves=[]
+    species = set.name;
+
+    checkGmax = species.indexOf("-Gmax", 0);
+    checkMega = species.indexOf("Mega ", 0);
+    checkPrimal = species.indexOf("Primal ", 0);
+
+    if (checkGmax == -1 && checkMega == -1 && checkPrimal == -1) {
+        for (var i = 0; i < saveToCalcFormes.length; ++i) {
+            if (species == saveToCalcFormes[i][0])
+                species = saveToCalcFormes[i][1];
+        }
+    }
+    else if (checkGmax != -1)
+        species = species.substring(0, checkGmax);
+    else if (checkMega != -1)
+        species = species.substring(5);
+    else
+        species = species.substring(6);
+
+    moves.push(set.moves[0].name);
+    moves.push(set.moves[1].name);
+    moves.push(set.moves[2].name);
+    moves.push(set.moves[3].name);
+
+    if (spreadName == '')
+        spreadName = "My Calc Set";
+    customFormat = {
+        "level": set.level,
+        "evs": {
+            "hp": set.HPEVs,
+            "at": set.evs[STATS[0]],
+            "df": set.evs[STATS[1]],
+            "sa": set.evs[STATS[2]],
+            "sd": set.evs[STATS[3]],
+            "sp": set.evs[STATS[4]],
+        },
+        "ivs": {
+            "hp": parseInt(accessIVs.find(".hp .ivs").val()),
+            "at": parseInt(accessIVs.find(".at .ivs").val()),
+            "df": parseInt(accessIVs.find(".df .ivs").val()),
+            "sa": parseInt(accessIVs.find(".sa .ivs").val()),
+            "sd": parseInt(accessIVs.find(".sd .ivs").val()),
+            "sp": parseInt(accessIVs.find(".sp .ivs").val()),
+        },
+        "nature": set.nature,
+        "ability": set.ability,
+        "item": set.item,
+        "moves": moves,
+    }
+
+    if (SETDEX_CUSTOM[species] == null)
+        SETDEX_CUSTOM[species] = {}
+    SETDEX_CUSTOM[species][spreadName] = customFormat
+    document.cookie = "custom=" + JSON.stringify(SETDEX_CUSTOM)
+    reloadXYScript()
+}
+
+var savecalc1 = function () {
+    var p1 = new Pokemon($("#p1"));
+    var spreadName = document.getElementById('setName1').value;
+    accessIVs = $('#p1 input.ivs.calc-trigger').closest(".poke-info"); 
+    savecalc(p1, spreadName, accessIVs);
+}
+var savecalc2 = function () {
+    var p2 = new Pokemon($("#p2"));
+    var spreadName = document.getElementById('setName2').value;
+    accessIVs = $('#p2 input.ivs.calc-trigger').closest(".poke-info");
+    savecalc(p2, spreadName, accessIVs);
+}
+
+//Looked this up online, copies to clipboard without any input
+function Clipboard_CopyTo(value) {
+    var tempText = document.createElement("textarea");
+    tempText.value = value;
+    document.body.appendChild(tempText);
+    tempText.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempText);
+}
+
+//Exports sets by copying them to clipboard. Might adjust later depending on how successful it is
+var exportset = function (set, accessIVs) {
+    /* Formatting Example:
+     *Rillaboom-Gmax @ Assault Vest
+     *Ability: Grassy Surge
+     *Level: 50
+     *EVs: 172 HP / 252 Atk / 4 Def / 0 SpA / 4 SpD / 76 Spe
+     *Adamant Nature
+     *IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+     * - Grassy Glide
+     * - Wood Hammer
+     * - High Horsepower
+     * - Knock Off
+     */
+
+    exSpecies = set.name;
+
+    for (var i = 0; i < calcToShowdownFormes.length; ++i) {
+        if (exSpecies == calcToShowdownFormes[i][1])
+            exSpecies = calcToShowdownFormes[i][0];
+    }
+
+    exItem = set.item != "" ? " @ " + set.item : "";
+    exAbility = "Ability: " + set.ability;
+    exLevel = "Level: " + set.level;
+    exEVs = "EVs: " + set.HPEVs.toString() + " HP / " +
+        set.evs[STATS[0]].toString() + " Atk / " +
+        set.evs[STATS[1]].toString() + " Def / " +
+        set.evs[STATS[2]].toString() + " SpA / " +
+        set.evs[STATS[3]].toString() + " SpD / " +
+        set.evs[STATS[4]].toString() + " Spe ";
+    exNature = set.nature + " Nature";
+    exIVs = "IVs: " + accessIVs.find(".hp .ivs").val().toString() + " HP / " +
+        accessIVs.find(".at .ivs").val().toString() + " Atk / " +
+        accessIVs.find(".df .ivs").val().toString() + " Def / " +
+        accessIVs.find(".sa .ivs").val().toString() + " SpA / " +
+        accessIVs.find(".sd .ivs").val().toString() + " SpD / " +
+        accessIVs.find(".sp .ivs").val().toString() + " Spe ";
+    exMoves = ["- " + set.moves[0].name,
+        "- " + set.moves[1].name,
+        "- " + set.moves[2].name,
+        "- " + set.moves[3].name,];
+    exMoveset = "";
+    for (i = 0; i < exMoves.length; i++) {
+        if (exMoves[i] !== "- (No Move)") {
+            exMoveset = exMoveset + exMoves[i] + "\n";
+        }
+    }
+
+    exportText = exSpecies + exItem + "\n" + exAbility + "\n" + exLevel + "\n" + exEVs + "\n" + exNature + "\n" + exIVs + "\n" +
+        exMoveset;
+
+    Clipboard_CopyTo(exportText);
+}
+
+var exportset1 = function () {
+    var p1 = new Pokemon($("#p1"));
+    accessIVs = $('#p1 input.ivs.calc-trigger').closest(".poke-info");
+    exportset(p1, accessIVs);
+}
+var exportset2 = function () {
+    var p2 = new Pokemon($("#p2"));
+    accessIVs = $('#p2 input.ivs.calc-trigger').closest(".poke-info");
+    exportset(p2, accessIVs);
 }

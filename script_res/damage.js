@@ -537,7 +537,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         description.moveBP = move.bp / 2;
         description.weather = field.weather;
     } //technicially Me First would sandwich between these
-    else if (move.name === "Knock Off" && !(defender.item === "" ||
+    else if (move.name === "Knock Off" && !(defender.item === null || defender.item === "" ||
             (defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1))) {
         bpMods.push(0x1800);
@@ -724,7 +724,8 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         (defAbility === "Grass Pelt" && terrain === "Grassy" && hitsPhysical)) {
         dfMods.push(0x1800);
         description.defenderAbility = defAbility;
-    } else if (defAbility === "Fur Coat" && hitsPhysical) {
+    } else if ((defAbility === "Fur Coat" && hitsPhysical) ||
+        (defAbility === "Ice Scales" && ((!hitsPhysical && !makesContact) || move.name == "Psyshock" || move.name == "Psystrike" || move.name == "Secret Sword"))) {
         dfMods.push(0x2000);
         description.defenderAbility = defAbility;
     }

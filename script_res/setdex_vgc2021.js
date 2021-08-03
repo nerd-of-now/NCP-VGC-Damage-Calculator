@@ -8262,3 +8262,1389 @@ var SETDEX_VGC2021 = {
         },
     },
 };
+
+var SETDEX_VGC2021_S10 = {
+    "Incineroar": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 4,
+                "df": 4,
+                "sa": 0,
+                "sd": 236,
+                "sp": 28
+            },
+            "nature": "Careful",
+            "ability": "Intimidate",
+            "item": "Aguav Berry",
+            "moves": [
+                "Flare Blitz",
+                "Darkest Lariat",
+                "Fake Out",
+                "Snarl"
+            ]
+        },
+        "[S10] AV Incin": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 164,
+                "sa": 0,
+                "sd": 44,
+                "sp": 44
+            },
+            "nature": "Impish",
+            "ability": "Intimidate",
+            "item": "Assault Vest",
+            "moves": [
+                "Flare Blitz",
+                "Throat Chop",
+                "Fake Out",
+                "U-turn"
+            ]
+        },
+    },
+    "Rillaboom": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 188,
+                "at": 140,
+                "df": 12,
+                "sa": 0,
+                "sd": 108,
+                "sp": 60
+            },
+            "nature": "Adamant",
+            "ability": "Grassy Surge",
+            "item": "Assault Vest",
+            "moves": [
+                "Grassy Glide",
+                "Wood Hammer",
+                "U-turn",
+                "Knock Off"
+            ]
+        },
+
+    },
+    "Regieleki": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Transistor",
+            "item": "Focus Sash",
+            "moves": [
+                "Thunderbolt",
+                "Electroweb",
+                "Volt Switch",
+                "Thunder"
+            ]
+        },
+
+    },
+    "Urshifu-Rapid Strike": {
+        "[S10] Bulky Urshifu": {
+            "level": 50,
+            "evs": {
+                "hp": 140,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 236,
+                "sp": 132
+            },
+            "nature": "Adamant",
+            "ability": "Unseen Fist",
+            "item": "Mystic Water",
+            "moves": [
+                "Surging Strikes",
+                "Close Combat",
+                "U-turn",
+                "Aqua Jet"
+            ]
+        },
+
+    },
+    "Landorus": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "ability": "Sheer Force",
+            "item": "Life Orb",
+            "moves": [
+                "Earth Power",
+                "Sludge Bomb",
+                "Rock Slide",
+                "Stone Edge"
+            ]
+        },
+
+    },
+    "Zacian": {
+        "[S10] Bulky Zacian": {
+            "level": 50,
+            "evs": {
+                "hp": 156,
+                "at": 156,
+                "df": 4,
+                "sa": 0,
+                "sd": 12,
+                "sp": 180
+            },
+            "nature": "Adamant",
+            "ability": "Intrepid Sword",
+            "item": "Rusted Sword",
+            "moves": [
+                "Behemoth Blade",
+                "Sacred Sword",
+                "Close Combat",
+                "Play Rough"
+            ]
+        },
+
+    },
+    "Volcarona": {
+        "[S10] Support Volcarona": {
+            "level": 50,
+            "evs": {
+                "hp": 196,
+                "at": 0,
+                "df": 236,
+                "sa": 4,
+                "sd": 4,
+                "sp": 68
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Flame Body",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Heat Wave",
+                "Struggle Bug",
+                "Overheat",
+                "Fiery Dance"
+            ]
+        },
+
+    },
+    "Xerneas": {
+        "[S10] Bulky Xerneas": {
+            "level": 50,
+            "evs": {
+                "hp": 92,
+                "at": 0,
+                "df": 12,
+                "sa": 132,
+                "sd": 36,
+                "sp": 236
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Fairy Aura",
+            "item": "Power Herb",
+            "moves": [
+                "Moonblast",
+                "Dazzling Gleam",
+                "Grass Knot",
+                "Thunderbolt"
+            ]
+        },
+
+    },
+    "Amoonguss": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 188,
+                "sa": 0,
+                "sd": 76,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "ability": "Regenerator",
+            "item": "Occa Berry",
+            "moves": [
+                "Pollen Puff",
+                "Clear Smog",
+                "Grass Knot",
+                "Sludge Bomb"
+            ]
+        },
+
+    },
+    "Kyogre": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Drizzle",
+            "item": "Mystic Water",
+            "moves": [
+                "Water Spout",
+                "Ice Beam",
+                "Scald",
+                "Origin Pulse"
+            ]
+        },
+
+    },
+    "Calyrex-Shadow Rider": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "As One",
+            "item": "Life Orb",
+            "moves": [
+                "Astral Barrage",
+                "Expanding Force",
+                "Shadow Ball",
+                "Psyshock"
+            ]
+        },
+
+    },
+    "Tsareena": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 36,
+                "df": 52,
+                "sa": 0,
+                "sd": 12,
+                "sp": 156
+            },
+            "nature": "Adamant",
+            "ability": "Queenly Majesty",
+            "item": "Assault Vest",
+            "moves": [
+                "Power Whip",
+                "Triple Axel",
+                "U-turn",
+                "High Jump Kick"
+            ]
+        },
+
+    },
+    "Tornadus": {
+        "[S10] Wacan Berry Tornadus": {
+            "level": 50,
+            "evs": {
+                "hp": 100,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 156,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Prankster",
+            "item": "Wacan Berry",
+            "moves": [
+                "Hurricane",
+                "Icy Wind",
+                "Heat Wave",
+                "Air Slash"
+            ]
+        },
+
+    },
+    "Urshifu-Single Strike": {
+        "[S10] Black Glasses Urshifu": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Unseen Fist",
+            "item": "Black Glasses",
+            "moves": [
+                "Wicked Blow",
+                "Close Combat",
+                "Sucker Punch",
+                "U-turn"
+            ]
+        },
+
+    },
+    "Indeedee-F": {
+        "[S10] Psychic Seed Indeedee": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Psychic Surge",
+            "item": "Psychic Seed",
+            "moves": [
+                "Expanding Force",
+                "Shadow Ball",
+                "Mystical Fire",
+                "Dazzling Gleam"
+            ]
+        },
+
+    },
+    "Mienshao": {
+        "Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Inner Focus",
+            "item": "Focus Sash",
+            "moves": [
+                "Fake Out",
+                "Close Combat",
+                "Knock Off",
+                "Feint"
+            ]
+        }
+    },
+    "Landorus-T": {
+        "[S10] Rocky Helmet Lando": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 244,
+                "sa": 20,
+                "sd": 4,
+                "sp": 28
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Intimidate",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Earth Power",
+                "U-turn",
+                "Rock Tomb",
+                "Sludge Bomb"
+            ]
+        },
+
+    },
+    "Tapu Fini": {
+        "[S10] Support Fini": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 124,
+                "sa": 12,
+                "sd": 76,
+                "sp": 52
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Misty Surge",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Moonblast",
+                "Nature\'s Madness",
+                "Muddy Water",
+                "Icy Wind"
+            ]
+        },
+
+    },
+    "Entei": {
+        "[S10] AV Entei": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Inner Focus",
+            "item": "Assault Vest",
+            "moves": [
+                "Sacred Fire",
+                "Stone Edge",
+                "Extreme Speed",
+                "Snarl"
+            ]
+        },
+        "[S10] Scarf Entei": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 236
+            },
+            "nature": "Adamant",
+            "ability": "Inner Focus",
+            "item": "Choice Scarf",
+            "moves": [
+                "Sacred Fire",
+                "Crunch",
+                "Stone Edge",
+                "Stomping Tantrum"
+            ]
+        },
+
+    },
+    "Nihilego": {
+        "[S10] Speed Beast Boost": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 76,
+                "sa": 172,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Beast Boost",
+            "item": "Power Herb",
+            "moves": [
+                "Meteor Beam",
+                "Sludge Bomb",
+                "Power Gem",
+                "Clear Smog"
+            ]
+        },
+
+    },
+    "Tapu Lele": {
+        "[S10] Psychic Seed Lele": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 0,
+                "df": 4,
+                "sa": 76,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Psychic Surge",
+            "item": "Psychic Seed",
+            "moves": [
+                "Psyshock",
+                "Moonblast",
+                "Shadow Ball",
+                "Dazzling Gleam"
+            ]
+        },
+
+    },
+    "Ditto": {
+        "[S10] Slow Sitrus Ditto": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "ability": "Imposter",
+            "item": "Sitrus",
+            "moves": [
+                "Transform",
+                "",
+                "",
+                ""
+            ]
+        },
+
+    },
+    "Eternatus": {
+        "[S10] Meteor Beam Eternatus": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 0,
+                "df": 28,
+                "sa": 116,
+                "sd": 28,
+                "sp": 164
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Pressure",
+            "item": "Power Herb",
+            "moves": [
+                "Sludge Bomb",
+                "Meteor Beam",
+                "Flamethrower",
+                "Dynamax Cannon"
+            ]
+        },
+        "[S10] Cosmic Power Eternatus": {
+            "level": 50,
+            "evs": {
+                "hp": 220,
+                "at": 0,
+                "df": 0,
+                "sa": 140,
+                "sd": 0,
+                "sp": 148
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Pressure",
+            "item": "Black Sludge",
+            "moves": [
+                "Sludge Bomb",
+                "Flamethrower",
+                "Dynamax Cannon",
+                "Cosmic Power"
+            ]
+        },
+
+    },
+    "Yveltal": {
+        "[S10] AV Yveltal": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 4,
+                "sa": 68,
+                "sd": 12,
+                "sp": 188
+            },
+            "nature": "Modest",
+            "ability": "Dark Aura",
+            "item": "Assault Vest",
+            "moves": [
+                "Foul Play",
+                "Sucker Punch",
+                "Oblivion Wing",
+                "Snarl"
+            ]
+        },
+
+    },
+    "Celesteela": {
+        "[S10] Defensive Celesteela": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 92,
+                "sa": 0,
+                "sd": 172,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Sassy",
+            "ability": "Beast Boost",
+            "item": "Leftovers",
+            "moves": [
+                "Heavy Slam",
+                "Flamethrower",
+                "Air Slash",
+                "Leech Seed"
+            ]
+        },
+
+    },
+    "Groudon": {
+        "[S10] LO Groudon": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 12
+            },
+            "nature": "Adamant",
+            "ability": "Drought",
+            "item": "Life Orb",
+            "moves": [
+                "Precipice Blades",
+                "Heat Crash",
+                "Rock Slide",
+                "Stomping Tantrum"
+            ]
+        },
+
+    },
+    "Thundurus": {
+        "[S10] Specially Defensive Thundy": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Prankster",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Thunderbolt",
+                "Volt Switch",
+                "Electroweb",
+                "Thunder"
+            ]
+        },
+
+    },
+    "Shedinja": {
+        "[S10] Oh Wait Shedinja Works": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 4,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "df": 0,
+                "sd": 0
+            },
+            "nature": "Lonely",
+            "ability": "Wonder Guard",
+            "item": "Focus Sash",
+            "moves": [
+                "Shadow Sneak",
+                "X-Scissor",
+                "Shadow Claw",
+                "Poltergeist"
+            ]
+        },
+
+    },
+    "Moltres-Galar": {
+        "[S10] AV Moltres": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 100,
+                "sa": 156,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Berserk",
+            "item": "Assault Vest",
+            "moves": [
+                "Fiery Wrath",
+                "Air Slash",
+                "Snarl",
+                "Foul Play"
+            ]
+        },
+
+    },
+    "Zapdos-Galar": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Defiant",
+            "item": "Lum Berry",
+            "moves": [
+                "Thunderous Kick",
+                "Close Combat",
+                "Brave Bird",
+                "U-turn"
+            ]
+        },
+
+    },
+    "Gothitelle": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "ability": "Shadow Tag",
+            "item": "Focus Sash",
+            "moves": [
+                "Fake Out",
+                "Psychic",
+                "Psyshock",
+                "Hypnosis"
+            ]
+        },
+
+    },
+    "Gastrodon": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 188,
+                "at": 0,
+                "df": 132,
+                "sa": 4,
+                "sd": 180,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Storm Drain",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Earth Power",
+                "Ice Beam",
+                "Scald",
+                "Clear Smogn"
+            ]
+        },
+
+    },
+    "Porygon2": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 12,
+                "sa": 116,
+                "sd": 124,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "ability": "Download",
+            "item": "Eviolite",
+            "moves": [
+                "Tri Attack",
+                "Ice Beam",
+                "Shadow Ball",
+                "Foul Play"
+            ]
+        },
+
+    },
+    "Ho-Oh": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 108,
+                "df": 36,
+                "sa": 0,
+                "sd": 44,
+                "sp": 68
+            },
+            "nature": "Adamant",
+            "ability": "Regenerator",
+            "item": "Leftovers",
+            "moves": [
+                "Sacred Fire",
+                "Brave Bird",
+                "Recover",
+                "Protect"
+            ]
+        },
+
+    },
+    "Venusaur": {
+        "[S10] LO Venusaur": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Chlorophyll",
+            "item": "Life Orb",
+            "moves": [
+                "Sludge Bomb",
+                "Grass Knot",
+                "Earth Power",
+                "Weather Ball"
+            ]
+        },
+
+    },
+    "Aegislash": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 84,
+                "df": 108,
+                "sa": 4,
+                "sd": 60,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0
+            },
+            "nature": "Brave",
+            "ability": "Stance Change",
+            "item": "Leftovers",
+            "moves": [
+                "Gyro Ball",
+                "Shadow Sneak",
+                "Shadow Ball",
+                "Flash Cannon"
+            ]
+        },
+        "[S10] Iron Ball Aegislash": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0
+            },
+            "nature": "Brave",
+            "ability": "Stance Change",
+            "item": "Iron Ball",
+            "moves": [
+                "Gyro Ball",
+                "Shadow Sneak",
+                "Iron Head",
+                "Shadow Claw"
+            ]
+        },
+
+    },
+    "Lunala": {
+        "[S10] Colbur TR Lunala": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 0,
+                "sa": 164,
+                "sd": 100,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "ability": "Shadow Shield",
+            "item": "Colbur Berry",
+            "moves": [
+                "Moongeist Beam",
+                "Moonblast",
+                "Expanding Force",
+                "Ice Beam"
+            ]
+        },
+
+    },
+    "Raichu": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 4,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "ability": "Lightning Rod",
+            "item": "Focus Sash",
+            "moves": [
+                "Fake Out",
+                "Nuzzle",
+                "Volt Switch",
+                "Feint"
+            ]
+        },
+
+    },
+    "Kartana": {
+        "[S10] Critana": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 236,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Beast Boost",
+            "item": "Scope Lens",
+            "moves": [
+                "Leaf Blade",
+                "Sacred Sword",
+                "Smart Strike",
+                "Night Slash"
+            ]
+        },
+
+    },
+    "Tapu Koko": {
+        "[S10] AV Koko": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 12,
+                "sa": 4,
+                "sd": 100,
+                "sp": 148
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Electric Surge",
+            "item": "Assault Vest",
+            "moves": [
+                "Volt Switch",
+                "Electroweb",
+                "Dazzling Gleam",
+                "Nature\'s Madness"
+            ]
+        },
+
+    },
+    "Palkia": {
+        "[S10] Lustrous Orb Palkia": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 20,
+                "sa": 236,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Pressure",
+            "item": "Lustrous Orb",
+            "moves": [
+                "Hydro Pump",
+                "Spacial Rend",
+                "Earth Power",
+                "Flamethrower"
+            ]
+        },
+
+    },
+    "Hitmontop": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Fake Out",
+                "Close Combat",
+                "Feint",
+                "Sucker Punch"
+            ]
+        },
+
+    },
+    "Oranguru": {
+        "[S10] Caly-Ice Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "ability": "Inner Focus",
+            "item": "Mental Herb",
+            "moves": [
+                "Brutal Swing",
+                "Foul Play",
+                "Expanding Force",
+                "Instruct"
+            ]
+        },
+
+    },
+    "Zapdos": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Static",
+            "item": "Life Orb",
+            "moves": [
+                "Thunderbolt",
+                "Hurricane",
+                "Heat Wave",
+                "Weather Ball"
+            ]
+        },
+
+    },
+    "Togekiss": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 0,
+                "df": 100,
+                "sa": 0,
+                "sd": 180,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Super Luck",
+            "item": "Babiri Berry",
+            "moves": [
+                "Dazzling Gleam",
+                "Air Slash",
+                "Flamethrower",
+                "Heat Wave"
+            ]
+        },
+
+    },
+    "Mandibuzz": {
+        "[S10] Misty Seed Mandibuzz": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 0,
+                "df": 108,
+                "sa": 0,
+                "sd": 228,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Overcoat",
+            "item": "Misty Seed",
+            "moves": [
+                "Foul Play",
+                "Snarl",
+                "Tailwind",
+                "Roost"
+            ]
+        },
+        "[S10] Pinch Berry Mandibuzz": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 84,
+                "sa": 4,
+                "sd": 148,
+                "sp": 20
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Overcoat",
+            "item": "Iapapa Berry",
+            "moves": [
+                "Foul Play",
+                "Snarl",
+                "Tailwind",
+                "Roost"
+            ]
+        },
+
+    },
+    "Ludicolo": {
+        "[S10] AV Ludi": {
+            "level": 50,
+            "evs": {
+                "hp": 84,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 172
+            },
+            "nature": "Modest",
+            "ability": "Swift Swim",
+            "item": "Assault Vest",
+            "moves": [
+                "Grass Knot",
+                "Scald",
+                "Ice Beam",
+                "Fake Out"
+            ]
+        },
+
+    },
+    "Drifblim": {
+        "[S10] Grassy Seed Blim": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 148,
+                "sa": 100,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Unburden",
+            "item": "Grassy Seed",
+            "moves": [
+                "Shadow Ball",
+                "Hex",
+                "Tailwind",
+                "Will-O-Wisp"
+            ]
+        },
+
+    },
+    "Politoed": {
+        "[S10] Discount Kyogre": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 108,
+                "sa": 0,
+                "sd": 156,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Drizzle",
+            "item": "Sitrus",
+            "moves": [
+                "Scald",
+                "Icy Wind",
+                "Muddy Water",
+                "Ice Beam"
+            ]
+        },
+
+    },
+    "Dusclops": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 212,
+                "sa": 0,
+                "sd": 44,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "ability": "Frisk",
+            "item": "Eviolite",
+            "moves": [
+                "Night Shade",
+                "Trick Room",
+                "Pain Split",
+                "Will-O-Wisp"
+            ]
+        },
+
+    },
+    "Necrozma-Dusk-Mane": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 108,
+                "df": 76,
+                "sa": 0,
+                "sd": 84,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "ability": "Prism Armor",
+            "item": "Weakness Policy",
+            "moves": [
+                "Sunsteel Strike",
+                "Photon Geyser",
+                "Rock Slide",
+                "Earthquake"
+            ]
+        },
+
+    },
+}

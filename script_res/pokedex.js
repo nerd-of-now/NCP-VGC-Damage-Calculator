@@ -12771,8 +12771,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 90,
     "ab": "Grassy Surge",
     "formes": [
-      "Rillaboom-Gmax",
-      "Rillaboom"
+      "Rillaboom",
+      "Rillaboom-Gmax"
     ]
   },
   "Scorbunny": {
@@ -12814,8 +12814,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 33,
     "ab": "Libero",
     "formes": [
-      "Cinderace-Gmax",
-      "Cinderace"
+      "Cinderace",
+      "Cinderace-Gmax"
     ]
   },
   "Sobble": {
@@ -12857,8 +12857,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 45.2,
     "ab": "Sniper",
     "formes": [
-      "Intelleon-Gmax",
-      "Intelleon"
+      "Intelleon",
+      "Intelleon-Gmax"
     ]
   },
   "Blipbug": {

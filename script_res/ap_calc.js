@@ -290,11 +290,16 @@ $("#p2 .item").bind("keyup change", function() {
 
 function autoSetType(p, item) {
     var ab = $(p + " .ability").val();
-    if (ab == "RKS System" && item.indexOf("Memory") != -1) {
-        $(p + " .type1").val(getMemoryType(item));
-    }
-    else if (ab == "Multitype" && item.indexOf("Plate") != -1) {
-        $(p + " .type1").val(getItemBoostType(item));
+    if (ab == "Multitype" || ab == "RKS System") {
+        if (ab == "RKS System" && item.indexOf("Memory") != -1) {
+            $(p + " .type1").val(getMemoryType(item));
+        }
+        else if (ab == "Multitype" && item.indexOf("Plate") != -1) {
+            $(p + " .type1").val(getItemBoostType(item));
+        }
+        else {
+            $(p + " .type1").val('Normal');
+        }
     }
 }
 
