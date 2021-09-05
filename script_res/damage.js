@@ -50,8 +50,8 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
     //    defender.ability = "";
     //}
     if (move.name == "Weather Ball") {
-        move.type = field.weather.indexOf("Sun") > -1 ? "Fire"
-            : field.weather.indexOf("Rain") > -1 ? "Water"
+        move.type = field.weather.indexOf("Sun") > -1 && attacker.item !== 'Utility Umbrella' ? "Fire"
+            : field.weather.indexOf("Rain") > -1 && attacker.item !== 'Utility Umbrella' ? "Water"
                 : field.weather === "Sand" ? "Rock"
                     : field.weather === "Hail" ? "Ice"
                         : "Normal";
@@ -102,7 +102,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
     var exceptions_120 = ["Double Hit", "Spike Cannon"];
     var exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
     "Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
-    if(move.isMax) {
+    if (attacker.isDynamax) {
         var tempMove = move;
         move = moves[MAXMOVES_LOOKUP[tempMove.type]];
         if (move == undefined) move = tempMove; //prevents crashing when switching between Gen VII and VIII, only used for such a case
@@ -142,13 +142,11 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         }
         else move.isCrit = tempMove.isCrit;
         move.category = tempMove.category;
-        move.isMax = true;
         move.hits = 1;
         if (field.isProtect) isQuarteredByProtect = true;
         if (move.name == "(No Move)") {
             move.bp == 0;
             move.isCrit = false;
-            move.isMax = false;
         }
     }
     if (move.name === "Nature Power") {         //Rename Nature Power to its appropriately called moves; needs to be done after Max Moves since Nature Power becomes Max Guard
@@ -532,7 +530,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         description.attackerItem = attacker.item;
     }
 
-    if ((move.name === "Solar Beam" || move.name === "SolarBeam" || move.name === "Solar Blade") && ["None", "Sun", "Harsh Sun", ""].indexOf(field.weather) === -1) {
+    if ((move.name === "Solar Beam" || move.name === "SolarBeam" || move.name === "Solar Blade") && ["None", "Sun", "Harsh Sun", ""].indexOf(field.weather) === -1 && attacker.item !== 'Utility Umbrella') {
         bpMods.push(0x800);
         description.moveBP = move.bp / 2;
         description.weather = field.weather;
@@ -624,12 +622,12 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         atMods.push(0x800);
         description.attackerAbility = attacker.ability;
     }
-    if (attacker.ability === "Flower Gift" && field.weather.indexOf("Sun") > -1 && move.category === "Physical") {
+    if (attacker.ability === "Flower Gift" && field.weather.indexOf("Sun") > -1 && move.category === "Physical" && attacker.item !== 'Utility Umbrella') {
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
         description.weather = field.weather;
     }
-    if (field.isFlowerGiftAtk && attacker.ability !== "Flower Gift" && field.weather.indexOf("Sun") > -1 && move.category === "Physical") {
+    if (field.isFlowerGiftAtk && attacker.ability !== "Flower Gift" && field.weather.indexOf("Sun") > -1 && move.category === "Physical" && attacker.item !== 'Utility Umbrella') {
         atMods.push(0x1800);
         description.isFlowerGiftAtk = true;
         description.weather = field.weather;
@@ -649,7 +647,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
     } else if ((attacker.ability === "Steelworker" || attacker.ability === "Steely Spirit") && move.type === "Steel") {
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Solar Power" && field.weather.indexOf("Sun") > -1 && move.category === "Special") {
+    } else if (attacker.ability === "Solar Power" && field.weather.indexOf("Sun") > -1 && move.category === "Special" && attacker.item !== 'Utility Umbrella') {
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
         description.weather = field.weather;
@@ -672,12 +670,12 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
             (attacker.item === "Light Ball" && attacker.name === "Pikachu")) {
         atMods.push(0x2000);
         description.attackerItem = attacker.item;
-    } else if ((attacker.item === "Choice Band" && move.category === "Physical" && !move.isMax) ||
-            (attacker.item === "Choice Specs" && move.category === "Special" && !move.isMax)) {
+    } else if ((attacker.item === "Choice Band" && move.category === "Physical" && !attacker.isDynamax) ||
+            (attacker.item === "Choice Specs" && move.category === "Special" && !attacker.isDynamax)) {
         atMods.push(0x1800);
         description.attackerItem = attacker.item;
     }
-    if(attacker.ability === "Gorilla Tactics" && move.category === "Physical" && !move.isMax) {
+    if(attacker.ability === "Gorilla Tactics" && move.category === "Physical" && !attacker.isDynamax) {
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
     }
@@ -710,12 +708,12 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
     }
 
     var dfMods = [];
-    if (defAbility === "Flower Gift" && field.weather.indexOf("Sun") > -1 && !hitsPhysical) {
+    if (defAbility === "Flower Gift" && field.weather.indexOf("Sun") > -1 && !hitsPhysical && defender.item !== 'Utility Umbrella') {
         dfMods.push(0x1800);
         description.defenderAbility = defAbility;
         description.weather = field.weather;
     }
-    if (field.isFlowerGiftSpD && defAbility !== "Flower Gift" && field.weather.indexOf("Sun") > -1 && !hitsPhysical) {
+    if (field.isFlowerGiftSpD && defAbility !== "Flower Gift" && field.weather.indexOf("Sun") > -1 && !hitsPhysical && defender.item !== 'Utility Umbrella') {
         dfMods.push(0x1800);
         description.isFlowerGiftSpD = true;
         description.weather = field.weather;
@@ -751,11 +749,11 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
     }
     //Parental Bond modifier should apply here
 
-    if ((field.weather.indexOf("Sun") > -1 && move.type === "Fire") || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) {
+    if (((field.weather.indexOf("Sun") > -1 && move.type === "Fire") || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) && defender.item !== 'Utility Umbrella') {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
     //Need to move Strong Winds check out; I strongly suspect it's a hard modifier to type effectiveness
-    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
+    } else if ((((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') ||
                (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
                typeChart[move.type]["Flying"] > 1)) {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
@@ -1050,9 +1048,9 @@ function getFinalSpeedSM(pokemon, weather, terrain, tailwind) {
     {
         otherSpeedMods *= 0.5;
     }
-    if ((pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") > -1) ||
+    if ((((pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") > -1) ||
+            (pokemon.ability === "Swift Swim" && weather.indexOf("Rain") > -1)) && pokemon.item !== 'Utility Umbrella') ||
             (pokemon.ability === "Sand Rush" && weather === "Sand") ||
-            (pokemon.ability === "Swift Swim" && weather.indexOf("Rain") > -1) ||
             (pokemon.ability === "Slush Rush" && weather.indexOf("Hail") > -1) ||
             (pokemon.ability === "Surge Surfer" && terrain === "Electric") ||
             (pokemon.ability === "Unburden" && pokemon.item === "") ||

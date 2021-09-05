@@ -3696,7 +3696,7 @@ var SETDEX_VGC2021 = {
             "item": "Life Orb",
             "moves": [
                 "Bullet Punch",
-                "Bug Bite",
+                "X-Scissor",
                 "Dual Wingbeat",
                 "Superpower"
             ]
@@ -8327,6 +8327,26 @@ var SETDEX_VGC2021_S10 = {
                 "Knock Off"
             ]
         },
+        "[S10] Miracle Seed Rilla": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "ability": "Grassy Surge",
+            "item": "Miracle Seed",
+            "moves": [
+                "Grassy Glide",
+                "Wood Hammer",
+                "U-turn",
+                "Knock Off"
+            ]
+        },
 
     },
     "Regieleki": {
@@ -8374,6 +8394,26 @@ var SETDEX_VGC2021_S10 = {
                 "Close Combat",
                 "U-turn",
                 "Aqua Jet"
+            ]
+        },
+        "[S10] Scarf Urshifu": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Unseen Fist",
+            "item": "Choice Scarf",
+            "moves": [
+                "Surging Strikes",
+                "Close Combat",
+                "U-turn",
+                "Rock Slide"
             ]
         },
 
@@ -8445,6 +8485,29 @@ var SETDEX_VGC2021_S10 = {
                 "Heat Wave",
                 "Struggle Bug",
                 "Overheat",
+                "Fiery Dance"
+            ]
+        },
+        "[S10] Quiver Dance Volcarona": {
+            "level": 50,
+            "evs": {
+                "hp": 124,
+                "at": 0,
+                "df": 116,
+                "sa": 36,
+                "sd": 4,
+                "sp": 228
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Flame Body",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Heat Wave",
+                "Bug Buzz",
+                "Giga Drain",
                 "Fiery Dance"
             ]
         },
@@ -8527,6 +8590,29 @@ var SETDEX_VGC2021_S10 = {
                 "Origin Pulse"
             ]
         },
+        "[S10] Bold Lefties Kyogre": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 188,
+                "sa": 4,
+                "sd": 60,
+                "sp": 5
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Drizzle",
+            "item": "Leftovers",
+            "moves": [
+                "Water Spout",
+                "Ice Beam",
+                "Thunder",
+                "Origin Pulse"
+            ]
+        },
 
     },
     "Calyrex-Shadow Rider": {
@@ -8574,6 +8660,26 @@ var SETDEX_VGC2021_S10 = {
                 "Triple Axel",
                 "U-turn",
                 "High Jump Kick"
+            ]
+        },
+        "[S10] Sitrus Set": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 76,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 196
+            },
+            "nature": "Adamant",
+            "ability": "Queenly Majesty",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Power Whip",
+                "Triple Axel",
+                "U-turn",
+                "Payback"
             ]
         },
 
@@ -8625,6 +8731,26 @@ var SETDEX_VGC2021_S10 = {
                 "U-turn"
             ]
         },
+        "[S10] Scarf Urshifu": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Unseen Fist",
+            "item": "Choice Scarf",
+            "moves": [
+                "Wicked Blow",
+                "Close Combat",
+                "Poison Jab",
+                "U-turn"
+            ]
+        },
 
     },
     "Indeedee-F": {
@@ -8651,10 +8777,34 @@ var SETDEX_VGC2021_S10 = {
                 "Dazzling Gleam"
             ]
         },
+        "[S10] Life Orb Indeedee": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0,
+            },
+            "nature": "Quiet",
+            "ability": "Psychic Surge",
+            "item": "Life Orb",
+            "moves": [
+                "Expanding Force",
+                "Shadow Ball",
+                "Mystical Fire",
+                "Dazzling Gleam"
+            ]
+        },
 
     },
     "Mienshao": {
-        "Default Set": {
+        "[S10] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8686,9 +8836,6 @@ var SETDEX_VGC2021_S10 = {
                 "sd": 4,
                 "sp": 28
             },
-            "ivs": {
-                "at": 0,
-            },
             "nature": "Bold",
             "ability": "Intimidate",
             "item": "Rocky Helmet",
@@ -8696,6 +8843,26 @@ var SETDEX_VGC2021_S10 = {
                 "Earth Power",
                 "U-turn",
                 "Rock Tomb",
+                "Sludge Bomb"
+            ]
+        },
+        "[S10] Offensive Lando": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Modest",
+            "ability": "Intimidate",
+            "item": "Expert Belt",
+            "moves": [
+                "Earth Power",
+                "U-turn",
+                "Rock Slide",
                 "Sludge Bomb"
             ]
         },
@@ -8768,6 +8935,26 @@ var SETDEX_VGC2021_S10 = {
                 "Stomping Tantrum"
             ]
         },
+        "[S10] Mixed Entei": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 76,
+                "df": 0,
+                "sa": 196,
+                "sd": 0,
+                "sp": 236
+            },
+            "nature": "Mild",
+            "ability": "Inner Focus",
+            "item": "Choice Scarf",
+            "moves": [
+                "Sacred Fire",
+                "Crunch",
+                "Eruption",
+                "Heat Wave"
+            ]
+        },
 
     },
     "Nihilego": {
@@ -8813,6 +9000,29 @@ var SETDEX_VGC2021_S10 = {
             "nature": "Modest",
             "ability": "Psychic Surge",
             "item": "Psychic Seed",
+            "moves": [
+                "Psyshock",
+                "Moonblast",
+                "Shadow Ball",
+                "Dazzling Gleam"
+            ]
+        },
+        "[S10] Scarf Lele": {
+            "level": 50,
+            "evs": {
+                "hp": 60,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 4,
+                "sp": 188
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Psychic Surge",
+            "item": "Choice Scarf",
             "moves": [
                 "Psyshock",
                 "Moonblast",
@@ -8896,6 +9106,29 @@ var SETDEX_VGC2021_S10 = {
                 "Cosmic Power"
             ]
         },
+        "[S10] Life Orb Eternatus": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Pressure",
+            "item": "Life Orb",
+            "moves": [
+                "Sludge Bomb",
+                "Dynamax Cannon",
+                "Flamethrower",
+                "Sludge Wave"
+            ]
+        },
 
     },
     "Yveltal": {
@@ -8961,6 +9194,26 @@ var SETDEX_VGC2021_S10 = {
             "nature": "Adamant",
             "ability": "Drought",
             "item": "Life Orb",
+            "moves": [
+                "Precipice Blades",
+                "Heat Crash",
+                "Rock Slide",
+                "Stomping Tantrum"
+            ]
+        },
+        "[S10] Specially Defensive Groudon": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 76,
+                "df": 4,
+                "sa": 0,
+                "sd": 172,
+                "sp": 28
+            },
+            "nature": "Adamant",
+            "ability": "Drought",
+            "item": "Sitrus Berry",
             "moves": [
                 "Precipice Blades",
                 "Heat Crash",
@@ -9066,6 +9319,26 @@ var SETDEX_VGC2021_S10 = {
             "moves": [
                 "Thunderous Kick",
                 "Close Combat",
+                "Brave Bird",
+                "U-turn"
+            ]
+        },
+        "[S10] Scarf Zapdos": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Defiant",
+            "item": "Choice Scarf",
+            "moves": [
+                "Thunderous Kick",
+                "Throat Chop",
                 "Brave Bird",
                 "U-turn"
             ]
@@ -9422,7 +9695,30 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Zapdos": {
-        "[S10] Default Set": {
+        "[S10] Bulky Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 164,
+                "sa": 4,
+                "sd": 84,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Static",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Thunderbolt",
+                "Hurricane",
+                "Heat Wave",
+                "Weather Ball"
+            ]
+        },
+        "[S10] LO Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9471,6 +9767,29 @@ var SETDEX_VGC2021_S10 = {
                 "Heat Wave"
             ]
         },
+        "[S10] Offensive Kiss": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 0,
+                "sa": 196,
+                "sd": 76,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Super Luck",
+            "item": "Scope Lens",
+            "moves": [
+                "Dazzling Gleam",
+                "Shadow Ball",
+                "Air Slash",
+                "Heat Wave"
+            ]
+        },
 
     },
     "Mandibuzz": {
@@ -9513,6 +9832,29 @@ var SETDEX_VGC2021_S10 = {
             "nature": "Bold",
             "ability": "Overcoat",
             "item": "Iapapa Berry",
+            "moves": [
+                "Foul Play",
+                "Snarl",
+                "Tailwind",
+                "Roost"
+            ]
+        },
+        "[S10] Rocky Helmet Mandibuzz": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 92,
+                "sa": 4,
+                "sd": 76,
+                "sp": 92
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Overcoat",
+            "item": "Rocky Helmet",
             "moves": [
                 "Foul Play",
                 "Snarl",
@@ -9646,5 +9988,473 @@ var SETDEX_VGC2021_S10 = {
             ]
         },
 
+    },
+    "Calyrex-Ice Rider": {
+        "[S10] Body Press Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "item": "Leftovers",
+            "moves": [
+                "Glacial Lance",
+                "Body Press",
+                "Iron Defense",
+                "Protect"
+            ]
+        },
+    },
+    "Suicune": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 108,
+                "sa": 4,
+                "sd": 92,
+                "sp": 52
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Inner Focus",
+            "item": "Leftovers",
+            "moves": [
+                "Scald",
+                "Icy Wind",
+                "Snarl",
+                "Ice Beam"
+            ]
+        }
+    },
+    "Dragapult": {
+        "Banded Dragapult": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Clear Body",
+            "item": "Choice Band",
+            "moves": [
+                "Phantom Force",
+                "Dragon Darts",
+                "Sucker Punch",
+                "U-turn"
+            ]
+        },
+        "Special Dragapult": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Infiltrator",
+            "item": "Focus Sash",
+            "moves": [
+                "Shadow Ball",
+                "Draco Meteor",
+                "Hex",
+                "Will-O-Wisp"
+            ]
+        }
+    },
+    "Ferrothorn": {
+        "[S10] Choice Band Ferrothorn": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0
+            },
+            "nature": "Brave",
+            "ability": "Iron Barbs",
+            "item": "Choice Band",
+            "moves": [
+                "Gyro Ball",
+                "Power Whip",
+                "Body Press",
+                "Knock Off"
+            ]
+        },
+    },
+    "Cherrim": {
+        "[S10] Physical Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Flower Gift",
+            "item": "Focus Sash",
+            "moves": [
+                "Solar Blade",
+                "Pollen Puff",
+                "Grassy Glide",
+                "Helping Hand"
+            ]
+        },
+        "[S10] Special Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Flower Gift",
+            "item": "Focus Sash",
+            "moves": [
+                "Grass Knot",
+                "Pollen Puff",
+                "Protect",
+                "Helping Hand"
+            ]
+        },
+    },
+    "Milotic": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 4,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Competitive",
+            "item": "Leftovers",
+            "moves": [
+                "Scald",
+                "Ice Beam",
+                "Icy Wind",
+                "Muddy Water"
+            ]
+        },
+    },
+    "Mamoswine": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Oblivious",
+            "item": "Focus Sash",
+            "moves": [
+                "Icicle Spear",
+                "Icicle Crash",
+                "High Horsepower",
+                "Ice Shard"
+            ]
+        }
+    },
+    "Kommo-o": {
+        "[S10] Iron Defense Set": {
+            "level": 50,
+            "evs": {
+                "hp": 204,
+                "at": 0,
+                "df": 204,
+                "sa": 0,
+                "sd": 100,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "ability": "Overcoat",
+            "item": "Leftovers",
+            "moves": [
+                "Body Press",
+                "Breaking Swipe",
+                "Iron Defense",
+                "Protect"
+            ]
+        }
+    },
+    "Thundurus-T": {
+        "[S10] Scarf Thundurus": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0
+            },
+            "nature": "Modest",
+            "ability": "Volt Absorb",
+            "item": "Choice Scarf",
+            "moves": [
+                "Sludge Bomb",
+                "Thunderbolt",
+                "Dark Pulse",
+                "Volt Switch"
+            ]
+        }
+    },
+    "Pelipper": {
+        "[S10] Bulky Pelipper": {
+            "level": 50,
+            "evs": {
+                "hp": 220,
+                "at": 0,
+                "df": 0,
+                "sa": 36,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0
+            },
+            "nature": "Modest",
+            "ability": "Drizzle",
+            "item": "Focus Sash",
+            "moves": [
+                "Scald",
+                "Hurricane",
+                "Weather Ball",
+                "Ice Beam"
+            ]
+        }
+    },
+    "Weavile": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Pressure",
+            "item": "Focus Sash",
+            "moves": [
+                "Fake Out",
+                "Feint",
+                "Triple Axel",
+                "Lash Out"
+            ]
+        }
+    },
+    "Scizor": {
+        "[S10] Banded Scizor": {
+            "level": 50,
+            "evs": {
+                "hp": 204,
+                "at": 236,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 60
+            },
+            "nature": "Adamant",
+            "ability": "Technician",
+            "item": "Choice Band",
+            "moves": [
+                "Bullet Punch",
+                "U-turn",
+                "Iron Head",
+                "Superpower"
+            ]
+        }
+    },
+    "Kyurem-W": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 68,
+                "at": 0,
+                "df": 4,
+                "sa": 236,
+                "sd": 4,
+                "sp": 196
+            },
+            "ivs": {
+                "at": 0
+            },
+            "nature": "Modest",
+            "ability": "Turboblaze",
+            "item": "Choice Scarf",
+            "moves": [
+                "Icy Wind",
+                "Freeze-Dry",
+                "Draco Meteor",
+                "Earth Power"
+            ]
+        }
+    },
+    "Indeedee-M": {
+        "[S10] Scarf Indeedee": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0
+            },
+            "nature": "Timid",
+            "ability": "Psychic Surge",
+            "item": "Choice Scarf",
+            "moves": [
+                "Expanding Force",
+                "Shadow Ball",
+                "Dazzling Gleam",
+                "Trick"
+            ]
+        },
+    },
+    "Lurantis": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 204,
+                "df": 0,
+                "sa": 0,
+                "sd": 52,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "ability": "Contrary",
+            "item": "Assault Vest",
+            "moves": [
+                "Leaf Blade",
+                "Superpower",
+                "Leech Life",
+                "Night Slash"
+            ]
+        }
+    },
+    "Raikou": {
+        "[S10] Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 0,
+                "df": 20,
+                "sa": 172,
+                "sd": 4,
+                "sp": 180
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Inner Focus",
+            "item": "Assault Vest",
+            "moves": [
+                "Thunderbolt",
+                "Shadow Ball",
+                "Snarl",
+                "Volt Switch"
+            ]
+        }
+    },
+    "Gyarados": {
+        "[S10] AV Gyarados": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 20,
+                "df": 20,
+                "sa": 0,
+                "sd": 116,
+                "sp": 100
+            },
+            "nature": "Adamant",
+            "ability": "Intimidate",
+            "item": "Assault Vest",
+            "moves": [
+                "Waterfall",
+                "Lash Out",
+                "Power Whip",
+                "Icy Wind"
+            ]
+        }
+    },
+    "Dragonite": {
+        "[S10] Life Orb Dragonite": {
+            "level": 50,
+            "evs": {
+                "hp": 180,
+                "at": 252,
+                "df": 20,
+                "sa": 0,
+                "sd": 4,
+                "sp": 52
+            },
+            "nature": "Adamant",
+            "ability": "Inner Focus",
+            "item": "Life Orb",
+            "moves": [
+                "Extreme Speed",
+                "Superpower",
+                "Dual Wingbeat",
+                "Fire Punch"
+            ]
+        }
     },
 }

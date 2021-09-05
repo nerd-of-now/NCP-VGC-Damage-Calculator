@@ -355,7 +355,6 @@ $(".move-selector").change(function() {
     if (moveName=="Dragon Darts") moveGroupObj.children(".move-hits2").show();
     else moveGroupObj.children(".move-hits2").hide();
     moveGroupObj.children(".move-z").prop("checked", false);
-    moveGroupObj.children(".move-max").prop("checked", false);
 });
 
 // auto-update set details on select
@@ -714,15 +713,15 @@ function Pokemon(pokeInfo) {
     this.status = pokeInfo.find(".status").val();
     this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
     this.moves = [
-        getMoveDetails(pokeInfo.find(".move1")),
-        getMoveDetails(pokeInfo.find(".move2")),
-        getMoveDetails(pokeInfo.find(".move3")),
-        getMoveDetails(pokeInfo.find(".move4"))
+        getMoveDetails(pokeInfo.find(".move1"), this.isDynamax),
+        getMoveDetails(pokeInfo.find(".move2"), this.isDynamax),
+        getMoveDetails(pokeInfo.find(".move3"), this.isDynamax),
+        getMoveDetails(pokeInfo.find(".move4"), this.isDynamax)
     ];
     this.weight = +pokeInfo.find(".weight").val();
 }
 
-function getMoveDetails(moveInfo) {
+function getMoveDetails(moveInfo, maxMon) {
     var moveName = moveInfo.find("select.move-selector").val();
     var defaultDetails = moves[moveName];
     return $.extend({}, defaultDetails, {
@@ -732,13 +731,12 @@ function getMoveDetails(moveInfo) {
         category: moveInfo.find(".move-cat").val(),
         isCrit: moveInfo.find(".move-crit").prop("checked"),
         isZ: moveInfo.find(".move-z").prop("checked"),
-        isMax: moveInfo.find(".move-max").prop("checked"),
-        hits: (defaultDetails.isMultiHit && !moveInfo.find(".move-z").prop("checked") && !moveInfo.find(".move-max").prop("checked")) ? ~~moveInfo.find(".move-hits").val()
-            : (moveName == "Dragon Darts" && !moveInfo.find(".move-z").prop("checked") && !moveInfo.find(".move-max").prop("checked")) ? ~~moveInfo.find(".move-hits2").val()
-            : (defaultDetails.isTwoHit && !moveInfo.find(".move-z").prop("checked") && !moveInfo.find(".move-max").prop("checked")) ? 2
-            : (defaultDetails.isThreeHit && !moveInfo.find(".move-z").prop("checked") && !moveInfo.find(".move-max").prop("checked")) ? 3
+        hits: (defaultDetails.isMultiHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits").val()
+            : (moveName == "Dragon Darts" && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits2").val()
+            : (defaultDetails.isTwoHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 2
+            : (defaultDetails.isThreeHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 3
             : 1,
-        isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !moveInfo.find(".move-max").prop("checked")) ? ~~moveInfo.find(".move-double").val() : 0
+        isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-double").val() : 0
     });
 }
 

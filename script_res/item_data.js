@@ -205,7 +205,7 @@ var ITEMS_SM = ITEMS_XY.concat([
 ]);
 
 var ITEMS_SS = ITEMS_SM.concat([
-
+    'Utility Umbrella',
 ]);
 
 function getItemBoostType(item) {
