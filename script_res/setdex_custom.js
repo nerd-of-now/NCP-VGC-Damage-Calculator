@@ -54,15 +54,56 @@ var saveToCalcFormes = [["Darmanitan-Z", "Darmanitan"],
 ["Zacian-Crowned", "Zacian"],
 ["Zamazenta-Crowned", "Zamazenta"],];
 
-if(readCookie("custom") != null){
-    SETDEX_CUSTOM = JSON.parse(readCookie("custom"));
-    reloadXYScript();
+
+gen = $(".gen").val();
+
+if (readCookie("custom_gen_" + gen) != null) {
+    switch (gen) {
+        case 6:
+            SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_" + gen));
+            reloadXYScript();
+            break;
+        case 7:
+            SETDEX_CUSTOM_SM = JSON.parse(readCookie("custom_gen_" + gen));
+            reloadSMScript();
+            break;
+        case 8:
+            SETDEX_CUSTOM_SS = JSON.parse(readCookie("custom_gen_" + gen));
+            reloadSSScript();
+            break;
+        case 84:
+            SETDEX_CUSTOM_BDSP = JSON.parse(readCookie("custom_gen_" + gen));
+            reloadBDSPScript();
+            break;
+        default:
+            console.log("THIS SHOULDN\'T HAPPEN LOL");
+    }
 }
-var deletecustom = function()
-{
-	SETDEX_CUSTOM = {}
-	eraseCookie("custom")
-    reloadXYScript()
+var deletecustom = function () {
+    switch (gen) {
+        case 6:
+            SETDEX_CUSTOM_XY = {};
+            eraseCookie("custom_gen_" + gen);
+            reloadXYScript();
+            break;
+        case 7:
+            SETDEX_CUSTOM_SM = {};
+            eraseCookie("custom_gen_" + gen);
+            reloadSMScript();
+            break;
+        case 8:
+            SETDEX_CUSTOM_SS = {};
+            eraseCookie("custom_gen_" + gen);
+            reloadSSScript();
+            break;
+        case 84:
+            SETDEX_CUSTOM_BDSP = {};
+            eraseCookie("custom_gen_" + gen);
+            reloadBDSPScript();
+            break;
+        default:
+            console.log("THIS SHOULDN\'T HAPPEN LOL");
+    }
 }
 
 function createCookie(name, value, days) {
@@ -266,12 +307,51 @@ var savecustom = function()
             "item": item,
             "moves": moves,
         }
-        if (SETDEX_CUSTOM[species] == null)
-            SETDEX_CUSTOM[species] = {}
-        SETDEX_CUSTOM[species][spreadName] = customFormat
-        document.cookie = "custom=" + JSON.stringify(SETDEX_CUSTOM)
+        switch (gen) {
+            case 6:
+                if (SETDEX_CUSTOM_XY[species] == null)
+                    SETDEX_CUSTOM_XY[species] = {}
+                SETDEX_CUSTOM_XY[species][spreadName] = customFormat
+                document.cookie = "custom_xy=" + JSON.stringify(SETDEX_CUSTOM_XY)
+                break;
+            case 7:
+                if (SETDEX_CUSTOM_SM[species] == null)
+                    SETDEX_CUSTOM_SM[species] = {}
+                SETDEX_CUSTOM_SM[species][spreadName] = customFormat
+                document.cookie = "custom_sm=" + JSON.stringify(SETDEX_CUSTOM_SM)
+                break;
+            case 8:
+                if (SETDEX_CUSTOM_SS[species] == null)
+                    SETDEX_CUSTOM_SS[species] = {}
+                SETDEX_CUSTOM_SS[species][spreadName] = customFormat
+                document.cookie = "custom_ss=" + JSON.stringify(SETDEX_CUSTOM_SS)
+                break;
+            case 84:
+                if (SETDEX_CUSTOM_BDSP[species] == null)
+                    SETDEX_CUSTOM_BDSP[species] = {}
+                SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
+                document.cookie = "custom_bdsp=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
+                break;
+            default:
+                console.log("THIS SHOULDN\'T HAPPEN LOL");
+        }
     }
-    reloadXYScript()
+    switch (gen) {
+        case 6:
+            reloadXYScript();
+            break;
+        case 7:
+            reloadSMScript();
+            break;
+        case 8:
+            reloadSSScript();
+            break;
+        case 84:
+            reloadBDSPScript();
+            break;
+        default:
+            console.log("THIS SHOULDN\'T HAPPEN LOL");
+    }
     document.getElementById("customMon").value = ""
 
 }
@@ -330,11 +410,38 @@ var savecalc = function (set, spreadName, accessIVs) {
         "moves": moves,
     }
 
-    if (SETDEX_CUSTOM[species] == null)
-        SETDEX_CUSTOM[species] = {}
-    SETDEX_CUSTOM[species][spreadName] = customFormat
-    document.cookie = "custom=" + JSON.stringify(SETDEX_CUSTOM)
-    reloadXYScript()
+    switch (gen) {
+        case 6:
+            if (SETDEX_CUSTOM_XY[species] == null)
+                SETDEX_CUSTOM_XY[species] = {}
+            SETDEX_CUSTOM_XY[species][spreadName] = customFormat
+            document.cookie = "custom_xy=" + JSON.stringify(SETDEX_CUSTOM_XY)
+            reloadXYScript()
+            break;
+        case 7:
+            if (SETDEX_CUSTOM_SM[species] == null)
+                SETDEX_CUSTOM_SM[species] = {}
+            SETDEX_CUSTOM_SM[species][spreadName] = customFormat
+            document.cookie = "custom_sm=" + JSON.stringify(SETDEX_CUSTOM_SM)
+            reloadSMScript()
+            break;
+        case 8:
+            if (SETDEX_CUSTOM_SS[species] == null)
+                SETDEX_CUSTOM_SS[species] = {}
+            SETDEX_CUSTOM_SS[species][spreadName] = customFormat
+            document.cookie = "custom_ss=" + JSON.stringify(SETDEX_CUSTOM_SS)
+            reloadSSScript()
+            break;
+        case 84:
+            if (SETDEX_CUSTOM_BDSP[species] == null)
+                SETDEX_CUSTOM_BDSP[species] = {}
+            SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
+                document.cookie = "custom_bdsp=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
+            reloadBDSPScript()
+            break;
+        default:
+            console.log("THIS SHOULDN\'T HAPPEN LOL");
+    }
 }
 
 var savecalc1 = function () {

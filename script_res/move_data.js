@@ -3715,3 +3715,5 @@ delete MOVES_SS['Hidden Power Bug'];
 delete MOVES_SS['Hidden Power Flying'];
 delete MOVES_SS['Hidden Power Dragon'];
 delete MOVES_SS['Hidden Power Poison'];
+
+var MOVES_BDSP = $.extend(true, {}, MOVES_SS_NATDEX, {});

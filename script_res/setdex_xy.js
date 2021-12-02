@@ -1,10 +1,10 @@
 var SETDEX_XY = {};
-var SETDEX_CUSTOM = {};
+var SETDEX_CUSTOM_XY = {};
 
 var components = [
     SETDEX_SHOWDOWN,
     SETDEX_NUGGETBRIDGE,
-    SETDEX_CUSTOM
+    //SETDEX_CUSTOM_XY
 ];
 
 for (var i=0; i<components.length; i++) {
@@ -20,10 +20,11 @@ for (var i=0; i<components.length; i++) {
 
 var reloadXYScript = function()
 {
+    console.log(SETDEX_CUSTOM_XY);
     components = [
     SETDEX_SHOWDOWN,
     SETDEX_NUGGETBRIDGE,
-    SETDEX_CUSTOM
+    SETDEX_CUSTOM_XY
 ];
 
 for (var i=0; i<components.length; i++) {

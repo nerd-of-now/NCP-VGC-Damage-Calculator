@@ -1,4 +1,5 @@
 var SETDEX_SM = {};
+var SETDEX_CUSTOM_SM = {};
 
 var components = [
     SETDEX_TT2019
@@ -15,12 +16,12 @@ for (var i=0; i<components.length; i++) {
     }
 }
 
-var reloadXYScript = function()
+var reloadSMScript = function()
 {
-  console.log(SETDEX_CUSTOM);
+  console.log(SETDEX_CUSTOM_SM);
     components = [
     SETDEX_TT2019,
-    SETDEX_CUSTOM,
+    SETDEX_CUSTOM_SM,
 ];
 
 for (var i=0; i<components.length; i++) {

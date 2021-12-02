@@ -8,7 +8,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         } else if (field.weather === "Heavy Rain" && move.type === "Fire") {
             return 'the Fire-Type attack fizzled out in the heavy rain';
         }
-        return 'aim for the horn next time';
+        return '[The Smooth Taste Of] IMMUNE';
     }
     var hasSitrus = defender.item === 'Sitrus Berry';
     var hasFigy = defender.item === 'Figy Berry' || defender.item === 'Aguav Berry' || defender.item === 'Iapapa Berry' || defender.item === 'Mago Berry' || defender.item === 'Wiki Berry';

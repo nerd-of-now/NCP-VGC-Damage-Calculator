@@ -577,7 +577,7 @@ function calculate() {
         minPercent = Math.floor(minDamage * 1000 / p2.maxHP) / 10;
         maxPercent = Math.floor(maxDamage * 1000 / p2.maxHP) / 10;
         result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-          result.koChanceText = p1.moves[i].bp === 0 ? '<a href="https://www.youtube.com/watch?v=7u6kMjWt1Rk&feature=youtu.be">you wanna dance with me?!</a>'
+        result.koChanceText = p1.moves[i].bp === 0 ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                   : getKOChanceText(result.damage, p1.moves[i], p2, field.getSide(1), p1.ability === 'Bad Dreams');
         result.crit = p1.moves[i].isCrit
         if(p1.moves[i].isMLG){
@@ -817,7 +817,7 @@ var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calculateAl
 $(".gen").change(function () {
     gen = ~~$(this).val();
     switch (gen) {
-        case 1:
+        case 1: //Gen 1
             pokedex = POKEDEX_RBY;
             setdex = SETDEX_RBY;
             typeChart = TYPE_CHART_RBY;
@@ -829,7 +829,7 @@ $(".gen").change(function () {
             calcHP = CALC_HP_RBY;
             calcStat = CALC_STAT_RBY;
             break;
-        case 2:
+        case 2: //Gen 2
             pokedex = POKEDEX_GSC;
             setdex = SETDEX_GSC;
             typeChart = TYPE_CHART_GSC;
@@ -841,7 +841,7 @@ $(".gen").change(function () {
             calcHP = CALC_HP_RBY;
             calcStat = CALC_STAT_RBY;
             break;
-        case 3:
+        case 3: //Gen 3
             pokedex = POKEDEX_ADV;
             setdex = SETDEX_ADV;
             typeChart = TYPE_CHART_GSC;
@@ -853,7 +853,7 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
-        case 4:
+        case 4: //Gen 4
             pokedex = POKEDEX_DPP;
             setdex = SETDEX_DPP;
             typeChart = TYPE_CHART_GSC;
@@ -865,7 +865,7 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
-        case 5:
+        case 5: //Gen 5
             pokedex = POKEDEX_BW;
             setdex = SETDEX_BW;
             typeChart = TYPE_CHART_GSC;
@@ -877,7 +877,7 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
-        case 6:
+        case 6: //Gen 6
             pokedex = POKEDEX_XY;
             setdex = SETDEX_XY;
             typeChart = TYPE_CHART_XY;
@@ -889,7 +889,7 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
-        case 7:
+        case 7: //Gen 7
             pokedex = POKEDEX_SM;
             setdex = SETDEX_SM;
             typeChart = TYPE_CHART_XY;
@@ -901,12 +901,24 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
-        case 8:
+        case 8: //Gen 8 SwSh
             pokedex = POKEDEX_SS;
             setdex = SETDEX_SS;
             typeChart = TYPE_CHART_XY;
             moves = MOVES_SS;
             items = ITEMS_SS;
+            abilities = ABILITIES_SS;
+            STATS = STATS_GSC;
+            calculateAllMoves = CALCULATE_ALL_MOVES_SM;
+            calcHP = CALC_HP_ADV;
+            calcStat = CALC_STAT_ADV;
+            break;
+        case 84: //Gen 8 BDSP
+            pokedex = POKEDEX_BDSP;
+            setdex = SETDEX_BDSP;
+            typeChart = TYPE_CHART_XY;
+            moves = MOVES_BDSP;
+            items = ITEMS_BDSP;
             abilities = ABILITIES_SS;
             STATS = STATS_GSC;
             calculateAllMoves = CALCULATE_ALL_MOVES_SM;

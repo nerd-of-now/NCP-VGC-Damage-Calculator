@@ -208,6 +208,10 @@ var ITEMS_SS = ITEMS_SM.concat([
     'Utility Umbrella',
 ]);
 
+var ITEMS_BDSP = ITEMS_DPP.concat([
+    'Pixie Plate',
+]);
+
 function getItemBoostType(item) {
     switch (item) {
         case 'Draco Plate':

@@ -1,3 +1,4 @@
+//NOTE: check the following lines of code: 324, 422, and 588
 /* Damage calculation for the Generation VIII games; Sword, Shield, Isle of Armor, and Crown Tundra */
 /* Leftover code from Generation VII left in until they can be fully separated, unless Nat Dex is wanted */
 
@@ -320,7 +321,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
             basePower = turnOrder === "LAST" ? 100 : 50;
             description.moveBP = basePower;
             break;
-        case "Electro Ball":
+        case "Electro Ball":    //Need an addition of 40 BP for r = 0. Also var r = (defender.stats[SP] == 0) ? 0 : Math.floor(attacker.stats[SP] / defender.stats[SP]);
             var r = Math.floor(attacker.stats[SP] / defender.stats[SP]);
             basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : 60;
             description.moveBP = basePower;
@@ -418,6 +419,10 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         case "Triple Axel":
             basePower = 40;
             break;
+        //case "Crush Grip":
+        //case "Wring Out":
+        //    basePower = floor(pokeRound(120 * 100 * floor(attacker.curHP*0x1000/attacker.maxHP)/0x1000)/100);
+        //    description.moveBP = basePower;
         default:
             if (move.isDouble) {
                 basePower = 2 * move.bp;
@@ -580,6 +585,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
 
     basePower = Math.max(1, pokeRound(basePower * chainMods(bpMods) / 0x1000));
     basePower = attacker.isChild ? basePower / 4 : basePower;
+    //basePower = attacker.isChild ? pokeRound(basePower * 0x0400 / 0x1000) : basePower;    //should be accurate based on implementation
 
     ////////////////////////////////
     ////////// (SP)ATTACK //////////

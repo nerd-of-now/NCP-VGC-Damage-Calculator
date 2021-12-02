@@ -10039,7 +10039,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Dragapult": {
-        "Banded Dragapult": {
+        "[S10] Banded Dragapult": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -10059,7 +10059,7 @@ var SETDEX_VGC2021_S10 = {
                 "U-turn"
             ]
         },
-        "Special Dragapult": {
+        "[S10] Special Dragapult": {
             "level": 50,
             "evs": {
                 "hp": 4,
