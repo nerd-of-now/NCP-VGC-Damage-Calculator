@@ -54,32 +54,48 @@ var saveToCalcFormes = [["Darmanitan-Z", "Darmanitan"],
 ["Zacian-Crowned", "Zacian"],
 ["Zamazenta-Crowned", "Zamazenta"],];
 
+//if (readCookie("custom_gen_" + gen) != null) {
+//    switch (gen) {
+//        case 6:
+//            SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_" + gen));
+//            reloadXYScript();
+//            break;
+//        case 7:
+//            SETDEX_CUSTOM_SM = JSON.parse(readCookie("custom_gen_" + gen));
+//            reloadSMScript();
+//            break;
+//        case 8:
+//            SETDEX_CUSTOM_SS = JSON.parse(readCookie("custom_gen_" + gen));
+//            reloadSSScript();
+//            break;
+//        case 84:
+//            SETDEX_CUSTOM_BDSP = JSON.parse(readCookie("custom_gen_" + gen));
+//            reloadBDSPScript();
+//            break;
+//        default:
+//            console.log("THIS SHOULDN\'T HAPPEN LOL");
+//    }
+//}
 
-gen = $(".gen").val();
-
-if (readCookie("custom_gen_" + gen) != null) {
-    switch (gen) {
-        case 6:
-            SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_" + gen));
-            reloadXYScript();
-            break;
-        case 7:
-            SETDEX_CUSTOM_SM = JSON.parse(readCookie("custom_gen_" + gen));
-            reloadSMScript();
-            break;
-        case 8:
-            SETDEX_CUSTOM_SS = JSON.parse(readCookie("custom_gen_" + gen));
-            reloadSSScript();
-            break;
-        case 84:
-            SETDEX_CUSTOM_BDSP = JSON.parse(readCookie("custom_gen_" + gen));
-            reloadBDSPScript();
-            break;
-        default:
-            console.log("THIS SHOULDN\'T HAPPEN LOL");
-    }
+if (readCookie("custom_gen_6") != null) {
+    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_6"));
+    reloadXYScript();
 }
+if (readCookie("custom_gen_7") != null) {
+    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_7"));
+    reloadSMScript();
+}
+if (readCookie("custom_gen_8") != null) {
+    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_8"));
+    reloadSSScript();
+}
+if (readCookie("custom_gen_84") != null) {
+    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_84"));
+    reloadBDSPScript();
+}
+
 var deletecustom = function () {
+    gen = $(".gen").val();
     switch (gen) {
         case 6:
             SETDEX_CUSTOM_XY = {};
@@ -134,6 +150,7 @@ function eraseCookie(name) {
 
 var savecustom = function()
 {
+    gen = $(".gen").val();
 	//first, to parse it all from the PS format
 	var string = document.getElementById('customMon').value
 	var spreadName = document.getElementById('spreadName').value
@@ -359,6 +376,7 @@ var savecustom = function()
 
 //Saves a custom set from within the calc
 var savecalc = function (set, spreadName, accessIVs) {
+    gen = $(".gen").val();
     var moves=[]
     species = set.name;
 
