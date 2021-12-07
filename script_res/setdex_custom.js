@@ -312,25 +312,25 @@ var savecustom = function()
                 if (SETDEX_CUSTOM_XY[species] == null)
                     SETDEX_CUSTOM_XY[species] = {}
                 SETDEX_CUSTOM_XY[species][spreadName] = customFormat
-                document.cookie = "custom_xy=" + JSON.stringify(SETDEX_CUSTOM_XY)
+                document.cookie = "custom_gen_6=" + JSON.stringify(SETDEX_CUSTOM_XY)
                 break;
             case 7:
                 if (SETDEX_CUSTOM_SM[species] == null)
                     SETDEX_CUSTOM_SM[species] = {}
                 SETDEX_CUSTOM_SM[species][spreadName] = customFormat
-                document.cookie = "custom_sm=" + JSON.stringify(SETDEX_CUSTOM_SM)
+                document.cookie = "custom_gen_7=" + JSON.stringify(SETDEX_CUSTOM_SM)
                 break;
             case 8:
                 if (SETDEX_CUSTOM_SS[species] == null)
                     SETDEX_CUSTOM_SS[species] = {}
                 SETDEX_CUSTOM_SS[species][spreadName] = customFormat
-                document.cookie = "custom_ss=" + JSON.stringify(SETDEX_CUSTOM_SS)
+                document.cookie = "custom_gen_8=" + JSON.stringify(SETDEX_CUSTOM_SS)
                 break;
             case 84:
                 if (SETDEX_CUSTOM_BDSP[species] == null)
                     SETDEX_CUSTOM_BDSP[species] = {}
                 SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
-                document.cookie = "custom_bdsp=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
+                document.cookie = "custom_gen_84=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
                 break;
             default:
                 console.log("THIS SHOULDN\'T HAPPEN LOL");
@@ -415,28 +415,28 @@ var savecalc = function (set, spreadName, accessIVs) {
             if (SETDEX_CUSTOM_XY[species] == null)
                 SETDEX_CUSTOM_XY[species] = {}
             SETDEX_CUSTOM_XY[species][spreadName] = customFormat
-            document.cookie = "custom_xy=" + JSON.stringify(SETDEX_CUSTOM_XY)
+            document.cookie = "custom_gen_6=" + JSON.stringify(SETDEX_CUSTOM_XY)
             reloadXYScript()
             break;
         case 7:
             if (SETDEX_CUSTOM_SM[species] == null)
                 SETDEX_CUSTOM_SM[species] = {}
             SETDEX_CUSTOM_SM[species][spreadName] = customFormat
-            document.cookie = "custom_sm=" + JSON.stringify(SETDEX_CUSTOM_SM)
+            document.cookie = "custom_gen_7=" + JSON.stringify(SETDEX_CUSTOM_SM)
             reloadSMScript()
             break;
         case 8:
             if (SETDEX_CUSTOM_SS[species] == null)
                 SETDEX_CUSTOM_SS[species] = {}
             SETDEX_CUSTOM_SS[species][spreadName] = customFormat
-            document.cookie = "custom_ss=" + JSON.stringify(SETDEX_CUSTOM_SS)
+            document.cookie = "custom_gen_8=" + JSON.stringify(SETDEX_CUSTOM_SS)
             reloadSSScript()
             break;
         case 84:
             if (SETDEX_CUSTOM_BDSP[species] == null)
                 SETDEX_CUSTOM_BDSP[species] = {}
             SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
-                document.cookie = "custom_bdsp=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
+                document.cookie = "custom_gen_84=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
             reloadBDSPScript()
             break;
         default:

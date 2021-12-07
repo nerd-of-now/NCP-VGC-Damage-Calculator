@@ -35,7 +35,12 @@ var ITEMS_ADV = ITEMS_GSC.concat([
     'Oran Berry',
     'Silk Scarf',
     'Sitrus Berry',
-    'Soul Dew'
+    'Soul Dew',
+    'Aguav Berry',
+    'Iapapa Berry',
+    'Mago Berry',
+    'Wiki Berry',
+    'Figy Berry',
 ]);
 
 ITEMS_ADV.splice(ITEMS_ADV.indexOf('Berry'), 1);
@@ -176,15 +181,10 @@ ITEMS_XY.splice(ITEMS_XY.indexOf('Soul Dew'), 1);
 
 
 var ITEMS_SM = ITEMS_XY.concat([
-    'Figy Berry',
     'Psychic Seed',
     'Misty Seed',
     'Electric Seed',
     'Grassy Seed',
-    'Aguav Berry',
-    'Iapapa Berry',
-    'Mago Berry',
-    'Wiki Berry',
     'Bug Memory',
     'Dark Memory',
     'Dragon Memory',

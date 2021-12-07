@@ -2,7 +2,7 @@
 /* Damage calculation for the Generation VIII games; Sword, Shield, Isle of Armor, and Crown Tundra */
 /* Leftover code from Generation VII left in until they can be fully separated, unless Nat Dex is wanted */
 
-function CALCULATE_ALL_MOVES_SM(p1, p2, field) {
+function CALCULATE_ALL_MOVES_SS(p1, p2, field) {
     checkNeutralGas(p1, p2, field.getNeutralGas());
     checkAirLock(p1, field);
     checkAirLock(p2, field);
@@ -15,11 +15,11 @@ function CALCULATE_ALL_MOVES_SM(p1, p2, field) {
     checkSeeds(p2, field);
     p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
     p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-    p1.stats[SP] = getFinalSpeedSM(p1, field.getWeather(), field.getTerrain(), field.getTailwind(0));
+    p1.stats[SP] = getFinalSpeedSS(p1, field.getWeather(), field.getTerrain(), field.getTailwind(0));
     $(".p1-speed-mods").text(p1.stats[SP]);
     p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
     p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-    p2.stats[SP] = getFinalSpeedSM(p2, field.getWeather(), field.getTerrain(), field.getTailwind(1));
+    p2.stats[SP] = getFinalSpeedSS(p2, field.getWeather(), field.getTerrain(), field.getTailwind(1));
     $(".p2-speed-mods").text(p2.stats[SP]);
     checkIntimidate(p1, p2);
     checkIntimidate(p2, p1);
@@ -37,13 +37,13 @@ function CALCULATE_ALL_MOVES_SM(p1, p2, field) {
     checkInfiltrator(p2, side2);
     var results = [[],[]];
     for (var i = 0; i < 4; i++) {
-        results[0][i] = GET_DAMAGE_SM(p1, p2, p1.moves[i], side1);
-        results[1][i] = GET_DAMAGE_SM(p2, p1, p2.moves[i], side2);
+        results[0][i] = GET_DAMAGE_SS(p1, p2, p1.moves[i], side1);
+        results[1][i] = GET_DAMAGE_SS(p2, p1, p2.moves[i], side2);
     }
     return results;
 }
 
-function GET_DAMAGE_SM(attacker, defender, move, field) {
+function GET_DAMAGE_SS(attacker, defender, move, field) {
     var moveDescName = move.name;
     var isQuarteredByProtect = false;
     //if (field.isNeutralizingGas) {
@@ -64,34 +64,34 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
                     : move.type = field.terrain === "Psychic" ? "Psychic"
                         : "Normal";
     }
-    if(move.isSignatureZ){
-      move.isZ = true;
-      if(field.isProtect){
-          isQuarteredByProtect = true;
-      }
-    }
-    if(move.isZ && !move.isSignatureZ){
-        if (move.name === "Nature Power") {
-            move.zp = (field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" || field.terrain === "Misty") ? 175 : 160;
-        }
-        var tempMove = move;
-        //turning it into a generic single-target Z-move
-        move = moves[ZMOVES_LOOKUP[tempMove.type]];
-        move.bp = tempMove.zp;
-        move.name = "Z-"+tempMove.name;
-        move.isZ = true;
-        move.category = tempMove.category;
-        if (move.name.includes("Hidden Power")){
-            move.type = "Normal";
-        }
-        else move.type = tempMove.type;
-        move.isCrit = tempMove.isCrit;
-        move.hits = 1;
-        moveDescName = ZMOVES_LOOKUP[move.type] + " (" + move.bp + " BP)";
-        if(field.isProtect){
-            isQuarteredByProtect = true;
-        }
-    }
+    //if(move.isSignatureZ){
+    //  move.isZ = true;
+    //  if(field.isProtect){
+    //      isQuarteredByProtect = true;
+    //  }
+    //}
+    //if(move.isZ && !move.isSignatureZ){
+    //    if (move.name === "Nature Power") {
+    //        move.zp = (field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" || field.terrain === "Misty") ? 175 : 160;
+    //    }
+    //    var tempMove = move;
+    //    //turning it into a generic single-target Z-move
+    //    move = moves[ZMOVES_LOOKUP[tempMove.type]];
+    //    move.bp = tempMove.zp;
+    //    move.name = "Z-"+tempMove.name;
+    //    move.isZ = true;
+    //    move.category = tempMove.category;
+    //    if (move.name.includes("Hidden Power")){
+    //        move.type = "Normal";
+    //    }
+    //    else move.type = tempMove.type;
+    //    move.isCrit = tempMove.isCrit;
+    //    move.hits = 1;
+    //    moveDescName = ZMOVES_LOOKUP[move.type] + " (" + move.bp + " BP)";
+    //    if(field.isProtect){
+    //        isQuarteredByProtect = true;
+    //    }
+    //}
     var exceptions_100_fight = ["Low Kick", "Reversal", "Final Gambit"];
     var exceptions_80_fight = ["Double Kick", "Triple Kick"];
     var exceptions_75_fight = ["Counter", "Seismic Toss"];
@@ -141,14 +141,15 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
             move.bp = 0;
             move.isCrit = false;
         }
+        else if (tempMove.name == "(No Move)") {
+            moveDescName = "(No Move)";
+            move.bp = 0;
+            move.isCrit = false;
+        }
         else move.isCrit = tempMove.isCrit;
         move.category = tempMove.category;
         move.hits = 1;
         if (field.isProtect) isQuarteredByProtect = true;
-        if (move.name == "(No Move)") {
-            move.bp == 0;
-            move.isCrit = false;
-        }
     }
     if (move.name === "Nature Power") {         //Rename Nature Power to its appropriately called moves; needs to be done after Max Moves since Nature Power becomes Max Guard
         move.name = (field.terrain == "Electric") ? "Thunderbolt"
@@ -866,7 +867,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
             child.boosts[AT]++;
             child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
         }
-        childDamage = GET_DAMAGE_SM(child, defender, move, field).damage;
+        childDamage = GET_DAMAGE_SS(child, defender, move, field).damage;
         description.attackerAbility = attacker.ability;
     }
 
@@ -1038,7 +1039,7 @@ function getModifiedStat(stat, mod) {
             : stat;
 }
 
-function getFinalSpeedSM(pokemon, weather, terrain, tailwind) {
+function getFinalSpeedSS(pokemon, weather, terrain, tailwind) {
     var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
     var otherSpeedMods = 1;
     if (pokemon.item === "Choice Scarf" && !pokemon.isDynamax) {

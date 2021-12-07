@@ -596,7 +596,7 @@ function calculate() {
         minPercent = Math.floor(minDamage * 1000 / p1.maxHP) / 10;
         maxPercent = Math.floor(maxDamage * 1000 / p1.maxHP) / 10;
         result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-          result.koChanceText = p2.moves[i].bp === 0 ? '<a href="https://www.youtube.com/watch?v=7u6kMjWt1Rk&feature=youtu.be">you wanna dance with me?!</a>'
+        result.koChanceText = p2.moves[i].bp === 0 ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                 : getKOChanceText(result.damage, p2.moves[i], p1, field.getSide(0), p2.ability === 'Bad Dreams');
         result.crit = p2.moves[i].isCrit
         if(p2.moves[i].isMLG){
@@ -909,7 +909,7 @@ $(".gen").change(function () {
             items = ITEMS_SS;
             abilities = ABILITIES_SS;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_SM;
+            calculateAllMoves = CALCULATE_ALL_MOVES_SS;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
@@ -921,7 +921,7 @@ $(".gen").change(function () {
             items = ITEMS_BDSP;
             abilities = ABILITIES_SS;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_SM;
+            calculateAllMoves = CALCULATE_ALL_MOVES_SS;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;

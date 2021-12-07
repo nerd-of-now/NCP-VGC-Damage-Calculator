@@ -15,9 +15,11 @@ function CALCULATE_ALL_MOVES_SM(p1, p2, field) {
     p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
     p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
     p1.stats[SP] = getFinalSpeedSM(p1, field.getWeather(), field.getTerrain());
+    $(".p1-speed-mods").text(p1.stats[SP]);
     p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
     p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
     p2.stats[SP] = getFinalSpeedSM(p2, field.getWeather(), field.getTerrain());
+    $(".p2-speed-mods").text(p1.stats[SP]);
     checkIntimidate(p1, p2);
     checkIntimidate(p2, p1);
     checkDownload(p1, p2);
@@ -571,7 +573,7 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
     //var smartMove = move.name == "Shell Side Arm";
     var attack;
     var attackSource = move.name === "Foul Play" ? defender : attacker;
-    var usesPhysicalAttackStat = move.category === "Physical" || (necrozmaMove && attacker.stats[AT] >= attacker.stats[SA]) || (smartMove && (attacker.stats[AT] / defender.stats[DF]) >= (attacker.stats[SA] / defender.stats[SD]));
+    var usesPhysicalAttackStat = move.category === "Physical" || (necrozmaMove && attacker.stats[AT] >= attacker.stats[SA]) /*|| (smartMove && (attacker.stats[AT] / defender.stats[DF]) >= (attacker.stats[SA] / defender.stats[SD]))*/;
     //var usesDefenseStat = move.name === "Body Press";
     var attackStat = /*usesDefenseStat ? DF :*/ usesPhysicalAttackStat ? AT : SA;
     description.attackEVs = attacker.evs[attackStat] +

@@ -2,7 +2,7 @@ var SETDEX_BDSP = {};
 var SETDEX_CUSTOM_BDSP = {};
 
 var components = [
-    //maybe default sets later?
+    SETDEX_VGC_BFD,
 ];
 
 for (var i = 0; i < components.length; i++) {
@@ -19,6 +19,7 @@ for (var i = 0; i < components.length; i++) {
 var reloadBDSPScript = function () {
     console.log(SETDEX_CUSTOM_BDSP);
     components = [
+        SETDEX_VGC_BFD,
         SETDEX_CUSTOM_BDSP,
     ];
 
