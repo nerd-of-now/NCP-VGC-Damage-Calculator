@@ -155,9 +155,6 @@ var SETDEX_VGC_BFD = {
                 "sd": 28,
                 "sp": 220
             },
-            "ivs": {
-                "at": 0
-            },
             "nature": "Jolly",
             "ability": "Intimidate",
             "item": "Aguav Berry",
@@ -177,6 +174,9 @@ var SETDEX_VGC_BFD = {
                 "sa": 4,
                 "sd": 4,
                 "sp": 252
+            },
+            "ivs": {
+                "at": 0
             },
             "nature": "Timid",
             "ability": "Intimidate",
