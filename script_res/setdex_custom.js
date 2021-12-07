@@ -59,15 +59,15 @@ if (readCookie("custom_gen_6") != null) {
     reloadXYScript();
 }
 if (readCookie("custom_gen_7") != null) {
-    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_7"));
+    SETDEX_CUSTOM_SM = JSON.parse(readCookie("custom_gen_7"));
     reloadSMScript();
 }
 if (readCookie("custom_gen_8") != null) {
-    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_8"));
+    SETDEX_CUSTOM_SS = JSON.parse(readCookie("custom_gen_8"));
     reloadSSScript();
 }
 if (readCookie("custom_gen_84") != null) {
-    SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_84"));
+    SETDEX_CUSTOM_BDSP = JSON.parse(readCookie("custom_gen_84"));
     reloadBDSPScript();
 }
 
