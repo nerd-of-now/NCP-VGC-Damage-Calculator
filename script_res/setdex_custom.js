@@ -95,7 +95,7 @@ if (readCookie("custom_gen_84") != null) {
 }
 
 var deletecustom = function () {
-    gen = $(".gen").val();
+    gen = $~~(".gen").val();
     switch (gen) {
         case 6:
             SETDEX_CUSTOM_XY = {};
@@ -150,7 +150,7 @@ function eraseCookie(name) {
 
 var savecustom = function()
 {
-    gen = $(".gen").val();
+    gen = $~~(".gen").val();
 	//first, to parse it all from the PS format
 	var string = document.getElementById('customMon').value
 	var spreadName = document.getElementById('spreadName').value
@@ -376,7 +376,7 @@ var savecustom = function()
 
 //Saves a custom set from within the calc
 var savecalc = function (set, spreadName, accessIVs) {
-    gen = $(".gen").val();
+    gen = $~~(".gen").val();
     var moves=[]
     species = set.name;
 
