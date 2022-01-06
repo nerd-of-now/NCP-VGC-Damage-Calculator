@@ -52,17 +52,18 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
 
     var eot = 0;
     var eotText = [];
+    var maxChip = defender.isDynamax ? 0.5 : 1;
     if (field.weather === 'Sun') {
         if (defender.ability === 'Dry Skin' || defender.ability === 'Solar Power') {
-            eot -= Math.floor(defender.maxHP / 8);
+            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push(defender.ability + ' damage');
         }
     } else if (field.weather === 'Rain') {
         if (defender.ability === 'Dry Skin') {
-            eot += Math.floor(defender.maxHP / 8);
+            eot += Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push('Dry Skin recovery');
         } else if (defender.ability === 'Rain Dish') {
-            eot += Math.floor(defender.maxHP / 16);
+            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Rain Dish recovery');
         }
     } else if (field.weather === 'Sand') {
@@ -70,51 +71,51 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
                 ['Rock', 'Ground', 'Steel'].indexOf(defender.type2) === -1 &&
                 ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].indexOf(defender.ability) === -1 &&
                 defender.item !== 'Safety Goggles') {
-            eot -= Math.floor(defender.maxHP / 16);
+            eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('sandstorm damage');
         }
     } else if (field.weather === 'Hail') {
         if (defender.ability === 'Ice Body') {
-            eot += Math.floor(defender.maxHP / 16);
+            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Ice Body recovery');
         } else if (defender.type1 !== 'Ice' && defender.type2 !== 'Ice' &&
                 ['Magic Guard', 'Overcoat', 'Snow Cloak'].indexOf(defender.ability) === -1 &&
                 defender.item !== 'Safety Goggles') {
-            eot -= Math.floor(defender.maxHP / 16);
+            eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('hail damage');
         }
     }
     if (defender.item === 'Leftovers') {
-        eot += Math.floor(defender.maxHP / 16);
+        eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
         eotText.push('Leftovers recovery');
     } else if (defender.item === 'Black Sludge') {
         if (defender.type1 === 'Poison' || defender.type2 === 'Poison') {
-            eot += Math.floor(defender.maxHP / 16);
+            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Black Sludge recovery');
         } else if (defender.ability !== 'Magic Guard' && defender.ability !== 'Klutz') {
-            eot -= Math.floor(defender.maxHP / 8);
+            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push('Black Sludge damage');
         }
     }
     if (field.terrain === "Grassy") {
         if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
                 defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
-            eot += Math.floor(defender.maxHP / 16);
+            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Grassy Terrain recovery');
         }
     }
     var toxicCounter = 0;
     if (defender.status === 'Poisoned') {
         if (defender.ability === 'Poison Heal') {
-            eot += Math.floor(defender.maxHP / 8);
+            eot += Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push('Poison Heal');
         } else if (defender.ability !== 'Magic Guard') {
-            eot -= Math.floor(defender.maxHP / 8);
+            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push('poison damage');
         }
     } else if (defender.status === 'Badly Poisoned') {
         if (defender.ability === 'Poison Heal') {
-            eot += Math.floor(defender.maxHP / 8);
+            eot += Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push('Poison Heal');
         } else if (defender.ability !== 'Magic Guard') {
             eotText.push('toxic damage');
@@ -123,19 +124,19 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     } else if (defender.status === 'Burned') {
         var burnDmgDivider = (gen >= 7) ? 16 : 8;
         if (defender.ability === 'Heatproof') {
-            eot -= Math.floor(defender.maxHP / burnDmgDivider / 2);
+            eot -= Math.floor(Math.floor(defender.maxHP / burnDmgDivider / 2) * maxChip);
             eotText.push('reduced burn damage');
         } else if (defender.ability !== 'Magic Guard') {
-            eot -= Math.floor(defender.maxHP / burnDmgDivider);
+            eot -= Math.floor(Math.floor(defender.maxHP / burnDmgDivider) * maxChip);
             eotText.push('burn damage');
         }
     } else if (defender.status === 'Asleep' && isBadDreams && defender.ability !== 'Magic Guard') {
-        eot -= Math.floor(defender.maxHP / 8);
+        eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
         eotText.push('Bad Dreams');
     }
 
     if (field.isGMaxField && defender.ability !== 'Magic Guard') {
-        eot -= Math.floor(defender.maxHP / 6);
+        eot -= Math.floor(Math.floor(defender.maxHP / 6) * maxChip);
         eotText.push('G-Max field damage');
     }
 

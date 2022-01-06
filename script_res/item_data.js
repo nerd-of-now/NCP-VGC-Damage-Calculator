@@ -25,7 +25,12 @@ var ITEMS_GSC = [
     'Spell Tag',
     'Stick',
     'Thick Club',
-    'TwistedSpoon'
+    'TwistedSpoon',
+    //NO FUNCT
+    'Bright Powder',
+    'Leek',
+    'Lucky Punch',
+    'Quick Claw',
 ];
 
 var ITEMS_ADV = ITEMS_GSC.concat([
@@ -41,6 +46,10 @@ var ITEMS_ADV = ITEMS_GSC.concat([
     'Mago Berry',
     'Wiki Berry',
     'Figy Berry',
+    //NO FUNCT
+    'Focus Band',
+    'Shell Bell',
+    'White Herb'
 ]);
 
 ITEMS_ADV.splice(ITEMS_ADV.indexOf('Berry'), 1);
@@ -121,16 +130,41 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Wave Incense',
     'Wise Glasses',
     'Yache Berry',
-    'Zap Plate'
+    'Zap Plate',
+    //NO FUNCT
+    'Damp Rock',
+    'Heat Rock',
+    'Icy Rock',
+    'Smooth Rock',
+    'Power Anklet',
+    'Power Band',
+    'Power Belt',
+    'Power Bracer',
+    'Power Lens',
+    'Power Weight',
+    'Big Root',
+    'Focus Sash',
+    'Full Incense',
+    'Grip Claw',
+    'Lagging Tail',
+    'Lax Incense',
+    'Light Clay',
+    'Metronome',
+    'Power Herb',
+    'Quick Powder',
+    'Razor Claw',
+    'Razor Fang',
+    'Scope Lens',
+    'Shed Shell',
+    'Wide Lens',
+    'Zoom Lens',
 ]);
 
-var ITEMS_BW = ITEMS_DPP.concat([
-    'Air Balloon',
+var ITEMS_GEMS = [
     'Bug Gem',
     'Dark Gem',
     'Dragon Gem',
     'Electric Gem',
-    'Eviolite',
     'Fighting Gem',
     'Fire Gem',
     'Flying Gem',
@@ -143,48 +177,149 @@ var ITEMS_BW = ITEMS_DPP.concat([
     'Psychic Gem',
     'Rock Gem',
     'Steel Gem',
-    'Water Gem'
+    'Water Gem',
+];
+
+var ITEMS_BW_NO_GEMS = ITEMS_DPP.concat([
+    'Air Balloon',
+    'Eviolite',
+    //GENESECT DRIVES (maybe implement)
+    'Burn Drive',
+    'Chill Drive',
+    'Douse Drive',
+    'Shock Drive',
+    //NO FUNCT
+    'Absorb Bulb',
+    'Binding Band', //Might implement
+    'Eject Button',
+    'Float Stone',  //Might implement
+    'Red Card',
+    'Ring Target',  //Might implement
+    'Rocky Helmet',
 ]);
 
-var ITEMS_XY = ITEMS_BW.concat([
+var ITEMS_BW = ITEMS_BW_NO_GEMS.concat(ITEMS_GEMS);
+
+var ITEMS_MEGA_STONES = [
+    //MEGA STONES
+    'Abomasite',
+    'Absolite',
+    'Aerodactylite',
+    'Aggronite',
+    'Alakazite',
+    'Ampharosite',
+    'Banettite',
+    'Blastoisinite',
+    'Blazikenite',
+    'Charizardite X',
+    'Charizardite Y',
+    'Garchompite',
+    'Gardevoirite',
+    'Gengarite',
+    'Gyaradosite',
+    'Heracronite',
+    'Houndoominite',
+    'Kangaskhanite',
+    'Latiasite',
+    'Latiosite',
+    'Lucarionite',
+    'Manectite',
+    'Mawilite',
+    'Medichamite',
+    'Mewtwonite X',
+    'Mewtwonite Y',
+    'Pinsirite',
+    'Scizorite',
+    'Tyranitarite',
+    'Venusaurite',
+    'Altarianite',
+    'Audinite',
+    'Beedrillite',
+    'Cameruptite',
+    'Diancite',
+    'Galladite',
+    'Glalitite',
+    'Lopunnite',
+    'Metagrossite',
+    'Pidgeotite',
+    'Sablenite',
+    'Salamencite',
+    'Sceptilite',
+    'Sharpedonite',
+    'Slowbronite',
+    'Steelixite',
+    'Swampertite',
+    'Red Orb',
+    'Blue Orb',
+];
+
+var ITEMS_XY_NO_MEGA = ITEMS_BW_NO_GEMS.concat([
     'Assault Vest',
     'Kee Berry',
     'Maranga Berry',
     'Pixie Plate',
     'Roseli Berry',
-    'Safety Goggles'
+    'Safety Goggles',
+    //NO FUNCT
+    'Luminous Moss',
+    'Snowball',
+    'Weakness Policy',
 ]);
 
-ITEMS_XY.splice(ITEMS_XY.indexOf('BlackGlasses'), 1, 'Black Glasses');
-ITEMS_XY.splice(ITEMS_XY.indexOf('DeepSeaScale'), 1, 'Deep Sea Scale');
-ITEMS_XY.splice(ITEMS_XY.indexOf('DeepSeaTooth'), 1, 'Deep Sea Tooth');
-ITEMS_XY.splice(ITEMS_XY.indexOf('NeverMeltIce'), 1, 'Never-Melt Ice');
-ITEMS_XY.splice(ITEMS_XY.indexOf('SilverPowder'), 1, 'Silver Powder');
-ITEMS_XY.splice(ITEMS_XY.indexOf('TwistedSpoon'), 1, 'Twisted Spoon');
-ITEMS_XY.splice(ITEMS_XY.indexOf('Bug Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Dark Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Dragon Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Electric Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Fighting Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Fire Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Flying Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Ghost Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Grass Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Ground Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Ice Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Poison Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Psychic Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Rock Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Steel Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Water Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Soul Dew'), 1);
+ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('BlackGlasses'), 1, 'Black Glasses');
+ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('DeepSeaScale'), 1, 'Deep Sea Scale');
+ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('DeepSeaTooth'), 1, 'Deep Sea Tooth');
+ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('NeverMeltIce'), 1, 'Never-Melt Ice');
+ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('SilverPowder'), 1, 'Silver Powder');
+ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('TwistedSpoon'), 1, 'Twisted Spoon');
 
+var ITEMS_XY = ITEMS_XY_NO_MEGA.concat(ITEMS_MEGA_STONES);
 
-var ITEMS_SM = ITEMS_XY.concat([
+var ITEMS_Z_AND_MEGA = ITEMS_MEGA_STONES.concat([
+    //Z-CRYSTALS
+    'Buginium Z',
+    'Darkinium Z',
+    'Dragonium Z',
+    'Electrium Z',
+    'Fairium Z',
+    'Fightinium Z',
+    'Firium Z',
+    'Flyinium Z',
+    'Ghostium Z',
+    'Grassium Z',
+    'Groundium Z',
+    'Icium Z',
+    'Normalium Z',
+    'Poisonium Z',
+    'Psychium Z',
+    'Rockium Z',
+    'Steelium Z',
+    'Waterium Z',
+    'Aloraichium Z',
+    'Decidium Z',
+    'Eevium Z',
+    'Incinium Z',
+    'Marshadium Z',
+    'Mewnium Z',
+    'Pikanium Z',
+    'Pikashunium Z',
+    'Primarium Z',
+    'Snorlium Z',
+    'Tapunium Z',
+    'Kommonium Z',
+    'Lunalium Z',
+    'Lycanium Z',
+    'Mimikium Z',
+    'Solganium Z',
+    'Ultranecrozium Z',
+]);
+
+var ITEMS_SM_NO_Z_MEGA = ITEMS_XY_NO_MEGA.concat([
     'Psychic Seed',
     'Misty Seed',
     'Electric Seed',
     'Grassy Seed',
+    //SILVALLY MEMORIES
     'Bug Memory',
     'Dark Memory',
     'Dragon Memory',
@@ -202,10 +337,24 @@ var ITEMS_SM = ITEMS_XY.concat([
     'Rock Memory',
     'Steel Memory',
     'Water Memory',
+    //NO FUNCT
+    'Adrenaline Orb',   //might implement
+    'Protective Pads',
+    'Terrain Extender',
 ]);
 
-var ITEMS_SS = ITEMS_SM.concat([
+var ITEMS_SM = ITEMS_SM_NO_Z_MEGA.concat(ITEMS_Z_AND_MEGA);
+
+var ITEMS_SS = ITEMS_SM_NO_Z_MEGA.concat([
     'Utility Umbrella',
+    //NO FUNCT
+    'Blunder Policy',
+    'Eject Pack',
+    'Heavy-Duty Boots',
+    'Room Service',
+    'Throat Spray',
+    'Rusted Sword',
+    'Rusted Shield',
 ]);
 
 var ITEMS_BDSP = ITEMS_DPP.concat([
@@ -282,6 +431,21 @@ function getItemBoostType(item) {
     }
 }
 
+function getItemDualTypeBoost(item, species) {
+    switch (item) {
+        case 'Adamant Orb':
+            if (species === 'Dialga') return 'Steel Dragon';
+        case 'Lustrous Orb':
+            if (species === 'Palkia') return 'Water Dragon';
+        case 'Griseous Orb':
+            if (species === 'Giratina-O') return 'Ghost Dragon';
+        case 'Soul Dew':
+            if ((species === 'Latias' || species === 'Latios') && gen >= 7) return 'Dragon Psychic';
+        default:
+            return '';
+    }
+}
+
 function getBerryResistType(berry) {
     switch (berry) {
         case 'Chilan Berry':
@@ -327,16 +491,21 @@ function getBerryResistType(berry) {
 
 function getFlingPower(item) {
     return item === 'Iron Ball' ? 130
-        : item === 'Hard Stone' ? 100
-        : item.indexOf('Plate') !== -1 || ['Deep Sea Tooth','Thick Club'].indexOf(item) !== -1 ? 90
-        : ['Assault Vest','Weakness Policy'].indexOf(item) !== -1 ? 80
-        : ['Poison Barb','Dragon Fang'].indexOf(item) !== -1 ? 70
-        : ['Adamant Orb','Lustrous Orb','Macho Brace','Stick'].indexOf(item) !== -1 ? 60
-        : item === 'Sharp Beak' ? 50
-        : item === 'Eviolite' ? 40
+        : ['Hard Stone','Room Service'].indexOf(item) !== -1 ? 100
+        : item.indexOf('Plate') !== -1 || ['Deep Sea Tooth','Thick Club','Grip Claw'].indexOf(item) !== -1 ? 90
+        : (item.indexOf('ite') !== -1 && item == 'Eviolite') || ['Assault Vest','Weakness Policy','Blunder Policy', 
+            'Heavy-Duty Boots','Quick Claw','Razor Claw','Safety Goggles'].indexOf(item) !== -1 ? 80
+        : ['Poison Barb','Dragon Fang','Power Anklet','Power Band','Power Belt','Power Bracer','Power Lens',
+            'Power Weight','Burn Drive','Chill Drive','Douse Drive','Shock Drive'].indexOf(item) !== -1 ? 70
+        : ['Adamant Orb','Lustrous Orb','Macho Brace','Leek','Rocky Helmet','Utility Umbrella','Terrain Extender',
+            'Damp Rock','Heat Rock'].indexOf(item) !== -1 ? 60
+        : item.indexOf('Memory') !== -1 || ['Sharp Beak','Eject Pack'].indexOf(item) !== -1 ? 50
+        : ['Eviolite','Icy Rock','Lucky Punch'].indexOf(item) !== -1 ? 40
         : ['Black Belt','Black Sludge','Black Glasses','Charcoal','Deep Sea Scale','Flame Orb',"King's Rock",
             'Life Orb','Light Ball','Magnet','Metal Coat','Miracle Seed','Mystic Water','Never-Melt Ice',
-            'Razor Fang','Soul Dew','Spell Tag','Toxic Orb','Twisted Spoon'].indexOf(item) !== -1 ? 30
+            'Razor Fang','Soul Dew','Spell Tag','Toxic Orb','Twisted Spoon', 'Absorb Bulb', 'Adrenaline Orb',
+            'Berry Juice','Binding Band','Eject Button','Float Stone','Light Clay', 'Luminous Moss', 
+            'Metronome','Protective Pads','Shell Bell','Throat Spray'].indexOf(item) !== -1 ? 30
         : 10;
 }
 
@@ -416,3 +585,179 @@ function getMemoryType(item) {
         case 'Water Memory': return 'Water';
     }
 }
+
+function getZType(item) {
+    switch (item) {
+        case 'Buginium Z': return 'Bug';
+        case 'Darkinium Z': return 'Dark';
+        case 'Dragonium Z': return 'Dragon';
+        case 'Electrium Z': return 'Electric';
+        case 'Fairium Z': return 'Fairy';
+        case 'Fightinium Z': return 'Fighting';
+        case 'Firium Z': return 'Fire';
+        case 'Flyinium Z': return 'Flying';
+        case 'Ghostium Z': return 'Ghost';
+        case 'Grassium Z': return 'Grass';
+        case 'Groundium Z': return 'Ground';
+        case 'Icium Z': return 'Ice';
+        case 'Poisonium Z': return 'Poison';
+        case 'Psychium Z': return 'Psychic';
+        case 'Rockium Z': return 'Rock';
+        case 'Steelium Z': return 'Steel';
+        case 'Waterium Z': return 'Water';
+        default: return '';
+    }
+}
+
+//FIX THIS CODE TO MATCH THIS EXAMPLE: 'Abomasite': 'Abomasnow'
+var MEGA_STONE_USER_LOOKUP = [
+['Abomasite', 'Abomasnow'],
+['Absolite', 'Absol'],
+['Aerodactylite', 'Aerodactyl'],
+['Aggronite', 'Aggron'],
+['Alakazite', 'Alakazam'],
+['Ampharosite', 'Ampharos'],
+['Banettite', 'Banette'],
+['Blastoisinite', 'Blastoise'],
+['Blazikenite', 'Blaziken'],
+['Charizardite X', 'Charizard'],
+['Charizardite Y', 'Charizard'],
+['Garchompite', 'Garchomp'],
+['Gardevoirite', 'Gardevoir'],
+['Gengarite', 'Gengar'],
+['Gyaradosite', 'Gyarados'],
+['Heracronite', 'Heracross'],
+['Houndoominite', 'Houndoom'],
+['Kangaskhanite', 'Kangaskhan'],
+['Latiasite', 'Latias'],
+['Latiosite', 'Latios'],
+['Lucarionite', 'Lucario'],
+['Manectite', 'Manectric'],
+['Mawilite', 'Mawile'],
+['Medichamite', 'Medicham'],
+['Mewtwonite X', 'Mewtwo'],
+['Mewtwonite Y', 'Mewtwo'],
+['Pinsirite', 'Pinsir'],
+['Scizorite', 'Scizor'],
+['Tyranitarite', 'Tyranitar'],
+['Venusaurite', 'Venusaur'],
+['Altarianite', 'Altaria'],
+['Audinite', 'Audino'],
+['Beedrillite', 'Beedrill'],
+['Cameruptite', 'Camerupt'],
+['Diancite', 'Diancie'],
+['Galladite', 'Gallade'],
+['Glalitite', 'Glalie'],
+['Lopunnite', 'Lopunny'],
+['Metagrossite', 'Metagross'],
+['Pidgeotite', 'Pidgeot'],
+['Sablenite', 'Sableye'],
+['Salamencite', 'Salamence'],
+['Sceptilite', 'Sceptile'],
+['Sharpedonite', 'Sharpedo'],
+['Slowbronite', 'Slowbro'],
+['Steelixite', 'Steelix'],
+['Swampertite', 'Swampert'],
+['Red Orb', 'Groudon'],
+['Blue Orb', 'Kyogre'],
+];
+
+function canMega(item, species) {
+    for (var i = 0; i < MEGA_STONE_USER_LOOKUP.length; i++) {
+        var tempMega = MEGA_STONE_USER_LOOKUP[i];
+        if (tempMega[0] == item && species.includes(tempMega[1]))
+            return true;
+    }
+    return false;
+}
+
+var SIGNATURE_Z_MOVE_LOOKUP = [
+    ['Aloraichium Z', 'Raichu-Alola', 'Thunderbolt', 'Stoked Sparksurfer'],
+    ['Decidium Z', 'Decidueye', 'Spirit Shackle', 'Sinister Arrow Raid'],
+    ['Eevium Z', 'Eevee', 'Last Resort', 'Extreme Evoboost'],
+    ['Incinium Z', 'Incineroar', 'Darkest Lariat', 'Malicious Moonsault'],
+    ['Marshadium Z', 'Marshadow', 'Spectral Thief', 'Soul-Stealing 7-Star Strike'],
+    ['Mewnium Z', 'Mew', 'Psychic', 'Genesis Supernova'],
+    ['Pikanium Z', 'Pikachu', 'Volt Tackle', 'Catastropika'],
+    ['Pikashunium Z', 'Pikachu', 'Thunderbolt', '10,000,000 Volt Thunderbolt'],
+    ['Primarium Z', 'Primarina', 'Sparkling Aria', 'Oceanic Operetta'],
+    ['Snorlium Z', 'Snorlax', 'Giga Impact', 'Pulverizing Pancake'],
+    ['Tapunium Z', 'Tapu Koko', 'Nature\'s Madness', 'Guardian of Alola'],
+    ['Tapunium Z', 'Tapu Lele', 'Nature\'s Madness', 'Guardian of Alola'],
+    ['Tapunium Z', 'Tapu Bulu', 'Nature\'s Madness', 'Guardian of Alola'],
+    ['Tapunium Z', 'Tapu Fini', 'Nature\'s Madness', 'Guardian of Alola'],
+    ['Kommonium Z', 'Kommo-o', 'Clanging Scales', 'Clangerous Soulblaze'],
+    ['Lunalium Z', 'Lunala', 'Moongeist Beam', 'Menacing Moonraze Maelstrom'],
+    ['Lunalium Z', 'Necrozma-Dawn-Wings', 'Moongeist Beam', 'Menacing Moonraze Maelstrom'],
+    ['Lycanium Z', 'Lycanroc-Midday', 'Stone Edge', 'Splintered Stormshards'],
+    ['Lycanium Z', 'Lycanroc-Midnight', 'Stone Edge', 'Splintered Stormshards'],
+    ['Lycanium Z', 'Lycanroc-Dusk', 'Stone Edge', 'Splintered Stormshards'],
+    ['Mimikium Z', 'Mimikyu', 'Play Rough', 'Let\'s Snuggle Forever'],
+    ['Solganium Z', 'Solgaleo', 'Sunsteel Strike', 'Searing Sunraze Smash'],
+    ['Solganium Z', 'Necrozma-Dusk-Mane', 'Sunsteel Strike', 'Searing Sunraze Smash'],
+    ['Ultranecrozium Z', 'Ultra Necrozma', 'Photon Geyser', 'Light That Burns the Sky']
+];
+
+function getSignatureZMove(item, species, move) {
+    var tempZ;
+    for (var i = 0; i < SIGNATURE_Z_MOVE_LOOKUP.length; i++) {
+        tempZ = SIGNATURE_Z_MOVE_LOOKUP[i];
+        if (tempZ[0] == item && tempZ[1] == species && tempZ[2] == move) return tempZ[3];
+    }
+    return -1;
+}
+
+var LOCK_ITEM_LOOKUP = {
+    'Mega Abomasnow': 'Abomasite',
+    'Mega Absol': 'Absolite',
+    'Mega Aerodactyl': 'Aerodactylite',
+    'Mega Aggron': 'Aggronite',
+    'Mega Alakazam': 'Alakazite',
+    'Mega Ampharos': 'Ampharosite',
+    'Mega Banette': 'Banettite',
+    'Mega Blastoise': 'Blastoisinite',
+    'Mega Blaziken': 'Blazkienite',
+    'Mega Charizard X': 'Charizardite X',
+    'Mega Charizard Y': 'Charizardite Y',
+    'Mega Garchomp': 'Garchompite',
+    'Mega Gardevoir': 'Gardevoirite',
+    'Mega Gengar': 'Gengarite',
+    'Mega Gyarados': 'Gyaradosite',
+    'Mega Heracross': 'Hreacroite',
+    'Mega Houndoom': 'Houndoominite',
+    'Mega Kangaskhan': 'Kangaskhanite',
+    'Mega Latias': 'Latiasite',
+    'Mega Latios': 'Latiosite',
+    'Mega Lucario': 'Lucarionite',
+    'Mega Manectric': 'Manectite',
+    'Mega Mawile': 'Mawilite',
+    'Mega Medicham': 'Medichamite',
+    'Mega Mewtwo X': 'Mewtwonite X',
+    'Mega Mewtwo Y': 'Mewtwonite Y',
+    'Mega Pinsir': 'Pinsirite',
+    'Mega Scizor': 'Scizorite',
+    'Mega Tyranitar': 'Tyranitarite',
+    'Mega Venusaur': 'Venusaurite',
+    'Mega Altaria': 'Altarianite',
+    'Mega Audino': 'Audinite',
+    'Mega Beedrill': 'Beedrillite',
+    'Mega Camerupt': 'Cameruptite',
+    'Mega Diancie': 'Diancite',
+    'Mega Gallade': 'Galladite',
+    'Mega Glalie': 'Glalitite',
+    'Mega Lopunny': 'Lopunnite',
+    'Mega Metagross': 'Metagrossite',
+    'Mega Pidgeot': 'Pidgeotite',
+    'Mega Sableye': 'Sablenite',
+    'Mega Salamence': 'Salamencite',
+    'Mega Sceptile': 'Sceptilite',
+    'Mega Sharpedo': 'Sharpedonite',
+    'Mega Slowbro': 'Slowbronite',
+    'Mega Steelix': 'Steelixite',
+    'Mega Swampert': 'Swampertite',
+    'Primal Groudon': 'Red Orb',
+    'Primal Kyogre': 'Blue Orb',
+    'Ultra Necrozma': 'Ultranecrozium Z',
+    'Zacian-Crowned': 'Rusted Sword',
+    'Zamazenta-Crowned': 'Rusted Shield',
+};

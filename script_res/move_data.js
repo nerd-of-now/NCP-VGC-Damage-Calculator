@@ -1446,12 +1446,14 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     'Fusion Bolt': {
         bp: 100,
         type: 'Electric',
-        category: 'Physical'
+        category: 'Physical',
+        canDouble: true,
     },
     'Fusion Flare': {
         bp: 100,
         type: 'Fire',
-        category: 'Special'
+        category: 'Special',
+        canDouble: true,
     },
     'Gear Grind': {
         bp: 50,
@@ -1593,7 +1595,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 70,
         type: 'Normal',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        canDouble: true,
     },
     'Sacred Sword': {
         bp: 90,
@@ -3441,6 +3444,108 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
     'Max Darkness': {
         type: 'Dark'
     },
+    'G-Max Wildfire': {
+        type: 'Fire'
+    },
+    'G-Max Befuddle': {
+        type: 'Bug'
+    },
+    'G-Max Volt Crash': {
+        type: 'Electric'
+    },
+    'G-Max Gold Rush': {
+        type: 'Normal'
+    },
+    'G-Max Chi Strike': {
+        type: 'Fighting'
+    },
+    'G-Max Terror': {
+        type: 'Ghost'
+    },
+    'G-Max Foam Burst': {
+        type: 'Water'
+    },
+    'G-Max Resonance': {
+        type: 'Ice'
+    },
+    'G-Max Cuddle': {
+        type: 'Normal'
+    },
+    'G-Max Replenish': {
+        type: 'Normal'
+    },
+    'G-Max Malodor': {
+        type: 'Poison'
+    },
+    'G-Max Meltdown': {
+        type: 'Steel'
+    },
+    'G-Max Wind Rage': {
+        type: 'Flying'
+    },
+    'G-Max Gravitas': {
+        type: 'Psychic'
+    },
+    'G-Max Stonesurge': {
+        type: 'Water'
+    },
+    'G-Max Volcalith': {
+        type: 'Rock'
+    },
+    'G-Max Tartness': {
+        type: 'Grass'
+    },
+    'G-Max Sweetness': {
+        type: 'Grass'
+    },
+    'G-Max Sandblast': {
+        type: 'Ground'
+    },
+    'G-Max Stun Shock': {
+        type: 'Electric'
+    },
+    'G-Max Centiferno': {
+        type: 'Fire'
+    },
+    'G-Max Smite': {
+        type: 'Fairy'
+    },
+    'G-Max Snooze': {
+        type: 'Dark'
+    },
+    'G-Max Finale': {
+        type: 'Fairy'
+    },
+    'G-Max Steelsurge': {
+        type: 'Steel'
+    },
+    'G-Max Depletion': {
+        type: 'Dragon'
+    },
+    'G-Max Vine Lash': {
+        type: 'Grass'
+    },
+    'G-Max Cannonade': {
+        type: 'Water'
+    },
+    'G-Max Drum Solo': {
+        type: 'Grass',
+        bp: 160,
+    },
+    'G-Max Fireball': {
+        type: 'Fire',
+        bp: 160,
+    },
+    'G-Max Hydrosnipe': {
+        type: 'Water',
+        bp: 160,
+    },
+    'G-Max One Blow': {
+        type: 'Dark'
+    },
+    'G-Max Rapid Flow': {
+        type: 'Water'
+    },
     'Parabolic Charge': { bp: 65 },
     'Multi-Attack': { bp: 120 },
     'Burning Jealousy': {
@@ -3615,6 +3720,78 @@ var MAXMOVES_LOOKUP = {
     'Steel':'Max Steelspike','Ice':'Max Hailstorm','Ground':'Max Quake',
     'Rock':'Max Rockfall','Bug':'Max Flutterby','Fairy':'Max Starfall',
     'Flying':'Max Airstream','Dragon':'Max Wyrmwind','Poison':'Max Ooze'
+};
+
+var G_MAXMOVES_TYPE = {
+    'Charizard-Gmax':'Fire',
+    'Butterfree-Gmax':'Bug',
+    'Pikachu-Gmax':'Electric',
+    'Meowth-Gmax':'Normal',
+    'Machamp-Gmax':'Fighting',
+    'Gengar-Gmax':'Ghost',
+    'Kingler-Gmax':'Water',
+    'Lapras-Gmax':'Ice',
+    'Eevee-Gmax':'Normal',
+    'Snorlax-Gmax':'Normal',
+    'Garbodor-Gmax':'Poison',
+    'Melmetal-Gmax':'Steel',
+    'Corviknight-Gmax':'Flying',
+    'Orbeetle-Gmax':'Psychic',
+    'Drednaw-Gmax':'Water',
+    'Coalossal-Gmax':'Rock',
+    'Flapple-Gmax':'Grass',
+    'Appletun-Gmax':'Grass',
+    'Sandaconda-Gmax':'Ground',
+    'Toxtricity-Gmax':'Electric',
+    'Centiskorch-Gmax':'Fire',
+    'Hatterene-Gmax':'Fairy',
+    'Grimmsnarl-Gmax':'Dark',
+    'Alcremie-Gmax':'Fairy',
+    'Copperajah-Gmax':'Steel',
+    'Duraludon-Gmax':'Dragon',
+    'Venusaur-Gmax':'Grass',
+    'Blastoise-Gmax':'Water',
+    'Rillaboom-Gmax':'Grass',
+    'Cinderace-Gmax':'Fire',
+    'Inteleon-Gmax':'Water',
+    'Urshifu-Single Strike-Gmax':'Dark',
+    'Urshifu-Rapid Strike-Gmax':'Water',
+    }
+
+var G_MAXMOVES_LOOKUP = {
+    'Charizard-Gmax': 'G-Max Wildfire',
+    'Butterfree-Gmax': 'G-Max Befuddle',
+    'Pikachu-Gmax': 'G-Max Volt Crash',
+    'Meowth-Gmax': 'G-Max Gold Rush',
+    'Machamp-Gmax': 'G-Max Chi Strike',
+    'Gengar-Gmax': 'G-Max Terror',
+    'Kingler-Gmax': 'G-Max Foam Burst',
+    'Lapras-Gmax': 'G-Max Resonance',
+    'Eevee-Gmax': 'G-Max Cuddle',
+    'Snorlax-Gmax': 'G-Max Replenish',
+    'Garbodor-Gmax': 'G-Max Malodor',
+    'Melmetal-Gmax': 'G-Max Meltdown',
+    'Corviknight-Gmax': 'G-Max Wind Rage',
+    'Orbeetle-Gmax': 'G-Max Gravitas',
+    'Drednaw-Gmax': 'G-Max Stonesurge',
+    'Coalossal-Gmax': 'G-Max Volcalith',
+    'Flapple-Gmax': 'G-Max Tartness',
+    'Appletun-Gmax': 'G-Max Sweetness',
+    'Sandaconda-Gmax': 'G-Max Sandblast',
+    'Toxtricity-Gmax': 'G-Max Stun Shock',
+    'Centiskorch-Gmax': 'G-Max Centinferno',
+    'Hatterene-Gmax': 'G-Max Smite',
+    'Grimmsnarl-Gmax': 'G-Max Snooze',
+    'Alcremie-Gmax': 'G-Max Finale',
+    'Copperajah-Gmax': 'G-Max Steelsurge',
+    'Duraludon-Gmax': 'G-Max Depletion',
+    'Venusaur-Gmax': 'G-Max Vine Lash',
+    'Blastoise-Gmax': 'G-Max Cannonade',
+    'Rillaboom-Gmax': 'G-Max Drum Solo',
+    'Cinderace-Gmax': 'G-Max Fireball',
+    'Inteleon-Gmax': 'G-Max Hydrosnipe',
+    'Urshifu-Single Strike-Gmax': 'G-Max One Blow',
+    'Urshifu-Rapid Strike-Gmax': 'G-Max Rapid Flow',
 };
 
 var MOVES_SS_NATDEX = $.extend(true, {}, MOVES_SS, {});

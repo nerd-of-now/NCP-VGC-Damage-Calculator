@@ -1079,11 +1079,11 @@ function checkKlutz(pokemon) {
     }
 }
 
-function checkSeeds(pokemon, field){
-    if(pokemon.item ==="Psychic Seed" || pokemon.item === "Misty Seed"){
+function checkSeeds(pokemon, field) {
+    if ((pokemon.item === "Psychic Seed" && field.getTerrain() === "Psychic") || (pokemon.item === "Misty Seed" && field.getTerrain() === "Misty")) {
         pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
     }
-    else if(pokemon.item ==="Electric Seed" || pokemon.item === "Grassy Seed"){
+    else if ((pokemon.item === "Electric Seed" && field.getTerrain() === "Electric") || (pokemon.item === "Grassy Seed" && field.getTerrain() === "Grassy")) {
         pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
     }
 }

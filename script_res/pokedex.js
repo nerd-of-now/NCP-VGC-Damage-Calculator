@@ -150,7 +150,8 @@ var POKEDEX_RBY = {
       "sp": 70,
       "sl": 80
     },
-    "w": 32.0
+    "w": 32.0,
+    "ab": "Compoundeyes"
   },
   "Caterpie": {
     "t1": "Bug",
@@ -947,7 +948,8 @@ var POKEDEX_RBY = {
       "sp": 60,
       "sl": 95
     },
-    "w": 220.0
+    "w": 220.0,
+    "ab": "Water Absorb"
   },
   "Lickitung": {
     "t1": "Normal",
@@ -1747,7 +1749,8 @@ var POKEDEX_RBY = {
       "sp": 30,
       "sl": 65
     },
-    "w": 460.0
+      "w": 460.0,
+      "ab": "Gluttony"
   },
   "Spearow": {
     "t1": "Normal",
@@ -5180,214 +5183,214 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 320.0,
     "ab": "Multitype"
   },
-  "Arceus-Bug": {
-    "t1": "Bug",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Dark": {
-    "t1": "Dark",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Dragon": {
-    "t1": "Dragon",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Electric": {
-    "t1": "Electric",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Fighting": {
-    "t1": "Fighting",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Fire": {
-    "t1": "Fire",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Flying": {
-    "t1": "Flying",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Ghost": {
-    "t1": "Ghost",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Grass": {
-    "t1": "Grass",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Ground": {
-    "t1": "Ground",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Ice": {
-    "t1": "Ice",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Poison": {
-    "t1": "Poison",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Psychic": {
-    "t1": "Psychic",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Rock": {
-    "t1": "Rock",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Steel": {
-    "t1": "Steel",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
-  "Arceus-Water": {
-    "t1": "Water",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
+  //"Arceus-Bug": {
+  //  "t1": "Bug",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Dark": {
+  //  "t1": "Dark",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Dragon": {
+  //  "t1": "Dragon",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Electric": {
+  //  "t1": "Electric",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Fighting": {
+  //  "t1": "Fighting",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Fire": {
+  //  "t1": "Fire",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Flying": {
+  //  "t1": "Flying",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Ghost": {
+  //  "t1": "Ghost",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Grass": {
+  //  "t1": "Grass",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Ground": {
+  //  "t1": "Ground",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Ice": {
+  //  "t1": "Ice",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Poison": {
+  //  "t1": "Poison",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Psychic": {
+  //  "t1": "Psychic",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Rock": {
+  //  "t1": "Rock",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Steel": {
+  //  "t1": "Steel",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
+  //"Arceus-Water": {
+  //  "t1": "Water",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
   "Azelf": {
     "t1": "Psychic",
     "bs": {
@@ -7541,7 +7544,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 82,
       "sp": 75
     },
-    "w": 107.3
+    "w": 107.3,
+    "ab": "Aftermath"
   },
   "Genesect": {
     "t1": "Bug",
@@ -9124,19 +9128,19 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 25.2,
     "ab": "Refrigerate"
   },
-  "Arceus-Fairy": {
-    "t1": "Fairy",
-    "bs": {
-      "hp": 120,
-      "at": 120,
-      "df": 120,
-      "sa": 120,
-      "sd": 120,
-      "sp": 120
-    },
-    "w": 320.0,
-    "ab": "Multitype"
-  },
+  //"Arceus-Fairy": {
+  //  "t1": "Fairy",
+  //  "bs": {
+  //    "hp": 120,
+  //    "at": 120,
+  //    "df": 120,
+  //    "sa": 120,
+  //    "sd": 120,
+  //    "sp": 120
+  //  },
+  //  "w": 320.0,
+  //  "ab": "Multitype"
+  //},
   "Aromatisse": {
     "t1": "Fairy",
     "bs": {
@@ -10877,7 +10881,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 305.0,
     "ab": "Power Construct",
-    "formes": ["Zygarde 50%", "Zygarde 10%", "Zygarde Complete"]
+    "formes": ["Zygarde 50%", "Zygarde Complete", "Zygarde 10%"]
   },
   "Zygarde 50%": {
     "t1": "Dragon",
@@ -10949,6 +10953,8 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
   //abilities
   "Pelipper": { "bs": { "sa": 95 }, "ab": "Drizzle"},
   "Torkoal": {"ab": "Drought"},
+  "Gengar": {"ab": "Cursed Body"},
+  "Venusaur": {"ab": "Chlorophyll"},
 
   //hp buffs
   "Magcargo": { "bs": { "hp": 60, "sa": 90 } },
@@ -12518,8 +12524,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 
 });
 
-delete POKEDEX_SM['Gengar'].ab;
-
 var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
   "Meltan": {
     "t1": "Steel",
@@ -12544,7 +12548,25 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 34
     },
     "w": 800,
+      "ab": "Iron Fist",
+      "formes": [
+          "Melmetal",
+          "Melmetal-Gmax",
+      ]
+  },
+  "Melmetal-Gmax": {
+    "t1": "Steel",
+    "bs": {
+      "hp": 135,
+      "at": 143,
+      "df": 143,
+      "sa": 80,
+      "sd": 65,
+      "sp": 34
+    },
+    "w": 800,
     "ab": "Iron Fist",
+    "isAlternateForme": true,
   },
   "Meowth-Galar": {
     "t1": "Steel",
@@ -12771,8 +12793,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 90,
     "ab": "Grassy Surge",
     "formes": [
+      "Rillaboom-Gmax",
       "Rillaboom",
-      "Rillaboom-Gmax"
     ]
   },
   "Scorbunny": {
@@ -12814,8 +12836,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 33,
     "ab": "Libero",
     "formes": [
+      "Cinderace-Gmax",
       "Cinderace",
-      "Cinderace-Gmax"
     ]
   },
   "Sobble": {
@@ -12856,9 +12878,9 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     },
     "w": 45.2,
     "ab": "Sniper",
-    "formes": [
-      "Intelleon",
-      "Intelleon-Gmax"
+      "formes": [
+      "Inteleon-Gmax",
+      "Inteleon",
     ]
   },
   "Blipbug": {
@@ -12936,6 +12958,25 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     },
     "w": 75,
     "ab": "Mirror Armor",
+      "formes": [
+          "Corviknight",
+          "Corviknight-Gmax"
+      ],
+  },
+  "Corviknight-Gmax": {
+    "t1": "Flying",
+    "t2": "Steel",
+    "bs": {
+      "hp": 98,
+      "at": 87,
+      "df": 105,
+      "sa": 53,
+      "sd": 85,
+      "sp": 67
+    },
+    "w": 75,
+    "ab": "Mirror Armor",
+    "isAlternateForme": true,
   },
   "Skwovet": {
     "t1": "Normal",
@@ -13061,6 +13102,22 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     },
     "w": 8.5,
     "ab": "Strong Jaw",
+    "formes":["Drednaw","Drednaw-Gmax"],
+  },
+  "Drednaw-Gmax": {
+    "t1": "Water",
+    "t2": "Rock",
+    "bs": {
+      "hp": 90,
+      "at": 115,
+      "df": 90,
+      "sa": 48,
+      "sd": 68,
+      "sp": 74
+    },
+    "w": 8.5,
+    "ab": "Strong Jaw",
+    "isAlternateForme": true,
   },
   "Yamper": {
     "t1": "Electric",
@@ -13123,6 +13180,23 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 30
     },
     "w": 310.5,
+    "ab": "Steam Engine",
+    "formes":["Coalossal-Gmax","Coalossal"],
+  },
+  "Coalossal-Gmax": {
+    "t1": "Rock",
+    "t2": "Fire",
+    "bs": {
+      "hp": 110,
+      "at": 80,
+      "df": 120,
+      "sa": 80,
+      "sd": 90,
+      "sp": 30
+    },
+    "w": 310.5,
+    "ab": "Steam Engine",
+    "isAlternateForme": true,
   },
   "Applin": {
     "t1": "Grass",
@@ -13149,7 +13223,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 70
     },
     "w": 1,
+      "ab": "Hustle",
+      "formes": [
+          "Flapple-Gmax",
+          "Flapple",
+      ]
+  },
+  "Flapple-Gmax": {
+    "t1": "Grass",
+    "t2": "Dragon",
+    "bs": {
+      "hp": 70,
+      "at": 110,
+      "df": 80,
+      "sa": 95,
+      "sd": 60,
+      "sp": 70
+    },
+    "w": 1,
     "ab": "Hustle",
+    "isAlternateForme": true,
   },
   "Appletun": {
     "t1": "Grass",
@@ -13163,7 +13256,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 30
     },
     "w": 13,
+      "ab": "Thick Fat",
+      "formes": [
+          "Appletun",
+          "Appletun-Gmax",
+      ]
+  },
+  "Appletun-Gmax": {
+    "t1": "Grass",
+    "t2": "Dragon",
+    "bs": {
+      "hp": 110,
+      "at": 85,
+      "df": 80,
+      "sa": 100,
+      "sd": 80,
+      "sp": 30
+    },
+    "w": 13,
     "ab": "Thick Fat",
+    "isAlternateForme": true,
   },
   "Silicobra": {
     "t1": "Ground",
@@ -13189,7 +13301,25 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 71
     },
     "w": 65.5,
+      "ab": "Sand Spit",
+      "formes": [
+          "Sandaconda-Gmax",
+          "Sandaconda",
+      ]
+  },
+  "Sandaconda-Gmax": {
+    "t1": "Ground",
+    "bs": {
+      "hp": 72,
+      "at": 107,
+      "df": 125,
+      "sa": 65,
+      "sd": 70,
+      "sp": 71
+    },
+    "w": 65.5,
     "ab": "Sand Spit",
+    "isAlternateForme": true,
   },
   "Cramorant": {
     "t1": "Flying",
@@ -13253,7 +13383,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 75
     },
     "w": 40,
+      "ab": "Punk Rock",
+      "formes": [
+          "Toxtricity-Gmax",
+          "Toxtricity",
+      ]
+  },
+  "Toxtricity-Gmax": {
+    "t1": "Electric",
+    "t2": "Poison",
+    "bs": {
+      "hp": 75,
+      "at": 98,
+      "df": 70,
+      "sa": 114,
+      "sd": 70,
+      "sp": 75
+    },
+    "w": 40,
     "ab": "Punk Rock",
+    "isAlternateForme": true,
   },
   "Sizzlipede": {
     "t1": "Fire",
@@ -13281,7 +13430,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 65
     },
     "w": 120,
+      "ab": "White Smoke",
+      "formes": [
+          "Centiskorch-Gmax",
+          "Centiskorch",
+      ]
+  },
+  "Centiskorch-Gmax": {
+    "t1": "Fire",
+    "t2": "Bug",
+    "bs": {
+      "hp": 100,
+      "at": 115,
+      "df": 65,
+      "sa": 90,
+      "sd": 90,
+      "sp": 65
+    },
+    "w": 120,
     "ab": "White Smoke",
+    "isAlternateForme": true,
   },
   "Clobbopus": {
     "t1": "Fighting",
@@ -13369,6 +13537,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 29
     },
     "w": 5.1,
+      "ab": "Magic Bounce",
+      "formes": [
+          "Hatterene-Gmax",
+          "Hatterene",
+      ]
+  },
+  "Hatterene-Gmax": {
+    "t1": "Psychic",
+    "t2": "Fairy",
+    "bs": {
+      "hp": 57,
+      "at": 90,
+      "df": 95,
+      "sa": 136,
+      "sd": 103,
+      "sp": 29
+    },
+    "w": 5.1,
+    "ab": "Magic Bounce",
+    "isAlternateForme": true,
   },
   "Impidimp": {
     "t1": "Dark",
@@ -13408,6 +13596,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 60
     },
     "w": 61,
+      "ab": "Prankster",
+      "formes": [
+          "Grimmsnarl-Gmax",
+          "Grimmsnarl",
+      ]
+  },
+  "Grimmsnarl-Gmax": {
+    "t1": "Dark",
+    "t2": "Fairy",
+    "bs": {
+      "hp": 95,
+      "at": 120,
+      "df": 65,
+      "sa": 95,
+      "sd": 75,
+      "sp": 60
+    },
+    "w": 61,
+    "ab": "Prankster",
+    "isAlternateForme": true,
   },
   "Obstagoon": {
     "t1": "Dark",
@@ -13510,6 +13718,25 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 64
     },
     "w": 0.5,
+      "ab": "Sweet Veil",
+      "formes": [
+          "Alcremie-Gmax",
+          "Alcremie",
+      ]
+  },
+  "Alcremie-Gmax": {
+    "t1": "Fairy",
+    "bs": {
+      "hp": 65,
+      "at": 60,
+      "df": 75,
+      "sa": 110,
+      "sd": 121,
+      "sp": 64
+    },
+    "w": 0.5,
+    "ab": "Sweet Veil",
+    "isAlternateForme": true,
   },
   "Falinks": {
     "t1": "Fighting",
@@ -13684,7 +13911,25 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 30
     },
     "w": 650,
+      "ab": "Sheer Force",
+      "formes": [
+          "Copperajah-Gmax",
+          "Copperajah",
+      ]
+  },
+  "Copperajah-Gmax": {
+    "t1": "Steel",
+    "bs": {
+      "hp": 122,
+      "at": 130,
+      "df": 69,
+      "sa": 80,
+      "sd": 69,
+      "sp": 30
+    },
+    "w": 650,
     "ab": "Sheer Force",
+    "isAlternateForme": true,
   },
   "Dracozolt": {
     "t1": "Electric",
@@ -13754,6 +13999,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 85
     },
     "w": 40,
+      "ab": "Stalwart",
+      "formes": [
+          "Duraludon",
+          "Duraludon-Gmax",
+      ]
+  },
+  "Duraludon-Gmax": {
+    "t1": "Steel",
+    "t2": "Dragon",
+    "bs": {
+      "hp": 70,
+      "at": 95,
+      "df": 115,
+      "sa": 120,
+      "sd": 50,
+      "sp": 85
+    },
+    "w": 40,
+    "ab": "Stalwart",
+    "isAlternateForme": true,
   },
   "Dreepy": {
     "t1": "Dragon",
@@ -13899,6 +14164,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
           "sp": 97
       },
       "w": 105,
+      "ab": "Unseen Fist",
+      "formes": [
+          "Urshifu-Single Strike-Gmax",
+          "Urshifu-Single Strike",
+      ]
+  },
+  "Urshifu-Single Strike-Gmax": {
+      "t1": "Fighting",
+      "t2": "Dark",
+      "bs": {
+          "hp": 100,
+          "at": 130,
+          "df": 100,
+          "sa": 63,
+          "sd": 60,
+          "sp": 97
+      },
+      "w": 105,
+      "ab": "Unseen Fist",
+      "isAlternateForme": true,
   },
   "Urshifu-Rapid Strike": {
       "t1": "Fighting",
@@ -13912,6 +14197,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
           "sp": 97
       },
       "w": 105,
+      "ab": "Unseen Fist",
+      "formes": [
+          "Urshifu-Rapid Strike-Gmax",
+          "Urshifu-Rapid Strike",
+      ]
+  },
+  "Urshifu-Rapid Strike-Gmax": {
+      "t1": "Fighting",
+      "t2": "Water",
+      "bs": {
+          "hp": 100,
+          "at": 130,
+          "df": 100,
+          "sa": 63,
+          "sd": 60,
+          "sp": 97
+      },
+      "w": 105,
+      "ab": "Unseen Fist",
+      "isAlternateForme": true,
   },
   "Zarude": {
       "t1": "Dark",
@@ -14138,12 +14443,199 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       },
       "w": 53.6,
       "ab": "As One"
-  },
+    },
 
+  //GMAX FORMS (save for Galar Pokemon)
+    "Venusaur": { "formes": ["Venusaur-Gmax","Venusaur", "Mega Venusaur"] },
+    "Charizard": { "ab":"Solar Power", "formes": ["Charizard-Gmax", "Charizard", "Mega Charizard Y", "Mega Charizard X"] },
+    "Blastoise": { "formes": ["Blastoise-Gmax", "Blastoise", "Mega Blastoise"] },
+    "Butterfree": { "formes": ["Butterfree-Gmax", "Butterfree"] },
+    "Pikachu": { "formes": ["Pikachu-Gmax", "Pikachu"] },
+    "Meowth": { "formes": ["Meowth-Gmax", "Meowth"] },
+    "Gengar": { "formes": ["Gengar-Gmax", "Gengar", "Mega Gengar"] },
+    "Kingler": { "formes": ["Kingler-Gmax", "Kingler"] },
+    "Lapras": { "formes": ["Lapras-Gmax", "Lapras"] },
+    "Eevee": { "formes": ["Eevee-Gmax", "Eevee"] },
+    "Snorlax": { "formes": ["Snorlax-Gmax", "Snorlax"] },
+    "Garbodor": { "formes": ["Garbodor-Gmax", "Garbodor"] },
+    "Venusaur-Gmax": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 80,
+            "at": 82,
+            "df": 83,
+            "sa": 100,
+            "sd": 100,
+            "sp": 80,
+        },
+        "w": 100.0,
+        "ab": "Chlorophyll",
+        "isAlternateForme": true,
+    },
+    "Charizard-Gmax": {
+        "t1": "Fire",
+        "t2": "Flying",
+        "bs": {
+            "hp": 78,
+            "at": 84,
+            "df": 78,
+            "sa": 109,
+            "sd": 85,
+            "sp": 100
+        },
+        "w": 90.5,
+        "ab": "Solar Power",
+        "isAlternateForme": true,
+    },
+    "Blastoise-Gmax": {
+        "t1": "Water",
+        "bs": {
+            "hp": 79,
+            "at": 83,
+            "df": 100,
+            "sa": 85,
+            "sd": 105,
+            "sp": 78,
+        },
+        "w": 85.5,
+        "ab": "Torrent",
+        "isAlternateForme": true,
+    },
+    "Butterfree-Gmax": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 60,
+            "at": 45,
+            "df": 50,
+            "sa": 90,
+            "sd": 80,
+            "sp": 70,
+        },
+        "w": 32.0,
+        "ab": "Compoundeyes",
+        "isAlternateForme": true,
+    },
+    "Pikachu-Gmax": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90
+        },
+        "w": 6.0,
+        "ab": "Lightning Rod",
+        "isAlternateForme": true,
+    },
+    "Meowth-Gmax": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 40,
+            "at": 45,
+            "df": 35,
+            "sa": 40,
+            "sd": 40,
+            "sp": 90,
+        },
+        "w": 4.2,
+        "ab": "Unnerve",
+        "isAlternateForme": true,
+    },
+    "Gengar-Gmax": {
+        "t1": "Ghost",
+        "t2": "Poison",
+        "bs": {
+            "hp": 60,
+            "at": 65,
+            "df": 60,
+            "sa": 130,
+            "sd": 75,
+            "sp": 110,
+        },
+        "w": 40.5,
+        "ab": "Cursed Body",
+        "isAlternateForme": true,
+    },
+    "Kingler-Gmax": {
+        "t1": "Water",
+        "bs": {
+            "hp": 55,
+            "at": 130,
+            "df": 115,
+            "sa": 50,
+            "sd": 50,
+            "sp": 75,
+        },
+        "w": 60.0,
+        "ab": "Hyper Cutter",
+        "isAlternateForme": true,
+    },
+    "Lapras-Gmax": {
+        "t1": "Water",
+        "t2": "Ice",
+        "bs": {
+            "hp": 130,
+            "at": 85,
+            "df": 80,
+            "sa": 85,
+            "sd": 95,
+            "sp": 60,
+        },
+        "w": 220.0,
+        "ab": "Shell Armor",
+        "isAlternateForme": true,
+    },
+    "Eevee-Gmax": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 55,
+            "at": 55,
+            "df": 50,
+            "sa": 45,
+            "sd": 65,
+            "sp": 55,
+        },
+        "w": 6.5,
+        "ab": "Adaptability",
+        "isAlternateForme": true,
+    },
+    "Snorlax-Gmax": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 160,
+            "at": 110,
+            "df": 65,
+            "sa": 65,
+            "sd": 110,
+            "sp": 30,
+        },
+        "w": 460.0,
+        "ab": "Gluttony",
+        "isAlternateForme": true,
+    },
+    "Garbodor-Gmax": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 80,
+            "at": 95,
+            "df": 82,
+            "sa": 60,
+            "sd": 82,
+            "sp": 75
+        },
+        "w": 107.3,
+        "ab": "Aftermath",
+        "isAlternateForme": true,
+    },
+    //BASE STAT CHANGES
   "Aegislash": { "bs": { "df": 140, "sd": 140 } },
   "Aegislash-Blade": { "bs": { "at": 140, "sa": 140 } },
   "Aegislash-Shield": { "bs": { "df": 140, "sd": 140 } },
-
+  //DEFAULT ABILITY CHANGES
     "Weezing": { "ab": "Neutralizing Gas" },
     "Sneasel": { "ab": "Inner Focus" },
     "Snorunt": { "ab": "Inner Focus" },
@@ -14210,6 +14702,11 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SS_NATDEX, {
     "Necrozma-Dusk-Mane": { "formes": null },
     "Primal Kyogre": { "isAlternateForme": true },
     "Primal Groudon": { "isAlternateForme": true },});
+
+POKEDEX_SS["Venusaur"].formes = ['Venusaur-Gmax', 'Venusaur'];
+POKEDEX_SS["Charizard"].formes = ['Charizard-Gmax', 'Charizard'];
+POKEDEX_SS["Blastoise"].formes = ['Blastoise-Gmax', 'Blastoise'];
+POKEDEX_SS["Gengar"].formes = ['Gengar-Gmax', 'Gengar'];
 
 delete POKEDEX_SS["Weedle"];
 delete POKEDEX_SS["Kakuna"];
@@ -14394,23 +14891,23 @@ delete POKEDEX_SS["Darkrai"];
 delete POKEDEX_SS["Shaymin"];
 delete POKEDEX_SS["Shaymin-S"];
 delete POKEDEX_SS["Arceus"];
-delete POKEDEX_SS["Arceus-Bug"];
-delete POKEDEX_SS["Arceus-Dark"];
-delete POKEDEX_SS["Arceus-Dragon"];
-delete POKEDEX_SS["Arceus-Electric"];
-delete POKEDEX_SS["Arceus-Fairy"];
-delete POKEDEX_SS["Arceus-Fighting"];
-delete POKEDEX_SS["Arceus-Fire"];
-delete POKEDEX_SS["Arceus-Flying"];
-delete POKEDEX_SS["Arceus-Ghost"];
-delete POKEDEX_SS["Arceus-Grass"];
-delete POKEDEX_SS["Arceus-Ground"];
-delete POKEDEX_SS["Arceus-Ice"];
-delete POKEDEX_SS["Arceus-Poison"];
-delete POKEDEX_SS["Arceus-Psychic"];
-delete POKEDEX_SS["Arceus-Rock"];
-delete POKEDEX_SS["Arceus-Steel"];
-delete POKEDEX_SS["Arceus-Water"];
+//delete POKEDEX_SS["Arceus-Bug"];
+//delete POKEDEX_SS["Arceus-Dark"];
+//delete POKEDEX_SS["Arceus-Dragon"];
+//delete POKEDEX_SS["Arceus-Electric"];
+//delete POKEDEX_SS["Arceus-Fairy"];
+//delete POKEDEX_SS["Arceus-Fighting"];
+//delete POKEDEX_SS["Arceus-Fire"];
+//delete POKEDEX_SS["Arceus-Flying"];
+//delete POKEDEX_SS["Arceus-Ghost"];
+//delete POKEDEX_SS["Arceus-Grass"];
+//delete POKEDEX_SS["Arceus-Ground"];
+//delete POKEDEX_SS["Arceus-Ice"];
+//delete POKEDEX_SS["Arceus-Poison"];
+//delete POKEDEX_SS["Arceus-Psychic"];
+//delete POKEDEX_SS["Arceus-Rock"];
+//delete POKEDEX_SS["Arceus-Steel"];
+//delete POKEDEX_SS["Arceus-Water"];
 delete POKEDEX_SS["Snivy"];
 delete POKEDEX_SS["Servine"];
 delete POKEDEX_SS["Serperior"];

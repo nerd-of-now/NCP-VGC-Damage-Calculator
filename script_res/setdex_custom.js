@@ -54,6 +54,10 @@ var saveToCalcFormes = [["Darmanitan-Z", "Darmanitan"],
 ["Zacian-Crowned", "Zacian"],
 ["Zamazenta-Crowned", "Zamazenta"],];
 
+if (readCookie("custom_gen_5") != null) {
+    SETDEX_CUSTOM_BW = JSON.parse(readCookie("custom_gen_5"));
+    reloadBWScript();
+}
 if (readCookie("custom_gen_6") != null) {
     SETDEX_CUSTOM_XY = JSON.parse(readCookie("custom_gen_6"));
     reloadXYScript();
@@ -74,6 +78,11 @@ if (readCookie("custom_gen_84") != null) {
 var deletecustom = function () {
     gen = parseInt($('input[name="gen"]:checked').val());
     switch (gen) {
+        case 5:
+            SETDEX_CUSTOM_BW = {};
+            eraseCookie("custom_gen_" + gen);
+            reloadBWScript();
+            break;
         case 6:
             SETDEX_CUSTOM_XY = {};
             eraseCookie("custom_gen_" + gen);
@@ -302,35 +311,44 @@ var savecustom = function()
             "moves": moves,
         }
         switch (gen) {
+            case 5:
+                if (SETDEX_CUSTOM_BW[species] == null)
+                    SETDEX_CUSTOM_BW[species] = {}
+                SETDEX_CUSTOM_BW[species][spreadName] = customFormat
+                createCookie("custom_gen_5", JSON.stringify(SETDEX_CUSTOM_BW), 365)
+                break;
             case 6:
                 if (SETDEX_CUSTOM_XY[species] == null)
                     SETDEX_CUSTOM_XY[species] = {}
                 SETDEX_CUSTOM_XY[species][spreadName] = customFormat
-                document.cookie = "custom_gen_6=" + JSON.stringify(SETDEX_CUSTOM_XY)
+                createCookie("custom_gen_6", JSON.stringify(SETDEX_CUSTOM_XY), 365)
                 break;
             case 7:
                 if (SETDEX_CUSTOM_SM[species] == null)
                     SETDEX_CUSTOM_SM[species] = {}
                 SETDEX_CUSTOM_SM[species][spreadName] = customFormat
-                document.cookie = "custom_gen_7=" + JSON.stringify(SETDEX_CUSTOM_SM)
+                createCookie("custom_gen_7", JSON.stringify(SETDEX_CUSTOM_SM), 365)
                 break;
             case 8:
                 if (SETDEX_CUSTOM_SS[species] == null)
                     SETDEX_CUSTOM_SS[species] = {}
                 SETDEX_CUSTOM_SS[species][spreadName] = customFormat
-                document.cookie = "custom_gen_8=" + JSON.stringify(SETDEX_CUSTOM_SS)
+                createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SS), 365)
                 break;
             case 84:
                 if (SETDEX_CUSTOM_BDSP[species] == null)
                     SETDEX_CUSTOM_BDSP[species] = {}
                 SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
-                document.cookie = "custom_gen_84=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
+                createCookie("custom_gen_84", JSON.stringify(SETDEX_CUSTOM_BDSP), 365)
                 break;
             default:
                 console.log("THIS SHOULDN\'T HAPPEN LOL");
         }
     }
     switch (gen) {
+        case 5:
+            reloadBWScript();
+            break;
         case 6:
             reloadXYScript();
             break;
@@ -406,32 +424,39 @@ var savecalc = function (set, spreadName, accessIVs) {
     }
 
     switch (gen) {
+        case 5:
+            if (SETDEX_CUSTOM_BW[species] == null)
+                SETDEX_CUSTOM_BW[species] = {}
+            SETDEX_CUSTOM_BW[species][spreadName] = customFormat
+            createCookie("custom_gen_5", JSON.stringify(SETDEX_CUSTOM_BW), 365)
+            reloadBWScript()
+            break;
         case 6:
             if (SETDEX_CUSTOM_XY[species] == null)
                 SETDEX_CUSTOM_XY[species] = {}
             SETDEX_CUSTOM_XY[species][spreadName] = customFormat
-            document.cookie = "custom_gen_6=" + JSON.stringify(SETDEX_CUSTOM_XY)
+            createCookie("custom_gen_6", JSON.stringify(SETDEX_CUSTOM_XY), 365)
             reloadXYScript()
             break;
         case 7:
             if (SETDEX_CUSTOM_SM[species] == null)
                 SETDEX_CUSTOM_SM[species] = {}
             SETDEX_CUSTOM_SM[species][spreadName] = customFormat
-            document.cookie = "custom_gen_7=" + JSON.stringify(SETDEX_CUSTOM_SM)
+            createCookie("custom_gen_7", JSON.stringify(SETDEX_CUSTOM_SM), 365)
             reloadSMScript()
             break;
         case 8:
             if (SETDEX_CUSTOM_SS[species] == null)
                 SETDEX_CUSTOM_SS[species] = {}
             SETDEX_CUSTOM_SS[species][spreadName] = customFormat
-            document.cookie = "custom_gen_8=" + JSON.stringify(SETDEX_CUSTOM_SS)
+            createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SS), 365)
             reloadSSScript()
             break;
         case 84:
             if (SETDEX_CUSTOM_BDSP[species] == null)
                 SETDEX_CUSTOM_BDSP[species] = {}
             SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
-                document.cookie = "custom_gen_84=" + JSON.stringify(SETDEX_CUSTOM_BDSP)
+                createCookie("custom_gen_84", JSON.stringify(SETDEX_CUSTOM_BDSP), 365)
             reloadBDSPScript()
             break;
         default:

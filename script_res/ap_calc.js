@@ -290,16 +290,21 @@ $("#p2 .item").bind("keyup change", function() {
 
 function autoSetType(p, item) {
     var ab = $(p + " .ability").val();
-    if (ab == "Multitype" || ab == "RKS System") {
-        if (ab == "RKS System" && item.indexOf("Memory") != -1) {
+    if (ab == "RKS System") {
+        if (item.indexOf("Memory") != -1) {
             $(p + " .type1").val(getMemoryType(item));
-        }
-        else if (ab == "Multitype" && item.indexOf("Plate") != -1) {
-            $(p + " .type1").val(getItemBoostType(item));
         }
         else {
             $(p + " .type1").val('Normal');
         }
+    }
+    else if (ab == "Multitype") {
+        if (item.indexOf("Plate") != -1)
+            $(p + " .type1").val(getItemBoostType(item));
+        else if (item.indexOf("ium Z") != -1)
+            $(p + " .type1").val(getZType(item));
+        else
+            $(p + " .type1").val('Normal');
     }
 }
 
@@ -451,14 +456,16 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
         var set = setdex[pokemonName][setName];
 
         // Repurpose the previous filtering code to provide the "different default" logic
-        if ((set.item.indexOf('ite') !== -1 && set.item.indexOf('ite Y') === -1) ||
-            (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
-            (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
-            (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
-            (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
-            defaultForme = 1;
-        } else if (set.item.indexOf('ite Y') !== -1) {
-            defaultForme = 2;
+        if (set.item) {
+            if ((set.item.indexOf('ite') !== -1 && set.item.indexOf('ite Y') === -1) ||
+                (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
+                (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
+                (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
+                (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
+                defaultForme = 1;
+            } else if (set.item.indexOf('ite Y') !== -1) {
+                defaultForme = 2;
+            }
         }
     }
 
@@ -497,10 +504,10 @@ $(".forme").change(function() {
     }
     container.find(".ability").keyup();
 
-    if ($(this).val().indexOf("Mega") === 0 && $(this).val() !== "Mega Rayquaza") {
-        container.find(".item").val("").keyup();
-        //container.find(".item").prop("disabled", true);
-        //edited out by squirrelboy1225 for doubles!
+    var lockItemCheck = LOCK_ITEM_LOOKUP[$(this).val()];
+    if (lockItemCheck !== undefined) {
+        container.find(".item").val(lockItemCheck).keyup();
+        container.find(".item").prop("disabled", true);
     } else {
         container.find(".item").prop("disabled", false);
     }
@@ -897,7 +904,7 @@ $(".gen").change(function () {
             items = ITEMS_SM;
             abilities = ABILITIES_SM;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_SM;
+            calculateAllMoves = CALCULATE_ALL_MOVES_SS;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
