@@ -225,8 +225,8 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         }
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
-    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
+    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, field.weather === "Strong Winds");
+    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, field.weather === "Strong Winds") : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
 
     if (typeEffectiveness === 0) {
@@ -736,9 +736,13 @@ function GET_DAMAGE_SM(attacker, defender, move, field) {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
     //Need to move Strong Winds check out; I strongly suspect it's a hard modifier to type effectiveness
-    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
+    //May 2022: This has been fixed but there still needs to be a description for it, so it's handled here
+    } else if ((field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
+        typeChart[move.type]["Flying"] > 1)) {
+        description.weather = field.weather;
+    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") /*||
                (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
-               typeChart[move.type]["Flying"] > 1)) {
+               typeChart[move.type]["Flying"] > 1)*/) {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     }
@@ -991,7 +995,7 @@ function chainMods(mods) {
     return M;
 }
 
-function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity) {
+function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, isStrongWinds) {
     if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
         return 1;
     } else if (isGravity && type === "Flying" && move.type === "Ground") {
@@ -1004,6 +1008,8 @@ function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity)
         return 2;
     } else if (move.name === "Flying Press") {
         return typeChart["Fighting"][type] * typeChart["Flying"][type];
+    } else if (isStrongWinds && type == "Flying" && typeChart[move.type][type] > 1) {
+        return 1;
     } else {
         return typeChart[move.type][type];
     }

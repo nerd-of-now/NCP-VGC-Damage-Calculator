@@ -2,6 +2,12 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     if (isNaN(damage[0])) {
        return 'something broke; please tell nerd of now';
     }
+    if (move.name == "Pain Split" && !move.painMax) {
+        return 'The battlers shared their pain!';
+    }
+    if (move.category == "Status") {
+        return 'Might as well Thunderbolt a Landorus';
+    }
     if (damage[damage.length-1] === 0) {
         if (field.weather === "Harsh Sun" && move.type === "Water") {
             return 'the Water-Type attack evaporated in the harsh sunlight';

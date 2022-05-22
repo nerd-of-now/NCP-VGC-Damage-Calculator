@@ -156,6 +156,7 @@ var ABILITIES_BW = ABILITIES_DPP.concat([
     'Healer',
     'Heavy Metal',
     'Illusion',
+    'Imposter',
     'Iron Barbs',
     'Justified',
     'Light Metal',
@@ -173,7 +174,7 @@ var ABILITIES_BW = ABILITIES_DPP.concat([
     'Victory Star',
     'Weak Armor',
     'Wonder Skin',
-    'Zen Mode'  //Might implement functionality
+    'Zen Mode',  //Might implement functionality
 ]);
 
 var ABILITIES_XY = ABILITIES_BW.concat([

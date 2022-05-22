@@ -5130,26 +5130,6 @@ var SETDEX_VGC2021 = {
     },
 
     "Yveltal": {
-        "Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Jolly",
-            "ability": "Dark Aura",
-            "item": "",
-            "moves": [
-                "Foul Play",
-                "Sucker Punch",
-                "Lash Out",
-                "Dual Wingbeat"
-            ]
-        },
         "Special Life Orb": {
             "level": 50,
             "evs": {
@@ -5166,8 +5146,8 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Dark Pulse",
                 "Sucker Punch",
-                "Hurricane",
-                "Snarl"
+                "Oblivion Wing",
+                "Heat Wave"
             ]
         },
         "AV Yveltal": {
@@ -5210,10 +5190,10 @@ var SETDEX_VGC2021 = {
             "ability": "",
             "item": "Life Orb",
             "moves": [
-                "Draco Meteor",
+                "Roar of Time",
                 "Flash Cannon",
                 "Earth Power",
-                "Body Press"
+                "Blizzard"
             ]
         }
     },
@@ -5232,14 +5212,14 @@ var SETDEX_VGC2021 = {
             "ivs": {
                 "at": 0
             },
-            "nature": "Modest",
+            "nature": "Timid",
             "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Spacial Rend",
                 "Hydro Pump",
                 "Earth Power",
-                "Thunder"
+                "Draco Meteor"
             ]
         }
     },
@@ -5304,13 +5284,13 @@ var SETDEX_VGC2021 = {
             "ivs": {
                 "at": 0
             },
-            "nature": "Modest",
+            "nature": "Timid",
             "ability": "Turboblaze",
             "item": "Life Orb",
             "moves": [
                 "Blizzard",
                 "Freeze-Dry",
-                "Fusion Flare",
+                "Draco Meteor",
                 "Earth Power"
             ]
         }
@@ -8164,7 +8144,7 @@ var SETDEX_VGC2021 = {
                 "Behemoth Blade",
                 "Play Rough",
                 "Close Combat",
-                "Wild Charge"
+                "Sacred Sword"
             ]
         },
     },
@@ -9389,7 +9369,7 @@ var SETDEX_VGC2021_S10 = {
                 "Earth Power",
                 "Ice Beam",
                 "Scald",
-                "Clear Smogn"
+                "Clear Smog"
             ]
         },
 

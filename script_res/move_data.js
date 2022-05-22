@@ -249,6 +249,201 @@ var MOVES_RBY = {
         bp: 15,
         type: 'Normal'
     },
+    'Swords Dance': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Whirlwind': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Tail Whip': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Leer': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Growl': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Roar': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Sing': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Disable': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Mist': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Leech Seed': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Growth': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Stun Spore': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Sleep Powder': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'String Shot': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Thunder Wave': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Toxic': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Hypnosis': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Agility': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Teleport': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Screech': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Double Team': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Recover': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Minimize': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Barrier': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Light Screen': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Haze': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Reflect': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Focus Energy': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Amnesia': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Soft-Boiled': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Glare': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Poison Gas': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Lovely Kiss': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Transform': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Spore': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Acid Armor': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Rest': {
+        
+        type: '',
+        category: 'Status'
+    },
+    'Conversion': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Substitute': {
+
+        type: '',
+        category: 'Status'
+    },
 };
 
 var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
@@ -518,7 +713,157 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Electric',
         category: 'Special',
         hasSecondaryEffect: true
-    }
+    },
+    'Pain Split': {
+        bp: 0,
+        type: 'Normal',
+        category: 'Status'
+    },
+    'Mind Reader': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Curse': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Cotton Spore': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Protect': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Scary Face': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Belly Drum': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Spikes': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Foresight': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Desting Bond': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Perish Song': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Detect': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Lock-On': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Sandstorm': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Endure': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Charm': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Swagger': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Milk Drink': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Sleep Talk': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Heal Bell': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Safeguard': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Baton Pass': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Encore': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Sweet Scent': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Morning Sun': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Synthesis': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Moonlight': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Rain Dance': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Sunny Day': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Psych Up': {
+
+        type: '',
+        category: 'Status'
+    },
 });
 
 delete MOVES_GSC['Acid'];
@@ -792,7 +1137,192 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-    }
+    },
+    'Stockpile': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Hail': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Torment': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Flatter': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Will-O-Wisp': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Memento': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Follow Me': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Taunt': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Helping Hand': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Trick': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Role Play': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Wish': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Assist': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Ingrain': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Magic Coat': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Recycle': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Yawn': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Skill Swap': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Imprison': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Refresh': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Grudge': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Snatch': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Tail Glow': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Feather Dance': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Teeter Dance': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Slack Off': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Aromatherapy': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Fake Tears': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Metal Sound': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Grass Whistle': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Tickle': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Cosmic Power': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Iron Defense': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Howl': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Bulk Up': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Calm Mind': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Dragon Dance': {
+
+        type: '',
+        category: 'Status'
+    },
 });
 
 delete MOVES_ADV['BubbleBeam'];
@@ -1310,6 +1840,136 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Dragon',
         category: 'Special',
     },
+    'Roost': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Gravity': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Healing Wish': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Tailwind': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Acupressure': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Embargo': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Psycho Shift': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Heal Block': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Power Trick': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Gastro Acid': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Me First': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Copycat': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Power Swap': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Worry Seed': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Toxic Spikes': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Heart Swap': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Magnet Rise': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Rock Polish': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Switcheroo': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Nasty Plot': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Defog': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Trick Room': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Captivate': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Stealth Rock': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Lunar Dance': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Dark Void': {
+
+        type: '',
+        category: 'Status'
+    },
 });
 
 delete MOVES_DPP['Razor Leaf'];
@@ -1748,6 +2408,116 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Fighting',
         category: 'Special',
     },
+    'Hone Claws': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Wide Guard': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Guard Split': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Power Split': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Autotomize': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Rage Powder': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Magic Room': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Quiver Dance': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Soak': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Coil': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Simple Beam': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Entrainment': {
+
+        type: '',
+        category: 'Status'
+    },
+    'After You': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Quick Guard': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Ally Switch': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Shell Smash': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Heal Pulse': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Shift Gear': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Quash': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Reflect Type': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Work Up': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Cotton Guard': {
+
+        type: '',
+        category: 'Status'
+    },
 });
 
 var MOVES_XY = $.extend(true, {}, MOVES_BW, {
@@ -1869,7 +2639,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Nature Power': {
         bp: 1,
         type: 'Normal',
-        category: 'Special',
+        category: 'Status',
         hasSecondaryEffect: true,
         isSpread: false
     },
@@ -1916,7 +2686,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     },
     'Rock Tomb': { bp: 60 },
     'Sheer Cold': {
-        bp: 0,
+        bp: 1,
         type: 'Ice',
         category: 'Special',
         isSpread: 'false',
@@ -1968,7 +2738,92 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Grass',
         category: 'Physical',
         isSpread: true
-    }
+    },
+    'Mat Block': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Sticky Web': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Trick-or-Treat': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Forest\'s Curse': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Parting Shot': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Topsy-Turvy': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Crafty Shield': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Grassy Terrain': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Misty Terrain': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Electrify': {
+
+        type: '',
+        category: 'Status'
+    },
+    'King\'s Shield': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Spiky Shield': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Eerie Impulse': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Powder': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Geomancy': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Electric Terrain': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Baby-Doll Eyes': {
+
+        type: '',
+        category: 'Status'
+    },
 });
 
 MOVES_XY['Ancient Power'] = MOVES_XY['AncientPower'];
@@ -2305,6 +3160,57 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Special',
         type: 'Fairy',
         zp: 100
+    },
+    'Shore Up': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Baneful Bunker': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Floral Healing': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Strength Sap': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Spotlight': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Psychic Terrain': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Speed Swap': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Instruct': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Aurora Veil': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Extreme Evoboost': {
+
+        type: '',
+        category: 'Status',
+        isSignatureZ: true,
     },
     'Catastropika': {
         category: 'Physical',
@@ -3710,6 +4616,36 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true
+    },
+    'No Retreat': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Octolock': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Clangerous Soul': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Decorate': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Life Dew': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Coaching': {
+
+        type: '',
+        category: 'Status'
     },
 });
 

@@ -2,6 +2,7 @@ var SETDEX_SS = {};
 var SETDEX_CUSTOM_SS = {};
 
 var components = [
+    SETDEX_VGC2022,
     SETDEX_VGC2021,
     SETDEX_VGC2021_S10,
 ];
@@ -21,6 +22,7 @@ var reloadSSScript = function()
 {
   console.log(SETDEX_CUSTOM_SS);
     components = [
+    SETDEX_VGC2022,
     SETDEX_VGC2021,
     SETDEX_VGC2021_S10,
     SETDEX_CUSTOM_SS,

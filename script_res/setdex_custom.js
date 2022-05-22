@@ -512,19 +512,105 @@ var exportset = function (set, accessIVs) {
     exItem = set.item != "" ? " @ " + set.item : "";
     exAbility = "Ability: " + set.ability;
     exLevel = "Level: " + set.level;
-    exEVs = "EVs: " + set.HPEVs.toString() + " HP / " +
-        set.evs[STATS[0]].toString() + " Atk / " +
-        set.evs[STATS[1]].toString() + " Def / " +
-        set.evs[STATS[2]].toString() + " SpA / " +
-        set.evs[STATS[3]].toString() + " SpD / " +
-        set.evs[STATS[4]].toString() + " Spe ";
+
+    //MORE OPTIMAL VERSION OF EV EXPORT IF READABILITY ISN'T A CONCERN
+    //
+    //exEVs = "EVs: " + set.HPEVs.toString() + " HP / " +
+    //    set.evs[STATS[0]].toString() + " Atk / " +
+    //    set.evs[STATS[1]].toString() + " Def / " +
+    //    set.evs[STATS[2]].toString() + " SpA / " +
+    //    set.evs[STATS[3]].toString() + " SpD / " +
+    //    set.evs[STATS[4]].toString() + " Spe ";
+
+    exEVs = "";
+    hasEVs = false;
+    if (set.HPEVs) {
+        hasEVs = true;
+        exEVs = exEVs + set.HPEVs.toString() + " HP ";
+    }
+    if (set.evs[STATS[0]]) {
+        if (hasEVs)
+            exEVs = exEVs + "/ ";
+        exEVs = exEVs + set.evs[STATS[0]].toString() + " Atk ";
+        hasEVs = true;
+    }
+    if (set.evs[STATS[1]]) {
+        if (hasEVs)
+            exEVs = exEVs + "/ ";
+        exEVs = exEVs + set.evs[STATS[1]].toString() + " Def ";
+        hasEVs = true;
+    }
+    if (set.evs[STATS[2]]) {
+        if (hasEVs)
+            exEVs = exEVs + "/ ";
+        exEVs = exEVs + set.evs[STATS[2]].toString() + " SpA ";
+        hasEVs = true;
+    }
+    if (set.evs[STATS[3]]) {
+        if (hasEVs)
+            exEVs = exEVs + "/ ";
+        exEVs = exEVs + set.evs[STATS[3]].toString() + " SpD ";
+        hasEVs = true;
+    }
+    if (set.evs[STATS[4]]) {
+        if (hasEVs)
+            exEVs = exEVs + "/ ";
+        exEVs = exEVs + set.evs[STATS[4]].toString() + " Spe ";
+        hasEVs = true;
+    }
+    if (hasEVs) {
+        exEVs = "EVs: " + exEVs;
+    }
     exNature = set.nature + " Nature";
-    exIVs = "IVs: " + accessIVs.find(".hp .ivs").val().toString() + " HP / " +
-        accessIVs.find(".at .ivs").val().toString() + " Atk / " +
-        accessIVs.find(".df .ivs").val().toString() + " Def / " +
-        accessIVs.find(".sa .ivs").val().toString() + " SpA / " +
-        accessIVs.find(".sd .ivs").val().toString() + " SpD / " +
-        accessIVs.find(".sp .ivs").val().toString() + " Spe ";
+
+    //SAME DEAL WITH EVS, OPTIMIZED IV EXPORT IF READABILITY ISN'T A CONCERN
+    //
+    //exIVs = "IVs: " + accessIVs.find(".hp .ivs").val().toString() + " HP / " +
+    //    accessIVs.find(".at .ivs").val().toString() + " Atk / " +
+    //    accessIVs.find(".df .ivs").val().toString() + " Def / " +
+    //    accessIVs.find(".sa .ivs").val().toString() + " SpA / " +
+    //    accessIVs.find(".sd .ivs").val().toString() + " SpD / " +
+    //    accessIVs.find(".sp .ivs").val().toString() + " Spe ";
+
+    exIVs = "";
+    hasIVs = false;
+    if (accessIVs.find(".hp .ivs").val() != 31) {
+        hasIVs = true;
+        exIVs = exIVs + accessIVs.find(".hp .ivs").val().toString() + " HP ";
+    }
+    if (accessIVs.find(".at .ivs").val() != 31) {
+        if (hasIVs)
+            exIVs = exIVs + "/ ";
+        exIVs = exIVs + accessIVs.find(".at .ivs").val().toString() + " Atk ";
+        hasIVs = true;
+    }
+    if (accessIVs.find(".df .ivs").val() != 31) {
+        if (hasIVs)
+            exIVs = exIVs + "/ ";
+        exIVs = exIVs + accessIVs.find(".df .ivs").val().toString() + " Def ";
+        hasIVs = true;
+    }
+    if (accessIVs.find(".sa .ivs").val() != 31) {
+        if (hasIVs)
+            exIVs = exIVs + "/ ";
+        exIVs = exIVs + accessIVs.find(".sa .ivs").val().toString() + " SpA ";
+        hasIVs = true;
+    }
+    if (accessIVs.find(".sd .ivs").val() != 31) {
+        if (hasIVs)
+            exIVs = exIVs + "/ ";
+        exIVs = exIVs + accessIVs.find(".sd .ivs").val().toString() + " SpD ";
+        hasIVs = true;
+    }
+    if (accessIVs.find(".sp .ivs").val() != 31) {
+        if (hasIVs)
+            exIVs = exIVs + "/ ";
+        exIVs = exIVs + accessIVs.find(".sp .ivs").val().toString() + " Spe ";
+        hasIVs = true;
+    }
+    if (hasIVs) {
+        exIVs = "IVs: " + exIVs;
+    }
     exMoves = ["- " + set.moves[0].name,
         "- " + set.moves[1].name,
         "- " + set.moves[2].name,

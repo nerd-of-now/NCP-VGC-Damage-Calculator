@@ -148,8 +148,9 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
             }
         }
         moveDescName = maxName + " (" + move.bp + " BP)";
-        if (tempMove.name == "Nature Power") {
+        if (tempMove.category == "Status") {
             moveDescName = "Max Guard";
+            move.name = moveDescName;
             move.bp = 0;
             move.isCrit = false;
         }
@@ -164,6 +165,7 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         if (field.isProtect && ["G-Max One Blow", "G-Max Rapid Flow"].indexOf(maxName) == -1) isQuarteredByProtect = true;
     }
     if (move.name === "Nature Power") {         //Rename Nature Power to its appropriately called moves; needs to be done after Max Moves since Nature Power becomes Max Guard
+        move.category = "Special";
         move.name = (field.terrain == "Electric") ? "Thunderbolt"
             : (field.terrain == "Grassy") ? "Energy Ball"
                 : (field.terrain == "Psychic") ? "Psychic"
@@ -184,8 +186,11 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         "moveName": moveDescName,
         "defenderName": defender_name
     };
-    if (move.bp === 0) {
-        return {"damage":[0], "description":buildDescriptionSS(description)};
+    if (move.name === "Pain Split") {
+        return { "damage": [Math.floor((defender.curHP - attacker.curHP) / 2)], "description": buildDescriptionSS(description) };
+    }
+    else if (move.bp === 0 || move.category === "Status") {
+        return { "damage": [0], "description": buildDescriptionSS(description) };
     }
 
     var defAbility = defender.ability;
@@ -247,12 +252,16 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         }
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
-    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
+    //if (move.category === "Status") {
+    //    return { "damage": [0], "description": buildDescriptionSS(description) };
+    //}
+
+    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, field.weather === "Strong Winds");
+    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, field.weather === "Strong Winds") : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
 
     if (typeEffectiveness === 0) {
-        return {"damage":[0], "description":buildDescriptionSS(description)};
+        return { "damage": [0], "description": buildDescriptionSS(description) };
     }
     if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1) ||
             (move.type === "Grass" && defAbility === "Sap Sipper") ||
@@ -699,7 +708,7 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
 
     if ((attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak" || attacker.name === "Marowak-Alola") && move.category === "Physical") ||
             (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special") ||
-            (attacker.item === "Light Ball" && attacker.name === "Pikachu")) {
+            (attacker.item === "Light Ball" && (attacker.name === "Pikachu" || attacker.name === "Pikachu-Gmax"))) {
         atMods.push(0x2000);
         description.attackerItem = attacker.item;
     } else if ((attacker.item === "Choice Band" && move.category === "Physical" && !attacker.isDynamax) ||
@@ -785,9 +794,13 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
     //Need to move Strong Winds check out; I strongly suspect it's a hard modifier to type effectiveness
-    } else if ((((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') ||
-               (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
+    //May 2022: This has been fixed but there still needs to be a description for it, so it's handled here
+    } else if ((field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
                typeChart[move.type]["Flying"] > 1)) {
+        description.weather = field.weather;
+    } else if ((((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') /*||
+               (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
+               typeChart[move.type]["Flying"] > 1)*/) {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     }
@@ -1040,7 +1053,7 @@ function chainMods(mods) {
     return M;
 }
 
-function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity) {
+function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, isStrongWinds) {
     if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
         return 1;
     } else if (isGravity && type === "Flying" && move.type === "Ground") {
@@ -1053,6 +1066,8 @@ function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity)
         return 2;
     } else if (move.name === "Flying Press") {
         return typeChart["Fighting"][type] * typeChart["Flying"][type];
+    } else if (isStrongWinds && type == "Flying" && typeChart[move.type][type] > 1) {
+        return 1;
     } else {
         return typeChart[move.type][type];
     }

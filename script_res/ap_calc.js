@@ -504,14 +504,6 @@ $(".forme").change(function() {
     }
     container.find(".ability").keyup();
 
-    var lockItemCheck = LOCK_ITEM_LOOKUP[$(this).val()];
-    if (lockItemCheck !== undefined) {
-        container.find(".item").val(lockItemCheck).keyup();
-        container.find(".item").prop("disabled", true);
-    } else {
-        container.find(".item").prop("disabled", false);
-    }
-
     if (pokemonName === "Darmanitan") {
         container.find(".percent-hp").val($(this).val() === "Darmanitan-Z" ? "50" : "100").keyup();
     }
@@ -578,13 +570,14 @@ function calculate() {
     var highestMaxPercent = -1;
     var bestResult;
     for (var i = 0; i < 4; i++) {
+        p1.moves[i].painMax = (p1.moves[i].name === "Pain Split" && p1.isDynamax);
         result = damageResults[0][i];
         minDamage = result.damage[0] * p1.moves[i].hits;
         maxDamage = result.damage[result.damage.length-1] * p1.moves[i].hits;
         minPercent = Math.floor(minDamage * 1000 / p2.maxHP) / 10;
         maxPercent = Math.floor(maxDamage * 1000 / p2.maxHP) / 10;
         result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-        result.koChanceText = p1.moves[i].bp === 0 ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
+        result.koChanceText = p1.moves[i].bp === 0 && p1.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                   : getKOChanceText(result.damage, p1.moves[i], p2, field.getSide(1), p1.ability === 'Bad Dreams');
         result.crit = p1.moves[i].isCrit
         if(p1.moves[i].isMLG){
@@ -597,13 +590,14 @@ function calculate() {
             bestResult = $(resultLocations[0][i].move);
         }
 
+        p2.moves[i].painMax = (p2.moves[i].name === "Pain Split" && p2.isDynamax);
         result = damageResults[1][i];
         minDamage = result.damage[0] * p2.moves[i].hits;
         maxDamage = result.damage[result.damage.length-1] * p2.moves[i].hits;
         minPercent = Math.floor(minDamage * 1000 / p1.maxHP) / 10;
         maxPercent = Math.floor(maxDamage * 1000 / p1.maxHP) / 10;
         result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-        result.koChanceText = p2.moves[i].bp === 0 ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
+        result.koChanceText = p2.moves[i].bp === 0 && p2.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                 : getKOChanceText(result.damage, p2.moves[i], p1, field.getSide(0), p2.ability === 'Bad Dreams');
         result.crit = p2.moves[i].isCrit
         if(p2.moves[i].isMLG){
@@ -692,12 +686,34 @@ function findDamageResult(resultMoveObj) {
 
 function Pokemon(pokeInfo) {
     var setName = pokeInfo.find("input.set-selector").val();
+
     if (setName.indexOf("(") === -1) {
         this.name = setName;
     } else {
         var pokemonName = setName.substring(0, setName.indexOf(" ("));
         this.name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
     }
+
+    //Check for form-item coordination
+    var lockItemCheck = LOCK_ITEM_LOOKUP[this.name];
+    if (lockItemCheck !== undefined) {
+        if (this.name && pokemonName && this.name.includes(pokemonName))    //if this if statement isn't here then sets won't change items from locked items properly
+            pokeInfo.find(".item").val(lockItemCheck);
+        pokeInfo.find(".item").prop("disabled", true);
+    }
+    else {
+        pokeInfo.find(".item").prop("disabled", false);
+    }
+
+    //Check for ability to Dynamax
+    if (["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].indexOf(this.name) !== -1) {
+        pokeInfo.find(".max").prop("checked", false);
+        pokeInfo.find(".max").prop("disabled", true);
+    }
+    else {
+        pokeInfo.find(".max").prop("disabled", false);
+    }
+
     this.type1 = pokeInfo.find(".type1").val();
     this.type2 = pokeInfo.find(".type2").val();
     this.level = ~~pokeInfo.find(".level").val();
@@ -726,6 +742,7 @@ function Pokemon(pokeInfo) {
         getMoveDetails(pokeInfo.find(".move4"), this.isDynamax)
     ];
     this.weight = +pokeInfo.find(".weight").val();
+
 }
 
 function getMoveDetails(moveInfo, maxMon) {

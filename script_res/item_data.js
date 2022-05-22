@@ -708,6 +708,7 @@ function getSignatureZMove(item, species, move) {
 }
 
 var LOCK_ITEM_LOOKUP = {
+    'Giratina-O': 'Griseous Orb',
     'Mega Abomasnow': 'Abomasite',
     'Mega Absol': 'Absolite',
     'Mega Aerodactyl': 'Aerodactylite',
