@@ -144,6 +144,29 @@ var SETDEX_VGC2022 = {
         },
     },
     "Regieleki": {
+        "Special Sash Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Transistor",
+            "item": "Focus Sash",
+            "moves": [
+                "Thunderbolt",
+                "Electroweb",
+                "Volt Switch",
+                "Thunder"
+            ]
+        },
         "Physical LO Eleki": {
             "level": 50,
             "evs": {
@@ -231,6 +254,33 @@ var SETDEX_VGC2022 = {
                 "Moonblast",
                 "Mist",
                 "Heal Pulse"
+            ]
+        },
+
+    },
+    "Shedinja": {
+        "Series 12 Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 4,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "df": 0,
+                "sd": 0
+            },
+            "nature": "Lonely",
+            "ability": "Wonder Guard",
+            "item": "Safety Goggles",
+            "moves": [
+                "Shadow Sneak",
+                "Ally Switch",
+                "Endure",
+                "Poltergeist"
             ]
         },
 

@@ -639,7 +639,7 @@ var SETDEX_VGC2021 = {
         }
     },
     "Gothitelle": {
-        "Default Set": {
+        "Bulky Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2670,7 +2670,7 @@ var SETDEX_VGC2021 = {
         },
     },
     "Dusclops": {
-        "Default Set": {
+        "WP Proc Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -3888,7 +3888,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Jolly",
             "ability": "Inner Focus",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Fake Out",
                 "Close Combat",
@@ -4867,32 +4867,6 @@ var SETDEX_VGC2021 = {
             ]
         }
     },
-    "Shedinja": {
-        "Lol Good Luck Using Shedinja": {
-            "level": 50,
-            "evs": {
-                "hp": 0,
-                "at": 252,
-                "df": 0,
-                "sa": 4,
-                "sd": 0,
-                "sp": 252
-            },
-            "ivs": {
-                "df": 0,
-                "sd": 0,
-            },
-            "nature": "Adamant",
-            "ability": "Wonder Guard",
-            "item": "",
-            "moves": [
-                "X-Scissor",
-                "Shadow Sneak",
-                "Phantom Force",
-                "Poltergiest"
-            ]
-        }
-    },
     "Sneasel": {
         "Default Set": {
             "level": 50,
@@ -5002,7 +4976,7 @@ var SETDEX_VGC2021 = {
             "ivs": {
                 "at": 0
             },
-            "nature": "Modest",
+            "nature": "Timid",
             "ability": "Drizzle",
             "item": "Choice Scarf",
             "moves": [
@@ -5150,26 +5124,6 @@ var SETDEX_VGC2021 = {
                 "Heat Wave"
             ]
         },
-        "AV Yveltal": {
-            "level": 50,
-            "evs": {
-                "hp": 180,
-                "at": 0,
-                "df": 4,
-                "sa": 44,
-                "sd": 116,
-                "sp": 164
-            },
-            "nature": "Calm",
-            "ability": "Dark Aura",
-            "item": "Assault Vest",
-            "moves": [
-                "Foul Play",
-                "Sucker Punch",
-                "Oblivion Wing",
-                "Snarl"
-            ]
-        }      
     },
 
     "Dialga": {
@@ -5369,7 +5323,7 @@ var SETDEX_VGC2021 = {
     },
 
     "Ho-Oh": {
-        "Default Set": {
+        "AV Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -5797,7 +5751,7 @@ var SETDEX_VGC2021 = {
     },
 
     "Tsareena": {
-        "Default Set": {
+        "AV Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -6813,31 +6767,6 @@ var SETDEX_VGC2021 = {
               "Earth Power",
               "Moongeist Beam",
               "Expanding Force"
-          ]
-      },
-    },
-    "Necrozma-Dusk-Mane" : {
-      "Default Set": {
-          "level": 50,
-          "evs": {
-              "hp": 252,
-              "at": 252,
-              "df": 0,
-              "sa": 0,
-              "sd": 4,
-              "sp": 0
-          },
-          "ivs": {
-            "sp": 0
-          },
-          "nature": "Brave",
-          "ability": "Prism Armor",
-          "item": "",
-          "moves": [
-              "Sunsteel Strike",
-              "Photon Geyser",
-              "Earthquake",
-              "Rock Slide"
           ]
       },
     },
@@ -8245,7 +8174,7 @@ var SETDEX_VGC2021 = {
 
 var SETDEX_VGC2021_S10 = {
     "Incineroar": {
-        "[S10] Default Set": {
+        "Specially Defensive Set": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -8265,7 +8194,7 @@ var SETDEX_VGC2021_S10 = {
                 "Snarl"
             ]
         },
-        "[S10] AV Incin": {
+        "AV Incin": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -8287,7 +8216,7 @@ var SETDEX_VGC2021_S10 = {
         },
     },
     "Rillaboom": {
-        "[S10] Default Set": {
+        "Series 10/12 AV Rilla": {
             "level": 50,
             "evs": {
                 "hp": 188,
@@ -8304,59 +8233,13 @@ var SETDEX_VGC2021_S10 = {
                 "Grassy Glide",
                 "Wood Hammer",
                 "U-turn",
-                "Knock Off"
-            ]
-        },
-        "[S10] Miracle Seed Rilla": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 4,
-                "sp": 0
-            },
-            "nature": "Adamant",
-            "ability": "Grassy Surge",
-            "item": "Miracle Seed",
-            "moves": [
-                "Grassy Glide",
-                "Wood Hammer",
-                "U-turn",
-                "Knock Off"
-            ]
-        },
-
-    },
-    "Regieleki": {
-        "[S10] Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Timid",
-            "ability": "Transistor",
-            "item": "Focus Sash",
-            "moves": [
-                "Thunderbolt",
-                "Electroweb",
-                "Volt Switch",
-                "Thunder"
+                "High Horsepower"
             ]
         },
 
     },
     "Urshifu-Rapid Strike": {
-        "[S10] Bulky Urshifu": {
+        "Series 10 Bulky Urshifu": {
             "level": 50,
             "evs": {
                 "hp": 140,
@@ -8376,7 +8259,7 @@ var SETDEX_VGC2021_S10 = {
                 "Aqua Jet"
             ]
         },
-        "[S10] Scarf Urshifu": {
+        "Scarf Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8399,7 +8282,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Landorus": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8422,7 +8305,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Zacian": {
-        "[S10] Bulky Zacian": {
+        "Bulky Zacian": {
             "level": 50,
             "evs": {
                 "hp": 156,
@@ -8445,7 +8328,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Volcarona": {
-        "[S10] Support Volcarona": {
+        "Support Volcarona": {
             "level": 50,
             "evs": {
                 "hp": 196,
@@ -8468,7 +8351,7 @@ var SETDEX_VGC2021_S10 = {
                 "Fiery Dance"
             ]
         },
-        "[S10] Quiver Dance Volcarona": {
+        "Quiver Dance Volcarona": {
             "level": 50,
             "evs": {
                 "hp": 124,
@@ -8494,7 +8377,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Xerneas": {
-        "[S10] Bulky Xerneas": {
+        "Bulky Xerneas": {
             "level": 50,
             "evs": {
                 "hp": 92,
@@ -8520,7 +8403,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Amoonguss": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -8547,7 +8430,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Kyogre": {
-        "[S10] Default Set": {
+        "Max Speed Mystic Water": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8570,7 +8453,7 @@ var SETDEX_VGC2021_S10 = {
                 "Origin Pulse"
             ]
         },
-        "[S10] Bold Lefties Kyogre": {
+        "Bold Lefties Kyogre": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -8596,7 +8479,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Calyrex-Shadow Rider": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8622,7 +8505,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Tsareena": {
-        "[S10] Default Set": {
+        "Faster AV Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -8642,7 +8525,7 @@ var SETDEX_VGC2021_S10 = {
                 "High Jump Kick"
             ]
         },
-        "[S10] Sitrus Set": {
+        "Sitrus Set": {
             "level": 50,
             "evs": {
                 "hp": 228,
@@ -8665,7 +8548,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Tornadus": {
-        "[S10] Wacan Berry Tornadus": {
+        "Wacan Berry Tornadus": {
             "level": 50,
             "evs": {
                 "hp": 100,
@@ -8691,7 +8574,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Urshifu-Single Strike": {
-        "[S10] Black Glasses Urshifu": {
+        "Black Glasses Urshifu": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8711,7 +8594,7 @@ var SETDEX_VGC2021_S10 = {
                 "U-turn"
             ]
         },
-        "[S10] Scarf Urshifu": {
+        "Scarf Urshifu": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8734,7 +8617,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Indeedee-F": {
-        "[S10] Psychic Seed Indeedee": {
+        "Psychic Seed Indeedee": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -8757,7 +8640,7 @@ var SETDEX_VGC2021_S10 = {
                 "Dazzling Gleam"
             ]
         },
-        "[S10] Life Orb Indeedee": {
+        "Series 10 LO Indeedee": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -8783,30 +8666,8 @@ var SETDEX_VGC2021_S10 = {
         },
 
     },
-    "Mienshao": {
-        "[S10] Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Jolly",
-            "ability": "Inner Focus",
-            "item": "Focus Sash",
-            "moves": [
-                "Fake Out",
-                "Close Combat",
-                "Knock Off",
-                "Feint"
-            ]
-        }
-    },
     "Landorus-T": {
-        "[S10] Rocky Helmet Lando": {
+        "Rocky Helmet Lando": {
             "level": 50,
             "evs": {
                 "hp": 212,
@@ -8826,7 +8687,7 @@ var SETDEX_VGC2021_S10 = {
                 "Sludge Bomb"
             ]
         },
-        "[S10] Offensive Lando": {
+        "Series 10 Offensive Lando": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8849,7 +8710,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Tapu Fini": {
-        "[S10] Support Fini": {
+        "Support Fini": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -8875,7 +8736,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Entei": {
-        "[S10] AV Entei": {
+        "Series 10 AV Entei": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8895,7 +8756,7 @@ var SETDEX_VGC2021_S10 = {
                 "Snarl"
             ]
         },
-        "[S10] Scarf Entei": {
+        "Scarf Entei": {
             "level": 50,
             "evs": {
                 "hp": 12,
@@ -8915,7 +8776,7 @@ var SETDEX_VGC2021_S10 = {
                 "Stomping Tantrum"
             ]
         },
-        "[S10] Mixed Entei": {
+        "Mixed Entei": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8938,7 +8799,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Nihilego": {
-        "[S10] Speed Beast Boost": {
+        "Speed Beast Boost": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8964,7 +8825,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Tapu Lele": {
-        "[S10] Psychic Seed Lele": {
+        "Psychic Seed Lele": {
             "level": 50,
             "evs": {
                 "hp": 172,
@@ -8987,7 +8848,7 @@ var SETDEX_VGC2021_S10 = {
                 "Dazzling Gleam"
             ]
         },
-        "[S10] Scarf Lele": {
+        "Series 10 Scarf Lele": {
             "level": 50,
             "evs": {
                 "hp": 60,
@@ -9013,7 +8874,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Ditto": {
-        "[S10] Slow Sitrus Ditto": {
+        "Slow Sitrus Ditto": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9040,7 +8901,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Eternatus": {
-        "[S10] Meteor Beam Eternatus": {
+        "Meteor Beam Eternatus": {
             "level": 50,
             "evs": {
                 "hp": 172,
@@ -9063,7 +8924,7 @@ var SETDEX_VGC2021_S10 = {
                 "Dynamax Cannon"
             ]
         },
-        "[S10] Cosmic Power Eternatus": {
+        "Cosmic Power Eternatus": {
             "level": 50,
             "evs": {
                 "hp": 220,
@@ -9086,7 +8947,7 @@ var SETDEX_VGC2021_S10 = {
                 "Cosmic Power"
             ]
         },
-        "[S10] Life Orb Eternatus": {
+        "Life Orb Eternatus": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9112,7 +8973,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Yveltal": {
-        "[S10] AV Yveltal": {
+        "AV Yveltal": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -9135,7 +8996,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Celesteela": {
-        "[S10] Defensive Celesteela": {
+        "Defensive Celesteela": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -9161,7 +9022,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Groudon": {
-        "[S10] LO Groudon": {
+        "LO Groudon": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -9181,7 +9042,7 @@ var SETDEX_VGC2021_S10 = {
                 "Stomping Tantrum"
             ]
         },
-        "[S10] Specially Defensive Groudon": {
+        "Specially Defensive Groudon": {
             "level": 50,
             "evs": {
                 "hp": 228,
@@ -9204,7 +9065,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Thundurus": {
-        "[S10] Specially Defensive Thundy": {
+        "Specially Defensive Thundy": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9230,7 +9091,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Shedinja": {
-        "[S10] Oh Wait Shedinja Works": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -9257,7 +9118,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Moltres-Galar": {
-        "[S10] AV Moltres": {
+        "AV Moltres": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9283,7 +9144,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Zapdos-Galar": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9303,30 +9164,10 @@ var SETDEX_VGC2021_S10 = {
                 "U-turn"
             ]
         },
-        "[S10] Scarf Zapdos": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Adamant",
-            "ability": "Defiant",
-            "item": "Choice Scarf",
-            "moves": [
-                "Thunderous Kick",
-                "Throat Chop",
-                "Brave Bird",
-                "U-turn"
-            ]
-        },
 
     },
     "Gothitelle": {
-        "[S10] Default Set": {
+        "Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9349,7 +9190,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Gastrodon": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 188,
@@ -9375,7 +9216,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Porygon2": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9402,7 +9243,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Ho-Oh": {
-        "[S10] Default Set": {
+        "Leftovers Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9425,7 +9266,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Venusaur": {
-        "[S10] LO Venusaur": {
+        "Timid LO Weather Ball": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9451,7 +9292,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Aegislash": {
-        "[S10] Default Set": {
+        "Leftovers Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9474,7 +9315,7 @@ var SETDEX_VGC2021_S10 = {
                 "Flash Cannon"
             ]
         },
-        "[S10] Iron Ball Aegislash": {
+        "Iron Ball Aegislash": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9500,7 +9341,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Lunala": {
-        "[S10] Colbur TR Lunala": {
+        "Colbur TR Lunala": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -9527,7 +9368,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Raichu": {
-        "[S10] Default Set": {
+        "Bulk Sash Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9550,7 +9391,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Kartana": {
-        "[S10] Critana": {
+        "Critana": {
             "level": 50,
             "evs": {
                 "hp": 20,
@@ -9573,7 +9414,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Tapu Koko": {
-        "[S10] AV Koko": {
+        "Series 10 AV Koko": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -9599,7 +9440,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Palkia": {
-        "[S10] Lustrous Orb Palkia": {
+        "Lustrous Orb Palkia": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9625,7 +9466,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Hitmontop": {
-        "[S10] Default Set": {
+        "Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9648,7 +9489,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Oranguru": {
-        "[S10] Caly-Ice Support": {
+        "Series 10 Caly-Ice Support": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9675,7 +9516,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Zapdos": {
-        "[S10] Bulky Set": {
+        "Rocky Helmet Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9698,56 +9539,10 @@ var SETDEX_VGC2021_S10 = {
                 "Weather Ball"
             ]
         },
-        "[S10] LO Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Timid",
-            "ability": "Static",
-            "item": "Life Orb",
-            "moves": [
-                "Thunderbolt",
-                "Hurricane",
-                "Heat Wave",
-                "Weather Ball"
-            ]
-        },
 
     },
     "Togekiss": {
-        "[S10] Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 228,
-                "at": 0,
-                "df": 100,
-                "sa": 0,
-                "sd": 180,
-                "sp": 0
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Calm",
-            "ability": "Super Luck",
-            "item": "Babiri Berry",
-            "moves": [
-                "Dazzling Gleam",
-                "Air Slash",
-                "Flamethrower",
-                "Heat Wave"
-            ]
-        },
-        "[S10] Offensive Kiss": {
+        "Slow Offensive Kiss": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -9773,7 +9568,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Mandibuzz": {
-        "[S10] Misty Seed Mandibuzz": {
+        "Misty Seed Mandibuzz": {
             "level": 50,
             "evs": {
                 "hp": 172,
@@ -9796,7 +9591,7 @@ var SETDEX_VGC2021_S10 = {
                 "Roost"
             ]
         },
-        "[S10] Pinch Berry Mandibuzz": {
+        "Pinch Berry Mandibuzz": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9819,7 +9614,7 @@ var SETDEX_VGC2021_S10 = {
                 "Roost"
             ]
         },
-        "[S10] Rocky Helmet Mandibuzz": {
+        "Rocky Helmet Mandibuzz": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -9845,7 +9640,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Ludicolo": {
-        "[S10] AV Ludi": {
+        "AV Ludi": {
             "level": 50,
             "evs": {
                 "hp": 84,
@@ -9868,7 +9663,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Drifblim": {
-        "[S10] Grassy Seed Blim": {
+        "Grassy Seed Blim": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9894,7 +9689,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Politoed": {
-        "[S10] Discount Kyogre": {
+        "Series 10 Discount Kyogre": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -9920,7 +9715,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Dusclops": {
-        "[S10] Default Set": {
+        "Standard Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9947,7 +9742,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Necrozma-Dusk-Mane": {
-        "[S10] Default Set": {
+        "Default Set": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -9970,7 +9765,7 @@ var SETDEX_VGC2021_S10 = {
 
     },
     "Calyrex-Ice Rider": {
-        "[S10] Body Press Set": {
+        "Body Press Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9994,7 +9789,7 @@ var SETDEX_VGC2021_S10 = {
         },
     },
     "Suicune": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -10019,7 +9814,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Dragapult": {
-        "[S10] Banded Dragapult": {
+        "Banded Dragapult": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -10039,7 +9834,7 @@ var SETDEX_VGC2021_S10 = {
                 "U-turn"
             ]
         },
-        "[S10] Special Dragapult": {
+        "Series 10 Special Dragapult": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -10064,7 +9859,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Ferrothorn": {
-        "[S10] Choice Band Ferrothorn": {
+        "Choice Band Ferrothorn": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -10089,7 +9884,7 @@ var SETDEX_VGC2021_S10 = {
         },
     },
     "Cherrim": {
-        "[S10] Physical Set": {
+        "Physical Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -10109,7 +9904,7 @@ var SETDEX_VGC2021_S10 = {
                 "Helping Hand"
             ]
         },
-        "[S10] Special Set": {
+        "Special Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -10134,7 +9929,7 @@ var SETDEX_VGC2021_S10 = {
         },
     },
     "Milotic": {
-        "[S10] Default Set": {
+        "Bold Lefties Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -10158,30 +9953,8 @@ var SETDEX_VGC2021_S10 = {
             ]
         },
     },
-    "Mamoswine": {
-        "[S10] Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Jolly",
-            "ability": "Oblivious",
-            "item": "Focus Sash",
-            "moves": [
-                "Icicle Spear",
-                "Icicle Crash",
-                "High Horsepower",
-                "Ice Shard"
-            ]
-        }
-    },
     "Kommo-o": {
-        "[S10] Iron Defense Set": {
+        "Iron Defense Set": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -10203,7 +9976,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Thundurus-T": {
-        "[S10] Scarf Thundurus": {
+        "Scarf Thundurus": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -10228,7 +10001,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Pelipper": {
-        "[S10] Bulky Pelipper": {
+        "Bulky Pelipper": {
             "level": 50,
             "evs": {
                 "hp": 220,
@@ -10253,7 +10026,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Weavile": {
-        "[S10] Default Set": {
+        "Series 10 Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -10275,7 +10048,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Scizor": {
-        "[S10] Banded Scizor": {
+        "Banded Scizor": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -10297,7 +10070,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Kyurem-W": {
-        "[S10] Default Set": {
+        "Scarf Set": {
             "level": 50,
             "evs": {
                 "hp": 68,
@@ -10322,7 +10095,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Indeedee-M": {
-        "[S10] Scarf Indeedee": {
+        "Scarf Indeedee": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -10347,7 +10120,7 @@ var SETDEX_VGC2021_S10 = {
         },
     },
     "Lurantis": {
-        "[S10] Default Set": {
+        "AV Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -10369,7 +10142,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Raikou": {
-        "[S10] Default Set": {
+        "Bulkier Shadow Ball Set": {
             "level": 50,
             "evs": {
                 "hp": 132,
@@ -10394,7 +10167,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Gyarados": {
-        "[S10] AV Gyarados": {
+        "AV Gyarados": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -10416,7 +10189,7 @@ var SETDEX_VGC2021_S10 = {
         }
     },
     "Dragonite": {
-        "[S10] Life Orb Dragonite": {
+        "Life Orb Dragonite": {
             "level": 50,
             "evs": {
                 "hp": 180,

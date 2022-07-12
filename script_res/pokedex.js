@@ -8994,7 +8994,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
   "Clefairy": { "t1": "Fairy" },
   "Clefable": { "t1": "Fairy", "bs": { "sa": 95 } },
   "Jigglypuff": { "t2": "Fairy" },
-  "Wigglytuff": { "t2": "Fairy", "bs": { "sa": 85 } },
+  "Wigglytuff": { "t2": "Fairy", "bs": { "sa": 85 }, "ab": "Competitive" },
   "Vileplume": { "bs": { "sa": 110 } },
   "Poliwrath": { "bs": { "at": 95 } },
   "Alakazam": { "bs": { "sd": 95 }, "formes": ["Mega Alakazam", "Alakazam"] },
@@ -10928,8 +10928,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "ab": "Power Construct",
     "isAlternateForme": true
   },
-  "Milotic": { "ab": "Competitive" },
-  "Wigglytuff": { "ab": "Competitive" }
+  "Milotic": { "ab": "Competitive" }
 });
 
 delete POKEDEX_XY['Duskull'].ab;
