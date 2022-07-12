@@ -560,7 +560,7 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         description.moveBP = move.bp / 2;
         description.weather = field.weather;
     } //technicially Me First would sandwich between these
-    else if (move.name === "Knock Off" && !(defender.item === null || defender.item === "" || defender.item.includes("ium Z") ||
+    else if (move.name === "Knock Off" && defender.name !== null && !(defender.item === null || defender.item === "" || defender.item.includes("ium Z") ||
         (defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
         (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
         (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
