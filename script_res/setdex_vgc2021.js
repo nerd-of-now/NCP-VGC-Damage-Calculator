@@ -3796,8 +3796,8 @@ var SETDEX_VGC2021 = {
             "item": "Life Orb",
             "moves": [
                 "Heat Wave",
-                "Air Slash",
-                "Scorching Sands",
+                "Hurricane",
+                "Solar Beam",
                 "Blast Burn"
             ]
         },

@@ -925,7 +925,7 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
-        case 8: //Gen 8 SwSh
+        case 8: //Gen 8 SwSh+BDSP
             pokedex = POKEDEX_SS;
             setdex = SETDEX_SS;
             typeChart = TYPE_CHART_XY;
@@ -937,18 +937,18 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
-        case 84: //Gen 8 BDSP
-            pokedex = POKEDEX_BDSP;
-            setdex = SETDEX_BDSP;
-            typeChart = TYPE_CHART_XY;
-            moves = MOVES_BDSP;
-            items = ITEMS_BDSP;
-            abilities = ABILITIES_SS;
-            STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_SS;
-            calcHP = CALC_HP_ADV;
-            calcStat = CALC_STAT_ADV;
-            break;
+        //case 84: //Gen 8 BDSP
+        //    pokedex = POKEDEX_BDSP;
+        //    setdex = SETDEX_BDSP;
+        //    typeChart = TYPE_CHART_XY;
+        //    moves = MOVES_BDSP;
+        //    items = ITEMS_BDSP;
+        //    abilities = ABILITIES_SS;
+        //    STATS = STATS_GSC;
+        //    calculateAllMoves = CALCULATE_ALL_MOVES_SS;
+        //    calcHP = CALC_HP_ADV;
+        //    calcStat = CALC_STAT_ADV;
+        //    break;
     }
     clearField();
     $(".gen-specific.g" + gen).show();

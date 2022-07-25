@@ -1,7 +1,7 @@
 var SETDEX_VGC_BFD = {
     //KANTO
     "Venusaur": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -56,7 +56,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Raichu": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -90,7 +90,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Clefable": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -145,7 +145,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Arcanine": {
-        "Physical Set": {
+        "[BDSP] Physical Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -165,7 +165,7 @@ var SETDEX_VGC_BFD = {
                 "Close Combat"
             ]
         },
-        "Special Set": {
+        "[BDSP] Special Set": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -235,7 +235,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Gengar": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -269,7 +269,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Exeggutor": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -304,7 +304,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Weezing": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -338,7 +338,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Kangaskhan": {
-        "Last Resort Set": {
+        "[BDSP] Last Resort Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -385,7 +385,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Gyarados": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -434,7 +434,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Snorlax": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 100,
@@ -457,7 +457,7 @@ var SETDEX_VGC_BFD = {
                 "Belly Drum"
             ]
         },
-        "Band Set": {
+        "[BDSP] Band Set": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -482,7 +482,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Zapdos": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 76,
@@ -510,7 +510,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Dragonite": {
-        "Slow Band Set": {
+        "[BDSP] Slow Band Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -561,7 +561,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Crobat": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -598,7 +598,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Azumarill": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -623,7 +623,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Politoed": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -660,7 +660,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Umbreon": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -721,7 +721,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Scizor": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -741,7 +741,7 @@ var SETDEX_VGC_BFD = {
                 "Swords Dance"
             ]
         },
-        "Band Set": {
+        "[BDSP] Band Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -802,7 +802,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Kingdra": {
-        "Life Orb Set": {
+        "[BDSP] Life Orb Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -825,7 +825,7 @@ var SETDEX_VGC_BFD = {
                 "Hydro Pump"
             ]
         },
-        "Choice Specs Set": {
+        "[BDSP] Choice Specs Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -859,7 +859,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Smeargle": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -881,7 +881,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Hitmontop": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -909,7 +909,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Raikou": {
-        "Bulky Set": {
+        "[BDSP] Bulky Set": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -932,7 +932,7 @@ var SETDEX_VGC_BFD = {
                 "Reflect"
             ]
         },
-        "Specs Set": {
+        "[BDSP] Specs Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -957,7 +957,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Entei": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -979,7 +979,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Suicune": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1004,7 +1004,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Tyranitar": {
-        "Chople Set": {
+        "[BDSP] Chople Set": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -1024,7 +1024,7 @@ var SETDEX_VGC_BFD = {
                 "Ice Beam"
             ]
         },
-        "Dragon Dance Set": {
+        "[BDSP] Dragon Dance Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1057,7 +1057,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Blaziken": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1095,7 +1095,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Ludicolo": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1126,7 +1126,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Pelipper": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1151,7 +1151,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Gardevoir": {
-        "Scarf Set": {
+        "[BDSP] Scarf Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1179,7 +1179,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Breloom": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -1214,7 +1214,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Hariyama": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 44,
@@ -1293,7 +1293,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Torkoal": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1352,7 +1352,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Crawdaunt": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -1389,7 +1389,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Milotic": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1456,7 +1456,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Salamence": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1493,7 +1493,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Latias": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -1518,7 +1518,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Latios": {
-        "Life Orb Set": {
+        "[BDSP] Life Orb Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -1541,7 +1541,7 @@ var SETDEX_VGC_BFD = {
                 "Thunderbolt"
             ]
         },
-        "Choice Specs Set": {
+        "[BDSP] Choice Specs Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -1580,7 +1580,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Infernape": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -1605,7 +1605,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Staraptor": {
-        "Scarf Set": {
+        "[BDSP] Scarf Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1654,7 +1654,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Pachirisu": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1682,7 +1682,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Gastrodon": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 172,
@@ -1728,7 +1728,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Bronzong": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1762,7 +1762,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Garchomp": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1787,7 +1787,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Lucario": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1807,7 +1807,7 @@ var SETDEX_VGC_BFD = {
                 "Extreme Speed"
             ]
         },
-        "Final Gambit Set": {
+        "[BDSP] Final Gambit Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1847,7 +1847,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Abomasnow": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1869,7 +1869,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Weavile": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1900,7 +1900,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Tangrowth": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1931,7 +1931,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Togekiss": {
-        "Crit Kiss Set": {
+        "[BDSP] Crit Kiss Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1956,7 +1956,7 @@ var SETDEX_VGC_BFD = {
         },
     },
     "Yanmega": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 12,
@@ -1990,7 +1990,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Mamoswine": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -2030,7 +2030,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Rotom-C": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2058,7 +2058,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Rotom-H": {
-        "Specs Set": {
+        "[BDSP] Specs Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -2086,7 +2086,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Rotom-W": {
-        "Bulky Set": {
+        "[BDSP] Bulky Set": {
             "level": 50,
             "evs": {
                 "hp": 228,
@@ -2109,7 +2109,7 @@ var SETDEX_VGC_BFD = {
                 "Nasty Plot"
             ]
         },
-        "Specs Set": {
+        "[BDSP] Specs Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -2149,7 +2149,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Heatran": {
-        "Default Set": {
+        "[BDSP] Default Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2183,7 +2183,7 @@ var SETDEX_VGC_BFD = {
 
     },
     "Cresselia": {
-        "Calm Mind Set": {
+        "[BDSP] Calm Mind Set": {
             "level": 50,
             "evs": {
                 "hp": 228,
@@ -2206,7 +2206,7 @@ var SETDEX_VGC_BFD = {
                 "Trick Room"
             ]
         },
-        "Specs Set": {
+        "[BDSP] Specs Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
