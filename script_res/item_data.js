@@ -438,7 +438,7 @@ function getItemDualTypeBoost(item, species) {
         case 'Lustrous Orb':
             if (species === 'Palkia') return 'Water Dragon';
         case 'Griseous Orb':
-            if (species === 'Giratina-O') return 'Ghost Dragon';
+            if (species === 'Giratina-Origin') return 'Ghost Dragon';
         case 'Soul Dew':
             if ((species === 'Latias' || species === 'Latios') && gen >= 7) return 'Dragon Psychic';
         default:
@@ -708,7 +708,7 @@ function getSignatureZMove(item, species, move) {
 }
 
 var LOCK_ITEM_LOOKUP = {
-    'Giratina-O': 'Griseous Orb',
+    'Giratina-Origin': 'Griseous Orb',
     'Mega Abomasnow': 'Abomasite',
     'Mega Absol': 'Absolite',
     'Mega Aerodactyl': 'Aerodactylite',

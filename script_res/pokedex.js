@@ -3751,7 +3751,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
     "w": 60.8,
     "ab": "Pressure"
   },
-  "Deoxys-A": {
+  "Deoxys-Attack": {
     "t1": "Psychic",
     "bs": {
       "hp": 50,
@@ -3764,7 +3764,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
     "w": 60.8,
     "ab": "Pressure"
   },
-  "Deoxys-D": {
+  "Deoxys-Defense": {
     "t1": "Psychic",
     "bs": {
       "hp": 50,
@@ -3777,7 +3777,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
     "w": 60.8,
     "ab": "Pressure"
   },
-  "Deoxys-S": {
+  "Deoxys-Speed": {
     "t1": "Psychic",
     "bs": {
       "hp": 50,
@@ -5183,214 +5183,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 320.0,
     "ab": "Multitype"
   },
-  //"Arceus-Bug": {
-  //  "t1": "Bug",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Dark": {
-  //  "t1": "Dark",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Dragon": {
-  //  "t1": "Dragon",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Electric": {
-  //  "t1": "Electric",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Fighting": {
-  //  "t1": "Fighting",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Fire": {
-  //  "t1": "Fire",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Flying": {
-  //  "t1": "Flying",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Ghost": {
-  //  "t1": "Ghost",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Grass": {
-  //  "t1": "Grass",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Ground": {
-  //  "t1": "Ground",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Ice": {
-  //  "t1": "Ice",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Poison": {
-  //  "t1": "Poison",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Psychic": {
-  //  "t1": "Psychic",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Rock": {
-  //  "t1": "Rock",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Steel": {
-  //  "t1": "Steel",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
-  //"Arceus-Water": {
-  //  "t1": "Water",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
   "Azelf": {
     "t1": "Psychic",
     "bs": {
@@ -5883,7 +5675,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     },
     "w": 750.0
   },
-  "Giratina-O": {
+  "Giratina-Origin": {
     "t1": "Ghost",
     "t2": "Dragon",
     "bs": {
@@ -6457,7 +6249,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 0.3,
     "ab": "Levitate"
   },
-  "Rotom-C": {
+  "Rotom-Mow": {
     "t1": "Electric",
     "t2": "Ghost",
     "bs": {
@@ -6471,7 +6263,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 0.3,
     "ab": "Levitate"
   },
-  "Rotom-F": {
+  "Rotom-Frost": {
     "t1": "Electric",
     "t2": "Ghost",
     "bs": {
@@ -6485,7 +6277,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 0.3,
     "ab": "Levitate"
   },
-  "Rotom-H": {
+  "Rotom-Heat": {
     "t1": "Electric",
     "t2": "Ghost",
     "bs": {
@@ -6499,7 +6291,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 0.3,
     "ab": "Levitate"
   },
-  "Rotom-S": {
+  "Rotom-Fan": {
     "t1": "Electric",
     "t2": "Ghost",
     "bs": {
@@ -6513,7 +6305,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 0.3,
     "ab": "Levitate"
   },
-  "Rotom-W": {
+  "Rotom-Wash": {
     "t1": "Electric",
     "t2": "Ghost",
     "bs": {
@@ -6540,7 +6332,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 2.1,
     "ab": "Natural Cure"
   },
-  "Shaymin-S": {
+  "Shaymin-Sky": {
     "t1": "Grass",
     "t2": "Flying",
     "bs": {
@@ -6815,7 +6607,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     },
     "w": 6.5
   },
-  "Wormadam-G": {
+  "Wormadam-Sandy": {
     "t1": "Bug",
     "t2": "Ground",
     "bs": {
@@ -6828,7 +6620,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     },
     "w": 6.5
   },
-  "Wormadam-S": {
+  "Wormadam-Trash": {
     "t1": "Bug",
     "t2": "Steel",
     "bs": {
@@ -6889,11 +6681,11 @@ delete POKEDEX_DPP['Sealeo'].ab;
 delete POKEDEX_DPP['Walrein'].ab;
 
 var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
-  "Rotom-C": { "t2": "Grass" },
-  "Rotom-F": { "t2": "Ice" },
-  "Rotom-H": { "t2": "Fire" },
-  "Rotom-S": { "t2": "Flying" },
-  "Rotom-W": { "t2": "Water" },
+  "Rotom-Mow": { "t2": "Grass" },
+  "Rotom-Frost": { "t2": "Ice" },
+  "Rotom-Heat": { "t2": "Fire" },
+  "Rotom-Fan": { "t2": "Flying" },
+  "Rotom-Wash": { "t2": "Water" },
   "Accelgor": {
     "t1": "Bug",
     "bs": {
@@ -7825,7 +7617,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     "w": 325.0,
     "ab": "Pressure"
   },
-  "Kyurem-B": {
+  "Kyurem-Black": {
     "t1": "Dragon",
     "t2": "Ice",
     "bs": {
@@ -7839,7 +7631,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     "w": 325.0,
     "ab": "Teravolt"
   },
-  "Kyurem-W": {
+  "Kyurem-White": {
     "t1": "Dragon",
     "t2": "Ice",
     "bs": {
@@ -7879,7 +7671,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     },
     "w": 68.0
   },
-  "Landorus-T": {
+  "Landorus-Therian": {
     "t1": "Ground",
     "t2": "Flying",
     "bs": {
@@ -8618,8 +8410,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sp": 111
     },
     "w": 61.0
-  },
-  "Thundurus-T": {
+    },
+  "Thundurus-Therian": {
     "t1": "Electric",
     "t2": "Flying",
     "bs": {
@@ -8670,7 +8462,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     },
     "w": 63.0
   },
-  "Tornadus-T": {
+  "Tornadus-Therian": {
     "t1": "Flying",
     "bs": {
       "hp": 79,
@@ -9128,19 +8920,6 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 25.2,
     "ab": "Refrigerate"
   },
-  //"Arceus-Fairy": {
-  //  "t1": "Fairy",
-  //  "bs": {
-  //    "hp": 120,
-  //    "at": 120,
-  //    "df": 120,
-  //    "sa": 120,
-  //    "sd": 120,
-  //    "sp": 120
-  //  },
-  //  "w": 320.0,
-  //  "ab": "Multitype"
-  //},
   "Aromatisse": {
     "t1": "Fairy",
     "bs": {
@@ -9463,7 +9242,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 0.9
   },
-  "Floette-E": {
+  "Floette-Eternal": {
     "t1": "Fairy",
     "bs": {
       "hp": 74,
@@ -14782,83 +14561,6 @@ delete POKEDEX_SS["Minior"];
 delete POKEDEX_SS["Komala"];
 delete POKEDEX_SS["Bruxish"];
 
-//var POKEDEX_BDSP = $.extend(true, {}, POKEDEX_DPP, {
-//    "Rotom-C": { "t2": "Grass" },
-//    "Rotom-F": { "t2": "Ice" },
-//    "Rotom-H": { "t2": "Fire" },
-//    "Rotom-S": { "t2": "Flying" },
-//    "Rotom-W": { "t2": "Water" },
-//    "Butterfree": { "bs": { "sa": 90 } },
-//    "Beedrill": { "bs": { "at": 90 }},
-//    "Pidgeot": { "bs": { "sp": 101 }},
-//    "Pikachu": { "bs": { "df": 40, "sd": 50 } },
-//    "Raichu": { "bs": { "sp": 110 } },
-//    "Nidoqueen": { "bs": { "at": 92 } },
-//    "Nidoking": { "bs": { "at": 102 } },
-//    "Clefairy": { "t1": "Fairy" },
-//    "Clefable": { "t1": "Fairy", "bs": { "sa": 95 } },
-//    "Jigglypuff": { "t2": "Fairy" },
-//    "Wigglytuff": { "t2": "Fairy", "bs": { "sa": 85 } },
-//    "Vileplume": { "bs": { "sa": 110 } },
-//    "Poliwrath": { "bs": { "at": 95 } },
-//    "Alakazam": { "bs": { "sd": 95 }},
-//    "Victreebel": { "bs": { "sd": 70 } },
-//    "Golem": { "bs": { "at": 120 } },
-//    "Mr. Mime": { "t2": "Fairy" },
-//    "Cleffa": { "t1": "Fairy" },
-//    "Igglybuff": { "t2": "Fairy" },
-//    "Togepi": { "t1": "Fairy" },
-//    "Togetic": { "t1": "Fairy" },
-//    "Ampharos": { "bs": { "df": 85 }},
-//    "Bellossom": { "bs": { "df": 95 } },
-//    "Marill": { "t2": "Fairy" },
-//    "Azumarill": { "t2": "Fairy", "bs": { "sa": 60 } },
-//    "Jumpluff": { "bs": { "sd": 95 } },
-//    "Snubbull": { "t1": "Fairy" },
-//    "Granbull": { "t1": "Fairy" },
-//    "Beautifly": { "bs": { "sa": 100 } },
-//    "Ralts": { "t2": "Fairy" },
-//    "Kirlia": { "t2": "Fairy" },
-//    "Gardevoir": { "t2": "Fairy"},
-//    "Exploud": { "bs": { "sd": 73 } },
-//    "Azurill": { "t2": "Fairy" },
-//    "Mawile": { "t2": "Fairy"},
-//    "Staraptor": { "bs": { "sd": 60 } },
-//    "Roserade": { "bs": { "df": 65 } },
-//    "Mime Jr.": { "t2": "Fairy" },
-//    "Togekiss": { "t1": "Fairy" },
-//    "Pelipper": { "bs": { "sa": 95 }, "ab": "Drizzle" },
-//    "Torkoal": { "ab": "Drought" },
-//    "Magcargo": { "bs": { "hp": 60, "sa": 90 } },
-//    "Corsola": { "bs": { "hp": 65, "df": 95, "sd": 95 } },
-//    "Mantine": { "bs": { "hp": 85 } },
-//    "Lunatone": { "bs": { "hp": 90 } },
-//    "Solrock": { "bs": { "hp": 90 } },
-//    "Chimecho": { "bs": { "hp": 75, "df": 80, "sd": 90 } },
-//    "Dugtrio": { "bs": { "at": 100 } },
-//    "Arbok": { "bs": { "at": 95 } },
-//    "Farfetch\u0027d": { "bs": { "at": 90 } },
-//    "Qwilfish": { "bs": { "df": 85 } },
-//    "Volbeat": { "bs": { "df": 75, "sd": 85 } },
-//    "Illumise": { "bs": { "df": 75, "sd": 85 } },
-//    "Noctowl": { "bs": { "sa": 86 } },
-//    "Swellow": { "bs": { "sa": 75 } },
-//    "Exeggutor": { "bs": { "sd": 75 } },
-//    "Ariados": { "bs": { "sd": 70 } },
-//    "Dodrio": { "bs": { "sp": 110 } },
-//    "Electrode": { "bs": { "sp": 150 } },
-//    "Delcatty": { "bs": { "sp": 90 } },
-//    "Masquerain": { "bs": { "sp": 80, "sa": 100 } },
-//    "Weezing": { "ab": "Neutralizing Gas" },
-//    "Sneasel": { "ab": "Inner Focus" },
-//    "Snorunt": { "ab": "Inner Focus" },
-//    "Glalie": { "ab": "Inner Focus" },
-//    "Lucario": { "ab": "Inner Focus" },
-//    "Umbreon": { "ab": "Inner Focus" },
-//    "Raikou": { "ab": "Inner Focus" },
-//    "Entei": { "ab": "Inner Focus" },
-//    "Suicune": { "ab": "Inner Focus" },
-//});
 
 var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
     "Growlithe-Hisui": {
@@ -15197,7 +14899,7 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "w": 48.0,
         "ab": "Contrary",
     },
-    "Enamorus-T": {
+    "Enamorus-Therian": {
         "t1": "Fairy",
         "t2": "Flying",
         "bs": {

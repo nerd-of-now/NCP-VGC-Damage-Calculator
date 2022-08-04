@@ -1,15 +1,15 @@
-var showdownToCalcFormes = [["Kyurem-White", "Kyurem-W"],
-["Kyurem-Black", "Kyurem-B"],
-["Rotom-Wash", "Rotom-W"],
-["Rotom-Heat", "Rotom-H"],
-["Rotom-Frost", "Rotom-F"],
-["Rotom-Mow", "Rotom-C"],
-["Rotom-Fan", "Rotom-S"],
-["Giratina-Origin", "Giratina-O"],
-["Landorus-Therian", "Landorus-T"],
-["Thundurus-Therian", "Thundurus-T"],
-["Tornadus-Therian", "Tornadus-T"],
-["Floette-Eternal", "Floette-E"],
+var showdownToCalcFormes = [//["Kyurem-White", "Kyurem-W"],
+//["Kyurem-Black", "Kyurem-B"],
+//["Rotom-Wash", "Rotom-W"],
+//["Rotom-Heat", "Rotom-H"],
+//["Rotom-Frost", "Rotom-F"],
+//["Rotom-Mow", "Rotom-C"],
+//["Rotom-Fan", "Rotom-S"],
+//["Giratina-Origin", "Giratina-O"],
+//["Landorus-Therian", "Landorus-T"],
+//["Thundurus-Therian", "Thundurus-T"],
+//["Tornadus-Therian", "Tornadus-T"],
+//["Floette-Eternal", "Floette-E"],
 ["Pumpkaboo", "Pumpkaboo-Average"],
 ["Gourgeist", "Gourgeist-Average"],
 ["Wormadan-Sandy", "Wormadan-G"],
@@ -23,28 +23,56 @@ var showdownToCalcFormes = [["Kyurem-White", "Kyurem-W"],
     ["Urshifu", "Urshifu-Single Strike"],
     ["Urshifu-Rapid-Strike", "Urshifu-Rapid Strike"],
     ["Calyrex-Ice", "Calyrex-Ice Rider"],
-    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],];
+    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],
+    ["Pikachu-Rock-Star", "Pikachu"],
+    ["Pikachu-Belle", "Pikachu"],
+    ["Pikachu-Pop-Star", "Pikachu"],
+    ["Pikachu-PhD", "Pikachu"],
+    ["Pikachu-Libre", "Pikachu"],
+    ["Shellos-East", "Shellos"],
+    ["Gastrodon-East", "Gastrodon"],
+    ["Basculin-Blue-Striped", "Basculin"],
+    ["Basculin-White-Striped", "Basculin"],
+    ["Deerling-Summer", "Deerling"],
+    ["Deerling-Autumn", "Deerling"],
+    ["Deerling-Winter", "Deerling"],
+    ["Sawsbuck-Summer", "Sawsbuck"],
+    ["Sawsbuck-Autumn", "Sawsbuck"],
+    ["Sawsbuck-Winter", "Sawsbuck"],
+    ["Keldeo-Resolute", "Keldeo"],
+    ["Genesect-Burn", "Genesect"],
+    ["Genesect-Chill", "Genesect"],
+    ["Genesect-Douse", "Genesect"],
+    ["Genesect-Shock", "Genesect"],
+    ["Magearna-Original", "Magearna"],
+    ["Toxtricity-Low-Key", "Toxtricity"],
+    ["Toxtricity-Low-Key-Gmax", "Toxtricity-Gmax"],
+    ["Sinistea-Antique", "Sinistea"],
+    ["Polteageist-Antique", "Polteageist"],
+    ["Zarude-Dada", "Zarude"],];
 
-var calcToShowdownFormes = [["Kyurem-White", "Kyurem-W"],
-["Kyurem-Black", "Kyurem-B"],
-["Rotom-Wash", "Rotom-W"],
-["Rotom-Heat", "Rotom-H"],
-["Rotom-Frost", "Rotom-F"],
-["Rotom-Mow", "Rotom-C"],
-["Rotom-Fan", "Rotom-S"],
-["Giratina-Origin", "Giratina-O"],
-["Landorus-Therian", "Landorus-T"],
-["Thundurus-Therian", "Thundurus-T"],
-["Tornadus-Therian", "Tornadus-T"],
-["Floette-Eternal", "Floette-E"],
+var calcToShowdownFormes = [//["Kyurem-White", "Kyurem-W"],
+//["Kyurem-Black", "Kyurem-B"],
+//["Rotom-Wash", "Rotom-W"],
+//["Rotom-Heat", "Rotom-H"],
+//["Rotom-Frost", "Rotom-F"],
+//["Rotom-Mow", "Rotom-C"],
+//["Rotom-Fan", "Rotom-S"],
+//["Giratina-Origin", "Giratina-O"],
+//["Landorus-Therian", "Landorus-T"],
+//["Thundurus-Therian", "Thundurus-T"],
+//["Tornadus-Therian", "Tornadus-T"],
+//["Floette-Eternal", "Floette-E"],
 ["Pumpkaboo", "Pumpkaboo-Average"],
 ["Gourgeist", "Gourgeist-Average"],
-["Wormadan-Sandy", "Wormadan-G"],
-["Wormadan-Trash", "Wormadan-S"],
+//["Wormadan-Sandy", "Wormadan-G"],
+//["Wormadan-Trash", "Wormadan-S"],
 ["Urshifu", "Urshifu-Single Strike"],
 ["Urshifu-Rapid-Strike", "Urshifu-Rapid Strike"],
 ["Calyrex-Ice", "Calyrex-Ice Rider"],
-    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],];
+    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],
+    ["Shellos-East", "Shellos"],
+    ["Gastrodon-East", "Gastrodon"],];
 
 var saveToCalcFormes = [["Darmanitan-Z", "Darmanitan"],
 ["Darmanitan-Z-Galar", "Darmanitan-Galar"],
@@ -188,9 +216,15 @@ var savecustom = function()
         else
             species = lines[0].split('@')[0].trim(); //species is always first
 
-        checkGmax = species.indexOf("-Gmax", 0)
+        checkGmax = species.indexOf("-Gmax", 0);
+        checkMega = species.indexOf("-Mega", 0);
+        checkPrimal = species.indexOf("-Primal", 0);
         if (checkGmax != -1)
             species = species.substring(0, checkGmax);
+        if (checkMega != -1)
+            species = species.substring(0, checkMega);
+        if (checkPrimal != -1)
+            species = species.substring(0, checkPrimal);
         for (var i = 0; i < showdownToCalcFormes.length; ++i) {
             if (species == showdownToCalcFormes[i][0])
                 species = showdownToCalcFormes[i][1]

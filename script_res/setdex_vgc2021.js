@@ -209,8 +209,8 @@ var SETDEX_VGC2021 = {
             ]
         }
     },
-    "Landorus-T": {
-        "Life Orb Landorus-T": {
+    "Landorus-Therian": {
+        "Life Orb Landorus-Therian": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -230,7 +230,7 @@ var SETDEX_VGC2021 = {
                 "U-turn"
             ]
         },
-        "Lum SD Landorus-T": {
+        "Lum SD Landorus-Therian": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -249,7 +249,7 @@ var SETDEX_VGC2021 = {
                 "Rock Slide"
             ]
         },
-        "AV Landorus-T": {
+        "AV Landorus-Therian": {
             "level": 50,
             "evs": {
                 "hp": 228,
@@ -269,7 +269,7 @@ var SETDEX_VGC2021 = {
                 "Superpower"
             ]
         },
-        "Scarf Landorus-T": {
+        "Scarf Landorus-Therian": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -289,7 +289,7 @@ var SETDEX_VGC2021 = {
                 "U-turn"
             ]
         },
-        "NailsOU's PC2 Finals Landorus-T": {
+        "NailsOU's PC2 Finals Landorus-Therian": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -943,7 +943,7 @@ var SETDEX_VGC2021 = {
             ]
         }
     },
-    "Rotom-C": {
+    "Rotom-Mow": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -2388,7 +2388,7 @@ var SETDEX_VGC2021 = {
             ]
         }
     },
-    "Rotom-F": {
+    "Rotom-Frost": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -2581,8 +2581,8 @@ var SETDEX_VGC2021 = {
             ]
         }
     },
-    "Rotom-H": {
-        "Standard Rotom-H": {
+    "Rotom-Heat": {
+        "Standard Rotom-Heat": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -3415,8 +3415,8 @@ var SETDEX_VGC2021 = {
             ]
         },        
     },
-    "Rotom-W": {
-        "Standard Rotom-W": {
+    "Rotom-Wash": {
+        "Standard Rotom-Wash": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -4731,7 +4731,7 @@ var SETDEX_VGC2021 = {
             ]
         },
     },
-    "Thundurus-T": {
+    "Thundurus-Therian": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -5201,7 +5201,7 @@ var SETDEX_VGC2021 = {
         }
     },
 
-    "Giratina-O": {
+    "Giratina-Origin": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -5224,7 +5224,7 @@ var SETDEX_VGC2021 = {
         }
     },
 
-    "Kyurem-W": {
+    "Kyurem-White": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -5250,7 +5250,7 @@ var SETDEX_VGC2021 = {
         }
     },
 
-    "Kyurem-B": {
+    "Kyurem-Black": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -8666,7 +8666,7 @@ var SETDEX_VGC2021_S10 = {
         },
 
     },
-    "Landorus-T": {
+    "Landorus-Therian": {
         "Rocky Helmet Lando": {
             "level": 50,
             "evs": {
@@ -9975,7 +9975,7 @@ var SETDEX_VGC2021_S10 = {
             ]
         }
     },
-    "Thundurus-T": {
+    "Thundurus-Therian": {
         "Scarf Thundurus": {
             "level": 50,
             "evs": {
@@ -10069,7 +10069,7 @@ var SETDEX_VGC2021_S10 = {
             ]
         }
     },
-    "Kyurem-W": {
+    "Kyurem-White": {
         "Scarf Set": {
             "level": 50,
             "evs": {

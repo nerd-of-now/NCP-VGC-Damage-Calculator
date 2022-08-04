@@ -2029,7 +2029,7 @@ var SETDEX_VGC_BFD = {
     "Rotom": {
 
     },
-    "Rotom-C": {
+    "Rotom-Mow": {
         "[BDSP] Default Set": {
             "level": 50,
             "evs": {
@@ -2054,10 +2054,10 @@ var SETDEX_VGC_BFD = {
             ]
         },
     },
-    "Rotom-F": {
+    "Rotom-Frost": {
 
     },
-    "Rotom-H": {
+    "Rotom-Heat": {
         "[BDSP] Specs Set": {
             "level": 50,
             "evs": {
@@ -2082,10 +2082,10 @@ var SETDEX_VGC_BFD = {
             ]
         },
     },
-    "Rotom-S": {
+    "Rotom-Fan": {
 
     },
-    "Rotom-W": {
+    "Rotom-Wash": {
         "[BDSP] Bulky Set": {
             "level": 50,
             "evs": {
@@ -2179,7 +2179,7 @@ var SETDEX_VGC_BFD = {
     "Giratina": {
 
     },
-    "Giratina-O": {
+    "Giratina-Origin": {
 
     },
     "Cresselia": {

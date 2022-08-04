@@ -48,7 +48,9 @@ var MOVES_RBY = {
     },
     'Dig': {
         bp: 100,
-        type: 'Ground'
+        type: 'Ground',
+        category: 'Physical',
+        makesContact: true,
     },
     'Double Kick': {
         bp: 30,
@@ -484,6 +486,9 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         hasSecondaryEffect: true,
         isBite: true
     },
+    'Dig': {
+        bp: 60,
+    },
     'Double-Edge': { bp: 120 },
     'DynamicPunch': {
         bp: 100,
@@ -869,7 +874,6 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 delete MOVES_GSC['Acid'];
 delete MOVES_GSC['Bind'];
 delete MOVES_GSC['Clamp'];
-delete MOVES_GSC['Dig'];
 delete MOVES_GSC['Fire Spin'];
 delete MOVES_GSC['Mega Drain'];
 delete MOVES_GSC['Slash'];
@@ -1840,6 +1844,9 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Dragon',
         category: 'Special',
     },
+    'Dig': {
+        bp: 60,
+    },
     'Roost': {
 
         type: '',
@@ -1981,8 +1988,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 55,
         type: "Electric",
         category: "Special",
-        isSpread: "True",
-        hasSecondaryEffect: "True"
+        isSpread: true,
+        hasSecondaryEffect: true
     },
     'Acid Spray': {
         bp: 40,
@@ -2326,8 +2333,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 30,
         type: "Bug",
         category: "Special",
-        isSpread: "True",
-        hasSecondaryEffect: "True"
+        isSpread: true,
+        hasSecondaryEffect: true
     },
     'Synchronoise': {
         bp: 70,
@@ -2406,6 +2413,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     'Final Gambit': {
         bp: 1,
         type: 'Fighting',
+        category: 'Special',
+    },
+    'Techno Blast': {
+        bp: 85,
+        type: 'Normal',
         category: 'Special',
     },
     'Hone Claws': {
@@ -2823,6 +2835,15 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 
         type: '',
         category: 'Status'
+    },
+    'Techno Blast': {
+        bp: 120,
+    },
+    'Steam Eruption': {
+        bp: 110,
+        type: 'Water',
+        category: 'Special',
+        hasSecondaryEffect: true
     },
 });
 
@@ -4164,6 +4185,12 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Ice Burn': {
         zp: 200,
     },
+    'Steam Eruption': {
+        zp: 185,
+    },
+    'Techno Blast': {
+        zp: 190,
+    },
 });
 
 var MOVES_SS = $.extend(true, {}, MOVES_SM, {
@@ -4643,6 +4670,19 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         category: 'Status'
     },
     'Coaching': {
+
+        type: '',
+        category: 'Status'
+    },
+    'Double Iron Bash': {
+        bp: 60,
+        type: 'Steel',
+        category: 'Physical',
+        makesContact: true,
+        isTwoHit: true,
+        isPunch: true,
+    },
+    'Jungle Healing': {
 
         type: '',
         category: 'Status'
