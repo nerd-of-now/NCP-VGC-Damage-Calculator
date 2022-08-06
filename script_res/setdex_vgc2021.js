@@ -6862,28 +6862,6 @@ var SETDEX_VGC2021 = {
           ]
       },
     },
-    //"Inteleon-Gmax" : {
-    //  "Default Set": {
-    //      "level": 50,
-    //      "evs": {
-    //          "hp": 4,
-    //          "at": 0,
-    //          "df": 0,
-    //          "sa": 252,
-    //          "sd": 0,
-    //          "sp": 252
-    //      },
-    //      "nature": "Timid",
-    //      "ability": "Torrent",
-    //      "item": "",
-    //      "moves": [
-    //          "Snipe Shot",
-    //          "Ice Beam",
-    //          "Blizzard",
-    //          "Air Slash"
-    //      ]
-    //  },
-    //},
     "Dragapult": {
         "Life Orb Dragapult": {
             "level": 50,
@@ -7465,48 +7443,6 @@ var SETDEX_VGC2021 = {
             ]
         },
     },
-    //"Rillaboom-Gmax": {
-    //    "AV Rilla": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 172,
-    //            "at": 252,
-    //            "df": 4,
-    //            "sa": 0,
-    //            "sd": 4,
-    //            "sp": 76
-    //        },
-    //        "nature": "Adamant",
-    //        "ability": "Grassy Surge",
-    //        "item": "Assault Vest",
-    //        "moves": [
-    //            "Grassy Glide",
-    //            "Wood Hammer",
-    //            "High Horsepower",
-    //            "Knock Off"
-    //        ]
-    //    },
-    //    "Banded Rilla": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 116,
-    //            "at": 252,
-    //            "df": 4,
-    //            "sa": 0,
-    //            "sd": 4,
-    //            "sp": 132
-    //        },
-    //        "nature": "Adamant",
-    //        "ability": "Grassy Surge",
-    //        "item": "Choice Band",
-    //        "moves": [
-    //            "Grassy Glide",
-    //            "Wood Hammer",
-    //            "U-turn",
-    //            "High Horsepower"
-    //        ]
-    //    },
-    //},
     "Cinderace": {
         "Life Orb Cinderace": {
             "level": 50,
@@ -7549,48 +7485,6 @@ var SETDEX_VGC2021 = {
             ]
         },
     },
-    //"Cinderace-Gmax": {
-    //    "Life Orb Cinderace": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 4,
-    //            "at": 252,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 252
-    //        },
-    //        "nature": "Jolly",
-    //        "ability": "Libero",
-    //        "item": "Life Orb",
-    //        "moves": [
-    //            "Pyro Ball",
-    //            "High Jump Kick",
-    //            "Bounce",
-    //            "Iron Head"
-    //        ]
-    //    },
-    //    "AV Cinderace": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 52,
-    //            "at": 196,
-    //            "df": 4,
-    //            "sa": 0,
-    //            "sd": 76,
-    //            "sp": 180
-    //        },
-    //        "nature": "Jolly",
-    //        "ability": "Libero",
-    //        "item": "Assault Vest",
-    //        "moves": [
-    //            "Pyro Ball",
-    //            "Sucker Punch",
-    //            "Bounce",
-    //            "Iron Head"
-    //        ]
-    //    },
-    //},
     "Urshifu-Rapid Strike": {
         "Default Set": {
             "level": 50,

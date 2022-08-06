@@ -6279,7 +6279,7 @@ var SETDEX_TT2019 = {
             },
             "nature": "Quiet",
             "ability": "Snow Warning",
-            "item": "",
+            "item": "Abomasite",
             "moves": [
                 "Blizzard",
                 "Ice Shard",

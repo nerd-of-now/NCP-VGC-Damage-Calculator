@@ -174,16 +174,14 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     }
     if (move.name === "Nature Power") {         //Rename Nature Power to its appropriately called moves; needs to be done after Max Moves since Nature Power becomes Max Guard
         move.category = "Special";
-        move.name = (field.terrain == "Electric") ? "Thunderbolt"
+        var npMove = (field.terrain == "Electric") ? "Thunderbolt"
             : (field.terrain == "Grassy") ? "Energy Ball"
                 : (field.terrain == "Psychic") ? "Psychic"
                     : (field.terrain == "Misty") ? "Moonblast"
                         : "Tri Attack";
-        move.bp = (field.terrain == "Electric" || field.terrain == "Grassy" || field.terrain == "Psychic") ? 90
-            : (field.terrain == "Misty") ? 95
-                : 80;
-        if (field.terrain == "Grassy") move.isBullet = true;
-        moveDescName = move.name;
+        move.name = npMove;
+        move = moves[npMove];
+        moveDescName = npMove;
     }
     attacker_name = attacker.name;
     if (attacker_name && attacker_name.includes("-Gmax")) attacker_name = attacker_name.substring(0, attacker_name.indexOf('-Gmax'));
@@ -644,7 +642,12 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     description.attackEVs = attacker.evs[attackStat] +
             (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
         toSmogonStat(attackStat);
-    if (move.name === "Meteor Beam") {
+
+    if (move.name === "Spectral Thief" && defender.boosts[attackStat] > 0) {
+        description.attackBoost = Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]);
+        attack = getModifiedStat(attackSource.rawStats[attackStat], Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]));
+    }
+    else if (move.name === "Meteor Beam") {
         description.attackBoost = Math.min(6, attackSource.boosts[attackStat] + 1);
         attack = getModifiedStat(attackSource.rawStats[attackStat], Math.min(6, attackSource.boosts[attackStat] + 1));
     } else if (attackSource.boosts[attackStat] === 0 || (isCritical && attackSource.boosts[attackStat] < 0)) {
@@ -740,7 +743,11 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     description.defenseEVs = defender.evs[defenseStat] +
             (NATURES[defender.nature][0] === defenseStat ? "+" : NATURES[defender.nature][1] === defenseStat ? "-" : "") + " " +
             toSmogonStat(defenseStat);
-    if (defender.boosts[defenseStat] === 0 || (isCritical && defender.boosts[defenseStat] > 0) || move.ignoresDefenseBoosts) {
+
+    if (move.name === "Spectral Thief" && defender.boosts[defenseStat] > 0) {
+        defense = defender.rawStats[defenseStat];
+    }
+    else if (defender.boosts[defenseStat] === 0 || (isCritical && defender.boosts[defenseStat] > 0) || move.ignoresDefenseBoosts) {
         defense = defender.rawStats[defenseStat];
     } else if (attacker.ability === "Unaware") {
         defense = defender.rawStats[defenseStat];
