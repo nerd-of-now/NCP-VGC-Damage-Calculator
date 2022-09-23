@@ -779,7 +779,7 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         dfMods.push(0x1800);
         description.defenderAbility = defAbility;
     } else if ((defAbility === "Fur Coat" && hitsPhysical) ||
-        (defAbility === "Ice Scales" && ((!hitsPhysical && !makesContact) || move.name == "Psyshock" || move.name == "Psystrike" || move.name == "Secret Sword"))) {
+        (defAbility === "Ice Scales" && ((!hitsPhysical && !move.makesContact) || move.name == "Psyshock" || move.name == "Psystrike" || move.name == "Secret Sword"))) {
         dfMods.push(0x2000);
         description.defenderAbility = defAbility;
     }
