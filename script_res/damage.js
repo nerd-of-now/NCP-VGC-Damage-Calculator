@@ -133,7 +133,6 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
             maxName = G_MAXMOVES_LOOKUP[attacker.name];
         }
         move = moves[maxName];
-        move.type = tempMove.type;
         if (move == undefined) move = tempMove; //prevents crashing when switching between Gen VII and VIII, only used for such a case
         move.name = maxName;
         if (['G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe'].indexOf(maxName)==-1) {
@@ -168,7 +167,10 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
             move.bp = 0;
             move.isCrit = false;
         }
-        else move.isCrit = tempMove.isCrit;
+        else {
+            move.isCrit = tempMove.isCrit;
+            move.type = tempMove.type;
+        }
         move.category = tempMove.category;
         move.hits = 1;
         if (field.isProtect && ["G-Max One Blow", "G-Max Rapid Flow"].indexOf(maxName) == -1) isQuarteredByProtect = true;
