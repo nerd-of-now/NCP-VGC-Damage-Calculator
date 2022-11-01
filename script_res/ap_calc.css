@@ -43,6 +43,7 @@ th {
     display: inline-block;
 }
 .poke-info {
+    /*width: 33.1em;*/
     width: 30em;
 }
 .field-info {
@@ -140,6 +141,11 @@ th {
     background: #10171e !important;
 }
 
+.divider {
+    width: 5em;
+    display: inline;
+}
+
 
 
 /* header */
@@ -189,7 +195,7 @@ th {
 select.toxic-counter {
     width: 4.5em;
 }
-.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-hits2 {
+.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge {
     font-size: 0.9em;
 }
 .move-selector {
@@ -198,8 +204,11 @@ select.toxic-counter {
 .poke-info input.move-bp {
     width: 2em;
 }
-.move-cat, .move-hits {
+.move-cat/*, .move-hits*/ {
     width: 4em;
+}
+.move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge {
+    width: 4.6em;
 }
 .poke-info .crit-btn {
     font-size: 0.8em;

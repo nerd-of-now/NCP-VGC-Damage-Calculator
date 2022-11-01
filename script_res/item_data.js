@@ -149,6 +149,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Lagging Tail',
     'Lax Incense',
     'Light Clay',
+    'Mental Herb',
     'Metronome',
     'Power Herb',
     'Quick Powder',
@@ -172,7 +173,6 @@ var ITEMS_GEMS = [
     'Grass Gem',
     'Ground Gem',
     'Ice Gem',
-    'Normal Gem',
     'Poison Gem',
     'Psychic Gem',
     'Rock Gem',
@@ -196,6 +196,7 @@ var ITEMS_BW_NO_GEMS = ITEMS_DPP.concat([
     'Red Card',
     'Ring Target',  //Might implement
     'Rocky Helmet',
+    'Normal Gem',
 ]);
 
 var ITEMS_BW = ITEMS_BW_NO_GEMS.concat(ITEMS_GEMS);
@@ -511,20 +512,29 @@ function getFlingPower(item) {
 
 function getNaturalGift(item) {
     var gift = {
-        'Apicot Berry' : {'t':'Ground','p':100},
+        'Aguav Berry': { 't': 'Dragon', 'p': 80 },
+        'Apicot Berry': { 't': 'Ground', 'p': 100 },
+        'Aspear Berry': { 't': 'Ice', 'p': 80 },
         'Babiri Berry' : {'t':'Steel','p':80},
-        'Belue Berry' : {'t':'Electric','p':100},
-        'Charti Berry' : {'t':'Rock','p':80},
+        'Belue Berry': { 't': 'Electric', 'p': 100 },
+        'Bluk Berry': { 't': 'Fire', 'p': 90 },
+        'Charti Berry': { 't': 'Rock', 'p': 80 },
+        'Cheri Berry': { 't': 'Fire', 'p': 80 },
         'Chesto Berry' : {'t':'Water','p':80},
         'Chilan Berry' : {'t':'Normal','p':80},
         'Chople Berry' : {'t':'Fighting','p':80},
         'Coba Berry' : {'t':'Flying','p':80},
-        'Colbur Berry' : {'t':'Dark','p':80},
+        'Colbur Berry': { 't': 'Dark', 'p': 80 },
+        'Cornn Berry': { 't': 'Bug', 'p': 90 },
         'Custap Berry' : {'t':'Ghost','p':100},
         'Durin Berry' : {'t':'Water','p':100},
-        'Enigma Berry' : {'t':'Bug','p':100},
-        'Ganlon Berry' : {'t':'Ice','p':100},
-        'Haban Berry' : {'t':'Dragon','p':80},
+        'Enigma Berry': { 't': 'Bug', 'p': 100 },
+        'Figy Berry': { 't': 'Bug', 'p': 80 },
+        'Ganlon Berry': { 't': 'Ice', 'p': 100 },
+        'Grepa Berry': { 't': 'Flying', 'p': 90 },
+        'Haban Berry': { 't': 'Dragon', 'p': 80 },
+        'Hondew Berry': { 't': 'Ground', 'p': 90 },
+        'Iapapa Berry': { 't': 'Dark', 'p': 80 },
         'Jaboca Berry' : {'t':'Dragon','p':100},
         'Kasib Berry' : {'t':'Ghost','p':80},
         'Kebia Berry' : {'t':'Poison','p':80},
@@ -532,25 +542,41 @@ function getNaturalGift(item) {
         'Lansat Berry' : {'t':'Flying','p':100},
         'Leppa Berry' : {'t':'Fighting','p':80},
         'Liechi Berry' : {'t':'Grass','p':100},
-        'Lum Berry' : {'t':'Flying','p':80},
+        'Lum Berry': { 't': 'Flying', 'p': 80 },
+        'Mago Berry': { 't': 'Ghost', 'p': 80 },
+        'Magost Berry': { 't': 'Rock', 'p': 90 },
         'Maranga Berry' : {'t':'Dark','p':100},
-        'Micle Berry' : {'t':'Rock','p':100},
+        'Micle Berry': { 't': 'Rock', 'p': 100 },
+        'Nanab Berry': { 't': 'Water', 'p': 90 },
+        'Nomel Berry': { 't': 'Dragon', 'p': 90 },
         'Occa Berry' : {'t':'Fire','p':80},
-        'Oran Berry' : {'t':'Poison','p':80},
+        'Oran Berry': { 't': 'Poison', 'p': 80 },
+        'Pamtre Berry': { 't': 'Steel', 'p': 90 },
         'Passho Berry' : {'t':'Water','p':80},
-        'Payapa Berry' : {'t':'Psychic','p':80},
-        'Petaya Berry' : {'t':'Poison','p':100},
-        'Rawst Berry' : {'t':'Grass','p':80},
+        'Payapa Berry': { 't': 'Psychic', 'p': 80 },
+        'Pecha Berry': { 't': 'Electric', 'p': 80 },
+        'Persim Berry': { 't': 'Ground', 'p': 80 },
+        'Petaya Berry': { 't': 'Poison', 'p': 100 },
+        'Pinap Berry': { 't': 'Grass', 'p': 90 },
+        'Pomeg Berry': { 't': 'Ice', 'p': 90 },
+        'Qualot Berry': { 't': 'Poison', 'p': 90 },
+        'Rabuta Berry': { 't': 'Ghost', 'p': 90 },
+        'Rawst Berry': { 't': 'Grass', 'p': 80 },
+        'Razz Berry': { 't': 'Steel', 'p': 80 },
         'Rindo Berry' : {'t':'Grass','p':80},
         'Roseli Berry' : {'t':'Fairy','p':80},
         'Rowap Berry' : {'t':'Dark','p':100},
         'Salac Berry' : {'t':'Fighting','p':100},
         'Shuca Berry' : {'t':'Ground','p':80},
-        'Sitrus Berry' : {'t':'Psychic','p':80},
-        'Starf Berry' : {'t':'Psychic','p':100},
+        'Sitrus Berry': { 't': 'Psychic', 'p': 80 },
+        'Spelon Berry': { 't': 'Dark', 'p': 90 },
+        'Starf Berry': { 't': 'Psychic', 'p': 100 },
+        'Tamato Berry': { 't': 'Psychic', 'p': 90 },
         'Tanga Berry' : {'t':'Bug','p':80},
         'Wacan Berry' : {'t':'Electric','p':80},
-        'Watmel Berry' : {'t':'Fire','p':100},
+        'Watmel Berry': { 't': 'Fire', 'p': 100 },
+        'Wepear Berry': { 't': 'Electric', 'p': 90 },
+        'Wiki Berry': { 't': 'Rock', 'p': 80 },
         'Yache Berry' : {'t':'Ice','p':80}
     }[item];
     if (gift) {
@@ -610,101 +636,151 @@ function getZType(item) {
 }
 
 //FIX THIS CODE TO MATCH THIS EXAMPLE: 'Abomasite': 'Abomasnow'
-var MEGA_STONE_USER_LOOKUP = [
-['Abomasite', 'Abomasnow'],
-['Absolite', 'Absol'],
-['Aerodactylite', 'Aerodactyl'],
-['Aggronite', 'Aggron'],
-['Alakazite', 'Alakazam'],
-['Ampharosite', 'Ampharos'],
-['Banettite', 'Banette'],
-['Blastoisinite', 'Blastoise'],
-['Blazikenite', 'Blaziken'],
-['Charizardite X', 'Charizard'],
-['Charizardite Y', 'Charizard'],
-['Garchompite', 'Garchomp'],
-['Gardevoirite', 'Gardevoir'],
-['Gengarite', 'Gengar'],
-['Gyaradosite', 'Gyarados'],
-['Heracronite', 'Heracross'],
-['Houndoominite', 'Houndoom'],
-['Kangaskhanite', 'Kangaskhan'],
-['Latiasite', 'Latias'],
-['Latiosite', 'Latios'],
-['Lucarionite', 'Lucario'],
-['Manectite', 'Manectric'],
-['Mawilite', 'Mawile'],
-['Medichamite', 'Medicham'],
-['Mewtwonite X', 'Mewtwo'],
-['Mewtwonite Y', 'Mewtwo'],
-['Pinsirite', 'Pinsir'],
-['Scizorite', 'Scizor'],
-['Tyranitarite', 'Tyranitar'],
-['Venusaurite', 'Venusaur'],
-['Altarianite', 'Altaria'],
-['Audinite', 'Audino'],
-['Beedrillite', 'Beedrill'],
-['Cameruptite', 'Camerupt'],
-['Diancite', 'Diancie'],
-['Galladite', 'Gallade'],
-['Glalitite', 'Glalie'],
-['Lopunnite', 'Lopunny'],
-['Metagrossite', 'Metagross'],
-['Pidgeotite', 'Pidgeot'],
-['Sablenite', 'Sableye'],
-['Salamencite', 'Salamence'],
-['Sceptilite', 'Sceptile'],
-['Sharpedonite', 'Sharpedo'],
-['Slowbronite', 'Slowbro'],
-['Steelixite', 'Steelix'],
-['Swampertite', 'Swampert'],
-['Red Orb', 'Groudon'],
-['Blue Orb', 'Kyogre'],
-];
+//var MEGA_STONE_USER_LOOKUP = [
+//['Abomasite', 'Abomasnow'],
+//['Absolite', 'Absol'],
+//['Aerodactylite', 'Aerodactyl'],
+//['Aggronite', 'Aggron'],
+//['Alakazite', 'Alakazam'],
+//['Ampharosite', 'Ampharos'],
+//['Banettite', 'Banette'],
+//['Blastoisinite', 'Blastoise'],
+//['Blazikenite', 'Blaziken'],
+//['Charizardite X', 'Charizard'],
+//['Charizardite Y', 'Charizard'],
+//['Garchompite', 'Garchomp'],
+//['Gardevoirite', 'Gardevoir'],
+//['Gengarite', 'Gengar'],
+//['Gyaradosite', 'Gyarados'],
+//['Heracronite', 'Heracross'],
+//['Houndoominite', 'Houndoom'],
+//['Kangaskhanite', 'Kangaskhan'],
+//['Latiasite', 'Latias'],
+//['Latiosite', 'Latios'],
+//['Lucarionite', 'Lucario'],
+//['Manectite', 'Manectric'],
+//['Mawilite', 'Mawile'],
+//['Medichamite', 'Medicham'],
+//['Mewtwonite X', 'Mewtwo'],
+//['Mewtwonite Y', 'Mewtwo'],
+//['Pinsirite', 'Pinsir'],
+//['Scizorite', 'Scizor'],
+//['Tyranitarite', 'Tyranitar'],
+//['Venusaurite', 'Venusaur'],
+//['Altarianite', 'Altaria'],
+//['Audinite', 'Audino'],
+//['Beedrillite', 'Beedrill'],
+//['Cameruptite', 'Camerupt'],
+//['Diancite', 'Diancie'],
+//['Galladite', 'Gallade'],
+//['Glalitite', 'Glalie'],
+//['Lopunnite', 'Lopunny'],
+//['Metagrossite', 'Metagross'],
+//['Pidgeotite', 'Pidgeot'],
+//['Sablenite', 'Sableye'],
+//['Salamencite', 'Salamence'],
+//['Sceptilite', 'Sceptile'],
+//['Sharpedonite', 'Sharpedo'],
+//['Slowbronite', 'Slowbro'],
+//['Steelixite', 'Steelix'],
+//['Swampertite', 'Swampert'],
+//['Red Orb', 'Groudon'],
+//['Blue Orb', 'Kyogre'],
+//];
+var MEGA_STONE_USER_LOOKUP = {
+    'Abomasite': 'Abomasnow',
+    'Absolite': 'Absol',
+    'Aerodactylite': 'Aerodactyl',
+    'Aggronite': 'Aggron',
+    'Alakazite': 'Alakazam',
+    'Ampharosite': 'Ampharos',
+    'Banettite': 'Banette',
+    'Blastoisinite': 'Blastoise',
+    'Blazikenite': 'Blaziken',
+    'Charizardite X': 'Charizard',
+    'Charizardite Y': 'Charizard',
+    'Garchompite': 'Garchomp',
+    'Gardevoirite': 'Gardevoir',
+    'Gengarite': 'Gengar',
+    'Gyaradosite': 'Gyarados',
+    'Heracronite': 'Heracross',
+    'Houndoominite': 'Houndoom',
+    'Kangaskhanite': 'Kangaskhan',
+    'Latiasite': 'Latias',
+    'Latiosite': 'Latios',
+    'Lucarionite': 'Lucario',
+    'Manectite': 'Manectric',
+    'Mawilite': 'Mawile',
+    'Medichamite': 'Medicham',
+    'Mewtwonite X': 'Mewtwo',
+    'Mewtwonite Y': 'Mewtwo',
+    'Pinsirite': 'Pinsir',
+    'Scizorite': 'Scizor',
+    'Tyranitarite': 'Tyranitar',
+    'Venusaurite': 'Venusaur',
+    'Altarianite': 'Altaria',
+    'Audinite': 'Audino',
+    'Beedrillite': 'Beedrill',
+    'Cameruptite': 'Camerupt',
+    'Diancite': 'Diancie',
+    'Galladite': 'Gallade',
+    'Glalitite': 'Glalie',
+    'Lopunnite': 'Lopunny',
+    'Metagrossite': 'Metagross',
+    'Pidgeotite': 'Pidgeot',
+    'Sablenite': 'Sableye',
+    'Salamencite': 'Salamence',
+    'Sceptilite': 'Sceptile',
+    'Sharpedonite': 'Sharpedo',
+    'Slowbronite': 'Slowbro',
+    'Steelixite': 'Steelix',
+    'Swampertite': 'Swampert',
+    'Red Orb': 'Groudon',
+    'Blue Orb': 'Kyogre',
+};
 
 function canMega(item, species) {
-    for (var i = 0; i < MEGA_STONE_USER_LOOKUP.length; i++) {
-        var tempMega = MEGA_STONE_USER_LOOKUP[i];
-        if (tempMega[0] == item && species.includes(tempMega[1]))
-            return true;
-    }
-    return false;
+    return MEGA_STONE_USER_LOOKUP[item] === species;
 }
 
-var SIGNATURE_Z_MOVE_LOOKUP = [
-    ['Aloraichium Z', 'Raichu-Alola', 'Thunderbolt', 'Stoked Sparksurfer'],
-    ['Decidium Z', 'Decidueye', 'Spirit Shackle', 'Sinister Arrow Raid'],
-    ['Eevium Z', 'Eevee', 'Last Resort', 'Extreme Evoboost'],
-    ['Incinium Z', 'Incineroar', 'Darkest Lariat', 'Malicious Moonsault'],
-    ['Marshadium Z', 'Marshadow', 'Spectral Thief', 'Soul-Stealing 7-Star Strike'],
-    ['Mewnium Z', 'Mew', 'Psychic', 'Genesis Supernova'],
-    ['Pikanium Z', 'Pikachu', 'Volt Tackle', 'Catastropika'],
-    ['Pikashunium Z', 'Pikachu', 'Thunderbolt', '10,000,000 Volt Thunderbolt'],
-    ['Primarium Z', 'Primarina', 'Sparkling Aria', 'Oceanic Operetta'],
-    ['Snorlium Z', 'Snorlax', 'Giga Impact', 'Pulverizing Pancake'],
-    ['Tapunium Z', 'Tapu Koko', 'Nature\'s Madness', 'Guardian of Alola'],
-    ['Tapunium Z', 'Tapu Lele', 'Nature\'s Madness', 'Guardian of Alola'],
-    ['Tapunium Z', 'Tapu Bulu', 'Nature\'s Madness', 'Guardian of Alola'],
-    ['Tapunium Z', 'Tapu Fini', 'Nature\'s Madness', 'Guardian of Alola'],
-    ['Kommonium Z', 'Kommo-o', 'Clanging Scales', 'Clangerous Soulblaze'],
-    ['Lunalium Z', 'Lunala', 'Moongeist Beam', 'Menacing Moonraze Maelstrom'],
-    ['Lunalium Z', 'Necrozma-Dawn-Wings', 'Moongeist Beam', 'Menacing Moonraze Maelstrom'],
-    ['Lycanium Z', 'Lycanroc-Midday', 'Stone Edge', 'Splintered Stormshards'],
-    ['Lycanium Z', 'Lycanroc-Midnight', 'Stone Edge', 'Splintered Stormshards'],
-    ['Lycanium Z', 'Lycanroc-Dusk', 'Stone Edge', 'Splintered Stormshards'],
-    ['Mimikium Z', 'Mimikyu', 'Play Rough', 'Let\'s Snuggle Forever'],
-    ['Solganium Z', 'Solgaleo', 'Sunsteel Strike', 'Searing Sunraze Smash'],
-    ['Solganium Z', 'Necrozma-Dusk-Mane', 'Sunsteel Strike', 'Searing Sunraze Smash'],
-    ['Ultranecrozium Z', 'Ultra Necrozma', 'Photon Geyser', 'Light That Burns the Sky']
-];
+var SIGNATURE_Z_MOVE_LOOKUP = {
+    'Raichu-Alola': { 'Aloraichium Z': { 'Thunderbolt': 'Stoked Sparksurfer' } },
+    'Decidueye': { 'Decidium Z': { 'Spirit Shackle': 'Sinister Arrow Raid' } },
+    'Eevee': { 'Eevium Z': { 'Last Resort': 'Extreme Evoboost' } },
+    'Incineroar': { 'Incinium Z': { 'Darkest Lariat': 'Malicious Moonsault' } },
+    'Marshadow': { 'Marshadium Z': { 'Spectral Thief': 'Soul-Stealing 7-Star Strike' } },
+    'Mew': { 'Mewnium Z': { 'Psychic': 'Genesis Supernova' } },
+    'Pikachu': {
+        'Pikanium Z': { 'Volt Tackle': 'Catastropika' },
+        'Pikashunium Z': { 'Thunderbolt': '10,000,000 Volt Thunderbolt' }
+    },
+    'Primarina': { 'Primarium Z': { 'Sparkling Aria': 'Oceanic Operetta' } },
+    'Snorlax': { 'Snorlium Z': { 'Giga Impact': 'Pulverizing Pancake' } },
+    'Tapu Koko': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
+    'Tapu Lele': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
+    'Tapu Bulu': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
+    'Tapu Fini': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
+    'Kommo-o': { 'Kommonium Z': { 'Clanging Scales': 'Clangorous Soulblaze' } },
+    'Lunala': { 'Lunalium Z': { 'Moongeist Beam': 'Menacing Moonraze Maelstrom' } },
+    'Necrozma-Dawn-Wings': { 'Lunalium Z': { 'Moongeist Beam': 'Menacing Moonraze Maelstrom' } },
+    'Lycanroc-Midday': { 'Lycanium Z': { 'Stone Edge': 'Splintered Stormshards' } },
+    'Lycanroc-Midnight': { 'Lycanium Z': { 'Stone Edge': 'Splintered Stormshards' } },
+    'Lycanroc-Dusk': { 'Lycanium Z': { 'Stone Edge': 'Splintered Stormshards' } },
+    'Mimikyu': { 'Mimikium Z': { 'Play Rough': 'Let\'s Snuggle Forever' } },
+    'Solgaleo': { 'Solganium Z': { 'Sunsteel Strike': 'Searing Sunraze Smash' } },
+    'Necrozma-Dusk-Mane': { 'Solganium Z': { 'Sunsteel Strike': 'Searing Sunraze Smash' } },
+    'Ultra Necrozma': { 'Ultranecrozium Z': { 'Photon Geyser': 'Light That Burns the Sky' } }
+};
 
 function getSignatureZMove(item, species, move) {
-    var tempZ;
-    for (var i = 0; i < SIGNATURE_Z_MOVE_LOOKUP.length; i++) {
-        tempZ = SIGNATURE_Z_MOVE_LOOKUP[i];
-        if (tempZ[0] == item && tempZ[1] == species && tempZ[2] == move) return tempZ[3];
-    }
-    return -1;
+    //var tempZ;
+    //for (var i = 0; i < SIGNATURE_Z_MOVE_LOOKUP.length; i++) {
+    //    tempZ = SIGNATURE_Z_MOVE_LOOKUP[i];
+    //    if (tempZ[0] == item && tempZ[1] == species && tempZ[2] == move) return tempZ[3];
+    //}
+    var isSigZ = SIGNATURE_Z_MOVE_LOOKUP[species] && SIGNATURE_Z_MOVE_LOOKUP[species][item] && SIGNATURE_Z_MOVE_LOOKUP[species][item][move]
+        ? SIGNATURE_Z_MOVE_LOOKUP[species][item][move] : -1;
+    return isSigZ;
 }
 
 var LOCK_ITEM_LOOKUP = {
@@ -762,3 +838,22 @@ var LOCK_ITEM_LOOKUP = {
     'Zacian-Crowned': 'Rusted Sword',
     'Zamazenta-Crowned': 'Rusted Shield',
 };
+
+function cantRemoveItem(defItem, defSpecies, terrain) {
+    return defItem === null || defItem === "" || defItem.indexOf("ium Z") !== -1
+        || LOCK_ITEM_LOOKUP[defSpecies] === defItem
+        || defItem === terrain + " Seed"
+        || (defSpecies === "Arceus" && defItem.indexOf(" Plate") !== -1)
+        || (defSpecies === "Genesect" && defItem.indexOf(" Drive") !== -1)
+        || (defSpecies === "Silvally" && defItem.indexOf(" Memory") !== -1);
+}
+
+function cantFlingItem(atItem, atSpecies, defAbility) {
+    return atItem === "" || atItem.indexOf(" Gem") !== -1 || atItem.indexOf(" ium Z") !== -1 || ["Red Orb", "Blue Orb", "Rusted Sword", "Rusted Shield"].indexOf(atItem) !== -1
+        || (atSpecies === 'Giratina-Origin' && atItem === "Griseous Orb")
+        || (atSpecies === 'Arceus' && atItem.indexOf(" Plate") !== -1)
+        || (atSpecies === 'Genesect' && atItem.indexOf(" Drive") !== -1)
+        || (atSpecies === 'Silvally' && atItem.indexOf(" Memory") !== -1)
+        || canMega(atItem, atSpecies)
+        || (["As One", "Unnerve"].indexOf(defAbility) !== -1 && atItem.indexOf(" Berry") !== -1);
+}

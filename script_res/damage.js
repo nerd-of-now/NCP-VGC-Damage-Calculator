@@ -447,11 +447,11 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
         case "Rising Voltage":
             basePower = (field.terrain === "Electric" && defIsGrounded) ? move.bp * 2 : move.bp;
             description.moveBP = basePower;
-            break;
+            break;/*
         case "Triple Kick":
         case "Triple Axel":
             basePower = move.bp * 2;
-            break;
+            break;*/
         case "Crush Grip":
         case "Wring Out":
             basePower = floor(pokeRound(120 * 100 * floor(attacker.curHP*0x1000/attacker.maxHP)/0x1000)/100);
@@ -914,17 +914,31 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     var finalMod = chainMods(finalMods);
 
     var damage = [], pbDamage = [];
-    var child, childDamage, j;
-    if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
-        child = JSON.parse(JSON.stringify(attacker));
-        child.ability = '';
-        child.isChild = true;
-        if (move.name === 'Power-Up Punch') {
-            child.boosts[AT]++;
-            child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
+    var child, childDamage, j; 
+    var childMove, child2Damage, tripleDamage = [];
+
+    //Triple Kick/Axel check comes first so Parental Bond doesn't mess with a multi hit move
+    if (typeof (move.tripleHit) === 'undefined') {
+        if (move.name === "Triple Kick" || move.name === "Triple Axel") {
+            childMove = move;
+            childMove.tripleHit = true;
+            childMove.bp = move.bp * 2;
+            childDamage = GET_DAMAGE_SS(attacker, defender, childMove, field).damage;
+            childMove.bp = childMove.bp * 1.5;
+            child2Damage = GET_DAMAGE_SS(attacker, defender, childMove, field).damage;
+            move.tripleHit = false;
         }
-        childDamage = GET_DAMAGE_SS(child, defender, move, field).damage;
-        description.attackerAbility = attacker.ability;
+        else if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
+            child = JSON.parse(JSON.stringify(attacker));
+            child.ability = '';
+            child.isChild = true;
+            if (move.name === 'Power-Up Punch') {
+                child.boosts[AT]++;
+                child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
+            }
+            childDamage = GET_DAMAGE_SS(child, defender, move, field).damage;
+            description.attackerAbility = attacker.ability;
+        }
     }
 
     for (var i = 0; i < 16; i++) {
@@ -940,7 +954,14 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
             description.isQuarteredByProtect = true;
         }
         damage[i] = Math.max(1, damage[i]);
-        if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
+        if (typeof (move.tripleHit) !== 'undefined' && move.tripleHit === false && (move.name === "Triple Kick" || move.name === "Triple Axel")) {
+            for (j = 0; j < 16; j++) {
+                for (k = 0; k < 16; k++) {
+                    tripleDamage[(16 * i) + (16 * j) + k] = damage[i] + childDamage[j] + child2Damage[k];
+                }
+            }
+        }
+        else if (typeof (move.tripleHit) === 'undefined' && attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
             for (j = 0; j < 16; j++) {
                 pbDamage[(16 * i) + j] = damage[i] + childDamage[j];
             }
@@ -954,8 +975,22 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
             "childDamage": childDamage,
             "description": buildDescriptionSS(description)
         };
-    }
-    return { "damage": pbDamage.length ? pbDamage.sort(numericSort) : damage, "description": buildDescriptionSS(description) };
+    }///*
+    if (tripleDamage.length) {
+        return {
+            "damage": tripleDamage.sort(numericSort),
+            "parentDamage": damage,
+            "childDamage": childDamage,
+            "child2Damage": child2Damage,
+            "description": buildDescriptionSS(description)
+        };
+    }//*/
+    return {
+        "damage": pbDamage.length ? pbDamage.sort(numericSort) :///*
+            tripleDamage.length ? tripleDamage.sort(numericSort) ://*/
+                damage,
+        "description": buildDescriptionSS(description)
+    };
 }
 
 function numericSort(a, b) {
