@@ -253,197 +253,197 @@ var MOVES_RBY = {
     },
     'Swords Dance': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Whirlwind': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Tail Whip': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Leer': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Growl': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Roar': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Sing': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Disable': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Mist': {
         
-        type: '',
+        type: 'Ice',
         category: 'Status'
     },
     'Leech Seed': {
         
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Growth': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Stun Spore': {
         
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Sleep Powder': {
         
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'String Shot': {
         
-        type: '',
+        type: 'Bug',
         category: 'Status'
     },
     'Thunder Wave': {
         
-        type: '',
+        type: 'Electric',
         category: 'Status'
     },
     'Toxic': {
         
-        type: '',
+        type: 'Poison',
         category: 'Status'
     },
     'Hypnosis': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Agility': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Teleport': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Screech': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Double Team': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Recover': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Minimize': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Barrier': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Light Screen': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Haze': {
         
-        type: '',
+        type: 'Ice',
         category: 'Status'
     },
     'Reflect': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Focus Energy': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Amnesia': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Soft-Boiled': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Glare': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Poison Gas': {
         
-        type: '',
+        type: 'Poison',
         category: 'Status'
     },
     'Lovely Kiss': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Transform': {
         
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Spore': {
         
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Acid Armor': {
         
-        type: '',
+        type: 'Poison',
         category: 'Status'
     },
     'Rest': {
         
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Conversion': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Substitute': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
 };
@@ -726,147 +726,147 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     },
     'Mind Reader': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Curse': {
 
-        type: '',
+        type: 'Ghost',
         category: 'Status'
     },
     'Cotton Spore': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Protect': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Scary Face': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Belly Drum': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Spikes': {
 
-        type: '',
+        type: 'Ground',
         category: 'Status'
     },
     'Foresight': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Desting Bond': {
 
-        type: '',
+        type: 'Ghost',
         category: 'Status'
     },
     'Perish Song': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Detect': {
 
-        type: '',
+        type: 'Fighting',
         category: 'Status'
     },
     'Lock-On': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Sandstorm': {
 
-        type: '',
+        type: 'Rock',
         category: 'Status'
     },
     'Endure': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Charm': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Swagger': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Milk Drink': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Sleep Talk': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Heal Bell': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Safeguard': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Baton Pass': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Encore': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Sweet Scent': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Morning Sun': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Synthesis': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Moonlight': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Rain Dance': {
 
-        type: '',
+        type: 'Water',
         category: 'Status'
     },
     'Sunny Day': {
 
-        type: '',
+        type: 'Fire',
         category: 'Status'
     },
     'Psych Up': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
 });
@@ -1144,187 +1144,187 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     },
     'Stockpile': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Hail': {
 
-        type: '',
+        type: 'Ice',
         category: 'Status'
     },
     'Torment': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Flatter': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Will-O-Wisp': {
 
-        type: '',
+        type: 'Fire',
         category: 'Status'
     },
     'Memento': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Follow Me': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Taunt': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Helping Hand': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Trick': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Role Play': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Wish': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Assist': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Ingrain': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Magic Coat': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Recycle': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Yawn': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Skill Swap': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Imprison': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Refresh': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Grudge': {
 
-        type: '',
+        type: 'Ghost',
         category: 'Status'
     },
     'Snatch': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Tail Glow': {
 
-        type: '',
+        type: 'Bug',
         category: 'Status'
     },
     'Feather Dance': {
 
-        type: '',
+        type: 'Flying',
         category: 'Status'
     },
     'Teeter Dance': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Slack Off': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Aromatherapy': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Fake Tears': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Metal Sound': {
 
-        type: '',
+        type: 'Steel',
         category: 'Status'
     },
     'Grass Whistle': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Tickle': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Cosmic Power': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Iron Defense': {
 
-        type: '',
+        type: 'Steel',
         category: 'Status'
     },
     'Howl': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Bulk Up': {
 
-        type: '',
+        type: 'Fighting',
         category: 'Status'
     },
     'Calm Mind': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Dragon Dance': {
 
-        type: '',
+        type: 'Dragon',
         category: 'Status'
     },
 });
@@ -1849,132 +1849,132 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     },
     'Roost': {
 
-        type: '',
+        type: 'Flying',
         category: 'Status'
     },
     'Gravity': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Healing Wish': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Tailwind': {
 
-        type: '',
+        type: 'Flying',
         category: 'Status'
     },
     'Acupressure': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Embargo': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Psycho Shift': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Heal Block': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Power Trick': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Gastro Acid': {
 
-        type: '',
+        type: 'Poison',
         category: 'Status'
     },
     'Me First': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Copycat': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Power Swap': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Worry Seed': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Toxic Spikes': {
 
-        type: '',
+        type: 'Poison',
         category: 'Status'
     },
     'Heart Swap': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Magnet Rise': {
 
-        type: '',
+        type: 'Electric',
         category: 'Status'
     },
     'Rock Polish': {
 
-        type: '',
+        type: 'Rock',
         category: 'Status'
     },
     'Switcheroo': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Nasty Plot': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Defog': {
 
-        type: '',
+        type: 'Flying',
         category: 'Status'
     },
     'Trick Room': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Captivate': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Stealth Rock': {
 
-        type: '',
+        type: 'Rock',
         category: 'Status'
     },
     'Lunar Dance': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Dark Void': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
 });
@@ -2389,21 +2389,21 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Water',
         category: 'Special',
     },
-    'Fire Pledge (Combined)': {
-        bp: 150,
-        type: 'Fire',
-        category: 'Special',
-    },
-    'Grass Pledge (Combined)': {
-        bp: 150,
-        type: 'Grass',
-        category: 'Special',
-    },
-    'Water Pledge (Combined)': {
-        bp: 150,
-        type: 'Water',
-        category: 'Special',
-    },
+    //'Fire Pledge (Combined)': {
+    //    bp: 150,
+    //    type: 'Fire',
+    //    category: 'Special',
+    //},
+    //'Grass Pledge (Combined)': {
+    //    bp: 150,
+    //    type: 'Grass',
+    //    category: 'Special',
+    //},
+    //'Water Pledge (Combined)': {
+    //    bp: 150,
+    //    type: 'Water',
+    //    category: 'Special',
+    //},
     'Heat Crash': {
         bp: 1,
         type: 'Fire',
@@ -2422,112 +2422,112 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     },
     'Hone Claws': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Wide Guard': {
 
-        type: '',
+        type: 'Rock',
         category: 'Status'
     },
     'Guard Split': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Power Split': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Autotomize': {
 
-        type: '',
+        type: 'Steel',
         category: 'Status'
     },
     'Rage Powder': {
 
-        type: '',
+        type: 'Bug',
         category: 'Status'
     },
     'Magic Room': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Quiver Dance': {
 
-        type: '',
+        type: 'Bug',
         category: 'Status'
     },
     'Soak': {
 
-        type: '',
+        type: 'Water',
         category: 'Status'
     },
     'Coil': {
 
-        type: '',
+        type: 'Poison',
         category: 'Status'
     },
     'Simple Beam': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Entrainment': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'After You': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Quick Guard': {
 
-        type: '',
+        type: 'Fighting',
         category: 'Status'
     },
     'Ally Switch': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Shell Smash': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Heal Pulse': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Shift Gear': {
 
-        type: '',
+        type: 'Steel',
         category: 'Status'
     },
     'Quash': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Reflect Type': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Work Up': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Cotton Guard': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
 });
@@ -2753,87 +2753,87 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     },
     'Mat Block': {
 
-        type: '',
+        type: 'Fighting',
         category: 'Status'
     },
     'Sticky Web': {
 
-        type: '',
+        type: 'Bug',
         category: 'Status'
     },
     'Trick-or-Treat': {
 
-        type: '',
+        type: 'Ghost',
         category: 'Status'
     },
     'Forest\'s Curse': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Parting Shot': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Topsy-Turvy': {
 
-        type: '',
+        type: 'Dark',
         category: 'Status'
     },
     'Crafty Shield': {
 
-        type: '',
+        type: 'Fairy',
         category: 'Status'
     },
     'Grassy Terrain': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Misty Terrain': {
 
-        type: '',
+        type: 'Fairy',
         category: 'Status'
     },
     'Electrify': {
 
-        type: '',
+        type: 'Electric',
         category: 'Status'
     },
     'King\'s Shield': {
 
-        type: '',
+        type: 'Steel',
         category: 'Status'
     },
     'Spiky Shield': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Eerie Impulse': {
 
-        type: '',
+        type: 'Electric',
         category: 'Status'
     },
     'Powder': {
 
-        type: '',
+        type: 'Bug',
         category: 'Status'
     },
     'Geomancy': {
 
-        type: '',
+        type: 'Fairy',
         category: 'Status'
     },
     'Electric Terrain': {
 
-        type: '',
+        type: 'Electric',
         category: 'Status'
     },
     'Baby-Doll Eyes': {
 
-        type: '',
+        type: 'Fairy',
         category: 'Status'
     },
     'Techno Blast': {
@@ -3184,52 +3184,52 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Shore Up': {
 
-        type: '',
+        type: 'Ground',
         category: 'Status'
     },
     'Baneful Bunker': {
 
-        type: '',
+        type: 'Poison',
         category: 'Status'
     },
     'Floral Healing': {
 
-        type: '',
+        type: 'Fairy',
         category: 'Status'
     },
     'Strength Sap': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
     'Spotlight': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status'
     },
     'Psychic Terrain': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Speed Swap': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Instruct': {
 
-        type: '',
+        type: 'Psychic',
         category: 'Status'
     },
     'Aurora Veil': {
 
-        type: '',
+        type: 'Ice',
         category: 'Status'
     },
     'Extreme Evoboost': {
 
-        type: '',
+        type: 'Normal',
         category: 'Status',
         isSignatureZ: true,
     },
@@ -4208,6 +4208,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 80,
         type: 'Dark',
         category: 'Physical',
+        makesContact: true,
     },
     'Dragon Darts': {
         bp: 50,
@@ -4233,6 +4234,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 80,
         type: 'Fighting',
         category: 'Physical',
+        makesContact: true,
     },
     'Drum Beating': {
         bp: 80,
@@ -4243,6 +4245,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 35,
         type: 'Grass',
         category: 'Physical',
+        makesContact: true,
     },
     'Pyro Ball': {
         bp: 120,
@@ -4253,11 +4256,13 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 100,
         type: 'Steel',
         category: 'Physical',
+        makesContact: true,
     },
     'Behemoth Bash': {
         bp: 100,
         type: 'Steel',
         category: 'Physical',
+        makesContact: true,
     },
     'Aura Wheel': {
         bp: 110,
@@ -4269,11 +4274,13 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Dragon',
         category: 'Physical',
         isSpread: true,
+        makesContact: true,
     },
     'Branch Poke': {
         bp: 40,
         type: 'Grass',
         category: 'Physical',
+        makesContact: true,
     },
     'Overdrive': {
         bp: 80,
@@ -4297,6 +4304,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Fairy',
         category: 'Physical',
         hasSecondaryEffect: true,
+        makesContact: true,
     },
     'Strange Stream': {
         bp: 90,
@@ -4307,6 +4315,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 80,
         type: 'Dark',
         category: 'Physical',
+        makesContact: true,
     },
     'Meteor Assault': {
         bp: 150,
@@ -4590,7 +4599,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Ice',
         category: 'Physical',
         makesContact: true,
-        isThreeHit: true
+        isTripleHit: true
     },
     'Wicked Blow': {
         bp: 80,
@@ -4646,32 +4655,32 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
     },
     'No Retreat': {
 
-        type: '',
+        type: 'Fighting',
         category: 'Status'
     },
     'Octolock': {
 
-        type: '',
+        type: 'Fighting',
         category: 'Status'
     },
     'Clangerous Soul': {
 
-        type: '',
+        type: 'Dragon',
         category: 'Status'
     },
     'Decorate': {
 
-        type: '',
+        type: 'Fairy',
         category: 'Status'
     },
     'Life Dew': {
 
-        type: '',
+        type: 'Water',
         category: 'Status'
     },
     'Coaching': {
 
-        type: '',
+        type: 'Fighting',
         category: 'Status'
     },
     'Double Iron Bash': {
@@ -4684,7 +4693,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
     },
     'Jungle Healing': {
 
-        type: '',
+        type: 'Grass',
         category: 'Status'
     },
 });
@@ -4809,10 +4818,8 @@ delete MOVES_SS['Frustration'];
 delete MOVES_SS['Jump Kick'];
 delete MOVES_SS['Mud Bomb'];
 delete MOVES_SS['Natural Gift'];
-delete MOVES_SS['Psycho Boost'];
 delete MOVES_SS['Pursuit'];
 delete MOVES_SS['Return'];
-delete MOVES_SS['Rock Climb'];
 delete MOVES_SS['Signal Beam'];
 delete MOVES_SS['Sky Drop'];
 delete MOVES_SS['Sky Uppercut'];
@@ -4869,4 +4876,22 @@ delete MOVES_SS['Hidden Power Flying'];
 delete MOVES_SS['Hidden Power Dragon'];
 delete MOVES_SS['Hidden Power Poison'];
 
-var MOVES_BDSP = $.extend(true, {}, MOVES_SS_NATDEX, {});
+var MOVES_SV = $.extend(true, {}, MOVES_SS_NATDEX, {
+    'Tera Blast': {
+        bp: 80,
+        type: 'Normal',
+        category: 'Special',
+    },
+});
+
+['Max Strike', 'Max Flare', 'Max Geyser', 'Max Lightning', 'Max Overgrowth',
+    'Max Phantasm', 'Max Darkness', 'Max Mindstorm', 'Max Knuckle', 'Max Steelspike',
+    'Max Hailstorm', 'Max Quake', 'Max Rockfall', 'Max Flutterby', 'Max Starfall',
+    'Max Airstream', 'Max Wyrmwind', 'Max Ooze', 'G-Max Wildfire', 'G-Max Befuddle',
+    'G-Max Volt Crash', 'G-Max Gold Rush', 'G-Max Chi Strike', 'G-Max Terror', 'G-Max Foam Burst',
+    'G-Max Resonance', 'G-Max Cuddle', 'G-Max Replenish', 'G-Max Malodor', 'G-Max Meltdown',
+    'G-Max Wind Rage', 'G-Max Gravitas', 'G-Max Stonesurge', 'G-Max Volcalith', 'G-Max Tartness',
+    'G-Max Sweetness', 'G-Max Sandblast', 'G-Max Stun Shock', 'G-Max Centinferno', 'G-Max Smite',
+    'G-Max Snooze', 'G-Max Finale', 'G-Max Steelsurge', 'G-Max Depletion', 'G-Max Vine Lash',
+    'G-Max Cannonade', 'G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe',
+    'G-Max One Blow','G-Max Rapid Flow',].forEach(e => delete MOVES_SV[e]);

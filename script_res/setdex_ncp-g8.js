@@ -476,6 +476,29 @@ var SETDEX_VGC2021 = {
                 "Flamethrower",
                 "Psyshock"
             ]
+        },
+        "2022 Body Press Set": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 12,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Oblivious",
+            "item": "Wacan Berry",
+            "moves": [
+                "Iron Defense",
+                "Body Press",
+                "Protect",
+                "Trick Room"
+            ]
         }
     },
     "Omastar": {
@@ -10417,6 +10440,29 @@ var SETDEX_VGC2022 = {
                 "Ally Switch",
                 "Endure",
                 "Poltergeist"
+            ]
+        },
+
+    },
+    "Yveltal": {
+        "Hamstermania's Worlds Top 16 Serious Yveltal": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 76,
+                "sa": 68,
+                "sd": 60,
+                "sp": 44
+            },
+            "nature": "Serious",
+            "ability": "Dark Aura",
+            "item": "Assault Vest",
+            "moves": [
+                "Foul Play",
+                "Sucker Punch",
+                "Oblivion Wing",
+                "Snarl"
             ]
         },
 

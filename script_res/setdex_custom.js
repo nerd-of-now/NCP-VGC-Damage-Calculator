@@ -102,6 +102,10 @@ if (readCookie("custom_gen_84") != null) {
     SETDEX_CUSTOM_BDSP = JSON.parse(readCookie("custom_gen_84"));
     reloadBDSPScript();
 }
+if (readCookie("custom_gen_9") != null) {
+    SETDEX_CUSTOM_SV = JSON.parse(readCookie("custom_gen_9"));
+    reloadSVScript();
+}
 
 var deletecustom = function () {
     gen = parseInt($('input[name="gen"]:checked').val());
@@ -130,6 +134,11 @@ var deletecustom = function () {
             SETDEX_CUSTOM_BDSP = {};
             eraseCookie("custom_gen_" + gen);
             reloadBDSPScript();
+            break;
+        case 9:
+            SETDEX_CUSTOM_SV = {};
+            eraseCookie("custom_gen_" + gen);
+            reloadSVScript();
             break;
         default:
             console.log("THIS SHOULDN\'T HAPPEN LOL");
@@ -170,6 +179,9 @@ var savecustom = function()
 	var spreadName = document.getElementById('spreadName').value
 	if(spreadName == '')
         spreadName = "My Custom Set";
+    //if ('https://pokepast.es/'.indexOf(string) !== -1) {
+    //    $.ajax({ url: 'string', success: function (data) { alert(data); } });
+    //}
 
     //numPokemon separates individual Pokemon so user can add multiple Pokemon at once under the same set name
     var numPokemon = string.split('\n\n')
@@ -375,6 +387,12 @@ var savecustom = function()
                 SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
                 createCookie("custom_gen_84", JSON.stringify(SETDEX_CUSTOM_BDSP), 365)
                 break;
+            case 9:
+                if (SETDEX_CUSTOM_SV[species] == null)
+                    SETDEX_CUSTOM_SV[species] = {}
+                SETDEX_CUSTOM_SV[species][spreadName] = customFormat
+                createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SV), 365)
+                break;
             default:
                 console.log("THIS SHOULDN\'T HAPPEN LOL");
         }
@@ -492,6 +510,13 @@ var savecalc = function (set, spreadName, accessIVs) {
             SETDEX_CUSTOM_BDSP[species][spreadName] = customFormat
                 createCookie("custom_gen_84", JSON.stringify(SETDEX_CUSTOM_BDSP), 365)
             reloadBDSPScript()
+            break;
+        case 9:
+            if (SETDEX_CUSTOM_SV[species] == null)
+                SETDEX_CUSTOM_SV[species] = {}
+            SETDEX_CUSTOM_SV[species][spreadName] = customFormat
+            createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SV), 365)
+            reloadSVScript()
             break;
         default:
             console.log("THIS SHOULDN\'T HAPPEN LOL");

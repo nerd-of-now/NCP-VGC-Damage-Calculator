@@ -148,7 +148,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
 
     // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
     var qualifier = '';
-    if (move.hits > 1) {
+    if (move.hits > 1 && !move.isTripleHit) {
         qualifier = 'approx. ';
         damage = squashMultihit(damage, move.hits);
     }
