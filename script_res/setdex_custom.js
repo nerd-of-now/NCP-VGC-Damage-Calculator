@@ -577,6 +577,8 @@ var exportset = function (set, accessIVs) {
                 : exAbility;
     }
     exLevel = "Level: " + set.level;
+    if (gen == 9)
+        exTera = "Tera Type: " + set.tera_type;
 
     //MORE OPTIMAL VERSION OF EV EXPORT IF READABILITY ISN'T A CONCERN
     //
@@ -689,7 +691,9 @@ var exportset = function (set, accessIVs) {
 
     exportText = exSpecies + exItem + "\n" + exAbility + "\n" + exLevel + "\n" + exEVs + "\n" + exNature + "\n" + exIVs + "\n" +
         exMoveset;
-
+    if (gen == 9)
+        exportText = exSpecies + exItem + "\n" + exAbility + "\n" + exLevel + "\n" + exTera + "\n" + exEVs + "\n" + exNature + "\n" +
+            exIVs + "\n" + exMoveset;
     Clipboard_CopyTo(exportText);
 }
 
