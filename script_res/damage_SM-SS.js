@@ -88,7 +88,7 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     var ateIzeAbility = ATE_IZE_ABILITIES.indexOf(attacker.ability);    //Confirms abilities like Normalize and Pixilate but not Liquid Voice
     var ateIzeBoosted;
     if (!move.isZ && (ateIzeAbility !== -1 || attacker.ability == "Liquid Voice")
-        && (gen <= 4 || ['Hidden Power', 'Weather Ball', 'Natural Gift', 'Judgement', 'Techno Blast', 'Revelation Dance', 'Multi-Attack', 'Terrain Pulse'].indexOf(move.type) !== -1)) {
+        && (gen <= 4 || ['Hidden Power', 'Weather Ball', 'Natural Gift', 'Judgement', 'Techno Blast', 'Revelation Dance', 'Multi-Attack', 'Terrain Pulse'].indexOf(move.name) === -1)) {
         [move, description, ateIzeBoosted] = ateIzeTypeChange(move, attacker, description);
     }
 

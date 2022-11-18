@@ -60,7 +60,9 @@ var DELTADEX_CH1 = {
         "df": 3,
     },
     "Lancer & Susie": {
-
+        "hp": 800,
+        "at": 7,
+        "df": 1,
     },
     "Lancer": {
         "hp": 800,
@@ -161,7 +163,9 @@ var DELTADEX_CH2 = {
         "df": 0,
     },
     "Sweet Cap'n Cakes": {
-
+        "hp": 120,
+        "at": 8,
+        "df": 0,
     },
     "Sweet": {
         "hp": 120,
