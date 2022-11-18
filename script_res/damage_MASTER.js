@@ -1082,9 +1082,9 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
-    //e.vi. Orichalcum Pulse, Hadron Engine (MAY NOT BE DONE HERE)
-    else if ((attacker.ability == "Orichalcum Pulse" && field.weather === "Sun")
-        || (attacker.ability == "Hadron Engine" && field.terrain === "Electric")) {
+    //test. Orichalcum Pulse, Hadron Engine (MAY NOT BE DONE HERE)
+    else if ((attacker.ability == "Orichalcum Pulse" && field.weather === "Sun" && move.category === "Physical")
+        || (attacker.ability == "Hadron Engine" && field.terrain === "Electric" && move.category === "Special")) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
@@ -1655,7 +1655,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.attackerAbility = attacker.ability;
     }
     //test. Collision Course/Electro Drift
-    if (["Collision Course", "Electro Drift"].indexOf(move.name) && typeEffectiveness > 1) {
+    if (["Collision Course", "Electro Drift"].indexOf(move.name) !== -1 && typeEffectiveness > 1) {
         finalMods.push(0x14CD);
         description.courseDriftSE = true;
     }
