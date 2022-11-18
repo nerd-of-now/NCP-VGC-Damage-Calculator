@@ -76,6 +76,9 @@ function buildDescription(description) {
     if (description.hits) {
         output += "(" + description.hits + " hits) ";
     }
+    if (description.courseDriftSE) {
+        output+="(Super Effective) "
+    }
     output += "vs. ";
     if (description.defenseBoost) {
         if (description.defenseBoost > 0) {
@@ -1319,7 +1322,8 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         || (attacker.ability === "Steelworker" && move.type === "Steel")
         || (attacker.ability === "Gorilla Tactics" && move.category === "Physical" && !attacker.isDynamax)
         || (["Plus", "Minus"].indexOf(attacker.ability) !== -1 && attacker.abilityOn)
-        || attacker.ability === "Sharpness" && move.isSlice) {  //KEEP AN EYE ON SHARPNESS AND MAKE SURE IT WORKS LIKE THIS
+        || (attacker.ability === "Sharpness" && move.isSlice)
+        || (attacker.ability === "Rocky Payload" && move.type === "Rock")) {  //KEEP AN EYE ON SHARPNESS AND MAKE SURE IT WORKS LIKE THIS
         //Overgrow/Blaze/Torrent/Swarm work differently in gen 3
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
@@ -1649,6 +1653,11 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
     if (attacker.ability === "Neuroforce" && typeEffectiveness > 1) {
         finalMods.push(0x1400);
         description.attackerAbility = attacker.ability;
+    }
+    //test. Collision Course/Electro Drift
+    if (["Collision Course", "Electro Drift"].indexOf(move.name) && typeEffectiveness > 1) {
+        finalMods.push(0x14CD);
+        description.courseDriftSE = true;
     }
     //c. Sniper
     if (attacker.ability === "Sniper" && isCritical) {
