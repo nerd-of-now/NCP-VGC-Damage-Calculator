@@ -74,9 +74,9 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         }
     } else if (field.weather === 'Sand') {
         if (['Rock', 'Ground', 'Steel'].indexOf(defender.type1) === -1 &&
-                ['Rock', 'Ground', 'Steel'].indexOf(defender.type2) === -1 &&
-                ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].indexOf(defender.ability) === -1 &&
-                defender.item !== 'Safety Goggles') {
+            ['Rock', 'Ground', 'Steel'].indexOf(defender.type2) === -1 &&
+            ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].indexOf(defender.ability) === -1 &&
+            defender.item !== 'Safety Goggles') {
             eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('sandstorm damage');
         }
@@ -85,11 +85,15 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
             eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Ice Body recovery');
         } else if (defender.type1 !== 'Ice' && defender.type2 !== 'Ice' &&
-                ['Magic Guard', 'Overcoat', 'Snow Cloak'].indexOf(defender.ability) === -1 &&
-                defender.item !== 'Safety Goggles') {
+            ['Magic Guard', 'Overcoat', 'Snow Cloak'].indexOf(defender.ability) === -1 &&
+            defender.item !== 'Safety Goggles') {
             eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('hail damage');
         }
+    }
+    else if (field.weather === 'Snow' && defender.ability === 'Ice Body') {
+        eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
+        eotText.push('Ice Body recovery');
     }
     if (defender.item === 'Leftovers') {
         eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
@@ -146,6 +150,17 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         eotText.push('G-Max field damage');
     }
 
+    if (field.isSaltCure && defender.ability !== 'Magic Guard') {
+        if (["Water", "Steel"].indexOf(defender.type1) === -1 && ["Water", "Steel"].indexOf(defender.type2) === -1) {
+            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
+            eotText.push('Salt Cure damage');
+        }
+        else {
+            eot -= Math.floor(Math.floor(defender.maxHP / 4) * maxChip);
+            eotText.push('extra Salt Cure damage');
+        }
+    }
+
     // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
     var qualifier = '';
     if (move.hits > 1 && !move.isTripleHit) {
@@ -158,7 +173,10 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     var afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
     if (c === 1) {
         return 'guaranteed OHKO' + afterText;
-    } else if (c > 0 && eot >= 0) {
+    }
+    else if (c > 0 && eot >= 0) {
+        if (move.hits >= 8 && damage[0] < defender.curHP && damage[1] >= defender.curHP)    //sv
+            return 'very high chance to OHKO' + afterText;                                  //sv
         return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;
     }
 
@@ -178,6 +196,8 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     if (c === 1) {
         return 'guaranteed OHKO' + afterText;
     } else if (c > 0) {
+        if (move.hits >= 8 && Math.round(c * 1000) / 10 > 93)    //sv    //This if statement isn't expected to happen, but is accounted for just in case
+            return 'very high chance to OHKO' + afterText;                                  //sv
         return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;
     }
 
@@ -188,7 +208,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
             return 'guaranteed ' + i + 'HKO' + afterText;
         } else if (c > 0) {
             var pct = Math.round(c * 1000) / 10;
-            var chance = pct ? qualifier + pct + '%' : 'Miniscule';
+            var chance = pct > 93 && move.hits >= 8 ? "very high" : pct ? qualifier + pct + '%' : 'Miniscule';  //sv
             return chance + ' chance to ' + i + 'HKO' + afterText;
         }
     }
@@ -326,6 +346,41 @@ function squashMultihit(d, hits) {
                     d[6]+d[6]+d[6]+d[6]+d[7], d[6]+d[6]+d[7]+d[7]+d[7], 5*d[7], d[7]+d[7]+d[7]+d[8]+d[8],
                     d[7]+d[7]+d[8]+d[8]+d[8], 5*d[8], d[8]+d[8]+d[8]+d[9]+d[9], d[8]+d[9]+d[9]+d[9]+d[9],
                     d[9]+d[9]+d[9]+d[9]+d[10], d[9]+d[10]+d[10]+d[10]+d[10], d[10]+d[10]+d[11]+d[11]+d[11], 5*d[15]
+                ];
+            case 6:       //PAY ATTENTION TO WHAT SMOGON DOES, THEY MIGHT HANDLE THIS DIFFERENTLY
+                return [
+                    6*d[0], 2*d[4]+4*d[5], 3*d[5]+3*d[6], 6*d[6],
+                    3*d[6]+3*d[7], 6*d[7], 5*d[7]+d[8], 4*d[7]+2*d[8], 
+                    2*d[7]+4*d[8], d[7]+5*d[8], 6*d[8], 3*d[8]+3*d[9],
+                    6*d[9],3*d[9]+3*d[10], 4*d[10]+2*d[11], 6*d[15]
+                ];
+            case 7:
+                return [
+                    7*d[0], 5*d[5]+2*d[6], 2*d[5]+5*d[6], 5*d[6]+2*d[7],
+                    3*d[6]+4*d[7], 7*d[7], 5*d[7]+2*d[8], 4*d[7]+3*d[8],
+                    3*d[7]+4*d[8], 2*d[7]+5*d[8], 7*d[8], 4*d[8]+3*d[9],
+                    5*d[9]+2*d[10], 5*d[10]+2*d[11], 2*d[10]+5*d[11], 7*d[15]
+                ];
+            case 8:
+                return [
+                    8*d[0], 4*d[5]+4*d[6], 8*d[6], 4*d[6]+4*d[7], 
+                    8*d[7], 7*d[7]+d[8], 6*d[7]+2*d[8], 5*d[7]+3*d[8],
+                    3*d[7]+5*d[8], 2*d[7]+6*d[8], d[7]+7*d[8], 8*d[8], 
+                    4*d[8]+4*d[9], 8*d[9], 4*d[9]+4*d[10], 8*d[15]
+                ];
+            case 9:
+                return [
+                    9*d[0], 2*d[5]+7*d[6], 7*d[6]+2*d[7], 4*d[6]+5*d[7], 
+                    9*d[7], 7*d[7]+2*d[8], 6*d[7]+3*d[8], 5*d[7]+4*d[8],
+                    4*d[7]+5*d[8], 3*d[7]+6*d[8], 2*d[7]+7*d[8], 9*d[8], 
+                    5*d[8]+4*d[9], 7*d[9]+2*d[10], 7*d[10]+2*d[11], 9*d[15]
+                ];
+            case 10:
+                return [
+                    10*d[0], 10*d[6], 5*d[6]+5*d[7], 10*d[7], 
+                    9*d[7]+d[8], 8*d[7]+2*d[8], 7*d[7]+3*d[8], 6*d[7]+4*d[8],
+                    4*d[7]+6*d[8], 3*d[7]+7*d[8], 2*d[7]+8*d[8], d[7]+9*d[8], 
+                    10*d[8],  5*d[8]+5*d[9], 10*d[9], 10*d[15]
                 ];
             default:
                 console.log("Unexpected # of hits: " + hits);

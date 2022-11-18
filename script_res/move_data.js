@@ -922,7 +922,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 75,
         type: 'Fighting',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        ignoreScreens: true,
     },
     'Doom Desire': {
         bp: 120,
@@ -2241,7 +2242,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 55,
         type: 'Grass',
         category: 'Physical',
-        isSpread: true
+        isSpread: true,
     },
     'Razor Shell': {
         bp: 75,
@@ -2958,7 +2959,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         bp: 85,
         zp: 160,
-        isBite: true
+        isBite: true,
+        ignoreScreens: true,
     },
     'Fleur Cannon': {
         category: 'Special',
@@ -4876,15 +4878,530 @@ delete MOVES_SS['Hidden Power Flying'];
 delete MOVES_SS['Hidden Power Dragon'];
 delete MOVES_SS['Hidden Power Poison'];
 
-var MOVES_SV = $.extend(true, {}, MOVES_SS_NATDEX, {
+var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
+    //Past move changes that aren't nerfs or buffs
+    //'Cut': {
+    //    isSlice: true,
+    //},
+    'Razor Leaf': {
+        isSlice: true,
+    },
+    //'Slash': {
+    //    isSlice: true,
+    //},
+    //'Fury Cutter': {
+    //    isSlice: true,
+    //},
+    'Air Cutter': {
+        isSlice: true,
+        isWind: true,
+    },
+    'Aerial Ace': {
+        isSlice: true,
+    },
+    'Leaf Blade': {
+        isSlice: true,
+    },
+    'Night Slash': {
+        isSlice: true,
+    },
+    'Air Slash': {
+        isSlice: true,
+    },
+    'X-Scissor': {
+        isSlice: true,
+    },
+    'Psycho Cut': {
+        isSlice: true,
+    },
+    'Cross Poison': {
+        isSlice: true,
+    },
+    'Sacred Sword': {
+        isSlice: true,
+    },
+    'Razor Shell': {
+        isSlice: true,
+    },
+    'Solar Blade': {
+        isSlice: true,
+    },
+    'Behemoth Blade': {
+        isSlice: true,
+    },
+    //'Gust': {
+    //    isWind: true,
+    //},
+    'Blizzard': {
+        isWind: true,
+    },
+    'Icy Wind': {
+        isWind: true,
+    },
+    //'Twister': {
+    //    isWind: true,
+    //},
+    'Heat Wave': {
+        isWind: true,
+    },
+    'Hurricane': {
+        isWind: true,
+    },
+    'Petal Blizzard': {
+        isWind: true,
+    },
+    //'Fairy Wind': {
+    //    isWind: true,
+    //},
+
+    //Past move nerfs/buffs
+    'Wicked Blow': {
+        bp: 75,
+    },
+    'Grassy Glide': {
+        bp: 60,
+    },
+    'Glacial Lance': {
+        bp: 120,
+    },
+
+    //PLA moves
+    'Dire Claw': {
+        bp: 80,
+        type: 'Poison',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true,
+    },
+    'Psyshield Bash': {
+        bp: 70,
+        type: 'Psychic',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true,
+    },
+    'Power Shift': {
+        type: 'Normal',
+        category: 'Status',
+    },
+    'Stone Axe': {
+        bp: 65,
+        type: 'Rock',
+        category: 'Physical',
+        makesContact: true,
+        isSlice: true,
+    },
+    'Springtide Storm': {
+        bp: 100,
+        type: 'Fairy',
+        category: 'Special',
+        hasSecondaryEffect: true,
+        isWind: true,
+        isSpread: true,
+    },
+    'Mystical Power': {
+        bp: 70,
+        type: 'Psychic',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Raging Fury': {
+        bp: 120,
+        type: 'Fire',
+        category: 'Physical',
+    },
+    'Wave Crash': {
+        bp: 120,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Chloroblast': {
+        bp: 150,
+        type: 'Grass',
+        category: 'Special',
+    },
+    'Mountain Gale': {
+        bp: 100,
+        type: 'Ice',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
+    'Victory Dance': {
+        type: 'Fighting',
+        category: 'Status',
+    },
+    'Headlong Rush': {
+        bp: 120,
+        type: 'Ground',
+        category: 'Physical',
+        isPunch: true,
+        makesContact: true,
+    },
+    'Barb Barrage': {
+        bp: 60,
+        type: 'Poison',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
+    'Esper Wing': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Bitter Malice': {
+        bp: 75,
+        type: 'Ghost',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Shelter': {
+        type: 'Steel',
+        category: 'Status',
+    },
+    'Triple Arrows': {
+        bp: 90,
+        type: 'Fighting',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
+    'Infernal Parade': {
+        bp: 60,
+        type: 'Ghost',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Ceaseless Edge': {
+        bp: 65,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true,
+        isSlice: true,
+    },
+    'Bleakwind Storm': {
+        bp: 100,
+        type: 'Flying',
+        category: 'Special',
+        hasSecondaryEffect: true,
+        isWind: true,
+        isSpread: true,
+    },
+    'Wildbolt Storm': {
+        bp: 100,
+        type: 'Electric',
+        category: 'Special',
+        hasSecondaryEffect: true,
+        isWind: true,
+        isSpread: true,
+    },
+    'Sandsear Storm': {
+        bp: 100,
+        type: 'Ground',
+        category: 'Special',
+        hasSecondaryEffect: true,
+        isWind: true,
+        isSpread: true,
+    },
+    'Lunar Blessing': {
+        type: 'Psychic',
+        category: 'Status',
+    },
+    'Take Heart': {
+        type: 'Psychic',
+        category: 'Status',
+    },
+
+    //SV moves
     'Tera Blast': {
         bp: 80,
         type: 'Normal',
         category: 'Special',
     },
+    'Silk Trap': {
+        type: 'Bug',
+        category: 'Status',
+    },
+    'Axe Kick': {
+        bp: 120,
+        type: 'Fighting',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+    },
+    'Last Respects': {
+        bp: 50,
+        type: 'Ghost',
+        category: 'Physical',
+    },
+    'Lumina Crash': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Order Up': {
+        bp: 80,
+        type: 'Dragon',
+        category: 'Physical',
+        //!!consider adding something for when it has orange Tatsugiri
+    },
+    'Jet Punch': {
+        bp: 60,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        isPunch: true,
+    },
+    'Spicy Extract': {
+        type: 'Grass',
+        category: 'Status',
+    },
+    'Spin Out': {
+        bp: 100,
+        type: 'Steel',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Population Bomb': {
+        bp: 20,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+        isSlice: true,
+        isTenMultiHit: true,
+    },
+    'Ice Spinner': {
+        bp: 80,
+        type: 'Ice',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Glaive Rush': {
+        bp: 120,
+        type: 'Dragon',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Revival BLessing': {
+        type: 'Normal',
+        category: 'Status',
+    },
+    'Salt Cure': {
+        bp: 40,
+        type: 'Rock',
+        category: 'Physical',
+        //!!consider adding effect for salt cure chip damage
+    },
+    'Triple Dive': {
+        bp: 30,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        isThreeHit: true,
+    },
+    'Mortal Spin': {
+        bp: 30,
+        type: 'Poison',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+        isSpread: true,
+    },
+    'Doodle': {
+        type: 'Normal',
+        category: 'Status',
+    },
+    'Fillet Away': {
+        type: 'Normal',
+        category: 'Status',
+    },
+    'Kowtow Cleave': {
+        bp: 85,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true,
+        isSlice: true,
+    },
+    'Flower Trick': {
+        bp: 70,
+        type: 'Grass',
+        category: 'Physical',
+        alwaysCrit: true,
+    },
+    'Torch Song': {
+        bp: 80,
+        type: 'Fire',
+        category: 'Special',
+        isSound: true,
+        hasSecondaryEffect: true,
+    },
+    'Aqua Step': {
+        bp: 80,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+    },
+    'Raging Bull': {
+        bp: 90,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+        ignoreScreens: true,
+    },
+    'Make It Rain': {
+        bp: 120,
+        type: 'Steel',
+        category: 'Special',
+        isSpread: true,
+    },
+    'Ruination': {
+        bp: 1,
+        type: 'Dark',
+        category: 'Special',
+    },
+    'Collision Course': {
+        bp: 100,
+        type: 'Fighting',
+        category: 'Physical',
+        makesContact: true,
+        //!!consider conditional here for additional SE damage
+    },
+    'Electro Drift': {
+        bp: 100,
+        type: 'Electric',
+        category: 'Special',
+        makesContact: true,
+        //!!same conditional as above
+    },
+    'Shed Tail': {
+        type: 'Normal',
+        category: 'Status',
+    },
+    'Chilly Reception': {
+        type: 'Ice',
+        category: 'Status',
+    },
+    'Tidy Up': {
+        type: 'Normal',
+        category: 'Status',
+    },
+    'Snowscape': {
+        type: 'Ice',
+        category: 'Status',
+    },
+    'Pounce': {
+        bp: 50,
+        type: 'Bug',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+    },
+    'Trailblaze': {
+        bp: 50,
+        type: 'Grass',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+    },
+    'Chilling Water': {
+        bp: 50,
+        type: 'Water',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Hyper Drill': {
+        bp: 100,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Twin Beam': {
+        bp: 40,
+        type: 'Psychic',
+        category: 'Special',
+        isTwoHit: true,
+    },
+    'Rage Fist': {
+        bp: 50,
+        type: 'Ghost',
+        category: 'Physical',
+        makesContact: true,
+        isPunch: true,
+    },
+    'Armor Cannon': {
+        bp: 120,
+        type: 'Fire',
+        category: 'Special',
+    },
+    'Bitter Blade': {
+        bp: 90,
+        type: 'Fire',
+        category: 'Physical',
+        makesContact: true,
+        isSlice: true,
+    },
+    'Double Shock': {
+        bp: 120,
+        type: 'Electric',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Gigaton Hammer': {
+        bp: 160,
+        type: 'Steel',
+        category: 'Physical',
+    },
+    //'Comeuppance': {
+    //    bp: 1,
+    //    type: 'Dark',
+    //    category: 'Physical',
+    //    makesContact: true,
+    //    //figure out what to do with this fixed damage attack
+    //},
+    'Aqua Cutter': {
+        bp: 70,
+        type: 'Water',
+        category: 'Physical',
+        isSlice: true,
+    },
+    'Blazing Torque': {
+        bp: 80,
+        type: 'Fire',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
+    'Wicked Torque': {
+        bp: 80,
+        type: 'Dark',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
+    'Noxious Torque': {
+        bp: 100,
+        type: 'Poison',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
+    'Combat Torque': {
+        bp: 100,
+        type: 'Fighting',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
+    'Magical Torque': {
+        bp: 100,
+        type: 'Fairy',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+    },
 });
 
-['Max Strike', 'Max Flare', 'Max Geyser', 'Max Lightning', 'Max Overgrowth',
+var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
+
+[   //Max Moves
+    'Max Strike', 'Max Flare', 'Max Geyser', 'Max Lightning', 'Max Overgrowth',
     'Max Phantasm', 'Max Darkness', 'Max Mindstorm', 'Max Knuckle', 'Max Steelspike',
     'Max Hailstorm', 'Max Quake', 'Max Rockfall', 'Max Flutterby', 'Max Starfall',
     'Max Airstream', 'Max Wyrmwind', 'Max Ooze', 'G-Max Wildfire', 'G-Max Befuddle',
@@ -4894,4 +5411,33 @@ var MOVES_SV = $.extend(true, {}, MOVES_SS_NATDEX, {
     'G-Max Sweetness', 'G-Max Sandblast', 'G-Max Stun Shock', 'G-Max Centinferno', 'G-Max Smite',
     'G-Max Snooze', 'G-Max Finale', 'G-Max Steelsurge', 'G-Max Depletion', 'G-Max Vine Lash',
     'G-Max Cannonade', 'G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe',
-    'G-Max One Blow','G-Max Rapid Flow',].forEach(e => delete MOVES_SV[e]);
+    'G-Max One Blow', 'G-Max Rapid Flow',
+    //Z-moves
+    'Breakneck Blitz', 'All-Out Pummeling', 'Supersonic Skystrike', 'Acid Downpour', 'Tectonic Rage',
+    'Continental Crush', 'Savage Spin-Out', 'Never-Ending Nightmare', 'Corkscrew Crash', 'Inferno Overdrive',
+    'Hydro Vortex', 'Bloom Doom', 'Gigavolt Havoc', 'Shattered Psyche', 'Subzero Slammer',
+    'Devastating Drake', 'Black Hole Eclipse', 'Twinkle Tackle', 'Catastropika', 'Sinister Arrow Raid',
+    'Malicious Moonsault', 'Oceanic Operetta', 'Guardian of Alola', 'Soul-Stealing 7-Star Strike', 'Stoked Sparksurfer',
+    'Pulverizing Pancake', 'Extreme Evoboost', 'Genesis Supernova', '10,000,000 Volt Thunderbolt', 'Light That Burns the Sky',
+    'Searing Sunraze Smash', 'Menacing Moonraze Maelstrom', 'Let\'s Snuggle Forever', 'Splintered Stormshards', 'Clangorous Soulblaze',
+    //Hidden Power
+    'Hidden Power Fire', 'Hidden Power Water', 'Hidden Power Grass', 'Hidden Power Electric', 'Hidden Power Psychic',
+    'Hidden Power Ice', 'Hidden Power Dragon', 'Hidden Power Dark', 'Hidden Power Fighting', 'Hidden Power Flying',
+    'Hidden Power Poison', 'Hidden Power Ground', 'Hidden Power Rock', 'Hidden Power Bug', 'Hidden Power Ghost', 'Hidden Power Steel',
+    //deleted SWSH moves
+    'Karate Chop', 'Double Slap', 'Comet Punch', 'Razor Wind', 'Jump Kick', 'Rolling Kick', 'Twineedle', 'Sonic Boom',
+    'Dragon Rage', 'Meditate', 'Rage', 'Barrier', 'Bide', 'Mirror Move', 'Egg Bomb', 'Bone Club',
+    'Clamp', 'Spike Cannon', 'Constrict', 'Barrage', 'Bubble', 'Dizzy Punch', 'Flash', 'Psywave',
+    'Sharpen', 'Spider Web', 'Nightmare', 'Feint Attack', 'Foresight', 'Return', 'Frustration', 'Magnitude',
+    'Pursuit', 'Hidden Power', 'Smelling Salts', 'Assist', 'Refresh', 'Snatch', 'Secret Power', 'Camouflage',
+    'Tail Glow', 'Mud Sport', 'Ice Ball', 'Needle Arm', 'Odor Sleuth', 'Silver Wind', 'Grass Whistle', 'Signal Beam',
+    'Sky Uppercut', 'Water Sport', 'Psycho Boost', 'Miracle Eye', 'Wake-Up Slap', 'Natural Gift', 'Embargo', 'Trump Card',
+    'Heal Block', 'Wring Out', 'Lucky Chant', 'Me First', 'Punishment', 'Mud Bomb', 'Mirror Shot', 'Rock Climb',
+    'Magnet Bomb', 'Captivate', 'Heal Order', 'Ominous Wind', 'Telekinesis', 'Flame Burst', 'Synchronoise', 'Chip Away',
+    'Sky Drop', 'Bestow', 'Heart Stamp', 'Steamroller', 'Rototiller', 'Ion Deluge', 'Spotlight', 'Laser Focus', 'Gear Up',
+    //deleted SV moves
+    'Submission', 'Skull Bash', 'Hyper Fang', 'Mind Reader', 'Vital Throw', 'Hail', 'Nature Power', 'Magic Coat',
+    'Revenge', 'Grudge', 'Aromatherapy', 'Doom Desire', 'Psycho Shift', 'Heart Swap', 'Autotomize', 'Dual Chop',
+    'Leaf Tornado', 'Mat Block', 'Crafty Shield', 'Flower Shield', 'Venom Drench', 'Powder', 'Power-Up Punch', 'Dragon Hammer',
+    'Eternabeam',
+].forEach(e => delete MOVES_SV[e]);

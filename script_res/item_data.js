@@ -358,6 +358,16 @@ var ITEMS_SS = ITEMS_SM_NO_Z_MEGA.concat([
     'Rusted Shield',
 ]);
 
+var ITEMS_SV = ITEMS_SS.concat([
+    'Mirror Herb',  //copies stat boosts from last stat boosting move from opponent, no calc functionality
+    'Covert Cloak', //item Shield Dust, no calc functionality
+    'Loaded Dice',  //increases chances of hitting more times with multi hit moves, no calc functionality
+    'Ability Shield',   //prevents other mons from changing ability, may have f u t u r e calc functionality
+    'Booster Energy',   //activates paradox mon abilities without sun/electric terrain, no calc functionality
+    'Clear Amulet', //item Clear Body
+    'Punching Glove',   //item Iron Fist, no contact, probably stacks with Iron Fist
+]);
+
 var ITEMS_BDSP = ITEMS_DPP.concat([
     'Pixie Plate',
 ]);
@@ -635,58 +645,6 @@ function getZType(item) {
     }
 }
 
-//FIX THIS CODE TO MATCH THIS EXAMPLE: 'Abomasite': 'Abomasnow'
-//var MEGA_STONE_USER_LOOKUP = [
-//['Abomasite', 'Abomasnow'],
-//['Absolite', 'Absol'],
-//['Aerodactylite', 'Aerodactyl'],
-//['Aggronite', 'Aggron'],
-//['Alakazite', 'Alakazam'],
-//['Ampharosite', 'Ampharos'],
-//['Banettite', 'Banette'],
-//['Blastoisinite', 'Blastoise'],
-//['Blazikenite', 'Blaziken'],
-//['Charizardite X', 'Charizard'],
-//['Charizardite Y', 'Charizard'],
-//['Garchompite', 'Garchomp'],
-//['Gardevoirite', 'Gardevoir'],
-//['Gengarite', 'Gengar'],
-//['Gyaradosite', 'Gyarados'],
-//['Heracronite', 'Heracross'],
-//['Houndoominite', 'Houndoom'],
-//['Kangaskhanite', 'Kangaskhan'],
-//['Latiasite', 'Latias'],
-//['Latiosite', 'Latios'],
-//['Lucarionite', 'Lucario'],
-//['Manectite', 'Manectric'],
-//['Mawilite', 'Mawile'],
-//['Medichamite', 'Medicham'],
-//['Mewtwonite X', 'Mewtwo'],
-//['Mewtwonite Y', 'Mewtwo'],
-//['Pinsirite', 'Pinsir'],
-//['Scizorite', 'Scizor'],
-//['Tyranitarite', 'Tyranitar'],
-//['Venusaurite', 'Venusaur'],
-//['Altarianite', 'Altaria'],
-//['Audinite', 'Audino'],
-//['Beedrillite', 'Beedrill'],
-//['Cameruptite', 'Camerupt'],
-//['Diancite', 'Diancie'],
-//['Galladite', 'Gallade'],
-//['Glalitite', 'Glalie'],
-//['Lopunnite', 'Lopunny'],
-//['Metagrossite', 'Metagross'],
-//['Pidgeotite', 'Pidgeot'],
-//['Sablenite', 'Sableye'],
-//['Salamencite', 'Salamence'],
-//['Sceptilite', 'Sceptile'],
-//['Sharpedonite', 'Sharpedo'],
-//['Slowbronite', 'Slowbro'],
-//['Steelixite', 'Steelix'],
-//['Swampertite', 'Swampert'],
-//['Red Orb', 'Groudon'],
-//['Blue Orb', 'Kyogre'],
-//];
 var MEGA_STONE_USER_LOOKUP = {
     'Abomasite': 'Abomasnow',
     'Absolite': 'Absol',
@@ -773,11 +731,6 @@ var SIGNATURE_Z_MOVE_LOOKUP = {
 };
 
 function getSignatureZMove(item, species, move) {
-    //var tempZ;
-    //for (var i = 0; i < SIGNATURE_Z_MOVE_LOOKUP.length; i++) {
-    //    tempZ = SIGNATURE_Z_MOVE_LOOKUP[i];
-    //    if (tempZ[0] == item && tempZ[1] == species && tempZ[2] == move) return tempZ[3];
-    //}
     var isSigZ = SIGNATURE_Z_MOVE_LOOKUP[species] && SIGNATURE_Z_MOVE_LOOKUP[species][item] && SIGNATURE_Z_MOVE_LOOKUP[species][item][move]
         ? SIGNATURE_Z_MOVE_LOOKUP[species][item][move] : -1;
     return isSigZ;

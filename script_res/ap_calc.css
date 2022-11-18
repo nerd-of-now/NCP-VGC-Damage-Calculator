@@ -190,12 +190,15 @@ th {
     width: 28em;
 }
 .info-selectors select {
-    width: 15em;
+    width: 12em;
+}
+select.ability-supreme {
+    width: 4.5em;
 }
 select.toxic-counter {
     width: 4.5em;
 }
-.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge {
+.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits, .move-lastRespRageFist {
     font-size: 0.9em;
 }
 .move-selector {
@@ -204,11 +207,14 @@ select.toxic-counter {
 .poke-info input.move-bp {
     width: 2em;
 }
-.move-cat/*, .move-hits*/ {
+.move-cat/*, .move-hits*/, .move-lastRespRageFist {
     width: 4em;
 }
-.move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge {
+.move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits {
     width: 4.6em;
+}
+.abilityToggle{
+    margin-top: 1px;
 }
 .poke-info .crit-btn {
     font-size: 0.8em;

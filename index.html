@@ -42,7 +42,7 @@
         </div>
         <div class="wrapper">
             <div>
-                <span class="title-text">VGC 2022: Sword & Shield Damage Calculator</span>
+                <span class="title-text">VGC 2023: Scarlet & Violet Damage Calculator</span>
                 <span class="generations" title="Select the generation.">
                     <input class="gen btn-input" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
                     <input class="gen btn-input" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
@@ -51,9 +51,8 @@
                     <input class="gen btn-input" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-mid" for="gen5">B/W</label>
                     <input class="gen btn-input" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">ORAS</label>
                     <input class="gen btn-input" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">USUM</label>
-                    <input class="gen btn-input" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">SWSH</label>
-                    <!--<input class="gen btn-input" type="radio" name="gen" value="8" id="gen8" /><label class="btn btn-small btn-mid" for="gen8">SWSH</label>
-                    <input class="gen btn-input" type="radio" name="gen" value="9" id="gen9" checked="checked" /><label class="btn btn-small btn-right" for="gen9">S/V</label>-->
+                    <input class="gen btn-input" type="radio" name="gen" value="8" id="gen8" /><label class="btn btn-small btn-mid" for="gen8">SWSH</label>
+                    <input class="gen btn-input" type="radio" name="gen" value="9" id="gen9" checked="checked" /><label class="btn btn-small btn-right" for="gen9">S/V</label>
                 </span>
             </div>
             <hr />
@@ -77,8 +76,11 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-            <p>VGC 2022 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerd_of_now">@nerd_of_now</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboydev">@squirrelboydev</a>).</p>
-            <p><b>Is there an important or relevant set missing? <a href="https://forms.gle/zBbEnvp2vZ2UADUJA">Give us your suggestion!</a></b></p>
+            <p>VGC 2023 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerd_of_now">@nerd_of_now</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboydev">@squirrelboydev</a>).</p>
+            <!--<p><b>Is there an important or relevant set missing? <a href="https://forms.gle/zBbEnvp2vZ2UADUJA">Give us your suggestion!</a></b></p>-->
+            <p><b>Pokemon Scarlet and Violet are out now!</b> We are working on optimizing this calculator for the new games.
+            <br>This calculator contains spoilers for Scarlet and Violet. <b>Use at your own discretion.</b></p>
+
             <p>For any issues with or other suggestions for this version of the Damage Calculator, contact Alex on <a href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator/issues" target="_blank">Github</a> or <a href="https://twitter.com/nerd_of_now">Twitter</a>.</p>
             <!-- OLD NUGGETBRIDGE ADS -->
             <!-- ALSO OLD TRAINER TOWER ADS -->
@@ -160,6 +162,7 @@
                             <label>Ability</label>
                             <select class="ability terrain-trigger calc-trigger"></select>
                             <input class="abilityToggle calc-trigger hide" type="checkbox" title="Is this Ability active?">
+                            <select class= "ability-supreme calc-trigger hide"><option value="0">0 down</option><option value="1">1 down</option><option value="2">2 down</option><option value="3">3 down</option><option value="4">4 down</option><option value="5">5 down</option></select>
                         </div>
                         <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <label>Item</label>
@@ -176,7 +179,6 @@
                         <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
                         <input class="max move-max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8" for="maxL" title="Dynamax this Pokemon?">Dynamax</label>
                         <input class="tera move-tera calc-trigger btn-input" type="checkbox" id="teraL" /><label class="btn btn-wide gen-specific g9" for="teraL" title="Terastalize this Pokemon?">Terastal</label>
-                        <!--<select class="tera-type calc-trigger gen-specific g9"></select>-->
                     </div>
                     <div class="move1">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -190,6 +192,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="move2">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -203,6 +207,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="move3">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -216,6 +222,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="move4">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -229,6 +237,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="info-group">
                         <input type="text" id="setName1" style="width: 25%" value="My Calc Set">
@@ -272,7 +282,8 @@
                         <input class="btn-input calc-trigger" type="radio" name="weather" value="Sun" id="sun" /><label class="btn btn-small btn-mid" for="sun">Sun</label>
                         <input class="btn-input calc-trigger" type="radio" name="weather" value="Rain" id="rain" /><label class="btn btn-small btn-mid" for="rain">Rain</label>
                         <input class="btn-input calc-trigger" type="radio" name="weather" value="Sand" id="sand" /><label class="btn btn-small btn-mid" for="sand">Sand</label>
-                        <input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" /><label class="btn btn-small btn-right" for="hail">Hail</label>
+                        <input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" /><label class="btn btn-small btn-right gen-specific g3 g4 g5 g6 g7 g8" for="hail">Hail</label>
+                        <input class="btn-input calc-trigger" type="radio" name="weather" value="Snow" id="snow" /><label class="btn btn-small btn-right gen-specific g9" for="snow">Snow</label>
                     </div>
                     <div class="gen-specific g6 g7" style="width: 23em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="btn-input calc-trigger" type="radio" name="weather" value="Harsh Sun" id="harsh-sun" /><label class="btn btn-wide btn-left" for="harsh-sun">Harsh Sun</label>
@@ -285,10 +296,17 @@
                         <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Rain" id="gscRain" /><label class="btn btn-small btn-mid" for="gscRain">Rain</label>
                         <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" /><label class="btn btn-small btn-right" for="gscSand">Sand</label>
                     </div>
-                    <div class="gen-specific g6 g7 g8 g9" style="width: 23em; margin: 5px auto;" title="Select the current radiating aura.">
+                    <div class="gen-specific g6 g7 g8" style="width: 22em; margin: 5px auto;" title="Select the current radiating aura.">
                         <input class="btn-input calc-trigger" type="checkbox" name="aura" value="Aura Break" id="aura-break" /><label class="btn btn-wide btn-left" for="aura-break">Aura Break</label>
                         <input class="btn-input calc-trigger" type="checkbox" name="aura" value="Fairy Aura" id="fairy-aura" /><label class="btn btn-wide btn-mid" for="fairy-aura">Fairy Aura</label>
                         <input class="btn-input calc-trigger" type="checkbox" name="aura" value="Dark Aura" id="dark-aura" /><label class="btn btn-wide btn-right" for="dark-aura">Dark Aura</label>
+                    </div>
+                    <div class="gen-specific g9" style="width: 19em; margin: 5px auto;" title="Select the current active Ruin.">
+                        <input class="btn-input calc-trigger" type="checkbox" name="ruin" value="Tablets of Ruin" id="tablets-of-ruin" /><label class="btn btn-xxxwide btn-left" for="tablets-of-ruin">Tablets of Ruin <u>(-Atk)</u></label>
+                        <input class="btn-input calc-trigger" type="checkbox" name="ruin" value="Vessel of Ruin" id="vessel-of-ruin" /><label class="btn btn-xxxwide btn-right" for="vessel-of-ruin">Vessel of Ruin <u>(-SpA)</u></label>
+                        <br />
+                        <input class="btn-input calc-trigger" type="checkbox" name="ruin" value="Sword of Ruin" id="sword-of-ruin" /><label class="btn btn-xxxwide btn-left" for="sword-of-ruin">Sword of Ruin <u>(-Def)</u></label>
+                        <input class="btn-input calc-trigger" type="checkbox" name="ruin" value="Beads of Ruin" id="beads-of-ruin" /><label class="btn btn-xxxwide btn-right" for="beads-of-ruin">Beads of Ruin <u>(-SpD)</u></label>
                     </div>
                     <!--<div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
                     <input class="btn-input calc-trigger" type="checkbox" id="gravity" /><label class="btn" for="gravity">Gravity</label>
@@ -297,17 +315,17 @@
                     <input class="btn-input calc-trigger" type="checkbox" id="neutralizingGas" /><label class="btn btn-xwide" for="neutralizingGas">Neutralizing Gas</label>
                 </div>-->
                     <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 14.6em; margin: 5px auto;">
-                        <div class="gen-specific g4 g5 g6 g7 divider">
+                        <div class="gen-specific g4 g5 g6 g7 g9 divider">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </div>
                         <input class="btn-input calc-trigger" type="checkbox" id="gravity" /><label class="btn" for="gravity" title="Is gravity in effect?">Gravity</label>
-                        <div class="gen-specific g8 g9 divider">
+                        <div class="gen-specific g8 divider">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input class="btn-input calc-trigger" type="checkbox" id="neutralizingGas" /><label class="btn btn-xwide" for="neutralizingGas" title="Is neutralizing gas in effect?">Neutralizing Gas </label>
                         </div>
                     </div>
                     <!-- Note: I know the html is clunky but it does make it look nicer so idk probably worth
-                       I have the original code commented out anyways if I change my mind -->
+                I have the original code commented out anyways if I change my mind -->
                     <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9" />
                     <div class="btn-group gen-specific g7 g8">
                         <div class="left" title="Is this Pokemon protecting?">
@@ -319,20 +337,20 @@
                     </div>
                     <div class="btn-group gen-specific g3 g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Has this Pokemon's power been boosted by an ally's Helping Hand?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="helpingHandL" /><label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="helpingHandL" /><label class="btn btn-xwide" for="helpingHandL">Helping Hand</label>
                         </div>
                         <div class="right" title="Has this Pokemon's power been boosted by an ally's Helping Hand?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="helpingHandR" /><label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="helpingHandR" /><label class="btn btn-xwide" for="helpingHandR">Helping Hand</label>
                         </div>
                     </div>
                     <div class="btn-group">
                         <div class="left" title="Is this Pokemon protected by Reflect and/or Light Screen?">
                             <input class="btn-input calc-trigger" type="checkbox" id="reflectL" /><label class="btn btn-left" for="reflectL">Reflect</label>
-                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" /><label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" /><label class="btn btn-wide btn-right" for="lightScreenL">Light Screen</label>
                         </div>
                         <div class="right" title="Is this Pokemon protected by Reflect and/or Light Screen?">
                             <input class="btn-input calc-trigger" type="checkbox" id="reflectR" /><label class="btn btn-left" for="reflectR">Reflect</label>
-                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" /><label class="btn btn-xwide btn-right" for="lightScreenR">Light Screen</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" /><label class="btn btn-wide btn-right" for="lightScreenR">Light Screen</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g8">
@@ -361,58 +379,10 @@
                     </div>
                     <div class="btn-group gen-specific g5 g6 g7 g8 g9">
                         <div class="left" title="Is this Pokemon protected by an ally's Friend Guard?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="friendGuardL" /><label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="friendGuardL" /><label class="btn btn-xwide" for="friendGuardL">Friend Guard</label>
                         </div>
                         <div class="right" title="Is this Pokemon protected by an ally's Friend Guard?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="friendGuardR" /><label class="btn btn-xxwide" for="friendGuardR">Friend Guard</label>
-                        </div>
-                    </div>
-                    <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
-                        <div class="left" title="Does this Pokemon's ally have Flower Gift?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="flowerGiftL" /><label class="btn btn-xxwide" for="flowerGiftL">Flower Gift</label>
-                        </div>
-                        <div class="right" title="Does this Pokemon's ally have Flower Gift?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="flowerGiftR" /><label class="btn btn-xxwide" for="flowerGiftR">Flower Gift</label>
-                        </div>
-                    </div>
-                    <div class="btn-group gen-specific g8 g9">
-                        <div class="left" title="Does this Pokemon's ally have Steely Spirit?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="steelySpiritL" /><label class="btn btn-xxwide" for="steelySpiritL">Steely Spirit</label>
-                        </div>
-                        <div class="right" title="Does this Pokemon's ally have Steely Spirit?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="steelySpiritR" /><label class="btn btn-xxwide" for="steelySpiritR">Steely Spirit</label>
-                        </div>
-                    </div>
-                    <div class="btn-group gen-specific g8 g9">
-                        <div class="left" title="Is this Pokemon boosted by an ally's Power Spot?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="powerSpotL" /><label class="btn btn-xxwide" for="powerSpotL">Power Spot</label>
-                        </div>
-                        <div class="right" title="Is this Pokemon boosted by an ally's Power Spot?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="powerSpotR" /><label class="btn btn-xxwide" for="powerSpotR">Power Spot</label>
-                        </div>
-                    </div>
-                    <div class="btn-group gen-specific g7 g8 g9">
-                        <div class="left" title="Has this Pokemon's power been boosted by an ally's Battery?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="batteryL" /><label class="btn btn-xxwide" for="batteryL">Battery</label>
-                        </div>
-                        <div class="right" title="Has this Pokemon's power been boosted by an ally's Battery?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="batteryR" /><label class="btn btn-xxwide" for="batteryR">Battery</label>
-                        </div>
-                    </div>
-                    <div class="btn-group gen-specific g7">
-                        <div class="left" title="Has this Pokemon used Geomancy?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="clangL" /><label class="btn btn-xwide" for="clangL"><img src="image_res/minisprites/716.png"><br>Geomancy</label>
-                        </div>
-                        <div class="right" title="Has this Pokemon used Geomancy?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="clangR" /><label class="btn btn-xwide" for="clangR"><img src="image_res/minisprites/716.png"><br>Geomancy</label>
-                        </div>
-                    </div>
-                    <div class="btn-group gen-specific g7">
-                        <div class="left" title="Has this Pokemon used Extreme Evoboost?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="evoL" /><label class="btn btn-xwide" for="evoL"><img src="image_res/133.png"><br>Extreme Evoboost</label>
-                        </div>
-                        <div class="right" title="Has this Pokemon used Extreme Evoboost?">
-                            <input class="btn-input calc-trigger" type="checkbox" id="evoR" /><label class="btn btn-xwide" for="evoR"><img src="image_res/133.png"><br>Extreme Evoboost</label>
+                            <input class="btn-input calc-trigger" type="checkbox" id="friendGuardR" /><label class="btn btn-xwide" for="friendGuardR">Friend Guard</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
@@ -435,6 +405,62 @@
                             <input class="btn-input calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" /><label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
                             <input class="btn-input calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" /><label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
                             <input class="btn-input calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" /><label class="btn btn-wide btn-right" for="spikesR3">3 Spikes</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g4 g5 g6 g7 g8">
+                        <div class="left" title="Does this Pokemon's ally have Flower Gift?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="flowerGiftL" /><label class="btn btn-xxwide" for="flowerGiftL">Flower Gift</label>
+                        </div>
+                        <div class="right" title="Does this Pokemon's ally have Flower Gift?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="flowerGiftR" /><label class="btn btn-xxwide" for="flowerGiftR">Flower Gift</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g8 g9">
+                        <div class="left" title="Does this Pokemon's ally have Steely Spirit?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="steelySpiritL" /><label class="btn btn-xwide" for="steelySpiritL">Steely Spirit</label>
+                        </div>
+                        <div class="right" title="Does this Pokemon's ally have Steely Spirit?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="steelySpiritR" /><label class="btn btn-xwide" for="steelySpiritR">Steely Spirit</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g8 g9">
+                        <div class="left" title="Is this Pokemon boosted by an ally's Power Spot?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="powerSpotL" /><label class="btn btn-xwide" for="powerSpotL">Power Spot</label>
+                        </div>
+                        <div class="right" title="Is this Pokemon boosted by an ally's Power Spot?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="powerSpotR" /><label class="btn btn-xwide" for="powerSpotR">Power Spot</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g7 g8">
+                        <div class="left" title="Has this Pokemon's power been boosted by an ally's Battery?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="batteryL" /><label class="btn btn-xwide" for="batteryL">Battery</label>
+                        </div>
+                        <div class="right" title="Has this Pokemon's power been boosted by an ally's Battery?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="batteryR" /><label class="btn btn-xwide" for="batteryR">Battery</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g9">
+                        <div class="left" title="Is this Pokemon affected by Salt Cure?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="saltCureL" /><label class="btn btn-xwide" for="saltCureL">Salt Cure</label>
+                        </div>
+                        <div class="right" title="Is this Pokemon affected by Salt Cure?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="saltCureR" /><label class="btn btn-xwide" for="saltCureR">Salt Cure</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g7">
+                        <div class="left" title="Has this Pokemon used Geomancy?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="clangL" /><label class="btn btn-xwide" for="clangL"><img src="image_res/minisprites/716.png"><br>Geomancy</label>
+                        </div>
+                        <div class="right" title="Has this Pokemon used Geomancy?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="clangR" /><label class="btn btn-xwide" for="clangR"><img src="image_res/minisprites/716.png"><br>Geomancy</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g7">
+                        <div class="left" title="Has this Pokemon used Extreme Evoboost?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="evoL" /><label class="btn btn-xwide" for="evoL"><img src="image_res/133.png"><br>Extreme Evoboost</label>
+                        </div>
+                        <div class="right" title="Has this Pokemon used Extreme Evoboost?">
+                            <input class="btn-input calc-trigger" type="checkbox" id="evoR" /><label class="btn btn-xwide" for="evoR"><img src="image_res/133.png"><br>Extreme Evoboost</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g2">
@@ -512,6 +538,7 @@
                             <label>Ability</label>
                             <select class="ability terrain-trigger calc-trigger"></select>
                             <input class="abilityToggle calc-trigger hide" type="checkbox" title="Is this Ability active?">
+                            <select class="ability-supreme calc-trigger hide"><option value="0">0 down</option><option value="1">1 down</option><option value="2">2 down</option><option value="3">3 down</option><option value="4">4 down</option><option value="5">5 down</option></select>
                         </div>
                         <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <label>Item</label>
@@ -528,7 +555,6 @@
                         <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
                         <input class="max move-max calc-trigger btn-input" type="checkbox" id="maxR" /><label class="btn btn-wide gen-specific g8" for="maxR" title="Dynamax this Pokemon?">Dynamax</label>
                         <input class="tera move-tera calc-trigger btn-input" type="checkbox" id="teraR" /><label class="btn btn-wide gen-specific g9" for="teraR" title="Terastalize this Pokemon?">Terastal</label>
-                        <!--<select class="tera-type calc-trigger gen-specific g9"></select>-->
                     </div>
                     <div class="move1">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -542,6 +568,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="move2">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -555,6 +583,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="move3">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -568,6 +598,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="move4">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -581,6 +613,8 @@
                         <select class="move-hits2 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option></select>
                         <select class="move-hits3 calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option></select>
                         <select class="move-pledge calc-trigger hide"><option value="Grass Pledge">Grass Pledge</option><option value="Fire Pledge">Fire Pledge</option><option value="Water Pledge">Water Pledge</option></select>
+                        <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
+                        <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option></select>
                     </div>
                     <div class="info-group">
                         <input type="text" id="setName2" style="width: 25%" value="My Calc Set">
@@ -591,7 +625,7 @@
             </div>
             <div class="footer">
                 <!--<p><em>This calculator is based on the work of Honko, gamut, and Zarel. It was optimized for players in the Pokémon Championship Series by Tapin, Firestorm, squirrelboy1225, and DaWoblefet. Huge thanks to Nugget Bridge for hosting this calculator in the past.</em></p>-->
-                <p><em>This calculator is based on the work of Tapin, Firestorm, squirrelboy1225, and DaWoblefet, whose work was in turn based on the work of Honko, gamut, and Zarel. It has been optimized for players in the current Pokémon Video Game Championship Series by nerd of now. <br />Many thanks to Nugget Bridge and Trainer Tower for hosting previous incarnations of this calculator in the past.</em></p>
+                <p><em>This calculator is based on the work of Tapin, Firestorm, and squirrelboy1225, whose work was in turn based on the work of Honko, gamut, and Zarel. It has been optimized for players in the current Pokémon Video Game Championship Series by nerd of now. <br />Many thanks to Nugget Bridge and Trainer Tower for hosting previous incarnations of this calculator in the past.</em></p>
             </div>
         </div>
 
@@ -641,9 +675,12 @@
     <script type="text/javascript" src="script_res/item_data.js"></script>
     <script type="text/javascript" src="script_res/move_data.js"></script>
     <script type="text/javascript" src="script_res/ap_calc.js"></script>
+    <!--<script type="text/javascript" src="script_res/damage_MASTER_TEST.js"></script>-->
     <script type="text/javascript" src="script_res/damage_MASTER.js"></script>
+    <script type="text/javascript" src="script_res/damage_SV.js"></script>
+    <script type="text/javascript" src="script_res/damage_SM-SS.js"></script>
     <!--<script type="text/javascript" src="script_res/damage.js"></script>-->
-    <script type="text/javascript" src="script_res/damage_sm.js"></script>
+    <!--<script type="text/javascript" src="script_res/damage_sm.js"></script>-->
     <script type="text/javascript" src="script_res/damage_xy.js"></script>
     <script type="text/javascript" src="script_res/damage_bw.js"></script>
     <script type="text/javascript" src="script_res/damage_dpp.js"></script>

@@ -294,6 +294,40 @@ var ABILITIES_SS = ABILITIES_SM.concat([
     'Grim Neigh'
 ]);
 
+var ABILITIES_SV = ABILITIES_SS.concat([
+    'Lingering Aroma',  //Mummy clone, no calc functionality
+    'Seed Sower',   //Grassy Terrain when hit, consider abilityOn
+    'Thermal Exchange', //+1 Atk when hit by Fire and cannot be burned, no calc functionality
+    'Anger Shell',  //+1 Atk SpA Spe -1 Def SpD at half health, consider calc functionality
+    'Purifying Salt',   //half Ghost damage taken and status condition immunity                     IN CALC
+    'Well-Baked Body',  //Fire immunity and +2 Def when hit                                         IN CALC
+    'Wind Rider',   //Wind move immunity and +1 Atk when hit or Tailwind is set                     IN CALC
+    'Guard Dog',    //Boosted Attack from Intimidate, switch-out moves fail                         IN CALC
+    'Rocky Payload',    //increase Rock damage dealt        MORE RESEARCH NEEDED
+    'Wind Power',   //charge when hit by wind move, abilityOff like Electromorphosis                IN CALC
+    'Zero to Hero', //changes form when switching out, no calc functionality
+    'Commander',    //all effects are related to the one mon, no calc functionality
+    'Electromorphosis', //already added, charge as an ability                                       IN CALC
+    'Protosynthesis',   //activates like Intrepid Sword in sun or with Booster Energy, determines stat like Beast Boost             IN CALC
+    'Quark Drive',  //activates like Intrepid Sword in electric terrain or with Booster Energy, determines stat like Beast Boost    IN CALC
+    'Good as Gold', //status move immunity, no calc functionality
+    'Vessel of Ruin',   //NOT A STAT DROP, IT'S A BASE STAT MODIFIER
+    'Sword of Ruin',    //SEE ABOVE
+    'Tablets of Ruin',  //SEE ABOVE
+    'Beads of Ruin',    //SEE ABOVE
+    'Orichalcum Pulse', //sun AND stat mod                                                          IN CALC
+    'Hadron Engine',    //electric terrain AND stat mod                                             IN CALC
+    'Opportunist',  //boosts same stats as opponent, might have calc functionality but probably not
+    'Cud Chew', //reuse the same berry, no calc functionality
+    'Sharpness',    //increase slicing move damage dealt                                            IN CALC
+    'Supreme Overlord', //Atk/SpA boost for each ally defeated, 1.2x for first ally fainted and +0.1x onwards   IN CALC
+    'Costar',   //copies ally stat changes, no calc functionality
+    'Toxic Debris', //Toxic Spikes for every physical hit, no calc functionality
+    'Armor Tail',   //Queenly Majesty/Dazzling again
+    'Earth Eater',  //Ground type Water Absorb                                                      IN CALC
+    'Mycelium Might',   //inverse Prankster, no calc functionality
+]);
+
 //ABILITIES_XY.splice(ABILITIES_XY.indexOf('Lightning Rod'), 1, 'Lightning Rod');
 var ATE_IZE_ABILITIES = [
     'Normalize',

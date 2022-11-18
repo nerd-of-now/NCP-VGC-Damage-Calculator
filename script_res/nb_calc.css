@@ -15,6 +15,17 @@ body.dark, html.dark {
     border-bottom: 5px solid #103a52;
 }
 
+/*.dark .panel[id="p1"] {
+    background-color: #5A1412;*/
+    /*background-color: #911e18;*/
+    /*border-bottom: 5px solid #103a52;
+}
+.dark .panel[id="p2"] {
+    background-color: #200c30;*/
+    /*background-color: #471868;*/
+    /*border-bottom: 5px solid #103a52;
+}*/
+
 .dark .header {    
     color: #ffffff !important;
     background-color: #192121 !important;
@@ -31,7 +42,7 @@ body.dark, html.dark {
     color: #d4d4d4;
     border: #525252 solid 1px;
 }
-.dark .poke-info input:not([type]), .poke-info input[type="text"], .poke-info span :not(.select2-chosen) {
+.dark .poke-info input:not([type]), .dark .poke-info input[type="text"], .poke-info span :not(.select2-chosen) {
     background: #31313a;
     color: #d4d4d4;
     border: #525252 solid 1px;
@@ -108,6 +119,12 @@ body, html {
 
 #notice a{
     color: #1e3864;
+}
+
+.poke-info input:not([type]), .poke-info input[type="text"], .poke-info span :not(.select2-chosen) {
+    background: #ffffff;
+    color: #000000;
+    border: #525252 solid 1px;
 }
 
 .header{

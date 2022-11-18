@@ -391,7 +391,7 @@ var savecustom = function()
                 if (SETDEX_CUSTOM_SV[species] == null)
                     SETDEX_CUSTOM_SV[species] = {}
                 SETDEX_CUSTOM_SV[species][spreadName] = customFormat
-                createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SV), 365)
+                createCookie("custom_gen_9", JSON.stringify(SETDEX_CUSTOM_SV), 365)
                 break;
             default:
                 console.log("THIS SHOULDN\'T HAPPEN LOL");
@@ -473,6 +473,7 @@ var savecalc = function (set, spreadName, accessIVs) {
         "ability": set.ability,
         "item": set.item,
         "moves": moves,
+        "tera_type": set.tera_type,
     }
 
     switch (gen) {
@@ -515,7 +516,7 @@ var savecalc = function (set, spreadName, accessIVs) {
             if (SETDEX_CUSTOM_SV[species] == null)
                 SETDEX_CUSTOM_SV[species] = {}
             SETDEX_CUSTOM_SV[species][spreadName] = customFormat
-            createCookie("custom_gen_8", JSON.stringify(SETDEX_CUSTOM_SV), 365)
+            createCookie("custom_gen_9", JSON.stringify(SETDEX_CUSTOM_SV), 365)
             reloadSVScript()
             break;
         default:
@@ -570,6 +571,11 @@ var exportset = function (set, accessIVs) {
 
     exItem = set.item != "" ? " @ " + set.item : "";
     exAbility = "Ability: " + set.ability;
+    if (set.ability === "As One") {
+        exAbility = exSpecies === "Calyrex-Ice" ? exAbility + " (Glastrier)"
+            : exSpecies === "Calyrex-Shadow" ? exAbility + " (Spectrier)"
+                : exAbility;
+    }
     exLevel = "Level: " + set.level;
 
     //MORE OPTIMAL VERSION OF EV EXPORT IF READABILITY ISN'T A CONCERN
