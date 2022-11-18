@@ -250,6 +250,9 @@ var savecustom = function()
                 if (lines[i].indexOf("Level") != -1) {
                     level = lines[2].split(' ')[1].trim(); //level is sometimes third but uh not always
                 }
+                if (lines[i].indexOf("Tera Type") != -1) {
+                    tera_type = lines[i].split(' ')[2].trim(); //
+                }
                 if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
                 {
                     evList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
@@ -353,6 +356,7 @@ var savecustom = function()
             },
             "nature": nature,
             "ability": ability,
+            "tera_type": tera_type,
             "item": item,
             "moves": moves,
         }
@@ -412,6 +416,9 @@ var savecustom = function()
             break;
         case 84:
             reloadBDSPScript();
+            break;
+        case 9:
+            reloadSVScript();
             break;
         default:
             console.log("THIS SHOULDN\'T HAPPEN LOL");
@@ -570,15 +577,17 @@ var exportset = function (set, accessIVs) {
     }
 
     exItem = set.item != "" ? " @ " + set.item : "";
-    exAbility = "Ability: " + set.ability;
     if (set.ability === "As One") {
-        exAbility = exSpecies === "Calyrex-Ice" ? exAbility + " (Glastrier)"
-            : exSpecies === "Calyrex-Shadow" ? exAbility + " (Spectrier)"
-                : exAbility;
+        set.ability = exSpecies === "Calyrex-Ice" ? set.ability + " (Glastrier)"
+            : exSpecies === "Calyrex-Shadow" ? set.ability + " (Spectrier)"
+                : set.ability;
     }
-    exLevel = "Level: " + set.level;
+    exAbility = "Ability: " + set.ability + "\n";
+    exLevel = "Level: " + set.level + "\n";
     if (gen == 9)
-        exTera = "Tera Type: " + set.tera_type;
+        exTera = "Tera Type: " + set.tera_type + "\n";
+    else
+        exTera = "";
 
     //MORE OPTIMAL VERSION OF EV EXPORT IF READABILITY ISN'T A CONCERN
     //
@@ -626,9 +635,9 @@ var exportset = function (set, accessIVs) {
         hasEVs = true;
     }
     if (hasEVs) {
-        exEVs = "EVs: " + exEVs;
+        exEVs = "EVs: " + exEVs + "\n";
     }
-    exNature = set.nature + " Nature";
+    exNature = set.nature + " Nature\n";
 
     //SAME DEAL WITH EVS, OPTIMIZED IV EXPORT IF READABILITY ISN'T A CONCERN
     //
@@ -676,7 +685,7 @@ var exportset = function (set, accessIVs) {
         hasIVs = true;
     }
     if (hasIVs) {
-        exIVs = "IVs: " + exIVs;
+        exIVs = "IVs: " + exIVs + "\n";
     }
     exMoves = ["- " + set.moves[0].name,
         "- " + set.moves[1].name,
@@ -689,11 +698,9 @@ var exportset = function (set, accessIVs) {
         }
     }
 
-    exportText = exSpecies + exItem + "\n" + exAbility + "\n" + exLevel + "\n" + exEVs + "\n" + exNature + "\n" + exIVs + "\n" +
-        exMoveset;
-    if (gen == 9)
-        exportText = exSpecies + exItem + "\n" + exAbility + "\n" + exLevel + "\n" + exTera + "\n" + exEVs + "\n" + exNature + "\n" +
-            exIVs + "\n" + exMoveset;
+    exSpeciesAndItem = exSpecies + exItem + "\n";
+
+    exportText = exSpeciesAndItem + exAbility + exLevel + exTera + exEVs + exNature + exIVs + exMoveset;
     Clipboard_CopyTo(exportText);
 }
 
