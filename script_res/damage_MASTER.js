@@ -1333,11 +1333,12 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         description.attackerAbility = attacker.ability;
         description.weather = field.weather;
     }
+    //test. 1.3x Abilities
     //PROTOSYNTHESIS/QUARK DRIVE MIGHT BE APPLIED IN A DIFFERENT PLACE
     else if (((attacker.ability === "Protosynthesis" && (attacker.item === "Booster Energy" || field.weather === "Sun"))
         || (attacker.ability === "Quark Drive" && (attacker.item === "Booster Energy" || field.terrain === "Electric")))
         && ((getHighestRawStat(attacker) === 0 && move.category === "Physical") || (getHighestRawStat(attacker) === 2) && move.category === "Special")) {
-        atMods.push(0x1800);
+        atMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
 
@@ -1441,11 +1442,12 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
         dfMods.push(0x1800);
         description.defenderAbility = defAbility;
     }
+    //test. 1.3x Abilities
     //PROTOSYNTHESIS/QUARK DRIVE MIGHT BE APPLIED IN A DIFFERENT PLACE
     else if (((defAbility === "Protosynthesis" && (defender.item === "Booster Energy" || field.weather === "Sun"))
         || (defAbility === "Quark Drive" && (defender.item === "Booster Energy" || field.terrain === "Electric")))
         && ((getHighestRawStat(defender) === 1 && hitsPhysical) || (getHighestRawStat(defender) === 3) && !hitsPhysical)) {
-        dfMods.push(0x1800);
+        dfMods.push(0x14CD);
         description.defenderAbility = defAbility;
     }
     //c. 2x Abilities

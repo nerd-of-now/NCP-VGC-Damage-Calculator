@@ -16352,7 +16352,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         },
         "w": 97.4,
         "ab": "Zero to Hero",
-        isAlternateForme: true,
+        "isAlternateForme": true,
     },
     "Smoliv": {
         "t1": "Grass",
@@ -16522,7 +16522,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 2.3,
         "ab": "Technician",
     },
-    "Maushold-Big": {
+    "Maushold-Four": {
         "t1": "Normal",
         "bs": {
             "hp": 74,
@@ -17482,7 +17482,7 @@ var POKEDEX_SV = {};
     'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
     'Meloetta-Pirouette', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Oricorio-Pom-Pom', "Oricorio-Pa'u", 'Oricorio-Sensu', 'Lycanroc-Midnight', 'Lycanroc-Dusk',
     'Eiscue-Noice', 'Indeedee-F', 'Zacian-Crowned', 'Zamazenta-Crowned', 'Urshifu-Rapid Strike', 'Calyrex-Ice Rider', 'Calyrex-Shadow Rider', 'Basculegion-F', 'Enamorus-Therian', 'Oinkologne-F',
-    'Dudunsparce-Big','Palafin-Hero','Maushold-Big','Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea'
+    'Dudunsparce-Big','Palafin-Hero','Maushold-Four','Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea'
 ].forEach(e => POKEDEX_SV[e] = POKEDEX_SV_NATDEX[e]);
 
 var NO_FORMS_SV =
