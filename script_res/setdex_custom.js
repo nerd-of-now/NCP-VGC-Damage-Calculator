@@ -236,6 +236,9 @@ var savecustom = function()
                 if (lines[i].indexOf("Tera Type") != -1) {
                     tera_type = lines[i].split(' ')[2].trim(); //
                 }
+                else {
+                    tera_type = pokedex[species].t1;
+                }
                 if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
                 {
                     evList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
