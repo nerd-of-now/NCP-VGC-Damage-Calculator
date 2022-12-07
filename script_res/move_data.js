@@ -164,7 +164,8 @@ var MOVES_RBY = {
         bp: 40,
         type: 'Normal',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        isPriority: true,
     },
     'Razor Leaf': {
         bp: 55,
@@ -503,7 +504,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 80,
         type: 'Normal',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        isPriority: true,
     },
     'Faint Attack': {
         bp: 60,
@@ -641,7 +643,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        isPunch: true
+        isPunch: true,
+        isPriority: true,
     },
     'Megahorn': {
         bp: 120,
@@ -959,7 +962,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        hasSecondaryEffect: true
+        hasSecondaryEffect: true,
+        isPriority: true,
     },
     'Focus Punch': {
         bp: 150,
@@ -1344,7 +1348,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 40,
         type: 'Water',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        isPriority: true,
     },
     'Aqua Tail': {
         bp: 90,
@@ -1403,7 +1408,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Steel',
         category: 'Physical',
         makesContact: true,
-        isPunch: true
+        isPunch: true,
+        isPriority: true,
     },
     'Charge Beam': {
         bp: 50,
@@ -1594,7 +1600,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Ice Shard': {
         bp: 40,
         type: 'Ice',
-        category: 'Physical'
+        category: 'Physical',
+        isPriority: true,
     },
     'Iron Head': {
         bp: 80,
@@ -1751,7 +1758,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 40,
         type: 'Ghost',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        isPriority: true,
     },
     'Spacial Rend': {
         bp: 100,
@@ -1767,7 +1775,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 80,
         type: 'Dark',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        isPriority: true,
     },
     'Swift': {
         bp: 60,
@@ -1798,7 +1807,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Vacuum Wave': {
         bp: 40,
         type: 'Fighting',
-        category: 'Special'
+        category: 'Special',
+        isPriority: true,
     },
     'Wake-Up Slap': {
         bp: 60,
@@ -2078,7 +2088,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     'Feint': {
         bp: 30,
         type: 'Normal',
-        category: 'Physical'
+        category: 'Physical',
+        isPriority: true,
     },
     'Fiery Dance': {
         bp: 80,
@@ -2717,7 +2728,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 15,
         type: 'Water',
         category: 'Physical',
-        isMultiHit: true
+        isMultiHit: true,
+        isPriority: true,
     },
     'Aurora Beam': {
         bp: 65,
@@ -2820,7 +2832,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Powder': {
 
         type: 'Bug',
-        category: 'Status'
+        category: 'Status',
+        isPriority: true,
     },
     'Geomancy': {
 
@@ -2835,7 +2848,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Baby-Doll Eyes': {
 
         type: 'Fairy',
-        category: 'Status'
+        category: 'Status',
+        isPriority: true,
     },
     'Techno Blast': {
         bp: 120,
@@ -2937,7 +2951,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Rock',
         makesContact: true,
         bp: 40,
-        zp: 100
+        zp: 100,
+        isPriority: true,
     },
     'Shadow Bone': {
         category: 'Physical',
@@ -3148,14 +3163,16 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Ice',
         makesContact: true,
         bp: 100,
-        zp: 180
+        zp: 180,
+        isPunch: true,
     },
     'First Impression': {
         category: 'Physical',
         type: 'Bug',
         makesContact: true,
         bp: '90',
-        zp: '175'
+        zp: '175',
+        isPriority: true,
     },
     'Sparkling Aria': {
          category: 'Special',
@@ -3207,7 +3224,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Spotlight': {
 
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        isPriority: true,
     },
     'Psychic Terrain': {
 
@@ -4103,6 +4121,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         zp: 180,
         type: 'Electric',
         category: 'Physical',
+        isPunch: true,
     },
     'Photon Geyser': {
         bp: 100,
@@ -4588,7 +4607,8 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         category: 'Physical',
         makesContact: true,
         alwaysCrit: true,
-        isThreeHit: true
+        isThreeHit: true,
+        isPunch: true,
     },
     'Terrain Pulse': {
         bp: 50,
@@ -4608,7 +4628,8 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Dark',
         category: 'Physical',
         makesContact: true,
-        alwaysCrit: true
+        alwaysCrit: true,
+        isPunch: true,
     },
     'Astral Barrage': {
         bp: 120,
@@ -5152,6 +5173,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Physical',
         makesContact: true,
         isPunch: true,
+        isPriority: true,
     },
     'Spicy Extract': {
         type: 'Grass',

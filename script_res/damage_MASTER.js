@@ -79,6 +79,9 @@ function buildDescription(description) {
     if (description.courseDriftSE) {
         output+="(Super Effective) "
     }
+    if (description.teraBPBoost) {
+        output+="(Tera 60 BP Boost) "
+    }
     output += "vs. ";
     if (description.defenseBoost) {
         if (description.defenseBoost > 0) {
@@ -1114,6 +1117,16 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.attackerAbility = attacker.ability;
     }
 
+    //If the BP before this point would exceed 60 BP, don't apply it
+    //tempBP = attacker.ability === "Technician" ? pokeRound(basePower * chainMods(bpMods) / 0x1000) : tempBP; //MIGHT BE DONE THIS WAY, COMMENTED OUT FOR NOW
+    tempBP = pokeRound(basePower * chainMods(bpMods) / 0x1000);
+
+    //test. Tera boost for moves with <60 BP
+    if (attacker.isTerastalize && attacker.tera_type === move.type && tempBP < 60 && canTeraBoost60BP(move)) {
+        bpMods.push(60 / tempBP * 0x1000);
+        description.teraBPBoost = true;
+    }
+
     //h. Heatproof
     if (defAbility === "Heatproof" && move.type === "Fire") {
         bpMods.push(0x800);
@@ -1222,6 +1235,14 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //w. Mud Sport, Water Sport
     return [bpMods, description, move];
+}
+
+function canTeraBoost60BP(move) {
+    var priority = move.isPriority;
+    var multiHit = move.isMultiHit || move.isTenMultiHit || move.isTwoHit || move.isThreeHit || move.isTripleHit || move.name === "Dragon Darts";
+    var otherExceptions = ["Crush Grip", "Dragon Energy", "Electro Ball", "Eruption", "Flail", "Fling", "Grass Knot", "Gyro Ball",
+        "Heat Crash", "Heavy Slam", "Low Kick", "Reversal", "Water Spout",].indexOf(move.name) !== -1;
+    return !priority && !multiHit && !otherExceptions;
 }
 
 //3. Attack
@@ -1345,7 +1366,8 @@ function calcAtMods(move, attacker, defAbility, description, field) {
     //d. 2.0x Offensive Abilities
     //Add Stakeout here as well
     if ((attacker.ability === "Water Bubble" && move.type === "Water") ||
-        ((attacker.ability === "Huge Power" || attacker.ability === "Pure Power") && move.category === "Physical")) {
+        ((attacker.ability === "Huge Power" || attacker.ability === "Pure Power") && move.category === "Physical")
+        || (attacker.ability === "Stakeout" && attacker.abilityOn)) {
         atMods.push(0x2000);
         description.attackerAbility = attacker.ability;
     }
@@ -1397,7 +1419,7 @@ function calcDefense(move, attacker, defender, description, hitsPhysical, isCrit
         description.defenseBoost = defender.boosts[defenseStat];
     }
 
-    //g. Sandstorm Rock types
+    //g. Sandstorm Rock types, Snowstorm Ice Types
     // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
     if ((field.weather === "Sand" && gen > 3 && (defender.type1 === "Rock" || defender.type2 === "Rock") && !hitsPhysical)
         || (field.weather === "Snow" && (defender.type1 === "Ice" || defender.type2 === "Ice") && hitsPhysical)) {
@@ -1503,26 +1525,58 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     //see GENERAL MODS CONTINUED for further comments
 
     var stabMod = 0x1000;
-    if (move.type === attacker.type1 || move.type === attacker.type2) {
-        if (attacker.ability === "Adaptability") {
-            stabMod = 0x2000;
-            description.attackerAbility = attacker.ability;
-        } else {
+    if (!attacker.isTerastalize) {
+        if (move.type === attacker.type1 || move.type === attacker.type2) {
+            if (attacker.ability === "Adaptability") {
+                stabMod = 0x2000;
+                description.attackerAbility = attacker.ability;
+            } else {
+                stabMod = 0x1800;
+            }
+        } else if (attacker.ability === "Protean" || attacker.ability == "Libero") {
             stabMod = 0x1800;
+            description.attackerAbility = attacker.ability;
         }
-    } else if (attacker.ability === "Protean" || attacker.ability == "Libero") {
-        stabMod = 0x1800;
-        description.attackerAbility = attacker.ability;
     }
-    var teraMod = 0x1000;
-    if (attacker.isTerastalize) {
+    else {
         if (move.type === attacker.tera_type && (pokedex[attacker.name].t1 === attacker.tera_type || pokedex[attacker.name].t2 === attacker.tera_type)) {
-            teraMod = 0x1555;
+            if (attacker.ability === "Adaptability") {
+                stabMod = 0x2400;
+                description.attackerAbility = attacker.ability;
+            } else {
+                stabMod = 0x2000;
+            }
         }
-        else if (move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type)) {
-            teraMod = 0x1800;
+        else if ((move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type))
+            || move.type === attacker.tera_type) {
+            if (attacker.ability === "Adaptability" && move.type === attacker.tera_type) {
+                stabMod = 0x2000;
+                description.attackerAbility = attacker.ability;
+            } else {
+                stabMod = 0x1800;
+            }
         }
     }
+    //if (move.type === attacker.type1 || move.type === attacker.type2) {
+    //    if (attacker.ability === "Adaptability") {
+    //        stabMod = 0x2000;
+    //        description.attackerAbility = attacker.ability;
+    //    } else {
+    //        stabMod = 0x1800;
+    //    }
+    //} else if (attacker.ability === "Protean" || attacker.ability == "Libero") {
+    //    stabMod = 0x1800;
+    //    description.attackerAbility = attacker.ability;
+    //}
+    //var teraMod = 0x1000;
+    //if (attacker.isTerastalize) {
+    //    if (move.type === attacker.tera_type && (pokedex[attacker.name].t1 === attacker.tera_type || pokedex[attacker.name].t2 === attacker.tera_type)) {
+    //        teraMod = 0x1555;
+    //    }
+    //    else if (move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type)) {
+    //        teraMod = 0x1800;
+    //    }
+    //}
     var applyBurn = (attacker.status === "Burned" && move.category === "Physical" && attacker.ability !== "Guts" && !move.ignoresBurn);
     description.isBurned = applyBurn;
     var finalMod;
@@ -1570,7 +1624,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         //f. STAB mod
         damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
         ////g. Tera mod
-        damage[i] = pokeRound(damage[i] * teraMod / 0x1000);
+        //damage[i] = pokeRound(damage[i] * teraMod / 0x1000);
         //g. Type Effect mod
         damage[i] = Math.floor(damage[i] * typeEffectiveness);
         //h. Burn mod
