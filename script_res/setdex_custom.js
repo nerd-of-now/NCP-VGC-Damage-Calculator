@@ -40,6 +40,8 @@ var showdownToCalcFormes = [
     ["Polteageist-Antique", "Polteageist"],
     ["Zarude-Dada", "Zarude"],
     ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
+    ["Tatsugiri-Droopy", "Tatsugiri"],
+    ["Tatsugiri-Stretchy", "Tatsugiri"],
 ];
 
 var calcToShowdownFormes = [
@@ -55,8 +57,8 @@ var calcToShowdownFormes = [
 ];
 
 var saveToCalcFormes = [
-    ["Darmanitan-Z", "Darmanitan"],
-    ["Darmanitan-Z-Galar", "Darmanitan-Galar"],
+    ["Darmanitan-Zen", "Darmanitan"],
+    ["Darmanitan-Galar-Zen", "Darmanitan-Galar"],
     ["Zygarde 50%", "Zygarde"],
     ["Zygarde 10%", "Zygarde"],
     ["Zygarde Complete", "Zygarde"],
@@ -171,30 +173,31 @@ var savecustom = function()
     numPokemon = numPokemon.filter(element => element)
 
     for (var a = 0; a < numPokemon.length; a++) {
-        var lines = numPokemon[a].split('\n')
+        var lines = numPokemon[a].split('\n');
         var species = "";
         var item = "";
-        var ability = ""
+        var ability = "";
         var level = 50;
         var EVs = [0, 0, 0, 0, 0, 0];
-        var IVs = [31, 31, 31, 31, 31, 31]
-        var nature = "Serious"
-        var moves = []
+        var IVs = [31, 31, 31, 31, 31, 31];
+        var nature = "Serious";
+        var moves = [];
 
         /*	Pokemon Showdown Export Format
     0	Nickname (Species) @ Item
     1	Ability: Name
     2	Level: #
-    3	EVs: # Stat / # Stat / # Stat
-    4	Serious Nature
-    5	IVs: # Stat
-    6	- Move Name
+    3	Tera Type: #
+    4	EVs: # Stat / # Stat / # Stat
+    5	Serious Nature
+    6	IVs: # Stat
     7	- Move Name
     8	- Move Name
     9	- Move Name
+    10	- Move Name
         */
 
-        //geting rid of gender identities (lel)
+        //The calc won't save gender until there's a new viable, calc-relevant thing in the games. Or Rivalry has a niche again
         if (lines[0].indexOf('(M)') != -1) {
             lines[0] = lines[0].substring(0, lines[0].indexOf('(M)') - 1) +
                 lines[0].substring(lines[0].indexOf('(M)') + 3, lines[0].length);
@@ -225,6 +228,8 @@ var savecustom = function()
                 species = showdownToCalcFormes[i][1]
         }
 
+        var tera_type = pokedex[species].t1;
+
         if (lines[0].indexOf('@') != -1)
             item = lines[0].substring(lines[0].indexOf('@') + 1).trim(); //item is always after @
         ability = lines[1].substring(lines[1].indexOf(' ') + 1).trim(); //ability is always second
@@ -235,9 +240,6 @@ var savecustom = function()
                 }
                 if (lines[i].indexOf("Tera Type") != -1) {
                     tera_type = lines[i].split(' ')[2].trim(); //
-                }
-                else {
-                    tera_type = pokedex[species].t1;
                 }
                 if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
                 {

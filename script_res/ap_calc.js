@@ -177,7 +177,7 @@ $(".ability").bind("keyup change", function () {
 
     var ab = $(this).val();
     var ABILITY_TOGGLE_OFF = ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Electromorphosis', 'Wind Power', 'Sand Spit', 'Seed Sower'];
-    var ABILITY_TOGGLE_ON = ['Intimidate', 'Slow Start'];
+    var ABILITY_TOGGLE_ON = gen === 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero'] : ['Intimidate', 'Slow Start'];
     if (ABILITY_TOGGLE_OFF.indexOf(ab) !== -1) {
         $(this).closest(".poke-info").find(".abilityToggle").show();
         $(this).closest(".poke-info").find(".abilityToggle").prop("checked", false);
@@ -887,7 +887,7 @@ function Pokemon(pokeInfo) {
     this.nature = pokeInfo.find(".nature").val();
     this.ability = pokeInfo.find(".ability").val();
     this.abilityOn = pokeInfo.find(".abilityToggle").prop("checked");
-    this.supremeOverlord = pokeInfo.find(".ability-supreme").val();
+    this.supremeOverlord = ~~pokeInfo.find(".ability-supreme").val();
     this.item = pokeInfo.find(".item").val();
     this.status = pokeInfo.find(".status").val();
     this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
@@ -1164,6 +1164,20 @@ function clearField() {
     $("#flowerGiftR").prop("checked", false);
     $("#tailwindL").prop("checked", false);
     $("#tailwindR").prop("checked", false);
+    $("#evoL").prop("checked", false);
+    $("#evoR").prop("checked", false);
+    $("#clangL").prop("checked", false);
+    $("#clangR").prop("checked", false);
+    $("#weakL").prop("checked", false);
+    $("#weakR").prop("checked", false);
+    $("#tatsuL").prop("checked", false);
+    $("#tatsuR").prop("checked", false);
+    $("#powerSpotL").prop("checked", false);
+    $("#powerSpotR").prop("checked", false);
+    $("#batteryL").prop("checked", false);
+    $("#batteryR").prop("checked", false);
+    $("#saltCureL").prop("checked", false);
+    $("#saltCureR").prop("checked", false);
 }
 
 function getSetOptions() {

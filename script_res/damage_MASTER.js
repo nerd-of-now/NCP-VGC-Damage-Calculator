@@ -241,8 +241,18 @@ function getHighestRawStat(pokemon) {
     return allStats.indexOf(Math.max(...allStats));
 }
 
+function usesPhysicalAttack(attacker, defender, move) {
+    var necrozmaMove = move.name == "Photon Geyser" || move.name == "Light That Burns the Sky" || (move.name == "Tera Blast" && attacker.isTerastalize);
+    var smartMove = move.name == "Shell Side Arm";
+
+    return (necrozmaMove && attacker.stats[AT] > attacker.stats[SA]) || (smartMove && (attacker.stats[AT] / defender.stats[DF]) > (attacker.stats[SA] / defender.stats[SD]));
+}
+
 function checkTrace(source, target) {
-    if (source.ability === "Trace" && source.abilityOn) {
+    var cannotCopy = ["As One", "Battle Bond", "Comatose", "Commander", "Disguise", "Flower Gift", "Forecast", "Gulp Missile",
+        "Ice Face", "Illusion", "Imposter", "Multitype", "Power of Alchemy", "Receiver", "RKS System", "Schooling", "Shields Down",
+        "Stance Change", "Trace", "Wonder Guard", "Zen Mode", "Zero to Hero",];
+    if (source.ability === "Trace" && source.abilityOn && cannotCopy.indexOf(target.ability) === -1) {
         source.ability = target.ability;
     }
 }
@@ -312,7 +322,7 @@ function checkIntimidate(source, target) {    //temporary solution
             // no effect
             canGetAdrenBoost = false;
         }
-        else if (["Contrary", "Defiant", "Guard Dog"].indexOf(target.ability) !== -1) {  //GUARD DOG IS ASSUMED, CHECK BACK LATER
+        else if (["Contrary", "Defiant", "Guard Dog"].indexOf(target.ability) !== -1) {
             target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
         } else if (target.ability === "Simple") {
             target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
@@ -345,14 +355,14 @@ function checkWindRider(pokemon, tailwind) {
 }
 
 function checkEvo(p1, p2){
-    if($('#evoL').prop("checked")){
+    if ($('#evoL').prop("checked") || $('#tatsuL').prop("checked")){
         p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 2);
         p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 2);
         p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 2);
         p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 2);
         p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 2);
     }
-    if($('#evoR').prop("checked")){
+    if ($('#evoR').prop("checked") || $('#tatsuR').prop("checked")){
         p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 2);
         p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 2);
         p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
@@ -1141,8 +1151,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //j. 1.1x Items
     if ((attacker.item === "Muscle Band" && move.category === "Physical")
-        || (attacker.item === "Wise Glasses" && move.category === "Special")
-        || (attacker.item === "Punching Glove" && move.isPunch && attacker.ability !== "Iron Fist")) {
+        || (attacker.item === "Wise Glasses" && move.category === "Special")) {
         bpMods.push(0x1199);
         description.attackerItem = attacker.item;
     }
@@ -1234,6 +1243,17 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //w. Mud Sport, Water Sport
+
+    //test. Supreme Overlord (NUMBERS PAST 3 UNCONFIRMED)
+    if (attacker.ability === "Supreme Overlord" && attacker.supremeOverlord > 0) {
+        //attack = pokeRound(attack * (1 + 0.1 * attacker.supremeOverlord));
+        overlordBoost = attacker.supremeOverlord === 5 ? 0x1800 :
+            attacker.supremeOverlord === 4 ? 0x1666 :
+                0x1000 + 0x13 + (0x190 * attacker.supremeOverlord);
+        bpMods.push(overlordBoost);
+        description.attackerAbility = attacker.supremeOverlord > 1 ? attacker.ability + " (" + attacker.supremeOverlord + " allies down)"
+            : attacker.ability + " (1 ally down)";
+    }
     return [bpMods, description, move];
 }
 
@@ -1246,13 +1266,12 @@ function canTeraBoost60BP(move) {
 }
 
 //3. Attack
-function calcAttack(move, attacker, defender, description, necrozmaMove, smartMove, isCritical, defAbility) {
+function calcAttack(move, attacker, defender, description, isCritical, defAbility) {
     //a. Foul Play, Photon Geyser, Light That Burns The Sky, Shell Side Arm, Body Press, Tera Blast
     var attack;
     var attackSource = move.name === "Foul Play" ? defender : attacker;
-    var usesPhysicalAttackStat = move.category === "Physical" || (necrozmaMove && attacker.stats[AT] >= attacker.stats[SA]) || (smartMove && (attacker.stats[AT] / defender.stats[DF]) >= (attacker.stats[SA] / defender.stats[SD]));
     var usesDefenseStat = move.name === "Body Press";
-    var attackStat = usesDefenseStat ? DF : usesPhysicalAttackStat ? AT : SA;
+    var attackStat = usesDefenseStat ? DF : move.category === "Physical" ? AT : SA;
     description.attackEVs = attacker.evs[attackStat] +
         (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
         toSmogonStat(attackStat);
@@ -1283,13 +1302,6 @@ function calcAttack(move, attacker, defender, description, necrozmaMove, smartMo
     if (attacker.ability === "Hustle" && move.category === "Physical") {
         attack = pokeRound(attack * 3 / 2);
         description.attackerAbility = attacker.ability;
-    }
-
-    //test. Supreme Overlord
-    if (attacker.ability === "Supreme Overlord" && attacker.supremeOverlord > 0) {
-        attack = pokeRound(attack * (1.2 + 0.1 * (attacker.supremeOverlord - 1)));
-        description.attackerAbility = attacker.supremeOverlord > 1 ? attacker.ability + " (" + attacker.supremeOverlord + " allies down)"
-            : attacker.ability + " (1 ally down)";
     }
 
     return [attack, description];
@@ -1389,6 +1401,11 @@ function calcAtMods(move, attacker, defAbility, description, field) {
     else if ((attacker.item === "Choice Band" && move.category === "Physical" && !attacker.isDynamax) ||
         (attacker.item === "Choice Specs" && move.category === "Special" && !attacker.isDynamax)) {
         atMods.push(0x1800);
+        description.attackerItem = attacker.item;
+    }
+    //test. 1.1x Items
+    else if (attacker.item === "Punching Glove" && move.isPunch) {
+        atMods.push(0x1199);
         description.attackerItem = attacker.item;
     }
     return [atMods, description];
@@ -1526,14 +1543,14 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
 
     var stabMod = 0x1000;
     if (!attacker.isTerastalize) {
-        if (move.type === attacker.type1 || move.type === attacker.type2) {
+        if (move.type === attacker.type1 || move.type === attacker.type2 || (move.combinePledge && move.combinePledge !== move.name)) {
             if (attacker.ability === "Adaptability") {
                 stabMod = 0x2000;
                 description.attackerAbility = attacker.ability;
             } else {
                 stabMod = 0x1800;
             }
-        } else if (attacker.ability === "Protean" || attacker.ability == "Libero") {
+        } else if ((attacker.ability === "Protean" || attacker.ability == "Libero") && (gen !== 9 || attacker.abilityOn)) {
             stabMod = 0x1800;
             description.attackerAbility = attacker.ability;
         }
@@ -1557,26 +1574,6 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             }
         }
     }
-    //if (move.type === attacker.type1 || move.type === attacker.type2) {
-    //    if (attacker.ability === "Adaptability") {
-    //        stabMod = 0x2000;
-    //        description.attackerAbility = attacker.ability;
-    //    } else {
-    //        stabMod = 0x1800;
-    //    }
-    //} else if (attacker.ability === "Protean" || attacker.ability == "Libero") {
-    //    stabMod = 0x1800;
-    //    description.attackerAbility = attacker.ability;
-    //}
-    //var teraMod = 0x1000;
-    //if (attacker.isTerastalize) {
-    //    if (move.type === attacker.tera_type && (pokedex[attacker.name].t1 === attacker.tera_type || pokedex[attacker.name].t2 === attacker.tera_type)) {
-    //        teraMod = 0x1555;
-    //    }
-    //    else if (move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type)) {
-    //        teraMod = 0x1800;
-    //    }
-    //}
     var applyBurn = (attacker.status === "Burned" && move.category === "Physical" && attacker.ability !== "Guts" && !move.ignoresBurn);
     description.isBurned = applyBurn;
     var finalMod;

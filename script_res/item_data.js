@@ -339,7 +339,7 @@ var ITEMS_SM_NO_Z_MEGA = ITEMS_XY_NO_MEGA.concat([
     'Steel Memory',
     'Water Memory',
     //NO FUNCT
-    'Adrenaline Orb',   //might implement
+    'Adrenaline Orb',   //sike it's implemented
     'Protective Pads',
     'Terrain Extender',
 ]);
@@ -363,7 +363,7 @@ var ITEMS_SV = ITEMS_SS.concat([
     'Covert Cloak', //item Shield Dust, no calc functionality
     'Loaded Dice',  //increases chances of hitting more times with multi hit moves, no calc functionality
     'Ability Shield',   //prevents other mons from changing ability, may have f u t u r e calc functionality
-    'Booster Energy',   //activates paradox mon abilities without sun/electric terrain, no calc functionality
+    'Booster Energy',   //activates paradox mon abilities without sun/electric terrain
     'Clear Amulet', //item Clear Body
     'Punching Glove',   //item Iron Fist, no contact, probably stacks with Iron Fist
 ]);
@@ -516,7 +516,8 @@ function getFlingPower(item) {
             'Life Orb','Light Ball','Magnet','Metal Coat','Miracle Seed','Mystic Water','Never-Melt Ice',
             'Razor Fang','Soul Dew','Spell Tag','Toxic Orb','Twisted Spoon', 'Absorb Bulb', 'Adrenaline Orb',
             'Berry Juice','Binding Band','Eject Button','Float Stone','Light Clay', 'Luminous Moss', 
-            'Metronome','Protective Pads','Shell Bell','Throat Spray'].indexOf(item) !== -1 ? 30
+            'Metronome','Protective Pads','Shell Bell','Throat Spray','Covert Cloak','Loaded Dice',
+            'Ability Shield','Booster Energy','Clear Amulet','Punching Glove'].indexOf(item) !== -1 ? 30
         : 10;
 }
 

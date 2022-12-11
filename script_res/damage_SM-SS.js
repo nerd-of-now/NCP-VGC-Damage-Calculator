@@ -116,6 +116,12 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     var basePower;
     [basePower, description] = basePowerFunc(move, description, turnOrder, attacker, defender, field, attIsGrounded, defIsGrounded, defAbility);
 
+    //BP Modifiers are where physical and special are first checked for so this is as late as this check can go! (Contact as well)
+    if (usesPhysicalAttack(attacker, defender, move)) {
+        move.category = "Physical";
+        if (move.name === "Shell Side Arm")
+            move.makesContact = true;
+    }
     var bpMods;
     [bpMods, description, move] = calcBPMods(attacker, defender, field, move, description, ateIzeBoosted, basePower, attIsGrounded, defIsGrounded, turnOrder, defAbility);
 
@@ -125,11 +131,8 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     ////////// (SP)ATTACK //////////
     ////////////////////////////////
 
-    var necrozmaMove = move.name == "Photon Geyser" || move.name == "Light That Burns the Sky";
-    var smartMove = move.name == "Shell Side Arm";
-
     var attack;
-    [attack, description] = calcAttack(move, attacker, defender, description, necrozmaMove, smartMove, isCritical, defAbility);
+    [attack, description] = calcAttack(move, attacker, defender, description, isCritical, defAbility);
 
     var atMods;
     [atMods, description] = calcAtMods(move, attacker, defAbility, description, field);
@@ -139,7 +142,7 @@ function GET_DAMAGE_SS(attacker, defender, move, field) {
     ////////////////////////////////
     ///////// (SP)DEFENSE //////////
     ////////////////////////////////
-    var hitsPhysical = move.category === "Physical" || move.dealsPhysicalDamage || (necrozmaMove && attacker.stats[AT] >= attacker.stats[SA]) || (smartMove && (attacker.stats[AT] / defender.stats[DF]) >= (attacker.stats[SA] / defender.stats[SD]));
+    var hitsPhysical = move.category === "Physical" || move.dealsPhysicalDamage;
 
     var defense;
     [defense, description] = calcDefense(move, attacker, defender, description, hitsPhysical, isCritical, field);
