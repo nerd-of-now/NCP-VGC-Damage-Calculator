@@ -4719,6 +4719,11 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Grass',
         category: 'Status'
     },
+    'Stuff Cheeks': {
+
+        type: 'Normal',
+        category: 'Status'
+    },
 });
 
 var MAXMOVES_LOOKUP = {
@@ -5165,7 +5170,6 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 80,
         type: 'Dragon',
         category: 'Physical',
-        //!!consider adding something for when it has orange Tatsugiri
     },
     'Jet Punch': {
         bp: 60,
@@ -5213,7 +5217,6 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 40,
         type: 'Rock',
         category: 'Physical',
-        //!!consider adding effect for salt cure chip damage
     },
     'Triple Dive': {
         bp: 30,
@@ -5380,7 +5383,6 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     //    type: 'Dark',
     //    category: 'Physical',
     //    makesContact: true,
-    //    //figure out what to do with this fixed damage attack
     //},
     'Aqua Cutter': {
         bp: 70,

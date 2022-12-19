@@ -1,6 +1,6 @@
 /*here are the changes for dark mode */
 
-#switchTheme{
+#switchTheme, #switchDex, .dex-change{
 	margin-left : 90px;
 	width: 100px;
 }

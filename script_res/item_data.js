@@ -372,6 +372,9 @@ var ITEMS_BDSP = ITEMS_DPP.concat([
     'Pixie Plate',
 ]);
 
+var ITEMS_SS_NATDEX = ITEMS_SS.concat(ITEMS_SM);
+var ITEMS_SV_NATDEX = ITEMS_SV.concat(ITEMS_SS_NATDEX);
+
 function getItemBoostType(item) {
     switch (item) {
         case 'Draco Plate':

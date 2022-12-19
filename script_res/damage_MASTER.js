@@ -111,7 +111,9 @@ function buildDescription(description) {
     } else if (description.terrain) {
         output += " in " + description.terrain + " Terrain";
     }
-    if (description.isReflect) {
+    if (description.isAuroraVeil) {
+        output += " through Aurora Veil";
+    } else if (description.isReflect) {
         output += " through Reflect";
     } else if (description.isLightScreen) {
         output += " through Light Screen";
@@ -405,6 +407,7 @@ function checkDownload(source, target) {
 
 function checkInfiltrator(attacker, affectedSide) {
     if (attacker.ability === "Infiltrator") {
+        affectedSide.isAuroraVeil = false;
         affectedSide.isReflect = false;
         affectedSide.isLightScreen = false;
     }
@@ -1095,12 +1098,6 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
-    //test. Orichalcum Pulse, Hadron Engine (MAY NOT BE DONE HERE)
-    else if ((attacker.ability == "Orichalcum Pulse" && field.weather === "Sun" && move.category === "Physical")
-        || (attacker.ability == "Hadron Engine" && field.terrain === "Electric" && move.category === "Special")) {
-        bpMods.push(0x14CD);
-        description.attackerAbility = attacker.ability;
-    }
 
     //f. Fairy Aura, Dark Aura
     if (auraActive && !auraBreak && !field.isNeutralizingGas) {
@@ -1246,7 +1243,6 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //test. Supreme Overlord (NUMBERS PAST 3 UNCONFIRMED)
     if (attacker.ability === "Supreme Overlord" && attacker.supremeOverlord > 0) {
-        //attack = pokeRound(attack * (1 + 0.1 * attacker.supremeOverlord));
         overlordBoost = attacker.supremeOverlord === 5 ? 0x1800 :
             attacker.supremeOverlord === 4 ? 0x1666 :
                 0x1000 + 0x13 + (0x190 * attacker.supremeOverlord);
@@ -1254,6 +1250,12 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.attackerAbility = attacker.supremeOverlord > 1 ? attacker.ability + " (" + attacker.supremeOverlord + " allies down)"
             : attacker.ability + " (1 ally down)";
     }
+    //test. 1.1x Items
+    else if (attacker.item === "Punching Glove" && move.isPunch) {
+        bpMods.push(0x119A);
+        description.attackerItem = attacker.item;
+    }
+
     return [bpMods, description, move];
 }
 
@@ -1374,6 +1376,12 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         atMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
+    //test. Orichalcum Pulse, Hadron Engine
+    else if ((attacker.ability == "Orichalcum Pulse" && field.weather === "Sun" && move.category === "Physical" && attacker.item !== "Utility Umbrella")
+        || (attacker.ability == "Hadron Engine" && field.terrain === "Electric" && move.category === "Special")) {
+        atMods.push(0x1555);
+        description.attackerAbility = attacker.ability;
+    }
 
     //d. 2.0x Offensive Abilities
     //Add Stakeout here as well
@@ -1401,11 +1409,6 @@ function calcAtMods(move, attacker, defAbility, description, field) {
     else if ((attacker.item === "Choice Band" && move.category === "Physical" && !attacker.isDynamax) ||
         (attacker.item === "Choice Specs" && move.category === "Special" && !attacker.isDynamax)) {
         atMods.push(0x1800);
-        description.attackerItem = attacker.item;
-    }
-    //test. 1.1x Items
-    else if (attacker.item === "Punching Glove" && move.isPunch) {
-        atMods.push(0x1199);
         description.attackerItem = attacker.item;
     }
     return [atMods, description];
@@ -1692,9 +1695,12 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
 function calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility) {
     var finalMods = [];
     var punchingGloveEffect = ['Protective Pads', 'Punching Glove'].indexOf(attacker.item) !== -1 && move.isPunch;
-    //a. Screens
-    //There's no Aurora Veil because it affects damage identically and can't stack with Reflect and Light Screen but it can always be added later
-    if (field.isReflect && move.category === "Physical" && !isCritical/* && move.name !== "Brick Break" && move.name !== "Psychic Fangs"*/ && !move.ignoresScreens) {
+    //a. Screens/Aurora Veil
+    if (field.isAuroraVeil && !isCritical && !move.ignoresScreens) {
+        finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
+        description.isAuroraVeil = true;
+    }
+    else if (field.isReflect && move.category === "Physical" && !isCritical && !move.ignoresScreens) {
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
         description.isReflect = true;
     } else if (field.isLightScreen && move.category === "Special" && !isCritical) {
@@ -1709,7 +1715,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
     }
     //test. Collision Course/Electro Drift
     if (["Collision Course", "Electro Drift"].indexOf(move.name) !== -1 && typeEffectiveness > 1) {
-        finalMods.push(0x14CD);
+        finalMods.push(0x1555);
         description.courseDriftSE = true;
     }
     //c. Sniper

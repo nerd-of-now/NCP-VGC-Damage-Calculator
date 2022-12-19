@@ -17485,6 +17485,9 @@ var POKEDEX_SV = {};
     'Dudunsparce-Big','Palafin-Hero','Maushold-Four','Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea'
 ].forEach(e => POKEDEX_SV[e] = POKEDEX_SV_NATDEX[e]);
 
+//performs deep copy; necessary to preserve form data for nat dex
+POKEDEX_SV = $.extend(true, {}, POKEDEX_SV);
+
 var NO_FORMS_SV =
     [
         'Charizard', 'Pikachu', 'Slowbro', 'Gengar', 'Gyarados', 'Eevee', 'Mewtwo', 'Ampharos', 'Scizor', 'Heracross',

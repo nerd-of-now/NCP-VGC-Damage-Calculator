@@ -955,6 +955,7 @@ function Field() {
     var isFlowerGiftAtk = (!isNeutralizingGas) ? [$("#flowerGiftR").prop("checked"), $("#flowerGiftL").prop("checked")] : false;
     var isTailwind = [$("#tailwindL").prop("checked"), $("#tailwindR").prop("checked")];
     var isSaltCure = [$("#saltCureL").prop("checked"), $("#saltCureR").prop("checked")];
+    var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 
     this.getNeutralGas = function () {
         return isNeutralizingGas;
@@ -972,11 +973,11 @@ function Field() {
         weather = "";
     };
     this.getSide = function (i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure, isAuroraVeil) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -998,6 +999,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isFlowerGiftAtk = isFlowerGiftAtk;
     this.isTailwind = isTailwind;
     this.isSaltCure = isSaltCure;
+    this.isAuroraVeil = isAuroraVeil;
 }
 
 var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
@@ -1093,11 +1095,11 @@ $(".gen").change(function () {
             calcStat = CALC_STAT_ADV;
             break;
         case 8: //Gen 8 SwSh+BDSP
-            pokedex = POKEDEX_SS;
+            pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SS_NATDEX : POKEDEX_SS;
             setdex = SETDEX_SS;
             typeChart = TYPE_CHART_XY;
-            moves = MOVES_SS;
-            items = ITEMS_SS;
+            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SS_NATDEX : MOVES_SS;
+            items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SS_NATDEX : ITEMS_SS;
             abilities = ABILITIES_SS;
             STATS = STATS_GSC;
             calculateAllMoves = CALCULATE_ALL_MOVES_SS;
@@ -1105,11 +1107,11 @@ $(".gen").change(function () {
             calcStat = CALC_STAT_ADV;
             break;
         case 9: //Gen 9 SV
-            pokedex = POKEDEX_SV;       //POKEDEX_SV
+            pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SV_NATDEX :  POKEDEX_SV;       //POKEDEX_SV
             setdex = SETDEX_SV;         //SETDEX_SV
             typeChart = TYPE_CHART_XY;
-            moves = MOVES_SV;           //MOVES_SV
-            items = ITEMS_SV;           //ITEMS_SV
+            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SS_NATDEX : MOVES_SV;           //MOVES_SV
+            items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SS_NATDEX : ITEMS_SV;           //ITEMS_SV
             abilities = ABILITIES_SV;   //ABILITIES_SV
             STATS = STATS_GSC;
             calculateAllMoves = CALCULATE_ALL_MOVES_SV; //CALCULATE_ALL_MOVES_7_PLUS
@@ -1120,6 +1122,18 @@ $(".gen").change(function () {
     clearField();
     $(".gen-specific.g" + gen).show();
     $(".gen-specific").not(".g" + gen).hide();
+    if (gen >= 8 && localStorage.getItem("dex") == "natdex") {
+        for (i = 1; i <= 4; i++) {
+            $('label[for="zL' + i + '"]').show();
+            $('label[for="zR' + i + '"]').show();
+        }
+    }
+    else {
+        for (i = 1; i <= 4; i++) {
+            $('label[for="zL' + i + '"]').hide();
+            $('label[for="zR' + i + '"]').hide();
+        }
+    }
     var typeOptions = getSelectOptions(Object.keys(typeChart));
     $("select.type1, select.move-type, select.tera-type").find("option").remove().end().append(typeOptions);
     $("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
@@ -1178,6 +1192,8 @@ function clearField() {
     $("#batteryR").prop("checked", false);
     $("#saltCureL").prop("checked", false);
     $("#saltCureR").prop("checked", false);
+    $("#auroraVeilL").prop("checked", false);
+    $("#auroraVeilR").prop("checked", false);
 }
 
 function getSetOptions() {
