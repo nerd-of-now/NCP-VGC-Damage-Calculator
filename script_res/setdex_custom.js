@@ -92,37 +92,37 @@ if (localStorage.custom_gen_9 != null) {
 if (readCookie("custom_gen_5") != null) {
     custom_cookies = JSON.parse(readCookie("custom_gen_5"));
     cookiesToLocalStorage(custom_cookies, 5);
-    //eraseCookie("custom_gen_5");
+    eraseCookie("custom_gen_5");
     reloadBWScript();
 }
 if (readCookie("custom_gen_6") != null) {
     custom_cookies = JSON.parse(readCookie("custom_gen_6"));
     cookiesToLocalStorage(custom_cookies, 6);
-    //eraseCookie("custom_gen_6");
+    eraseCookie("custom_gen_6");
     reloadXYScript();
 }
 if (readCookie("custom_gen_7") != null) {
     custom_cookies = JSON.parse(readCookie("custom_gen_7"));
     cookiesToLocalStorage(custom_cookies, 7);
-    //eraseCookie("custom_gen_7");
+    eraseCookie("custom_gen_7");
     reloadSMScript();
 }
 if (readCookie("custom_gen_8") != null) {
     custom_cookies = JSON.parse(readCookie("custom_gen_8"));
     cookiesToLocalStorage(custom_cookies, 8);
-    //eraseCookie("custom_gen_8");
+    eraseCookie("custom_gen_8");
     reloadSSScript();
 }
 if (readCookie("custom_gen_84") != null) {
     custom_cookies = JSON.parse(readCookie("custom_gen_84"));
     cookiesToLocalStorage(custom_cookies, 8);
-    //eraseCookie("custom_gen_84");
+    eraseCookie("custom_gen_84");
     reloadSSScript();
 }
 if (readCookie("custom_gen_9") != null) {
     custom_cookies = JSON.parse(readCookie("custom_gen_9"));
     cookiesToLocalStorage(custom_cookies, 9);
-    //eraseCookie("custom_gen_9");
+    eraseCookie("custom_gen_9");
     reloadSVScript();
 }
 
