@@ -346,7 +346,7 @@ var ITEMS_SM_NO_Z_MEGA = ITEMS_XY_NO_MEGA.concat([
 
 var ITEMS_SM = ITEMS_SM_NO_Z_MEGA.concat(ITEMS_Z_AND_MEGA);
 
-var ITEMS_SS = ITEMS_SM_NO_Z_MEGA.concat([
+var NEW_ITEMS_SS = [
     'Utility Umbrella',
     //NO FUNCT
     'Blunder Policy',
@@ -356,9 +356,11 @@ var ITEMS_SS = ITEMS_SM_NO_Z_MEGA.concat([
     'Throat Spray',
     'Rusted Sword',
     'Rusted Shield',
-]);
+];
 
-var ITEMS_SV = ITEMS_SS.concat([
+var ITEMS_SS = ITEMS_SM_NO_Z_MEGA.concat(NEW_ITEMS_SS);
+
+var NEW_ITEMS_SV = [
     'Mirror Herb',  //copies stat boosts from last stat boosting move from opponent, no calc functionality
     'Covert Cloak', //item Shield Dust, no calc functionality
     'Loaded Dice',  //increases chances of hitting more times with multi hit moves, no calc functionality
@@ -366,14 +368,12 @@ var ITEMS_SV = ITEMS_SS.concat([
     'Booster Energy',   //activates paradox mon abilities without sun/electric terrain
     'Clear Amulet', //item Clear Body
     'Punching Glove',   //item Iron Fist, no contact, probably stacks with Iron Fist
-]);
+];
 
-var ITEMS_BDSP = ITEMS_DPP.concat([
-    'Pixie Plate',
-]);
+var ITEMS_SV = ITEMS_SS.concat(NEW_ITEMS_SV);
 
-var ITEMS_SS_NATDEX = ITEMS_SS.concat(ITEMS_SM);
-var ITEMS_SV_NATDEX = ITEMS_SV.concat(ITEMS_SS_NATDEX);
+var ITEMS_SS_NATDEX = ITEMS_SM.concat(NEW_ITEMS_SS);
+var ITEMS_SV_NATDEX = ITEMS_SS_NATDEX.concat(NEW_ITEMS_SV);
 
 function getItemBoostType(item) {
     switch (item) {

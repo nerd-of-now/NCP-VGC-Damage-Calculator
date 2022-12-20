@@ -1110,8 +1110,8 @@ $(".gen").change(function () {
             pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SV_NATDEX :  POKEDEX_SV;       //POKEDEX_SV
             setdex = SETDEX_SV;         //SETDEX_SV
             typeChart = TYPE_CHART_XY;
-            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SS_NATDEX : MOVES_SV;           //MOVES_SV
-            items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SS_NATDEX : ITEMS_SV;           //ITEMS_SV
+            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SV_NATDEX : MOVES_SV;           //MOVES_SV
+            items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SV_NATDEX : ITEMS_SV;           //ITEMS_SV
             abilities = ABILITIES_SV;   //ABILITIES_SV
             STATS = STATS_GSC;
             calculateAllMoves = CALCULATE_ALL_MOVES_SV; //CALCULATE_ALL_MOVES_7_PLUS
