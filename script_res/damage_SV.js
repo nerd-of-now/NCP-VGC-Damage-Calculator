@@ -15,8 +15,8 @@ function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
     checkKlutz(p1);
     checkKlutz(p2);
     checkEvo(p1, p2);
-    checkSeeds(p1, field);
-    checkSeeds(p2, field);
+    checkSeeds(p1, field.getTerrain());
+    checkSeeds(p2, field.getTerrain());
     checkSwordShield(p1);
     checkSwordShield(p2);
     checkWindRider(p1, field.getTailwind(0));

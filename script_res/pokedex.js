@@ -17416,7 +17416,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
             "at": 85,
             "df": 100,
             "sa": 135,
-            "sd": 100,
+            "sd": 115,
             "sp": 135,
         },
         "w": 240.0,

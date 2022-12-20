@@ -147,6 +147,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Spidops": {
+    //    "Actually worse than Ledian": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Lokix": {
         "Choice Band Set": {
             "level": 50,
@@ -171,6 +199,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Jumpluff": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Talonflame": {
         "Sharp Beak Set": {
             "level": 50,
@@ -218,6 +274,146 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Houndoom": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Gumshoos": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Greedent": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Sunflora": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Kricketune": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Vivillon": {
         "Remember Butterfree?": {
             "level": 50,
@@ -245,6 +441,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Vespiquen": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Corviknight": {
         "Bulk Up Set": {
             "level": 50,
@@ -309,6 +533,62 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Chansey": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Blissey": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Azumarill": {
         "Belly Drum Set": {
             "level": 50,
@@ -352,6 +632,62 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Masquerain": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Floatzel": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Clodsire": {
         "Haze Toxic Leftovers": {
             "level": 50,
@@ -379,6 +715,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Golduck": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Drednaw": {
         "Tera Grass Life Orb": {
             "level": 50,
@@ -403,6 +767,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Wigglytuff": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Gardevoir": {
         "Trick Choice Scarf": {
             "level": 50,
@@ -443,6 +835,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Jolly",
             "ability": "Sharpness",
+            "tera_type": "Fighting",
             "item": "Life Orb",
             "moves": [
                 "Psycho Cut",
@@ -453,6 +846,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Hypno": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Gengar": {
         "Tera Flying Focus Sash": {
             "level": 50,
@@ -1115,6 +1536,34 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
+    //"Drifblim": {//!!!!
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     "Florges": {
         "Tera Fire Leftovers": {
             "level": 50,
@@ -1169,7 +1618,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Bronzong": {
+    //"Bronzong": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1186,7 +1635,7 @@ var SETDEX_VGC2023 = {
     //        },
     //        "nature": "",
     //        "ability": "",
-    //        "tera_type": "", //HERE
+    //        "tera_type": "",
     //        "item": "",
     //        "moves": [
     //            "",
@@ -1338,7 +1787,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Bellibolt": {
+    //"Bellibolt": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1365,7 +1814,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Goodra": {
+    //"Goodra": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1414,6 +1863,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Vaporeon": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
     //"Umbreon": {
     //    "": {
     //        "level": 50,
@@ -1566,7 +2043,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Toxtricity": {
+    //"Toxtricity": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1615,7 +2092,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Grafaiai": {
+    //"Grafaiai": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1787,7 +2264,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Tauros-Paldea-Fire": {
+    //"Tauros-Paldea-Fire": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1810,7 +2287,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Tauros-Paldea-Water": {
+    //"Tauros-Paldea-Water": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1833,7 +2310,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Weavile": {
+    //"Weavile": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1883,7 +2360,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Gothitelle": {
+    //"Gothitelle": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1910,7 +2387,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Mimikyu": {
+    //"Mimikyu": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -1962,7 +2439,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Indeedee": {
+    //"Indeedee": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2015,7 +2492,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Brambleghast": {
+    //"Brambleghast": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2088,7 +2565,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Scovillain": {
+    //"Scovillain": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2114,7 +2591,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Rabsca": {
+    //"Rabsca": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2212,7 +2689,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Espathra": {
+    //"Espathra": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2284,7 +2761,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Mudsdale": {
+    //"Mudsdale": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2577,7 +3054,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Cyclizar": {
+    //"Cyclizar": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2600,7 +3077,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Orthworm": {
+    //"Orthworm": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2640,6 +3117,34 @@ var SETDEX_VGC2023 = {
     //        },
     //        "nature": "",
     //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Noivern": {//!!!!
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
     //        "item": "",
     //        "moves": [
     //            "",
@@ -2777,7 +3282,35 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Houndstone": {
+    //"Rotom-Frost": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //            "sp": 0
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "tera_type": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+
+    //},
+    //"Houndstone": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
@@ -2926,7 +3459,7 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Slowking": {
+    //"Slowking": {//!!!!
     //    "": {
     //        "level": 50,
     //        "evs": {
