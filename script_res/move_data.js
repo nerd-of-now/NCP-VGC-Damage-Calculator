@@ -2542,6 +2542,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Grass',
         category: 'Status'
     },
+    'Venoshock': {
+        bp: 65,
+        type: 'Poison',
+        category: 'Special',
+    },
 });
 
 var MOVES_XY = $.extend(true, {}, MOVES_BW, {

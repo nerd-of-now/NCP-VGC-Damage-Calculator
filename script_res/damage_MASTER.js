@@ -213,7 +213,7 @@ function getFinalSpeed(pokemon, weather, terrain, tailwind) {
             (pokemon.ability === "Sand Rush" && weather === "Sand") ||
             (pokemon.ability === "Slush Rush" && ["Hail", "Snow"].indexOf(weather) > -1) ||
             (pokemon.ability === "Surge Surfer" && terrain === "Electric") ||
-            (pokemon.ability === "Unburden" && pokemon.item === "")) {
+            (pokemon.ability === "Unburden" && (pokemon.item === "" || pokemon.item === terrain + " Seed"))) {
         otherSpeedMods *= 2;
     }
     //g. Tailwind
@@ -324,19 +324,27 @@ function checkIntimidate(source, target) {    //temporary solution
             // no effect
             canGetAdrenBoost = false;
         }
-        else if (["Contrary", "Defiant", "Guard Dog"].indexOf(target.ability) !== -1) {
+        else if (target.ability === "Defiant") {
             target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
-        } else if (target.ability === "Simple") {
+        }
+        else if (["Contrary", "Guard Dog"].indexOf(target.ability) !== -1) {
+            target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
+            canGetAdrenBoost = false;
+        }
+        else if (target.ability === "Simple") {
             target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
-        } else if (target.ability === "Mirror Armor") {
+        }
+        else if (target.ability === "Mirror Armor") {
             source.boosts[AT] = Math.max(-6, source.boosts[AT] - 1);
             canGetAdrenBoost = false;
-        } else {
+        }
+        else {
             target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
             if (target.ability === "Competitive") {
                 target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
             }
         }
+
         if (target.item === "Adrenaline Orb" && canGetAdrenBoost)
             target.boosts[SP] = Math.min(6, target.boosts[SP] + 1);
     }
@@ -747,7 +755,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         return { "damage": [0], "description": buildDescription(description) };
     }
     //Remove if it makes the calc annoying to use
-    if (field.terrain === "Psychic" && move.isPriority) {
+    if (field.terrain === "Psychic" && move.isPriority && pIsGrounded(defender, field.terrain)) {
         description.terrain = field.terrain;
         return { "damage": [0], "description": buildDescription(description) };
     }
