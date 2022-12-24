@@ -28,7 +28,6 @@ var ITEMS_GSC = [
     'TwistedSpoon',
     //NO FUNCT
     'Bright Powder',
-    'Leek',
     'Lucky Punch',
     'Quick Claw',
 ];
@@ -356,9 +355,12 @@ var NEW_ITEMS_SS = [
     'Throat Spray',
     'Rusted Sword',
     'Rusted Shield',
+    'Leek', // Renamed from Stick in Gen VIII
 ];
 
 var ITEMS_SS = ITEMS_SM_NO_Z_MEGA.concat(NEW_ITEMS_SS);
+
+ITEMS_SS.splice(ITEMS_SS.indexOf('Stick'), 1); // Renamed to Leek in Gen VIII
 
 var NEW_ITEMS_SV = [
     'Mirror Herb',  //copies stat boosts from last stat boosting move from opponent, no calc functionality
