@@ -91,8 +91,8 @@ function GET_DAMAGE_XY(attacker, defender, move, field) {
         description.attackerAbility = attacker.ability;
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, field.weather === "Strong Winds");
-    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, field.weather === "Strong Winds") : 1;
+    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item === "Iron Ball", field.weather === "Strong Winds");
+    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item === "Iron Ball", field.weather === "Strong Winds") : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
 
     if (typeEffectiveness === 0) {

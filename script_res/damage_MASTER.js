@@ -157,14 +157,14 @@ function chainMods(mods) {
     return M;
 }
 
-function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, isStrongWinds) {
+function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, isIronBall, isStrongWinds) {
     if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
         return 1;
-    } else if (isGravity && type === "Flying" && move.type === "Ground") {
+    } else if ((isGravity || isIronBall || move.name == "Thousand Arrows") && type === "Flying" && move.type === "Ground") {
         return 1;
-    } else if(!isGravity && type== "Flying" && move.type === "Ground" && move.name == "Thousand Arrows") {
+    } /*else if(!isGravity && type== "Flying" && move.type === "Ground" && move.name == "Thousand Arrows") {
         return 1;
-    } else if(!isGravity && otherType == "Flying" && move.type === "Ground" && move.name == "Thousand Arrows") {
+    }*/ else if (otherType == "Flying" && move.type === "Ground" && (move.name == "Thousand Arrows" || isIronBall) && !isGravity) {
         return 1;
     } else if (move.name === "Freeze-Dry" && type === "Water") {
         return 2;
@@ -1046,7 +1046,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     var isDefenderAura = defAbility === (move.type + " Aura");
     var auraActive = ($("input:checkbox[id='" + move.type.toLowerCase() + "-aura']:checked").val() != undefined);
     var auraBreak = ($("input:checkbox[id='aura-break']:checked").val() != undefined);
-    var punchingGloveEffect = ['Protective Pads', 'Punching Glove'].indexOf(attacker.item) !== -1 && move.isPunch;
+    var contactOverride = attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach";
 
     //a. Aura Break
     if (auraActive && auraBreak && !field.isNeutralizingGas) {
@@ -1109,7 +1109,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.attackerAbility = attacker.ability;
     }
     //e.iv. Tough Claws
-    else if (attacker.ability === "Tough Claws" && move.makesContact && !punchingGloveEffect) {
+    else if (attacker.ability === "Tough Claws" && move.makesContact && !contactOverride) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
@@ -1731,7 +1731,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
 //9. Finals Damage Mods
 function calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility) {
     var finalMods = [];
-    var punchingGloveEffect = ['Protective Pads', 'Punching Glove'].indexOf(attacker.item) !== -1 && move.isPunch;
+    var contactOverride = attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach";
     //a. Screens/Aurora Veil
     if (field.isAuroraVeil && !isCritical && !move.ignoresScreens) {
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
@@ -1775,7 +1775,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //g. Fluffy (contact)
-    if (defAbility === "Fluffy" && move.makesContact && !punchingGloveEffect) {
+    if (defAbility === "Fluffy" && move.makesContact && !contactOverride) {
         finalMods.push(0x800);
         description.defenderAbility = defAbility;
     }

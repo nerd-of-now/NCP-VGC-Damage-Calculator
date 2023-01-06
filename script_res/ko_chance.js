@@ -30,13 +30,13 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
 
     var hazards = 0;
     var hazardText = [];
-    if (field.isSR && defender.ability !== 'Magic Guard') {
+    if (field.isSR && defender.ability !== 'Magic Guard' && defender.item !== "Heavy-Duty Boots") {
         var effectiveness = typeChart['Rock'][defender.type1] * (defender.type2 ? typeChart['Rock'][defender.type2] : 1);
         hazards += Math.floor(effectiveness * defender.maxHP / 8);
         hazardText.push('Stealth Rock');
     }
     if ([defender.type1, defender.type2].indexOf('Flying') === -1 &&
-            ['Magic Guard', 'Levitate'].indexOf(defender.ability) === -1 && defender.item !== 'Air Balloon') {
+        ['Magic Guard', 'Levitate'].indexOf(defender.ability) === -1 && ['Air Balloon', 'Heavy-Duty Boots'].indexOf(defender.item) === -1) {
         if (field.spikes === 1) {
             hazards += Math.floor(defender.maxHP / 8);
             if (gen === 2) {
@@ -175,8 +175,12 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         return 'guaranteed OHKO' + afterText;
     }
     else if (c > 0 && eot >= 0) {
-        if (move.hits >= 8 && damage[0] < defender.curHP && damage[1] >= defender.curHP)    //sv
-            return 'very high chance to OHKO' + afterText;                                  //sv
+        if (move.hits >= 8) {    //sv
+            if(damage[0] < defender.curHP && damage[1] >= defender.curHP)
+                return 'very high chance to OHKO' + afterText;                                  //sv
+            else if (damage[14] < defender.curHP && damage[15] >= defender.curHP)
+                return 'very low chance to OHKO' + afterText;                                   //sv
+        }
         return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;
     }
 

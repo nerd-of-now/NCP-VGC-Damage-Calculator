@@ -356,9 +356,11 @@ var NEW_ITEMS_SS = [
     'Throat Spray',
     'Rusted Sword',
     'Rusted Shield',
+    'Leek',
 ];
 
 var ITEMS_SS = ITEMS_SM_NO_Z_MEGA.concat(NEW_ITEMS_SS);
+ITEMS_SS.splice(ITEMS_SS.indexOf('Stick'), 1);
 
 var NEW_ITEMS_SV = [
     'Mirror Herb',  //copies stat boosts from last stat boosting move from opponent, no calc functionality
@@ -368,6 +370,9 @@ var NEW_ITEMS_SV = [
     'Booster Energy',   //activates paradox mon abilities without sun/electric terrain
     'Clear Amulet', //item Clear Body
     'Punching Glove',   //item Iron Fist, no contact, probably stacks with Iron Fist
+    //'Adamant Crystal',  //Origin Dialga item, commented out in case it changes to a key item because if it doesn't then the Origin forms suck lol
+    //'Lustrous Globe',   //Origin Palkia item, commented out in case it changes to a key item because if it doesn't then the Origin forms suck lol
+    //'Griseous Core',    //Origin Giratina item, commented out in case it changes to a key item because if it doesn't then the Origin forms suck lol
 ];
 
 var ITEMS_SV = ITEMS_SS.concat(NEW_ITEMS_SV);
@@ -757,7 +762,7 @@ var LOCK_ITEM_LOOKUP = {
     'Mega Gardevoir': 'Gardevoirite',
     'Mega Gengar': 'Gengarite',
     'Mega Gyarados': 'Gyaradosite',
-    'Mega Heracross': 'Hreacroite',
+    'Mega Heracross': 'Heracroite',
     'Mega Houndoom': 'Houndoominite',
     'Mega Kangaskhan': 'Kangaskhanite',
     'Mega Latias': 'Latiasite',
@@ -794,6 +799,8 @@ var LOCK_ITEM_LOOKUP = {
     'Ultra Necrozma': 'Ultranecrozium Z',
     'Zacian-Crowned': 'Rusted Sword',
     'Zamazenta-Crowned': 'Rusted Shield',
+    //'Dialga-Origin': 'Adamant Crystal', //Game Freak please change this
+    //'Palkia-Origin': 'Lustrous Globe',  //Right now these are just Zacian and Zamazenta transformations without the base stat boosts
 };
 
 function cantRemoveItem(defItem, defSpecies, terrain) {

@@ -199,34 +199,33 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Jumpluff": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Jumpluff": {
+        "Tailwind Support Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0
+            },
+            "nature": "Timid",
+            "ability": "Chlorophyll",
+            "tera_type": "Rock",
+            "item": "Mental Herb",
+            "moves": [
+                "Pollen Puff",
+                "Sleep Powder",
+                "Rage Powder",
+                "Tailwind"
+            ]
+        },
 
-    //},
+    },
     "Talonflame": {
         "Sharp Beak Set": {
             "level": 50,
@@ -1513,29 +1512,29 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Barraskewda": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Barraskewda": {
+        "Swift Swim Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Swift Swim",
+            "item": "Life Orb",
+            "moves": [
+                "Liquidation",
+                "Close Combat",
+                "Psychic Fangs",
+                "Throat Chop"
+            ]
+        },
 
-    //},
+    },
     "Drifblim": {
         "Psychic Seed Unburden Support": {
             "level": 50,
@@ -1862,34 +1861,33 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Vaporeon": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Vaporeon": {
+        "Hard Dondozo Check": {
+            "level": 50,
+            "evs": {
+                "hp": 148,
+                "at": 0,
+                "df": 252,
+                "sa": 4,
+                "sd": 100,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Water Absorb",
+            "tera_type": "Fairy",
+            "item": "",
+            "moves": [
+                "Muddy Water",
+                "Ice Beam",
+                "Haze",
+                "Recover"
+            ]
+        },
 
-    //},
+    },
     //"Umbreon": {
     //    "": {
     //        "level": 50,
@@ -1966,32 +1964,60 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Dudunsparce": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Dudunsparce": {
+        "Rattled WP Tera Psychic": {
+            "level": 50,
+            "evs": {
+                "hp": 140,
+                "at": 0,
+                "df": 0,
+                "sa": 164,
+                "sd": 0,
+                "sp": 204
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Rattled",
+            "tera_type": "Psychic",
+            "item": "Weakness Policy",
+            "moves": [
+                "Boomburst",
+                "Stored Power",
+                "Baton Pass",
+                "Roost"
+            ]
+        },
 
-    //},
+    },
+    "Dudunsparce-Big": {
+        "Rattled WP Tera Psychic": {
+            "level": 50,
+            "evs": {
+                "hp": 140,
+                "at": 0,
+                "df": 0,
+                "sa": 164,
+                "sd": 0,
+                "sp": 204
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Rattled",
+            "tera_type": "Psychic",
+            "item": "Weakness Policy",
+            "moves": [
+                "Boomburst",
+                "Stored Power",
+                "Baton Pass",
+                "Roost"
+            ]
+        },
+
+    },
     "Farigiraf": {
         "Safety Goggles Trick Room": {
             "level": 50,
@@ -2170,32 +2196,33 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Magnezone": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Magnezone": {
+        "Tera Flying Specs Analytic": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Analytic",
+            "tera_type": "Flying",
+            "item": "Choice Specs",
+            "moves": [
+                "Thunderbolt",
+                "Flash Cannon",
+                "Tera Blast",
+                "Volt Switch"
+            ]
+        },
 
-    //},
+    },
     "Arcanine": {
         "Bulky Physical Set": {
             "level": 50,
@@ -3126,33 +3153,57 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Sableye": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Sableye": {
+        "Quash Will-O-Wisp": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 116,
+                "sa": 0,
+                "sd": 140,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Prankster",
+            "tera_type": "Poison",
+            "item": "Roseli Berry",
+            "moves": [
+                "Foul Play",
+                "Fake Out",
+                "Quash",
+                "Will-O-Wisp"
+            ]
+        },
 
-    //},
+    },
+    "Avalugg": {
+        "Physically Defensive Body Press": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 252,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "ability": "Sturdy",
+            "tera_type": "Water",
+            "item": "Figy Berry",
+            "moves": [
+                "Body Press",
+                "Ice Spinner",
+                "Wide Guard",
+                "Recover"
+            ]
+        },
+
+    },
     "Noivern": {
         "Tera Normal Boomburst": {
             "level": 50,
@@ -3303,6 +3354,33 @@ var SETDEX_VGC2023 = {
                 "Overheat",
                 "Volt Switch",
                 "Trick"
+            ]
+        },
+
+    },
+    "Rotom-Mow": {
+        "Sitrus DisQuake": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 92,
+                "sd": 44,
+                "sp": 116
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Levitate",
+            "tera_type": "Electric",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Discharge",
+                "Leaf Storm",
+                "Will-O-Wisp",
+                "Protect"
             ]
         },
 
@@ -3783,6 +3861,33 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
+    "Cryogonal": {
+        "1.5% usage in December in 1760+ how": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Levitate",
+            "tera_type": "Fairy",
+            "item": "Focus Sash",
+            "moves": [
+                "Freeze-Dry",
+                "Icy Wind",
+                "Haze",
+                "Protect"
+            ]
+        },
+
+    },
     "Cetitan": {
         "Belly Drum Set": {
             "level": 50,
