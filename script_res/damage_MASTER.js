@@ -1598,21 +1598,23 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         }
     }
     else {
-        if (move.type === attacker.tera_type && (pokedex[attacker.name].t1 === attacker.tera_type || pokedex[attacker.name].t2 === attacker.tera_type)) {
-            if (attacker.ability === "Adaptability") {
-                stabMod = 0x2400;
-                description.attackerAbility = attacker.ability;
-            } else {
-                stabMod = 0x2000;
+        if (pokedex[attacker.name]) {   //catches any potential issues when switching between sv dex and national dex with a terastalized mon
+            if (move.type === attacker.tera_type && (pokedex[attacker.name].t1 === attacker.tera_type || pokedex[attacker.name].t2 === attacker.tera_type)) {
+                if (attacker.ability === "Adaptability") {
+                    stabMod = 0x2400;
+                    description.attackerAbility = attacker.ability;
+                } else {
+                    stabMod = 0x2000;
+                }
             }
-        }
-        else if ((move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type))
-            || move.type === attacker.tera_type) {
-            if (attacker.ability === "Adaptability" && move.type === attacker.tera_type) {
-                stabMod = 0x2000;
-                description.attackerAbility = attacker.ability;
-            } else {
-                stabMod = 0x1800;
+            else if ((move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type))
+                || move.type === attacker.tera_type) {
+                if (attacker.ability === "Adaptability" && move.type === attacker.tera_type) {
+                    stabMod = 0x2000;
+                    description.attackerAbility = attacker.ability;
+                } else {
+                    stabMod = 0x1800;
+                }
             }
         }
     }

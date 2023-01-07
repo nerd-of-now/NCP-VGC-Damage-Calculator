@@ -28,7 +28,6 @@ var ITEMS_GSC = [
     'TwistedSpoon',
     //NO FUNCT
     'Bright Powder',
-    'Leek',
     'Lucky Punch',
     'Quick Claw',
 ];
@@ -146,7 +145,6 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Focus Sash',
     'Full Incense',
     'Grip Claw',
-    'Lagging Tail',
     'Lax Incense',
     'Light Clay',
     'Mental Herb',
@@ -154,7 +152,6 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Power Herb',
     'Quick Powder',
     'Razor Claw',
-    'Razor Fang',
     'Scope Lens',
     'Shed Shell',
     'Wide Lens',
