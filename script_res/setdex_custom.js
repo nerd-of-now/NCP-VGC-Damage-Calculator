@@ -723,6 +723,7 @@ var exportset = function (set, accessIVs) {
 
     exportText = exSpeciesAndItem + exAbility + exLevel + exTera + exEVs + exNature + exIVs + exMoveset;
     Clipboard_CopyTo(exportText);
+    //tempCSV();
 }
 
 var exportset1 = function () {

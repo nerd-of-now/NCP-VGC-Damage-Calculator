@@ -17498,3 +17498,16 @@ var NO_FORMS_SV =
     ];
 
 NO_FORMS_SV.forEach(e => POKEDEX_SV[e].formes = null);
+
+//function tempCSV() {
+//    var pokemonCSV = "Pokemon,Type 1,Type 2,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed\n";
+//    Object.keys(POKEDEX_SV).forEach(i => pokemonCSV = POKEDEX_SV[i].t2 ? pokemonCSV + i + "," + POKEDEX_SV[i].t1 + "," + POKEDEX_SV[i].t2 + ","
+//        + POKEDEX_SV[i].bs.hp + "," + POKEDEX_SV[i].bs.at + "," + POKEDEX_SV[i].bs.df + "," + POKEDEX_SV[i].bs.sa + ","
+//        + POKEDEX_SV[i].bs.sd + "," + POKEDEX_SV[i].bs.sp + "\n"
+//        : pokemonCSV + i + "," + POKEDEX_SV[i].t1 + ",,"
+//        + POKEDEX_SV[i].bs.hp + "," + POKEDEX_SV[i].bs.at + "," + POKEDEX_SV[i].bs.df + "," + POKEDEX_SV[i].bs.sa + ","
+//        + POKEDEX_SV[i].bs.sd + "," + POKEDEX_SV[i].bs.sp + "\n");
+
+//    Clipboard_CopyTo(pokemonCSV);
+//    alert("Copied CSV.");
+//}

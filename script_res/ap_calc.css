@@ -195,6 +195,9 @@ th {
 select.ability-supreme {
     width: 4.5em;
 }
+select.ability-proto-quark {
+    width: 4.5em;
+}
 select.toxic-counter {
     width: 4.5em;
 }
@@ -213,7 +216,7 @@ select.toxic-counter {
 .move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits {
     width: 4.6em;
 }
-.abilityToggle{
+.abilityToggle, .ability-advanced{
     margin-top: 1px;
 }
 .poke-info .crit-btn {

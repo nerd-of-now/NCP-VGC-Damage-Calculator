@@ -111,16 +111,18 @@ function loadDex(dexMode) {
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
-	if (gen >= 8 && localStorage.getItem("dex") == "vgcdex") {
-		for (i = 1; i <= 4; i++) {
-			$('label[for="zL' + i + '"]').show();
-			$('label[for="zR' + i + '"]').show();
+	if (gen >= 8) {
+		if (localStorage.getItem("dex") == "vgcdex") {
+			for (i = 1; i <= 4; i++) {
+				$('label[for="zL' + i + '"]').show();
+				$('label[for="zR' + i + '"]').show();
+			}
 		}
-	}
-	else {
-		for (i = 1; i <= 4; i++) {
-			$('label[for="zL' + i + '"]').hide();
-			$('label[for="zR' + i + '"]').hide();
+		else {
+			for (i = 1; i <= 4; i++) {
+				$('label[for="zL' + i + '"]').hide();
+				$('label[for="zR' + i + '"]').hide();
+			}
 		}
 	}
 	if (typeChart !== undefined) {

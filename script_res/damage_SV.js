@@ -1,4 +1,6 @@
-/* Damage calculation for the Generation IX games: Scarlet and Violet */
+/* Damage calculation for the Generation IX games: Scarlet and Violet;
+ * for the Generation VIII games: Sword, Shield, Brilliant Diamond, and Shining Pearl;
+ * and for the Generation VII games: Sun, Moon, Ultra Sun, and Ultra Moon */
 
 function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
     checkTrace(p1, p2);
@@ -23,20 +25,24 @@ function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
     checkWindRider(p2, field.getTailwind(1));
     checkIntimidate(p1, p2);
     checkIntimidate(p2, p1);
-    p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
-    p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-    p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain(), field.getTailwind(0));
-    $(".p1-speed-mods").text(p1.stats[SP]);
-    p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
-    p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-    p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain(), field.getTailwind(1));
-    $(".p2-speed-mods").text(p2.stats[SP]);
     checkDownload(p1, p2);
     checkDownload(p2, p1);
-    p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
+    p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]); //new order is important for the proper Protosynthesis/Quark Drive boost
+    p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
     p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
+    p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
+    p1.stats[SP] = getModifiedStat(p1.rawStats[SP], p1.boosts[SP]);
+    setHighestStat(p1);
+    p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain(), field.getTailwind(0));
+    $(".p1-speed-mods").text(p1.stats[SP]);
     p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
+    p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
     p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
+    p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
+    p2.stats[SP] = getModifiedStat(p2.rawStats[SP], p2.boosts[SP]);
+    setHighestStat(p2);
+    p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain(), field.getTailwind(1));
+    $(".p2-speed-mods").text(p2.stats[SP]);
     var side1 = field.getSide(1);
     var side2 = field.getSide(0);
     checkInfiltrator(p1, side1);
@@ -98,8 +104,8 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
         [move, description, ateIzeBoosted] = ateIzeTypeChange(move, attacker, description);
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item === "Iron Ball", field.weather === "Strong Winds");
-    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item === "Iron Ball", field.weather === "Strong Winds") : 1;
+    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds");
+    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds") : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;

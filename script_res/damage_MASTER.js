@@ -157,20 +157,20 @@ function chainMods(mods) {
     return M;
 }
 
-function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, isIronBall, isStrongWinds) {
+function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, defItem, isStrongWinds) {
     if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
         return 1;
-    } else if ((isGravity || isIronBall || move.name == "Thousand Arrows") && type === "Flying" && move.type === "Ground") {
+    } else if ((isGravity || defItem == "Iron Ball" || move.name == "Thousand Arrows") && type === "Flying" && move.type === "Ground") {
         return 1;
-    } /*else if(!isGravity && type== "Flying" && move.type === "Ground" && move.name == "Thousand Arrows") {
-        return 1;
-    }*/ else if (otherType == "Flying" && move.type === "Ground" && (move.name == "Thousand Arrows" || isIronBall) && !isGravity) {
+    } else if (otherType == "Flying" && move.type === "Ground" && (move.name == "Thousand Arrows" || defItem == "Iron Ball") && !isGravity) {
         return 1;
     } else if (move.name === "Freeze-Dry" && type === "Water") {
         return 2;
     } else if (move.name === "Flying Press") {
         return typeChart["Fighting"][type] * typeChart["Flying"][type];
     } else if (isStrongWinds && type == "Flying" && typeChart[move.type][type] > 1) {
+        return 1;
+    } else if (defItem == "Ring Target" && typeChart[move.type][type] == 0) {
         return 1;
     } else {
         return typeChart[move.type][type];
@@ -228,7 +228,7 @@ function getFinalSpeed(pokemon, weather, terrain, tailwind) {
     //4. Protosynthesis, Quark Drive
     if (((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather === "Sun"))
         || (pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric")))
-        && getHighestRawStat(pokemon) === 4) {
+        && pokemon.highestStat === 'sp') {
         speed = Math.floor(speed * 1.5);
     }
     //4. 65536 Speed check
@@ -238,16 +238,25 @@ function getFinalSpeed(pokemon, weather, terrain, tailwind) {
     return speed;
 }
 
-function getHighestRawStat(pokemon) {
-    allStats = [pokemon.rawStats[AT], pokemon.rawStats[DF], pokemon.rawStats[SA], pokemon.rawStats[SD], pokemon.rawStats[SP]];
-    return allStats.indexOf(Math.max(...allStats));
+//Currently used for determining Protosynthesis/Quark Drive boost, may be expanded upon depending on future releases
+function setHighestStat(pokemon) {
+    if (pokemon.highestStat == -1) {
+        allStats = [pokemon.stats[AT], pokemon.stats[DF], pokemon.stats[SA], pokemon.stats[SD], pokemon.stats[SP]];
+        pokemon.highestStat = allStats.indexOf(Math.max(...allStats));
+    }
+    pokemon.highestStat = pokemon.highestStat == 0 ? 'at'
+        : pokemon.highestStat == 1 ? 'df'
+            : pokemon.highestStat == 2 ? 'sa'
+                : pokemon.highestStat == 3 ? 'sd'
+                    : pokemon.highestStat == 4 ? 'sp'
+                        : 'oh dear this should not happen';
 }
 
 function usesPhysicalAttack(attacker, defender, move) {
-    var necrozmaMove = move.name == "Photon Geyser" || move.name == "Light That Burns the Sky" || (move.name == "Tera Blast" && attacker.isTerastalize);
+    var userStatsMove = move.name == "Photon Geyser" || move.name == "Light That Burns the Sky" || (move.name == "Tera Blast" && attacker.isTerastalize);
     var smartMove = move.name == "Shell Side Arm";
 
-    return (necrozmaMove && attacker.stats[AT] > attacker.stats[SA]) || (smartMove && (attacker.stats[AT] / defender.stats[DF]) > (attacker.stats[SA] / defender.stats[SD]));
+    return (userStatsMove && attacker.stats[AT] > attacker.stats[SA]) || (smartMove && (attacker.stats[AT] / defender.stats[DF]) > (attacker.stats[SA] / defender.stats[SD]));
 }
 
 function checkTrace(source, target) {
@@ -1263,10 +1272,8 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //test. Supreme Overlord (NUMBERS PAST 3 UNCONFIRMED)
     if (attacker.ability === "Supreme Overlord" && attacker.supremeOverlord > 0) {
-        overlordBoost = attacker.supremeOverlord === 5 ? 0x1800 :
-            attacker.supremeOverlord === 4 ? 0x1666 :
-                0x1000 + 0x13 + (0x190 * attacker.supremeOverlord);
-        bpMods.push(overlordBoost);
+        overlordBoost = [0x1199, 0x1333, 0x14CD, 0x1666, 0x1800];
+        bpMods.push(overlordBoost[attacker.supremeOverlord - 1]);
         description.attackerAbility = attacker.supremeOverlord > 1 ? attacker.ability + " (" + attacker.supremeOverlord + " allies down)"
             : attacker.ability + " (1 ally down)";
     }
@@ -1398,7 +1405,7 @@ function calcAtMods(move, attacker, defAbility, description, field) {
     //PROTOSYNTHESIS/QUARK DRIVE MIGHT BE APPLIED IN A DIFFERENT PLACE
     else if (((attacker.ability === "Protosynthesis" && (attacker.item === "Booster Energy" || field.weather === "Sun"))
         || (attacker.ability === "Quark Drive" && (attacker.item === "Booster Energy" || field.terrain === "Electric")))
-        && ((getHighestRawStat(attacker) === 0 && move.category === "Physical") || (getHighestRawStat(attacker) === 2) && move.category === "Special")) {
+        && ((attacker.highestStat === 'at' && move.category === "Physical") || (attacker.highestStat === 'sa' && move.category === "Special"))) {
         atMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
@@ -1527,7 +1534,7 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
     //PROTOSYNTHESIS/QUARK DRIVE MIGHT BE APPLIED IN A DIFFERENT PLACE
     else if (((defAbility === "Protosynthesis" && (defender.item === "Booster Energy" || field.weather === "Sun"))
         || (defAbility === "Quark Drive" && (defender.item === "Booster Energy" || field.terrain === "Electric")))
-        && ((getHighestRawStat(defender) === 1 && hitsPhysical) || (getHighestRawStat(defender) === 3) && !hitsPhysical)) {
+        && ((defender.highestStat === 'df' && hitsPhysical) || (defender.highestStat === 'sd' && !hitsPhysical))) {
         dfMods.push(0x14CD);
         description.defenderAbility = defAbility;
     }

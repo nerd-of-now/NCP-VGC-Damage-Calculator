@@ -4516,6 +4516,10 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
     },
     'Parabolic Charge': { bp: 65 },
     'Multi-Attack': { bp: 120 },
+    'Rapid Spin': {
+        bp: 50,
+        hasSecondaryEffect: true,
+    },
     'Burning Jealousy': {
         bp: 70,
         type: 'Fire',
@@ -5214,7 +5218,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Physical',
         makesContact: true,
     },
-    'Revival BLessing': {
+    'Revival Blessing': {
         type: 'Normal',
         category: 'Status',
     },
@@ -5296,14 +5300,12 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        //!!consider conditional here for additional SE damage
     },
     'Electro Drift': {
         bp: 100,
         type: 'Electric',
         category: 'Special',
         makesContact: true,
-        //!!same conditional as above
     },
     'Shed Tail': {
         type: 'Normal',
@@ -5469,4 +5471,6 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     'Revenge', 'Grudge', 'Aromatherapy', 'Doom Desire', 'Psycho Shift', 'Heart Swap', 'Autotomize', 'Dual Chop',
     'Leaf Tornado', 'Mat Block', 'Crafty Shield', 'Flower Shield', 'Venom Drench', 'Powder', 'Power-Up Punch', 'Dragon Hammer',
     'Eternabeam',
+    //unusable SV moves
+    'Blzaing Torque', 'Wicked Torque', 'Noxious Torque', 'Combat Torque', 'Magical Torque',
 ].forEach(e => delete MOVES_SV[e]);

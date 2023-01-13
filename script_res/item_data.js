@@ -180,18 +180,18 @@ var ITEMS_GEMS = [
 var ITEMS_BW_NO_GEMS = ITEMS_DPP.concat([
     'Air Balloon',
     'Eviolite',
-    //GENESECT DRIVES (maybe implement)
+    //GENESECT DRIVES
     'Burn Drive',
     'Chill Drive',
     'Douse Drive',
     'Shock Drive',
     //NO FUNCT
     'Absorb Bulb',
-    'Binding Band', //Might implement
+    'Binding Band',
     'Eject Button',
-    'Float Stone',  //Might implement
+    'Float Stone',  //is actually implemented
     'Red Card',
-    'Ring Target',  //Might implement
+    'Ring Target',  //is actually implemented
     'Rocky Helmet',
     'Normal Gem',
 ]);
@@ -337,7 +337,7 @@ var ITEMS_SM_NO_Z_MEGA = ITEMS_XY_NO_MEGA.concat([
     'Water Memory',
     //NO FUNCT
     'Adrenaline Orb',   //sike it's implemented
-    'Protective Pads',
+    'Protective Pads',  //this too
     'Terrain Extender',
 ]);
 
@@ -362,7 +362,7 @@ ITEMS_SS.splice(ITEMS_SS.indexOf('Stick'), 1);
 var NEW_ITEMS_SV = [
     'Mirror Herb',  //copies stat boosts from last stat boosting move from opponent, no calc functionality
     'Covert Cloak', //item Shield Dust, no calc functionality
-    'Loaded Dice',  //increases chances of hitting more times with multi hit moves, no calc functionality
+    'Loaded Dice',  //increases chances of hitting more times with multi hit moves
     'Ability Shield',   //prevents other mons from changing ability, may have f u t u r e calc functionality
     'Booster Energy',   //activates paradox mon abilities without sun/electric terrain
     'Clear Amulet', //item Clear Body
