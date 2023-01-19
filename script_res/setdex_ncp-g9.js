@@ -262,7 +262,7 @@ var SETDEX_VGC2023 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "Volt Absorb",
+            "ability": "Natural Cure",
             "item": "Focus Sash",
             "moves": [
                 "Fake Out",
@@ -659,34 +659,29 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Floatzel": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Floatzel": {
+        "Choice Band Rain Sweeper": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Swift Swim",
+            "item": "Choice Band",
+            "moves": [
+                "Wave Crash",
+                "Ice Spinner",
+                "Aqua Jet",
+                "Brick Break"
+            ]
+        },
 
-    //},
+    },
     "Clodsire": {
         "Haze Toxic Leftovers": {
             "level": 50,
@@ -1256,6 +1251,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Timid",
             "ability": "Chlorophyll",
+            "tera_type": "Ghost",
             "item": "Focus Sash",
             "moves": [
                 "Leaf Storm",
@@ -1459,6 +1455,27 @@ var SETDEX_VGC2023 = {
                 "Recover"
             ]
         },
+        "MeLuCa's Tera Poison Support": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 12,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "nature": "Careful",
+            "ability": "Purifying Salt",
+            "tera_type": "Poison",
+            "item": "Leftovers",
+            "moves": [
+                "Salt Cure",
+                "Wide Guard",
+                "Protect",
+                "Recover"
+            ]
+        },
 
     },
     "Pelipper": {
@@ -1484,6 +1501,30 @@ var SETDEX_VGC2023 = {
                 "Tailwind",
                 "Wide Guard",
                 "Helping Hand"
+            ]
+        },
+        "Bulky Damp Rock Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 76,
+                "sa": 4,
+                "sd": 140,
+                "sp": 36
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Drizzle",
+            "tera_type": "Grass",
+            "item": "Damp Rock",
+            "moves": [
+                "Hurricane",
+                "Tailwind",
+                "Wide Guard",
+                "Hydro Pump"
             ]
         },
 
@@ -1610,7 +1651,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Eruption",
                 "Heat Wave",
-                "Solar Beam",
+                "Earth Power",
                 "Protect"
             ]
         },
@@ -2043,6 +2084,31 @@ var SETDEX_VGC2023 = {
                 "Trick Room"
             ]
         },
+        "Throat Spray Imprison": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "ability": "Armor Tail",
+            "tera_type": "Fairy",
+            "item": "Throat Spray",
+            "moves": [
+                "Hyper Voice",
+                "Psychic",
+                "Imprison",
+                "Trick Room"
+            ]
+        },
 
     },
     //"Mabosstiff": {
@@ -2290,6 +2356,27 @@ var SETDEX_VGC2023 = {
                 "Wild Charge"
             ]
         },
+        "Chuppa's & D'Angelo's San Diego AV": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 236,
+                "df": 4,
+                "sa": 0,
+                "sd": 12,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "ability": "Intimidate",
+            "tera_type": "Fairy",
+            "item": "Assault Vest",
+            "moves": [
+                "Flare Blitz",
+                "Extreme Speed",
+                "Play Rough",
+                "Snarl"
+            ]
+        },
 
     },
     "Tauros-Paldea-Fire": {
@@ -2357,6 +2444,27 @@ var SETDEX_VGC2023 = {
                 "Close Combat",
                 "Aqua Jet",
                 "Earthquake"
+            ]
+        },
+        "Mirror Herb Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Intimidate",
+            "tera_type": "Grass",
+            "item": "Mirror Herb",
+            "moves": [
+                "Raging Bull",
+                "Close Combat",
+                "Aqua Jet",
+                "Protect"
             ]
         },
 
@@ -2456,6 +2564,27 @@ var SETDEX_VGC2023 = {
                 "Shadow Sneak",
                 "Trick Room",
                 "Will-O-Wisp"
+            ]
+        },
+        "Life Orb Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Disguise",
+            "tera_type": "Ghost",
+            "item": "Life Orb",
+            "moves": [
+                "Play Rough",
+                "Shadow Sneak",
+                "Shadow Claw",
+                "Protect"
             ]
         },
 
@@ -2854,7 +2983,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Timid",
             "ability": "Flame Body",
-            "tera_type": "Fire",
+            "tera_type": "Grass",
             "item": "Sitrus Berry",
             "moves": [
                 "Heat Wave",
@@ -3012,29 +3141,30 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Bombirdier": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Bombirdier": {
+        "Tera Rock Assault Vest": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "ability": "Rocky Payload",
+            "item": "Assault Vest",
+            "tera_type": "Rock",
+            "moves": [
+                "Rock Slide",
+                "Brave Bird",
+                "Knock Off",
+                "Sucker Punch"
+            ]
+        },
 
-    //},
+    },
     "Palafin": {
         "Choice Band Set": {
             "level": 50,
@@ -4057,7 +4187,7 @@ var SETDEX_VGC2023 = {
                 "df": 20,
                 "sa": 116,
                 "sd": 12,
-                "sp": 156
+                "sp": 172
             },
             "ivs": {
                 "at": 0,
@@ -4193,309 +4323,431 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Great Tusk": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Great Tusk": {
+        "Life Orb Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Life Orb",
+            "moves": [
+                "Headlong Rush",
+                "Close Combat",
+                "Earthquake",
+                "Protect"
+            ]
+        },
+        "Assault Vest Set": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 252,
+                "df": 68,
+                "sa": 0,
+                "sd": 132,
+                "sp": 36
+            },
+            "nature": "Adamant",
+            "item": "Assault Vest",
+            "tera_type": "Steel",
+            "moves": [
+                "Earthquake",
+                "Close Combat",
+                "Iron Head",
+                "Ice Spinner"
+            ]
+        },
 
-    //},
-    //"Scream Tail": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Scream Tail": {
+        "Trick Room Disruption": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 164,
+                "sa": 0,
+                "sd": 132,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "item": "Sitrus Berry",
+            "tera_type": "Steel",
+            "moves": [
+                "Dazzling Gleam",
+                "Disable",
+                "Encore",
+                "Trick Room"
+            ]
+        },
 
-    //},
-    //"Brute Bonnet": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Brute Bonnet": {
+        "Offensive Support Set": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 12,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "item": "Sitrus Berry",
+            "tera_type": "Rock",
+            "moves": [
+                "Seed Bomb",
+                "Sucker Punch",
+                "Spore",
+                "Rage Powder"
+            ]
+        },
 
-    //},
-    //"Flutter Mane": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Flutter Mane": {
+        "Sash Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Focus Sash",
+            "tera_type": "Fairy",
+            "moves": [
+                "Shadow Ball",
+                "Moonblast",
+                "Icy Wind",
+                "Protect"
+            ]
+        },
+        "Specs Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Specs",
+            "tera_type": "Fire",
+            "moves": [
+                "Shadow Ball",
+                "Moonblast",
+                "Dazzling Gleam",
+                "Mystical Fire"
+            ]
+        },
 
-    //},
-    //"Slither Wing": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Slither Wing": {
+        "Tera Fire Booster Energy": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 228
+            },
+            "nature": "Adamant",
+            "item": "Booster Energy",
+            "tera_type": "Fire",
+            "moves": [
+                "Leech Life",
+                "Close Combat",
+                "Flame Charge",
+                "Protect"
+            ]
+        },
 
-    //},
-    //"Sandy Shocks": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Sandy Shocks": {
+        "Life Orb Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "tera_type": "Electric",
+            "moves": [
+                "Volt Switch",
+                "Earth Power",
+                "Thunderbolt",
+                "Protect"
+            ]
+        },
+        "Tera Ice Specs Set": {
+            "level": 50,
+            "evs": {
+                "hp": 36,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 12,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Specs",
+            "tera_type": "Ice",
+            "moves": [
+                "Volt Switch",
+                "Earth Power",
+                "Thunderbolt",
+                "Tera Blast"
+            ]
+        },
 
-    //},
-    //"Iron Treads": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Iron Treads": {
+        "Tera Flying Assault Vest": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 172,
+                "df": 0,
+                "sa": 0,
+                "sd": 84,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Assault Vest",
+            "tera_type": "Flying",
+            "moves": [
+                "Iron Head",
+                "Stomping Tantrum",
+                "Ice Spinner",
+                "Tera Blast"
+            ]
+        },
 
-    //},
-    //"Iron Bundle": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Iron Bundle": {
+        "Fast Booster Energy Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Booster Energy",
+            "tera_type": "Grass",
+            "moves": [
+                "Freeze-Dry",
+                "Hydro Pump",
+                "Icy Wind",
+                "Protect"
+            ]
+        },
+        "Specs Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Specs",
+            "tera_type": "Water",
+            "moves": [
+                "Freeze-Dry",
+                "Hydro Pump",
+                "Icy Wind",
+                "Chilling Water"
+            ]
+        },
 
-    //},
-    //"Iron Hands": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Iron Hands": {
+        "Tera Grass Assault Vest": {
+            "level": 50,
+            "evs": {
+                "hp": 108,
+                "at": 236,
+                "df": 76,
+                "sa": 0,
+                "sd": 84,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "item": "Assault Vest",
+            "tera_type": "Grass",
+            "moves": [
+                "Close Combat",
+                "Wild Charge",
+                "Fake Out",
+                "Volt Switch"
+            ]
+        },
+        "Tera Fire Swords Dance": {
+            "level": 50,
+            "evs": {
+                "hp": 84,
+                "at": 124,
+                "df": 36,
+                "sa": 0,
+                "sd": 252,
+                "sp": 12
+            },
+            "nature": "Adamant",
+            "item": "Sitrus Berry",
+            "tera_type": "Fire",
+            "moves": [
+                "Drain Punch",
+                "Thunder Punch",
+                "Fake Out",
+                "Swords Dance"
+            ]
+        },
 
-    //},
-    //"Iron Jugulis": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Iron Jugulis": {
+        "Tera Poison Tailwind Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 84,
+                "sa": 36,
+                "sd": 44,
+                "sp": 92
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Booster Energy",
+            "tera_type": "Poison",
+            "moves": [
+                "Snarl",
+                "Air Slash",
+                "Tailwind",
+                "Protect"
+            ]
+        },
+        "Life Orb Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "tera_type": "Ground",
+            "moves": [
+                "Dark Pulse",
+                "Hurricane",
+                "Earth Power",
+                "Tailwind"
+            ]
+        },
 
-    //},
-    //"Iron Moth": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Iron Moth": {
+        "Tera Grass Booster Energy": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Booster Energy",
+            "tera_type": "Grass",
+            "moves": [
+                "Heat Wave",
+                "Acid Spray",
+                "Energy Ball",
+                "Protect"
+            ]
+        },
 
-    //},
-    //"Iron Thorns": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Iron Thorns": {
+        "Tera Flying Booster Energy": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "item": "Booster Energy",
+            "tera_type": "Flying",
+            "moves": [
+                "Rock Slide",
+                "Wild Charge",
+                "Tera Blast",
+                "Protect"
+            ]
+        },
 
-    //},
+    },
     "Baxcalibur": {
         "Dragon Dance Clear Amulet": {
             "level": 50,
@@ -4509,10 +4761,11 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Thermal Exchange",
+            "tera_type": "Electric",
             "item": "Clear Amulet",
             "moves": [
                 "Glaive Rush",
-                "Icicle Crash",
+                "Tera Blast",
                 "Dragon Dance",
                 "Protect"
             ]
@@ -4529,12 +4782,33 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Thermal Exchange",
-            "tera_type": "Ice",
+            "tera_type": "Fire",
             "item": "Life Orb",
             "moves": [
                 "Glaive Rush",
                 "Ice Shard",
                 "Swords Dance",
+                "Protect"
+            ]
+        },
+        "MeLuCa's Loaded Dice Icicle Spear": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 196,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 52
+            },
+            "nature": "Adamant",
+            "ability": "Thermal Exchange",
+            "tera_type": "Water",
+            "item": "Loaded Dice",
+            "moves": [
+                "Glaive Rush",
+                "Ice Shard",
+                "Icicle Spear",
                 "Protect"
             ]
         },
@@ -4561,7 +4835,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Make It Rain",
                 "Shadow Ball",
-                "Dazzling Gleam",
+                "Power Gem",
                 "Thunderbolt"
             ]
         },
@@ -4693,53 +4967,69 @@ var SETDEX_VGC2023 = {
     //    },
 
     //},
-    //"Roaring Moon": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Roaring Moon": {
+        "Booster Energy Acrobatics": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Flying",
+            "item": "Booster Energy",
+            "moves": [
+                "Acrobatics",
+                "Throat Chop",
+                "Tailwind",
+                "Protect"
+            ]
+        },
+        "Clear Amulet Dragon Dance": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Ground",
+            "item": "Clear Amulet",
+            "moves": [
+                "Earthquake",
+                "Throat Chop",
+                "Dragon Dance",
+                "Protect"
+            ]
+        },
 
-    //},
-    //"Iron Valiant": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    },
+    "Iron Valiant": {
+        "Mixed Sash Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 100,
+                "df": 0,
+                "sa": 156,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Naive",
+            "item": "Focus Sash",
+            "moves": [
+                "Moonblast",
+                "Close Combat",
+                "Shadow Sneak",
+                "Protect"
+            ]
+        },
 
-    //},
+    },
 }

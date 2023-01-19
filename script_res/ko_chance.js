@@ -176,9 +176,9 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     }
     else if (c > 0 && eot >= 0) {
         if (move.hits >= 8) {    //sv
-            if(damage[0] < defender.curHP && damage[1] >= defender.curHP)
+            if(c >= .9375)
                 return 'very high chance to OHKO' + afterText;                                  //sv
-            else if (damage[14] < defender.curHP && damage[15] >= defender.curHP)
+            else if (c <= .0625)
                 return 'very low chance to OHKO' + afterText;                                   //sv
         }
         return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;

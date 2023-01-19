@@ -516,6 +516,11 @@ function checkMoveTypeChange(move, field, attacker) {
     }
 }
 
+function checkConditionalPriority(move, terrain) {
+    if (move.name == "Grassy Glide" && terrain == "Grassy")
+        move.isPriority = true;
+}
+
 function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
     if (move.isSignatureZ) {
         move.isZ = true;
@@ -759,7 +764,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         return { "damage": [0], "description": buildDescription(description) };
     }
     //Remove if it makes the calc annoying to use
-    if (["Queenly Majesty", "Dazzling"].indexOf(defAbility) !== -1 && move.isPriority) {
+    if (["Queenly Majesty", "Dazzling", "Armor Tail"].indexOf(defAbility) !== -1 && move.isPriority) {
         description.defenderAbility = defAbility;
         return { "damage": [0], "description": buildDescription(description) };
     }
@@ -1272,7 +1277,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //test. Supreme Overlord (NUMBERS PAST 3 UNCONFIRMED)
     if (attacker.ability === "Supreme Overlord" && attacker.supremeOverlord > 0) {
-        overlordBoost = [0x1199, 0x1333, 0x14CD, 0x1666, 0x1800];
+        overlordBoost = [0x119A, 0x1333, 0x14CD, 0x1666, 0x1800];
         bpMods.push(overlordBoost[attacker.supremeOverlord - 1]);
         description.attackerAbility = attacker.supremeOverlord > 1 ? attacker.ability + " (" + attacker.supremeOverlord + " allies down)"
             : attacker.ability + " (1 ally down)";
@@ -1582,6 +1587,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     }
+    //test. Glaive Rush 2x mod (CONSIDER ADDING)
     //d. Crit mod
     if (isCritical) {
         baseDamage = Math.floor(baseDamage * 1.5);

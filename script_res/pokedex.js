@@ -11360,7 +11360,6 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "ab": "Aura Break",
   },
     "Milotic": { "ab": "Competitive" },
-    "Wigglytuff": { "ab": "Competitive", },
     "Kecleon": { "ab": "Protean", },
     "Dusclops": { "ab": "Frisk", },
     "Dusknoir": { "ab": "Frisk", },
