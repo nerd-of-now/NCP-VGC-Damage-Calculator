@@ -59,6 +59,7 @@ var ABILITIES_ADV = [
     'Plus',  //Functionality in calc I lied
     'Poison Point',
     'Pressure',
+    'Rock Head',
     'Rough Skin',
     'Run Away',
     'Serene Grace',

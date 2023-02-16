@@ -33,11 +33,12 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Jolly",
             "ability": "Protean",
+            "tera_type": "Ghost",
             "item": "Choice Band",
             "moves": [
                 "Flower Trick",
                 "Knock Off",
-                "Brick Break",
+                "Play Rough",
                 "U-turn"
             ]
         },
@@ -59,7 +60,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Modest",
             "ability": "Unaware",
-            "tera_type": "Fairy",
+            "tera_type": "Grass",
             "item": "Leftovers",
             "moves": [
                 "Torch Song",
@@ -1500,7 +1501,7 @@ var SETDEX_VGC2023 = {
                 "Hurricane",
                 "Tailwind",
                 "Wide Guard",
-                "Helping Hand"
+                "Hydro Pump"
             ]
         },
         "Bulky Damp Rock Set": {
@@ -3166,6 +3167,27 @@ var SETDEX_VGC2023 = {
 
     },
     "Palafin": {
+        "Mystic Water Haze": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Zero to Hero",
+            "tera_type": "Grass",
+            "item": "Mystic Water",
+            "moves": [
+                "Jet Punch",
+                "Wave Crash",
+                "Haze",
+                "Protect"
+            ]
+        },
         "Choice Band Set": {
             "level": 50,
             "evs": {
@@ -3183,27 +3205,6 @@ var SETDEX_VGC2023 = {
                 "Flip Turn",
                 "Jet Punch",
                 "Ice Punch",
-                "Close Combat"
-            ]
-        },
-        "Choice Scarf Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Adamant",
-            "ability": "Zero to Hero",
-            "tera_type": "Grass",
-            "item": "Choice Scarf",
-            "moves": [
-                "Flip Turn",
-                "Wave Crash",
-                "Tera Blast",
                 "Close Combat"
             ]
         },
@@ -3432,6 +3433,30 @@ var SETDEX_VGC2023 = {
                 "Sludge Bomb",
                 "Earth Power",
                 "Energy Ball"
+            ]
+        },
+        "Emilio's Specs Set": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 0,
+                "df": 0,
+                "sa": 236,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Toxic Debris",
+            "tera_type": "Grass",
+            "item": "Choice Specs",
+            "moves": [
+                "Power Gem",
+                "Sludge Bomb",
+                "Earth Power",
+                "Sludge Wave"
             ]
         },
 
@@ -4389,6 +4414,26 @@ var SETDEX_VGC2023 = {
                 "Trick Room"
             ]
         },
+        "Wolfe's Orlando 1st Perish Trap": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 60,
+                "df": 60,
+                "sa": 0,
+                "sd": 36,
+                "sp": 100
+            },
+            "nature": "Jolly",
+            "item": "Booster Energy",
+            "tera_type": "Steel",
+            "moves": [
+                "Play Rough",
+                "Disable",
+                "Protect",
+                "Perish Song"
+            ]
+        },
 
     },
     "Brute Bonnet": {
@@ -4404,7 +4449,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Impish",
             "item": "Sitrus Berry",
-            "tera_type": "Rock",
+            "tera_type": "Fairy",
             "moves": [
                 "Seed Bomb",
                 "Sucker Punch",
@@ -4412,6 +4457,46 @@ var SETDEX_VGC2023 = {
                 "Rage Powder"
             ]
         },
+        "Loaded Dice Tera Poison": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 20,
+                "df": 20,
+                "sa": 0,
+                "sd": 220,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "item": "Loaded Dice",
+            "tera_type": "Poison",
+            "moves": [
+                "Bullet Seed",
+                "Crunch",
+                "Spore",
+                "Rage Powder"
+            ]
+        },
+        //"Placeholder for Ashton's Bonnet": {
+        //    "level": 50,
+        //    "evs": {
+        //        "hp": 244,
+        //        "at": 20,
+        //        "df": 20,
+        //        "sa": 0,
+        //        "sd": 220,
+        //        "sp": 4
+        //    },
+        //    "nature": "Adamant",
+        //    "item": "Sitrus Berry",
+        //    "tera_type": "Water",
+        //    "moves": [
+        //        "Pollen Puff",
+        //        "Crunch",
+        //        "Spore",
+        //        "Protect"
+        //    ]
+        //},
 
     },
     "Flutter Mane": {
@@ -4434,7 +4519,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Shadow Ball",
                 "Moonblast",
-                "Icy Wind",
+                "Perish Song",
                 "Protect"
             ]
         },
@@ -4459,6 +4544,29 @@ var SETDEX_VGC2023 = {
                 "Moonblast",
                 "Dazzling Gleam",
                 "Mystical Fire"
+            ]
+        },
+        "Bulky SpAtk Booster Energy": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 252,
+                "sa": 4,
+                "sd": 12,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Booster Energy",
+            "tera_type": "Grass",
+            "moves": [
+                "Shadow Ball",
+                "Moonblast",
+                "Dazzling Gleam",
+                "Protect"
             ]
         },
 
@@ -4516,7 +4624,7 @@ var SETDEX_VGC2023 = {
                 "hp": 36,
                 "at": 0,
                 "df": 4,
-                "sa": 252,
+                "sa": 204,
                 "sd": 12,
                 "sp": 252
             },
@@ -4700,7 +4808,30 @@ var SETDEX_VGC2023 = {
 
     },
     "Iron Moth": {
-        "Tera Grass Booster Energy": {
+        "Speed-Boosting Booster Energy": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 116,
+                "sa": 132,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Booster Energy",
+            "tera_type": "Grass",
+            "moves": [
+                "Heat Wave",
+                "Acid Spray",
+                "Energy Ball",
+                "Protect"
+            ]
+        },
+        "SpAtk-Boosting Booster Energy": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -4717,8 +4848,8 @@ var SETDEX_VGC2023 = {
             "item": "Booster Energy",
             "tera_type": "Grass",
             "moves": [
-                "Heat Wave",
-                "Acid Spray",
+                "Overheat",
+                "Sludge Wave",
                 "Energy Ball",
                 "Protect"
             ]
@@ -4764,7 +4895,7 @@ var SETDEX_VGC2023 = {
             "tera_type": "Electric",
             "item": "Clear Amulet",
             "moves": [
-                "Glaive Rush",
+                "Icicle Crash",
                 "Tera Blast",
                 "Dragon Dance",
                 "Protect"

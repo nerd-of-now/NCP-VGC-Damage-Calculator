@@ -15571,7 +15571,7 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "t2": "Ghost",
         "bs": {
             "hp": 60,
-            "at": 100,
+            "at": 105,
             "df": 60,
             "sa": 120,
             "sd": 60,

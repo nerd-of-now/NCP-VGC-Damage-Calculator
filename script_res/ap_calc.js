@@ -158,6 +158,7 @@ $(".percent-hp").keyup(function() {
 });
 
 var lastAura = [false, false, false]
+var manualProtoQuark;
 $(".ability").bind("keyup change", function () {
     autoSetNeutralGas();
 
@@ -196,6 +197,8 @@ $(".ability").bind("keyup change", function () {
     }
     else
         $(this).closest(".poke-info").find(".ability-advanced").hide();
+    $(this).closest(".poke-info").find(".ability-proto-quark").hide();
+    manualProtoQuark = false;
 });
 
 $("#p1 .ability").bind("keyup change", function() {
@@ -220,12 +223,18 @@ $("#p2 .abilityToggle").bind("keyup change", function () {
         autoSetTerrain()
 });
 
+var lastHighestStat = [0,0];
 $(".ability-advanced").bind("keyup change", function () {
-    if ($(this).prop("checked"))
+    if ($(this).prop("checked")) {
         $(this).closest(".poke-info").find(".ability-proto-quark").show();
-    else
+        manualProtoQuark = true;
+    }
+    else {
         $(this).closest(".poke-info").find(".ability-proto-quark").hide();
-    $(this).closest(".poke-info").find(".ability-proto-quark").val(0);
+        manualProtoQuark = false;
+    }
+    $("#p1 .ability-proto-quark").val(lastHighestStat[0]);
+    $("#p2 .ability-proto-quark").val(lastHighestStat[1]);
 });
 
 var lastTerrain = "noterrain";
@@ -512,6 +521,14 @@ $(".move-selector").change(function() {
     else moveGroupObj.children(".move-pledge").hide();
 
     moveGroupObj.children(".move-z").prop("checked", false);
+
+    //CHANGE HOW THIS WORKS, IT DOESN'T APPEAR FOR SETS AND DISAPPEAR PROPERLY
+    if (moveName == "Glaive Rush")
+        $(this).closest(".poke-info").find(".glaive-rush").show();
+    else {
+        $(this).closest(".poke-info").find(".glaive-rush").hide();
+        $(this).closest(".poke-info").find(".glaive-rush").prop("checked", false);
+    }
 });
 
 // auto-update set details on select
@@ -548,6 +565,8 @@ $(".set-selector").change(function() {
         var itemObj = pokeObj.find(".item");
         if (pokemonName in setdex && setName in setdex[pokemonName]) {
             var set = setdex[pokemonName][setName];
+            if (setdexCustom !== [] && pokemonName in setdexCustom && setName in setdexCustom[pokemonName])
+                $(this).closest(".poke-info").find(".setCalc").val(setName);
             if(DOU) pokeObj.find(".level").val(100);
             else pokeObj.find(".level").val(set.level);
             pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);
@@ -740,8 +759,8 @@ function calculate() {
         result.koChanceText = p1.moves[i].bp === 0 && p1.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                   : getKOChanceText(result.damage, p1.moves[i], p2, field.getSide(1), p1.ability === 'Bad Dreams');
         result.crit = p1.moves[i].isCrit
-        if(p1.moves[i].isMLG){
-            result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>"; //dank memes
+        if(p1.moves[i].isMLG && !($("#p1").find(".move" + (i + 1)).find(".move-z").prop("checked"))){
+            result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>"; //dank memes
         }
         $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
         $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%");
@@ -760,8 +779,8 @@ function calculate() {
         result.koChanceText = p2.moves[i].bp === 0 && p2.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                 : getKOChanceText(result.damage, p2.moves[i], p1, field.getSide(0), p2.ability === 'Bad Dreams');
         result.crit = p2.moves[i].isCrit
-        if(p2.moves[i].isMLG){
-            result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=iD92h-M474g'>it's a one-hit KO!</a>";
+        if (p2.moves[i].isMLG && !($("#p2").find(".move" + (i + 1)).find(".move-z").prop("checked"))){
+            result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>";
         }
         $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
         $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%");
@@ -916,6 +935,7 @@ function Pokemon(pokeInfo) {
         getMoveDetails(pokeInfo.find(".move3"), this.isDynamax),
         getMoveDetails(pokeInfo.find(".move4"), this.isDynamax)
     ];
+    this.glaiveRushMod = pokeInfo.find(".glaive-rush").prop("checked");
     this.weight = +pokeInfo.find(".weight").val();
     this.canEvolve = pokedex[pokemonName].canEvolve;
 
@@ -936,6 +956,7 @@ function getMoveDetails(moveInfo, maxMon) {
                 : (moveName == "Dragon Darts" && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits2").val()
                     : (defaultDetails.isTwoHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 2
                         : (defaultDetails.isThreeHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 3
+                            : (moveName == "Beat Up" && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 4
                             : 1,
         isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-double").val() : 0,
         tripleHits: (defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits3").val() : 0,
@@ -1021,7 +1042,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isAuroraVeil = isAuroraVeil;
 }
 
-var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
+var gen, pokedex, setdex, setdexCustom, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
 
 $(".gen").change(function () {
     gen = ~~$(this).val();
@@ -1032,6 +1053,7 @@ $(".gen").change(function () {
         case 1: //Gen 1
             pokedex = POKEDEX_RBY;
             setdex = SETDEX_RBY;
+            setdexCustom = [];
             typeChart = TYPE_CHART_RBY;
             moves = MOVES_RBY;
             items = [];
@@ -1044,6 +1066,7 @@ $(".gen").change(function () {
         case 2: //Gen 2
             pokedex = POKEDEX_GSC;
             setdex = SETDEX_GSC;
+            setdexCustom = [];
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_GSC;
             items = ITEMS_GSC;
@@ -1056,6 +1079,7 @@ $(".gen").change(function () {
         case 3: //Gen 3
             pokedex = POKEDEX_ADV;
             setdex = SETDEX_ADV;
+            setdexCustom = [];
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_ADV;
             items = ITEMS_ADV;
@@ -1068,6 +1092,7 @@ $(".gen").change(function () {
         case 4: //Gen 4
             pokedex = POKEDEX_DPP;
             setdex = SETDEX_DPP;
+            setdexCustom = [];
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_DPP;
             items = ITEMS_DPP;
@@ -1080,6 +1105,7 @@ $(".gen").change(function () {
         case 5: //Gen 5
             pokedex = POKEDEX_BW;
             setdex = SETDEX_BW;
+            setdexCustom = SETDEX_CUSTOM_BW;
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_BW;
             items = ITEMS_BW;
@@ -1092,6 +1118,7 @@ $(".gen").change(function () {
         case 6: //Gen 6
             pokedex = POKEDEX_XY;
             setdex = SETDEX_XY;
+            setdexCustom = SETDEX_CUSTOM_XY;
             typeChart = TYPE_CHART_XY;
             moves = MOVES_XY;
             items = ITEMS_XY;
@@ -1104,6 +1131,7 @@ $(".gen").change(function () {
         case 7: //Gen 7
             pokedex = POKEDEX_SM;
             setdex = SETDEX_SM;
+            setdexCustom = SETDEX_CUSTOM_SM;
             typeChart = TYPE_CHART_XY;
             moves = MOVES_SM;
             items = ITEMS_SM;
@@ -1116,6 +1144,7 @@ $(".gen").change(function () {
         case 8: //Gen 8 SwSh+BDSP
             pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SS_NATDEX : POKEDEX_SS;
             setdex = SETDEX_SS;
+            setdexCustom = SETDEX_CUSTOM_SS;
             typeChart = TYPE_CHART_XY;
             moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SS_NATDEX : MOVES_SS;
             items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SS_NATDEX : ITEMS_SS;
@@ -1126,14 +1155,15 @@ $(".gen").change(function () {
             calcStat = CALC_STAT_ADV;
             break;
         case 9: //Gen 9 SV
-            pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SV_NATDEX :  POKEDEX_SV;       //POKEDEX_SV
-            setdex = SETDEX_SV;         //SETDEX_SV
+            pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SV_NATDEX :  POKEDEX_SV;
+            setdex = SETDEX_SV;
+            setdexCustom = SETDEX_CUSTOM_SV;
             typeChart = TYPE_CHART_XY;
-            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SV_NATDEX : MOVES_SV;           //MOVES_SV
-            items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SV_NATDEX : ITEMS_SV;           //ITEMS_SV
-            abilities = ABILITIES_SV;   //ABILITIES_SV
+            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SV_NATDEX : MOVES_SV;
+            items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SV_NATDEX : ITEMS_SV;
+            abilities = ABILITIES_SV;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_SV; //CALCULATE_ALL_MOVES_7_PLUS
+            calculateAllMoves = CALCULATE_ALL_MOVES_SV;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;

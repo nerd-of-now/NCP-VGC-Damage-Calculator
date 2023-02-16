@@ -32,7 +32,7 @@ function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
     p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
     p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
     p1.stats[SP] = getModifiedStat(p1.rawStats[SP], p1.boosts[SP]);
-    setHighestStat(p1);
+    setHighestStat(p1, 0);
     p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain(), field.getTailwind(0));
     $(".p1-speed-mods").text(p1.stats[SP]);
     p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
@@ -40,7 +40,7 @@ function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
     p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
     p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
     p2.stats[SP] = getModifiedStat(p2.rawStats[SP], p2.boosts[SP]);
-    setHighestStat(p2);
+    setHighestStat(p2, 1);
     p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain(), field.getTailwind(1));
     $(".p2-speed-mods").text(p2.stats[SP]);
     var side1 = field.getSide(1);
@@ -88,13 +88,17 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     description.attackerTera = attacker.isTerastalize ? attacker.tera_type : false;
     description.defenderTera = defender.isTerastalize ? defender.tera_type : false;
 
+    if (move.name === "Grassy Glide" && field.terrain === "Grassy") //sloppy addition
+        move.hasPriority = true;
+
+
     var defAbility = defender.ability;
     [defAbility, description] = abilityIgnore(attacker, move, defAbility, description);
 
     var isCritical = critMove(move, defAbility);
 
     if (move.name == "Aura Wheel" && attacker.name == "Morpeko-Hangry") {
-        move.type = AuraWheel(move, attacker);
+        move.type = "Dark";
     }
 
     var ateIzeAbility = ATE_IZE_ABILITIES.indexOf(attacker.ability);    //Confirms abilities like Normalize and Pixilate but not Liquid Voice
