@@ -5163,4 +5163,53 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    //"Zoroark-Hisui": {
+    //    "Tera Fighting Sash Set": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 4,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 252,
+    //            "sd": 0,
+    //            "sp": 252
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "Timid",
+    //        "tera_type": "Fighting",
+    //        "item": "Focus Sash",
+    //        "moves": [
+    //            "Tera Blast",
+    //            "Shadow Ball",
+    //            "Nasty Plot",
+    //            "Protect"
+    //        ]
+    //    },
+    //    "Tera Fairy Life Orb Set": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 4,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 252,
+    //            "sd": 0,
+    //            "sp": 252
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "Timid",
+    //        "tera_type": "Fairy",
+    //        "item": "Life Orb",
+    //        "moves": [
+    //            "Tera Blast",
+    //            "Shadow Ball",
+    //            "Nasty Plot",
+    //            "Protect"
+    //        ]
+    //    },
+
+    //},
 }

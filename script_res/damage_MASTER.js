@@ -218,6 +218,11 @@ function getFinalSpeed(pokemon, weather, terrain, tailwind) {
     }
     //g. Tailwind
     if (tailwind) otherSpeedMods *= 2;
+    //h. Protosynthesis, Quark Drive
+    if (((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather === "Sun" || manualProtoQuark))
+        || (pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric" || manualProtoQuark)))
+        && pokemon.highestStat === 'sp')
+        otherSpeedMods *= 1.5;
 
     speed = pokeRound(speed * otherSpeedMods);
 
@@ -225,15 +230,9 @@ function getFinalSpeed(pokemon, weather, terrain, tailwind) {
     if (pokemon.status === "Paralyzed" && pokemon.ability !== "Quick Feet") {
         speed = Math.floor(speed / 2);
     }
-    //4. Protosynthesis, Quark Drive
-    if (((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather === "Sun" || manualProtoQuark))
-        || (pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric" || manualProtoQuark)))
-        && pokemon.highestStat === 'sp') {
-        speed = Math.floor(speed * 1.5);
-    }
-    //5. 65536 Speed check
+    //4. 65536 Speed check
     if (speed > 65535) { speed %= 65536; }
-    //6. 10000 Speed check
+    //5. 10000 Speed check
     if (speed > 10000) { speed = 10000; }
     return speed;
 }
@@ -1598,8 +1597,17 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     } else if ((field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
         typeChart[move.type]["Flying"] > 1)) {
         description.weather = field.weather;        //not actually a mod, just adding the description here
-    } else if ((((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella')) {
+    } else if (((field.weather === "Sun" && move.type === "Water" && move.name !== "Hydro Steam") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
+        description.weather = field.weather;
+    }
+    //c.i. Psyblade/Hydro Steam mod, TEST IN GAME
+    if (field.terrain === "Electric" && move.name === "Psyblade") {
+        baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
+        description.terrain = field.terrain;
+    }
+    else if (field.weather.indexOf("Sun") > -1 && move.name === "Hydro Steam") {
+        baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
     }
     //d. Glaive Rush 2x mod (NEEDS OTHER PARTS TO BE FIXED)

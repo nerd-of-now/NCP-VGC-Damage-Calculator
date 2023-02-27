@@ -15570,12 +15570,12 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "t1": "Normal",
         "t2": "Ghost",
         "bs": {
-            "hp": 60,
-            "at": 105,
+            "hp": 55,
+            "at": 100,
             "df": 60,
-            "sa": 120,
+            "sa": 125,
             "sd": 60,
-            "sp": 105,
+            "sp": 110,
         },
         "w": 73.0,
         "ab": "Illusion",
@@ -17421,6 +17421,34 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 240.0,
         "ab": "Hadron Engine",
     },
+    "Walking Wake": {
+        "t1": "Water",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 99,
+            "at": 83,
+            "df": 91,
+            "sa": 125,
+            "sd": 83,
+            "sp": 109,
+        },
+        "w": 280.0,
+        "ab": "Protosynthesis",
+    },
+    "Iron Leaves": {
+        "t1": "Grass",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 90,
+            "at": 130,
+            "df": 88,
+            "sa": 70,
+            "sd": 108,
+            "sp": 104,
+        },
+        "w": 125.0,
+        "ab": "Quark Drive",
+    },
 });
 
 var POKEDEX_SV = {};
@@ -17473,7 +17501,7 @@ var POKEDEX_SV = {};
     'Maschiff', 'Mabosstiff', 'Bramblin', 'Brambleghast', 'Gimmighoul', 'Gholdengo', 'Ting-Lu', 'Chien-Pao', 'Wo-Chien', 'Chi-Yu',
     'Tinkatink', 'Tinkatuff', 'Tinkaton', 'Charcadet', 'Armarouge', 'Ceruledge', 'Toedscool', 'Toedscruel', 'Kingambit', 'Clodsire',
     'Annihilape', 'Great Tusk', 'Brute Bonnet', 'Sandy Shocks', 'Scream Tail', 'Flutter Mane', 'Slither Wing', 'Roaring Moon', 'Iron Treads', 'Iron Moth',
-    'Iron Hands', 'Iron Jugulis', 'Iron Thorns', 'Iron Bundle', 'Iron Valiant', 'Koraidon', 'Miraidon',
+    'Iron Hands', 'Iron Jugulis', 'Iron Thorns', 'Iron Bundle', 'Iron Valiant', 'Koraidon', 'Miraidon', 'Walking Wake', 'Iron Leaves',
     //Forms for Initial Pokemon
     'Raichu-Alola', 'Diglett-Alola', 'Dugtrio-Alola', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', 'Growlithe-Hisui', 'Arcanine-Hisui', 'Slowpoke-Galar', 'Slowbro-Galar',
     'Grimer-Alola', 'Muk-Alola', 'Voltorb-Hisui', 'Electrode-Hisui', 'Tauros-Paldea', 'Tauros-Paldea-Fire', 'Tauros-Paldea-Water', 'Articuno-Galar', 'Zapdos-Galar', 'Moltres-Galar',

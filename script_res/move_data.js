@@ -1159,7 +1159,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 40,
         type: 'Dark',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        canDouble: true,
     },
     'Rapid Spin': {
         bp: 20,
@@ -1273,7 +1274,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Normal',
         category: 'Status'
     },
-    'Desting Bond': {
+    'Destiny Bond': {
 
         type: 'Ghost',
         category: 'Status'
@@ -4957,7 +4958,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Fighting',
         category: 'Status'
     },
-    'Clangerous Soul': {
+    'Clangorous Soul': {
 
         type: 'Dragon',
         category: 'Status'
@@ -5647,6 +5648,17 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Fairy',
         category: 'Physical',
         hasSecondaryEffect: true,
+    },
+    'Hydro Steam': {
+        bp: 80,
+        type: 'Water',
+        category: 'Special',
+    },
+    'Psyblade': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Physical',
+        isSlice: true,
     },
 });
 
