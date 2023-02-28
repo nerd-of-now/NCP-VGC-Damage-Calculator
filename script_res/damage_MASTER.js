@@ -1228,11 +1228,22 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //o. Me First
 
-    //p. Knock Off
+    //p. Knock Off, Psyblade, Hydro Steam
     else if (gen > 5 && move.name === "Knock Off" && defender.name !== null && !cantRemoveItem(defender.item, defender.name, field.terrain)) {
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
-    }//q. Misty Explosion
+    }
+    else if (field.terrain === "Electric" && move.name === "Psyblade") {
+        bpMods.push(0x1800);
+        description.moveBP = move.bp * 1.5;
+        description.terrain = field.terrain;
+    }
+    else if (field.weather.indexOf("Sun") > -1 && move.name === "Hydro Steam") {
+        bpMods.push(0x1800);
+        description.moveBP = move.bp * 1.5;
+        description.weather = field.weather;
+    }
+    //q. Misty Explosion
     else if ((move.name === "Misty Explosion" && field.terrain == "Misty" && attIsGrounded) ||
         (move.name === "Grav Apple" && field.isGravity)) {
         bpMods.push(0x1800);
@@ -1599,15 +1610,6 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         description.weather = field.weather;        //not actually a mod, just adding the description here
     } else if (((field.weather === "Sun" && move.type === "Water" && move.name !== "Hydro Steam") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
-        description.weather = field.weather;
-    }
-    //c.i. Psyblade/Hydro Steam mod, TEST IN GAME
-    if (field.terrain === "Electric" && move.name === "Psyblade") {
-        baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
-        description.terrain = field.terrain;
-    }
-    else if (field.weather.indexOf("Sun") > -1 && move.name === "Hydro Steam") {
-        baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
     }
     //d. Glaive Rush 2x mod (NEEDS OTHER PARTS TO BE FIXED)
