@@ -15367,7 +15367,7 @@ delete POKEDEX_SS["Simisage"];
 delete POKEDEX_SS["Pansear"];
 delete POKEDEX_SS["Simisear"];
 delete POKEDEX_SS["Panpour"];
-delete POKEDEX_SS["Simipout"];
+delete POKEDEX_SS["Simipour"];
 delete POKEDEX_SS["Blitzle"];
 delete POKEDEX_SS["Zebstrika"];
 delete POKEDEX_SS["Sewaddle"];
@@ -15411,10 +15411,10 @@ delete POKEDEX_SS["Yungoos"];
 delete POKEDEX_SS["Gumshoos"];
 delete POKEDEX_SS["Crabrawler"];
 delete POKEDEX_SS["Crabominable"];
-delete POKEDEX_SS["Oricorio-Electric"];
-delete POKEDEX_SS["Oricorio-Fire"];
-delete POKEDEX_SS["Oricorio-Ghost"];
-delete POKEDEX_SS["Oricorio-Psychic"];
+delete POKEDEX_SS["Oricorio-Pom-Pom"];
+delete POKEDEX_SS["Oricorio-Baile"];
+delete POKEDEX_SS["Oricorio-Sensu"];
+delete POKEDEX_SS["Oricorio-Pa'u"];
 delete POKEDEX_SS["Minior"];
 delete POKEDEX_SS["Komala"];
 delete POKEDEX_SS["Bruxish"];
@@ -17079,7 +17079,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
             "df": 35,
             "sa": 50,
             "sd": 100,
-            "sp": 75,
+            "sp": 70,
         },
         "w": 33.0,
         "ab": "Mycelium Might",

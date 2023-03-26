@@ -304,13 +304,13 @@ var ABILITIES_SV = ABILITIES_SS.concat([
     'Well-Baked Body',  //Fire immunity and +2 Def when hit                                         IN CALC
     'Wind Rider',   //Wind move immunity and +1 Atk when hit or Tailwind is set                     IN CALC
     'Guard Dog',    //Boosted Attack from Intimidate, switch-out moves fail                         IN CALC
-    'Rocky Payload',    //increase Rock damage dealt        MORE RESEARCH NEEDED
+    'Rocky Payload',    //increase Rock damage dealt by 1.5x
     'Wind Power',   //charge when hit by wind move, abilityOff like Electromorphosis                IN CALC
     'Zero to Hero', //changes form when switching out, no calc functionality
     'Commander',    //all effects are related to the one mon, no calc functionality
     'Electromorphosis', //already added, charge as an ability                                       IN CALC
-    'Protosynthesis',   //activates like Intrepid Sword in sun or with Booster Energy, determines stat like Beast Boost             IN CALC
-    'Quark Drive',  //activates like Intrepid Sword in electric terrain or with Booster Energy, determines stat like Beast Boost    IN CALC
+    'Protosynthesis',   //activates in sun or with Booster Energy, determines stat like Beast Boost             IN CALC
+    'Quark Drive',  //activates in electric terrain or with Booster Energy, determines stat like Beast Boost    IN CALC
     'Good as Gold', //status move immunity, no calc functionality
     'Vessel of Ruin',   //NOT A STAT DROP, IT'S A BASE STAT MODIFIER
     'Sword of Ruin',    //SEE ABOVE
@@ -321,7 +321,7 @@ var ABILITIES_SV = ABILITIES_SS.concat([
     'Opportunist',  //boosts same stats as opponent, might have calc functionality but probably not
     'Cud Chew', //reuse the same berry, no calc functionality
     'Sharpness',    //increase slicing move damage dealt                                            IN CALC
-    'Supreme Overlord', //Atk/SpA boost for each ally defeated, 1.2x for first ally fainted and +0.1x onwards   IN CALC
+    'Supreme Overlord', //Atk/SpA boost for each ally defeated by +0.1x   IN CALC
     'Costar',   //copies ally stat changes, no calc functionality
     'Toxic Debris', //Toxic Spikes for every physical hit, no calc functionality
     'Armor Tail',   //Queenly Majesty/Dazzling again

@@ -360,10 +360,10 @@ function checkIntimidate(source, target) {    //temporary solution
 }
 
 function checkSwordShield(pokemon) {
-    if (pokemon.ability === "Intrepid Sword") {
+    if (pokemon.ability === "Intrepid Sword" && (gen !== 9 || pokemon.abilityOn)) {
         pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
     }
-    else if (pokemon.ability === "Dauntless Shield") {
+    else if (pokemon.ability === "Dauntless Shield" && (gen !== 9 || pokemon.abilityOn)) {
         pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
     }
 }
@@ -1228,46 +1228,42 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //o. Me First
 
-    //p. Knock Off, Psyblade, Hydro Steam
+    //p. Knock Off
     else if (gen > 5 && move.name === "Knock Off" && defender.name !== null && !cantRemoveItem(defender.item, defender.name, field.terrain)) {
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
     }
+    //q. Psyblade
     else if (field.terrain === "Electric" && move.name === "Psyblade") {
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
         description.terrain = field.terrain;
     }
-    else if (field.weather.indexOf("Sun") > -1 && move.name === "Hydro Steam") {
-        bpMods.push(0x1800);
-        description.moveBP = move.bp * 1.5;
-        description.weather = field.weather;
-    }
-    //q. Misty Explosion
+    //r. Misty Explosion
     else if ((move.name === "Misty Explosion" && field.terrain == "Misty" && attIsGrounded) ||
         (move.name === "Grav Apple" && field.isGravity)) {
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
-    }//r. Expanding Force
+    }//s. Expanding Force
     else if (move.name === "Expanding Force" && field.terrain == "Psychic" && attIsGrounded) {
         move.isSpread = true;
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
     }
 
-    //s. Helping Hand
+    //t. Helping Hand
     if (field.isHelpingHand) {  //calculated differently in gen 3
         bpMods.push(0x1800);
         description.isHelpingHand = true;
     }
 
-    //t. Charge, Electromorphosis, Wind Power
+    //u. Charge, Electromorphosis, Wind Power
     if ((attacker.ability === "Electromorphosis" || attacker.ability === "Wind Power") && attacker.abilityOn && move.type === "Electric") {
         bpMods.push(0x2000);
         description.attackerAbility = attacker.ability;
     }
 
-    //u. Double power (Facade, Brine, Venoshock, Retaliate, Fusion Bolt, Fusion Flare, Lash Out)
+    //v. Double power (Facade, Brine, Venoshock, Retaliate, Fusion Bolt, Fusion Flare, Lash Out)
     if ((move.name === "Facade" && ["Burned", "Paralyzed", "Poisoned", "Badly Poisoned"].indexOf(attacker.status) !== -1) ||
         (move.name === "Brine" && defender.curHP <= defender.maxHP / 2) ||
         (["Venoshock", "Barb Barrage"].indexOf(move.name) !== -1 && (defender.status === "Poisoned" || defender.status === "Badly Poisoned")) ||
@@ -1276,7 +1272,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.moveBP = move.bp * 2;
     }
 
-    //v. Offensive Terrain
+    //w. Offensive Terrain
     if (attIsGrounded) {
         var terrainMultiplier = gen > 7 ? 0x14CD : 0x1800;
         if (field.terrain === "Electric" && move.type === "Electric") {
@@ -1289,7 +1285,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
             bpMods.push(terrainMultiplier);
             description.terrain = field.terrain;
         }
-    }//w. Defensive Terrain
+    }//x. Defensive Terrain
     if (defIsGrounded) {
         if ((field.terrain === "Misty" && move.type === "Dragon") ||
             (field.terrain === "Grassy" && (move.name === "Earthquake" || move.name === "Bulldoze"))) {
@@ -1298,16 +1294,16 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         }
     }
 
-    //x. Mud Sport, Water Sport
+    //y. Mud Sport, Water Sport
 
-    //y. Supreme Overlord (NUMBERS PAST 3 UNCONFIRMED)
+    //z. Supreme Overlord (NUMBERS PAST 3 UNCONFIRMED)
     if (attacker.ability === "Supreme Overlord" && attacker.supremeOverlord > 0) {
         overlordBoost = [0x119A, 0x1333, 0x14CD, 0x1666, 0x1800];
         bpMods.push(overlordBoost[attacker.supremeOverlord - 1]);
         description.attackerAbility = attacker.supremeOverlord > 1 ? attacker.ability + " (" + attacker.supremeOverlord + " allies down)"
             : attacker.ability + " (1 ally down)";
     }
-    //z. 1.1x Items
+    //aa. 1.1x Items
     else if (attacker.item === "Punching Glove" && move.isPunch) {
         bpMods.push(0x119A);
         description.attackerItem = attacker.item;
@@ -1601,8 +1597,8 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     }
     //b. Parental Bond mod
     baseDamage = attacker.isChild ? pokeRound(baseDamage * 0x0400 / 0x1000) : baseDamage;    //should be accurate based on implementation
-    //c. Weather mod
-    if (((field.weather.indexOf("Sun") > -1 && move.type === "Fire") || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) && defender.item !== 'Utility Umbrella') {
+    //c. Weather mod, Hydro Steam
+    if (((field.weather.indexOf("Sun") > -1 && (move.type === "Fire" || move.name === "Hydro Steam")) || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) && defender.item !== 'Utility Umbrella') {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
     } else if ((field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&

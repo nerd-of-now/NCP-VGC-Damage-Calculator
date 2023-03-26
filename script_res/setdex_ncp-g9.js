@@ -45,7 +45,7 @@ var SETDEX_VGC2023 = {
 
     },
     "Skeledirge": {
-        "Bulky Tera Fairy": {
+        "Bulky Tera Grass": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -815,6 +815,30 @@ var SETDEX_VGC2023 = {
                 "Trick"
             ]
         },
+        "Ashton's Sitrus Tera Grass": {
+            "level": 50,
+            "evs": {
+                "hp": 180,
+                "at": 0,
+                "df": 212,
+                "sa": 44,
+                "sd": 4,
+                "sp": 68
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Trace",
+            "tera_type": "Grass",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Psychic",
+                "Moonblast",
+                "Protect",
+                "Trick Room"
+            ]
+        },
 
     },
     "Gallade": {
@@ -1493,7 +1517,7 @@ var SETDEX_VGC2023 = {
             "ivs": {
                 "at": 0,
             },
-            "nature": "Timid",
+            "nature": "Modest",
             "ability": "Drizzle",
             "tera_type": "Flying",
             "item": "Focus Sash",
@@ -1733,11 +1757,11 @@ var SETDEX_VGC2023 = {
             "level": 50,
             "evs": {
                 "hp": 180,
-                "at": 196,
-                "df": 20,
+                "at": 36,
+                "df": 108,
                 "sa": 0,
-                "sd": 4,
-                "sp": 108
+                "sd": 172,
+                "sp": 12
             },
             "nature": "Adamant",
             "ability": "Defiant",
@@ -2519,6 +2543,27 @@ var SETDEX_VGC2023 = {
                 "Haze"
             ]
         },
+        "Sash Brave Bird Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Prankster",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Brave Bird",
+                "Tailwind",
+                "Protect",
+                "Haze"
+            ]
+        },
 
     },
     "Gothitelle": {
@@ -2659,10 +2704,10 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Bold",
             "ability": "Psychic Surge",
-            "tera_type": "Dark",
-            "item": "Safety Goggles",
+            "tera_type": "Fairy",
+            "item": "Psychic Seed",
             "moves": [
-                "Psychic",
+                "Dazzling Gleam",
                 "Follow Me",
                 "Helping Hand",
                 "Trick Room"
@@ -2894,6 +2939,30 @@ var SETDEX_VGC2023 = {
                 "Protect"
             ]
         },
+        "Sash Hypnosis Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Speed Boost",
+            "tera_type": "Fairy",
+            "item": "Focus Sash",
+            "moves": [
+                "Lumina Crash",
+                "Dazzling Gleam",
+                "Hypnosis",
+                "Protect"
+            ]
+        },
 
     },
     //"Hippowdon": {
@@ -2969,28 +3038,52 @@ var SETDEX_VGC2023 = {
 
     },
     "Volcarona": {
-        "Sitrus Quiver Dance": {
+        "Leftovers Quiver Dance": {
             "level": 50,
             "evs": {
-                "hp": 4,
+                "hp": 252,
                 "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
+                "df": 196,
+                "sa": 4,
+                "sd": 4,
+                "sp": 164
             },
             "ivs": {
                 "at": 0,
             },
             "nature": "Timid",
             "ability": "Flame Body",
+            "tera_type": "Water",
+            "item": "Leftovers",
+            "moves": [
+                "Fiery Dance",
+                "Giga Drain",
+                "Protect",
+                "Quiver Dance"
+            ]
+        },
+        "Sitrus Berry Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 212,
+                "sa": 4,
+                "sd": 36,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Flame Body",
             "tera_type": "Grass",
             "item": "Sitrus Berry",
             "moves": [
-                "Heat Wave",
-                "Bug Buzz",
-                "Giga Drain",
-                "Quiver Dance"
+                "Struggle Bug",
+                "Overheat",
+                "Tailwind",
+                "Rage Powder"
             ]
         },
 
@@ -3179,7 +3272,6 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Zero to Hero",
-            "tera_type": "Grass",
             "item": "Mystic Water",
             "moves": [
                 "Jet Punch",
@@ -4147,7 +4239,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Defiant",
-            "tera_type": "Steel",
+            "tera_type": "Dark",
             "item": "Life Orb",
             "moves": [
                 "Kowtow Cleave",
@@ -4168,13 +4260,13 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Defiant",
-            "tera_type": "Fighting",
+            "tera_type": "Flying",
             "item": "Assault Vest",
             "moves": [
                 "Kowtow Cleave",
                 "Iron Head",
                 "Sucker Punch",
-                "Brick Break"
+                "Tera Blast"
             ]
         },
 
@@ -4264,7 +4356,7 @@ var SETDEX_VGC2023 = {
                 "sd": 4,
                 "sp": 252
             },
-            "nature": "Jolly",
+            "nature": "Adamant",
             "ability": "Unaware",
             "tera_type": "Dragon",
             "item": "Leftovers",
@@ -4272,10 +4364,10 @@ var SETDEX_VGC2023 = {
                 "Order Up",
                 "Earthquake",
                 "Substitute",
-                "Protect"
+                "Wave Crash"
             ]
         },
-        "Tera Grass Bulky": {
+        "Tera Steel Bulky": {
             "level": 50,
             "evs": {
                 "hp": 116,
@@ -4287,10 +4379,10 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Unaware",
-            "tera_type": "Grass",
+            "tera_type": "Steel",
             "item": "Chesto Berry",
             "moves": [
-                "Order Up",
+                "Earthquake",
                 "Wave Crash",
                 "Rest",
                 "Protect"
@@ -4314,12 +4406,13 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Timid",
             "ability": "Commander",
+            "tera_type": "Steel",
             "item": "Choice Scarf",
             "moves": [
                 "Muddy Water",
                 "Draco Meteor",
                 "Icy Wind",
-                "Soak"
+                "Dragon Pulse"
             ]
         },
         "Sash Set": {
@@ -4477,26 +4570,26 @@ var SETDEX_VGC2023 = {
                 "Rage Powder"
             ]
         },
-        //"Placeholder for Ashton's Bonnet": {
-        //    "level": 50,
-        //    "evs": {
-        //        "hp": 244,
-        //        "at": 20,
-        //        "df": 20,
-        //        "sa": 0,
-        //        "sd": 220,
-        //        "sp": 4
-        //    },
-        //    "nature": "Adamant",
-        //    "item": "Sitrus Berry",
-        //    "tera_type": "Water",
-        //    "moves": [
-        //        "Pollen Puff",
-        //        "Crunch",
-        //        "Spore",
-        //        "Protect"
-        //    ]
-        //},
+        "Ashton's Runner-Up Bonnet": {
+            "level": 50,
+            "evs": {
+                "hp": 180,
+                "at": 12,
+                "df": 12,
+                "sa": 0,
+                "sd": 68,
+                "sp": 236
+            },
+            "nature": "Adamant",
+            "item": "Sitrus Berry",
+            "tera_type": "Water",
+            "moves": [
+                "Pollen Puff",
+                "Crunch",
+                "Spore",
+                "Protect"
+            ]
+        },
 
     },
     "Flutter Mane": {
@@ -4536,14 +4629,14 @@ var SETDEX_VGC2023 = {
             "ivs": {
                 "at": 0,
             },
-            "nature": "Timid",
+            "nature": "Modest",
             "item": "Choice Specs",
-            "tera_type": "Fire",
+            "tera_type": "Steel",
             "moves": [
                 "Shadow Ball",
                 "Moonblast",
                 "Dazzling Gleam",
-                "Mystical Fire"
+                "Power Gem"
             ]
         },
         "Bulky SpAtk Booster Energy": {
@@ -4996,110 +5089,34 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Wo-Chien": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
+    "Wo-Chien": {
+        "Defensive Leftovers": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 140,
+                "sa": 0,
+                "sd": 116,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "tera_type": "Poison",
+            "item": "Leftovers",
+            "moves": [
+                "Pollen Puff",
+                "Snarl",
+                "Foul Play",
+                "Giga Drain"
+            ]
+        },
 
-    //},
-    //"Chien-Pao": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-
-    //},
-    //"Ting-Lu": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-
-    //},
-    //"Chi-Yu": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-
-    //},
-    "Roaring Moon": {
-        "Booster Energy Acrobatics": {
+    },
+    "Chien-Pao": {
+        "Sash Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5107,6 +5124,78 @@ var SETDEX_VGC2023 = {
                 "df": 0,
                 "sa": 0,
                 "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Sucker Punch",
+                "Ice Spinner",
+                "Throat Chop",
+                "Sacred Sword"
+            ]
+        },
+
+    },
+    "Ting-Lu": {
+        "Offensive Sitrus Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 244,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "tera_type": "Water",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Stomping Tantrum",
+                "Throat Chop",
+                "Heavy Slam",
+                "Body Press"
+            ]
+        },
+
+    },
+    "Chi-Yu": {
+        "Choice Scarf Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Fire",
+            "item": "Choice Scarf",
+            "moves": [
+                "Heat Wave",
+                "Snarl",
+                "Dark Pulse",
+                "Overheat"
+            ]
+        },
+
+    },
+    "Roaring Moon": {
+        "Booster Energy Acrobatics": {
+            "level": 50,
+            "evs": {
+                "hp": 28,
+                "at": 220,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
                 "sp": 252
             },
             "nature": "Jolly",

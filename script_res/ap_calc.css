@@ -192,10 +192,7 @@ th {
 .info-selectors select {
     width: 12em;
 }
-select.ability-supreme {
-    width: 4.5em;
-}
-select.ability-proto-quark {
+select.ability-supreme, select.ability-proto-quark {
     width: 4.5em;
 }
 select.toxic-counter {
@@ -204,8 +201,12 @@ select.toxic-counter {
 .move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits, .move-lastRespRageFist {
     font-size: 0.9em;
 }
-.move-selector {
+.move-selector{
     width: 9.0em;
+}
+.item, .ability {
+    font-size: 1.1em;
+    width: 12.15em;
 }
 .poke-info input.move-bp {
     width: 2em;
@@ -217,7 +218,7 @@ select.toxic-counter {
     width: 4.6em;
 }
 .abilityToggle, .ability-advanced{
-    margin-top: 1px;
+    margin-top: 0px;
 }
 .poke-info .crit-btn {
     font-size: 0.8em;
