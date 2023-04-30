@@ -447,6 +447,22 @@ $(".status").bind("keyup change", function() {
     }
 });
 
+//sloppy check for Glaive Rush checkbox
+function glaiveRushCheck(divValue) {    //divValue should accept any div class, it's just meant to be a quick way to find which Pokemon it's checking
+    pInfo = $(divValue).closest(".poke-info");
+    pMoves = [pInfo.find(".move1").children("select.move-selector").val(),
+        pInfo.find(".move2").children("select.move-selector").val(),
+        pInfo.find(".move3").children("select.move-selector").val(),
+        pInfo.find(".move4").children("select.move-selector").val()];
+
+    if (pMoves.indexOf("Glaive Rush") != -1)
+        pInfo.find(".glaive-rush").show();
+    else {
+        pInfo.find(".glaive-rush").hide();
+        pInfo.find(".glaive-rush").prop("checked", false);
+    }
+}
+
 // auto-update move details on select
 $(".move-selector").change(function() {
     var moveName = $(this).val();
@@ -496,13 +512,8 @@ $(".move-selector").change(function() {
 
     moveGroupObj.children(".move-z").prop("checked", false);
 
-    //CHANGE HOW THIS WORKS, IT DOESN'T APPEAR FOR SETS AND DISAPPEAR PROPERLY
-    if (moveName == "Glaive Rush")
-        $(this).closest(".poke-info").find(".glaive-rush").show();
-    else {
-        $(this).closest(".poke-info").find(".glaive-rush").hide();
-        $(this).closest(".poke-info").find(".glaive-rush").prop("checked", false);
-    }
+    //SLOPPY WAY OF HANDLING
+    glaiveRushCheck(moveGroupObj);
 });
 
 // auto-update set details on select
@@ -602,6 +613,9 @@ $(".set-selector").change(function() {
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {
     var defaultForme = 0;
+    var gmaxDefaults = ['Venusaur', 'Charizard', 'Blastoise', 'Butterfree', 'Pikachu', 'Meowth', 'Gengar', 'Kingler', 'Lapras', 'Eevee', 'Snorlax', 'Garbodor',
+        'Rillaboom', 'Cinderace', 'Inteleon', 'Orbeetle', 'Coalossal', 'Flapple', 'Sandaconda', 'Toxtricity', 'Centiskorch', 'Hatterene', 'Grimmsnarl',
+        'Alcremie', 'Copperajah', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike'];
 
     if (setName !== 'Blank Set') {
         var set = setdex[pokemonName][setName];
@@ -619,6 +633,11 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
             }
         }
     }
+
+    if (pokemonName === "Palafin")
+        defaultForme = 1;
+    else if (gen == 8 && !defaultForme && gmaxDefaults.indexOf(pokemonName) != -1)
+        defaultForme = pokedex[pokemonName].formes.indexOf(pokemonName + "-Gmax");
 
     var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
     formeObj.children("select").find("option").remove().end().append(formeOptions).change();

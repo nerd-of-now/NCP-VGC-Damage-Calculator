@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="main-result-group">
-                <div class="big-text"><span id="mainResult">Loading...</span></div>
+                <div class="big-text"><span id="mainResult" onclick="Clipboard_CopyTo(this.textContent)" title="Click to copy the result.">Loading...</span></div>
                 <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console [Ctrl+Shift+I on Google Chrome].)</span></div>
             </div>
             <div class="panel poke-info" id="p1">
@@ -233,7 +233,7 @@
                         <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
                         <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option><option value="6">6x effect</option></select>
                     </div>
-                    <!--<input class="glaive-rush calc-trigger hide" type="checkbox" id="glaiveL" title="Apply double damage from using Glaive Rush?" />-->
+                    <input class="glaive-rush calc-trigger hide" type="checkbox" id="glaiveL" title="Apply double damage from using Glaive Rush?" />
                     <div class="info-group">
                         <input type="text" class="setCalc" id="setName1" style="width: 25%" value="My Calc Set">
                         <button type="button" onclick="savecalc1()">Save Calc Set</button>
@@ -628,7 +628,7 @@
                         <select class="move-10hits calc-trigger hide"><option value="1">1 hit</option><option value="2">2 hits</option><option value="3">3 hits</option><option value="4">4 hits</option><option value="5">5 hits</option><option value="6">6 hits</option><option value="7">7 hits</option><option value="8">8 hits</option><option value="9">9 hits</option><option value="10">10 hits</option></select>
                         <select class="move-lastRespRageFist calc-trigger hide"><option value="0">0x effect</option><option value="1">1x effect</option><option value="2">2x effect</option><option value="3">3x effect</option><option value="4">4x effect</option><option value="5">5x effect</option><option value="6">6x effect</option></select>
                     </div>
-                    <!--<input class="glaive-rush calc-trigger hide" type="checkbox" id="glaiveR" title="Apply double damage from using Glaive Rush?" />-->
+                    <input class="glaive-rush calc-trigger hide" type="checkbox" id="glaiveR" title="Apply double damage from using Glaive Rush?" />
                     <div class="info-group">
                         <input type="text" class="setCalc" id="setName2" style="width: 25%" value="My Calc Set">
                         <button type="button" onclick="savecalc2()">Save Calc Set</button>

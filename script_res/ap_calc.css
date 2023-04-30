@@ -323,3 +323,9 @@ select.toxic-counter {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
+
+
+#mainResult {
+    visibility: visible;
+    cursor: pointer;
+}

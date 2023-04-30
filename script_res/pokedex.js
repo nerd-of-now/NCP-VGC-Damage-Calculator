@@ -9405,11 +9405,11 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 
 var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
   "Venusaur": { "formes": ["Venusaur", "Mega Venusaur"] },
-  "Charizard": { "formes": ["Mega Charizard Y", "Mega Charizard X", "Charizard"] },
+  "Charizard": { "formes": ["Charizard", "Mega Charizard X", "Mega Charizard Y"] },
   "Blastoise": { "formes": ["Blastoise", "Mega Blastoise"] },
   "Butterfree": { "bs": { "sa": 90 } },
-  "Beedrill": { "bs": { "at": 90 }, "formes": ["Mega Beedrill", "Beedrill"] },
-  "Pidgeot": { "bs": { "sp": 101 }, "formes": ["Mega Pidgeot", "Pidgeot"] },
+  "Beedrill": { "bs": { "at": 90 }, "formes": ["Beedrill", "Mega Beedrill"] },
+  "Pidgeot": { "bs": { "sp": 101 }, "formes": ["Pidgeot", "Mega Pidgeot"] },
   "Pikachu": { "bs": { "df": 40, "sd": 50 } },
   "Raichu": { "bs": { "sp": 110 } },
   "Nidoqueen": { "bs": { "at": 92 } },
@@ -9420,22 +9420,22 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
   "Wigglytuff": { "t2": "Fairy", "bs": { "sa": 85 }, "ab": "Competitive" },
   "Vileplume": { "bs": { "sa": 110 } },
   "Poliwrath": { "bs": { "at": 95 } },
-  "Alakazam": { "bs": { "sd": 95 }, "formes": ["Mega Alakazam", "Alakazam"] },
+  "Alakazam": { "bs": { "sd": 95 }, "formes": ["Alakazam", "Mega Alakazam"] },
   "Victreebel": { "bs": { "sd": 70 } },
   "Golem": { "bs": { "at": 120 } },
-  "Slowbro": { "formes": ["Mega Slowbro", "Slowbro"] },
-  "Gengar": { "formes": ["Mega Gengar", "Gengar"] },
-  "Kangaskhan": { "formes": ["Mega Kangaskhan", "Kangaskhan"] },
+  "Slowbro": { "formes": ["Slowbro", "Mega Slowbro"] },
+  "Gengar": { "formes": ["Gengar", "Mega Gengar"] },
+  "Kangaskhan": { "formes": ["Kangaskhan", "Mega Kangaskhan"] },
   "Mr. Mime": { "t2": "Fairy" },
-  "Pinsir": { "formes": ["Mega Pinsir", "Pinsir"] },
-  "Gyarados": { "formes": ["Mega Gyarados", "Gyarados"] },
+  "Pinsir": { "formes": ["Pinsir", "Mega Pinsir"] },
+  "Gyarados": { "formes": ["Gyarados", "Mega Gyarados"] },
   "Aerodactyl": { "formes": ["Aerodactyl", "Mega Aerodactyl"] },
   "Mewtwo": { "formes": ["Mewtwo", "Mega Mewtwo X", "Mega Mewtwo Y"] },
   "Cleffa": { "t1": "Fairy" },
   "Igglybuff": { "t2": "Fairy" },
   "Togepi": { "t1": "Fairy" },
   "Togetic": { "t1": "Fairy" },
-  "Ampharos": { "bs": { "df": 85 }, "formes": ["Mega Ampharos", "Ampharos"] },
+  "Ampharos": { "bs": { "df": 85 }, "formes": ["Ampharos", "Mega Ampharos"] },
   "Bellossom": { "bs": { "df": 95 } },
   "Marill": { "t2": "Fairy" },
   "Azumarill": { "t2": "Fairy", "bs": { "sa": 60 } },
@@ -9453,22 +9453,22 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
   "Beautifly": { "bs": { "sa": 100 } },
   "Ralts": { "t2": "Fairy" },
   "Kirlia": { "t2": "Fairy" },
-  "Gardevoir": { "t2": "Fairy", "formes": ["Mega Gardevoir", "Gardevoir"] },
+  "Gardevoir": { "t2": "Fairy", "formes": ["Gardevoir", "Mega Gardevoir"] },
   "Exploud": { "bs": { "sd": 73 } },
   "Azurill": { "t2": "Fairy" },
   "Sableye": { "formes": ["Sableye", "Mega Sableye"] },
-  "Mawile": { "t2": "Fairy", "formes": ["Mega Mawile", "Mawile"] },
+  "Mawile": { "t2": "Fairy", "formes": ["Mawile", "Mega Mawile"] },
   "Aggron": { "formes": ["Aggron", "Mega Aggron"] },
-  "Medicham": { "formes": ["Mega Medicham", "Medicham"] },
-  "Manectric": { "formes": ["Mega Manectric", "Manectric"] },
+  "Medicham": { "formes": ["Medicham", "Mega Medicham"] },
+  "Manectric": { "formes": ["Manectric", "Mega Manectric"] },
   "Sharpedo": { "formes": ["Sharpedo", "Mega Sharpedo"] },
-  "Camerupt": { "formes": ["Mega Camerupt", "Camerupt"] },
+  "Camerupt": { "formes": ["Camerupt", "Mega Camerupt"] },
   "Altaria": { "formes": ["Altaria", "Mega Altaria"] },
   "Banette": { "formes": ["Banette", "Mega Banette"] },
   "Absol": { "formes": ["Absol", "Mega Absol"] },
   "Glalie": { "formes": ["Glalie", "Mega Glalie"] },
-  "Salamence": { "formes": ["Mega Salamence", "Salamence"] },
-  "Metagross": { "formes": ["Mega Metagross", "Metagross"] },
+  "Salamence": { "formes": ["Salamence", "Mega Salamence"] },
+  "Metagross": { "formes": ["Metagross", "Mega Metagross"] },
   "Latias": { "formes": ["Latias", "Mega Latias"] },
   "Latios": { "formes": ["Latios", "Mega Latios"] },
   "Kyogre": { "formes": ["Primal Kyogre", "Kyogre"] },
@@ -9476,7 +9476,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
   "Rayquaza": { "formes": ["Rayquaza", "Mega Rayquaza"] },
   "Staraptor": { "bs": { "sd": 60 } },
   "Roserade": { "bs": { "df": 65 } },
-  "Lopunny": { "formes": ["Mega Lopunny", "Lopunny"] },
+  "Lopunny": { "formes": ["Lopunny", "Mega Lopunny"] },
   "Mime Jr.": { "t2": "Fairy" },
   "Garchomp": { "formes": ["Garchomp", "Mega Garchomp"] },
   "Lucario": { "formes": ["Lucario", "Mega Lucario"] },
@@ -13365,8 +13365,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 90,
     "ab": "Grassy Surge",
     "formes": [
-      "Rillaboom-Gmax",
       "Rillaboom",
+      "Rillaboom-Gmax",
     ]
   },
   "Scorbunny": {
@@ -13410,8 +13410,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 33,
     "ab": "Libero",
     "formes": [
-      "Cinderace-Gmax",
       "Cinderace",
+      "Cinderace-Gmax",
     ]
   },
   "Sobble": {
@@ -13455,8 +13455,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 45.2,
     "ab": "Sniper",
       "formes": [
-      "Inteleon-Gmax",
       "Inteleon",
+      "Inteleon-Gmax",
     ]
   },
   "Blipbug": {
@@ -13499,6 +13499,25 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     },
       "w": 40.8,
       "ab": "Frisk",
+      "formes": [
+          "Orbeetle",
+          "Orbeetle-Gmax",
+      ]
+  },
+  "Orbeetle-Gmax": {
+    "t1": "Bug",
+    "t2": "Psychic",
+    "bs": {
+      "hp": 60,
+      "at": 45,
+      "df": 110,
+      "sa": 80,
+      "sd": 120,
+      "sp": 90
+    },
+      "w": 40.8,
+      "ab": "Frisk",
+      "isAlternateForme": true,
   },
   "Rookidee": {
     "t1": "Flying",
@@ -13774,7 +13793,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     },
     "w": 310.5,
     "ab": "Steam Engine",
-    "formes":["Coalossal-Gmax","Coalossal"],
+      "formes": ["Coalossal","Coalossal-Gmax"],
   },
   "Coalossal-Gmax": {
     "t1": "Rock",
@@ -13819,8 +13838,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 1,
       "ab": "Hustle",
       "formes": [
-          "Flapple-Gmax",
           "Flapple",
+          "Flapple-Gmax",
       ]
   },
   "Flapple-Gmax": {
@@ -13898,8 +13917,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 65.5,
       "ab": "Sand Spit",
       "formes": [
-          "Sandaconda-Gmax",
           "Sandaconda",
+          "Sandaconda-Gmax",
       ]
   },
   "Sandaconda-Gmax": {
@@ -13984,8 +14003,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 40,
       "ab": "Punk Rock",
       "formes": [
-          "Toxtricity-Gmax",
           "Toxtricity",
+          "Toxtricity-Gmax",
       ]
   },
   "Toxtricity-Gmax": {
@@ -14032,8 +14051,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 120,
       "ab": "White Smoke",
       "formes": [
-          "Centiskorch-Gmax",
           "Centiskorch",
+          "Centiskorch-Gmax",
       ]
   },
   "Centiskorch-Gmax": {
@@ -14144,8 +14163,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 5.1,
       "ab": "Magic Bounce",
       "formes": [
-          "Hatterene-Gmax",
           "Hatterene",
+          "Hatterene-Gmax",
       ]
   },
   "Hatterene-Gmax": {
@@ -14205,8 +14224,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 61,
       "ab": "Prankster",
       "formes": [
-          "Grimmsnarl-Gmax",
           "Grimmsnarl",
+          "Grimmsnarl-Gmax",
       ]
   },
   "Grimmsnarl-Gmax": {
@@ -14331,8 +14350,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 0.5,
       "ab": "Sweet Veil",
       "formes": [
-          "Alcremie-Gmax",
           "Alcremie",
+          "Alcremie-Gmax",
       ]
   },
   "Alcremie-Gmax": {
@@ -14536,8 +14555,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "w": 650,
       "ab": "Sheer Force",
       "formes": [
-          "Copperajah-Gmax",
           "Copperajah",
+          "Copperajah-Gmax",
       ]
   },
   "Copperajah-Gmax": {
@@ -14792,8 +14811,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "w": 105,
       "ab": "Unseen Fist",
       "formes": [
-          "Urshifu-Single Strike-Gmax",
           "Urshifu-Single Strike",
+          "Urshifu-Single Strike-Gmax",
       ]
   },
   "Urshifu-Single Strike-Gmax": {
@@ -14825,8 +14844,8 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "w": 105,
       "ab": "Unseen Fist",
       "formes": [
-          "Urshifu-Rapid Strike-Gmax",
           "Urshifu-Rapid Strike",
+          "Urshifu-Rapid Strike-Gmax",
       ]
   },
   "Urshifu-Rapid Strike-Gmax": {
@@ -15080,18 +15099,18 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     },
 
   //GMAX FORMS (save for Galar Pokemon)
-    "Venusaur": { "formes": ["Venusaur-Gmax","Venusaur", "Mega Venusaur"] },
-    "Charizard": { "ab":"Solar Power", "formes": ["Charizard-Gmax", "Charizard", "Mega Charizard Y", "Mega Charizard X"] },
-    "Blastoise": { "formes": ["Blastoise-Gmax", "Blastoise", "Mega Blastoise"] },
-    "Butterfree": { "formes": ["Butterfree-Gmax", "Butterfree"] },
-    "Pikachu": { "formes": ["Pikachu-Gmax", "Pikachu"] },
-    "Meowth": { "formes": ["Meowth-Gmax", "Meowth"] },
-    "Gengar": { "formes": ["Gengar-Gmax", "Gengar", "Mega Gengar"] },
-    "Kingler": { "formes": ["Kingler-Gmax", "Kingler"] },
-    "Lapras": { "formes": ["Lapras-Gmax", "Lapras"] },
-    "Eevee": { "formes": ["Eevee-Gmax", "Eevee"] },
-    "Snorlax": { "formes": ["Snorlax-Gmax", "Snorlax"] },
-    "Garbodor": { "formes": ["Garbodor-Gmax", "Garbodor"] },
+    "Venusaur": { "formes": ["Venusaur", "Mega Venusaur", "Venusaur-Gmax"] },
+    "Charizard": { "ab": "Solar Power", "formes": ["Charizard", "Mega Charizard X", "Mega Charizard Y", "Charizard-Gmax"] },
+    "Blastoise": { "formes": ["Blastoise", "Mega Blastoise", "Blastoise-Gmax"] },
+    "Butterfree": { "formes": ["Butterfree", "Butterfree-Gmax"] },
+    "Pikachu": { "formes": ["Pikachu", "Pikachu-Gmax"] },
+    "Meowth": { "formes": ["Meowth", "Meowth-Gmax"] },
+    "Gengar": { "formes": ["Gengar", "Mega Gengar", "Gengar-Gmax"] },
+    "Kingler": { "formes": ["Kingler", "Kingler-Gmax"] },
+    "Lapras": { "formes": ["Lapras", "Lapras-Gmax"] },
+    "Eevee": { "formes": ["Eevee", "Eevee-Gmax"] },
+    "Snorlax": { "formes": ["Snorlax", "Snorlax-Gmax"] },
+    "Garbodor": { "formes": ["Garbodor", "Garbodor-Gmax"] },
     "Venusaur-Gmax": {
         "t1": "Grass",
         "t2": "Poison",
@@ -15339,10 +15358,10 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SS_NATDEX, {
     "Necrozma-Dawn-Wings": { "formes": null },
     "Necrozma-Dusk-Mane": { "formes": null },});
 
-POKEDEX_SS["Venusaur"].formes = ['Venusaur-Gmax', 'Venusaur'];
-POKEDEX_SS["Charizard"].formes = ['Charizard-Gmax', 'Charizard'];
-POKEDEX_SS["Blastoise"].formes = ['Blastoise-Gmax', 'Blastoise'];
-POKEDEX_SS["Gengar"].formes = ['Gengar-Gmax', 'Gengar'];
+POKEDEX_SS["Venusaur"].formes = ['Venusaur', 'Venusaur-Gmax'];
+POKEDEX_SS["Charizard"].formes = ['Charizard', 'Charizard-Gmax'];
+POKEDEX_SS["Blastoise"].formes = ['Blastoise', 'Blastoise-Gmax'];
+POKEDEX_SS["Gengar"].formes = ['Gengar', 'Gengar-Gmax'];
 
 delete POKEDEX_SS["Rattata-Alola"];
 delete POKEDEX_SS["Raticate-Alola"];
