@@ -121,6 +121,9 @@ function buildDescription(description) {
     if (description.isCritical) {
         output += " on a critical hit";
     }
+    if (description.isGlaiveMod) {
+        output += " after using Glaive Rush";
+    }
     if (description.isFriendGuard) {
         output += " with Friend Guard";
     }
@@ -1077,7 +1080,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     var contactOverride = attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach";
 
     //a. Aura Break
-    if (auraActive && auraBreak && !field.isNeutralizingGas) {
+    if (auraActive && auraBreak && !field.isNeutralizingGas && ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) == -1) {
         bpMods.push(0x0C00);
         if (isAttackerAura || attacker.ability == "Aura Break") {
             description.attackerAbility = attacker.ability;
@@ -1148,7 +1151,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //f. Fairy Aura, Dark Aura
-    if (auraActive && !auraBreak && !field.isNeutralizingGas) {
+    if (auraActive && !auraBreak && !field.isNeutralizingGas && (gen > 7 || ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) == -1)) {
         bpMods.push(0x1548);
         if (isAttackerAura) {
             description.attackerAbility = attacker.ability;
@@ -1611,6 +1614,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     //d. Glaive Rush 2x mod (NEEDS OTHER PARTS TO BE FIXED)
     if (defender.glaiveRushMod) {
         baseDamage = pokeRound(baseDamage * 0x2000 / 0x1000);
+        description.isGlaiveMod = true;
     }
     //e. Crit mod
     if (isCritical) {
