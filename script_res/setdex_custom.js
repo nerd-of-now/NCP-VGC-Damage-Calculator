@@ -159,6 +159,26 @@ function cookiesToLocalStorage(custom_cookies, generation) {
     }
 }
 
+//Check for any sets that have the old naming convention
+if (SETDEX_CUSTOM_SV["Tauros-Paldea"]) {
+    for (set in SETDEX_CUSTOM_SV["Tauros-Paldea"]) {
+        saveSets(9, SETDEX_CUSTOM_SV["Tauros-Paldea"][set], "Tauros-Paldea-Combat", set);
+    }
+    delete SETDEX_CUSTOM_SV["Tauros-Paldea"];
+}
+if (SETDEX_CUSTOM_SV["Tauros-Paldea-Water"]) {
+    for (set in SETDEX_CUSTOM_SV["Tauros-Paldea-Water"]) {
+        saveSets(9, SETDEX_CUSTOM_SV["Tauros-Paldea-Water"][set], "Tauros-Paldea-Aqua", set);
+    }
+    delete SETDEX_CUSTOM_SV["Tauros-Paldea-Water"];
+}
+if (SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"]) {
+    for (set in SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"]) {
+        saveSets(9, SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"][set], "Tauros-Paldea-Blaze", set);
+    }
+    delete SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"];
+}
+
 var deletecustom = function () {
     if (confirm("Warning: ALL custom sets from this generation will be deleted. This cannot be undone. Proceed?")) {
         gen = parseInt($('input[name="gen"]:checked').val());

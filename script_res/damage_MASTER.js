@@ -266,7 +266,7 @@ function checkTrace(source, target) {
     var cannotCopy = ["As One", "Battle Bond", "Comatose", "Commander", "Disguise", "Flower Gift", "Forecast", "Gulp Missile",
         "Ice Face", "Illusion", "Imposter", "Multitype", "Power of Alchemy", "Receiver", "RKS System", "Schooling", "Shields Down",
         "Stance Change", "Trace", "Wonder Guard", "Zen Mode", "Zero to Hero",];
-    if (source.ability === "Trace" && source.abilityOn && cannotCopy.indexOf(target.ability) === -1) {
+    if (source.ability === "Trace" && source.abilityOn && cannotCopy.indexOf(target.ability) === -1 && source.item !== "Ability Shield") {
         source.ability = target.ability;
     }
 }
@@ -504,13 +504,13 @@ function checkMoveTypeChange(move, field, attacker) {
     }
     else if (move.name === "Raging Bull") {
         switch (attacker.name) {
-            case "Tauros-Paldea":
+            case "Tauros-Paldea-Combat":
                 move.type = "Fighting";
                 break;
-            case "Tauros-Paldea-Fire":
+            case "Tauros-Paldea-Blaze":
                 move.type = "Fire";
                 break;
-            case "Tauros-Paldea-Water":
+            case "Tauros-Paldea-Aqua":
                 move.type = "Water";
                 break;
             default:
@@ -663,8 +663,8 @@ function statusMoves(move, attacker, defender, description) {
     }
 }
 
-function abilityIgnore(attacker, move, defAbility, description) {
-    if (['Shadow Shield', 'Full Metal Body', 'Prism Armor'].indexOf(defAbility) == -1) {
+function abilityIgnore(attacker, move, defAbility, description, defItem = "") {
+    if (['Shadow Shield', 'Full Metal Body', 'Prism Armor'].indexOf(defAbility) == -1 && defItem !== "Ability Shield" ) {
         if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
             defAbility = "";
             description.attackerAbility = attacker.ability;
@@ -928,7 +928,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //c.iii. Crush Grip, Wring Out
         case "Crush Grip":
         case "Wring Out":
-            basePower = floor(pokeRound(120 * 100 * floor(attacker.curHP * 0x1000 / attacker.maxHP) / 0x1000) / 100);
+            basePower = Math.floor(pokeRound(120 * 100 * Math.floor(attacker.curHP * 0x1000 / attacker.maxHP) / 0x1000) / 100);
             description.moveBP = basePower;
             break;
 

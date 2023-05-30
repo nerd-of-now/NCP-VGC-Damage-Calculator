@@ -367,9 +367,9 @@ var NEW_ITEMS_SV = [
     'Booster Energy',   //activates paradox mon abilities without sun/electric terrain
     'Clear Amulet', //item Clear Body
     'Punching Glove',   //item Iron Fist, no contact, probably stacks with Iron Fist
-    //'Adamant Crystal',  //Origin Dialga item, commented out in case it changes to a key item because if it doesn't then the Origin forms suck lol
-    //'Lustrous Globe',   //Origin Palkia item, commented out in case it changes to a key item because if it doesn't then the Origin forms suck lol
-    //'Griseous Core',    //Origin Giratina item, commented out in case it changes to a key item because if it doesn't then the Origin forms suck lol
+    'Adamant Crystal',  //Origin Dialga item, also acts like Adamant Orb
+    'Lustrous Globe',   //Origin Palkia item, also acts like Lustrous Orb
+    'Griseous Core',    //Origin Giratina item, also acts like Griseous Orb
 ];
 
 var ITEMS_SV = ITEMS_SS.concat(NEW_ITEMS_SV);
@@ -454,9 +454,15 @@ function getItemDualTypeBoost(item, species) {
         case 'Lustrous Orb':
             if (species === 'Palkia') return 'Water Dragon';
         case 'Griseous Orb':
-            if (species === 'Giratina-Origin') return 'Ghost Dragon';
+            if ((species === 'Giratina-Origin' && gen <= 8) || (species === 'Giratina' && gen >= 9)) return 'Ghost Dragon';
         case 'Soul Dew':
             if ((species === 'Latias' || species === 'Latios') && gen >= 7) return 'Dragon Psychic';
+        case 'Adamant Crystal':
+            if (species === 'Dialga-Origin') return 'Steel Dragon';
+        case 'Lustrous Globe':
+            if (species === 'Palkia-Origin') return 'Water Dragon';
+        case 'Griseous Core':
+            if (species === 'Giratina-Origin') return 'Ghost Dragon';
         default:
             return '';
     }
@@ -796,8 +802,8 @@ var LOCK_ITEM_LOOKUP = {
     'Ultra Necrozma': 'Ultranecrozium Z',
     'Zacian-Crowned': 'Rusted Sword',
     'Zamazenta-Crowned': 'Rusted Shield',
-    //'Dialga-Origin': 'Adamant Crystal', //Game Freak please change this
-    //'Palkia-Origin': 'Lustrous Globe',  //Right now these are just Zacian and Zamazenta transformations without the base stat boosts
+    'Dialga-Origin': 'Adamant Crystal', 
+    'Palkia-Origin': 'Lustrous Globe',  
 };
 
 function cantRemoveItem(defItem, defSpecies, terrain) {

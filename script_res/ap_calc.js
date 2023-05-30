@@ -875,9 +875,9 @@ function Pokemon(pokeInfo) {
 
     //Check for form-item coordination
     var lockItemCheck = LOCK_ITEM_LOOKUP[this.name];
-    if (lockItemCheck === "Griseous Orb" && gen >= 9)       //look how they massacred my boy
-        //    lockItemCheck = "Griseous Core";              //they should've buffed origin giratina not nerf it
-        lockItemCheck = LOCK_ITEM_LOOKUP[''];               //cmon game freak make it a key item before the home update
+    if (lockItemCheck === "Griseous Orb" && gen >= 9)
+        lockItemCheck = "Griseous Core";
+        //lockItemCheck = LOCK_ITEM_LOOKUP[''];               
     if (lockItemCheck !== undefined) {
         if (this.name && pokemonName && (this.name.includes(pokemonName) || this.name === "Ultra Necrozma")) {    //if this if statement isn't here then sets won't change items from locked items properly
             pokeInfo.find(".item").val(lockItemCheck);

@@ -12951,7 +12951,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "w": 22.2,
       "ab": "Technician",
   },
-  "Poiple": {
+  "Poipole": {
     "t1": "Poison",
     "bs": {
       "hp": 67,
@@ -15871,7 +15871,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
     },
 
     //SV Paldean Forms
-    "Tauros-Paldea": {
+    "Tauros-Paldea-Combat": {
         "t1": "Fighting",
         "bs": {
             "hp": 75,
@@ -15884,7 +15884,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 115.0,
         "ab": "Intimidate",
     },
-    "Tauros-Paldea-Fire": {
+    "Tauros-Paldea-Blaze": {
         "t1": "Fighting",
         "t2": "Fire",
         "bs": {
@@ -15898,7 +15898,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 85.0,
         "ab": "Intimidate",
     },
-    "Tauros-Paldea-Water": {
+    "Tauros-Paldea-Aqua": {
         "t1": "Fighting",
         "t2": "Water",
         "bs": {
@@ -17523,7 +17523,7 @@ var POKEDEX_SV = {};
     'Iron Hands', 'Iron Jugulis', 'Iron Thorns', 'Iron Bundle', 'Iron Valiant', 'Koraidon', 'Miraidon', 'Walking Wake', 'Iron Leaves',
     //Forms for Initial Pokemon
     'Raichu-Alola', 'Diglett-Alola', 'Dugtrio-Alola', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', 'Growlithe-Hisui', 'Arcanine-Hisui', 'Slowpoke-Galar', 'Slowbro-Galar',
-    'Grimer-Alola', 'Muk-Alola', 'Voltorb-Hisui', 'Electrode-Hisui', 'Tauros-Paldea', 'Tauros-Paldea-Fire', 'Tauros-Paldea-Water', 'Articuno-Galar', 'Zapdos-Galar', 'Moltres-Galar',
+    'Grimer-Alola', 'Muk-Alola', 'Voltorb-Hisui', 'Electrode-Hisui', 'Tauros-Paldea-Combat', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Aqua', 'Articuno-Galar', 'Zapdos-Galar', 'Moltres-Galar',
     'Typhlosion-Hisui', 'Slowking-Galar', 'Qwilfish-Hisui', 'Sneasel-Hisui', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Dialga-Origin',
     'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
     'Meloetta-Pirouette', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Oricorio-Pom-Pom', "Oricorio-Pa'u", 'Oricorio-Sensu', 'Lycanroc-Midnight', 'Lycanroc-Dusk',

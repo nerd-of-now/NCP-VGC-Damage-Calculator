@@ -204,24 +204,24 @@ var SETDEX_VGC2023 = {
         "Tailwind Support Set": {
             "level": 50,
             "evs": {
-                "hp": 252,
+                "hp": 244,
                 "at": 0,
-                "df": 0,
-                "sa": 0,
+                "df": 60,
+                "sa": 4,
                 "sd": 4,
-                "sp": 252
+                "sp": 196
             },
             "ivs": {
                 "at": 0
             },
             "nature": "Timid",
             "ability": "Chlorophyll",
-            "tera_type": "Rock",
-            "item": "Mental Herb",
+            "tera_type": "Water",
+            "item": "Covert Cloak",
             "moves": [
-                "Pollen Puff",
+                "Leaf Storm",
                 "Sleep Powder",
-                "Rage Powder",
+                "Encore",
                 "Tailwind"
             ]
         },
@@ -450,7 +450,7 @@ var SETDEX_VGC2023 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "Compound Eyes",
+            "ability": "Friend Guard",
             "tera_type": "Ghost",
             "item": "Focus Sash",
             "moves": [
@@ -1151,7 +1151,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Rock Slide",
                 "Endeavor",
-                "Taunt",
+                "Accelerock",
                 "Protect"
             ]
         },
@@ -1967,7 +1967,7 @@ var SETDEX_VGC2023 = {
             "nature": "Modest",
             "ability": "Water Absorb",
             "tera_type": "Fairy",
-            "item": "",
+            "item": "Leftovers",
             "moves": [
                 "Muddy Water",
                 "Ice Beam",
@@ -2338,7 +2338,28 @@ var SETDEX_VGC2023 = {
 
     },
     "Arcanine": {
-        "Bulky Physical Set": {
+        "Fast Goggles Set": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 68,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 196
+            },
+            "nature": "Jolly",
+            "ability": "Intimidate",
+            "tera_type": "Water",
+            "item": "Safety Goggles",
+            "moves": [
+                "Flare Blitz",
+                "Extreme Speed",
+                "Will-O-Wisp",
+                "Protect"
+            ]
+        },
+        "Bulky Sitrus Set": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -2356,30 +2377,6 @@ var SETDEX_VGC2023 = {
                 "Flare Blitz",
                 "Extreme Speed",
                 "Snarl",
-                "Protect"
-            ]
-        },
-        "Bulky Special Set": {
-            "level": 50,
-            "evs": {
-                "hp": 244,
-                "at": 0,
-                "df": 44,
-                "sa": 28,
-                "sd": 156,
-                "sp": 36
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Calm",
-            "ability": "Intimidate",
-            "tera_type": "Grass",
-            "item": "Sitrus Berry",
-            "moves": [
-                "Heat Wave",
-                "Snarl",
-                "Will-O-Wisp",
                 "Protect"
             ]
         },
@@ -2401,7 +2398,7 @@ var SETDEX_VGC2023 = {
                 "Flare Blitz",
                 "Extreme Speed",
                 "Close Combat",
-                "Wild Charge"
+                "Crunch"
             ]
         },
         "Chuppa's & D'Angelo's San Diego AV": {
@@ -2427,7 +2424,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    "Tauros-Paldea-Fire": {
+    "Tauros-Paldea-Blaze": {
         "Will-O-Wisp Support": {
             "level": 50,
             "evs": {
@@ -2451,7 +2448,7 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    "Tauros-Paldea-Water": {
+    "Tauros-Paldea-Aqua": {
         "Life Orb Set": {
             "level": 50,
             "evs": {
@@ -2658,33 +2655,32 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Klefki": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-
-    //},
-    "Indeedee": {
+    "Klefki": {
+        "Screens Speed Control": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 76,
+                "sa": 0,
+                "sd": 180,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Prankster",
+            "item": "Light Clay",
+            "moves": [
+                "Dazzling Gleam",
+                "Reflect",
+                "Light Screen",
+                "Thunder Wave"
+            ]
+        },
+    },
+    "Indeedee-M": {
         "Sash Imprison Trick Room": {
             "level": 50,
             "evs": {
@@ -3753,7 +3749,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Rock Slide",
                 "Assurance",
-                "Ice Punch",
+                "Low Kick",
                 "Tera Blast"
             ]
         },
@@ -4250,7 +4246,7 @@ var SETDEX_VGC2023 = {
 
     //},
     "Kingambit": {
-        "Life Orb Set": {
+        "Black Glasses Set": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -4263,12 +4259,12 @@ var SETDEX_VGC2023 = {
             "nature": "Adamant",
             "ability": "Defiant",
             "tera_type": "Dark",
-            "item": "Life Orb",
+            "item": "Black Glasses",
             "moves": [
                 "Kowtow Cleave",
-                "Iron Head",
                 "Sucker Punch",
-                "Protect"
+                "Iron Head",
+                "Assurance"
             ]
         },
         "Assault Vest Set": {
@@ -4849,6 +4845,29 @@ var SETDEX_VGC2023 = {
                 "Encore"
             ]
         },
+        "Snow Specs Set": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Specs",
+            "tera_type": "Ice",
+            "moves": [
+                "Freeze-Dry",
+                "Hydro Pump",
+                "Icy Wind",
+                "Blizzard"
+            ]
+        },
 
     },
     "Iron Hands": {
@@ -5410,5 +5429,30 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
 
+    //},
+    //"": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
     //},
 }

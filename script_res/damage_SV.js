@@ -93,7 +93,7 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
 
 
     var defAbility = defender.ability;
-    [defAbility, description] = abilityIgnore(attacker, move, defAbility, description);
+    [defAbility, description] = abilityIgnore(attacker, move, defAbility, description, defender.item);
 
     var isCritical = critMove(move, defAbility);
 
