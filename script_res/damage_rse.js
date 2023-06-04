@@ -177,7 +177,8 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 
     if (field.format !== "Singles" && move.isSpread) {
         // some sources say 3/4, some say 2/3, some say 1/2...using 3/4 for now since that's what DPP+ use
-        baseDamage = Math.floor(baseDamage * 3/4);
+        // the correct answer was 1/2 lol
+        baseDamage = Math.floor(baseDamage * 1/2);
     }
     
     if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {

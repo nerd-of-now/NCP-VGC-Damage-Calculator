@@ -1413,7 +1413,7 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         || (attacker.ability === "Blaze" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Fire")
         || (attacker.ability === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Water")
         || (attacker.ability === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Bug")
-        || (attacker.ability === "Transistor" && move.type === "Electric")
+        || (attacker.ability === "Transistor" && move.type === "Electric" && gen <= 8)
         || (attacker.ability === "Dragon\'s Maw" && move.type === "Dragon")
         || (attacker.ability === "Flash Fire" && attacker.abilityOn && move.type === "Fire")
         || (attacker.ability === "Steelworker" && move.type === "Steel")
@@ -1434,7 +1434,8 @@ function calcAtMods(move, attacker, defAbility, description, field) {
     //PROTOSYNTHESIS/QUARK DRIVE MIGHT BE APPLIED IN A DIFFERENT PLACE
     else if (((attacker.ability === "Protosynthesis" && (attacker.item === "Booster Energy" || field.weather === "Sun" || manualProtoQuark))
         || (attacker.ability === "Quark Drive" && (attacker.item === "Booster Energy" || field.terrain === "Electric" || manualProtoQuark)))
-        && ((attacker.highestStat === 'at' && move.category === "Physical") || (attacker.highestStat === 'sa' && move.category === "Special"))) {
+        && ((attacker.highestStat === 'at' && move.category === "Physical") || (attacker.highestStat === 'sa' && move.category === "Special"))
+        || (attacker.ability === "Transistor" && move.type === "Electric" && gen >= 9)) {
         atMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }

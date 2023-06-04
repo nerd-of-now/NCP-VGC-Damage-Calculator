@@ -184,6 +184,7 @@ var MOVES_RBY = {
     'Razor Leaf': {
         bp: 55,
         type: 'Grass',
+        category: 'Physical',
         isSpread: true,
     },
     'Rock Slide': {

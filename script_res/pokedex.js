@@ -8188,7 +8188,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sp": 101
     },
       "w": 68.0,
-      "ab": "Sand Force",
+      "ab": "Sheer Force",
   },
   "Landorus-Therian": {
     "t1": "Ground",
@@ -15724,7 +15724,7 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
             "sp": 78,
         },
         "w": 110.0,
-        "ab": "Adaptability",
+        "ab": "Swift Swim",
     },
     "Basculegion-F": {
         "t1": "Water",
