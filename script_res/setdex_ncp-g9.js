@@ -3062,7 +3062,7 @@ var SETDEX_VGC2023 = {
             "evs": {
                 "hp": 252,
                 "at": 0,
-                "df": 196,
+                "df": 84,
                 "sa": 4,
                 "sd": 4,
                 "sp": 164
@@ -4246,7 +4246,7 @@ var SETDEX_VGC2023 = {
 
     //},
     "Kingambit": {
-        "Black Glasses Set": {
+        "Black Glasses Set SUGGESTION BY ASHTONCOXGAZ": {
             "level": 50,
             "evs": {
                 "hp": 252,

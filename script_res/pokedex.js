@@ -15459,7 +15459,7 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "t1": "Fire",
         "t2": "Rock",
         "bs": {
-            "hp": 96,
+            "hp": 95,
             "at": 115,
             "df": 80,
             "sa": 95,
@@ -15503,7 +15503,7 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "t2": "Ghost",
         "bs": {
             "hp": 73,
-            "at": 94,
+            "at": 84,
             "df": 78,
             "sa": 119,
             "sd": 85,
@@ -15689,10 +15689,10 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "t2": "Rock",
         "bs": {
             "hp": 70,
-            "at": 130,
+            "at": 135,
             "df": 95,
-            "sa": 40,
-            "sd": 75,
+            "sa": 45,
+            "sd": 70,
             "sp": 85,
         },
         "w": 89.0,
