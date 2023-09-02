@@ -923,6 +923,27 @@ var SETDEX_VGC2023 = {
 
     },
     "Maushold": {
+        "Bulky Goggles Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 100,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "ability": "Friend Guard",
+            "tera_type": "Ghost",
+            "item": "Safety Goggles",
+            "moves": [
+                "Super Fang",
+                "U-turn",
+                "Beat Up",
+                "Follow Me"
+            ]
+        },
         "Wide Lens Technician": {
             "level": 50,
             "evs": {
@@ -941,32 +962,32 @@ var SETDEX_VGC2023 = {
                 "Follow Me",
                 "Protect",
                 "Tidy Up"
-            ]
-        },
-        "Bulky Goggles Support": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 156,
-                "sa": 0,
-                "sd": 100,
-                "sp": 0
-            },
-            "nature": "Impish",
-            "ability": "Friend Guard",
-            "tera_type": "Ghost",
-            "item": "Safety Goggles",
-            "moves": [
-                "Super Fang",
-                "Feint",
-                "Beat Up",
-                "Follow Me"
             ]
         },
 
     },
     "Maushold-Four": {
+        "Bulky Goggles Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 100,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "ability": "Friend Guard",
+            "tera_type": "Ghost",
+            "item": "Safety Goggles",
+            "moves": [
+                "Super Fang",
+                "U-turn",
+                "Beat Up",
+                "Follow Me"
+            ]
+        },
         "Wide Lens Technician": {
             "level": 50,
             "evs": {
@@ -985,27 +1006,6 @@ var SETDEX_VGC2023 = {
                 "Follow Me",
                 "Protect",
                 "Tidy Up"
-            ]
-        },
-        "Bulky Goggles Support": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 156,
-                "sa": 0,
-                "sd": 100,
-                "sp": 0
-            },
-            "nature": "Impish",
-            "ability": "Friend Guard",
-            "tera_type": "Ghost",
-            "item": "Safety Goggles",
-            "moves": [
-                "Super Fang",
-                "Feint",
-                "Beat Up",
-                "Follow Me"
             ]
         },
 
@@ -2030,6 +2030,27 @@ var SETDEX_VGC2023 = {
 
     //},
     "Sylveon": {
+        "Tera Water Choice Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Modest",
+            "ability": "Pixilate",
+            "tera_type": "Water",
+            "item": "Choice Specs",
+            "moves": [
+                "Hyper Voice",
+                "Tera Blast",
+                "Quick Attack",
+                "Hyper Beam"
+            ]
+        },
         "Tera Fire Throat Spray": {
             "level": 50,
             "evs": {
@@ -2108,6 +2129,30 @@ var SETDEX_VGC2023 = {
 
     },
     "Farigiraf": {
+        "Bulky Imprison Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Armor Tail",
+            "tera_type": "Fairy",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Dazzling Gleam",
+                "Psychic",
+                "Imprison",
+                "Trick Room"
+            ]
+        },
         "Safety Goggles Trick Room": {
             "level": 50,
             "evs": {
@@ -2129,31 +2174,6 @@ var SETDEX_VGC2023 = {
                 "Hyper Voice",
                 "Psychic",
                 "Helping Hand",
-                "Trick Room"
-            ]
-        },
-        "Throat Spray Imprison": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 4,
-                "sa": 252,
-                "sd": 0,
-                "sp": 0
-            },
-            "ivs": {
-                "at": 0,
-                "sp": 0
-            },
-            "nature": "Quiet",
-            "ability": "Armor Tail",
-            "tera_type": "Fairy",
-            "item": "Throat Spray",
-            "moves": [
-                "Hyper Voice",
-                "Psychic",
-                "Imprison",
                 "Trick Room"
             ]
         },
@@ -2283,7 +2303,7 @@ var SETDEX_VGC2023 = {
 
     //},
     "Amoonguss": {
-        "Pinch Berry Set": {
+        "Sitrus Berry Set": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -2295,12 +2315,11 @@ var SETDEX_VGC2023 = {
             },
             "ivs": {
                 "at": 0,
-                "sp": 0
             },
-            "nature": "Relaxed",
+            "nature": "Bold",
             "ability": "Regenerator",
             "tera_type": "Water",
-            "item": "Wiki Berry",
+            "item": "Sitrus Berry",
             "moves": [
                 "Clear Smog",
                 "Pollen Puff",
@@ -2735,6 +2754,27 @@ var SETDEX_VGC2023 = {
 
     },
     "Brambleghast": {
+        "Emilio Forbes' 2023 Worlds Top 16 Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Wind Rider",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Power Whip",
+                "Shadow Sneak",
+                "Tera Blast",
+                "Strength Sap"
+            ]
+        },
         "Tera Fire Life Orb": {
             "level": 50,
             "evs": {
@@ -3883,6 +3923,32 @@ var SETDEX_VGC2023 = {
         },
 
     },
+    "Bruxish": {
+        "TR Setter + Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0
+            },
+            "nature": "Brave",
+            "ability": "Dazzling",
+            "tera_type": "Grass",
+            "item": "Focus Sash",
+            "moves": [
+                "Wave Crash",
+                "Psychic Fangs",
+                "Aqua Jet",
+                "Trick Room"
+            ]
+        },
+    },
     //"Dragalge": {
     //    "": {
     //        "level": 50,
@@ -4097,7 +4163,7 @@ var SETDEX_VGC2023 = {
             "item": "Focus Sash",
             "moves": [
                 "Blizzard",
-                "Energy Ball",
+                "Leaf Storm",
                 "Aurora Veil",
                 "Earth Power"
             ]
@@ -4365,6 +4431,27 @@ var SETDEX_VGC2023 = {
 
     //},
     "Dondozo": {
+        "Kenji Yabata's 2023 Worlds Cut (No Tatsu)": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 4,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 4
+            },
+            "nature": "Careful",
+            "ability": "Unaware",
+            "tera_type": "Water",
+            "item": "Leftovers",
+            "moves": [
+                "Wave Crash",
+                "Fissure",
+                "Curse",
+                "Protect"
+            ]
+        },
         "Tera Grass Offensive": {
             "level": 50,
             "evs": {
@@ -4874,12 +4961,12 @@ var SETDEX_VGC2023 = {
         "Tera Grass Assault Vest": {
             "level": 50,
             "evs": {
-                "hp": 108,
-                "at": 236,
-                "df": 76,
+                "hp": 4,
+                "at": 252,
+                "df": 4,
                 "sa": 0,
-                "sd": 84,
-                "sp": 4
+                "sd": 236,
+                "sp": 12
             },
             "nature": "Adamant",
             "item": "Assault Vest",
@@ -4888,7 +4975,7 @@ var SETDEX_VGC2023 = {
                 "Close Combat",
                 "Wild Charge",
                 "Fake Out",
-                "Volt Switch"
+                "Heavy Slam"
             ]
         },
         "Tera Fire Swords Dance": {
@@ -5217,8 +5304,8 @@ var SETDEX_VGC2023 = {
             "item": "Focus Sash",
             "moves": [
                 "Sucker Punch",
-                "Ice Spinner",
-                "Throat Chop",
+                "Icicle Crash",
+                "Crunch",
                 "Sacred Sword"
             ]
         },
@@ -5268,7 +5355,7 @@ var SETDEX_VGC2023 = {
 
     },
     "Chi-Yu": {
-        "Choice Scarf Set": {
+        "Choice Specs Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5281,12 +5368,12 @@ var SETDEX_VGC2023 = {
             "ivs": {
                 "at": 0,
             },
-            "nature": "Modest",
-            "tera_type": "Fire",
-            "item": "Choice Scarf",
+            "nature": "Timid",
+            "tera_type": "Water",
+            "item": "Choice Specs",
             "moves": [
                 "Heat Wave",
-                "Snarl",
+                "Tera Blast",
                 "Dark Pulse",
                 "Overheat"
             ]
@@ -5305,11 +5392,11 @@ var SETDEX_VGC2023 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "tera_type": "Water",
+            "tera_type": "Ghost",
             "item": "Life Orb",
             "moves": [
                 "Heat Wave",
-                "Tera Blast",
+                "Flamethrower",
                 "Dark Pulse",
                 "Overheat"
             ]
@@ -5554,7 +5641,7 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Arcanine-Hisui": {
-        "Choice Band Rock Head": {
+        "Choice Band Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5565,14 +5652,14 @@ var SETDEX_VGC2023 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "Rock Head",
+            "ability": "Intimidate",
             "tera_type": "Normal",
             "item": "Choice Band",
             "moves": [
                 "Flare Blitz",
                 "Head Smash",
                 "Extreme Speed",
-                "Double-Edge"
+                "Rock Slide"
             ]
         },
     },
@@ -5645,7 +5732,7 @@ var SETDEX_VGC2023 = {
                 "Solar Blade",
                 "Close Combat",
                 "Ice Spinner",
-                "Low Sweep"
+                "Leaf Blade"
             ]
         },
     },
@@ -5865,39 +5952,18 @@ var SETDEX_VGC2023 = {
                 "sp": 0,
             },
             "nature": "Brave",
-            "tera_type": "Normal",
+            "tera_type": "Ghost",
             "item": "Flame Orb",
             "moves": [
                 "Facade",
                 "Headlong Rush",
                 "Earthquake",
-                "Hammer Arm"
+                "Ice Punch"
             ]
         },
     },
     "Basculegion": {
-        "Rain Sweeper Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Jolly",
-            "item": "Life Orb",
-            "moves": [
-                "Wave Crash",
-                "Last Respects",
-                "Liquidation",
-                "Aqua Jet"
-            ]
-        },
-    },
-    "Sneasler": {
-        "Unburden Set": {
+        "Rain Adaptability Sweeper": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5908,12 +5974,34 @@ var SETDEX_VGC2023 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "tera_type": "Steel",
-            "item": "",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+                "Wave Crash",
+                "Last Respects",
+                "Phantom Force",
+                "Aqua Jet"
+            ]
+        },
+    },
+    "Sneasler": {
+        "Tera Flying Unburden Acrobatics": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "tera_type": "Flying",
+            "item": "Psychic Seed",
             "moves": [
                 "Dire Claw",
                 "Close Combat",
-                "Acid Spray",
+                "Acrobatics",
                 "Fake Out"
             ]
         },
@@ -6089,7 +6177,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Fake Out",
                 "Wood Hammer",
-                "Knock Off",
+                "Stomping Tantrum",
                 "U-turn"
             ]
         },
@@ -6110,12 +6198,11 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Timid",
             "ability": "Blaze",
-            "tera_type": "Flying",
             "item": "Choice Scarf",
             "moves": [
                 "Heat Wave",
                 "Eruption",
-                "Tera Blast",
+                "Infernal Parade",
                 "Shadow Ball"
             ]
         },
@@ -6164,6 +6251,32 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
+    "Articuno": {
+        "Patrick Donegan's Worlds Day 2 Snowbelle": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 68,
+                "sa": 124,
+                "sd": 4,
+                "sp": 100
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Snow Cloak",
+            "tera_type": "Poison",
+            "item": "Bright Powder",
+            "moves": [
+                "Freeze-Dry",
+                "Blizzard",
+                "Sheer Cold",
+                "Roost"
+            ]
+        },
+    },
     //"Articuno-Galar": {
     //    "": {
     //        "level": 50,
@@ -6190,6 +6303,30 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Zapdos": {
+        "Bold Rocky Helmet": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 236,
+                "sa": 0,
+                "sd": 20,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Static",
+            "tera_type": "Fairy",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Thunderbolt",
+                "Hurricane",
+                "Heat Wave",
+                "Volt Switch"
+            ]
+        },
         "Sitrus Berry Attacker": {
             "level": 50,
             "evs": {
@@ -6244,12 +6381,12 @@ var SETDEX_VGC2023 = {
         "Nasty Plot Sitrus": {
             "level": 50,
             "evs": {
-                "hp": 4,
+                "hp": 212,
                 "at": 0,
                 "df": 0,
-                "sa": 252,
+                "sa": 156,
                 "sd": 0,
-                "sp": 252
+                "sp": 140
             },
             "ivs": {
                 "at": 0,
@@ -6341,15 +6478,38 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Heatran": {
+        "Kenji Miura's 2023 Worlds Top 16 Magma Storm": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 20,
+                "sa": 76,
+                "sd": 148,
+                "sp": 20
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Grass",
+            "item": "Leftovers",
+            "moves": [
+                "Magma Storm",
+                "Earth Power",
+                "Tera Blast",
+                "Protect"
+            ]
+        },
         "Offensive Life Orb": {
             "level": 50,
             "evs": {
-                "hp": 4,
+                "hp": 252,
                 "at": 0,
                 "df": 0,
                 "sa": 252,
                 "sd": 0,
-                "sp": 252
+                "sp": 4
             },
             "ivs": {
                 "at": 0,
@@ -6415,6 +6575,30 @@ var SETDEX_VGC2023 = {
                 "Tailwind"
             ]
         },
+        "Mattie Morgan's 2023 Worlds Top 8 Bulky Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 220,
+                "sa": 4,
+                "sd": 4,
+                "sp": 28
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Prankster",
+            "tera_type": "Steel",
+            "item": "Aguav Berry",
+            "moves": [
+                "Bleakwind Storm",
+                "Taunt",
+                "Rain Dance",
+                "Tailwind"
+            ]
+        },
     },
     "Thundurus": {
         "Bulky Prankster Disruption": {
@@ -6432,7 +6616,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Bold",
             "ability": "Prankster",
-            "tera_type": "Steel",
+            "tera_type": "Water",
             "item": "Sitrus Berry",
             "moves": [
                 "Thunderbolt",
@@ -6494,7 +6678,27 @@ var SETDEX_VGC2023 = {
         },
     },
     "Landorus-Therian": {
-        "Tera Flying Assault Vest": {
+        "Tera Flying Choice Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "tera_type": "Flying",
+            "item": "Choice Scarf",
+            "moves": [
+                "Stomping Tantrum",
+                "Tera Blast",
+                "U-turn",
+                "Rock Slide"
+            ]
+        },
+        "Tera Water Assault Vest": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -6505,11 +6709,11 @@ var SETDEX_VGC2023 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "tera_type": "Flying",
+            "tera_type": "Water",
             "item": "Assault Vest",
             "moves": [
                 "Earthquake",
-                "Tera Blast",
+                "Stomping Tantrum",
                 "U-turn",
                 "Rock Slide"
             ]
@@ -6541,6 +6745,28 @@ var SETDEX_VGC2023 = {
         },
     },
     "Enamorus-Therian": {
+        "Tera Fairy Choice Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Choice Specs",
+            "moves": [
+                "Dazzling Gleam",
+                "Moonblast",
+                "Earth Power",
+                "Mystical Fire"
+            ]
+        },
         "Tera Flying Offense": {
             "level": 50,
             "evs": {
@@ -6583,7 +6809,7 @@ var SETDEX_VGC2023 = {
                 "Wicked Blow",
                 "Close Combat",
                 "Sucker Punch",
-                "U-turn"
+                "Poison Jab"
             ]
         },
     },
@@ -6606,6 +6832,26 @@ var SETDEX_VGC2023 = {
                 "Close Combat",
                 "Aqua Jet",
                 "Rock Slide"
+            ]
+        },
+        "Scarf Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "tera_type": "Water",
+            "item": "Choice Scarf",
+            "moves": [
+                "Surging Strikes",
+                "Close Combat",
+                "Aqua Jet",
+                "U-turn"
             ]
         },
     },
@@ -6635,6 +6881,29 @@ var SETDEX_VGC2023 = {
         },
     },
     "Regidrago": {
+        "Dragon Fang Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 100,
+                "sa": 252,
+                "sd": 12,
+                "sp": 140
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Steel",
+            "item": "Dragon Fang",
+            "moves": [
+                "Dragon Energy",
+                "Draco Meteor",
+                "Dragon Pulse",
+                "Earth Power"
+            ]
+        },
         "Choice Scarf Set": {
             "level": 50,
             "evs": {
