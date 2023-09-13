@@ -5725,9 +5725,9 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     'Sky Drop', 'Bestow', 'Heart Stamp', 'Steamroller', 'Rototiller', 'Ion Deluge', 'Spotlight', 'Laser Focus', 'Gear Up',
     //deleted SV moves
     'Submission', 'Skull Bash', 'Hyper Fang', 'Mind Reader', 'Vital Throw', 'Hail', 'Nature Power', 'Magic Coat',
-    'Revenge', 'Grudge', 'Aromatherapy', 'Doom Desire', 'Psycho Shift', 'Heart Swap', 'Autotomize', 'Dual Chop',
+    'Revenge', 'Grudge', 'Aromatherapy', 'Psycho Shift', 'Autotomize', 'Dual Chop',
     'Leaf Tornado', 'Mat Block', 'Crafty Shield', 'Flower Shield', 'Venom Drench', 'Powder', 'Power-Up Punch', 'Dragon Hammer',
-    'Eternabeam', 'Take Heart',
+    'Eternabeam', 
     //unusable SV moves
     'Blazing Torque', 'Wicked Torque', 'Noxious Torque', 'Combat Torque', 'Magical Torque',
     //currently unusable SV moves that might be usable later
