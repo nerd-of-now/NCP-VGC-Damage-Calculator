@@ -264,17 +264,19 @@ function usesPhysicalAttack(attacker, defender, move) {
 
 function checkTrace(source, target) {
     var cannotCopy = ["As One", "Battle Bond", "Comatose", "Commander", "Disguise", "Flower Gift", "Forecast", "Gulp Missile",
-        "Ice Face", "Illusion", "Imposter", "Multitype", "Power of Alchemy", "Receiver", "RKS System", "Schooling", "Shields Down",
-        "Stance Change", "Trace", "Wonder Guard", "Zen Mode", "Zero to Hero",];
+        "Ice Face", "Illusion", "Imposter", "Multitype", "Power of Alchemy", 'Protosynthesis', 'Quark Drive', "Receiver", "RKS System", "Schooling",
+        "Shields Down", "Stance Change", "Trace", "Wonder Guard", "Zen Mode", "Zero to Hero"];
     if (source.ability === "Trace" && source.abilityOn && cannotCopy.indexOf(target.ability) === -1 && source.item !== "Ability Shield") {
         source.ability = target.ability;
     }
 }
 
 function checkNeutralGas(p1, p2, isNGas) {
+    var cannotSupress = ['As One', 'Battle Bond', 'Comatose', 'Commander', 'Disguise', 'Gulp Missile', 'Hadron Engine', 'Ice Face', 'Multitype',
+        'Orichalcum Pulse', 'Power Construct', 'Protosynthesis', 'Quark Drive', 'RKS System', 'Schooling', 'Shields Down', 'Stance Change', 'Zero to Hero'];
     if (isNGas) {
-        if (p1.ability != "As One" || p1.ability != "RKS System" || p1.ability != "Multitype") p1.ability = "";
-        if (p2.ability != "As One" || p2.ability != "RKS System" || p2.ability != "Multitype") p2.ability = "";
+        if (cannotSupress.indexOf(p1.ability) == -1 && p1.item !== 'Ability Shield') p1.ability = '';
+        if (cannotSupress.indexOf(p2.ability) == -1 && p2.item !== 'Ability Shield') p2.ability = '';
     }
 }
 function checkAirLock(pokemon, field) {
@@ -327,38 +329,47 @@ function checkSeeds(pokemon, terrain) {
     }
 }
 
-function checkIntimidate(source, target) {    //temporary solution
-    var canGetAdrenBoost = true;
+function checkSupersweetSyrup(source, target) {
+    if (source.ability === 'Supersweet Syrup' && source.abilityOn) {
+        if (target.ability === "Defiant") {
+            target.boosts[AT] = Math.min(6, target.boosts[AT] + 2);
+        }
+        else if (target.ability === "Competitive") {
+            target.boosts[AT] = Math.min(6, target.boosts[SA] + 2);
+        }
+    }
+}
+
+function checkIntimidate(source, target) {
     if (source.ability === "Intimidate" && source.abilityOn) {
+        var checkSimple = target.ability === "Simple" ? 1 : 0;
+
         if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].indexOf(target.ability) !== -1
             || (["Inner Focus", "Oblivious", "Own Tempo", "Scrappy"].indexOf(target.ability) !== -1 && gen >= 8)
             || target.item === "Clear Amulet") {
             // no effect
-            canGetAdrenBoost = false;
-        }
-        else if (target.ability === "Defiant") {
-            target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
         }
         else if (["Contrary", "Guard Dog"].indexOf(target.ability) !== -1) {
             target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
-            canGetAdrenBoost = false;
-        }
-        else if (target.ability === "Simple") {
-            target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
         }
         else if (target.ability === "Mirror Armor") {
             source.boosts[AT] = Math.max(-6, source.boosts[AT] - 1);
-            canGetAdrenBoost = false;
         }
         else {
-            target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
-            if (target.ability === "Competitive") {
+            target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1 * (1 + checkSimple));
+            if (target.ability === "Defiant") {
+                target.boosts[AT] = Math.min(6, target.boosts[AT] + 2);
+            }
+            else if (target.ability === "Competitive") {
                 target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
             }
         }
-
-        if (target.item === "Adrenaline Orb" && canGetAdrenBoost)
+        if (target.item === "Adrenaline Orb" && target.ability !== "Mirror Armor") {
+            target.boosts[SP] = Math.min(6, target.boosts[SP] + 1 * (1 + checkSimple));
+        }
+        if (target.ability === "Rattled" && gen >= 8 && target.item !== "Clear Amulet") {
             target.boosts[SP] = Math.min(6, target.boosts[SP] + 1);
+        }
     }
 }
 
@@ -515,6 +526,21 @@ function checkMoveTypeChange(move, field, attacker) {
                 break;
             default:
                 move.type = "Normal";
+        }
+    }
+    else if (move.name === "Ivy Cudgel") {
+        switch (attacker.name) {
+            case "Ogrepon-Wellspring":
+                move.type = "Water";
+                break;
+            case "Ogrepon-Hearthflame":
+                move.type = "Fire";
+                break;
+            case "Ogrepon-Cornerstone":
+                move.type = "Rock";
+                break;
+            default:
+                move.type = "Grass";
         }
     }
 }

@@ -5209,7 +5209,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 75,
     },
     'Grassy Glide': {
-        bp: 60,
+        bp: 55,
     },
     'Glacial Lance': {
         bp: 120,
@@ -5661,6 +5661,29 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Physical',
         isSlice: true,
     },
+    //Teal Mask new additions
+    'Blood Moon': {
+        bp: 140,
+        type: 'Normal',
+        category: 'Special',
+    },
+    'Matcha Gotcha': {
+        bp: 80,
+        type: 'Grass',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Syrup Bomb': {
+        bp: 60,
+        type: 'Grass',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Ivy Cudgel': {
+        bp: 100,
+        type: 'Grass',
+        category: 'Physical',
+    },
 });
 
 var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
@@ -5708,8 +5731,8 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     //unusable SV moves
     'Blazing Torque', 'Wicked Torque', 'Noxious Torque', 'Combat Torque', 'Magical Torque',
     //currently unusable SV moves that might be usable later
-    //'Freeze Shock', 'Ice Burn', 'Gear Grind', 'Conversion', 'Head Charge', 'Lovely Kiss', 'Trick-or-Treat',
-    //'Rock Wrecker', 'Bonemerang', 'Fusion Bolt', 'Octazooka', 'Fusion Flare', 'Bolt Strike', 'Sparkling Aria',
-    //'Triple Kick', 'Blue Flare', 'Glaciate', 'King\'s Shield', 'Sketch', 'Kinesis', 'Electrify', 'Conversion 2',
-    //'Forest\'s Curse', 'Light of Ruin', 'Floral Healing', 'Topsy-Turvy',
+    'Freeze Shock', 'Ice Burn', 'Gear Grind', 'Conversion', 'Head Charge', 'Lovely Kiss', 'Trick-or-Treat',
+    'Rock Wrecker', 'Bonemerang', 'Fusion Bolt', 'Octazooka', 'Fusion Flare', 'Bolt Strike', 'Sparkling Aria',
+    'Triple Kick', 'Blue Flare', 'Glaciate', 'King\'s Shield', 'Sketch', 'Kinesis', 'Electrify', 'Conversion 2',
+    'Forest\'s Curse', 'Light of Ruin', 'Floral Healing', 'Topsy-Turvy',
 ].forEach(e => delete MOVES_SV[e]);

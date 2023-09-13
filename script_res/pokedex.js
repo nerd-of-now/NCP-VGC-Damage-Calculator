@@ -15570,6 +15570,20 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "w": 19.2,
         "ab": "Chlorophyll",
     },
+    "Basculin-White-Striped": {
+        "t1": "Water",
+        "bs": {
+            "hp": 70,
+            "at": 92,
+            "df": 65,
+            "sa": 80,
+            "sd": 55,
+            "sp": 98
+        },
+        "w": 18.0,
+        "ab": "Adaptability",
+        "canEvolve": true,
+    },
     "Zorua-Hisui": {
         "t1": "Normal",
         "t2": "Ghost",
@@ -15828,7 +15842,6 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
     //EVIOLITE ELIGIBILITY CHANGES
     "Stantler": { "canEvolve": true, },
     "Ursaring": { "canEvolve": true, },
-    "Basculin": { "canEvolve": true, },
 });
 
 var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
@@ -17468,6 +17481,165 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 125.0,
         "ab": "Quark Drive",
     },
+    //Teal Mask DLC new additions
+    "Shiftry": {
+        "ab": "Wind Rider",
+    },
+
+    "Ursaluna-Bloodmoon": {
+        "t1": "Ground",
+        "t2": "Normal",
+        "bs": {
+            "hp": 113,
+            "at": 70,
+            "df": 120,
+            "sa": 135,
+            "sd": 65,
+            "sp": 52,
+        },
+        "w": 290.0,
+        "ab": "Mind's Eye",
+    },
+    "Dipplin": {
+        "t1": "Grass",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 80,
+            "at": 80,
+            "df": 110,
+            "sa": 95,
+            "sd": 80,
+            "sp": 40,
+        },
+        "w": 4.4,
+        "ab": "Supersweet Syrup",
+    },
+    "Poltchageist": {
+        "t1": "Grass",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 40,
+            "at": 45,
+            "df": 45,
+            "sa": 74,
+            "sd": 54,
+            "sp": 50,
+        },
+        "w": 1.1,
+        "ab": "Hospitality",
+        "canEvolve": true,
+    },
+    "Sinistcha": {
+        "t1": "Grass",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 71,
+            "at": 60,
+            "df": 106,
+            "sa": 121,
+            "sd": 80,
+            "sp": 70,
+        },
+        "w": 2.2,
+        "ab": "Hospitality",
+    },
+    "Okidogi": {
+        "t1": "Poison",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 88,
+            "at": 128,
+            "df": 115,
+            "sa": 58,
+            "sd": 86,
+            "sp": 80,
+        },
+        "w": 92.2,
+        "ab": "Toxic Chain",
+    },
+    "Munkidori": {
+        "t1": "Poison",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 88,
+            "at": 75,
+            "df": 66,
+            "sa": 130,
+            "sd": 90,
+            "sp": 106,
+        },
+        "w": 12.2,
+        "ab": "Toxic Chain",
+    },
+    "Fezandipiti": {
+        "t1": "Poison",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 88,
+            "at": 91,
+            "df": 82,
+            "sa": 70,
+            "sd": 125,
+            "sp": 99,
+        },
+        "w": 30.1,
+        "ab": "Toxic Chain",
+    },
+    "Ogrepon": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 80,
+            "at": 120,
+            "df": 84,
+            "sa": 60,
+            "sd": 96,
+            "sp": 110,
+        },
+        "w": 39.8,
+        "ab": "Defiant",
+    },
+    "Ogrepon-Wellspring": {
+        "t1": "Grass",
+        "t2": "Water",
+        "bs": {
+            "hp": 80,
+            "at": 120,
+            "df": 84,
+            "sa": 60,
+            "sd": 96,
+            "sp": 110,
+        },
+        "w": 39.8,
+        "ab": "Water Absorb",
+    },
+    "Ogrepon-Hearthflame": {
+        "t1": "Grass",
+        "t2": "Fire",
+        "bs": {
+            "hp": 80,
+            "at": 120,
+            "df": 84,
+            "sa": 60,
+            "sd": 96,
+            "sp": 110,
+        },
+        "w": 39.8,
+        "ab": "Mold Breaker",
+    },
+    "Ogrepon-Cornerstone": {
+        "t1": "Grass",
+        "t2": "Rock",
+        "bs": {
+            "hp": 80,
+            "at": 120,
+            "df": 84,
+            "sa": 60,
+            "sd": 96,
+            "sp": 110,
+        },
+        "w": 39.8,
+        "ab": "Sturdy",
+    },
 });
 
 var POKEDEX_SV = {};
@@ -17525,10 +17697,22 @@ var POKEDEX_SV = {};
     'Raichu-Alola', 'Diglett-Alola', 'Dugtrio-Alola', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', 'Growlithe-Hisui', 'Arcanine-Hisui', 'Slowpoke-Galar', 'Slowbro-Galar',
     'Grimer-Alola', 'Muk-Alola', 'Voltorb-Hisui', 'Electrode-Hisui', 'Tauros-Paldea-Combat', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Aqua', 'Articuno-Galar', 'Zapdos-Galar', 'Moltres-Galar',
     'Typhlosion-Hisui', 'Slowking-Galar', 'Qwilfish-Hisui', 'Sneasel-Hisui', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Dialga-Origin',
-    'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
+    'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Basculin-White-Striped', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
     'Meloetta-Pirouette', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Oricorio-Pom-Pom', "Oricorio-Pa'u", 'Oricorio-Sensu', 'Lycanroc-Midnight', 'Lycanroc-Dusk',
     'Eiscue-Noice', 'Indeedee-F', 'Zacian-Crowned', 'Zamazenta-Crowned', 'Urshifu-Rapid Strike', 'Calyrex-Ice Rider', 'Calyrex-Shadow Rider', 'Basculegion-F', 'Enamorus-Therian', 'Oinkologne-F',
-    'Dudunsparce-Big','Palafin-Hero','Maushold-Four','Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea'
+    'Dudunsparce-Big', 'Palafin-Hero', 'Maushold-Four', 'Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea',
+    //Teal Mask DLC Pokemon
+    'Ekans', 'Arbok', 'Sandshrew', 'Sandslash', 'Clefairy', 'Clefable', 'Vulpix', 'Ninetales', 'Poliwag', 'Poliwhirl', 'Poliwrath', 'Bellsprout', 'Weepinbell', 'Victreebel',
+    'Geodude', 'Graveler', 'Golem', 'Koffing', 'Weezing', 'Snorlax', 'Sentret', 'Furret', 'Hoothoot', 'Noctowl', 'Spinarak', 'Ariados', 'Cleffa', 'Politoed', 'Aipom',
+    'Yanma', 'Gligar', 'Slugma', 'Magcargo', 'Swinub', 'Piloswine', 'Poochyena', 'Mightyena', 'Lotad', 'Lombre', 'Ludicolo', 'Seedot', 'Nuzleaf', 'Shiftry', 'Nosepass',
+    'Volbeat', 'Illumise', 'Corphish', 'Crawdaunt', 'Feebas', 'Milotic', 'Duskull', 'Dusclops', 'Chimecho', 'Turtwig', 'Grotle', 'Torterra', 'Chimchar', 'Monferno',
+    'Infernape', 'Piplup', 'Prinplup', 'Empoleon', 'Ambipom', 'Chingling', 'Munchlax', 'Yanmega', 'Gliscor', 'Mamoswine', 'Probopass', 'Dusknoir', 'Shaymin', 'Timburr',
+    'Gurdurr', 'Conkeldurr', 'Sewaddle', 'Swadloon', 'Leavanny', 'Ducklett', 'Swanna', 'Litwick', 'Lampent', 'Chandelure', 'Mienfoo', 'Mienshao', 'Vullaby', 'Mandibuzz',
+    'Phantump', 'Trevenant', 'Grubbin', 'Charjabug', 'Vikavolt', 'Cutiefly', 'Ribombee', 'Jangmo-o', 'Hakamo-o', 'Kommo-o', 'Cramorant', 'Morpeko',
+    'Dipplin', 'Poltchageist', 'Sinistcha', 'Okidogi', 'Munkidori', 'Fezandipiti', 'Ogrepon',
+    //Forms for Teal Mask Pokemon
+    'Sandshrew-Alola', 'Sandslash-Alola', 'Vulpix-Alola', 'Ninetales-Alola', 'Geodude-Alola', 'Graveler-Alola', 'Golem-Alola', 'Weezing-Galar', 'Shaymin-Sky',
+    'Ursaluna-Bloodmoon', 'Ogrepon-Hearthflame', 'Ogrepon-Wellspring', 'Ogrepon-Cornerstone',
 ].forEach(e => POKEDEX_SV[e] = POKEDEX_SV_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex
@@ -17540,7 +17724,7 @@ var NO_FORMS_SV =
         'Houndoom', 'Tyranitar', 'Gardevoir', 'Sableye', 'Medicham', 'Camerupt', 'Altaria', 'Banette', 'Glalie', 'Salamence',
         'Kyogre', 'Groudon', 'Rayquaza', 'Garchomp', 'Lucario', 'Abomasnow', 'Gallade', 'Diancie', 'Rillaboom', 'Cinderace',
         'Inteleon', 'Corviknight', 'Drednaw', 'Coalossal', 'Flapple', 'Appletun', 'Sandaconda', 'Toxtricity', 'Hatterene', 'Grimmsnarl',
-        'Copperajah', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike', 'Greninja'
+        'Copperajah', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike', 'Greninja', 'Snorlax'
     ];
 
 NO_FORMS_SV.forEach(e => POKEDEX_SV[e].formes = null);

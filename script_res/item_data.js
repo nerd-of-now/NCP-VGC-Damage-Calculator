@@ -194,6 +194,7 @@ var ITEMS_BW_NO_GEMS = ITEMS_DPP.concat([
     'Ring Target',  //is actually implemented
     'Rocky Helmet',
     'Normal Gem',
+    'Big Nugget', //pretty much only here because of Fling 130 BP Gen 8+
 ]);
 
 var ITEMS_BW = ITEMS_BW_NO_GEMS.concat(ITEMS_GEMS);
@@ -370,6 +371,11 @@ var NEW_ITEMS_SV = [
     'Adamant Crystal',  //Origin Dialga item, also acts like Adamant Orb
     'Lustrous Globe',   //Origin Palkia item, also acts like Lustrous Orb
     'Griseous Core',    //Origin Giratina item, also acts like Griseous Orb
+    'Fairy Feather',    //Non-Plate equivalent of Pixie Plate
+    'Teal Mask',    //Grass Ogrepon, Spe Embody Aspect
+    'Hearthflame Mask',    //Fire Ogrepon, SpD Embody Aspect
+    'Wellspring Mask',    //Water Ogrepon, Atk Embody Aspect
+    'Cornerstone Mask',    //Rock Ogrepon, Def Embody Aspect
 ];
 
 var ITEMS_SV = ITEMS_SS.concat(NEW_ITEMS_SV);
@@ -416,6 +422,7 @@ function getItemBoostType(item) {
         case 'Twisted Spoon':
             return 'Psychic';
         case 'Pixie Plate':
+        case 'Fairy Feather':
             return 'Fairy';
         case 'Sky Plate':
         case 'Sharp Beak':
@@ -512,7 +519,7 @@ function getBerryResistType(berry) {
 }
 
 function getFlingPower(item) {
-    return item === 'Iron Ball' ? 130
+    return item === 'Iron Ball' || (item === 'Big Nugget' && gen >=8) ? 130
         : ['Hard Stone','Room Service'].indexOf(item) !== -1 ? 100
         : item.indexOf('Plate') !== -1 || ['Deep Sea Tooth','Thick Club','Grip Claw'].indexOf(item) !== -1 ? 90
         : (item.indexOf('ite') !== -1 && item == 'Eviolite') || ['Assault Vest','Weakness Policy','Blunder Policy', 
@@ -528,7 +535,7 @@ function getFlingPower(item) {
             'Razor Fang','Soul Dew','Spell Tag','Toxic Orb','Twisted Spoon', 'Absorb Bulb', 'Adrenaline Orb',
             'Berry Juice','Binding Band','Eject Button','Float Stone','Light Clay', 'Luminous Moss', 
             'Metronome','Protective Pads','Shell Bell','Throat Spray','Covert Cloak','Loaded Dice',
-            'Ability Shield','Booster Energy','Clear Amulet','Punching Glove'].indexOf(item) !== -1 ? 30
+            'Ability Shield','Booster Energy','Clear Amulet','Punching Glove', 'Big Nugget'].indexOf(item) !== -1 ? 30
         : 10;
 }
 
@@ -803,7 +810,10 @@ var LOCK_ITEM_LOOKUP = {
     'Zacian-Crowned': 'Rusted Sword',
     'Zamazenta-Crowned': 'Rusted Shield',
     'Dialga-Origin': 'Adamant Crystal', 
-    'Palkia-Origin': 'Lustrous Globe',  
+    'Palkia-Origin': 'Lustrous Globe',
+    'Ogrepon-Wellspring': 'Wellspring Mask',
+    'Ogrepon-Hearthflame': 'Hearthflame Mask',
+    'Ogrepon-Cornerstone': 'Cornerstone Mask',
 };
 
 function cantRemoveItem(defItem, defSpecies, terrain) {

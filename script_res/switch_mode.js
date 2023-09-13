@@ -64,20 +64,24 @@ function loadSVColors(theme) {																    //
 		if (theme === "light") {																//
 			document.querySelector('.dark .panel[id="p1"]').style.backgroundColor = '#380c0a';	//
 			document.querySelector('.dark .panel[id="p2"]').style.backgroundColor = '#200c30';	//
+			document.querySelector('.dark .panel[id="field-panel"]').style.backgroundColor = '#003030';	//
 		}																						//
 		else {																					//
 			document.querySelector('.light .panel[id="p1"]').style.backgroundColor = '#fad2d2';	//
 			document.querySelector('.light .panel[id="p2"]').style.backgroundColor = '#e8d6f5';	//
+			document.querySelector('.light .panel[id="field-panel"]').style.backgroundColor = '#c8e0f0';	//
 		}																						//
 	}																							//
 	else {																						//
 		if (theme === "light") {																//
 			document.querySelector('.dark .panel[id="p1"]').style.backgroundColor = '#192121';	//
 			document.querySelector('.dark .panel[id="p2"]').style.backgroundColor = '#192121';	//
+			document.querySelector('.dark .panel[id="field-panel"]').style.backgroundColor = '#192121';	//
 		}																						//
 		else {																					//
 			document.querySelector('.light .panel[id="p1"]').style.backgroundColor = '#ffffff';	//
 			document.querySelector('.light .panel[id="p2"]').style.backgroundColor = '#ffffff';	//
+			document.querySelector('.light .panel[id="field-panel"]').style.backgroundColor = '#ffffff';	//
 		}																						//
     }																							//
 }																								//

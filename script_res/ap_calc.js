@@ -178,7 +178,7 @@ $(".ability").bind("keyup change", function () {
 
     var ab = $(this).val();
     var ABILITY_TOGGLE_OFF = ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Electromorphosis', 'Wind Power', 'Sand Spit', 'Seed Sower'];
-    var ABILITY_TOGGLE_ON = gen === 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero', 'Intrepid Sword', 'Dauntless Shield'] : ['Intimidate', 'Slow Start'];
+    var ABILITY_TOGGLE_ON = gen >= 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero', 'Intrepid Sword', 'Dauntless Shield', 'Supersweet Syrup'] : ['Intimidate', 'Slow Start'];
     if (ABILITY_TOGGLE_OFF.indexOf(ab) !== -1) {
         $(this).closest(".poke-info").find(".abilityToggle").show();
         $(this).closest(".poke-info").find(".abilityToggle").prop("checked", false);
@@ -896,6 +896,34 @@ function Pokemon(pokeInfo) {
     }
     else {
         pokeInfo.find(".max").prop("disabled", false);
+    }
+
+    //Check for Tera form (ability only for now, should probably be changed to a different form with Terapagos coming in the next DLC)
+    if (this.name.indexOf('Ogrepon') !== -1 && pokeInfo.find("select.item").val().indexOf("Mask") !== -1) {
+        var mask = pokeInfo.find("select.item").val().substring(0, pokeInfo.find("select.item").val().indexOf(" Mask"));
+
+        if (this.name.indexOf(mask) !== -1 || (this.name === 'Ogrepon' && mask === 'Teal')) {
+            var maskTera = mask === 'Wellspring' ? 'Water'
+                : mask === 'Hearthflame' ? 'Fire'
+                    : mask === 'Cornerstone' ? 'Rock'
+                        : 'Grass';
+            pokeInfo.find(".tera-type").val(maskTera);
+            pokeInfo.find(".tera-type").prop("disabled", true);
+            if (pokeInfo.find(".tera").prop("checked")) {
+                pokeInfo.find("select.ability").val("Embody Aspect");
+                pokeInfo.find("select.ability").trigger('change.select2');
+            }
+            else {
+                pokeInfo.find("select.ability").val(pokedex[this.name].ab);
+                pokeInfo.find("select.ability").trigger('change.select2');
+            }
+        }
+        else {
+            pokeInfo.find(".tera-type").prop("disabled", false);
+        }
+    }
+    else {
+        pokeInfo.find(".tera-type").prop("disabled", false);
     }
 
     this.type1 = pokeInfo.find(".type1").val();
