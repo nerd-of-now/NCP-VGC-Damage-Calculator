@@ -29,6 +29,8 @@ function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
     checkSupersweetSyrup(p2, p1);
     checkDownload(p1, p2);
     checkDownload(p2, p1);
+    checkEmbodyAspect(p1);
+    checkEmbodyAspect(p2);
     p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]); //new order is important for the proper Protosynthesis/Quark Drive boost
     p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
     p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);

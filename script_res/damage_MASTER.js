@@ -434,6 +434,23 @@ function checkDownload(source, target) {
     }
 }
 
+function checkEmbodyAspect(pokemon) {
+    if (pokemon.ability === 'Embody Aspect') {
+        if (pokemon.name === 'Ogrepon' && pokemon.item === 'Teal Mask') {
+            pokemon.boosts[SP] = Math.min(6, pokemon.boosts[SP] + 1);
+        }
+        else if (pokemon.name === 'Ogrepon-Wellspring' && pokemon.item === 'Wellspring Mask') {
+            pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
+        }
+        else if(pokemon.name === 'Ogrepon-Hearthflame' && pokemon.item === 'Hearthflame Mask') {
+            pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
+        }
+        else if (pokemon.name === 'Ogrepon-Cornerstone' && pokemon.item === 'Cornerstone Mask') {
+            pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
+        }
+    }
+}
+
 //CONSIDER AN ALL ENCOMPASSING FUNCTION FOR BOOSTS
 
 function checkInfiltrator(attacker, affectedSide) {
