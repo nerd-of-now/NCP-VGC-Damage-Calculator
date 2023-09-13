@@ -17585,7 +17585,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 30.1,
         "ab": "Toxic Chain",
     },
-    "Ogrepon": {
+    "Ogerpon": {
         "t1": "Grass",
         "bs": {
             "hp": 80,
@@ -17598,7 +17598,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 39.8,
         "ab": "Defiant",
     },
-    "Ogrepon-Wellspring": {
+    "Ogerpon-Wellspring": {
         "t1": "Grass",
         "t2": "Water",
         "bs": {
@@ -17612,7 +17612,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 39.8,
         "ab": "Water Absorb",
     },
-    "Ogrepon-Hearthflame": {
+    "Ogerpon-Hearthflame": {
         "t1": "Grass",
         "t2": "Fire",
         "bs": {
@@ -17626,7 +17626,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 39.8,
         "ab": "Mold Breaker",
     },
-    "Ogrepon-Cornerstone": {
+    "Ogerpon-Cornerstone": {
         "t1": "Grass",
         "t2": "Rock",
         "bs": {
@@ -17710,10 +17710,10 @@ var POKEDEX_SV = {};
     'Probopass', 'Dusknoir', 'Phione', 'Manaphy', 'Darkrai', 'Shaymin', 'Timburr',
     'Gurdurr', 'Conkeldurr', 'Sewaddle', 'Swadloon', 'Leavanny', 'Ducklett', 'Swanna', 'Litwick', 'Lampent', 'Chandelure', 'Mienfoo', 'Mienshao', 'Vullaby', 'Mandibuzz',
     'Phantump', 'Trevenant', 'Grubbin', 'Charjabug', 'Vikavolt', 'Cutiefly', 'Ribombee', 'Jangmo-o', 'Hakamo-o', 'Kommo-o', 'Cramorant', 'Morpeko',
-    'Dipplin', 'Poltchageist', 'Sinistcha', 'Okidogi', 'Munkidori', 'Fezandipiti', 'Ogrepon',
+    'Dipplin', 'Poltchageist', 'Sinistcha', 'Okidogi', 'Munkidori', 'Fezandipiti', 'Ogerpon',
     //Forms for Teal Mask Pokemon
     'Sandshrew-Alola', 'Sandslash-Alola', 'Vulpix-Alola', 'Ninetales-Alola', 'Geodude-Alola', 'Graveler-Alola', 'Golem-Alola', 'Weezing-Galar', 'Shaymin-Sky',
-    'Ursaluna-Bloodmoon', 'Ogrepon-Hearthflame', 'Ogrepon-Wellspring', 'Ogrepon-Cornerstone',
+    'Ursaluna-Bloodmoon', 'Ogerpon-Hearthflame', 'Ogerpon-Wellspring', 'Ogerpon-Cornerstone',
 ].forEach(e => POKEDEX_SV[e] = POKEDEX_SV_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex

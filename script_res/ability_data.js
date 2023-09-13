@@ -332,7 +332,7 @@ var ABILITIES_SV = ABILITIES_SS.concat([
     'Supersweet Syrup', //Intimidate but with evasion and only once
     'Hospitality',  //Heals HP, needs more info but probably has no calc functionality
     'Toxic Chain',  //Poison Touch but with badly poisoned instead, no calc functionality
-    'Embody Aspect', //Boosts Ogrepon's stats based on mask, needs for info for what kind of boost and how much
+    'Embody Aspect', //Boosts Ogerpon's stats based on mask, needs for info for what kind of boost and how much
 ]);
 
 //ABILITIES_XY.splice(ABILITIES_XY.indexOf('Lightning Rod'), 1, 'Lightning Rod');

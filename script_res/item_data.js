@@ -372,10 +372,10 @@ var NEW_ITEMS_SV = [
     'Lustrous Globe',   //Origin Palkia item, also acts like Lustrous Orb
     'Griseous Core',    //Origin Giratina item, also acts like Griseous Orb
     'Fairy Feather',    //Non-Plate equivalent of Pixie Plate
-    'Teal Mask',    //Grass Ogrepon, Spe Embody Aspect
-    'Hearthflame Mask',    //Fire Ogrepon, SpD Embody Aspect
-    'Wellspring Mask',    //Water Ogrepon, Atk Embody Aspect
-    'Cornerstone Mask',    //Rock Ogrepon, Def Embody Aspect
+    'Teal Mask',    //Grass Ogerpon, Spe Embody Aspect
+    'Hearthflame Mask',    //Fire Ogerpon, SpD Embody Aspect
+    'Wellspring Mask',    //Water Ogerpon, Atk Embody Aspect
+    'Cornerstone Mask',    //Rock Ogerpon, Def Embody Aspect
 ];
 
 var ITEMS_SV = ITEMS_SS.concat(NEW_ITEMS_SV);
@@ -811,9 +811,9 @@ var LOCK_ITEM_LOOKUP = {
     'Zamazenta-Crowned': 'Rusted Shield',
     'Dialga-Origin': 'Adamant Crystal', 
     'Palkia-Origin': 'Lustrous Globe',
-    'Ogrepon-Wellspring': 'Wellspring Mask',
-    'Ogrepon-Hearthflame': 'Hearthflame Mask',
-    'Ogrepon-Cornerstone': 'Cornerstone Mask',
+    'Ogerpon-Wellspring': 'Wellspring Mask',
+    'Ogerpon-Hearthflame': 'Hearthflame Mask',
+    'Ogerpon-Cornerstone': 'Cornerstone Mask',
 };
 
 function cantRemoveItem(defItem, defSpecies, terrain) {

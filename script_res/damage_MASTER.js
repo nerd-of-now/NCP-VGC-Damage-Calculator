@@ -436,16 +436,16 @@ function checkDownload(source, target) {
 
 function checkEmbodyAspect(pokemon) {
     if (pokemon.ability === 'Embody Aspect') {
-        if (pokemon.name === 'Ogrepon' && pokemon.item === 'Teal Mask') {
+        if (pokemon.name === 'Ogerpon' && pokemon.item === 'Teal Mask') {
             pokemon.boosts[SP] = Math.min(6, pokemon.boosts[SP] + 1);
         }
-        else if (pokemon.name === 'Ogrepon-Wellspring' && pokemon.item === 'Wellspring Mask') {
+        else if (pokemon.name === 'Ogerpon-Wellspring' && pokemon.item === 'Wellspring Mask') {
             pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
         }
-        else if(pokemon.name === 'Ogrepon-Hearthflame' && pokemon.item === 'Hearthflame Mask') {
+        else if(pokemon.name === 'Ogerpon-Hearthflame' && pokemon.item === 'Hearthflame Mask') {
             pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
         }
-        else if (pokemon.name === 'Ogrepon-Cornerstone' && pokemon.item === 'Cornerstone Mask') {
+        else if (pokemon.name === 'Ogerpon-Cornerstone' && pokemon.item === 'Cornerstone Mask') {
             pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
         }
     }
@@ -547,13 +547,13 @@ function checkMoveTypeChange(move, field, attacker) {
     }
     else if (move.name === "Ivy Cudgel") {
         switch (attacker.name) {
-            case "Ogrepon-Wellspring":
+            case "Ogerpon-Wellspring":
                 move.type = "Water";
                 break;
-            case "Ogrepon-Hearthflame":
+            case "Ogerpon-Hearthflame":
                 move.type = "Fire";
                 break;
-            case "Ogrepon-Cornerstone":
+            case "Ogerpon-Cornerstone":
                 move.type = "Rock";
                 break;
             default:
