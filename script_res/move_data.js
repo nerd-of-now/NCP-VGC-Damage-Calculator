@@ -5734,5 +5734,5 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     'Freeze Shock', 'Ice Burn', 'Gear Grind', 'Conversion', 'Head Charge', 'Lovely Kiss', 'Trick-or-Treat',
     'Rock Wrecker', 'Bonemerang', 'Fusion Bolt', 'Octazooka', 'Fusion Flare', 'Bolt Strike', 'Sparkling Aria',
     'Triple Kick', 'Blue Flare', 'Glaciate', 'King\'s Shield', 'Sketch', 'Kinesis', 'Electrify', 'Conversion 2',
-    'Forest\'s Curse', 'Light of Ruin', 'Floral Healing', 'Topsy-Turvy',
+    'Light of Ruin', 'Floral Healing', 'Topsy-Turvy',
 ].forEach(e => delete MOVES_SV[e]);
