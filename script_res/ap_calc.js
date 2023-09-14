@@ -899,7 +899,7 @@ function Pokemon(pokeInfo) {
     }
 
     //Check for Tera form (ability only for now, should probably be changed to a different form with Terapagos coming in the next DLC)
-    if (this.name.indexOf('Ogerpon') !== -1 && pokeInfo.find("select.item").val().indexOf("Mask") !== -1) {
+    if (this.name.indexOf('Ogerpon') !== -1) {
         var mask = pokeInfo.find("select.item").val().substring(0, pokeInfo.find("select.item").val().indexOf(" Mask"));
 
         if (this.name.indexOf(mask) !== -1 || (this.name === 'Ogerpon' && mask === 'Teal')) {

@@ -436,7 +436,7 @@ function checkDownload(source, target) {
 
 function checkEmbodyAspect(pokemon) {
     if (pokemon.ability === 'Embody Aspect') {
-        if (pokemon.name === 'Ogerpon' && pokemon.item === 'Teal Mask') {
+        if (pokemon.name === 'Ogerpon') {
             pokemon.boosts[SP] = Math.min(6, pokemon.boosts[SP] + 1);
         }
         else if (pokemon.name === 'Ogerpon-Wellspring' && pokemon.item === 'Wellspring Mask') {
@@ -1350,7 +1350,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
             : attacker.ability + " (1 ally down)";
     }
     //aa. 1.1x Items
-    else if (attacker.item === "Punching Glove" && move.isPunch) {
+    if (attacker.item === "Punching Glove" && move.isPunch) {
         bpMods.push(0x119A);
         description.attackerItem = attacker.item;
     }

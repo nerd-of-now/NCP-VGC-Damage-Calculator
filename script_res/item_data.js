@@ -372,7 +372,6 @@ var NEW_ITEMS_SV = [
     'Lustrous Globe',   //Origin Palkia item, also acts like Lustrous Orb
     'Griseous Core',    //Origin Giratina item, also acts like Griseous Orb
     'Fairy Feather',    //Non-Plate equivalent of Pixie Plate
-    'Teal Mask',    //Grass Ogerpon, Spe Embody Aspect
     'Hearthflame Mask',    //Fire Ogerpon, SpD Embody Aspect
     'Wellspring Mask',    //Water Ogerpon, Atk Embody Aspect
     'Cornerstone Mask',    //Rock Ogerpon, Def Embody Aspect
