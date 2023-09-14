@@ -17513,6 +17513,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         },
         "w": 4.4,
         "ab": "Supersweet Syrup",
+        "canEvolve": true,
     },
     "Poltchageist": {
         "t1": "Grass",
