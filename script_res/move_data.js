@@ -5672,6 +5672,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Grass',
         category: 'Special',
         hasSecondaryEffect: true,
+        isSpread: true,
     },
     'Syrup Bomb': {
         bp: 60,
