@@ -11372,7 +11372,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 
   //new forms
   "Greninja": { "formes": ["Greninja", "Ash-Greninja"] },
-  "Zygarde": { "formes": ["Zygarde 50%", "Zygarde Complete", "Zygarde 10%"] },
+  "Zygarde": { "formes": ["Zygarde", "Zygarde-Complete"] },
 
   //abilities
   "Pelipper": { "bs": { "sa": 95 }, "ab": "Drizzle"},
@@ -11422,22 +11422,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
   "Mega Alakazam": { "bs": { "sd": 105} },
 
   //and here's the dex!
-  "Zygarde 50%": {
-    "t1": "Dragon",
-    "t2": "Ground",
-    "bs": {
-      "hp": 108,
-      "at": 100,
-      "df": 121,
-      "sa": 81,
-      "sd": 95,
-      "sp": 95
-    },
-    "w": 305.0,
-    "ab": "Power Construct",
-    "isAlternateForme": true
-  },
-  "Zygarde 10%": {
+  "Zygarde-10%": {
     "t1": "Dragon",
     "t2": "Ground",
     "bs": {
@@ -11450,9 +11435,9 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 33.5,
     "ab": "Power Construct",
-    "isAlternateForme": true
+    "formes": ['Zygarde-10%', 'Zygarde-Complete'],
   },
-  "Zygarde Complete": {
+  "Zygarde-Complete": {
     "t1": "Dragon",
     "t2": "Ground",
     "bs": {
@@ -17497,7 +17482,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
             "sd": 65,
             "sp": 52,
         },
-        "w": 290.0,
+        "w": 333.0,
         "ab": "Mind's Eye",
     },
     "Dipplin": {

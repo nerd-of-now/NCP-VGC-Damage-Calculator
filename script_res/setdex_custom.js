@@ -1,11 +1,8 @@
 var showdownToCalcFormes = [
     ["Pumpkaboo", "Pumpkaboo-Average"],
     ["Gourgeist", "Gourgeist-Average"],
-    ["Wormadan-Sandy", "Wormadan-G"],
-    ["Wormadan-Trash", "Wormadan-S"],
     ["Groudon-Primal", "Groudon"],
     ["Kyogre-Primal", "Kyogre"],
-    ["Zygarde-10%", "Zygarde"],
     ["Zygarde-Complete", "Zygarde"],
     ["Zacian-Crowned", "Zacian"],
     ["Zamazenta-Crowned", "Zamazenta"],
@@ -21,7 +18,6 @@ var showdownToCalcFormes = [
     ["Shellos-East", "Shellos"],
     ["Gastrodon-East", "Gastrodon"],
     ["Basculin-Blue-Striped", "Basculin"],
-    ["Basculin-White-Striped", "Basculin"],
     ["Deerling-Summer", "Deerling"],
     ["Deerling-Autumn", "Deerling"],
     ["Deerling-Winter", "Deerling"],
@@ -42,6 +38,8 @@ var showdownToCalcFormes = [
     ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
     ["Tatsugiri-Droopy", "Tatsugiri"],
     ["Tatsugiri-Stretchy", "Tatsugiri"],
+    ["Poltchageist-Artisan", "Poltchageist"],
+    ['Sinistcha-Masterpiece','Sinistcha']
 ];
 
 var calcToShowdownFormes = [
@@ -59,9 +57,7 @@ var calcToShowdownFormes = [
 var saveToCalcFormes = [
     ["Darmanitan-Zen", "Darmanitan"],
     ["Darmanitan-Galar-Zen", "Darmanitan-Galar"],
-    ["Zygarde 50%", "Zygarde"],
-    ["Zygarde 10%", "Zygarde"],
-    ["Zygarde Complete", "Zygarde"],
+    ["Zygarde-Complete", "Zygarde"],
     ["Zacian-Crowned", "Zacian"],
     ["Zamazenta-Crowned", "Zamazenta"],
     ["Palafin-Hero", "Palafin"],
