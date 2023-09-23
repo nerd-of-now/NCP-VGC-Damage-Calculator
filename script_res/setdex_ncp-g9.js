@@ -6700,7 +6700,7 @@ var SETDEX_VGC2023 = {
             "item": "Assault Vest",
             "tera_type": "Grass",
             "moves": [
-                "Close Combat",
+                "Drain Punch",
                 "Wild Charge",
                 "Fake Out",
                 "Heavy Slam"
