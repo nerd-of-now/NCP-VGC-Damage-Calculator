@@ -86,13 +86,15 @@ var MOVES_RBY = {
         bp: 100,
         type: 'Ground',
         category: 'Physical',
-        isSpread: true
+        isSpread: true,
+        isGen3Spread: true,
     },
     'Explosion': {
         bp: 170,
         type: 'Normal',
         category: 'Physical',
-        isSpread: true
+        isSpread: true,
+        isGen3Spread: true,
     },
     'Fire Blast': {
         bp: 120,
@@ -204,7 +206,8 @@ var MOVES_RBY = {
         bp: 130,
         type: 'Normal',
         category: 'Physical',
-        isSpread: true
+        isSpread: true,
+        isGen3Spread: true,
     },
     'Sky Attack': {
         bp: 140,
@@ -1499,7 +1502,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     //    bp: 1,
     //    type: 'Ground',
     //    category: 'Physical',
-    //    isSpread: true
+    //    isSpread: true,
+    //    isGen3Spread: true,
     //    zp: 140
     //},
     'Dragon Breath': {
