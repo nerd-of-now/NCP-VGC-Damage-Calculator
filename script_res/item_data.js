@@ -364,7 +364,7 @@ var NEW_ITEMS_SV = [
     'Mirror Herb',  //copies stat boosts from last stat boosting move from opponent, no calc functionality
     'Covert Cloak', //item Shield Dust, no calc functionality
     'Loaded Dice',  //increases chances of hitting more times with multi hit moves
-    'Ability Shield',   //prevents other mons from changing ability, may have f u t u r e calc functionality
+    'Ability Shield',   //prevents other mons from changing ability
     'Booster Energy',   //activates paradox mon abilities without sun/electric terrain
     'Clear Amulet', //item Clear Body
     'Punching Glove',   //item Iron Fist, no contact, probably stacks with Iron Fist
@@ -372,9 +372,9 @@ var NEW_ITEMS_SV = [
     'Lustrous Globe',   //Origin Palkia item, also acts like Lustrous Orb
     'Griseous Core',    //Origin Giratina item, also acts like Griseous Orb
     'Fairy Feather',    //Non-Plate equivalent of Pixie Plate
-    'Hearthflame Mask',    //Fire Ogerpon, SpD Embody Aspect
-    'Wellspring Mask',    //Water Ogerpon, Atk Embody Aspect
-    'Cornerstone Mask',    //Rock Ogerpon, Def Embody Aspect
+    'Hearthflame Mask',     //Fire Ogerpon, Atk Embody Aspect
+    'Wellspring Mask',      //Water Ogerpon, SpD Embody Aspect
+    'Cornerstone Mask',     //Rock Ogerpon, Def Embody Aspect
 ];
 
 var ITEMS_SV = ITEMS_SS.concat(NEW_ITEMS_SV);

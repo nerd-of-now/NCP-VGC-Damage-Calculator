@@ -3581,7 +3581,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Ice Beam': { bp: 90 },
     'Incinerate': { bp: 60 },
     'Knock Off': { bp: 65 },
-    'Land\'s Wrath': {
+    "Land's Wrath": {
         bp: 90,
         type: 'Ground',
         category: 'Physical',
@@ -3721,7 +3721,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Ghost',
         category: 'Status'
     },
-    'Forest\'s Curse': {
+    "Forest's Curse": {
 
         type: 'Grass',
         category: 'Status'
@@ -3756,7 +3756,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Electric',
         category: 'Status'
     },
-    'King\'s Shield': {
+    "King's Shield": {
 
         type: 'Steel',
         category: 'Status'
@@ -4233,7 +4233,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 80,
         hasSecondaryEffect: true,
     },
-    'Nature\'s Madness':{
+    "Nature's Madness":{
         bp: 1,
         category: 'Special',
         type: 'Fairy',
@@ -4422,7 +4422,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Special',
         isSignatureZ: true,
     },
-    'Let\'s Snuggle Forever': {
+    "Let's Snuggle Forever": {
         bp: 190,
         type: 'Fairy',
         category: 'Physical',
@@ -5113,7 +5113,7 @@ var MOVES_SS_NATDEX = $.extend(true, {}, MOVES_SS, {});
     'Breakneck Blitz', 'Inferno Overdrive', 'Bloom Doom', 'Hydro Vortex', 'Gigavolt Havoc', 'Never-Ending Nightmare',
     'Black Hole Eclipse', 'Shattered Psyche', 'All-Out Pummeling', 'Corkscrew Crash', 'Subzero Slammer', 'Tectonic Rage',
     'Continental Crush', 'Savage Spin-Out', 'Twinkle Tackle', 'Supersonic Skystrike', 'Devastating Drake', 'Acid Downpour',
-    'Catastropika', 'Clangorous Soulblaze', 'Genesis Supernova', 'Let\'s Snuggle Forever', 'Light That Burns the Sky',
+    'Catastropika', 'Clangorous Soulblaze', 'Genesis Supernova', "Let's Snuggle Forever", 'Light That Burns the Sky',
     'Malicious Moonsault', 'Menacing Moonraze Maelstrom', 'Oceanic Operetta', 'Pulverizing Pancake', 'Searing Sunraze Smash',
     'Sinister Arrow Raid', 'Soul-Stealing 7-Star Strike', 'Splintered Stormshards', 'Stoked Sparksurfer', 'Extreme Evoboost', '10,000,000 Volt Thunderbolt',
     //Hidden Power
@@ -5712,7 +5712,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     'Devastating Drake', 'Black Hole Eclipse', 'Twinkle Tackle', 'Catastropika', 'Sinister Arrow Raid',
     'Malicious Moonsault', 'Oceanic Operetta', 'Guardian of Alola', 'Soul-Stealing 7-Star Strike', 'Stoked Sparksurfer',
     'Pulverizing Pancake', 'Extreme Evoboost', 'Genesis Supernova', '10,000,000 Volt Thunderbolt', 'Light That Burns the Sky',
-    'Searing Sunraze Smash', 'Menacing Moonraze Maelstrom', 'Let\'s Snuggle Forever', 'Splintered Stormshards', 'Clangorous Soulblaze',
+    'Searing Sunraze Smash', 'Menacing Moonraze Maelstrom', "Let's Snuggle Forever", 'Splintered Stormshards', 'Clangorous Soulblaze',
     //Hidden Power
     'Hidden Power Fire', 'Hidden Power Water', 'Hidden Power Grass', 'Hidden Power Electric', 'Hidden Power Psychic',
     'Hidden Power Ice', 'Hidden Power Dragon', 'Hidden Power Dark', 'Hidden Power Fighting', 'Hidden Power Flying',
@@ -5738,6 +5738,6 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     //currently unusable SV moves that might be usable later
     'Freeze Shock', 'Ice Burn', 'Gear Grind', 'Conversion', 'Head Charge', 'Lovely Kiss', 'Trick-or-Treat',
     'Rock Wrecker', 'Bonemerang', 'Fusion Bolt', 'Octazooka', 'Fusion Flare', 'Bolt Strike', 'Sparkling Aria',
-    'Triple Kick', 'Blue Flare', 'Glaciate', 'King\'s Shield', 'Sketch', 'Kinesis', 'Electrify', 'Conversion 2',
+    'Triple Kick', 'Blue Flare', 'Glaciate', "King's Shield", 'Sketch', 'Kinesis', 'Electrify', 'Conversion 2',
     'Light of Ruin', 'Floral Healing', 'Topsy-Turvy',
 ].forEach(e => delete MOVES_SV[e]);

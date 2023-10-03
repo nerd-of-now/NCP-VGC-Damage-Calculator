@@ -1257,7 +1257,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //l. Gems
-    else if (attacker.item === move.type + " Gem") {
+    else if (attacker.item === move.type + " Gem" && move.name.indexOf(" Pledge") !== -1) {
         var gemMultiplier = gen > 5 ? 0x14CD : 0x1800;
         bpMods.push(gemMultiplier);
         description.attackerItem = attacker.item;
@@ -1632,7 +1632,7 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
         description.defenderItem = defender.item;
     } //g. 2.0x Items
     else if ((defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical) ||
-        (defender.item === "Metal Powder" && defender.name === "Ditto")) {
+        (defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical)) {
         dfMods.push(0x2000);
         description.defenderItem = defender.item;
     }
@@ -1885,7 +1885,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //k. Friend Guard
-    if (field.isFriendGuard) {
+    if (field.isFriendGuard && attacker.ability !== "Mold Breaker") {
         finalMods.push(0xC00);
         description.isFriendGuard = true;
     }
