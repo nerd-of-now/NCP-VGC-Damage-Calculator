@@ -1885,7 +1885,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //k. Friend Guard
-    if (field.isFriendGuard && attacker.ability !== "Mold Breaker") {
+    if (field.isFriendGuard && ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
         finalMods.push(0xC00);
         description.isFriendGuard = true;
     }
