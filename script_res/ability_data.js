@@ -8,7 +8,6 @@ var ABILITIES_ADV = [
     'Drizzle',
     'Drought',
     'Flash Fire',
-    //'Flash Fire (activated)',   //make flash fire work and remove this
     'Forecast',
     'Guts',
     'Huge Power',
@@ -32,12 +31,15 @@ var ABILITIES_ADV = [
     'Water Absorb',
     'White Smoke',
     'Wonder Guard',
+    'Damp',
+    'Minus',   
+    'Plus', 
+    'Trace',   
     //NO FUNCTION IN CALCS
     'Arena Trap',
     'Color Change',
     'Compound Eyes',
     'Cute Charm',
-    'Damp', //Functionality in calc I lied
     'Early Bird',
     'Effect Spore',
     'Flame Body',
@@ -51,12 +53,10 @@ var ABILITIES_ADV = [
     'Liquid Ooze',
     'Magma Armor',
     'Magnet Pull',
-    'Minus',    //Functionality in calc I lied
     'Natural Cure',
     'Oblivious',    //Has functionality in a later gen
     'Own Tempo',    //Has functionality in a later gen
     'Pickup',
-    'Plus',  //Functionality in calc I lied
     'Poison Point',
     'Pressure',
     'Rock Head',
@@ -73,7 +73,6 @@ var ABILITIES_ADV = [
     'Sturdy',
     'Suction Cups',
     'Synchronize',
-    'Trace',    //Functionality in calc I lied
     'Truant',
     'Vital Spirit',
     'Water Veil',
@@ -110,6 +109,8 @@ var ABILITIES_DPP = ABILITIES_ADV.concat([
     'Technician',
     'Tinted Lens',
     'Unaware',
+    'Quick Feet',
+    'Unburden',
     //NO FUNCTIONALITY IN CALCS
     'Aftermath',
     'Anger Point',
@@ -120,14 +121,12 @@ var ABILITIES_DPP = ABILITIES_ADV.concat([
     'Hydration',
     'Leaf Guard',
     'No Guard',
-    'Quick Feet',  //Functionality in calc I lied
     'Rivalry',  //Only implement functionality if demand is a lot
     'Stall',
     'Steadfast',
     'Storm Drain',   //Has functionality in a later gen
     'Super Luck',
     'Tangled Feet',
-    'Unburden'  //Functionality in calc I lied
 ]);
 
 var ABILITIES_BW = ABILITIES_DPP.concat([
@@ -149,18 +148,18 @@ var ABILITIES_BW = ABILITIES_DPP.concat([
     'Toxic Boost',
     'Turboblaze',
     'Unnerve',
+    'Heavy Metal',
+    'Light Metal',
     //NO FUNCTIONALITY IN CALCS
     'Big Pecks',
     'Cursed Body',
     'Friend Guard',
     'Harvest',
     'Healer',
-    'Heavy Metal', //Functionality in calc I lied
     'Illusion',
     'Imposter',
     'Iron Barbs',
     'Justified',
-    'Light Metal', //Functionality in calc I lied
     'Magic Bounce',
     'Moody',
     'Moxie',
@@ -196,13 +195,13 @@ var ABILITIES_XY = ABILITIES_BW.concat([
     'Refrigerate',
     'Strong Jaw',
     'Tough Claws',
+    'Grass Pelt',
     //NO FUNCTIONALITY IN CALCS
     'Aroma Veil',
     'Cheek Pouch',  //Maybe implement functionality
     'Flower Veil',
     'Gale Wings',
     'Gooey',
-    'Grass Pelt', //Functionality in calc I lied
     'Magician',
     'Stance Change',
     'Sweet Veil',
@@ -229,6 +228,8 @@ var ABILITIES_SM = ABILITIES_XY.concat([
     'Surge Surfer',
     'Neuroforce',
     'Power Construct',
+    'Dazzling',
+    'Queenly Majesty',
     //NO FUNCTIONALITY IN CALCS
     'Battery',
     'Battle Bond',
@@ -237,13 +238,11 @@ var ABILITIES_SM = ABILITIES_XY.concat([
     'Comatose',
     'Corrosion',
     'Dancer',
-    'Dazzling',
     'Disguise',
     'Emergency Exit',
     'Innards Out',
     'Long Reach',
     'Power of Alchemy',
-    'Queenly Majesty',
     'Receiver',
     'Schooling',    
     'Shields Down', 
@@ -271,19 +270,19 @@ var ABILITIES_SS = ABILITIES_SM.concat([
     'Ripen',
     'Steely Spirit',
     'Transistor',
-    'Dragon\'s Maw',
+    "Dragon's Maw",
     'As One',
+    'Mimicry',
+    'Sand Spit',
     //NO FUNCTIONALITY IN CALCS
     'Ball Fetch',
     'Cotton Down',
     'Gulp Missile',
     'Hunger Switch',
     'Ice Face',
-    'Mimicry',  //Functionality in calc I lied
     'Pastel Veil',
     'Perish Body',
     'Propeller Tail',
-    'Sand Spit',    //Maybe implement with abilityOn? idk
     'Screen Cleaner',   
     'Stalwart',
     'Steam Engine',

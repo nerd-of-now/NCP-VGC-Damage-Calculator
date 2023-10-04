@@ -1257,7 +1257,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //l. Gems
-    else if (attacker.item === move.type + " Gem" && move.name.indexOf(" Pledge") !== -1) {
+    else if (attacker.item === move.type + " Gem" && move.name.includes(" Pledge")) {
         var gemMultiplier = gen > 5 ? 0x14CD : 0x1800;
         bpMods.push(gemMultiplier);
         description.attackerItem = attacker.item;
@@ -1885,7 +1885,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //k. Friend Guard
-    if (field.isFriendGuard && ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
+    if (field.isFriendGuard && ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) === -1) {
         finalMods.push(0xC00);
         description.isFriendGuard = true;
     }
