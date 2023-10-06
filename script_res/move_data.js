@@ -684,6 +684,7 @@ var MOVES_RBY = {
     //    type: 'Fighting',
     //    category: 'Physical',
     //    makesContact: true,
+    //    usesOppMoves: true,
     //},
     'Strength': {
         bp: 80,
@@ -1537,6 +1538,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     //    bp: 1,
     //    type: 'Psychic',
     //    category: 'Special',
+    //    usesOppMoves: true,
     //},
     'Future Sight': {
         bp: 80,
@@ -2718,7 +2720,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Me First': {
 
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //usesOppMoves: true,
     },
     'Copycat': {
 
@@ -2833,6 +2836,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     //    bp: 1,
     //    type: 'Steel',
     //    category: 'Physical',
+    //    usesOppMoves: true,
     //},
     'Trump Card': {
         bp: 40,
@@ -4497,6 +4501,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 50,
         type: 'Dragon',
         category: 'Physical',
+        oneTwoHit: true,
     },
     'Bolt Beak': {
         bp: 85,
@@ -5392,6 +5397,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 50,
         type: 'Ghost',
         category: 'Physical',
+        linearAddBP: true,
     },
     'Lumina Crash': {
         bp: 80,
@@ -5588,6 +5594,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Physical',
         makesContact: true,
         isPunch: true,
+        linearAddBP: true,
     },
     'Armor Cannon': {
         bp: 120,
@@ -5617,6 +5624,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     //    type: 'Dark',
     //    category: 'Physical',
     //    makesContact: true,
+    //    usesOppMoves: true,
     //},
     'Aqua Cutter': {
         bp: 70,

@@ -492,11 +492,18 @@ $(".move-selector").change(function() {
     if (move.canDouble) moveGroupObj.children(".move-double").show();
     else moveGroupObj.children(".move-double").hide();
 
-    if (moveName == "Dragon Darts") moveGroupObj.children(".move-hits2").show();
+    if (move.oneTwoHit) moveGroupObj.children(".move-hits2").show();
     else moveGroupObj.children(".move-hits2").hide();
 
-    if (["Last Respects", "Rage Fist"].indexOf(moveName) != -1) moveGroupObj.children(".move-lastRespRageFist").show();
-    else moveGroupObj.children(".move-lastRespRageFist").hide();
+    if (move.linearAddBP) moveGroupObj.children(".move-linearAddedBP").show();
+    else moveGroupObj.children(".move-linearAddedBP").hide();
+
+    //if (move.usesOppMoves) {
+    //    getOppMoves($(this).closest(".poke-info").attr("id"), moveGroupObj);
+    //    moveGroupObj.children(".move-opponent").show();
+    //} else {
+    //    moveGroupObj.children(".move-opponent").hide();
+    //}
 
     if (move.isTripleHit) {
         moveGroupObj.children(".move-hits3").show();
@@ -514,7 +521,51 @@ $(".move-selector").change(function() {
 
     //SLOPPY WAY OF HANDLING
     glaiveRushCheck(moveGroupObj);
+    //getOppMoves($(this).closest(".poke-info").attr("id"));
 });
+
+function getOppMoves(pokID, moveGroupObj) {
+    var oppMoveOptions;
+    if (moveGroupObj) {
+        if (pokID == 'p1') {
+            var oppMoves = [$("#p2 .move1 select.move-selector").val(),
+            $("#p2 .move2 select.move-selector").val(),
+            $("#p2 .move3 select.move-selector").val(),
+            $("#p2 .move4 select.move-selector").val(),];
+            oppMoveOptions = getSelectOptions(oppMoves);
+            moveGroupObj.children(".move-opponent").find("option").remove().end().append(oppMoveOptions);
+        }
+        else if (pokID == 'p2') {
+            var oppMoves = [$("#p1 .move1 select.move-selector").val(),
+            $("#p1 .move2 select.move-selector").val(),
+            $("#p1 .move3 select.move-selector").val(),
+            $("#p1 .move4 select.move-selector").val(),];
+            oppMoveOptions = getSelectOptions(oppMoves);
+            moveGroupObj.children(".move-opponent").find("option").remove().end().append(oppMoveOptions);
+        }
+    }
+    else {
+        var oppMoves = [$("#" + pokID + " .move1 select.move-selector").val(),
+            $("#" + pokID + " .move2 select.move-selector").val(),
+            $("#" + pokID + " .move3 select.move-selector").val(),
+            $("#" + pokID + " .move4 select.move-selector").val(),];
+        oppMoveOptions = getSelectOptions(oppMoves);
+        if (pokID == 'p1') {
+            for (i = 1; i <= 4; i++) {
+                if ($("#p2 .move" + i + " .move-opponent").is(":visible")) {
+                    $("#p2 .move" + i + " .move-opponent").find("option").remove().end().append(oppMoveOptions);
+                }
+            }
+        }
+        else if (pokID == 'p2') {
+            for (i = 1; i <= 4; i++) {
+                if ($("#p1 .move" + i + " .move-opponent").is(":visible")) {
+                    $("#p1 .move" + i + " .move-opponent").find("option").remove().end().append(oppMoveOptions);
+                }
+            }
+        }
+    }
+}
 
 // auto-update set details on select
 $(".set-selector").change(function() {
@@ -976,7 +1027,7 @@ function getMoveDetails(moveInfo, maxMon) {
         isZ: moveInfo.find(".move-z").prop("checked"),
         hits: (defaultDetails.isMultiHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits").val()
             : (defaultDetails.isTenMultiHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-10hits").val()
-                : (moveName == "Dragon Darts" && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits2").val()
+                : (defaultDetails.oneTwoHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits2").val()
                     : (defaultDetails.isTwoHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 2
                         : (defaultDetails.isThreeHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 3
                             : (moveName == "Beat Up" && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 4
@@ -984,7 +1035,8 @@ function getMoveDetails(moveInfo, maxMon) {
         isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-double").val() : 0,
         tripleHits: (defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits3").val() : 0,
         combinePledge: (moveName.includes(" Pledge") && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
-        timesAffected: (["Last Respects", "Rage Fist"].indexOf(moveName) != -1 && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-lastRespRageFist").val() : 0,
+        timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
+        //usedOppMove: ~~moveInfo.find(".move-opponent").val(),
     });
 }
 

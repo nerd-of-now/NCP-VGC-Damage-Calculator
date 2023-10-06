@@ -630,7 +630,7 @@ function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
         "Flail", "Return", "Frustration", "Endeavor", "Natural Gift", "Trump Card", "Stored Power", "Rock Blast", "Gear Grind", "Gyro Ball", "Heavy Slam",
         "Dual Wingbeat", "Terrain Pulse", "Surging Strikes", "Scale Shot"];
     var exceptions_120 = ["Double Hit", "Spike Cannon"];
-    var exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature\'s Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
+    var exceptions_100 = ["Twineedle", "Beat Up", "Fling", "Dragon Rage", "Nature's Madness", "Night Shade", "Comet Punch", "Fury Swipes", "Sonic Boom", "Bide",
         "Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
     var tempMove = move;
     var maxName = MAXMOVES_LOOKUP[tempMove.type];
@@ -700,8 +700,18 @@ function NaturePower(move, field, moveDescName) {         //Rename Nature Power 
     return [move, moveDescName];
 }
 
+//function checkMeFirst(move, moveDescName) {
+//    var meFirstZ = move.isZ;
+//    move.name = move.usedOppMove;
+//    move = moves[move.usedOppMove];
+//    move.isMeFirst = true;
+//    move.isZ = meFirstZ;
+//    moveDescName = move.name;
+//    return GET_DAMAGE_HANDLER(attacker, defender, counteredMove, field); 
+//}
+
 function statusMoves(move, attacker, defender, description) {
-    if (move.name === "Pain Split") {
+    if (move.name === "Pain Split" && attacker.item !== "Assault Vest") {
         return { "damage": [Math.floor((defender.curHP - attacker.curHP) / 2)], "description": buildDescription(description) };
     }
     else if (move.bp === 0 || move.category === "Status") {
@@ -838,11 +848,23 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
 //Special Cases
 function setDamage(move, attacker, defender, description, isQuarteredByProtect) {
     var isParentBond = attacker.ability === "Parental Bond";
-    //a. Counterattacks (Counter, Mirror Coat, Metal Burst, Bide)
+    //a. Counterattacks (Counter, Mirror Coat, Metal Burst, Comeuppance, Bide)
+    //if (['Counter', 'Mirror Coat', 'Metal Burst', 'Comeuppance'].indexOf(move.name) !== -1) {
+    //    var counteredMove = moves[move.usedOppMove];
+    //    counteredMove.hits = 1;
+    //    //if move can be countered (nested if)
+    //    if (['Counter', 'Mirror Coat'].indexOf(move.name) !== -1 && move.category == counteredMove.category) {
+    //        return GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);    //result needs raw damage multiplied by 2
+    //    }
+    //    else {
+    //        return GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);    //result needs raw damage multiplied by 1.5
+    //    }
+    //    //Bide ain't being added it's too niche
+    //}
 
     //b. Defender HP Dependent (Super Fang/Nature's Madness/Ruination, Guardian of Alola)
     var def_curHP;
-    if (["Super Fang", "Nature\'s Madness", "Ruination"].indexOf(move.name) !== -1) {
+    if (["Super Fang", "Nature's Madness", "Ruination"].indexOf(move.name) !== -1) {
         def_curHP = Math.floor(defender.curHP / 2);
         if (isParentBond) {
             def_curHP = Math.floor(def_curHP * 3 / 2);
@@ -1257,7 +1279,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //l. Gems
-    else if (attacker.item === move.type + " Gem" && move.name.includes(" Pledge")) {
+    else if (attacker.item === move.type + " Gem" && !move.name.includes(" Pledge")) {
         var gemMultiplier = gen > 5 ? 0x14CD : 0x1800;
         bpMods.push(gemMultiplier);
         description.attackerItem = attacker.item;
@@ -1271,9 +1293,12 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //n. Me First
+    if (move.isMeFirst) {
+        bpMods.push(0x1800);
+    }
 
     //o. Knock Off
-    else if (gen > 5 && move.name === "Knock Off" && defender.name !== null && !cantRemoveItem(defender.item, defender.name, field.terrain)) {
+    if (gen > 5 && move.name === "Knock Off" && defender.name !== null && !cantRemoveItem(defender.item, defender.name, field.terrain)) {
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
     }
@@ -1466,7 +1491,7 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         || (attacker.ability === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Water")
         || (attacker.ability === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Bug")
         || (attacker.ability === "Transistor" && move.type === "Electric" && gen <= 8)
-        || (attacker.ability === "Dragon\'s Maw" && move.type === "Dragon")
+        || (attacker.ability === "Dragon's Maw" && move.type === "Dragon")
         || (attacker.ability === "Flash Fire" && attacker.abilityOn && move.type === "Fire")
         || (attacker.ability === "Steelworker" && move.type === "Steel")
         || (attacker.ability === "Gorilla Tactics" && move.category === "Physical" && !attacker.isDynamax)
