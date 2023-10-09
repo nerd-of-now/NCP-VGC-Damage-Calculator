@@ -1289,33 +1289,29 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Staraptor": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Staraptor": {
+        "Choice Scarf Lead": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 108,
+                "df": 28,
+                "sa": 0,
+                "sd": 4,
+                "sp": 236
+            },
+            "nature": "Adamant",
+            "ability": "Intimidate",
+            "tera_type": "Ghost",
+            "item": "Choice Scarf",
+            "moves": [
+                "Final Gambit",
+                "Brave Bird",
+                "U-turn",
+                "Close Combat"
+            ]
+        },
+    },
     "Oricorio-Sensu": {
         "Tera Steel Life Orb": {
             "level": 50,
@@ -5327,33 +5323,33 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Slowbro": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-
-    //},
+    "Slowbro": {
+        "Trick Room Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "ability": "Oblivious",
+            "tera_type": "Fire",
+            "item": "Leftovers",
+            "moves": [
+                "Scald",
+                "Psychic",
+                "Body Press",
+                "Trick Room"
+            ]
+        },
+    },
     "Slowking": {
         "Trick Room Set": {
             "level": 50,
@@ -9059,31 +9055,32 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Illumise": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Illumise": {
+        "Tailwind Full Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 188,
+                "sa": 0,
+                "sd": 68,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Prankster",
+            "tera_type": "Ghost",
+            "item": "Mental Herb",
+            "moves": [
+                "Infestation",
+                "Tailwind",
+                "Encore",
+                "Fake Tears"
+            ]
+        },
+    },
     //"Crawdaunt": {
     //    "": {
     //        "level": 50,
@@ -9759,31 +9756,32 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Weezing": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Weezing": {
+        "General Disruption": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Neutralizing Gas",
+            "tera_type": "Grass",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Sludge Bomb",
+                "Pain Split",
+                "Will-O-Wisp",
+                "Taunt"
+            ]
+        },
+    },
     //"Mienshao": {
     //    "": {
     //        "level": 50,
@@ -9809,31 +9807,33 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Dusclops": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Dusclops": {
+        "Trick Room Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0,
+            },
+            "nature": "Sassy",
+            "ability": "Pressure",
+            "tera_type": "Dark",
+            "item": "Eviolite",
+            "moves": [
+                "Night Shade",
+                "Pain Split",
+                "Will-O-Wisp",
+                "Trick Room"
+            ]
+        },
+    },
     //"Dusknoir": {
     //    "": {
     //        "level": 50,
@@ -10286,31 +10286,32 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Weezing-Galar": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Weezing-Galar": {
+        "General Disruption": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 100,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Neutralizing Gas",
+            "tera_type": "Flying",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Sludge Bomb",
+                "Dazzling Gleam",
+                "Strange Steam",
+                "Clear Smog"
+            ]
+        },
+    },
     "Ursaluna-Bloodmoon": {
         "Trick Room Throat Spray": {
             "level": 50,

@@ -953,7 +953,7 @@ function Pokemon(pokeInfo) {
     if (this.name && this.name.indexOf('Ogerpon') !== -1) {
         var mask = pokeInfo.find("select.item").val().substring(0, pokeInfo.find("select.item").val().indexOf(" Mask"));
 
-        if (this.name.indexOf(mask) !== -1 || (this.name === 'Ogerpon' && mask === 'Teal')) {
+        if (this.name.indexOf(mask) !== -1) {
             var maskTera = mask === 'Wellspring' ? 'Water'
                 : mask === 'Hearthflame' ? 'Fire'
                     : mask === 'Cornerstone' ? 'Rock'
@@ -968,9 +968,6 @@ function Pokemon(pokeInfo) {
                 pokeInfo.find("select.ability").val(pokedex[this.name].ab);
                 pokeInfo.find("select.ability").trigger('change.select2');
             }
-        }
-        else {
-            pokeInfo.find(".tera-type").prop("disabled", false);
         }
     }
     else {
