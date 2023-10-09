@@ -17,7 +17,6 @@ function GET_DAMAGE_HANDLER(attacker, defender, move, field) {
             return GET_DAMAGE_XY(attacker, defender, move, field);
         case 7:
         case 8:
-            return GET_DAMAGE_SS(attacker, defender, move, field);
         case 9:
             return GET_DAMAGE_SV(attacker, defender, move, field);
         default:
