@@ -6850,14 +6850,14 @@ var SETDEX_VGC2023 = {
             "level": 50,
             "evs": {
                 "hp": 4,
-                "at": 196,
+                "at": 252,
                 "df": 0,
                 "sa": 0,
                 "sd": 0,
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "Thermal Exchange",
+            "ability": "Ice Body",
             "tera_type": "Poison",
             "item": "Loaded Dice",
             "moves": [

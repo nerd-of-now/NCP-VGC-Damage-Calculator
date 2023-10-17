@@ -1669,7 +1669,7 @@ function calcBaseDamage(attacker, basePower, attack, defense) {
 }
 
 //8. General Damage Mods
-function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field, description, isCritical, typeEffectiveness, isQuarteredByProtect) {
+function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field, description, isCritical, typeEffectiveness, isQuarteredByProtect, hitsPhysical) {
     //a. Spread Move mod
     if (field.format !== "Singles" && move.isSpread) {
         baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
@@ -1738,7 +1738,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     var applyBurn = (attacker.status === "Burned" && move.category === "Physical" && attacker.ability !== "Guts" && !move.ignoresBurn);
     description.isBurned = applyBurn;
     var finalMod;
-    [finalMod, description] = calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility);
+    [finalMod, description] = calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility, hitsPhysical);
     finalMods = chainMods(finalMod);
 
     var damage = [], pbDamage = [];
@@ -1848,7 +1848,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
 }
 
 //9. Finals Damage Mods
-function calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility) {
+function calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility, hitsPhysical) {
     var finalMods = [];
     var contactOverride = attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach";
     //a. Screens/Aurora Veil

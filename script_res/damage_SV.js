@@ -177,5 +177,5 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     var baseDamage = calcBaseDamage(attacker, basePower, attack, defense);
 
 
-    return calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field, description, isCritical, typeEffectiveness, isQuarteredByProtect);
+    return calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field, description, isCritical, typeEffectiveness, isQuarteredByProtect, hitsPhysical);
 }
