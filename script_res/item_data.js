@@ -825,7 +825,7 @@ function cantRemoveItem(defItem, defSpecies, terrain) {
 }
 
 function cantFlingItem(atItem, atSpecies, defAbility) {
-    return atItem === "" || atItem.indexOf(" Gem") !== -1 || atItem.indexOf(" ium Z") !== -1 || ["Red Orb", "Blue Orb", "Rusted Sword", "Rusted Shield"].indexOf(atItem) !== -1
+    return atItem === "" || atItem === 'Klutz' || atItem.indexOf(" Gem") !== -1 || atItem.indexOf(" ium Z") !== -1 || ["Red Orb", "Blue Orb", "Rusted Sword", "Rusted Shield"].indexOf(atItem) !== -1
         || (atSpecies === 'Giratina-Origin' && atItem === "Griseous Orb")
         || (atSpecies === 'Arceus' && atItem.indexOf(" Plate") !== -1)
         || (atSpecies === 'Genesect' && atItem.indexOf(" Drive") !== -1)

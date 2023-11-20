@@ -602,6 +602,8 @@ $(".set-selector").change(function() {
             var set = setdex[pokemonName][setName];
             if (setdexCustom !== [] && pokemonName in setdexCustom && setName in setdexCustom[pokemonName])
                 $(this).closest(".poke-info").find(".setCalc").val(setName);
+            else
+                $(this).closest(".poke-info").find(".setCalc").val("My Calc Set");
             if(DOU) pokeObj.find(".level").val(100);
             else pokeObj.find(".level").val(set.level);
             pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);

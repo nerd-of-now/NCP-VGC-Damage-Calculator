@@ -4477,6 +4477,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Fell Stinger': {
         bp: 50,
     },
+    'Tackle': { bp: 40 },
 });
 
 var MOVES_SS = $.extend(true, {}, MOVES_SM, {
@@ -4601,7 +4602,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         hasSecondaryEffect: true,
         makesContact: true,
     },
-    'Strange Stream': {
+    'Strange Steam': {
         bp: 90,
         type: 'Fairy',
         category: 'Special',

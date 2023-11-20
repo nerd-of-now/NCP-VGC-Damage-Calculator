@@ -36,6 +36,9 @@ function buildDescription(description) {
         }
         output += description.attackBoost + " ";
     }
+    if (description.attackerLevel) {
+        output = output + 'Lv. ' + description.attackerLevel + ' ';
+    }
     output = appendIfSet(output, description.attackEVs);
     output = appendIfSet(output, description.attackerItem);
     output = appendIfSet(output, description.attackerAbility);
@@ -90,6 +93,9 @@ function buildDescription(description) {
             output += "+";
         }
         output += description.defenseBoost + " ";
+    }
+    if (description.defenderLevel) {
+        output = output + 'Lv. ' + description.defenderLevel + ' ';
     }
     output = appendIfSet(output, description.HPEVs);
     if (description.defenseEVs) {
@@ -160,6 +166,14 @@ function chainMods(mods) {
         }
     }
     return M;
+}
+
+function addLevelDesc(attacker, defender, description) {
+    autoLevel = $('#douswitch').is(':checked') ? 50 : 100;
+    if (attacker.level !== autoLevel)
+        description.attackerLevel = attacker.level;
+    if (defender.level !== autoLevel)
+        description.defenderLevel = defender.level;
 }
 
 function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, defItem, isStrongWinds) {
@@ -317,8 +331,8 @@ function checkTerastal(pokemon) {
 }
 
 function checkKlutz(pokemon) {
-    if (pokemon.ability === "Klutz") {
-        pokemon.item = "";
+    if (pokemon.ability === "Klutz" && ['Macho Brace', 'Power Anklet', 'Power Band', 'Power Belt', 'Power Bracer', 'Power Lens', 'Power Weight'].indexOf(pokemon.item) === -1 ) {
+        pokemon.item = "Klutz";
     }
 }
 
@@ -567,6 +581,11 @@ function checkMoveTypeChange(move, field, attacker) {
 function checkConditionalPriority(move, terrain) {
     if (move.name == "Grassy Glide" && terrain == "Grassy")
         move.isPriority = true;
+}
+
+function checkContactOverride(move, attacker) {
+    if (move.makesContact && (attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach"))
+        move.makesContact = false;
 }
 
 function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
@@ -852,11 +871,20 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect) 
     //    var counteredMove = moves[move.usedOppMove];
     //    counteredMove.hits = 1;
     //    //if move can be countered (nested if)
-    //    if (['Counter', 'Mirror Coat'].indexOf(move.name) !== -1 && move.category == counteredMove.category) {
-    //        return GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);    //result needs raw damage multiplied by 2
-    //    }
-    //    else {
-    //        return GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);    //result needs raw damage multiplied by 1.5
+    //    if (counteredMove.category !== 'Status') {
+    //        counteredResult = GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);
+    //        if (['Counter', 'Mirror Coat'].indexOf(move.name) !== -1 && move.category == counteredMove.category) {
+    //            for (i = 0; i < counteredResult.damage.length(); i++) {
+    //                counteredResult.damage[i] *= 2;
+    //            }
+    //            counteredResult.description = 'Countered '
+    //        }
+    //        else {
+    //            for (i = 0; i < counteredResult.damage.length(); i++) {
+    //                counteredResult.damage[i] = floor(counteredResult.damage[i] * 1.5);
+    //            }
+    //        }
+    //        return counteredResult;
     //    }
     //    //Bide ain't being added it's too niche
     //}
@@ -1144,7 +1172,6 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     var isDefenderAura = defAbility === (move.type + " Aura");
     var auraActive = ($("input:checkbox[id='" + move.type.toLowerCase() + "-aura']:checked").val() != undefined);
     var auraBreak = ($("input:checkbox[id='aura-break']:checked").val() != undefined);
-    var contactOverride = attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach";
 
     //a. Aura Break
     if (auraActive && auraBreak && !field.isNeutralizingGas && ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) == -1) {
@@ -1207,7 +1234,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.attackerAbility = attacker.ability;
     }
     //e.iv. Tough Claws
-    else if (attacker.ability === "Tough Claws" && move.makesContact && !contactOverride) {
+    else if (attacker.ability === "Tough Claws" && move.makesContact) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
@@ -1687,7 +1714,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     }
-    //d. Glaive Rush 2x mod (NEEDS OTHER PARTS TO BE FIXED)
+    //d. Glaive Rush 2x mod
     if (defender.glaiveRushMod) {
         baseDamage = pokeRound(baseDamage * 0x2000 / 0x1000);
         description.isGlaiveMod = true;
@@ -1850,7 +1877,6 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
 //9. Finals Damage Mods
 function calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility, hitsPhysical) {
     var finalMods = [];
-    var contactOverride = attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach";
     //a. Screens/Aurora Veil
     if (field.isAuroraVeil && !isCritical && !move.ignoresScreens) {
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
@@ -1894,7 +1920,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //h. Fluffy (contact)
-    if (defAbility === "Fluffy" && move.makesContact && !contactOverride) {
+    if (defAbility === "Fluffy" && move.makesContact) {
         finalMods.push(0x800);
         description.defenderAbility = defAbility;
     }

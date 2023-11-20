@@ -66,11 +66,12 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
 
     checkMoveTypeChange(move, field, attacker);
     checkConditionalPriority(move, field.terrain);
+    checkContactOverride(move, attacker);
 
     if (attacker.isDynamax)
         [move, isQuarteredByProtect, moveDescName] = MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field);
 
-    if (move.name == "Nature Power")
+    if (move.name == "Nature Power" && attacker.item !== 'Assault Vest')
         [move, moveDescName] = NaturePower(move, field, moveDescName);
 
     if (move.isZ || move.isSignatureZ)
@@ -86,13 +87,14 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
         "defenderName": defender_name
     };
 
+    addLevelDesc(attacker, defender, description);
+
     if (move.bp === 0 || move.category === "Status") {
         return statusMoves(move, attacker, defender, description);
     }
 
     description.attackerTera = attacker.isTerastalize ? attacker.tera_type : false;
     description.defenderTera = defender.isTerastalize ? defender.tera_type : false;
-
 
     var defAbility = defender.ability;
     [defAbility, description] = abilityIgnore(attacker, move, defAbility, description, defender.item);

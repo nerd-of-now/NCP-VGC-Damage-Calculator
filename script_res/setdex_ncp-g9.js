@@ -5172,6 +5172,27 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Tyranitar": {
+        "EternalSnowman's Sacramento 1st AV Tera Psychic": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 244
+            },
+            "nature": "Adamant",
+            "ability": "Sand Stream",
+            "tera_type": "Psychic",
+            "item": "Assault Vest",
+            "moves": [
+                "Rock Slide",
+                "Knock Off",
+                "Low Kick",
+                "Tera Blast"
+            ]
+        },
         "Tera Flying AV": {
             "level": 50,
             "evs": {
@@ -6443,6 +6464,29 @@ var SETDEX_VGC2023 = {
 
     },
     "Flutter Mane": {
+        "Bulky Speed Booster Energy": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 132,
+                "sa": 36,
+                "sd": 4,
+                "sp": 124
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Booster Energy",
+            "tera_type": "Fairy",
+            "moves": [
+                "Shadow Ball",
+                "Moonblast",
+                "Dazzling Gleam",
+                "Icy Wind"
+            ]
+        },
         "Sash Set": {
             "level": 50,
             "evs": {
@@ -6512,7 +6556,6 @@ var SETDEX_VGC2023 = {
                 "Protect"
             ]
         },
-
     },
     "Slither Wing": {
         "Tera Fire Booster Energy": {
@@ -9755,6 +9798,27 @@ var SETDEX_VGC2023 = {
                 "Clangerous Soul"
             ]
         },
+        "EternalSnowman's Sacramento 1st Body Press": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 156,
+                "sa": 0,
+                "sd": 92,
+                "sp": 4
+            },
+            "nature": "Impish",
+            "ability": "Bulletproof",
+            "tera_type": "Steel",
+            "item": "Leftovers",
+            "moves": [
+                "Body Press",
+                "Iron Head",
+                "Iron Defense",
+                "Protect"
+            ]
+        },
     },
     "Weezing": {
         "General Disruption": {
@@ -9767,15 +9831,12 @@ var SETDEX_VGC2023 = {
                 "sd": 252,
                 "sp": 0
             },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Bold",
+            "nature": "Impish",
             "ability": "Neutralizing Gas",
             "tera_type": "Grass",
             "item": "Sitrus Berry",
             "moves": [
-                "Sludge Bomb",
+                "Gunk Shot",
                 "Pain Split",
                 "Will-O-Wisp",
                 "Taunt"
@@ -10313,7 +10374,7 @@ var SETDEX_VGC2023 = {
         },
     },
     "Ursaluna-Bloodmoon": {
-        "Trick Room Throat Spray": {
+        "Trick Room Special Offense": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -10329,7 +10390,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Quiet",
             "tera_type": "Normal",
-            "item": "Throat Spray",
+            "item": "Life Orb",
             "moves": [
                 "Hyper Voice",
                 "Earth Power",
