@@ -3830,6 +3830,27 @@ var SETDEX_VGC2023 = {
 
     },
     "Brambleghast": {
+        "Regulation E Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Wind Rider",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Power Whip",
+                "Shadow Sneak",
+                "Poltergeist",
+                "Seed Bomb"
+            ]
+        },
         "Emilio Forbes' 2023 Worlds Top 16 Sash": {
             "level": 50,
             "evs": {
@@ -8566,6 +8587,31 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Bleakwind Storm",
                 "Taunt",
+                "Rain Dance",
+                "Tailwind"
+            ]
+        },
+        "Thiago Lattanzi's 2024 LAIC Finalist Bulky Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 28,
+            },
+            "nature": "Bold",
+            "ability": "Prankster",
+            "tera_type": "Dark",
+            "item": "Safety Goggles",
+            "moves": [
+                "Bleakwind Storm",
+                "Protect",
                 "Rain Dance",
                 "Tailwind"
             ]
