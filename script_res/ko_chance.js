@@ -5,8 +5,8 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     if (move.name == "Pain Split" && !move.painMax) {
         return 'The battlers shared their pain!';
     }
-    if (move.category == "Status") {
-        return 'Might as well Thunderbolt a Landorus';
+    if (move.category == "Status" && move.name != 'Me First') {
+        return "It's a status move, it won't deal damage.";
     }
     if (damage[damage.length-1] === 0) {
         if (field.weather === "Harsh Sun" && move.type === "Water") {
@@ -14,7 +14,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         } else if (field.weather === "Heavy Rain" && move.type === "Fire") {
             return 'the Fire-Type attack fizzled out in the heavy rain';
         }
-        return '[The Smooth Taste Of] IMMUNE';
+        return 'No damage for you';
     }
     var hasSitrus = defender.item === 'Sitrus Berry';
     var hasFigy = defender.item === 'Figy Berry' || defender.item === 'Aguav Berry' || defender.item === 'Iapapa Berry' || defender.item === 'Mago Berry' || defender.item === 'Wiki Berry';

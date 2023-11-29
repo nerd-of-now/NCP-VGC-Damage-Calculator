@@ -67,6 +67,9 @@ function buildDescription(description) {
     if (description.isFlowerGiftAtk) {
         output += "Flower Gift ";
     }
+    if (description.meFirst) {
+        output += "Me First ";
+    }
     output += description.moveName + " ";
     if (description.moveBP && description.moveType) {
         output += "(" + description.moveBP + " BP " + description.moveType + ") ";
@@ -99,7 +102,7 @@ function buildDescription(description) {
     }
     output = appendIfSet(output, description.HPEVs);
     if (description.defenseEVs) {
-        output += " / " + description.defenseEVs + " ";
+        output += "/ " + description.defenseEVs + " ";
     }
     output = appendIfSet(output, description.defenderItem);
     if (description.isFlowerGiftSpD) {
@@ -576,6 +579,9 @@ function checkMoveTypeChange(move, field, attacker) {
                 move.type = "Grass";
         }
     }
+    else if ((move.name == "Struggle" && gen >= 2) || (['Beat Up', 'Future Sight', 'Doom Desire'].indexOf(move.name) != -1 && gen <= 4)) {
+        move.type = 'Typeless';
+    }
 }
 
 function checkConditionalPriority(move, terrain) {
@@ -718,15 +724,16 @@ function NaturePower(move, field, moveDescName) {         //Rename Nature Power 
     return [move, moveDescName];
 }
 
-//function checkMeFirst(move, moveDescName) {
-//    var meFirstZ = move.isZ;
-//    move.name = move.usedOppMove;
-//    move = moves[move.usedOppMove];
-//    move.isMeFirst = true;
-//    move.isZ = meFirstZ;
-//    moveDescName = move.name;
-//    return GET_DAMAGE_HANDLER(attacker, defender, counteredMove, field); 
-//}
+function checkMeFirst(move, moveDescName) {
+    var meFirstZ = move.isZ;
+    moveName = move.usedOppMove;
+    move = moves[move.usedOppMove];
+    move.name = moveName;
+    move.isMeFirst = true;
+    move.isZ = meFirstZ;
+    moveDescName = move.name;
+    return [move, moveDescName];
+}
 
 function statusMoves(move, attacker, defender, description) {
     if (move.name === "Pain Split" && attacker.item !== "Assault Vest") {
@@ -864,30 +871,43 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
 }
 
 //Special Cases
-function setDamage(move, attacker, defender, description, isQuarteredByProtect) {
+function setDamage(move, attacker, defender, description, isQuarteredByProtect, field) {
     var isParentBond = attacker.ability === "Parental Bond";
     //a. Counterattacks (Counter, Mirror Coat, Metal Burst, Comeuppance, Bide)
-    //if (['Counter', 'Mirror Coat', 'Metal Burst', 'Comeuppance'].indexOf(move.name) !== -1) {
-    //    var counteredMove = moves[move.usedOppMove];
-    //    counteredMove.hits = 1;
-    //    //if move can be countered (nested if)
-    //    if (counteredMove.category !== 'Status') {
-    //        counteredResult = GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);
-    //        if (['Counter', 'Mirror Coat'].indexOf(move.name) !== -1 && move.category == counteredMove.category) {
-    //            for (i = 0; i < counteredResult.damage.length(); i++) {
-    //                counteredResult.damage[i] *= 2;
-    //            }
-    //            counteredResult.description = 'Countered '
-    //        }
-    //        else {
-    //            for (i = 0; i < counteredResult.damage.length(); i++) {
-    //                counteredResult.damage[i] = floor(counteredResult.damage[i] * 1.5);
-    //            }
-    //        }
-    //        return counteredResult;
-    //    }
-    //    //Bide ain't being added it's too niche
-    //}
+    if (['Counter', 'Mirror Coat', 'Metal Burst', 'Comeuppance'].indexOf(move.name) !== -1) {
+        var moveName = move.usedOppMove ? move.usedOppMove : '(No Move)';
+        var counteredMove = moves[moveName];
+        counteredMove.name = moveName;
+        counteredMove.hits = 1;
+        if (counteredMove.isTripleHit)
+            counteredMove.tripleHit3 = true;
+        else if (defender.ability === 'Parental Bond' && (field.format === "Singles" || !counteredMove.isSpread))
+            defender.isChild = true;
+        //if move can be countered (nested if)
+        if (counteredMove.category !== 'Status') {
+            counteredResult = GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);
+            if (['Counter', 'Mirror Coat'].indexOf(move.name) !== -1 && move.category == counteredMove.category) {
+                for (i = 0; i < counteredResult.damage.length; i++) {
+                    counteredResult.damage[i] *= 2;
+                }
+                counteredResult.description = '2x ' + move.name + ' (' + counteredResult.description + ') vs. ' + description.HPEVs + ' ' + description.defenderName;
+            }
+            else if (['Metal Burst', 'Comeuppance'].indexOf(move.name) !== -1) {
+                for (i = 0; i < counteredResult.damage.length; i++) {
+                    counteredResult.damage[i] = Math.floor(counteredResult.damage[i] * 1.5);
+                }
+                counteredResult.description = '1.5x ' + move.name + ' (' + counteredResult.description + ') vs. ' + description.HPEVs + ' ' + description.defenderName;
+            }
+            else {
+                return { "damage": [0], "description": buildDescription(description) };
+            }
+            return counteredResult;
+        }
+        else {
+            return { "damage": [0], "description": buildDescription(description) };
+        }
+        //Bide ain't being added it's too niche
+    }
 
     //b. Defender HP Dependent (Super Fang/Nature's Madness/Ruination, Guardian of Alola)
     var def_curHP;
@@ -1321,6 +1341,8 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     //n. Me First
     if (move.isMeFirst) {
         bpMods.push(0x1800);
+        description.meFirst = true;
+        move.isMeFirst = false;
     }
 
     //o. Knock Off
@@ -1728,36 +1750,38 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     //see GENERAL MODS CONTINUED for further comments
 
     var stabMod = 0x1000;
-    if (!attacker.isTerastalize) {
-        if (move.type === attacker.type1 || move.type === attacker.type2 || (move.combinePledge && move.combinePledge !== move.name)) {
-            if (attacker.ability === "Adaptability") {
-                stabMod = 0x2000;
-                description.attackerAbility = attacker.ability;
-            } else {
-                stabMod = 0x1800;
-            }
-        } else if ((attacker.ability === "Protean" || attacker.ability == "Libero") && (gen !== 9 || attacker.abilityOn)) {
-            stabMod = 0x1800;
-            description.attackerAbility = attacker.ability;
-        }
-    }
-    else {
-        if (pokedex[attacker.name]) {   //catches any potential issues when switching between sv dex and national dex with a terastalized mon
-            if (move.type === attacker.tera_type && (pokedex[attacker.name].t1 === attacker.tera_type || pokedex[attacker.name].t2 === attacker.tera_type)) {
+    if (move.type !== 'Typeless') {     //Typeless moves cannot get stab even if the user is Typeless
+        if (!attacker.isTerastalize) {
+            if (move.type === attacker.type1 || move.type === attacker.type2 || (move.combinePledge && move.combinePledge !== move.name)) {
                 if (attacker.ability === "Adaptability") {
-                    stabMod = 0x2400;
-                    description.attackerAbility = attacker.ability;
-                } else {
-                    stabMod = 0x2000;
-                }
-            }
-            else if ((move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type))
-                || move.type === attacker.tera_type) {
-                if (attacker.ability === "Adaptability" && move.type === attacker.tera_type) {
                     stabMod = 0x2000;
                     description.attackerAbility = attacker.ability;
                 } else {
                     stabMod = 0x1800;
+                }
+            } else if ((attacker.ability === "Protean" || attacker.ability == "Libero") && (gen !== 9 || attacker.abilityOn)) {
+                stabMod = 0x1800;
+                description.attackerAbility = attacker.ability;
+            }
+        }
+        else {
+            if (pokedex[attacker.name]) {   //catches any potential issues when switching between sv dex and national dex with a terastalized mon
+                if (move.type === attacker.tera_type && (pokedex[attacker.name].t1 === attacker.tera_type || pokedex[attacker.name].t2 === attacker.tera_type)) {
+                    if (attacker.ability === "Adaptability") {
+                        stabMod = 0x2400;
+                        description.attackerAbility = attacker.ability;
+                    } else {
+                        stabMod = 0x2000;
+                    }
+                }
+                else if ((move.type !== attacker.tera_type && (pokedex[attacker.name].t1 === move.type || pokedex[attacker.name].t2 === move.type))
+                    || move.type === attacker.tera_type) {
+                    if (attacker.ability === "Adaptability" && move.type === attacker.tera_type) {
+                        stabMod = 0x2000;
+                        description.attackerAbility = attacker.ability;
+                    } else {
+                        stabMod = 0x1800;
+                    }
                 }
             }
         }

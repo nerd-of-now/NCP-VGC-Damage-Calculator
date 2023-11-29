@@ -7,9 +7,8 @@ var MOVES_RBY = {
         zp: 1
     },
     '(No Move)': {
-        bp: 0,
-        type: 'Normal',
-        category: 'Physical'
+        type: 'Typeless',
+        category: 'Status'
     },
     'Acid': {
         bp: 40,
@@ -679,13 +678,13 @@ var MOVES_RBY = {
         category: 'Physical',
         makesContact: true,
     },
-    //'Counter': {
-    //    bp: 1,
-    //    type: 'Fighting',
-    //    category: 'Physical',
-    //    makesContact: true,
-    //    usesOppMoves: true,
-    //},
+    'Counter': {
+        bp: 1,
+        type: 'Fighting',
+        category: 'Physical',
+        makesContact: true,
+        usesOppMoves: true,
+    },
     'Strength': {
         bp: 80,
         type: 'Normal',
@@ -1534,12 +1533,12 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         isSpread: true,
         canDouble: true,
     },
-    //'Mirror Coat': {
-    //    bp: 1,
-    //    type: 'Psychic',
-    //    category: 'Special',
-    //    usesOppMoves: true,
-    //},
+    'Mirror Coat': {
+        bp: 1,
+        type: 'Psychic',
+        category: 'Special',
+        usesOppMoves: true,
+    },
     'Future Sight': {
         bp: 80,
         type: 'Psychic',
@@ -2721,7 +2720,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 
         type: 'Normal',
         category: 'Status',
-        //usesOppMoves: true,
+        usesOppMoves: true,
     },
     'Copycat': {
 
@@ -2832,12 +2831,12 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         isPriority: true,
     },
-    //'Metal Burst': {
-    //    bp: 1,
-    //    type: 'Steel',
-    //    category: 'Physical',
-    //    usesOppMoves: true,
-    //},
+    'Metal Burst': {
+        bp: 1,
+        type: 'Steel',
+        category: 'Physical',
+        usesOppMoves: true,
+    },
     'Trump Card': {
         bp: 40,
         type: 'Normal',
@@ -5620,13 +5619,13 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Steel',
         category: 'Physical',
     },
-    //'Comeuppance': {
-    //    bp: 1,
-    //    type: 'Dark',
-    //    category: 'Physical',
-    //    makesContact: true,
-    //    usesOppMoves: true,
-    //},
+    'Comeuppance': {
+        bp: 1,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true,
+        usesOppMoves: true,
+    },
     'Aqua Cutter': {
         bp: 70,
         type: 'Water',

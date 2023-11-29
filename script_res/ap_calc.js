@@ -498,12 +498,12 @@ $(".move-selector").change(function() {
     if (move.linearAddBP) moveGroupObj.children(".move-linearAddedBP").show();
     else moveGroupObj.children(".move-linearAddedBP").hide();
 
-    //if (move.usesOppMoves) {
-    //    getOppMoves($(this).closest(".poke-info").attr("id"), moveGroupObj);
-    //    moveGroupObj.children(".move-opponent").show();
-    //} else {
-    //    moveGroupObj.children(".move-opponent").hide();
-    //}
+    if (move.usesOppMoves) {    //for when the attacker's moves change
+      getOppMoves($(this).closest(".poke-info").attr("id"), moveGroupObj);
+        moveGroupObj.children(".move-opponent").show();
+    } else {
+        moveGroupObj.children(".move-opponent").hide();
+    }
 
     if (move.isTripleHit) {
         moveGroupObj.children(".move-hits3").show();
@@ -521,7 +521,7 @@ $(".move-selector").change(function() {
 
     //SLOPPY WAY OF HANDLING
     glaiveRushCheck(moveGroupObj);
-    //getOppMoves($(this).closest(".poke-info").attr("id"));
+    getOppMoves($(this).closest(".poke-info").attr("id"));  //for when the defender's moves change
 });
 
 function getOppMoves(pokID, moveGroupObj) {
@@ -1035,7 +1035,7 @@ function getMoveDetails(moveInfo, maxMon) {
         tripleHits: (defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits3").val() : 0,
         combinePledge: (moveName.includes(" Pledge") && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
         timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
-        //usedOppMove: ~~moveInfo.find(".move-opponent").val(),
+        usedOppMove: moveInfo.find(".move-opponent option:selected").text(),
     });
 }
 

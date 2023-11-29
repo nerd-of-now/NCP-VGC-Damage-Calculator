@@ -15348,80 +15348,14 @@ POKEDEX_SS["Charizard"].formes = ['Charizard', 'Charizard-Gmax'];
 POKEDEX_SS["Blastoise"].formes = ['Blastoise', 'Blastoise-Gmax'];
 POKEDEX_SS["Gengar"].formes = ['Gengar', 'Gengar-Gmax'];
 
-delete POKEDEX_SS["Rattata-Alola"];
-delete POKEDEX_SS["Raticate-Alola"];
-delete POKEDEX_SS["Geodude-Alola"];
-delete POKEDEX_SS["Graveler-Alola"];
-delete POKEDEX_SS["Golem-Alola"];
-delete POKEDEX_SS["Grimer-Alola"];
-delete POKEDEX_SS["Muk-Alola"];
-delete POKEDEX_SS["Snivy"];
-delete POKEDEX_SS["Servine"];
-delete POKEDEX_SS["Serperior"];
-delete POKEDEX_SS["Tepig"];
-delete POKEDEX_SS["Pignite"];
-delete POKEDEX_SS["Emboar"];
-delete POKEDEX_SS["Oshawott"];
-delete POKEDEX_SS["Dewott"];
-delete POKEDEX_SS["Samurott"];
-delete POKEDEX_SS["Patrat"];
-delete POKEDEX_SS["Watchog"];
-delete POKEDEX_SS["Pansage"];
-delete POKEDEX_SS["Simisage"];
-delete POKEDEX_SS["Pansear"];
-delete POKEDEX_SS["Simisear"];
-delete POKEDEX_SS["Panpour"];
-delete POKEDEX_SS["Simipour"];
-delete POKEDEX_SS["Blitzle"];
-delete POKEDEX_SS["Zebstrika"];
-delete POKEDEX_SS["Sewaddle"];
-delete POKEDEX_SS["Swadloon"];
-delete POKEDEX_SS["Leavanny"];
-delete POKEDEX_SS["Ducklett"];
-delete POKEDEX_SS["Swanna"];
-delete POKEDEX_SS["Deerling"];
-delete POKEDEX_SS["Sawsbuck"];
-delete POKEDEX_SS["Alomomola"];
-delete POKEDEX_SS["Tynamo"];
-delete POKEDEX_SS["Eelektrik"];
-delete POKEDEX_SS["Eelektross"];
-delete POKEDEX_SS["Meloetta"];
-delete POKEDEX_SS["Chespin"];
-delete POKEDEX_SS["Quilladin"];
-delete POKEDEX_SS["Chesnaught"];
-delete POKEDEX_SS["Fennekin"];
-delete POKEDEX_SS["Braixen"];
-delete POKEDEX_SS["Delphox"];
-delete POKEDEX_SS["Froakie"];
-delete POKEDEX_SS["Frogadier"];
-delete POKEDEX_SS["Greninja"];
-delete POKEDEX_SS["Scatterbug"];
-delete POKEDEX_SS["Spewpa"];
-delete POKEDEX_SS["Vivillon"];
-delete POKEDEX_SS["Litleo"];
-delete POKEDEX_SS["Pyroar"];
-delete POKEDEX_SS["Flabebe"];
-delete POKEDEX_SS["Floette"];
-delete POKEDEX_SS["Florges"];
-delete POKEDEX_SS["Skiddo"];
-delete POKEDEX_SS["Gogoat"];
-delete POKEDEX_SS["Furfrou"];
-delete POKEDEX_SS["Hoopa"];
-delete POKEDEX_SS["Hoopa-Unbound"];
-delete POKEDEX_SS["Pikipek"];
-delete POKEDEX_SS["Trumbeak"];
-delete POKEDEX_SS["Toucannon"];
-delete POKEDEX_SS["Yungoos"];
-delete POKEDEX_SS["Gumshoos"];
-delete POKEDEX_SS["Crabrawler"];
-delete POKEDEX_SS["Crabominable"];
-delete POKEDEX_SS["Oricorio-Pom-Pom"];
-delete POKEDEX_SS["Oricorio-Baile"];
-delete POKEDEX_SS["Oricorio-Sensu"];
-delete POKEDEX_SS["Oricorio-Pa'u"];
-delete POKEDEX_SS["Minior"];
-delete POKEDEX_SS["Komala"];
-delete POKEDEX_SS["Bruxish"];
+["Rattata-Alola", "Raticate-Alola", "Geodude-Alola", "Graveler-Alola", "Golem-Alola", "Grimer-Alola", "Muk-Alola", "Snivy", "Servine",
+    "Serperior", "Tepig", "Pignite", "Emboar", "Oshawott", "Dewott", "Samurott", "Patrat", "Watchog", "Pansage", "Simisage", "Pansear",
+    "Simisear", "Panpour", "Simipour", "Blitzle", "Zebstrika", "Sewaddle", "Swadloon", "Leavanny", "Ducklett", "Swanna", "Deerling",
+    "Sawsbuck", "Alomomola", "Tynamo", "Eelektrik", "Eelektross", "Meloetta", "Chespin", "Quilladin", "Chesnaught", "Fennekin",
+    "Braixen", "Delphox", "Froakie", "Frogadier", "Greninja", "Scatterbug", "Spewpa", "Vivillon", "Litleo", "Pyroar", "Flabebe", "Floette",
+    "Florges", "Skiddo", "Gogoat", "Furfrou", "Hoopa", "Hoopa-Unbound", "Pikipek", "Trumbeak", "Toucannon", "Yungoos", "Gumshoos",
+    "Crabrawler", "Crabominable", "Oricorio-Pom-Pom", "Oricorio-Baile", "Oricorio-Sensu", "Oricorio-Pa'u", "Minior", "Komala", "Bruxish"
+].forEach(e => delete POKEDEX_SS[e]);
 
 
 var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
@@ -15830,6 +15764,12 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
 });
 
 var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
+    //Minor Nat Dex Housekeeping
+    "Venusaur": { "formes": null },
+    "Charizard": { "formes": null },
+    "Blastoise": { "formes": null },
+    "Gengar": { "formes": null },
+
     //Past Pokemon Changes
     "Primeape": { "canEvolve": true, },
     "Dunsparce": { "canEvolve": true, },
@@ -15852,7 +15792,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
     },
     "Zacian-Crowned": {
         "bs": {
-            "at":150,
+            "at": 150,
         },
     },
     "Zamazenta": {
@@ -16226,7 +16166,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
             "sd": 97,
             "sp": 68,
         },
-        "w": 15.0, 
+        "w": 15.0,
         "ab": "Sand Rush",
     },
     "Flittle": {
@@ -17628,6 +17568,17 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
     },
 });
 
+['Butterfree', 'Pikachu', 'Meowth', 'Machamp', 'Kingler', 'Lapras', 'Eevee', 'Snorlax', 'Garbodor', 'Melmetal',
+    'Corviknight', 'Orbeetle', 'Drednaw', 'Coalossal', 'Flapple', 'Appletun', 'Sandaconda', 'Toxtricity', 'Centiskorch', 'Hatterene',
+    'Grimmsnarl', 'Alcremie', 'Copperajah', 'Duraludon', 'Rillaboom', 'Cinderace', 'Inteleon', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike'
+].forEach(e => POKEDEX_SV_NATDEX[e].formes = null);
+
+
+POKEDEX_SV_NATDEX["Venusaur"].formes = ["Venusaur", "Mega Venusaur"];
+POKEDEX_SV_NATDEX["Charizard"].formes = ["Charizard", "Mega Charizard X", "Mega Charizard Y"];
+POKEDEX_SV_NATDEX["Blastoise"].formes = ["Blastoise", "Mega Blastoise"];
+POKEDEX_SV_NATDEX["Gengar"].formes = ["Gengar", "Mega Gengar"];
+
 var POKEDEX_SV = {};
 [
     //Initial Pokemon Programmed into Scarlet and Violet
@@ -17707,11 +17658,9 @@ POKEDEX_SV = $.extend(true, {}, POKEDEX_SV);
 
 var NO_FORMS_SV =
     [
-        'Charizard', 'Pikachu', 'Slowbro', 'Gengar', 'Gyarados', 'Eevee', 'Mewtwo', 'Ampharos', 'Scizor', 'Heracross',
+        'Charizard', 'Slowbro', 'Gengar', 'Gyarados', 'Mewtwo', 'Ampharos', 'Scizor', 'Heracross',
         'Houndoom', 'Tyranitar', 'Gardevoir', 'Sableye', 'Medicham', 'Camerupt', 'Altaria', 'Banette', 'Glalie', 'Salamence',
-        'Kyogre', 'Groudon', 'Rayquaza', 'Garchomp', 'Lucario', 'Abomasnow', 'Gallade', 'Diancie', 'Rillaboom', 'Cinderace',
-        'Inteleon', 'Corviknight', 'Drednaw', 'Coalossal', 'Flapple', 'Appletun', 'Sandaconda', 'Toxtricity', 'Hatterene', 'Grimmsnarl',
-        'Copperajah', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike', 'Greninja', 'Snorlax'
+        'Kyogre', 'Groudon', 'Rayquaza', 'Garchomp', 'Lucario', 'Abomasnow', 'Gallade', 'Diancie', 'Greninja'
     ];
 
 NO_FORMS_SV.forEach(e => POKEDEX_SV[e].formes = null);

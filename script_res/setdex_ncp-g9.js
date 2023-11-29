@@ -149,32 +149,27 @@ var SETDEX_VGC2023 = {
 
     },
     //"Spidops": {
-    //    "Actually worse than Ledian": {
+    //    "very weak bug": {
     //        "level": 50,
     //        "evs": {
-    //            "hp": 0,
+    //            "hp": 252,
     //            "at": 0,
-    //            "df": 0,
+    //            "df": 252,
     //            "sa": 0,
-    //            "sd": 0,
+    //            "sd": 4,
     //            "sp": 0
     //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
+    //        "nature": "Impish",
+    //        "ability": "Insomnia",
+    //        "tera_type": "Water",
+    //        "item": "Focus Sash",
     //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
+    //            "Circle Throw",
+    //            "Counter",
+    //            "Toxic Spikes",
+    //            "Silk Trap"
     //        ]
     //    },
-
     //},
     "Lokix": {
         "Choice Band Set": {
@@ -8242,31 +8237,32 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Articuno-Galar": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Articuno-Galar": {
+        "Jamie Boyt's Gda\u0144sk Tera Ground": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 140,
+                "sa": 44,
+                "sd": 12,
+                "sp": 60
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Competitive",
+            "tera_type": "Ground",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Freezing Glare",
+                "Tera Blast",
+                "Calm Mind",
+                "Recover"
+            ]
+        },
+    },
     "Zapdos": {
         "Bold Rocky Helmet": {
             "level": 50,
@@ -8470,6 +8466,29 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Heatran": {
+        "Offensive Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Fairy",
+            "item": "Life Orb",
+            "moves": [
+                "Heat Wave",
+                "Flash Cannon",
+                "Earth Power",
+                "Flamethrower"
+            ]
+        },
         "Kenji Miura's 2023 Worlds Top 16 Magma Storm": {
             "level": 50,
             "evs": {
@@ -8491,29 +8510,6 @@ var SETDEX_VGC2023 = {
                 "Earth Power",
                 "Tera Blast",
                 "Protect"
-            ]
-        },
-        "Offensive Life Orb": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 4
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Modest",
-            "tera_type": "Grass",
-            "item": "Life Orb",
-            "moves": [
-                "Heat Wave",
-                "Flash Cannon",
-                "Earth Power",
-                "Tera Blast"
             ]
         },
     },
@@ -8685,7 +8681,7 @@ var SETDEX_VGC2023 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "tera_type": "Ice",
+            "tera_type": "Flying",
             "item": "Life Orb",
             "moves": [
                 "Wildbolt Storm",

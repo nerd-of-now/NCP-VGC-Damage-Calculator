@@ -198,7 +198,7 @@ select.ability-supreme, select.ability-proto-quark {
 select.toxic-counter {
     width: 4.5em;
 }
-.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits, .move-lastRespRageFist {
+.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits, .move-linearAddedBP, .move-opponent {
     font-size: 0.9em;
 }
 .move-selector{
@@ -211,10 +211,10 @@ select.toxic-counter {
 .poke-info input.move-bp {
     width: 2em;
 }
-.move-cat/*, .move-hits*/, .move-lastRespRageFist {
+.move-cat, .move-linearAddedBP {
     width: 4em;
 }
-.move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits {
+.move-hits, .move-double, .move-hits2, .move-hits3, .move-pledge, .move-10hits, .move-opponent {
     width: 4.6em;
 }
 .abilityToggle, .ability-advanced{
