@@ -1445,7 +1445,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     'Mud-Slap': {
         bp: 20,
         type: 'Ground',
-        category: 'Speical',
+        category: 'Special',
         hasSecondaryEffect: true
     },
     'Octazooka': {
@@ -2591,12 +2591,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true,
         isPriority: true,
-    },
-    'Swift': {
-        bp: 60,
-        type: 'Normal',
-        category: 'Special',
-        isSpread: true
     },
     'Thunder Fang': {
         bp: 65,

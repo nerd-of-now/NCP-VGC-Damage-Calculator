@@ -5,7 +5,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     if (move.name == "Pain Split" && !move.painMax) {
         return 'The battlers shared their pain!';
     }
-    if (move.category == "Status" && move.name != 'Me First') {
+    if (move.category == "Status" && ['Me First', '(No Move)'].indexOf(move.name) == -1) {
         return "It's a status move, it won't deal damage.";
     }
     if (damage[damage.length-1] === 0) {

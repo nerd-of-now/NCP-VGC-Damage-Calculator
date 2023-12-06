@@ -3944,33 +3944,32 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Lurantis": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Lurantis": {
+        "TR Sitrus Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0
+            },
+            "nature": "Brave",
+            "ability": "Contrary",
+            "tera_type": "Poison",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Superpower",
+                "Knock Off",
+                "Leaf Blade",
+                "Petal Blizzard"
+            ]
+        },
+    },
     //"Klawf": {
     //    "": {
     //        "level": 50,
@@ -4402,6 +4401,30 @@ var SETDEX_VGC2023 = {
 
     },
     "Salamence": {
+        "Bulky Rocky Helmet": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 172,
+                "sa": 4,
+                "sd": 12,
+                "sp": 84
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Intimidate",
+            "tera_type": "Poison",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Draco Meteor",
+                "Air Slash",
+                "Tailwind",
+                "Roost"
+            ]
+        },
         "Tera Steel Dragon Dance": {
             "level": 50,
             "evs": {
@@ -5764,7 +5787,7 @@ var SETDEX_VGC2023 = {
                 "sp": 20
             },
             "nature": "Adamant",
-            "ability": "Multiscale",
+            "ability": "Inner Focus",
             "tera_type": "Normal",
             "item": "Choice Band",
             "moves": [
@@ -10059,7 +10082,7 @@ var SETDEX_VGC2023 = {
                 "Icy Wind",
                 "Moonblast",
                 "Follow Me",
-                "Heling Hand"
+                "Helping Hand"
             ]
         },
     },

@@ -1185,7 +1185,7 @@ $(".gen").change(function () {
             items = ITEMS_BW;
             abilities = ABILITIES_BW;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_BW;
+            calculateAllMoves = CALCULATE_ALL_MOVES_XY;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
