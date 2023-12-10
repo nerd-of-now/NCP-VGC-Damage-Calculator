@@ -5636,6 +5636,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 31
     },
       "w": 20.0,
+      "ab": "Unaware",
       "canEvolve": true,
   },
   "Bonsly": {
@@ -5677,6 +5678,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 23
     },
       "w": 60.5,
+      "ab": "Levitate",
       "canEvolve": true,
   },
   "Budew": {
@@ -5691,6 +5693,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 55
     },
       "w": 1.2,
+      "ab": "Natural Cure",
       "canEvolve": true,
   },
   "Buizel": {
@@ -5718,6 +5721,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 85
     },
       "w": 5.5,
+      "ab": "Klutz",
       "canEvolve": true,
   },
   "Burmy": {
@@ -5731,6 +5735,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 36
     },
       "w": 3.4,
+      "ab": "Shed Skin",
       "canEvolve": true,
   },
   "Carnivine": {
@@ -5757,7 +5762,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 42,
       "sp": 91
     },
-    "w": 1.9
+      "w": 1.9,
+      "ab": "Tangled Feet",
   },
   "Cherrim": {
     "t1": "Grass",
@@ -5826,6 +5832,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 70
     },
       "w": 5.5,
+      "ab": "Honey Gather",
       "canEvolve": true,
   },
   "Cranidos": {
@@ -5839,6 +5846,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 58
     },
       "w": 31.5,
+      "ab": "Mold Breaker",
       "canEvolve": true,
   },
   "Cresselia": {
@@ -5866,6 +5874,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 50
     },
       "w": 23.0,
+      "ab": "Dry Skin",
       "canEvolve": true,
   },
   "Darkrai": {
@@ -5935,6 +5944,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 70
     },
       "w": 1.2,
+      "ab": "Unburden",
       "canEvolve": true,
   },
   "Dusknoir": {
@@ -5988,6 +5998,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 66
     },
       "w": 7.0,
+      "ab": "Swift Swim",
       "canEvolve": true,
   },
   "Floatzel": {
@@ -6141,6 +6152,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 85
     },
       "w": 3.9,
+      "ab": "Own Tempo",
       "canEvolve": true,
   },
   "Gliscor": {
@@ -6182,6 +6194,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 30
     },
       "w": 24.4,
+      "ab": "Natural Cure",
       "canEvolve": true,
   },
   "Heatran": {
@@ -6264,6 +6277,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 25
     },
       "w": 2.2,
+      "ab": "Shed Skin",
       "canEvolve": true,
   },
   "Kricketune": {
@@ -6289,7 +6303,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 65,
       "sp": 95
     },
-    "w": 25.5
+      "w": 25.5,
+      "ab": "Leaf Guard",
   },
   "Lickilicky": {
     "t1": "Normal",
@@ -6355,6 +6370,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 60
     },
       "w": 30.5,
+      "ab": "Intimidate",
       "canEvolve": true,
   },
   "Luxray": {
@@ -6463,6 +6479,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 60
     },
       "w": 13.0,
+      "ab": "Filter",
       "canEvolve": true,
   },
   "Mismagius": {
@@ -6518,6 +6535,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 5
     },
       "w": 105.0,
+      "ab": "Thick Fat",
       "canEvolve": true,
   },
   "Pachirisu": {
@@ -6530,7 +6548,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 90,
       "sp": 95
     },
-    "w": 3.9
+      "w": 3.9,
+      "ab": "Volt Absorb",
   },
   "Palkia": {
     "t1": "Water",
@@ -6678,6 +6697,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 60
     },
       "w": 20.2,
+      "ab": "Steadfast",
       "canEvolve": true,
   },
   "Roserade": {
@@ -6816,6 +6836,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 34
     },
       "w": 6.3,
+      "ab": "Storm Drain",
       "canEvolve": true,
   },
   "Shieldon": {
@@ -6830,6 +6851,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 30
     },
       "w": 57.0,
+      "ab": "Sturdy",
       "canEvolve": true,
   },
   "Shinx": {
@@ -6843,6 +6865,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 45
     },
       "w": 9.5,
+      "ab": "Intimidate",
       "canEvolve": true,
   },
   "Skorupi": {
@@ -6857,6 +6880,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 65
     },
       "w": 12.0,
+      "ab": "Sniper",
       "canEvolve": true,
   },
   "Skuntank": {
@@ -6943,6 +6967,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 60
     },
       "w": 2.0,
+      "ab": "Intimidate",
       "canEvolve": true,
   },
   "Stunky": {
@@ -6957,6 +6982,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 74
     },
       "w": 19.2,
+      "ab": "Aftermath",
       "canEvolve": true,
   },
   "Tangrowth": {
@@ -7052,7 +7078,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 102,
       "sp": 40
     },
-    "w": 38.5
+      "w": 38.5,
+      "ab": "Pressure",
   },
   "Weavile": {
     "t1": "Dark",
@@ -7079,7 +7106,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 105,
       "sp": 36
     },
-    "w": 6.5
+      "w": 6.5,
+      "ab": "Anticipation",
   },
   "Wormadam-Sandy": {
     "t1": "Bug",
@@ -7092,7 +7120,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 85,
       "sp": 36
     },
-    "w": 6.5
+      "w": 6.5,
+      "ab": "Anticipation",
   },
   "Wormadam-Trash": {
     "t1": "Bug",
@@ -7105,7 +7134,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 95,
       "sp": 36
     },
-    "w": 6.5
+      "w": 6.5,
+      "ab": "Anticipation",
   },
   "Yanmega": {
     "t1": "Bug",
@@ -7129,6 +7159,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "Hitmonlee": { "ab": "Reckless" },
     "Hitmonchan": { "ab": "Iron Fist" },
     "Kangaskhan": { "ab": "Scrappy" },
+    "Scyther": { "ab": "Technician" },
     "Scizor": { "ab": "Technician" },
     "Sunflora": { "ab": "Solar Power" },
     "Miltank": { "ab": "Scrappy" },

@@ -103,10 +103,6 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
 
     var isCritical = critMove(move, defAbility);
 
-    if (move.name == "Aura Wheel" && attacker.name == "Morpeko-Hangry") {
-        move.type = "Dark";
-    }
-
     var ateIzeAbility = ATE_IZE_ABILITIES.indexOf(attacker.ability);    //Confirms abilities like Normalize and Pixilate but not Liquid Voice
     var ateIzeBoosted;
     if (!move.isZ && (ateIzeAbility !== -1 || attacker.ability == "Liquid Voice")

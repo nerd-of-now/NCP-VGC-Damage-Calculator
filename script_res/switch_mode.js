@@ -19,6 +19,16 @@ if (localStorage.getItem("dex") == "natdex") {
 	//loadDex("vgcdex");	Don't load when starting, it'll be easier if ap_calc handles it by itself
 }
 
+//LEVEL TOGGLING
+//Load the leveling system according to localStorage
+if (localStorage.getItem("level") == true) {
+	$("#douswitch").prop("checked", false);
+}
+
+//GEN TOGGLING
+//Load the generation according to localStorage
+//see function getGen() in ap_calc.js
+
 $(function(){
 
 	$("#switchTheme").on("click", function(){
@@ -51,7 +61,17 @@ $(function(){
 			localStorage.setItem("dex", "vgcdex");
 		}
 	});
-	
+
+	$("#douswitch").on("click", function () {
+		if (!$(this).is(":checked")) {
+			localStorage.setItem("level", true);
+		}
+		else {
+			localStorage.setItem("level", false);
+        }
+	});
+
+	//see $(".gen").change(function ()) in ap_calc.js for changing gen value in localStorage
 })
 
 function loadTheme(color){
@@ -121,19 +141,39 @@ function loadDex(dexMode) {
 				$('label[for="zL' + i + '"]').show();
 				$('label[for="zR' + i + '"]').show();
 			}
+			$('div #primal-weather').show();
 		}
 		else {
 			for (i = 1; i <= 4; i++) {
 				$('label[for="zL' + i + '"]').hide();
 				$('label[for="zR' + i + '"]').hide();
 			}
+			$('div #primal-weather').hide();
+		}
+	}
+	if (gen >= 9) {
+		if (localStorage.getItem("dex") == "vgcdex") {
+			$('div #auras').show();
+			$('div #protect-field').show();
+			$('div #flower-gift').show();
+		}
+		else {
+			$('div #auras').hide();
+			$('div #protect-field').hide();
+			$('div #flower-gift').hide();
 		}
 	}
 	if (typeChart !== undefined) {
-		var typeOptions = getSelectOptions(Object.keys(typeChart));
+		var types = Object.keys(typeChart);
+		types.splice(types.indexOf('Typeless'), 1);
+		var teraTypes = $.extend(true, [], types);
+		if (gen >= 2) types.push('Typeless');
+		var typeOptions = getSelectOptions(types);
+		var teraTypeOptions = getSelectOptions(teraTypes);
     }
-	$("select.type1, select.move-type, select.tera-type").find("option").remove().end().append(typeOptions);
+	$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
 	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
+	$("select.tera-type").find("option").remove().end().append(teraTypeOptions);
 	var moveOptions = getSelectOptions(Object.keys(moves), true);
 	$("select.move-selector").find("option").remove().end().append(moveOptions);
 	var abilityOptions = getSelectOptions(abilities, true);

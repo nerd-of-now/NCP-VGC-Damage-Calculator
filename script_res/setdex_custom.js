@@ -34,6 +34,7 @@ var showdownToCalcFormes = [
     ["Toxtricity-Low-Key-Gmax", "Toxtricity-Gmax"],
     ["Sinistea-Antique", "Sinistea"],
     ["Polteageist-Antique", "Polteageist"],
+    ["Indeedee", "Indeedee-M"],
     ["Zarude-Dada", "Zarude"],
     ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
     ["Tatsugiri-Droopy", "Tatsugiri"],
@@ -52,6 +53,7 @@ var calcToShowdownFormes = [
     ["Shellos-East", "Shellos"],
     ["Gastrodon-East", "Gastrodon"],
     ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
+    ["Indeedee", "Indeedee-M"],
 ];
 
 var saveToCalcFormes = [

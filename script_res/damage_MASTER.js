@@ -350,6 +350,20 @@ function checkSeeds(pokemon, terrain) {
     }
 }
 
+//function checkConsumedItem(pokemon, terrain) {
+//    if (pokemon.item === terrain + ' Seed') {
+//        if (['Electric', 'Grassy'].indexOf(terrain) !== -1)
+//            pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
+//        else
+//            pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
+//        pokemon.item = '';
+//    }
+//    else if (pokemon.item === 'Booster Energy'
+//        && (pokemon.ability === 'Protosynthesis' && weather !== 'Sun') || (pokemon.ability === 'Quark Drive' && terrain !== 'Electric')) {
+//        pokemon.item = '';
+//    }
+//}
+
 function checkSupersweetSyrup(source, target) {
     if (source.ability === 'Supersweet Syrup' && source.abilityOn) {
         if (target.ability === "Defiant") {
@@ -547,6 +561,9 @@ function checkMoveTypeChange(move, field, attacker) {
             : bothPledgeNames.includes("Grass") && bothPledgeNames.includes("Water") ? 'Grass'
                 : bothPledgeNames.includes("Water") && bothPledgeNames.includes("Fire") ? 'Water'
                     : 'Typeless';   //last case should never happen, just there to help with debugging
+    }
+    else if (move.name === 'Aura Wheel' && attacker.name === 'Morpeko-Hangry') {
+        move.type = 'Dark';
     }
     else if (move.name === "Tera Blast" && attacker.isTerastalize) {
         move.type = attacker.tera_type;
@@ -750,12 +767,13 @@ function abilityIgnore(attacker, move, defAbility, description, defItem = "") {
     if (['Shadow Shield', 'Full Metal Body', 'Prism Armor', 'As One',
         'Tablets of Ruin', 'Vessel of Ruin', 'Sword of Ruin', 'Beads of Ruin'].indexOf(defAbility) == -1 && defItem !== "Ability Shield") {
         if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
-            defAbility = "";
+            defAbility = "[ignored]";   //'[ignored]' is used as a check for ally abilities as well
             description.attackerAbility = attacker.ability;
         }
         else if (["Moongeist Beam", "Sunsteel Strike", "Photon Geyser", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom",
-            "Light That Burns the Sky", 'G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe'].indexOf(move.name) !== -1)
-            defAbility = ""; //works as a mold breaker
+            "Light That Burns the Sky", 'G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe'].indexOf(move.name) !== -1) {
+            defAbility = "[ignored]"; //works as a mold breaker
+        }
     }
 
     return [defAbility, description];
@@ -817,7 +835,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
     if (typeEffectiveness === 0) {
         return { "damage": [0], "description": buildDescription(description) };
     }
-    if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1) ||
+    if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== 'Struggle') ||
         (move.type === "Grass" && defAbility === "Sap Sipper") ||
         (move.type === "Fire" && ["Flash Fire","Well-Baked Body"].indexOf(defAbility) !== -1) ||
         (move.type === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1) ||
@@ -972,9 +990,9 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
     //f. OHKO moves
     if (move.isMLG) {
         if (move.name == 'Sheer Cold' && [defender.type1, defender.type2].indexOf('Ice') !== -1)
-            return { "damage": [defender.curHP], "description": buildDescription(description) };
-        else
             return { "damage": [0], "description": buildDescription(description) };
+        else
+            return { "damage": [defender.curHP], "description": buildDescription(description) };
     }
     //g. Psywave
 
@@ -1203,7 +1221,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     var auraBreak = ($("input:checkbox[id='aura-break']:checked").val() != undefined);
 
     //a. Aura Break
-    if (auraActive && auraBreak && !field.isNeutralizingGas && ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) == -1) {
+    if (auraActive && auraBreak && !field.isNeutralizingGas && defAbility !== '[ignored]') {
         bpMods.push(0x0C00);
         if (isAttackerAura || attacker.ability == "Aura Break") {
             description.attackerAbility = attacker.ability;
@@ -1274,7 +1292,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //f. Fairy Aura, Dark Aura
-    if (auraActive && !auraBreak && !field.isNeutralizingGas && (gen > 7 || ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) == -1)) {
+    if (auraActive && !auraBreak && !field.isNeutralizingGas && (gen > 7 || defAbility !== '[ignored]')) {
         bpMods.push(0x1548);
         if (isAttackerAura) {
             description.attackerAbility = attacker.ability;
@@ -1738,15 +1756,18 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     var childMod = gen >= 7 ? 0x0400 : 0x0800;
     baseDamage = attacker.isChild ? pokeRound(baseDamage * childMod / 0x1000) : baseDamage;    //should be accurate based on implementation
     //c. Weather mod, Hydro Steam
-    if (((field.weather.indexOf("Sun") > -1 && (move.type === "Fire" || move.name === "Hydro Steam")) || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) && defender.item !== 'Utility Umbrella') {
+    if ((((field.weather.indexOf("Sun") > -1 && move.type === "Fire") || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) && defender.item !== 'Utility Umbrella')
+        || (field.weather.indexOf("Sun") > -1 && move.name === "Hydro Steam" && attacker.item !== 'Utility Umbrella')) {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
-    } else if ((field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
-        typeChart[move.type]["Flying"] > 1)) {
-        description.weather = field.weather;        //not actually a mod, just adding the description here
-    } else if (((field.weather === "Sun" && move.type === "Water" && move.name !== "Hydro Steam") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') {
+    }
+    else if (((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
+    }
+    else if ((field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
+        typeChart[move.type]["Flying"] > 1)) {
+        description.weather = field.weather;        //not actually a mod, just adding the description here
     }
     //d. Glaive Rush 2x mod
     if (defender.glaiveRushMod) {
@@ -1827,7 +1848,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             child.isChild = true;
             childMove = move;
             if (move.name === 'Power-Up Punch') {
-                child.boosts[AT]++;
+                child.boosts[AT] = Math.min(6, child.boosts[AT] + 1);
                 child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
             }
             else if (move.name === 'Assurance') {
@@ -1969,7 +1990,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //k. Friend Guard
-    if (field.isFriendGuard && ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) === -1) {
+    if (field.isFriendGuard && defAbility !== '[ignored]') {
         finalMods.push(0xC00);
         description.isFriendGuard = true;
     }
@@ -2005,7 +2026,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         }
         description.defenderItem = defender.item;
     }
-    //r. Doubled damage
+    //r. Doubled damage (These likely won't be added since Minimize/Dig/Dive are hardly ever used)
     //r.i. Body Slam, Stomp, Dragon Rush, Steamroller, Heat Crash, Heavy Slam, Flying Press, Malicious Moonsault
     //r.ii. Earthquake
     //r.iii. Surf, Whirlpool

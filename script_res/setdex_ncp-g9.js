@@ -7132,7 +7132,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Sucker Punch",
                 "Icicle Crash",
-                "Crunch",
+                "Lash Out",
                 "Sacred Sword"
             ]
         },

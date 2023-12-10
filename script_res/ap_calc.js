@@ -489,8 +489,8 @@ $(".move-selector").change(function() {
         moveGroupObj.children(".move-10hits").hide();
     }
 
-    if (move.canDouble) moveGroupObj.children(".move-double").show();
-    else moveGroupObj.children(".move-double").hide();
+    if (move.canDouble) moveGroupObj.children(".double-btn").show();
+    else moveGroupObj.children(".double-btn").hide();
 
     if (move.oneTwoHit) moveGroupObj.children(".move-hits2").show();
     else moveGroupObj.children(".move-hits2").hide();
@@ -1031,7 +1031,7 @@ function getMoveDetails(moveInfo, maxMon) {
                         : (defaultDetails.isThreeHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 3
                             : (moveName == "Beat Up" && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 4
                             : 1,
-        isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-double").val() : 0,
+        isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon && moveInfo.find(".move-double").prop("checked")) ? 1 : 0,
         tripleHits: (defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits3").val() : 0,
         combinePledge: (moveName.includes(" Pledge") && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
         timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
@@ -1120,6 +1120,7 @@ var gen, pokedex, setdex, setdexCustom, typeChart, moves, abilities, items, STAT
 
 $(".gen").change(function () {
     gen = ~~$(this).val();
+    localStorage.setItem("gen", gen);
 
     loadSVColors(document.getElementById('switchTheme').value);     //
 
@@ -1180,7 +1181,7 @@ $(".gen").change(function () {
             pokedex = POKEDEX_BW;
             setdex = SETDEX_BW;
             setdexCustom = SETDEX_CUSTOM_BW;
-            typeChart = TYPE_CHART_GSC;
+            typeChart = TYPE_CHART_BW;
             moves = MOVES_BW;
             items = ITEMS_BW;
             abilities = ABILITIES_BW;
@@ -1251,17 +1252,37 @@ $(".gen").change(function () {
                 $('label[for="zL' + i + '"]').show();
                 $('label[for="zR' + i + '"]').show();
             }
+            $('div #primal-weather').show();
         }
         else {
             for (i = 1; i <= 4; i++) {
                 $('label[for="zL' + i + '"]').hide();
                 $('label[for="zR' + i + '"]').hide();
             }
+            $('div #primal-weather').hide();
         }
     }
-    var typeOptions = getSelectOptions(Object.keys(typeChart));
-    $("select.type1, select.move-type, select.tera-type").find("option").remove().end().append(typeOptions);
+    if (gen >= 9) {
+        if (localStorage.getItem("dex") == "natdex") {
+            $('div #auras').show();
+            $('div #protect-field').show();
+            $('div #flower-gift').show();
+        }
+        else {
+            $('div #auras').hide();
+            $('div #protect-field').hide();
+            $('div #flower-gift').hide();
+        }
+    }
+    var types = Object.keys(typeChart);
+    types.splice(types.indexOf('Typeless'), 1);
+    var teraTypes = $.extend(true, [], types);
+    if (gen >= 2) types.push('Typeless');
+    var typeOptions = getSelectOptions(types);
+    var teraTypeOptions = getSelectOptions(teraTypes);
+    $("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
     $("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
+    $("select.tera-type").find("option").remove().end().append(teraTypeOptions);
     var moveOptions = getSelectOptions(Object.keys(moves), true);
     $("select.move-selector").find("option").remove().end().append(moveOptions);
     var abilityOptions = getSelectOptions(abilities, true);
@@ -1385,9 +1406,20 @@ function getSelectOptions(arr, sort, defaultIdx) {
     return r;
 }
 
+function getGen() {
+    var genLocalStor = localStorage.getItem("gen");
+    if (genLocalStor) {
+        $("#gen" + genLocalStor).prop("checked", true);
+        $("#gen" + genLocalStor).change();
+    }
+    else {
+        $("#gen9").prop("checked", true);
+        $("#gen9").change();
+    }
+}
+
 $(document).ready(function() {
-    $("#gen9").prop("checked", true);
-    $("#gen9").change();
+    getGen();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
     $(".calc-trigger").bind("change keyup", calculate);
     $(".set-selector").select2({

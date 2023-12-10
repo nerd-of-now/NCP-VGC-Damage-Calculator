@@ -1243,7 +1243,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     },
     'Curse': {
 
-        type: 'Ghost',
+        type: '???',
         category: 'Status'
     },
     'Cotton Spore': {
@@ -3487,6 +3487,9 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     },
     'Covet': {
         bp: 60,
+    },
+    'Curse': {
+        type: 'Ghost',
     },
 });
 

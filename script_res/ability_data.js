@@ -329,7 +329,7 @@ var ABILITIES_SV = ABILITIES_SS.concat([
     //Teal Mask DLC new additions
     "Mind's Eye",   //Ignores evasion/accuracy and is Scrappy w/o Intimidate immunity
     'Supersweet Syrup', //Intimidate but with evasion and only once
-    'Hospitality',  //Heals HP, needs more info but probably has no calc functionality
+    'Hospitality',  //Heals ally's HP, no calc functionality
     'Toxic Chain',  //Poison Touch but with badly poisoned instead, no calc functionality
     'Embody Aspect', //Boosts Ogerpon's stats based on mask, needs for info for what kind of boost and how much
 ]);
