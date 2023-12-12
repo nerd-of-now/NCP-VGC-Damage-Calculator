@@ -1290,8 +1290,10 @@ $(".gen").change(function () {
     var itemOptions = getSelectOptions(items, true);
     $("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 
-    $(".set-selector").val(getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
-    $(".set-selector").change();
+    $("#p1 .set-selector").val(getSetOptions("#p1")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
+    $("#p1 .set-selector").change();
+    $("#p2 .set-selector").val(getSetOptions("#p2")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
+    $("#p2 .set-selector").change();
 });
 
 function clearField() {
@@ -1342,7 +1344,7 @@ function clearField() {
     $("#auroraVeilR").prop("checked", false);
 }
 
-function getSetOptions() {
+function getSetOptions(p) {
     var pokeNames, index;
     pokeNames = Object.keys(pokedex);
     index = pokeNames.length;
@@ -1359,14 +1361,15 @@ function getSetOptions() {
     pokeNames.sort();
     var setOptions = [];
     var idNum = 0;
+    var setdexUsed = $(p + " .set-toggle").prop("checked") && gen >= 5 ? setdexCustom : setdex;
     for (var i = 0; i < pokeNames.length; i++) {
         var pokeName = pokeNames[i];
         setOptions.push({
             pokemon: pokeName,
             text: pokeName
         });
-        if (pokeName in setdex) {
-            var setNames = Object.keys(setdex[pokeName]);
+        if (pokeName in setdexUsed) {
+            var setNames = Object.keys(setdexUsed[pokeName]);
             for (var j = 0; j < setNames.length; j++) {
                 var setName = setNames[j];
                 setOptions.push({
@@ -1418,16 +1421,13 @@ function getGen() {
     }
 }
 
-$(document).ready(function() {
-    getGen();
-    $(".terrain-trigger").bind("change keyup", getTerrainEffects);
-    $(".calc-trigger").bind("change keyup", calculate);
-    $(".set-selector").select2({
-        formatResult: function(object) {
+function setStartup(p) {
+    $(p + " .set-selector").select2({
+        formatResult: function (object) {
             return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
         },
-        query: function(query) {
-            var setOptions = getSetOptions();
+        query: function (query) {
+            var setOptions = getSetOptions(p);
             var pageSize = 30;
             var results = [];
             for (var i = 0; i < setOptions.length; i++) {
@@ -1445,11 +1445,47 @@ $(document).ready(function() {
                 more: results.length >= query.page * pageSize
             });
         },
-        initSelection: function(element, callback) {
-            var data = getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3];
+        initSelection: function (element, callback) {
+            var data = getSetOptions(p)[gen > 3 ? 1 : gen === 1 ? 5 : 3];
             callback(data);
         }
     });
+}
+
+$(document).ready(function() {
+    getGen();
+    $(".terrain-trigger").bind("change keyup", getTerrainEffects);
+    $(".calc-trigger").bind("change keyup", calculate);
+    //$(".set-selector").select2({
+    //    formatResult: function(object) {
+    //        return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
+    //    },
+    //    query: function(query) {
+    //        var setOptions = getSetOptions();
+    //        var pageSize = 30;
+    //        var results = [];
+    //        for (var i = 0; i < setOptions.length; i++) {
+    //            var pokeName = setOptions[i].pokemon.toUpperCase();
+    //            //if (!query.term || pokeName.indexOf(query.term.toUpperCase()) === 0) {
+    //            //    results.push(setOptions[i]);
+    //            //}
+    //            if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
+    //                return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
+    //            }))
+    //                results.push(setOptions[i]);
+    //        }
+    //        query.callback({
+    //            results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
+    //            more: results.length >= query.page * pageSize
+    //        });
+    //    },
+    //    initSelection: function(element, callback) {
+    //        var data = getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3];
+    //        callback(data);
+    //    }
+    //});
+    setStartup("#p1");
+    setStartup("#p2");
     $(".move-selector").select2({
         dropdownAutoWidth:true,
         matcher: function(term, text) {
@@ -1472,6 +1508,8 @@ $(document).ready(function() {
             return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
         }
     });
-    $(".set-selector").val(getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
-    $(".set-selector").change();
+    $("#p1 .set-selector").val(getSetOptions("#p1")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
+    $("#p1 .set-selector").change();
+    $("#p2 .set-selector").val(getSetOptions("#p2")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
+    $("#p2 .set-selector").change();
 });
