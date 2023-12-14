@@ -64,8 +64,12 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     var moveDescName = move.name;
     var isQuarteredByProtect = false;
 
+    var attIsGrounded = pIsGrounded(attacker, field);
+    var defIsGrounded = pIsGrounded(defender, field);
+
     checkMoveTypeChange(move, field, attacker);
     checkConditionalPriority(move, field.terrain);
+    checkConditionalSpread(move, field.terrain, attacker, attIsGrounded);
     checkContactOverride(move, attacker);
 
     if (attacker.isDynamax)
@@ -110,8 +114,8 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
         [move, description, ateIzeBoosted] = ateIzeTypeChange(move, attacker, description);
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds");
-    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds") : 1;
+    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds", defender.ability === 'Tera Shell' && defender.curHP === defender.maxHP);
+    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 && move.type !== 'Stellar' ? getMoveEffectiveness(move, defender.type2, defender.type1, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds", defender.ability === 'Tera Shell' && defender.curHP === defender.maxHP) : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
@@ -125,8 +129,6 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
         description.hits = move.hits;
     }
     var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";
-    var attIsGrounded = pIsGrounded(attacker, field);
-    var defIsGrounded = pIsGrounded(defender, field);
 
     ////////////////////////////////
     ////////// BASE POWER //////////

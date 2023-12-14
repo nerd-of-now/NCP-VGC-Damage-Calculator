@@ -687,7 +687,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
         }
     }
 
-    if (pokemonName === "Palafin")
+    if (pokemonName === "Palafin" || pokemonName === "Terapagos")
         defaultForme = 1;
     else if (gen == 8 && !defaultForme && gmaxDefaults.indexOf(pokemonName) != -1)
         defaultForme = pokedex[pokemonName].formes.indexOf(pokemonName + "-Gmax");
@@ -951,7 +951,7 @@ function Pokemon(pokeInfo) {
         pokeInfo.find(".max").prop("disabled", false);
     }
 
-    //Check for Tera form (ability only for now, should probably be changed to a different form with Terapagos coming in the next DLC)
+    //Check for Tera form (ability only for now, should probably be changed to a different form with Terapagos coming in the next DLC) edit: nope lol
     if (this.name && this.name.indexOf('Ogerpon') !== -1) {
         var mask = pokeInfo.find("select.item").val().substring(0, pokeInfo.find("select.item").val().indexOf(" Mask"));
 
@@ -970,6 +970,34 @@ function Pokemon(pokeInfo) {
                 pokeInfo.find("select.ability").val(pokedex[this.name].ab);
                 pokeInfo.find("select.ability").trigger('change.select2');
             }
+        }
+    }
+    else if (this.name === 'Terapagos-Terastal') {
+        pokeInfo.find(".tera-type").val('Stellar');
+        pokeInfo.find(".tera-type").prop("disabled", true);
+        if (pokeInfo.find(".tera").prop("checked")) {
+            this.name = 'Terapagos-Stellar';
+            pokeInfo.find(".hp .base").val(pokedex['Terapagos-Stellar'].bs.hp);
+            pokeInfo.find(".at .base").val(pokedex['Terapagos-Stellar'].bs.at);
+            pokeInfo.find(".df .base").val(pokedex['Terapagos-Stellar'].bs.df);
+            pokeInfo.find(".sa .base").val(pokedex['Terapagos-Stellar'].bs.sa);
+            pokeInfo.find(".sd .base").val(pokedex['Terapagos-Stellar'].bs.sd);
+            pokeInfo.find(".sp .base").val(pokedex['Terapagos-Stellar'].bs.sp);
+            pokeInfo.find(".weight").val(pokedex['Terapagos-Stellar'].w);
+            pokeInfo.find("select.ability").val(pokedex['Terapagos-Stellar'].ab);
+            pokeInfo.find("select.ability").trigger('change.select2');
+        }
+        else {
+            this.name = 'Terapagos-Terastal';
+            pokeInfo.find(".hp .base").val(pokedex['Terapagos-Terastal'].bs.hp);
+            pokeInfo.find(".at .base").val(pokedex['Terapagos-Terastal'].bs.at);
+            pokeInfo.find(".df .base").val(pokedex['Terapagos-Terastal'].bs.df);
+            pokeInfo.find(".sa .base").val(pokedex['Terapagos-Terastal'].bs.sa);
+            pokeInfo.find(".sd .base").val(pokedex['Terapagos-Terastal'].bs.sd);
+            pokeInfo.find(".sp .base").val(pokedex['Terapagos-Terastal'].bs.sp);
+            pokeInfo.find(".weight").val(pokedex['Terapagos-Terastal'].w);
+            pokeInfo.find("select.ability").val(pokedex['Terapagos-Terastal'].ab);
+            pokeInfo.find("select.ability").trigger('change.select2');
         }
     }
     else {
@@ -1085,6 +1113,9 @@ function Field() {
     };
     this.clearWeather = function() {
         weather = "";
+    };
+    this.clearTerrain = function () {
+        terrain = "";
     };
     this.getSide = function (i) {
         return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i]);
@@ -1278,6 +1309,7 @@ $(".gen").change(function () {
     types.splice(types.indexOf('Typeless'), 1);
     var teraTypes = $.extend(true, [], types);
     if (gen >= 2) types.push('Typeless');
+    teraTypes.push('Stellar');
     var typeOptions = getSelectOptions(types);
     var teraTypeOptions = getSelectOptions(teraTypes);
     $("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
@@ -1456,34 +1488,6 @@ $(document).ready(function() {
     getGen();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
     $(".calc-trigger").bind("change keyup", calculate);
-    //$(".set-selector").select2({
-    //    formatResult: function(object) {
-    //        return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
-    //    },
-    //    query: function(query) {
-    //        var setOptions = getSetOptions();
-    //        var pageSize = 30;
-    //        var results = [];
-    //        for (var i = 0; i < setOptions.length; i++) {
-    //            var pokeName = setOptions[i].pokemon.toUpperCase();
-    //            //if (!query.term || pokeName.indexOf(query.term.toUpperCase()) === 0) {
-    //            //    results.push(setOptions[i]);
-    //            //}
-    //            if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
-    //                return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
-    //            }))
-    //                results.push(setOptions[i]);
-    //        }
-    //        query.callback({
-    //            results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
-    //            more: results.length >= query.page * pageSize
-    //        });
-    //    },
-    //    initSelection: function(element, callback) {
-    //        var data = getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3];
-    //        callback(data);
-    //    }
-    //});
     setStartup("#p1");
     setStartup("#p2");
     $(".move-selector").select2({
