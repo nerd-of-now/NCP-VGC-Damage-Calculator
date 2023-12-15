@@ -17598,6 +17598,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "ab": "Sturdy",
     },
     //Indigo Disk DLC new additions
+    "Duraludon": { "canEvolve": true, },
     "Hydrapple": {
         "t1": "Grass",
         "t2": "Dragon",

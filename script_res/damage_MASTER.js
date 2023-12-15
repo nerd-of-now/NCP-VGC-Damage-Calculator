@@ -179,9 +179,12 @@ function addLevelDesc(attacker, defender, description) {
         description.defenderLevel = defender.level;
 }
 
-function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, defItem, isStrongWinds, isTeraShell) {
-    if (isTeraShell) {
+function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, defItem, isStrongWinds, isTeraShell, attackerName) {
+    if (isTeraShell && typeChart[move.type][type] >= 0.5) {
         return 0.5;
+    }
+    else if (attackerName === 'Terapagos-Stellar' && move.name === 'Tera Starstorm') {
+        return 1;
     }
     else if (move.type == "Stellar" && move.name == "Tera Blast") {
         return 2;

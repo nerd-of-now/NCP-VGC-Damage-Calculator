@@ -916,6 +916,7 @@ function findDamageResult(resultMoveObj) {
     }
 }
 
+var terapagosCheck = {"p1": false, "p2": false};
 function Pokemon(pokeInfo) {
     var setName = pokeInfo.find("input.set-selector").val();
 
@@ -971,37 +972,51 @@ function Pokemon(pokeInfo) {
                 pokeInfo.find("select.ability").trigger('change.select2');
             }
         }
+        terapagosCheck[pokeInfo.prop('id')] = false;
     }
     else if (this.name === 'Terapagos-Terastal') {
         pokeInfo.find(".tera-type").val('Stellar');
         pokeInfo.find(".tera-type").prop("disabled", true);
         if (pokeInfo.find(".tera").prop("checked")) {
             this.name = 'Terapagos-Stellar';
-            pokeInfo.find(".hp .base").val(pokedex['Terapagos-Stellar'].bs.hp);
-            pokeInfo.find(".at .base").val(pokedex['Terapagos-Stellar'].bs.at);
-            pokeInfo.find(".df .base").val(pokedex['Terapagos-Stellar'].bs.df);
-            pokeInfo.find(".sa .base").val(pokedex['Terapagos-Stellar'].bs.sa);
-            pokeInfo.find(".sd .base").val(pokedex['Terapagos-Stellar'].bs.sd);
-            pokeInfo.find(".sp .base").val(pokedex['Terapagos-Stellar'].bs.sp);
+            if (!terapagosCheck[pokeInfo.prop('id')]) {
+                pokeInfo.find(".hp .base").val(pokedex['Terapagos-Stellar'].bs.hp);
+                pokeInfo.find(".at .base").val(pokedex['Terapagos-Stellar'].bs.at);
+                pokeInfo.find(".df .base").val(pokedex['Terapagos-Stellar'].bs.df);
+                pokeInfo.find(".sa .base").val(pokedex['Terapagos-Stellar'].bs.sa);
+                pokeInfo.find(".sd .base").val(pokedex['Terapagos-Stellar'].bs.sd);
+                pokeInfo.find(".sp .base").val(pokedex['Terapagos-Stellar'].bs.sp);
+                calcHP(pokeInfo);
+                calcStats(pokeInfo);
+                terapagosCheck[pokeInfo.prop('id')] = true;
+            }
             pokeInfo.find(".weight").val(pokedex['Terapagos-Stellar'].w);
             pokeInfo.find("select.ability").val(pokedex['Terapagos-Stellar'].ab);
             pokeInfo.find("select.ability").trigger('change.select2');
+            pokeInfo.find(".forme").prop("disabled", true);
         }
         else {
             this.name = 'Terapagos-Terastal';
-            pokeInfo.find(".hp .base").val(pokedex['Terapagos-Terastal'].bs.hp);
-            pokeInfo.find(".at .base").val(pokedex['Terapagos-Terastal'].bs.at);
-            pokeInfo.find(".df .base").val(pokedex['Terapagos-Terastal'].bs.df);
-            pokeInfo.find(".sa .base").val(pokedex['Terapagos-Terastal'].bs.sa);
-            pokeInfo.find(".sd .base").val(pokedex['Terapagos-Terastal'].bs.sd);
-            pokeInfo.find(".sp .base").val(pokedex['Terapagos-Terastal'].bs.sp);
+            if (terapagosCheck[pokeInfo.prop('id')]) {
+                pokeInfo.find(".hp .base").val(pokedex['Terapagos-Terastal'].bs.hp);
+                pokeInfo.find(".at .base").val(pokedex['Terapagos-Terastal'].bs.at);
+                pokeInfo.find(".df .base").val(pokedex['Terapagos-Terastal'].bs.df);
+                pokeInfo.find(".sa .base").val(pokedex['Terapagos-Terastal'].bs.sa);
+                pokeInfo.find(".sd .base").val(pokedex['Terapagos-Terastal'].bs.sd);
+                pokeInfo.find(".sp .base").val(pokedex['Terapagos-Terastal'].bs.sp);
+                calcHP(pokeInfo);
+                calcStats(pokeInfo);
+                terapagosCheck[pokeInfo.prop('id')] = false;
+            }
             pokeInfo.find(".weight").val(pokedex['Terapagos-Terastal'].w);
             pokeInfo.find("select.ability").val(pokedex['Terapagos-Terastal'].ab);
             pokeInfo.find("select.ability").trigger('change.select2');
+            pokeInfo.find(".forme").prop("disabled", false);
         }
     }
     else {
         pokeInfo.find(".tera-type").prop("disabled", false);
+        terapagosCheck[pokeInfo.prop('id')] = false;
     }
 
     this.type1 = pokeInfo.find(".type1").val();
