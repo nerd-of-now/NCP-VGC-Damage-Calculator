@@ -280,31 +280,30 @@ function autoSetRuin() {
     else
         $("input:checkbox[id='beads-of-ruin']").prop("checked", false)
 }
-function autoSetTerrain()
-{
+function autoSetTerrain() {
     var ability1 = $("#p1 select.ability").val()
     var ability2 = $("#p2 select.ability").val()
     var abOn1 = $("#p1").find(".abilityToggle").prop("checked")
     var abOn2 = $("#p2").find(".abilityToggle").prop("checked")
     //Grassy Terrain check is first due to the need to check for abilityToggle with Seed Sower
-    if ((ability1 == "Grassy Surge" || ability2 == "Grassy Surge" || (ability1 == "Seed Sower" && abOn1) || (ability2 == "Seed Sower" && abOn2))) {
-        $("input:radio[id='grassy']").prop("checked", true)
+    if ([ability1, ability2].indexOf("Grassy Surge") !== -1 || (ability1 == "Seed Sower" && abOn1) || (ability2 == "Seed Sower" && abOn2)) {
+        $("input:radio[id='grassy']").prop("checked", true);
         lastTerrain = 'grassy';
     }
-    else if ((["Electric Surge", "Hadron Engine"].indexOf(ability1) !== -1 || ["Electric Surge", "Hadron Engine"].indexOf(ability2) !== -1)) {
-        $("input:radio[id='electric']").prop("checked", true)
+    else if ([ability1, ability2].indexOf("Electric Surge") != -1 || [ability1, ability2].indexOf("Hadron Engine") != -1) {
+        $("input:radio[id='electric']").prop("checked", true);
         lastTerrain = 'electric';
     }
-    else if((ability1 == "Misty Surge" || ability2 == "Misty Surge")){
-        $("input:radio[id='misty']").prop("checked", true)
+    else if ([ability1, ability2].indexOf("Misty Surge") !== -1) {
+        $("input:radio[id='misty']").prop("checked", true);
         lastTerrain = 'misty';
     }
-    else if((ability1 == "Psychic Surge" || ability2 == "Psychic Surge")){
-        $("input:radio[id='psychic']").prop("checked", true)
+    else if ([ability1, ability2].indexOf("Psychic Surge") !== -1) {
+        $("input:radio[id='psychic']").prop("checked", true);
         lastTerrain = 'psychic';
     }
     else
-        $("input:radio[id='noterrain']").prop("checked", true)
+        $("input:radio[id='noterrain']").prop("checked", true);
 }
 
 function autosetWeather(ability, i, abOn) {
@@ -974,44 +973,50 @@ function Pokemon(pokeInfo) {
         }
         terapagosCheck[pokeInfo.prop('id')] = false;
     }
-    else if (this.name === 'Terapagos-Terastal') {
+    else if (this.name && this.name.indexOf('Terapagos') !== -1) {
         pokeInfo.find(".tera-type").val('Stellar');
         pokeInfo.find(".tera-type").prop("disabled", true);
-        if (pokeInfo.find(".tera").prop("checked")) {
-            this.name = 'Terapagos-Stellar';
-            if (!terapagosCheck[pokeInfo.prop('id')]) {
-                pokeInfo.find(".hp .base").val(pokedex['Terapagos-Stellar'].bs.hp);
-                pokeInfo.find(".at .base").val(pokedex['Terapagos-Stellar'].bs.at);
-                pokeInfo.find(".df .base").val(pokedex['Terapagos-Stellar'].bs.df);
-                pokeInfo.find(".sa .base").val(pokedex['Terapagos-Stellar'].bs.sa);
-                pokeInfo.find(".sd .base").val(pokedex['Terapagos-Stellar'].bs.sd);
-                pokeInfo.find(".sp .base").val(pokedex['Terapagos-Stellar'].bs.sp);
-                calcHP(pokeInfo);
-                calcStats(pokeInfo);
-                terapagosCheck[pokeInfo.prop('id')] = true;
+        if (this.name === 'Terapagos-Terastal') {
+            if (pokeInfo.find(".tera").prop("checked")) {
+                this.name = 'Terapagos-Stellar';
+                if (!terapagosCheck[pokeInfo.prop('id')]) {
+                    pokeInfo.find(".type1").val(pokedex['Terapagos-Stellar'].t1);
+                    pokeInfo.find(".type2").val(pokedex['Terapagos-Stellar'].t2);
+                    pokeInfo.find(".hp .base").val(pokedex['Terapagos-Stellar'].bs.hp);
+                    pokeInfo.find(".at .base").val(pokedex['Terapagos-Stellar'].bs.at);
+                    pokeInfo.find(".df .base").val(pokedex['Terapagos-Stellar'].bs.df);
+                    pokeInfo.find(".sa .base").val(pokedex['Terapagos-Stellar'].bs.sa);
+                    pokeInfo.find(".sd .base").val(pokedex['Terapagos-Stellar'].bs.sd);
+                    pokeInfo.find(".sp .base").val(pokedex['Terapagos-Stellar'].bs.sp);
+                    calcHP(pokeInfo);
+                    calcStats(pokeInfo);
+                    pokeInfo.find(".weight").val(pokedex['Terapagos-Stellar'].w);
+                    pokeInfo.find("select.ability").val(pokedex['Terapagos-Stellar'].ab);
+                    pokeInfo.find("select.ability").trigger('change.select2');
+                    terapagosCheck[pokeInfo.prop('id')] = true;
+                }
+                pokeInfo.find(".forme").prop("disabled", true);
             }
-            pokeInfo.find(".weight").val(pokedex['Terapagos-Stellar'].w);
-            pokeInfo.find("select.ability").val(pokedex['Terapagos-Stellar'].ab);
-            pokeInfo.find("select.ability").trigger('change.select2');
-            pokeInfo.find(".forme").prop("disabled", true);
-        }
-        else {
-            this.name = 'Terapagos-Terastal';
-            if (terapagosCheck[pokeInfo.prop('id')]) {
-                pokeInfo.find(".hp .base").val(pokedex['Terapagos-Terastal'].bs.hp);
-                pokeInfo.find(".at .base").val(pokedex['Terapagos-Terastal'].bs.at);
-                pokeInfo.find(".df .base").val(pokedex['Terapagos-Terastal'].bs.df);
-                pokeInfo.find(".sa .base").val(pokedex['Terapagos-Terastal'].bs.sa);
-                pokeInfo.find(".sd .base").val(pokedex['Terapagos-Terastal'].bs.sd);
-                pokeInfo.find(".sp .base").val(pokedex['Terapagos-Terastal'].bs.sp);
-                calcHP(pokeInfo);
-                calcStats(pokeInfo);
-                terapagosCheck[pokeInfo.prop('id')] = false;
+            else {
+                this.name = 'Terapagos-Terastal';
+                if (terapagosCheck[pokeInfo.prop('id')]) {
+                    pokeInfo.find(".type1").val(pokedex['Terapagos-Terastal'].t1);
+                    pokeInfo.find(".type2").val(pokedex['Terapagos-Terastal'].t2);
+                    pokeInfo.find(".hp .base").val(pokedex['Terapagos-Terastal'].bs.hp);
+                    pokeInfo.find(".at .base").val(pokedex['Terapagos-Terastal'].bs.at);
+                    pokeInfo.find(".df .base").val(pokedex['Terapagos-Terastal'].bs.df);
+                    pokeInfo.find(".sa .base").val(pokedex['Terapagos-Terastal'].bs.sa);
+                    pokeInfo.find(".sd .base").val(pokedex['Terapagos-Terastal'].bs.sd);
+                    pokeInfo.find(".sp .base").val(pokedex['Terapagos-Terastal'].bs.sp);
+                    calcHP(pokeInfo);
+                    calcStats(pokeInfo);
+                    pokeInfo.find(".weight").val(pokedex['Terapagos-Terastal'].w);
+                    pokeInfo.find("select.ability").val(pokedex['Terapagos-Terastal'].ab);
+                    pokeInfo.find("select.ability").trigger('change.select2');
+                    terapagosCheck[pokeInfo.prop('id')] = false;
+                }
+                pokeInfo.find(".forme").prop("disabled", false);
             }
-            pokeInfo.find(".weight").val(pokedex['Terapagos-Terastal'].w);
-            pokeInfo.find("select.ability").val(pokedex['Terapagos-Terastal'].ab);
-            pokeInfo.find("select.ability").trigger('change.select2');
-            pokeInfo.find(".forme").prop("disabled", false);
         }
     }
     else {
@@ -1279,7 +1284,7 @@ $(".gen").change(function () {
             pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SV_NATDEX :  POKEDEX_SV;
             setdex = SETDEX_SV;
             setdexCustom = SETDEX_CUSTOM_SV;
-            typeChart = TYPE_CHART_XY;
+            typeChart = TYPE_CHART_SV;
             moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SV_NATDEX : MOVES_SV;
             items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SV_NATDEX : ITEMS_SV;
             abilities = ABILITIES_SV;
@@ -1324,7 +1329,7 @@ $(".gen").change(function () {
     types.splice(types.indexOf('Typeless'), 1);
     var teraTypes = $.extend(true, [], types);
     if (gen >= 2) types.push('Typeless');
-    teraTypes.push('Stellar');
+    types.splice(types.indexOf('Stellar'), 1);
     var typeOptions = getSelectOptions(types);
     var teraTypeOptions = getSelectOptions(teraTypes);
     $("select.type1, select.move-type").find("option").remove().end().append(typeOptions);

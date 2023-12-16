@@ -538,3 +538,85 @@ var TYPE_CHART_XY = $.extend(true, {}, TYPE_CHART_BW, {
         Fairy: 1
     }
 });
+
+var TYPE_CHART_SV = $.extend(true, {}, TYPE_CHART_XY, {
+    Normal: {
+        Stellar: 1
+    },
+    Grass: {
+        Stellar: 1
+    },
+    Fire: {
+        Stellar: 1
+    },
+    Water: {
+        Stellar: 1
+    },
+    Electric: {
+        Stellar: 1
+    },
+    Ice: {
+        Stellar: 1
+    },
+    Flying: {
+        Stellar: 1
+    },
+    Bug: {
+        Stellar: 1
+    },
+    Poison: {
+        Stellar: 1
+    },
+    Ground: {
+        Stellar: 1
+    },
+    Rock: {
+        Stellar: 1
+    },
+    Fighting: {
+        Stellar: 1
+    },
+    Psychic: {
+        Stellar: 1
+    },
+    Ghost: {
+        Stellar: 1
+    },
+    Dragon: {
+        Stellar: 1
+    },
+    Dark: {
+        Stellar: 1
+    },
+    Steel: {
+        Stellar: 1
+    },
+    Fairy: {
+        Stellar: 1
+    },
+    Typeless: {
+        Stellar: 1
+    },
+    Stellar: {
+        Normal: 1,
+        Grass: 1,
+        Fire: 1,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 1,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 1,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 1,
+        Dark: 1,
+        Steel: 1,
+        Fairy: 1,
+        Typeless: 1,
+        Stellar: 1
+    },
+});

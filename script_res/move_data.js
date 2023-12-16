@@ -2496,7 +2496,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 50,
         type: 'Dark',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        canDouble: true,
     },
     'Pluck': {
         bp: 60,
@@ -5220,6 +5221,12 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     'Glacial Lance': {
         bp: 120,
     },
+    'Luster Purge': {
+        bp: 95,
+    },
+    'Mist Ball': {
+        bp: 95,
+    },
 
     //PLA moves
     'Dire Claw': {
@@ -5751,13 +5758,13 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Special',
         hasSecondaryEffect: true,
     },
-    'Temper Fire': {
+    'Temper Flare': {
         bp: 75,
         type: 'Fire',
         category: 'Special',
         canDouble: true,
     },
-    'Supercharged Slam': {
+    'Supercell Slam': {
         bp: 100,
         type: 'Electric',
         category: 'Physical',

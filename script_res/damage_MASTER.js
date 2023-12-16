@@ -179,14 +179,11 @@ function addLevelDesc(attacker, defender, description) {
         description.defenderLevel = defender.level;
 }
 
-function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, defItem, isStrongWinds, isTeraShell, attackerName) {
+function getMoveEffectiveness(move, type, otherType, isGhostRevealed, isGravity, defItem, isStrongWinds, isTeraShell, defIsTera) {
     if (isTeraShell && typeChart[move.type][type] >= 0.5) {
         return 0.5;
     }
-    else if (attackerName === 'Terapagos-Stellar' && move.name === 'Tera Starstorm') {
-        return 1;
-    }
-    else if (move.type == "Stellar" && move.name == "Tera Blast") {
+    else if (move.type == "Stellar" && defIsTera) {
         return 2;
     }
     else if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
@@ -613,6 +610,9 @@ function checkMoveTypeChange(move, field, attacker) {
     }
     else if ((move.name == "Struggle" && gen >= 2) || (['Beat Up', 'Future Sight', 'Doom Desire'].indexOf(move.name) != -1 && gen <= 4)) {
         move.type = 'Typeless';
+    }
+    else if (move.name === 'Tera Starstorm' && attacker.isTerastalize) {
+        move.type = 'Stellar';
     }
 }
 
@@ -1176,12 +1176,19 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             if (move.combinePledge !== move.name)
                 description.moveType = move.type;
             break;
-        //g.x. Payback, Fisheous Rend, Bolt Beak                                            CONSIDER ISDOUBLE
-        case "Payback":
-            basePower = turnOrder === "LAST" ? 100 : 50;
+        //g.x. Tera Blast Tera-Stellar
+        case "Tera Blast":
+            basePower = move.type == 'Stellar' ? 100 : 80;
             if (basePower !== move.bp) description.moveBP = basePower;
             break;
-        //g.xi. Everything else (Assurance, Avalanche, Revenge, Gust, Twister, Pursuit, Round, Stomping Tantrum)    CHECK DEFAULT; CURRENTLY ALSO HAS FISHEOUS REND AND BOLT BEAK
+        //g.xi. Payback, Fisheous Rend, Bolt Beak                                            CURRENTLY USING ISDOUBLE
+        //case "Payback":
+        //case "Fisheous Rend":
+        //case "Bolt Beak":
+        //    basePower = turnOrder === "LAST" ? 100 : 50;
+        //    if (basePower !== move.bp) description.moveBP = basePower;
+        //    break;
+        //g.xii. Everything else (Assurance, Avalanche, Revenge, Gust, Twister, Pursuit, Round, Stomping Tantrum, Temper Flare)    CHECK DEFAULT
 
         //h. Item based
         //h.i. Fling
@@ -1477,7 +1484,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     tempBP = pokeRound(basePower * chainMods(bpMods) / 0x1000);
 
     //aa. Tera boost for moves with <60 BP
-    if (attacker.isTerastalize && attacker.tera_type === move.type && tempBP < 60 && canTeraBoost60BP(move)) {
+    if (attacker.isTerastalize && [move.type, 'Stellar'].indexOf(attacker.tera_type) !== -1 && tempBP < 60 && canTeraBoost60BP(move)) {
         bpMods.push(60 / tempBP * 0x1000);
         description.teraBPBoost = true;
     }
@@ -1815,9 +1822,8 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
                 description.attackerAbility = attacker.ability;
             }
         }
-        else {
-            if ((move.type === attacker.tera_type && (attacker.teraSTAB1 === attacker.tera_type || attacker.teraSTAB2 === attacker.tera_type))
-                || (attacker.tera_type === 'Stellar' && (attacker.type1 === move.type || attacker.type2 === move.type))) {
+        else if (attacker.tera_type !== 'Stellar') {
+            if (move.type === attacker.tera_type && (attacker.teraSTAB1 === attacker.tera_type || attacker.teraSTAB2 === attacker.tera_type)) {
                 if (attacker.ability === "Adaptability") {
                     stabMod = 0x2400;
                     description.attackerAbility = attacker.ability;
@@ -1825,15 +1831,21 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
                     stabMod = 0x2000;
                 }
             }
-            else if ((move.type !== attacker.tera_type && (attacker.teraSTAB1 === move.type || attacker.teraSTAB2 === move.type))
-                || move.type === attacker.tera_type
-                || (attacker.tera_type === 'Stellar' && (attacker.type1 !== move.type || attacker.type2 !== move.type))) {
+            else if ((move.type !== attacker.tera_type && (attacker.teraSTAB1 === move.type || attacker.teraSTAB2 === move.type)) || move.type === attacker.tera_type) {
                 if (attacker.ability === "Adaptability" && move.type === attacker.tera_type) {
                     stabMod = 0x2000;
                     description.attackerAbility = attacker.ability;
                 } else {
                     stabMod = 0x1800;
                 }
+            }
+        }
+        else {
+            if ([attacker.type1, attacker.type2].indexOf(move.type) !== -1) {
+                stabMod = 0x2000;
+            }
+            else {
+                stabMod = 0x1333;
             }
         }
     }
