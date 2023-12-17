@@ -5706,6 +5706,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 130,
         type: 'Electric',
         category: 'Special',
+        hasSecondaryEffect: true,   //like Jet Punch, no downsides with Sheer Force
     },
     'Tera Starstorm': {
         bp: 120,
@@ -5734,6 +5735,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Rock',
         category: 'Physical',
         isSlice: true,
+        makesContact: true,
     },
     'Tachyon Cutter': {
         bp: 50,
@@ -5757,12 +5759,14 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Fairy',
         category: 'Special',
         hasSecondaryEffect: true,
+        isSound: true,
     },
     'Temper Flare': {
         bp: 75,
         type: 'Fire',
-        category: 'Special',
+        category: 'Physical',
         canDouble: true,
+        makesContact: true,
     },
     'Supercell Slam': {
         bp: 100,
@@ -5775,6 +5779,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Psychic',
         category: 'Special',
         hasSecondaryEffect: true,
+        isSound: true,
     },
     'Upper Hand': {
         bp: 65,

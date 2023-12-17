@@ -1088,8 +1088,11 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //c.iii. Crush Grip, Wring Out, Hard Press
         case "Crush Grip":
         case "Wring Out":
-        case "Hard Press":
             basePower = Math.floor(pokeRound(120 * 100 * Math.floor(attacker.curHP * 0x1000 / attacker.maxHP) / 0x1000) / 100);
+            description.moveBP = basePower;
+            break;
+        case "Hard Press":
+            basePower = Math.floor(pokeRound(100 * 100 * Math.floor(attacker.curHP * 0x1000 / attacker.maxHP) / 0x1000) / 100);
             description.moveBP = basePower;
             break;
 
@@ -1496,7 +1499,7 @@ function canTeraBoost60BP(move) {
     var priority = move.isPriority;
     var multiHit = move.isMultiHit || move.isTenMultiHit || move.isTwoHit || move.isThreeHit || move.isTripleHit || move.name === "Dragon Darts";
     var otherExceptions = ["Crush Grip", "Dragon Energy", "Electro Ball", "Eruption", "Flail", "Fling", "Grass Knot", "Gyro Ball",
-        "Heat Crash", "Heavy Slam", "Low Kick", "Reversal", "Water Spout","Wring Out",].indexOf(move.name) !== -1;
+        "Heat Crash", "Heavy Slam", "Low Kick", "Reversal", "Water Spout", "Wring Out", "Hard Press"].indexOf(move.name) !== -1;
     return !priority && !multiHit && !otherExceptions;
 }
 
