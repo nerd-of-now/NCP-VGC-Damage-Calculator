@@ -45,6 +45,7 @@ $(".tera").bind("keyup change", function () {
     var poke = $(this).closest(".poke-info");
     calcHP(poke);
     calcStats(poke);
+    teraStellarBtns(poke, $(this).prop("checked"), poke.find(".tera-type").val() === 'Stellar');
 });
 $(".nature").bind("keyup change", function() {
     calcStats($(this).closest(".poke-info"));
@@ -156,6 +157,26 @@ $(".percent-hp").keyup(function() {
     var percent = $(this).val();
     calcCurrentHP($(this).parent(), max, percent);
 });
+
+$(".tera-type").bind("keyup change", function () {
+    var poke = $(this).closest(".poke-info");
+    teraStellarBtns(poke, poke.find(".tera").prop("checked"), $(this).val() === 'Stellar')
+});
+
+function teraStellarBtns(poke, isTera, isStellar) {
+    if (isTera && isStellar && poke.find("input.set-selector").val().indexOf('Terapagos') === -1) {
+        for (i = 1; i <= 4; i++) {
+            poke.find(".move" + i + " .stellar-btn").show();
+            poke.find(".move" + i + " .move-stellar").prop("checked", true);
+        }
+    }
+    else {
+        for (i = 1; i <= 4; i++) {
+            poke.find(".move" + i + " .stellar-btn").hide();
+            poke.find(".move" + i + " .move-stellar").prop("checked", false);
+        }
+    }
+}
 
 var lastAura = [false, false, false]
 var manualProtoQuark;
@@ -655,6 +676,7 @@ $(".set-selector").change(function() {
         }
         pokeObj.find(".max").prop("checked", false);
         pokeObj.find(".tera").prop("checked", false);
+        pokeObj.find(".tera").change();
         calcHP(pokeObj);
         calcStats(pokeObj);
         calcEvTotal(pokeObj);
@@ -960,6 +982,8 @@ function Pokemon(pokeInfo) {
                 : mask === 'Hearthflame' ? 'Fire'
                     : mask === 'Cornerstone' ? 'Rock'
                         : 'Grass';
+            //pokeInfo.find(".type1").val(pokedex['Ogerpon-' + mask].t1);
+            //pokeInfo.find(".type2").val(pokedex['Ogerpon-' + mask].t2);
             pokeInfo.find(".tera-type").val(maskTera);
             pokeInfo.find(".tera-type").prop("disabled", true);
             if (pokeInfo.find(".tera").prop("checked")) {
@@ -972,11 +996,13 @@ function Pokemon(pokeInfo) {
             }
         }
         terapagosCheck[pokeInfo.prop('id')] = false;
+        pokeInfo.find(".tera").prop("disabled", false);
     }
     else if (this.name && this.name.indexOf('Terapagos') !== -1) {
         pokeInfo.find(".tera-type").val('Stellar');
         pokeInfo.find(".tera-type").prop("disabled", true);
         if (this.name === 'Terapagos-Terastal') {
+            pokeInfo.find(".tera").prop("disabled", false);
             if (pokeInfo.find(".tera").prop("checked")) {
                 this.name = 'Terapagos-Stellar';
                 if (!terapagosCheck[pokeInfo.prop('id')]) {
@@ -1018,10 +1044,15 @@ function Pokemon(pokeInfo) {
                 pokeInfo.find(".forme").prop("disabled", false);
             }
         }
+        else {
+            pokeInfo.find(".tera").prop("disabled", true);
+        }
     }
     else {
         pokeInfo.find(".tera-type").prop("disabled", false);
+        pokeInfo.find(".forme").prop("disabled", false);
         terapagosCheck[pokeInfo.prop('id')] = false;
+        pokeInfo.find(".tera").prop("disabled", false);
     }
 
     this.type1 = pokeInfo.find(".type1").val();
@@ -1084,6 +1115,7 @@ function getMoveDetails(moveInfo, maxMon) {
         combinePledge: (moveName.includes(" Pledge") && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
         timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
         usedOppMove: moveInfo.find(".move-opponent option:selected").text(),
+        getsStellarBoost: moveInfo.find(".move-stellar").prop("checked"),
     });
 }
 
@@ -1504,7 +1536,8 @@ function setStartup(p) {
     });
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
+    $(".stellar-btn").hide();
     getGen();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
     $(".calc-trigger").bind("change keyup", calculate);

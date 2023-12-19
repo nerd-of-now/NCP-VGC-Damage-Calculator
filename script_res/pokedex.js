@@ -17853,7 +17853,9 @@ var NO_FORMS_SV =
     [
         'Charizard', 'Slowbro', 'Gengar', 'Gyarados', 'Mewtwo', 'Ampharos', 'Scizor', 'Heracross',
         'Houndoom', 'Tyranitar', 'Gardevoir', 'Sableye', 'Medicham', 'Camerupt', 'Altaria', 'Banette', 'Glalie', 'Salamence',
-        'Kyogre', 'Groudon', 'Rayquaza', 'Garchomp', 'Lucario', 'Abomasnow', 'Gallade', 'Diancie', 'Greninja'
+        'Kyogre', 'Groudon', 'Rayquaza', 'Garchomp', 'Lucario', 'Abomasnow', 'Gallade', 'Diancie', 'Greninja',
+        //Indigo Disk additions (none in Teal Mask)
+        'Venusaur', 'Blastoise', 'Sceptile', 'Blaziken', 'Swampert', 'Metagross', 'Latias', 'Latios', 'Necrozma-Dusk-Mane', 'Necrozma-Dawn-Wings',
     ];
 
 NO_FORMS_SV.forEach(e => POKEDEX_SV[e].formes = null);

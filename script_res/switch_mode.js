@@ -29,15 +29,6 @@ if (localStorage.getItem("level") == true) {
 //Load the generation according to localStorage
 //see function getGen() in ap_calc.js
 
-////SET TOGGLING
-////Set the set type according to localStorage on initialize
-//if (localStorage.getItem("isCustom1") == true) {
-//	$("#p1 .set-toggle").prop("checked", true);
-//}
-//if (localStorage.getItem("isCustom2") == true) {
-//	$("#p2 .set-toggle").prop("checked", true);
-//}
-
 $(function(){
 
 	$("#switchTheme").on("click", function(){
@@ -181,6 +172,7 @@ function loadDex(dexMode) {
 		types.splice(types.indexOf('Typeless'), 1);
 		var teraTypes = $.extend(true, [], types);
 		if (gen >= 2) types.push('Typeless');
+		types.splice(types.indexOf('Stellar'), 1);
 		var typeOptions = getSelectOptions(types);
 		var teraTypeOptions = getSelectOptions(teraTypes);
     }

@@ -90,6 +90,9 @@ function buildDescription(description) {
     if (description.maskBoost) {
         output += "(1.2x Mask Boost) "
     }
+    if (description.stellarBoost) {
+        output += "(1st Use) "
+    }
     output += "vs. ";
     if (description.defenseBoost) {
         if (description.defenseBoost > 0) {
@@ -611,7 +614,7 @@ function checkMoveTypeChange(move, field, attacker) {
     else if ((move.name == "Struggle" && gen >= 2) || (['Beat Up', 'Future Sight', 'Doom Desire'].indexOf(move.name) != -1 && gen <= 4)) {
         move.type = 'Typeless';
     }
-    else if (move.name === 'Tera Starstorm' && attacker.isTerastalize) {
+    else if (move.name === 'Tera Starstorm' && attacker.name === 'Terapagos-Stellar') {
         move.type = 'Stellar';
     }
 }
@@ -1555,8 +1558,8 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
 function calcAtMods(move, attacker, defAbility, description, field) {
     atMods = [];
     var ruinActive = {
-        "Tablets of Ruin": $("input:checkbox[id='tablets-of-ruin']:checked").val() != undefined,
-        "Vessel of Ruin": $("input:checkbox[id='vessel-of-ruin']:checked").val() != undefined,
+        "Tablets of Ruin": $("input:checkbox[id='tablets-of-ruin']:checked").val() != undefined && !field.isNeutralizingGas,
+        "Vessel of Ruin": $("input:checkbox[id='vessel-of-ruin']:checked").val() != undefined && !field.isNeutralizingGas,
     };
 
     //a. Tablets of Ruin, Vessel of Ruin
@@ -1710,8 +1713,8 @@ function calcDefense(move, attacker, defender, description, hitsPhysical, isCrit
 function calcDefMods(move, defender, field, description, hitsPhysical, defAbility) {
     var dfMods = [];
     var ruinActive = {
-        "Sword of Ruin": $("input:checkbox[id='sword-of-ruin']:checked").val() != undefined,
-        "Beads of Ruin": $("input:checkbox[id='beads-of-ruin']:checked").val() != undefined,
+        "Sword of Ruin": $("input:checkbox[id='sword-of-ruin']:checked").val() != undefined && !field.isNeutralizingGas,
+        "Beads of Ruin": $("input:checkbox[id='beads-of-ruin']:checked").val() != undefined && !field.isNeutralizingGas,
     };
 
     //a. Sword of Ruin, Beads of Ruin
@@ -1812,20 +1815,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
 
     var stabMod = 0x1000;
     if (move.type !== 'Typeless') {     //Typeless moves cannot get stab even if the user is Typeless
-        if (!attacker.isTerastalize) {
-            if (move.type === attacker.type1 || move.type === attacker.type2 || (move.combinePledge && move.combinePledge !== move.name)) {
-                if (attacker.ability === "Adaptability") {
-                    stabMod = 0x2000;
-                    description.attackerAbility = attacker.ability;
-                } else {
-                    stabMod = 0x1800;
-                }
-            } else if ((attacker.ability === "Protean" || attacker.ability == "Libero") && (gen !== 9 || attacker.abilityOn)) {
-                stabMod = 0x1800;
-                description.attackerAbility = attacker.ability;
-            }
-        }
-        else if (attacker.tera_type !== 'Stellar') {
+        if (attacker.isTerastalize && attacker.tera_type !== 'Stellar') {
             if (move.type === attacker.tera_type && (attacker.teraSTAB1 === attacker.tera_type || attacker.teraSTAB2 === attacker.tera_type)) {
                 if (attacker.ability === "Adaptability") {
                     stabMod = 0x2400;
@@ -1843,12 +1833,26 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
                 }
             }
         }
-        else {
+        else if (attacker.isTerastalize && (move.getsStellarBoost || attacker.name === 'Terapagos-Stellar')) { //Tera Type being Stellar is implicit
             if ([attacker.type1, attacker.type2].indexOf(move.type) !== -1) {
                 stabMod = 0x2000;
             }
             else {
                 stabMod = 0x1333;
+            }
+            if (attacker.name !== 'Terapagos-Stellar') description.stellarBoost = true;
+        }
+        else { //Covers for non-terastalized and Stellar being used up
+            if (move.type === attacker.type1 || move.type === attacker.type2 || (move.combinePledge && move.combinePledge !== move.name)) {
+                if (attacker.ability === "Adaptability") {
+                    stabMod = 0x2000;
+                    description.attackerAbility = attacker.ability;
+                } else {
+                    stabMod = 0x1800;
+                }
+            } else if ((attacker.ability === "Protean" || attacker.ability == "Libero") && (gen !== 9 || attacker.abilityOn)) {
+                stabMod = 0x1800;
+                description.attackerAbility = attacker.ability;
             }
         }
     }
