@@ -7,7 +7,7 @@ var MOVES_RBY = {
         zp: 1
     },
     '(No Move)': {
-        type: 'Typeless',
+        type: 'Normal',
         category: 'Status'
     },
     'Acid': {
@@ -949,6 +949,9 @@ var MOVES_RBY = {
 };
 
 var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
+    '(No Move)': {
+        type: 'Typeless',
+    },
     'Karate Chop': {
         type: 'Fighting',
     },

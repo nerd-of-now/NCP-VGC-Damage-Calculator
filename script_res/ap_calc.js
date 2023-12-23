@@ -945,7 +945,7 @@ function Pokemon(pokeInfo) {
         this.name = setName;
     } else {
         var pokemonName = setName.substring(0, setName.indexOf(" ("));
-        this.name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
+        this.name = (pokedex[pokemonName] && pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
     }
 
     //Check for form-item coordination
@@ -1089,7 +1089,7 @@ function Pokemon(pokeInfo) {
     ];
     this.glaiveRushMod = pokeInfo.find(".glaive-rush").prop("checked");
     this.weight = +pokeInfo.find(".weight").val();
-    this.canEvolve = pokedex[pokemonName].canEvolve;
+    this.canEvolve = pokedex[pokemonName] ? pokedex[pokemonName].canEvolve : false;
 
 }
 

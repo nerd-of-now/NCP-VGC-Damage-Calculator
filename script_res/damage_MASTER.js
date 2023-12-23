@@ -1490,7 +1490,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     tempBP = pokeRound(basePower * chainMods(bpMods) / 0x1000);
 
     //aa. Tera boost for moves with <60 BP
-    if (attacker.isTerastalize && [move.type, 'Stellar'].indexOf(attacker.tera_type) !== -1 && tempBP < 60 && canTeraBoost60BP(move)) {
+    if (attacker.isTerastalize && (move.type === attacker.tera_type || (attacker.tera_type === 'Stellar' && move.stellarBoost)) && tempBP < 60 && canTeraBoost60BP(move)) {
         bpMods.push(60 / tempBP * 0x1000);
         description.teraBPBoost = true;
     }
@@ -1502,7 +1502,7 @@ function canTeraBoost60BP(move) {
     var priority = move.isPriority;
     var multiHit = move.isMultiHit || move.isTenMultiHit || move.isTwoHit || move.isThreeHit || move.isTripleHit || move.name === "Dragon Darts";
     var otherExceptions = ["Crush Grip", "Dragon Energy", "Electro Ball", "Eruption", "Flail", "Fling", "Grass Knot", "Gyro Ball",
-        "Heat Crash", "Heavy Slam", "Low Kick", "Reversal", "Water Spout", "Wring Out", "Hard Press"].indexOf(move.name) !== -1;
+        "Heat Crash", "Heavy Slam", "Low Kick", "Reversal", "Water Spout", "Hard Press"].indexOf(move.name) !== -1;
     return !priority && !multiHit && !otherExceptions;
 }
 
