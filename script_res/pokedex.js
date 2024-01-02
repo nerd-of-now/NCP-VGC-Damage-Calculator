@@ -11412,6 +11412,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     "Venusaur": { "ab": "Chlorophyll" },
     "Vanilluxe": { "ab": "Snow Warning", },
     "Gigalith": { "ab": "Sand Stream", },
+    "Porygon2": { "ab": "Download", },
 
   //hp buffs
   "Magcargo": { "bs": { "hp": 60, "sa": 90 } },
@@ -17625,7 +17626,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
             "sp": 85,
         },
         "w": 60.0,
-        "ab": "Stalwart",
+        "ab": "Stamina",
     },
     "Gouging Fire": {
         "t1": "Fire",

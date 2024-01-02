@@ -236,6 +236,13 @@ select.toxic-counter {
     padding: 3px 3px;
     margin-left: 0.3em;
 }
+.poke-info .xx-btn {
+    font-size: 0.8em;
+    width: 3.8em;
+    height: 1em;
+    padding: 3px 3px;
+    margin-left: 0.3em;
+}
 .poke-info .ev-total, .poke-info .ev-left {
     font-size: 0.8em;
 }

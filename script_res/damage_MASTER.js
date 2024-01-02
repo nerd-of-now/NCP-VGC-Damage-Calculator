@@ -474,10 +474,19 @@ function checkEvo(p1, p2){
 
 function checkDownload(source, target) {
     if (source.ability === "Download") {
-        if (target.stats[SD] <= target.stats[DF]) {
-            source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
-        } else {
-            source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
+        if (target.stats[DF] && target.stats[SD]) {
+            if (target.stats[SD] <= target.stats[DF]) {
+                source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
+            } else {
+                source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
+            }
+        }
+        else {
+            if (getModifiedStat(target.rawStats[SD], target.boosts[SD]) <= getModifiedStat(target.rawStats[DF], target.boosts[DF])) {
+                source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
+            } else {
+                source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
+            }
         }
     }
 }

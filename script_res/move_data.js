@@ -5776,6 +5776,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Electric',
         category: 'Physical',
         makesContact: true,
+        hasRecoil: true,
     },
     'Psychic Noise': {
         bp: 75,
