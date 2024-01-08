@@ -818,7 +818,6 @@ var LOCK_ITEM_LOOKUP = {
 function cantRemoveItem(defItem, defSpecies, terrain) {
     return defItem === null || defItem === "" || defItem.indexOf("ium Z") !== -1
         || LOCK_ITEM_LOOKUP[defSpecies] === defItem
-        || defItem === terrain + " Seed"
         || (defSpecies === "Arceus" && defItem.indexOf(" Plate") !== -1)
         || (defSpecies === "Genesect" && defItem.indexOf(" Drive") !== -1)
         || (defSpecies === "Silvally" && defItem.indexOf(" Memory") !== -1);

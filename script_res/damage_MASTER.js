@@ -244,15 +244,13 @@ function getFinalSpeed(pokemon, weather, terrain, tailwind) {
             (pokemon.ability === "Sand Rush" && weather === "Sand") ||
             (pokemon.ability === "Slush Rush" && ["Hail", "Snow"].indexOf(weather) > -1) ||
             (pokemon.ability === "Surge Surfer" && terrain === "Electric") ||
-            (pokemon.ability === "Unburden" && (pokemon.item === "" || pokemon.item === terrain + " Seed"))) {
+            (pokemon.ability === "Unburden" && pokemon.item === "")) {
         otherSpeedMods *= 2;
     }
     //g. Tailwind
     if (tailwind) otherSpeedMods *= 2;
     //h. Protosynthesis, Quark Drive
-    if (((pokemon.ability === "Protosynthesis" && (pokemon.item === "Booster Energy" || weather === "Sun" || manualProtoQuark))
-        || (pokemon.ability === "Quark Drive" && (pokemon.item === "Booster Energy" || terrain === "Electric" || manualProtoQuark)))
-        && pokemon.highestStat === 'sp')
+    if (pokemon.paradoxAbilityBoost && pokemon.highestStat === 'sp')
         otherSpeedMods *= 1.5;
 
     speed = pokeRound(speed * otherSpeedMods);
@@ -355,30 +353,30 @@ function checkKlutz(pokemon) {
 }
 
 function checkSeeds(pokemon, terrain) {
-    if ((pokemon.item === "Psychic Seed" && terrain === "Psychic") || (pokemon.item === "Misty Seed" && terrain === "Misty")){
-        pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
-    }
-    else if ((pokemon.item === "Electric Seed" && terrain === "Electric") || (pokemon.item === "Grassy Seed" && terrain === "Grassy")) {
-        pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
+    if (pokemon.item === terrain + ' Seed') {
+        if (['Electric', 'Grassy'].indexOf(terrain) !== -1)
+            pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
+        else
+            pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
+        pokemon.item = '';
     }
 }
 
-//function checkConsumedItem(pokemon, terrain) {
-//    if (pokemon.item === terrain + ' Seed') {
-//        if (['Electric', 'Grassy'].indexOf(terrain) !== -1)
-//            pokemon.boosts[DF] = Math.min(6, pokemon.boosts[DF] + 1);
-//        else
-//            pokemon.boosts[SD] = Math.min(6, pokemon.boosts[SD] + 1);
-//        pokemon.item = '';
-//    }
-//    else if (pokemon.item === 'Booster Energy'
-//        && (pokemon.ability === 'Protosynthesis' && weather !== 'Sun') || (pokemon.ability === 'Quark Drive' && terrain !== 'Electric')) {
-//        pokemon.item = '';
-//    }
-//}
+function checkParadoxAbilities(pokemon, terrain, weather) {
+    if (['Protosynthesis', 'Quark Drive'].indexOf(pokemon.ability) !== -1) {
+        if ((pokemon.ability === 'Protosynthesis' && weather === 'Sun')
+            || (pokemon.ability === 'Quark Drive' && terrain === 'Electric')
+            || (manualProtoQuark && pokemon.item !== 'Booster Energy'))
+            pokemon.paradoxAbilityBoost = true;
+        else if (pokemon.item === 'Booster Energy') {
+            pokemon.paradoxAbilityBoost = true;
+            pokemon.item = '';
+        }
+    }
+}
 
 function checkSupersweetSyrup(source, target) {
-    if (source.ability === 'Supersweet Syrup' && source.abilityOn) {
+    if (source.ability === 'Supersweet Syrup' && source.abilityOn && target.item !== 'Clear Amulet') {
         if (target.ability === "Defiant") {
             target.boosts[AT] = Math.min(6, target.boosts[AT] + 2);
         }
@@ -414,6 +412,7 @@ function checkIntimidate(source, target) {
         }
         if (target.item === "Adrenaline Orb" && target.ability !== "Mirror Armor") {
             target.boosts[SP] = Math.min(6, target.boosts[SP] + 1 * (1 + checkSimple));
+            target.item = '';
         }
         if (target.ability === "Rattled" && gen >= 8 && target.item !== "Clear Amulet") {
             target.boosts[SP] = Math.min(6, target.boosts[SP] + 1);
@@ -1100,11 +1099,11 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //c.iii. Crush Grip, Wring Out, Hard Press
         case "Crush Grip":
         case "Wring Out":
-            basePower = Math.floor(pokeRound(120 * 100 * Math.floor(attacker.curHP * 0x1000 / attacker.maxHP) / 0x1000) / 100);
+            basePower = Math.floor(pokeRound(120 * 100 * Math.floor(defender.curHP * 0x1000 / defender.maxHP) / 0x1000) / 100);
             description.moveBP = basePower;
             break;
         case "Hard Press":
-            basePower = Math.floor(pokeRound(100 * 100 * Math.floor(attacker.curHP * 0x1000 / attacker.maxHP) / 0x1000) / 100);
+            basePower = Math.floor(pokeRound(100 * 100 * Math.floor(defender.curHP * 0x1000 / defender.maxHP) / 0x1000) / 100);
             description.moveBP = basePower;
             break;
 
@@ -1133,8 +1132,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //g. Dichotomous BP
         //g.i. Acrobatics
         case "Acrobatics":
-            basePower = ["Flying Gem", field.terrain + " Seed"].indexOf(attacker.item) !== -1
-                || (attacker.item === "Booster Energy" && ["Protosynthesis", "Quark Drive"].indexOf(attacker.ability) !== -1)
+            basePower = attacker.item === 'Flying Gem'
                 || attacker.item === "" ? 110 : 55;
             if (basePower !== move.bp) description.moveBP = basePower;
             break;
@@ -1522,24 +1520,30 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     var attackSource = move.name === "Foul Play" ? defender : attacker;
     var usesDefenseStat = move.name === "Body Press";
     var attackStat = usesDefenseStat ? DF : move.category === "Physical" ? AT : SA;
+    var isMidMoveAtkBoost = false;
     description.attackEVs = attacker.evs[attackStat] +
         (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
         toSmogonStat(attackStat);
+    //Spectral Thief and Meteor Beam aren't part of the calculations but are instead here to properly account for the boosts they give
+    if (move.name === "Spectral Thief" && defender.boosts[attackStat] > 0) {
+        attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]);
+        isMidMoveAtkBoost = true;
+    }
+    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1) {
+        attacker.boosts[attackStat] = Math.min(6, attackSource.boosts[attackStat] + 1);
+        isMidMoveAtkBoost = true;
+    }
     //b. Unaware
     if (defAbility === "Unaware" && attackSource.boosts[attackStat] !== 0) {
         attack = attackSource.rawStats[attackStat];
         description.defenderAbility = defAbility;
         description.attackBoost = attackSource.boosts[attackStat];
     }
-    //Spectral Thief and Meteor Beam aren't part of the calculations but are instead here to properly account for the boosts they give
-    else if (move.name === "Spectral Thief" && defender.boosts[attackStat] > 0) {
-        description.attackBoost = Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]);
-        attack = getModifiedStat(attackSource.rawStats[attackStat], Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]));
+    else if (isMidMoveAtkBoost) {
+        description.attackBoost = attacker.boosts[attackStat];
+        attack = getModifiedStat(attackSource.rawStats[attackStat], attacker.boosts[attackStat]);
     }
-    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1) {
-        description.attackBoost = Math.min(6, attackSource.boosts[attackStat] + 1);
-        attack = getModifiedStat(attackSource.rawStats[attackStat], Math.min(6, attackSource.boosts[attackStat] + 1));
-    } //c. Crit
+    //c. Crit
     else if (attackSource.boosts[attackStat] === 0 || (isCritical && attackSource.boosts[attackStat] < 0)) {
         attack = attackSource.rawStats[attackStat];
     }
@@ -1623,10 +1627,7 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         description.weather = field.weather;
     }
     //e. 1.3x Abilities
-    //PROTOSYNTHESIS/QUARK DRIVE MIGHT BE APPLIED IN A DIFFERENT PLACE
-    else if (((attacker.ability === "Protosynthesis" && (attacker.item === "Booster Energy" || field.weather === "Sun" || manualProtoQuark))
-        || (attacker.ability === "Quark Drive" && (attacker.item === "Booster Energy" || field.terrain === "Electric" || manualProtoQuark)))
-        && ((attacker.highestStat === 'at' && move.category === "Physical") || (attacker.highestStat === 'sa' && move.category === "Special"))
+    else if (attacker.paradoxAbilityBoost && ((attacker.highestStat === 'at' && move.category === "Physical") || (attacker.highestStat === 'sa' && move.category === "Special"))
         || (attacker.ability === "Transistor" && move.type === "Electric" && gen >= 9)) {
         atMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
@@ -1754,10 +1755,7 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
         description.defenderAbility = defAbility;
     }
     //d. 1.3x Abilities
-    //PROTOSYNTHESIS/QUARK DRIVE MIGHT BE APPLIED IN A DIFFERENT PLACE
-    else if (((defAbility === "Protosynthesis" && (defender.item === "Booster Energy" || field.weather === "Sun" || manualProtoQuark))
-        || (defAbility === "Quark Drive" && (defender.item === "Booster Energy" || field.terrain === "Electric" || manualProtoQuark)))
-        && ((defender.highestStat === 'df' && hitsPhysical) || (defender.highestStat === 'sd' && !hitsPhysical))) {
+    else if (defender.paradoxAbilityBoost && ((defender.highestStat === 'df' && hitsPhysical) || (defender.highestStat === 'sd' && !hitsPhysical))) {
         dfMods.push(0x14CD);
         description.defenderAbility = defAbility;
     }
