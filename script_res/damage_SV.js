@@ -79,7 +79,7 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
 
     if (move.name == "Nature Power" && attacker.item !== 'Assault Vest')
         [move, moveDescName] = NaturePower(move, field, moveDescName);
-    else if (move.name == 'Me First' && !move.isMeFirst && attacker.item !== 'Assault Vest')
+    else if (move.name == 'Me First' && !move.isMeFirst)
         [move, moveDescName] = checkMeFirst(move, moveDescName);
 
     if (move.isZ || move.isSignatureZ)

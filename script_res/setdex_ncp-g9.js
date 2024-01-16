@@ -2455,33 +2455,28 @@ var SETDEX_VGC2023 = {
         },
 
     },
-    //"Toxicroak": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Toxicroak": {
+        "Bulky AV Set": {
+            "level": 50,
+            "evs": {
+                "hp": 204,
+                "at": 108,
+                "df": 100,
+                "sa": 0,
+                "sd": 92,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "tera_type": "Fire",
+            "item": "Assault Vest",
+            "moves": [
+                "Gunk Shot",
+                "Close Combat",
+                "Sucker Punch",
+                "Fake Out"
+            ]
+        },
+    },
     "Kilowattrel": {
         "Tailwind Sash Set": {
             "level": 50,
@@ -2841,7 +2836,7 @@ var SETDEX_VGC2023 = {
             "item": "Rocky Helmet",
             "moves": [
                 "Dazzling Gleam",
-                "Psychic",
+                "Psychic Noise",
                 "Imprison",
                 "Trick Room"
             ]
@@ -3813,10 +3808,10 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Modest",
             "ability": "Psychic Surge",
-            "tera_type": "Fairy",
+            "tera_type": "Psychic",
             "item": "Focus Sash",
             "moves": [
-                "Psychic",
+                "Expanding Force",
                 "Dazzling Gleam",
                 "Trick Room",
                 "Imprison"
@@ -4974,6 +4969,27 @@ var SETDEX_VGC2023 = {
 
     },
     "Glimmora": {
+        "Meteor Beam Set": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 0,
+                "df": 36,
+                "sa": 156,
+                "sd": 44,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "ability": "Toxic Debris",
+            "tera_type": "Grass",
+            "item": "Power Herb",
+            "moves": [
+                "Meteor Beam",
+                "Sludge Bomb",
+                "Earth Power",
+                "Mortal Spin"
+            ]
+        },
         "Tera Grass Assault Vest": {
             "level": 50,
             "evs": {
@@ -11227,32 +11243,27 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Excadrill": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Excadrill": {
+        "Tera Ground Swords Dance": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Clear Amulet",
+            "moves": [
+                "High Horsepower",
+                "Iron Head",
+                "Rock Slide",
+                "Swords Dance"
+            ]
+        },
+    },
     //"Meowstic": {
     //    "": {
     //        "level": 50,
@@ -12116,6 +12127,29 @@ var SETDEX_VGC2023 = {
                 "Dragon Pulse"
             ]
         },
+        "Lexicon's Goggles Raging Bolt": {
+            "level": 50,
+            "evs": {
+                "hp": 180,
+                "at": 0,
+                "df": 68,
+                "sa": 100,
+                "sd": 4,
+                "sp": 156
+            },
+            "ivs": {
+                "at": 20,
+            },
+            "nature": "Modest",
+            "tera_type": "Water",
+            "item": "Safety Goggles",
+            "moves": [
+                "Thunderbolt",
+                "Draco Meteor",
+                "Thunderclap",
+                "Protect"
+            ]
+        },
     },
     "Iron Boulder": {
         "Tera Grass Life Orb": {
@@ -12281,6 +12315,27 @@ var SETDEX_VGC2023 = {
                 "Snarl"
             ]
         },
+        //"Lexicon's Tera Grass Entei": {
+        //    "level": 50,
+        //    "evs": {
+        //        "hp": 68,
+        //        "at": 116,
+        //        "df": 20,
+        //        "sa": 0,
+        //        "sd": 148,
+        //        "sp": 156
+        //    },
+        //    "nature": "Adamant",
+        //    "tera_type": "Grass",
+        //    "ability": "Inner Focus",
+        //    "item": "Assault Vest",
+        //    "moves": [
+        //        "Sacred Fire",
+        //        "Extreme Speed",
+        //        "Stomping Tantrum",
+        //        "Snarl"
+        //    ]
+        //},
     },
     "Suicune": {
         "Standard Tailwind Support": {
