@@ -9896,7 +9896,7 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Kommo-o": {
-        "Throat Spray Clangerous Soul": {
+        "Throat Spray Clangorous Soul": {
             "level": 50,
             "evs": {
                 "hp": 28,
@@ -9917,7 +9917,7 @@ var SETDEX_VGC2023 = {
                 "Clanging Scales",
                 "Flash Cannon",
                 "Aura Sphere",
-                "Clangerous Soul"
+                "Clangorous Soul"
             ]
         },
         "EternalSnowman's Sacramento 1st Body Press": {
