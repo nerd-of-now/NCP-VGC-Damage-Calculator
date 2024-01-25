@@ -4188,7 +4188,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Bullet Punch",
                 "Close Combat",
-                "Pounce",
+                "Bug Bite",
                 "U-turn"
             ]
         },
@@ -7162,9 +7162,9 @@ var SETDEX_VGC2023 = {
         "Jolly Tera Ghost Sash": {
             "level": 50,
             "evs": {
-                "hp": 4,
+                "hp": 0,
                 "at": 252,
-                "df": 0,
+                "df": 4,
                 "sa": 0,
                 "sd": 0,
                 "sp": 252
@@ -7182,9 +7182,9 @@ var SETDEX_VGC2023 = {
         "Adamant Tera Stellar Sash": {
             "level": 50,
             "evs": {
-                "hp": 4,
+                "hp": 0,
                 "at": 252,
-                "df": 0,
+                "df": 4,
                 "sa": 0,
                 "sd": 0,
                 "sp": 252
@@ -7481,31 +7481,28 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Muk-Alola": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Muk-Alola": {
+        "Moody Inheritor": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 124,
+                "sa": 0,
+                "sd": 132,
+                "sp": 0
+            },
+            "nature": "Careful",
+            "ability": "Power of Alchemy",
+            "item": "Leftovers",
+            "moves": [
+                "Knock Off",
+                "Gunk Shot",
+                "Minimize",
+                "Protect"
+            ]
+        },
+    },
     //"Slowbro-Galar": {
     //    "": {
     //        "level": 50,
@@ -11217,32 +11214,29 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Hitmontop": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Hitmontop": {
+        "Tera Steel AV": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "tera_type": "Steel",
+            "ability": "Intimidate",
+            "item": "Assault Vest",
+            "moves": [
+                "Fake Out",
+                "Close Combat",
+                "Triple Axel",
+                "Bullet Punch"
+            ]
+        },
+    },
     "Excadrill": {
         "Tera Ground Swords Dance": {
             "level": 50,
@@ -12102,9 +12096,29 @@ var SETDEX_VGC2023 = {
                 "Dragon Claw"
             ]
         },
+        "Speed Booster Support, AGAIN WITH HEAT CRASH": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 60,
+                "df": 12,
+                "sa": 0,
+                "sd": 28,
+                "sp": 156
+            },
+            "nature": "Jolly",
+            "tera_type": "Fairy",
+            "item": "Booster Energy",
+            "moves": [
+                "Heat Crash",
+                "Breaking Swipe",
+                "Howl",
+                "Burning Bulwark"
+            ]
+        },
     },
     "Raging Bolt": {
-        "Magnet Offense": {
+        "Booster Energy Offense": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -12119,12 +12133,12 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Modest",
             "tera_type": "Electric",
-            "item": "Magnet",
+            "item": "Booster Energy",
             "moves": [
                 "Thunderbolt",
-                "Draco Meteor",
+                "Dragon Pulse",
                 "Thunderclap",
-                "Dragon Pulse"
+                "Calm Mind"
             ]
         },
         "Lexicon's Goggles Raging Bolt": {
@@ -12174,6 +12188,29 @@ var SETDEX_VGC2023 = {
         },
     },
     "Iron Crown": {
+        "Psyspam SpAtk Booster": {
+            "level": 50,
+            "evs": {
+                "hp": 28,
+                "at": 0,
+                "df": 4,
+                "sa": 220,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 20,
+            },
+            "nature": "Timid",
+            "tera_type": "Water",
+            "item": "Booster Energy",
+            "moves": [
+                "Tachyon Cutter",
+                "Expanding Force",
+                "Focus Blast",
+                "Tera Blast"
+            ]
+        },
         "Psyspam Speed Booster": {
             "level": 50,
             "evs": {
@@ -12294,18 +12331,18 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Entei": {
-        "Assault Vest Set": {
+        "Lexicon's Tera Grass Entei": {
             "level": 50,
             "evs": {
-                "hp": 228,
+                "hp": 68,
                 "at": 116,
-                "df": 52,
+                "df": 20,
                 "sa": 0,
-                "sd": 84,
-                "sp": 28
+                "sd": 148,
+                "sp": 156
             },
             "nature": "Adamant",
-            "tera_type": "Normal",
+            "tera_type": "Grass",
             "ability": "Inner Focus",
             "item": "Assault Vest",
             "moves": [
@@ -12315,27 +12352,27 @@ var SETDEX_VGC2023 = {
                 "Snarl"
             ]
         },
-        //"Lexicon's Tera Grass Entei": {
-        //    "level": 50,
-        //    "evs": {
-        //        "hp": 68,
-        //        "at": 116,
-        //        "df": 20,
-        //        "sa": 0,
-        //        "sd": 148,
-        //        "sp": 156
-        //    },
-        //    "nature": "Adamant",
-        //    "tera_type": "Grass",
-        //    "ability": "Inner Focus",
-        //    "item": "Assault Vest",
-        //    "moves": [
-        //        "Sacred Fire",
-        //        "Extreme Speed",
-        //        "Stomping Tantrum",
-        //        "Snarl"
-        //    ]
-        //},
+        "Tera Normal Choice Band": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "tera_type": "Normal",
+            "ability": "Inner Focus",
+            "item": "Choice Band",
+            "moves": [
+                "Sacred Fire",
+                "Extreme Speed",
+                "Stomping Tantrum",
+                "Flare Blitz"
+            ]
+        },
     },
     "Suicune": {
         "Standard Tailwind Support": {

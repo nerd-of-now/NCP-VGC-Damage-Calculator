@@ -488,6 +488,7 @@ var POKEDEX_RBY = {
     },
       "w": 30.0,
       "ab": "Static",
+      "canEvolve": true,
   },
   "Electrode": {
     "t1": "Electric",

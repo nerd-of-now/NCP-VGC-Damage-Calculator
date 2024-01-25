@@ -5425,7 +5425,6 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         makesContact: true,
         isPunch: true,
         isPriority: true,
-        hasSecondaryEffect: true,   //it doesn't make sense but it's apparently boosted by Sheer Force
     },
     'Spicy Extract': {
         type: 'Grass',
@@ -5709,7 +5708,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 130,
         type: 'Electric',
         category: 'Special',
-        hasSecondaryEffect: true,   //like Jet Punch, no downsides with Sheer Force
+        hasSecondaryEffect: true,   //no downsides with Sheer Force
     },
     'Tera Starstorm': {
         bp: 120,

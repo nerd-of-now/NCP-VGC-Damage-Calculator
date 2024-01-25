@@ -1529,8 +1529,8 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
         attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]);
         isMidMoveAtkBoost = true;
     }
-    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1) {
-        attacker.boosts[attackStat] = Math.min(6, attackSource.boosts[attackStat] + 1);
+    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1 && attacker.boosts[attackStat] < 6) {
+        attacker.boosts[attackStat] += 1;
         isMidMoveAtkBoost = true;
     }
     //b. Unaware
@@ -1542,6 +1542,7 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     else if (isMidMoveAtkBoost) {
         description.attackBoost = attacker.boosts[attackStat];
         attack = getModifiedStat(attackSource.rawStats[attackStat], attacker.boosts[attackStat]);
+        attacker.boosts[attackStat] -= 1;
     }
     //c. Crit
     else if (attackSource.boosts[attackStat] === 0 || (isCritical && attackSource.boosts[attackStat] < 0)) {
