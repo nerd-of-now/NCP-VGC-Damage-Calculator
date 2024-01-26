@@ -8839,7 +8839,7 @@ var SETDEX_VGC2023 = {
         },
     },
     "Enamorus": {
-        "Special Life Orb": {
+        "Tera Stellar Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8853,10 +8853,10 @@ var SETDEX_VGC2023 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "tera_type": "Fairy",
+            "tera_type": "Stellar",
             "item": "Life Orb",
             "moves": [
-                "Springtide Storm",
+                "Tera Blast",
                 "Moonblast",
                 "Earth Power",
                 "Sludge Bomb"
@@ -10496,11 +10496,11 @@ var SETDEX_VGC2023 = {
         "Trick Room Special Offense": {
             "level": 50,
             "evs": {
-                "hp": 252,
+                "hp": 244,
                 "at": 0,
                 "df": 0,
                 "sa": 252,
-                "sd": 4,
+                "sd": 12,
                 "sp": 0
             },
             "ivs": {
@@ -12034,9 +12034,6 @@ var SETDEX_VGC2023 = {
                 "sd": 124,
                 "sp": 84
             },
-            "ivs": {
-                "at": 0,
-            },
             "nature": "Careful",
             "tera_type": "Water",
             "ability": "Intimidate",
@@ -12096,7 +12093,7 @@ var SETDEX_VGC2023 = {
                 "Dragon Claw"
             ]
         },
-        "Speed Booster Support, AGAIN WITH HEAT CRASH": {
+        "Speed Booster Support, WITH HEAT CRASH": {
             "level": 50,
             "evs": {
                 "hp": 252,
