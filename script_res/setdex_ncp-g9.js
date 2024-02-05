@@ -1821,7 +1821,7 @@ var SETDEX_VGC2023 = {
 
     },
     "Pelipper": {
-        "Sash Set": {
+        "Tera Stellar Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1836,7 +1836,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Modest",
             "ability": "Drizzle",
-            "tera_type": "Flying",
+            "tera_type": "Stellar",
             "item": "Focus Sash",
             "moves": [
                 "Hurricane",
@@ -2817,7 +2817,7 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Farigiraf": {
-        "Bulky Imprison Set": {
+        "Bulky Support": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2837,35 +2837,34 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Dazzling Gleam",
                 "Psychic Noise",
-                "Imprison",
-                "Trick Room"
-            ]
-        },
-        "Safety Goggles Trick Room": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 4,
-                "sa": 252,
-                "sd": 0,
-                "sp": 0
-            },
-            "ivs": {
-                "at": 0,
-                "sp": 0
-            },
-            "nature": "Quiet",
-            "ability": "Armor Tail",
-            "item": "Safety Goggles",
-            "moves": [
-                "Hyper Voice",
-                "Psychic",
                 "Helping Hand",
                 "Trick Room"
             ]
         },
-
+        "Throat Spray Offensive": {
+            "level": 50,
+            "evs": {
+                "hp": 108,
+                "at": 0,
+                "df": 44,
+                "sa": 156,
+                "sd": 196,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0
+            },
+            "nature": "Modest",
+            "ability": "Armor Tail",
+            "tera_type": "Fairy",
+            "item": "Throat Spray",
+            "moves": [
+                "Hyper Voice",
+                "Psychic",
+                "Dazzling Gleam",
+                "Trick Room"
+            ]
+        },
     },
     //"Muk": {
     //    "": {
@@ -11516,31 +11515,7 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Porygon2": {
-        "Bolt Beam Trick Room": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 0,
-                "df": 196,
-                "sa": 52,
-                "sd": 4,
-                "sp": 4
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Bold",
-            "tera_type": "Ghost",
-            "ability": "Download",
-            "item": "Eviolite",
-            "moves": [
-                "Thunderbolt",
-                "Ice Beam",
-                "Recover",
-                "Trick Room"
-            ]
-        },
-        "Offensive Download Set": {
+        "Mixed Offense Download": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -11554,14 +11529,38 @@ var SETDEX_VGC2023 = {
                 "sp": 0,
             },
             "nature": "Quiet",
-            "tera_type": "Ghost",
+            "tera_type": "Poison",
             "ability": "Download",
             "item": "Eviolite",
             "moves": [
-                "Double-Edge",
                 "Tera Blast",
+                "Ice Beam",
+                "Recover",
+                "Trick Room",
+            ]
+        },
+        "Bolt Beam Trick Room": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 100,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "tera_type": "Ghost",
+            "ability": "Trace",
+            "item": "Eviolite",
+            "moves": [
                 "Thunderbolt",
-                "Ice Beam"
+                "Ice Beam",
+                "Recover",
+                "Trick Room"
             ]
         },
     },
@@ -11629,7 +11628,7 @@ var SETDEX_VGC2023 = {
                 "sp": 4
             },
             "nature": "Adamant",
-            "tera_type": "Dragon",
+            "tera_type": "Flying",
             "item": "Assault Vest",
             "moves": [
                 "Heavy Slam",
@@ -12096,12 +12095,12 @@ var SETDEX_VGC2023 = {
         "Speed Booster Support, WITH HEAT CRASH": {
             "level": 50,
             "evs": {
-                "hp": 252,
-                "at": 60,
-                "df": 12,
+                "hp": 196,
+                "at": 100,
+                "df": 4,
                 "sa": 0,
-                "sd": 28,
-                "sp": 156
+                "sd": 4,
+                "sp": 204
             },
             "nature": "Jolly",
             "tera_type": "Fairy",
@@ -12115,6 +12114,29 @@ var SETDEX_VGC2023 = {
         },
     },
     "Raging Bolt": {
+        "Tera Fairy AV": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 0,
+                "df": 108,
+                "sa": 20,
+                "sd": 116,
+                "sp": 36
+            },
+            "ivs": {
+                "at": 20,
+            },
+            "nature": "Modest",
+            "tera_type": "Fairy",
+            "item": "Assault Vest",
+            "moves": [
+                "Thunderbolt",
+                "Draco Meteor",
+                "Thunderclap",
+                "Snarl"
+            ]
+        },
         "Booster Energy Offense": {
             "level": 50,
             "evs": {
