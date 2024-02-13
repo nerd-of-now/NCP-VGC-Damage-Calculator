@@ -2351,7 +2351,30 @@ var SETDEX_VGC2023 = {
                 "Wide Guard"
             ]
         },
-
+        "Porengan's Stellar Meteor Beam": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Weak Armor",
+            "tera_type": "Stellar",
+            "item": "Power Herb",
+            "moves": [
+                "Expanding Force",
+                "Armor Cannon",
+                "Meteor Beam",
+                "Endure"
+            ]
+        },
     },
     "Ceruledge": {
         "Bulk Up Set": {
@@ -9419,31 +9442,32 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Ninetales": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Ninetales": {
+        "Eject Pack Support": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Drought",
+            "tera_type": "Grass",
+            "item": "Eject Pack",
+            "moves": [
+                "Overheat",
+                "Scorching Sands",
+                "Roar",
+                "Will-O-Wisp"
+            ]
+        },
+    },
     //"Poliwrath": {
     //    "": {
     //        "level": 50,
@@ -10763,14 +10787,17 @@ var SETDEX_VGC2023 = {
                 "sd": 4,
                 "sp": 0
             },
-            "nature": "Impish",
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
             "tera_type": "Grass",
             "ability": "Flame Body",
             "item": "Eviolite",
             "moves": [
-                "Flare Blitz",
-                "Mach Punch",
-                "Knock Off",
+                "Overheat",
+                "Flamethrower",
+                "Clear Smog",
                 "Follow Me"
             ]
         },
