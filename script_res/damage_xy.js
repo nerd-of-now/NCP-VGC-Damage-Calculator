@@ -49,7 +49,7 @@ function GET_DAMAGE_XY(attacker, defender, move, field) {
 
     if (move.name == "Nature Power" && attacker.item !== 'Assault Vest')
         [move, moveDescName] = NaturePower(move, field, moveDescName);
-    else if (move.name == 'Me First' && !move.isMeFirst && attacker.item !== 'Assault Vest')
+    else if (move.name == 'Me First' && !move.isMeFirst)
         [move, moveDescName] = checkMeFirst(move, moveDescName);
 
     attacker_name = attacker.name;
@@ -77,8 +77,8 @@ function GET_DAMAGE_XY(attacker, defender, move, field) {
         [move, description, ateIzeBoosted] = ateIzeTypeChange(move, attacker, description);
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds");
-    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity, defender.item, field.weather === "Strong Winds") : 1;
+    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds");
+    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds") : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;

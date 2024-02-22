@@ -45,6 +45,7 @@ var ITEMS_ADV = ITEMS_GSC.concat([
     'Mago Berry',
     'Wiki Berry',
     'Figy Berry',
+    'Sea Incense',
     //NO FUNCT
     'Focus Band',
     'Shell Bell',
@@ -114,7 +115,6 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Rose Incense',
     'Rowap Berry',
     'Salac Berry',
-    'Sea Incense',
     'Shuca Berry',
     'Sky Plate',
     'Splash Plate',
@@ -518,24 +518,27 @@ function getBerryResistType(berry) {
 }
 
 function getFlingPower(item) {
-    return item === 'Iron Ball' || (item === 'Big Nugget' && gen >=8) ? 130
-        : ['Hard Stone','Room Service'].indexOf(item) !== -1 ? 100
-        : item.indexOf('Plate') !== -1 || ['Deep Sea Tooth','Thick Club','Grip Claw'].indexOf(item) !== -1 ? 90
-        : (item.indexOf('ite') !== -1 && item == 'Eviolite') || ['Assault Vest','Weakness Policy','Blunder Policy', 
-            'Heavy-Duty Boots','Quick Claw','Razor Claw','Safety Goggles'].indexOf(item) !== -1 ? 80
-        : ['Poison Barb','Dragon Fang','Power Anklet','Power Band','Power Belt','Power Bracer','Power Lens',
-            'Power Weight','Burn Drive','Chill Drive','Douse Drive','Shock Drive'].indexOf(item) !== -1 ? 70
-        : ['Adamant Orb','Lustrous Orb','Macho Brace','Leek','Rocky Helmet','Utility Umbrella','Terrain Extender',
-            'Damp Rock','Heat Rock'].indexOf(item) !== -1 ? 60
-        : item.indexOf('Memory') !== -1 || ['Sharp Beak','Eject Pack'].indexOf(item) !== -1 ? 50
-        : ['Eviolite','Icy Rock','Lucky Punch'].indexOf(item) !== -1 ? 40
-        : ['Black Belt','Black Sludge','Black Glasses','Charcoal','Deep Sea Scale','Flame Orb',"King's Rock",
-            'Life Orb','Light Ball','Magnet','Metal Coat','Miracle Seed','Mystic Water','Never-Melt Ice',
-            'Razor Fang','Soul Dew','Spell Tag','Toxic Orb','Twisted Spoon', 'Absorb Bulb', 'Adrenaline Orb',
-            'Berry Juice','Binding Band','Eject Button','Float Stone','Light Clay', 'Luminous Moss', 
-            'Metronome','Protective Pads','Shell Bell','Throat Spray','Covert Cloak','Loaded Dice',
-            'Ability Shield','Booster Energy','Clear Amulet','Punching Glove', 'Big Nugget'].indexOf(item) !== -1 ? 30
-        : 10;
+    isInt = parseInt(item);
+    return isNaN(isInt) ?
+        (item === 'Iron Ball' || (item === 'Big Nugget' && gen >= 8) || (gen == 4 && item === 'Klutz Iron Ball') ? 130
+            : ['Hard Stone', 'Room Service'].indexOf(item) !== -1 ? 100
+                : item.indexOf('Plate') !== -1 || ['Deep Sea Tooth', 'Thick Club', 'Grip Claw'].indexOf(item) !== -1 ? 90
+                    : (item.indexOf('ite') !== -1 && item == 'Eviolite') || ['Assault Vest', 'Weakness Policy', 'Blunder Policy',
+                        'Heavy-Duty Boots', 'Quick Claw', 'Razor Claw', 'Safety Goggles'].indexOf(item) !== -1 ? 80
+                        : ['Poison Barb', 'Dragon Fang', 'Power Anklet', 'Power Band', 'Power Belt', 'Power Bracer', 'Power Lens',
+                            'Power Weight', 'Burn Drive', 'Chill Drive', 'Douse Drive', 'Shock Drive'].indexOf(item) !== -1 ? 70
+                            : ['Adamant Orb', 'Lustrous Orb', 'Macho Brace', 'Leek', 'Rocky Helmet', 'Utility Umbrella', 'Terrain Extender',
+                                'Damp Rock', 'Heat Rock'].indexOf(item) !== -1 ? 60
+                                : item.indexOf('Memory') !== -1 || ['Sharp Beak', 'Eject Pack'].indexOf(item) !== -1 ? 50
+                                    : ['Eviolite', 'Icy Rock', 'Lucky Punch'].indexOf(item) !== -1 ? 40
+                                        : ['Black Belt', 'Black Sludge', 'Black Glasses', 'Charcoal', 'Deep Sea Scale', 'Flame Orb', "King's Rock",
+                                            'Life Orb', 'Light Ball', 'Magnet', 'Metal Coat', 'Miracle Seed', 'Mystic Water', 'Never-Melt Ice',
+                                            'Razor Fang', 'Soul Dew', 'Spell Tag', 'Toxic Orb', 'Twisted Spoon', 'Absorb Bulb', 'Adrenaline Orb',
+                                            'Berry Juice', 'Binding Band', 'Eject Button', 'Float Stone', 'Light Clay', 'Luminous Moss',
+                                            'Metronome', 'Protective Pads', 'Shell Bell', 'Throat Spray', 'Covert Cloak', 'Loaded Dice',
+                                            'Ability Shield', 'Booster Energy', 'Clear Amulet', 'Punching Glove', 'Big Nugget'].indexOf(item) !== -1 ? 30
+                                            : 10)
+        : isInt;
 }
 
 function getNaturalGift(item) {

@@ -40,7 +40,9 @@ var showdownToCalcFormes = [
     ["Tatsugiri-Droopy", "Tatsugiri"],
     ["Tatsugiri-Stretchy", "Tatsugiri"],
     ["Poltchageist-Artisan", "Poltchageist"],
-    ['Sinistcha-Masterpiece','Sinistcha']
+    ['Sinistcha-Masterpiece', 'Sinistcha'],
+    ['Terapagos-Terastal', 'Terapagos'],
+    ['Terapagos-Stellar', 'Terapagos'],
 ];
 
 var calcToShowdownFormes = [
@@ -63,8 +65,18 @@ var saveToCalcFormes = [
     ["Zacian-Crowned", "Zacian"],
     ["Zamazenta-Crowned", "Zamazenta"],
     ["Palafin-Hero", "Palafin"],
+    ['Terapagos-Terastal', 'Terapagos'],
+    ['Terapagos-Stellar', 'Terapagos'],
 ];
 
+if (localStorage.custom_gen_3 != null) {
+    SETDEX_CUSTOM_ADV = JSON.parse(localStorage.custom_gen_3);
+    reloadADVScript();
+}
+if (localStorage.custom_gen_4 != null) {
+    SETDEX_CUSTOM_DPP = JSON.parse(localStorage.custom_gen_4);
+    reloadDPPScript();
+}
 if (localStorage.custom_gen_5 != null) {
     SETDEX_CUSTOM_BW = JSON.parse(localStorage.custom_gen_5);
     reloadBWScript();
@@ -86,7 +98,18 @@ if (localStorage.custom_gen_9 != null) {
     reloadSVScript();
 }
 
-
+if (readCookie("custom_gen_3") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_3"));
+    cookiesToLocalStorage(custom_cookies, 4);
+    eraseCookie("custom_gen_3");
+    reloadADVScript();
+}
+if (readCookie("custom_gen_4") != null) {
+    custom_cookies = JSON.parse(readCookie("custom_gen_4"));
+    cookiesToLocalStorage(custom_cookies, 4);
+    eraseCookie("custom_gen_4");
+    reloadDPPScript();
+}
 if (readCookie("custom_gen_5") != null) {
     custom_cookies = JSON.parse(readCookie("custom_gen_5"));
     cookiesToLocalStorage(custom_cookies, 5);
@@ -182,6 +205,14 @@ var deletecustom = function () {
         gen = parseInt($('input[name="gen"]:checked').val());
         localStorage.removeItem("custom_gen_" + gen);
         switch (gen) {
+            case 3:
+                SETDEX_CUSTOM_ADV = {};
+                reloadADVScript();
+                break;
+            case 4:
+                SETDEX_CUSTOM_DPP = {};
+                reloadDPPScript();
+                break;
             case 5:
                 SETDEX_CUSTOM_BW = {};
                 reloadBWScript();
@@ -211,6 +242,18 @@ var deletecustom = function () {
 
 function saveSets(gen, customFormat, species, spreadName) {
     switch (gen) {
+        case 3:
+            if (SETDEX_CUSTOM_ADV[species] == null)
+                SETDEX_CUSTOM_ADV[species] = {}
+            SETDEX_CUSTOM_ADV[species][spreadName] = customFormat
+            localStorage.custom_gen_3 = JSON.stringify(SETDEX_CUSTOM_ADV);
+            break;
+        case 4:
+            if (SETDEX_CUSTOM_DPP[species] == null)
+                SETDEX_CUSTOM_DPP[species] = {}
+            SETDEX_CUSTOM_DPP[species][spreadName] = customFormat
+            localStorage.custom_gen_4 = JSON.stringify(SETDEX_CUSTOM_DPP);
+            break;
         case 5:
             if (SETDEX_CUSTOM_BW[species] == null)
                 SETDEX_CUSTOM_BW[species] = {}
@@ -467,6 +510,12 @@ var savecustom = function()
         saveSets(gen, customFormat, species, spreadName);
     }
     switch (gen) {
+        case 3:
+            reloadADVScript();
+            break;
+        case 4:
+            reloadDPPScript();
+            break;
         case 5:
             reloadBWScript();
             break;
@@ -495,7 +544,6 @@ var savecustom = function()
 
 //Saves a custom set from within the calc
 var savecalc = function (set, spreadName, accessIVs) {
-    gen = parseInt($('input[name="gen"]:checked').val());
     var moves=[]
     species = set.name;
 
@@ -550,6 +598,12 @@ var savecalc = function (set, spreadName, accessIVs) {
 
     saveSets(gen, customFormat, species, spreadName);
     switch (gen) {
+        case 3:
+            reloadADVScript();
+            break;
+        case 4:
+            reloadDPPScript();
+            break;
         case 5:
             reloadBWScript()
             break;

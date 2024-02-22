@@ -839,6 +839,30 @@ var SETDEX_VGC2023 = {
 
     },
     "Gallade": {
+        "Trick Room Clear Amulet": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 2,
+            },
+            "nature": "Brave",
+            "ability": "Sharpness",
+            "tera_type": "Fire",
+            "item": "Clear Amulet",
+            "moves": [
+                "Psycho Cut",
+                "Sacred Sword",
+                "Trick Room",
+                "Wide Guard"
+            ]
+        },
         "Life Orb Set": {
             "level": 50,
             "evs": {

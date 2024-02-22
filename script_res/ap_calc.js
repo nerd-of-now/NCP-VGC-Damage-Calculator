@@ -224,9 +224,17 @@ $(".ability").bind("keyup change", function () {
 
 $("#p1 select.ability").bind("keyup change", function() {
     autosetWeather($(this).val(), 0, $("#p1").find(".abilityToggle").prop("checked"));
+    if ($(this).val() == 'Teraform Zero') {
+        removeWeather();
+        removeTerrain();
+    }
 });
 $("#p2 select.ability").bind("keyup change", function() {
     autosetWeather($(this).val(), 1, $("#p2").find(".abilityToggle").prop("checked"));
+    if ($(this).val() == 'Teraform Zero') {
+        removeWeather();
+        removeTerrain();
+    }
 });
 
 $("#p1 .abilityToggle").bind("keyup change", function () {
@@ -327,6 +335,10 @@ function autoSetTerrain() {
         $("input:radio[id='noterrain']").prop("checked", true);
 }
 
+function removeTerrain() {
+    $("input:radio[id='noterrain']").prop("checked", true);
+}
+
 function autosetWeather(ability, i, abOn) {
     var currentWeather = $("input:radio[name='weather']:checked").val();
     if (lastAutoWeather.indexOf(currentWeather) === -1 || currentWeather === "") {
@@ -336,16 +348,16 @@ function autosetWeather(ability, i, abOn) {
 
     var primalWeather = ["Harsh Sun", "Heavy Rain"];
     var autoWeatherAbilities = {
-            "Drought": "Sun",
-            "Drizzle": "Rain",
-            "Sand Stream": "Sand",
-            "Snow Warning": "Hail",
-            //"Sand Spit": "Sand",
-            "Desolate Land": "Harsh Sun",
-            "Primordial Sea": "Heavy Rain",
-            "Delta Stream": "Strong Winds",
-            "Orichalcum Pulse": "Sun",
-        };
+        "Drought": "Sun",
+        "Drizzle": "Rain",
+        "Sand Stream": "Sand",
+        "Snow Warning": "Hail",
+        //"Sand Spit": "Sand",
+        "Desolate Land": "Harsh Sun",
+        "Primordial Sea": "Heavy Rain",
+        "Delta Stream": "Strong Winds",
+        "Orichalcum Pulse": "Sun",
+    };
     var newWeather;
 
     if (gen >= 9) autoWeatherAbilities["Snow Warning"] = "Snow";
@@ -389,6 +401,10 @@ function autosetWeather(ability, i, abOn) {
         }
     }
     $("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+}
+
+function removeWeather() {
+    $("input:radio[name='weather'][value='']").prop("checked", true);
 }
 
 function autoSetNeutralGas() {
@@ -973,7 +989,7 @@ function Pokemon(pokeInfo) {
         pokeInfo.find(".max").prop("disabled", false);
     }
 
-    //Check for Tera form (ability only for now, should probably be changed to a different form with Terapagos coming in the next DLC) edit: nope lol
+    //Check for Tera form
     if (this.name && this.name.indexOf('Ogerpon') !== -1) {
         var mask = pokeInfo.find("select.item").val().substring(0, pokeInfo.find("select.item").val().indexOf(" Mask"));
 
@@ -982,11 +998,11 @@ function Pokemon(pokeInfo) {
                 : mask === 'Hearthflame' ? 'Fire'
                     : mask === 'Cornerstone' ? 'Rock'
                         : 'Grass';
-            //pokeInfo.find(".type1").val(pokedex['Ogerpon-' + mask].t1);
-            //pokeInfo.find(".type2").val(pokedex['Ogerpon-' + mask].t2);
             pokeInfo.find(".tera-type").val(maskTera);
             pokeInfo.find(".tera-type").prop("disabled", true);
             if (pokeInfo.find(".tera").prop("checked")) {
+                pokeInfo.find(".type1").val(pokedex[this.name].t1);
+                pokeInfo.find(".type2").val(pokedex[this.name].t2);
                 pokeInfo.find("select.ability").val("Embody Aspect");
                 pokeInfo.find("select.ability").trigger('change.select2');
             }
@@ -1020,6 +1036,8 @@ function Pokemon(pokeInfo) {
                     pokeInfo.find("select.ability").val(pokedex['Terapagos-Stellar'].ab);
                     pokeInfo.find("select.ability").trigger('change.select2');
                     terapagosCheck[pokeInfo.prop('id')] = true;
+                    removeWeather();
+                    removeTerrain();
                 }
                 pokeInfo.find(".forme").prop("disabled", true);
             }
@@ -1237,7 +1255,7 @@ $(".gen").change(function () {
         case 3: //Gen 3
             pokedex = POKEDEX_ADV;
             setdex = SETDEX_ADV;
-            setdexCustom = [];
+            setdexCustom = SETDEX_CUSTOM_ADV;
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_ADV;
             items = ITEMS_ADV;
@@ -1250,7 +1268,7 @@ $(".gen").change(function () {
         case 4: //Gen 4
             pokedex = POKEDEX_DPP;
             setdex = SETDEX_DPP;
-            setdexCustom = [];
+            setdexCustom = SETDEX_CUSTOM_DPP;
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_DPP;
             items = ITEMS_DPP;
@@ -1358,10 +1376,12 @@ $(".gen").change(function () {
         }
     }
     var types = Object.keys(typeChart);
-    types.splice(types.indexOf('Typeless'), 1);
+    if (types.indexOf('Typeless') !== -1)
+        types.splice(types.indexOf('Typeless'), 1);
     var teraTypes = $.extend(true, [], types);
     if (gen >= 2) types.push('Typeless');
-    types.splice(types.indexOf('Stellar'), 1);
+    if (types.indexOf('Stellar') !== -1)
+        types.splice(types.indexOf('Stellar'), 1);
     var typeOptions = getSelectOptions(types);
     var teraTypeOptions = getSelectOptions(teraTypes);
     $("select.type1, select.move-type").find("option").remove().end().append(typeOptions);

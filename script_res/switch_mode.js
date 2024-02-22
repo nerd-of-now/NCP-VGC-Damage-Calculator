@@ -169,10 +169,12 @@ function loadDex(dexMode) {
 	}
 	if (typeChart !== undefined) {
 		var types = Object.keys(typeChart);
-		types.splice(types.indexOf('Typeless'), 1);
+		if (types.indexOf('Typeless') !== -1)
+			types.splice(types.indexOf('Typeless'), 1);
 		var teraTypes = $.extend(true, [], types);
 		if (gen >= 2) types.push('Typeless');
-		types.splice(types.indexOf('Stellar'), 1);
+		if (types.indexOf('Stellar') !== -1)
+			types.splice(types.indexOf('Stellar'), 1);
 		var typeOptions = getSelectOptions(types);
 		var teraTypeOptions = getSelectOptions(teraTypes);
     }

@@ -2018,6 +2018,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         category: 'Status',
     },
     'Nature Power': {
+        bp: 1,
         type: 'Normal',
         category: 'Status',
     },
@@ -2479,12 +2480,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Normal',
         category: 'Physical',
         zp: 160
-    },
-    'Nature Power': {
-        bp: 80,
-        type: 'Normal',
-        category: 'Special',
-        hasSecondaryEffect: true
     },
     'Night Slash': {
         bp: 70,
@@ -3104,13 +3099,6 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         makesContact: true,
         hasSecondaryEffect: true
     },
-    'Nature Power': {
-        bp: 100,
-        type: 'Ground',
-        category: 'Physical',
-        hasSecondaryEffect: false,
-        isSpread: true
-    },
     'Night Daze': {
         bp: 85,
         type: 'Dark',
@@ -3609,13 +3597,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         hasSecondaryEffect: true
     },
     'Muddy Water': { bp: 90 },
-    'Nature Power': {
-        bp: 1,
-        type: 'Normal',
-        category: 'Status',
-        hasSecondaryEffect: true,
-        isSpread: false
-    },
     'Oblivion Wing': {
         bp: 80,
         type: 'Flying',
