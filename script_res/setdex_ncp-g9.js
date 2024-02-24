@@ -4584,7 +4584,7 @@ var SETDEX_VGC2023 = {
             "tera_type": "Fire",
             "item": "Covert Cloak",
             "moves": [
-                "Psychic",
+                "Expanding Force",
                 "Dazzling Gleam",
                 "Mystical Fire",
                 "Trick Room"

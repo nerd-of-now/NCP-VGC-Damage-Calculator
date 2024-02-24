@@ -967,9 +967,6 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     'Wing Attack': {
         bp: 60,
     },
-    'Struggle': {
-        type: 'Typeless'
-    },
     'Aeroblast': {
         bp: 100,
         type: 'Flying',
@@ -1730,7 +1727,6 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Rock',
         category: 'Physical',
         isMultiHit: true,
-        isBullet: true,
         zp: 140
     },
     'Rock Tomb': {
@@ -3938,6 +3934,9 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Leech Life': {
         bp: 80,
     },
+    'Rock Blast': {
+        isBullet: true,
+    },
     'Zing Zap': {
         category: 'Physical',
         type: 'Electric',
@@ -4724,7 +4723,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
     'G-Max Stun Shock': {
         type: 'Electric'
     },
-    'G-Max Centiferno': {
+    'G-Max Centinferno': {
         type: 'Fire'
     },
     'G-Max Smite': {
@@ -5678,6 +5677,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Grass',
         category: 'Special',
         hasSecondaryEffect: true,
+        isBullet: true,
     },
     'Ivy Cudgel': {
         bp: 100,
@@ -5823,7 +5823,10 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     'Revenge', 'Grudge', 'Aromatherapy', 'Psycho Shift', 'Autotomize', 'Dual Chop',
     'Leaf Tornado', 'Mat Block', 'Crafty Shield', 'Flower Shield', 'Venom Drench', 'Powder', 'Power-Up Punch',
     'Eternabeam', 'Gear Grind', 'Head Charge', 'Lovely Kiss', 'Trick-or-Treat', 'Bonemerang', 'Octazooka', "King's Shield",
-    'Kinesis', 'Electrify', 'Light of Ruin',
+    'Kinesis', 'Electrify', 'Light of Ruin', 'Anchor Shot', 'Bolt Beak', 'Chatter', 'Core Enforcer', 'Double Iron Bash',
+    'Fishious Rend', 'Geomancy', 'Hold Hands', "Land's Wrath", 'Meteor Assault', 'Mind Blown', 'Multi-Attack',
+    "Nature's Madness", 'Oblivion Wing', 'Octolock', 'Plasma Fists', 'Purify', 'Shadow Bone', 'Shell Trap',
+    'Snap Trap', 'Spectral Thief', 'Storm Throw', 'Techno Blast', 'Thousand Arrows', 'Thousand Waves',
     //unusable SV moves
-    'Blazing Torque', 'Wicked Torque', 'Noxious Torque', 'Combat Torque', 'Magical Torque',
+    'Blazing Torque', 'Wicked Torque', 'Noxious Torque', 'Combat Torque', 'Magical Torque', 'Power Shift',
 ].forEach(e => delete MOVES_SV[e]);

@@ -153,7 +153,7 @@ function calcBPModsGen4(attacker, field, move, description, basePower, defAbilit
             (attacker.ability === "Blaze" && move.type === "Fire") ||
             (attacker.ability === "Torrent" && move.type === "Water") ||
             (attacker.ability === "Swarm" && move.type === "Bug"))) ||
-        (attacker.ability === "Technician" && move.bp <= 60)) {
+        (attacker.ability === "Technician" && move.bp <= 60 && ['Struggle', 'Beat Up'].indexOf(move.name) === -1)) {
         basePower = Math.floor(basePower * 1.5);
         description.attackerAbility = attacker.ability;
     }
@@ -392,7 +392,8 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
     }
     //iv. Resist Berries
     var berryMod = 1;
-    if (getBerryResistType(defender.item) === move.type && (typeEffectiveness > 1 || move.type === "Normal")) {
+    if ((getBerryResistType(defender.item) === move.type && (typeEffectiveness > 1 || move.type === "Normal"))
+        || (defender.item === 'Chilan Berry' && move.name === 'Struggle')) {
         berryMod = 0.5;
         description.defenderItem = defender.item;
     }

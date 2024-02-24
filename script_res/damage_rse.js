@@ -42,9 +42,10 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     }
     
     var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight);
-    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight) : 1;
+    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight) : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defender.ability, typeEffectiveness);
+    if (immuneBuildDesc !== -1) return immuneBuildDesc;
 
     description.HPEVs = defender.HPEVs + " HP";
 
@@ -61,7 +62,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     var at, df;
     //Unlike the other gens, it's best to leave the Attack, Defense, general, and final modifiers all together. It best matches the decomp.
     if (move.name !== 'Beat Up') {
-        var isPhysical = typeChart[move.type].category === "Physical";
+        var isPhysical = move.type === 'Typeless' ? typeChart[moves[move.name].type].category === 'Physical' : typeChart[move.type].category === "Physical";
         var attackStat = isPhysical ? AT : SA;
         description.attackEVs = attacker.evs[attackStat] +
             (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
