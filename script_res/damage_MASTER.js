@@ -897,11 +897,11 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
     if (typeEffectiveness === 0 || (gen === 3 && move.type === '???')) {
         return { "damage": [0], "description": buildDescription(description) };
     }
-    if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== 'Struggle' && (gen !== 4 || move.name !== 'Fire Fang') ||
+    if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== 'Struggle' && (gen !== 4 || move.name !== 'Fire Fang')) ||
         (move.type === "Grass" && defAbility === "Sap Sipper") ||
         (move.type === "Fire" && ["Flash Fire", "Well-Baked Body"].indexOf(defAbility) !== -1) ||
         (move.type === "Water" && (["Dry Skin", "Water Absorb"].indexOf(defAbility) !== -1 || (defAbility === 'Storm Drain' && gen !== 4))) ||
-        (move.type === "Electric" && (["Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1) || (defAbility === 'Lightning Rod' && gen > 4))) ||
+        (move.type === "Electric" && (["Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 || (defAbility === 'Lightning Rod' && gen > 4))) ||
         (move.type === "Ground" && ((!field.isGravity && defender.item !== "Iron Ball" && defAbility === "Levitate") || defAbility === "Earth Eater")) ||
         (move.isBullet && defAbility === "Bulletproof") ||
         (move.isSound && defAbility === "Soundproof") ||
