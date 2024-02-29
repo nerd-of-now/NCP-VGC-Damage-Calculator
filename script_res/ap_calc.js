@@ -1086,10 +1086,16 @@ function Pokemon(pokeInfo) {
     this.boosts = {};
     this.stats = {};
     this.evs = {};
+    if (gen >= 3) {
+        this.ivs = {};
+    }
     for (var i = 0; i < STATS.length; i++) {
         this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
         this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
         this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
+        if (gen >= 3) {
+            this.ivs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .ivs").val();
+        }
     }
     this.nature = pokeInfo.find(".nature").val();
     this.ability = pokeInfo.find("select.ability").val();

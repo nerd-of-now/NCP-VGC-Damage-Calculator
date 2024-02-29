@@ -845,6 +845,19 @@ function critMove(move, defAbility) {
     return move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
 }
 
+//UNUSED CURRENTLY
+function HiddenPower(move, attacker, description) {
+    var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var typeIndex = Math.floor(((attacker.ivs['hp'] & 1) + (attacker.ivs[AT] & 1) * 2 + (attacker.ivs[DF] & 1) * 4 + (attacker.ivs[SP] & 1) * 8 + (attacker.ivs[SA] & 1) * 16 + (attacker.ivs[SD] & 1) * 32) * 15 / 63);
+    move.type = typeOrder[typeIndex];
+    if (gen < 6) {
+        move.bp = Math.floor((((attacker.ivs['hp'] & 2) / 2) + ((attacker.ivs[AT] & 2) / 2) * 2 + ((attacker.ivs[DF] & 2) / 2) * 4 + ((attacker.ivs[SP] & 2) / 2) * 8 + ((attacker.ivs[SA] & 2) / 2) * 16 + ((attacker.ivs[SD] & 2) / 2) * 32) * 40 / 63);
+        description.moveBP = move.bp;
+    }
+    description.moveType = move.type;
+
+    return [move, description];
+}
 
 function NaturalGift(move, attacker, description) {
         var gift = getNaturalGift(attacker.item);
