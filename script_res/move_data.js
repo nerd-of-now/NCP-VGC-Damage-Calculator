@@ -66,7 +66,7 @@ var MOVES_RBY = {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        isTwoHit: true
+        hitRange: 2
     },
     'Double-Edge': {
         bp: 100,
@@ -166,7 +166,7 @@ var MOVES_RBY = {
         bp: 14,
         type: 'Bug',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
         zp: 140
     },
     'Psychic': {
@@ -268,7 +268,7 @@ var MOVES_RBY = {
     'Twineedle': {
         bp: 25,
         type: 'Bug',
-        isTwoHit: true,
+        hitRange: 2,
         category: 'Physical',
         hasSecondaryEffect: true,
     },
@@ -456,14 +456,14 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isMultiHit: true,
+        hitRange: [2, 5],
     },
     'Comet Punch': {
         bp: 18,
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isMultiHit: true,
+        hitRange: [2, 5],
         isPunch: true,
     },
     'Mega Punch': {
@@ -570,7 +570,7 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isMultiHit: true,
+        hitRange: [2, 5],
     },
     'Horn Drill': {
         bp: 1,
@@ -784,7 +784,7 @@ var MOVES_RBY = {
         bp: 20,
         type: 'Normal',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
     },
     'Constrict': {
         bp: 10,
@@ -806,7 +806,7 @@ var MOVES_RBY = {
         bp: 15,
         type: 'Normal',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
         isBullet: true,
     },
     'Leech Life': {
@@ -848,13 +848,13 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isMultiHit: true,
+        hitRange: [2, 5],
     },
     'Bonemerang': {
         bp: 50,
         type: 'Ground',
         category: 'Physical',
-        isTwoHit: true,
+        hitRange: 2,
     },
     'Hyper Fang': {
         bp: 80,
@@ -917,27 +917,13 @@ var MOVES_RBY = {
 
 var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     //Past move changes
-    '(No Move)': {
-        type: 'Typeless',
-    },
-    'Karate Chop': {
-        type: 'Fighting',
-    },
-    'Gust': {
-        type: 'Flying',
-    },
-    'Sand Attack': {
-        type: 'Ground',
-    },
-    'Bite': {
-        type: 'Dark',
-    },
-    'Wing Attack': {
-        bp: 60,
-    },
-    'Dig': {
-        bp: 60,
-    },
+    '(No Move)': { type: 'Typeless', },
+    'Karate Chop': { type: 'Fighting', },
+    'Gust': { type: 'Flying', },
+    'Sand Attack': { type: 'Ground', },
+    'Bite': { type: 'Dark', },
+    'Wing Attack': { bp: 60, },
+    'Dig': { bp: 60, },
     'Double-Edge': { bp: 120 },
     'Explosion': { bp: 250 },
     'Self-Destruct': { bp: 200 },
@@ -1367,6 +1353,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Physical',
         makesContact: true,
         isTripleHit: true,
+        hitRange: [1, 3],
         zp: 120,
     },
     'Snore': {
@@ -1400,7 +1387,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 25,
         type: 'Ground',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
         zp: 140
     },
     'Outrage': {
@@ -1501,14 +1488,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 10,
         type: 'Dark',
         category: 'Physical',
+        hitRange: [1, 6],
     },
 });
 
 var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     //Past move changes
-    'Low Kick': {
-        bp: 1,
-    },
+    'Low Kick': { bp: 1, },
 
     //RSEFRLG moves
     'Aerial Ace': {
@@ -1670,7 +1656,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 25,
         type: 'Rock',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
         zp: 140
     },
     'Rock Tomb': {
@@ -1977,7 +1963,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        isMultiHit: true,
+        hitRange: [2, 5],
     },
     'Mist Ball': {
         bp: 70,
@@ -2039,7 +2025,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 10,
         type: 'Grass',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
         isBullet: true,
         zp: 140
     },
@@ -2047,7 +2033,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 10,
         type: 'Ice',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
         zp: 140
     },
     'Poison Tail': {
@@ -2075,33 +2061,17 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     //Past move changes
     'Fly': { bp: 90, },
     'High Jump Kick': { bp: 100 },
-    'Jump Kick': {
-        bp: 85,
-    },
+    'Jump Kick': { bp: 85, },
     'Leaf Blade': { bp: 90 },
-    'Outrage': {
-        bp: 120,
-    },
-    'Rock Smash': {
-        bp: 40,
-    },
+    'Outrage': { bp: 120, },
+    'Rock Smash': { bp: 40, },
     'Zap Cannon': { bp: 120 },
     'Dive': { bp: 80 },
-    'Dig': {
-        bp: 80,
-    },
-    'Petal Dance': {
-        bp: 90,
-    },
-    'Astonish': {
-        miniDoubleBP: false,
-    },
-    'Extrasensory': {
-        miniDoubleBP: false,
-    },
-    'Needle Arm': {
-        miniDoubleBP: false,
-    },
+    'Dig': { bp: 80, },
+    'Petal Dance': { bp: 90, },
+    'Astonish': { miniDoubleBP: false, },
+    'Extrasensory': { miniDoubleBP: false, },
+    'Needle Arm': { miniDoubleBP: false, },
 
     //DPPt moves
     'Air Slash': {
@@ -2222,7 +2192,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isTwoHit: true
+        hitRange: 2
     },
     'Draco Meteor': {
         bp: 140,
@@ -2763,49 +2733,27 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     //Past move changes
     'Fire Spin': { bp: 35 },
     'Sand Tomb': { bp: 35 },
-    'Bullet Seed': {
-        bp: 25,
-    },
+    'Bullet Seed': { bp: 25, },
     'Doom Desire': { bp: 140 },
     'Drain Punch': { bp: 75 },
-    'Feint': {
-        bp: 30,
-    },
+    'Feint': { bp: 30, },
     'Giga Drain': { bp: 75 },
     'High Jump Kick': { bp: 130 },
     'Jump Kick': { bp: 100 },
     'Last Resort': { bp: 140 },
-    'Petal Dance': {
-        bp: 120,
-    },
+    'Petal Dance': { bp: 120, },
     'Tackle': { bp: 50 },
-    'Thrash': {
-        bp: 120,
-    },
-    'Fury Cutter': {
-        bp: 20,
-    },
-    'Future Sight': {
-        bp: 100,
-    },
-    'Whirlpool': {
-        bp: 35,
-    },
+    'Thrash': { bp: 120, },
+    'Fury Cutter': { bp: 20, },
+    'Future Sight': { bp: 100, },
+    'Whirlpool': { bp: 35, },
+    'Uproar': { bp: 90, },
+    'Icicle Spear': { bp: 25, },
+    'Covet': { bp: 60, },
     'Beat Up': {
         bp: 14, //average fully evolved atk. stat is ~90. 90/10 + 5 = 14. cállate tu boca i'm lazy
     },
-    'Uproar': {
-        bp: 90,
-    },
-    'Icicle Spear': {
-        bp: 25,
-    },
-    'Covet': {
-        bp: 60,
-    },
-    'Curse': {
-        type: 'Ghost',
-    },
+    'Curse': { type: 'Ghost', },
 
     //BWB2W2 moves
     'Electroweb': {
@@ -2876,7 +2824,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Dragon',
         category: 'Physical',
         makesContact: true,
-        isTwoHit: true
+        hitRange: 2
     },
     'Electro Ball': {
         bp: 1,
@@ -2932,7 +2880,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 50,
         type: 'Steel',
         category: 'Physical',
-        isTwoHit: true,
+        hitRange: 2,
         makesContact: true,
         zp: 180
     },
@@ -3130,7 +3078,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isMultiHit: true,
+        hitRange: [2, 5],
         zp: 140
     },
     'V-create': {
@@ -3156,16 +3104,19 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 50,
         type: 'Fire',
         category: 'Special',
+        isPledge: true
     },
     'Grass Pledge': {
         bp: 50,
         type: 'Grass',
         category: 'Special',
+        isPledge: true
     },
     'Water Pledge': {
         bp: 50,
         type: 'Water',
         category: 'Special',
+        isPledge: true
     },
     'Heat Crash': {
         bp: 1,
@@ -3352,7 +3303,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Energy Ball': { bp: 90 },
     'Fire Blast': { bp: 110 },
     'Flamethrower': { bp: 90 },
-    'Facade': { ignoresBurn: true },
     'Frost Breath': { bp: 60 },
     'Future Sight': { bp: 120 },
     'Heat Wave': { bp: 95 },
@@ -3398,55 +3348,24 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Fire Pledge': { bp: 80 },
     'Grass Pledge': { bp: 80 },
     'Water Pledge': { bp: 80 },
-    'Techno Blast': {
-        bp: 120,
-    },
-    'Fury Cutter': {
-        bp: 40,
-    },
-    'Future Sight': {
-        bp: 120,
-    },
-    'Vine Whip': {
-        bp: 45,
-    },
-    'Lick': {
-        bp: 30,
-    },
-    'Smog': {
-        bp: 30,
-    },
-    'Skull Bash': {
-        bp: 130,
-    },
+    'Techno Blast': { bp: 120, },
+    'Fury Cutter': { bp: 40, },
+    'Future Sight': { bp: 120, },
+    'Vine Whip': { bp: 45, },
+    'Lick': { bp: 30, },
+    'Smog': { bp: 30, },
+    'Skull Bash': { bp: 130, },
     'Snore': { bp: 50 },
-    'Bubble': {
-        bp: 40,
-    },
-    'Charm': {
-        type: 'Fairy',
-    },
-    'Moonlight': {
-        type: 'Fairy',
-    },
-    'Sweet Kiss': {
-        type: 'Fairy',
-    },
-    'Smelling Salts': {
-        bp: 70,
-    },
-    'Body Slam': {
-        miniDoubleBP: true,
-    },
-    'Dragon Rush': {
-        miniDoubleBP: true
-    },
-    'Shadow Force': {
-        miniDoubleBP: true
-    },
-    'Heat Crash': {
-        miniDoubleBP: true
-    },
+    'Bubble': { bp: 40, },
+    'Smelling Salts': { bp: 70, },
+    'Charm': { type: 'Fairy', },
+    'Moonlight': { type: 'Fairy', },
+    'Sweet Kiss': { type: 'Fairy', },
+    'Body Slam': { miniDoubleBP: true, },
+    'Dragon Rush': { miniDoubleBP: true },
+    'Shadow Force': { miniDoubleBP: true },
+    'Heat Crash': { miniDoubleBP: true },
+    'Facade': { ignoresBurn: true },
 
     //XY moves
     'Boomburst': {
@@ -3533,7 +3452,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 15,
         type: 'Water',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
         isPriority: true,
     },
     'Disarming Voice': {
@@ -3768,36 +3687,18 @@ var ZMOVES_LOOKUP = {
 
 var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     //Past move changes
-    'Water Shuriken': {
-        category: 'Special',
-    },
-    'Leech Life': {
-        bp: 80,
-    },
-    'Rock Blast': {
-        isBullet: true,
-    },
+    'Leech Life': { bp: 80, },
     'Mystical Fire': { bp: 75 },
-    'Sucker Punch': {
-        bp: 70,
-    },
-    'Shadow Force': {
-        miniDoubleBP: false,
-    },
-    'Heavy Slam': {
-        miniDoubleBP: true,
-    },
-    'Flying Press': {
-        bp: 100,
-    },
-    'Phantom Force': {
-        miniDoubleBP: false,
-    },
+    'Sucker Punch': { bp: 70, },
+    'Flying Press': { bp: 100, },
     'Parabolic Charge': { bp: 65 },
-    'Fell Stinger': {
-        bp: 50,
-    },
+    'Fell Stinger': { bp: 50, },
     'Tackle': { bp: 40 },
+    'Phantom Force': { miniDoubleBP: false, },
+    'Shadow Force': { miniDoubleBP: false, },
+    'Heavy Slam': { miniDoubleBP: true, },
+    'Rock Blast': { isBullet: true, },
+    'Water Shuriken': { category: 'Special', },
 
     //SM moves
     'Zing Zap': {
@@ -4309,7 +4210,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Steel',
         category: 'Physical',
         makesContact: true,
-        isTwoHit: true,
+        hitRange: 2,
         isPunch: true,
         hasSecondaryEffect: true,
     },
@@ -4336,7 +4237,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 50,
         type: 'Dragon',
         category: 'Physical',
-        oneTwoHit: true,
+        hitRange: [1, 2]
     },
     'Bolt Beak': {
         bp: 85,
@@ -4673,7 +4574,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Flying',
         category: 'Physical',
         makesContact: true,
-        isTwoHit: true,
+        hitRange: 2,
     },
     'Expanding Force': {
         bp: 80,
@@ -4724,7 +4625,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 25,
         type: 'Dragon',
         category: 'Physical',
-        isMultiHit: true,
+        hitRange: [2, 5],
     },
     'Scorching Sands': {
         bp: 70,
@@ -4757,7 +4658,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         category: 'Physical',
         makesContact: true,
         alwaysCrit: true,
-        isThreeHit: true,
+        hitRange: 3,
         isPunch: true,
     },
     'Terrain Pulse': {
@@ -4771,7 +4672,8 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Ice',
         category: 'Physical',
         makesContact: true,
-        isTripleHit: true
+        isTripleHit: true,
+        hitRange: [1, 3]
     },
     'Wicked Blow': {
         bp: 80,
@@ -4957,96 +4859,38 @@ var MOVES_SS_NATDEX = $.extend(true, {}, MOVES_SS, {});
 
 var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     //Past move changes that aren't nerfs or buffs
-    'Cut': {
-        isSlice: true,
-    },
-    'Razor Leaf': {
-        isSlice: true,
-    },
-    'Slash': {
-        isSlice: true,
-    },
-    'Fury Cutter': {
-        isSlice: true,
-    },
+    'Cut': { isSlice: true, },
+    'Razor Leaf': { isSlice: true, },
+    'Slash': { isSlice: true, },
+    'Fury Cutter': { isSlice: true, },
     'Air Cutter': {
         isSlice: true,
         isWind: true,
     },
-    'Aerial Ace': {
-        isSlice: true,
-    },
-    'Leaf Blade': {
-        isSlice: true,
-    },
-    'Night Slash': {
-        isSlice: true,
-    },
-    'Air Slash': {
-        isSlice: true,
-    },
-    'X-Scissor': {
-        isSlice: true,
-    },
-    'Psycho Cut': {
-        isSlice: true,
-    },
-    'Cross Poison': {
-        isSlice: true,
-    },
-    'Sacred Sword': {
-        isSlice: true,
-    },
-    'Razor Shell': {
-        isSlice: true,
-    },
-    'Solar Blade': {
-        isSlice: true,
-    },
-    'Behemoth Blade': {
-        isSlice: true,
-    },
-    'Gust': {
-        isWind: true,
-    },
-    'Blizzard': {
-        isWind: true,
-    },
-    'Icy Wind': {
-        isWind: true,
-    },
-    'Twister': {
-        isWind: true,
-    },
-    'Heat Wave': {
-        isWind: true,
-    },
-    'Hurricane': {
-        isWind: true,
-    },
-    'Petal Blizzard': {
-        isWind: true,
-    },
-    'Fairy Wind': {
-        isWind: true,
-    },
-
-    //Past move nerfs/buffs
-    'Wicked Blow': {
-        bp: 75,
-    },
-    'Grassy Glide': {
-        bp: 55,
-    },
-    'Glacial Lance': {
-        bp: 120,
-    },
-    'Luster Purge': {
-        bp: 95,
-    },
-    'Mist Ball': {
-        bp: 95,
-    },
+    'Aerial Ace': { isSlice: true, },
+    'Leaf Blade': { isSlice: true, },
+    'Night Slash': { isSlice: true, },
+    'Air Slash': { isSlice: true, },
+    'X-Scissor': { isSlice: true, },
+    'Psycho Cut': { isSlice: true, },
+    'Cross Poison': { isSlice: true, },
+    'Sacred Sword': { isSlice: true, },
+    'Razor Shell': { isSlice: true, },
+    'Solar Blade': { isSlice: true, },
+    'Behemoth Blade': { isSlice: true, },
+    'Gust': { isWind: true, },
+    'Blizzard': { isWind: true, },
+    'Icy Wind': { isWind: true, },
+    'Twister': { isWind: true, },
+    'Heat Wave': { isWind: true, },
+    'Hurricane': { isWind: true, },
+    'Petal Blizzard': { isWind: true, },
+    'Fairy Wind': { isWind: true, },
+    'Wicked Blow': { bp: 75, },
+    'Grassy Glide': { bp: 55, },
+    'Glacial Lance': { bp: 120, },
+    'Luster Purge': { bp: 95, },
+    'Mist Ball': { bp: 95, },
 
     //PLA moves
     'Dire Claw': {
@@ -5259,7 +5103,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Physical',
         makesContact: true,
         isSlice: true,
-        isTenMultiHit: true,
+        hitRange: [1, 10]
     },
     'Ice Spinner': {
         bp: 80,
@@ -5288,7 +5132,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Water',
         category: 'Physical',
         makesContact: true,
-        isThreeHit: true,
+        hitRange: 3,
     },
     'Mortal Spin': {
         bp: 30,
@@ -5409,7 +5253,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 40,
         type: 'Psychic',
         category: 'Special',
-        isTwoHit: true,
+        hitRange: 2,
     },
     'Rage Fist': {
         bp: 50,
@@ -5563,7 +5407,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 50,
         type: 'Steel',
         category: 'Special',
-        isTwoHit: true,
+        hitRange: 2,
         isSlice: true,
     },
     'Hard Press': {

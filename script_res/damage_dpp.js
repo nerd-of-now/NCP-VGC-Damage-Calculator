@@ -11,9 +11,9 @@ function CALCULATE_ALL_MOVES_DPP(p1, p2, field) {
     checkIntimidate(p2, p1);
     checkDownload(p1, p2);
     checkDownload(p2, p1);
-    p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), '', field.getTailwind(0));
+    p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTailwind(0));
     $(".p1-speed-mods").text(p1.stats[SP]);
-    p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), '', field.getTailwind(1));
+    p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTailwind(1));
     $(".p2-speed-mods").text(p2.stats[SP]);
     var side1 = field.getSide(1);
     var side2 = field.getSide(0);

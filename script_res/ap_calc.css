@@ -201,7 +201,7 @@ select.ability-supreme, select.ability-proto-quark {
 select.toxic-counter {
     width: 4.5em;
 }
-.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-stellar, .move-hits2, .move-hits3, .move-pledge, .move-10hits, .move-linearAddedBP, .move-opponent {
+.move-selector, .move-bp, .move-type, .move-cat, .move-hits, .move-double, .move-stellar, .move-pledge, .move-linearAddedBP, .move-opponent {
     font-size: 0.9em;
 }
 .move-selector{
@@ -217,7 +217,7 @@ select.toxic-counter {
 .move-cat, .move-linearAddedBP {
     width: 4em;
 }
-.move-hits, .move-double, .move-stellar, .move-hits2, .move-hits3, .move-pledge, .move-10hits, .move-opponent {
+.move-hits, .move-double, .move-stellar, .move-pledge, .move-opponent {
     width: 4.6em;
 }
 .abilityToggle, .ability-advanced{

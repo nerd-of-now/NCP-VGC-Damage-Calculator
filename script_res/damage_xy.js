@@ -20,14 +20,14 @@ function CALCULATE_ALL_MOVES_XY(p1, p2, field) {
     p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
     p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
     p1.stats[SP] = getModifiedStat(p1.rawStats[SP], p1.boosts[SP]);
-    p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTerrain(), field.getTailwind(0));
+    p1.stats[SP] = getFinalSpeed(p1, field.getWeather(), field.getTailwind(0), field.getSwamp(0), field.getTerrain());
     $(".p1-speed-mods").text(p1.stats[SP]);
     p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
     p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
     p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
     p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
     p2.stats[SP] = getModifiedStat(p2.rawStats[SP], p2.boosts[SP]);
-    p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTerrain(), field.getTailwind(1));
+    p2.stats[SP] = getFinalSpeed(p2, field.getWeather(), field.getTailwind(1), field.getSwamp(1), field.getTerrain());
     $(".p2-speed-mods").text(p2.stats[SP]);
     var side1 = field.getSide(1);
     var side2 = field.getSide(0);

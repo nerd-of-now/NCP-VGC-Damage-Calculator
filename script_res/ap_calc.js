@@ -178,20 +178,37 @@ function teraStellarBtns(poke, isTera, isStellar) {
     }
 }
 
+function setHitsVal(poke, ab, item) {
+    var pokeMoveObjs = [poke.find(".move1"), poke.find(".move2"), poke.find(".move3"), poke.find(".move4")];
+    var moveData = [moves[pokeMoveObjs[0].children("select.move-selector").val()], moves[pokeMoveObjs[1].children("select.move-selector").val()],
+        moves[pokeMoveObjs[2].children("select.move-selector").val()], moves[pokeMoveObjs[3].children("select.move-selector").val()]];
+
+    for (var i = 0; i < 4; i++) {
+        var curHitBounds = moveData[i].hitRange;
+        if (curHitBounds && curHitBounds.length == 2) {
+            if (curHitBounds[0] === 2 && curHitBounds[1] === 5) {
+                pokeMoveObjs[i].children(".move-hits").val(ab === 'Skill Link' ? 5 : item === 'Loaded Dice' ? 4 : 3);
+            }
+            else if (curHitBounds[1] !== 6 && curHitBounds[1] !== 2) {
+                pokeMoveObjs[i].children(".move-hits").val(curHitBounds[1]);
+            }
+        }
+    }
+}
+
 var lastAura = [false, false, false]
 var manualProtoQuark;
 $(".ability").bind("keyup change", function () {
+    thisPoke = $(this).closest(".poke-info");
     autoSetNeutralGas();
 
-    $(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5
-        : $(this).closest(".poke-info").find("select.item").val() === 'Loaded Dice' ? 4
-            : 3);
+    setHitsVal(thisPoke, $(this).val(), thisPoke.find("select.item").val());
 
     if ($(this).val() === "Supreme Overlord")
-        $(this).closest(".poke-info").find(".ability-supreme").show();
+        thisPoke.find(".ability-supreme").show();
     else
-        $(this).closest(".poke-info").find(".ability-supreme").hide();
-    $(this).closest(".poke-info").find(".ability-supreme").val(0);
+        thisPoke.find(".ability-supreme").hide();
+    thisPoke.find(".ability-supreme").val(0);
 
     autoSetAura()
     autoSetRuin()
@@ -201,24 +218,24 @@ $(".ability").bind("keyup change", function () {
     var ABILITY_TOGGLE_OFF = ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Electromorphosis', 'Wind Power', 'Sand Spit', 'Seed Sower'];
     var ABILITY_TOGGLE_ON = gen >= 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero', 'Intrepid Sword', 'Dauntless Shield', 'Supersweet Syrup'] : ['Intimidate', 'Slow Start'];
     if (ABILITY_TOGGLE_OFF.indexOf(ab) !== -1) {
-        $(this).closest(".poke-info").find(".abilityToggle").show();
-        $(this).closest(".poke-info").find(".abilityToggle").prop("checked", false);
+        thisPoke.find(".abilityToggle").show();
+        thisPoke.find(".abilityToggle").prop("checked", false);
     }
     else if (ABILITY_TOGGLE_ON.indexOf(ab) !== -1) {
-        $(this).closest(".poke-info").find(".abilityToggle").show();
-        $(this).closest(".poke-info").find(".abilityToggle").prop("checked", true);
+        thisPoke.find(".abilityToggle").show();
+        thisPoke.find(".abilityToggle").prop("checked", true);
     }
     else {
-        $(this).closest(".poke-info").find(".abilityToggle").hide();
+        thisPoke.find(".abilityToggle").hide();
     }
     var STAT_BOOST_VARY = ['Protosynthesis', 'Quark Drive'];
     if (STAT_BOOST_VARY.indexOf(ab) !== -1) {
-        $(this).closest(".poke-info").find(".ability-advanced").show();
-        $(this).closest(".poke-info").find(".ability-advanced").prop("checked", false);
+        thisPoke.find(".ability-advanced").show();
+        thisPoke.find(".ability-advanced").prop("checked", false);
     }
     else
-        $(this).closest(".poke-info").find(".ability-advanced").hide();
-    $(this).closest(".poke-info").find(".ability-proto-quark").hide();
+        thisPoke.find(".ability-advanced").hide();
+    thisPoke.find(".ability-proto-quark").hide();
     manualProtoQuark = false;
 });
 
@@ -415,25 +432,19 @@ function autoSetNeutralGas() {
     }
 }
 
-$("#p1 .item").bind("keyup change", function () {
-    $(this).closest(".poke-info").find(".move-hits").val($(this).closest(".poke-info").find("select.ability").val() === 'Skill Link' ? 5
-        : $(this).val() === 'Loaded Dice' ? 4
-            : 3);
-    autosetStatus("#p1", $(this).val());
-    autoSetType("#p1", $(this).val());
-});
-$("#p2 .item").bind("keyup change", function () {
-    $(this).closest(".poke-info").find(".move-hits").val($(this).closest(".poke-info").find("select.ability").val() === 'Skill Link' ? 5
-        : $(this).val() === 'Loaded Dice' ? 4
-            : 3);
-    autosetStatus("#p2", $(this).val());
-    autoSetType("#p2", $(this).val());
+$(".item").bind("keyup change", function () {
+    var thisMon = $(this).closest(".poke-info");
+    setHitsVal(thisMon, thisMon.find("select.ability").val(), $(this).val());
+    autosetStatus('#' + thisMon.attr('id'), $(this).val());
+    autoSetType('#' + thisMon.attr('id'), $(this).val());
 });
 
 function autoSetType(p, item) {
     var ab = $(p + " select.ability").val();
-    
-    if (ab == "RKS System") {
+    var name = $(p + " input.set-selector").val();
+    var pokName = name.substring(0, name.indexOf(" ("));
+
+    if (ab == "RKS System" && pokName == "Silvally") {
         if (item.indexOf("Memory") != -1) {
             $(p + " .type1").val(getMemoryType(item));
         }
@@ -441,10 +452,10 @@ function autoSetType(p, item) {
             $(p + " .type1").val('Normal');
         }
     }
-    else if (ab == "Multitype") {
+    else if (ab == "Multitype" && pokName == "Arceus") {
         if (item.indexOf("Plate") != -1)
             $(p + " .type1").val(getItemBoostType(item));
-        else if (item.indexOf("ium Z") != -1)
+        else if (item.indexOf("ium Z") != -1 && getZType(item) !== '')
             $(p + " .type1").val(getZType(item));
         else
             $(p + " .type1").val('Normal');
@@ -483,6 +494,75 @@ $(".status").bind("keyup change", function() {
     }
 });
 
+// auto-update move details on select
+$(".move-selector").change(function() {
+    var moveName = $(this).val();
+    var move = moves[moveName] || moves['(No Move)'];
+    var moveGroupObj = $(this).parent();
+    moveGroupObj.children(".move-bp").val(move.bp);
+    moveGroupObj.children(".move-type").val(move.type);
+    moveGroupObj.children(".move-cat").val(move.category);
+    moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
+
+    if (move.hitRange && move.hitRange.length == 2) {
+        showHits(move.hitRange, moveGroupObj);
+        //if (moveName == 'Dragon Darts' && $('#douswitch').is(":checked")) {
+        //    moveGroupObj.children(".move-hits").hide();
+        //}
+    }
+    else {
+        moveGroupObj.children(".move-hits").hide();
+    }
+
+    if (move.canDouble) moveGroupObj.children(".double-btn").show();
+    else moveGroupObj.children(".double-btn").hide();
+
+    if (move.linearAddBP) moveGroupObj.children(".move-linearAddedBP").show();
+    else moveGroupObj.children(".move-linearAddedBP").hide();
+
+    if (move.usesOppMoves) {    //for when the attacker's moves change
+        getOppMoves($(this).closest(".poke-info").attr("id"), moveGroupObj);
+        moveGroupObj.children(".move-opponent").show();
+    } else {
+        moveGroupObj.children(".move-opponent").hide();
+    }
+
+    if (move.isPledge) {
+        moveGroupObj.children(".move-pledge").show();
+        moveGroupObj.children(".move-pledge").val(moveName);
+    }
+    else moveGroupObj.children(".move-pledge").hide();
+
+    moveGroupObj.children(".move-z").prop("checked", false);
+
+    //SLOPPY WAY OF HANDLING
+    glaiveRushCheck(moveGroupObj);
+    getOppMoves($(this).closest(".poke-info").attr("id"));  //for when the defender's moves change
+});
+
+function showHits(hitBounds, moveGroupObj) {
+    var moveHits = moveGroupObj.children(".move-hits");
+    moveHits.find("option").hide();
+    moveHits.show();
+    for (var i = hitBounds[0]; i <= hitBounds[1]; i++) {
+        moveHits.find('option[value="' + i + '"]').show();
+    }
+    if (hitBounds[0] === 2 && hitBounds[1] === 5) {
+        moveHits.val(moveHits.closest(".poke-info").find("select.ability").val() === 'Skill Link' ? 5
+            : moveHits.closest(".poke-info").find("select.item").val() === 'Loaded Dice' ? 4
+                : 3);
+    }
+    else if (hitBounds[0] === 1 && hitBounds[1] === 2) {  //Use case only for Dragon Darts, for now.
+        moveHits.val(1);
+    }
+    else if (hitBounds[0] === 1 && hitBounds[1] === 6) {  //Use case only for Beat Up. Sorry non-VGC players, it'll be stuck as 4
+        moveHits.val(4);
+    }
+    else {
+        moveHits.val(hitBounds[1]);
+    }
+}
+
 //sloppy check for Glaive Rush checkbox
 function glaiveRushCheck(divValue) {    //divValue should accept any div class, it's just meant to be a quick way to find which Pokemon it's checking
     pInfo = $(divValue).closest(".poke-info");
@@ -498,67 +578,6 @@ function glaiveRushCheck(divValue) {    //divValue should accept any div class, 
         pInfo.find(".glaive-rush").prop("checked", false);
     }
 }
-
-// auto-update move details on select
-$(".move-selector").change(function() {
-    var moveName = $(this).val();
-    var move = moves[moveName] || moves['(No Move)'];
-    var moveGroupObj = $(this).parent();
-    moveGroupObj.children(".move-bp").val(move.bp);
-    moveGroupObj.children(".move-type").val(move.type);
-    moveGroupObj.children(".move-cat").val(move.category);
-    moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
-
-    if (move.isMultiHit) {
-        moveGroupObj.children(".move-hits").show();
-        moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find("select.ability").val() === 'Skill Link' ? 5
-            : $(this).closest(".poke-info").find("select.item").val() === 'Loaded Dice' ? 4
-            : 3);
-    } else {
-        moveGroupObj.children(".move-hits").hide();
-    }
-
-    if (move.isTenMultiHit) {
-        moveGroupObj.children(".move-10hits").show();
-        moveGroupObj.children(".move-10hits").val(10);
-    } else {
-        moveGroupObj.children(".move-10hits").hide();
-    }
-
-    if (move.canDouble) moveGroupObj.children(".double-btn").show();
-    else moveGroupObj.children(".double-btn").hide();
-
-    if (move.oneTwoHit) moveGroupObj.children(".move-hits2").show();
-    else moveGroupObj.children(".move-hits2").hide();
-
-    if (move.linearAddBP) moveGroupObj.children(".move-linearAddedBP").show();
-    else moveGroupObj.children(".move-linearAddedBP").hide();
-
-    if (move.usesOppMoves) {    //for when the attacker's moves change
-      getOppMoves($(this).closest(".poke-info").attr("id"), moveGroupObj);
-        moveGroupObj.children(".move-opponent").show();
-    } else {
-        moveGroupObj.children(".move-opponent").hide();
-    }
-
-    if (move.isTripleHit) {
-        moveGroupObj.children(".move-hits3").show();
-        moveGroupObj.children(".move-hits3").val(3);
-    }
-    else moveGroupObj.children(".move-hits3").hide();
-
-    if (moveName.includes(" Pledge")) {
-        moveGroupObj.children(".move-pledge").show();
-        moveGroupObj.children(".move-pledge").val(moveName);
-    }
-    else moveGroupObj.children(".move-pledge").hide();
-
-    moveGroupObj.children(".move-z").prop("checked", false);
-
-    //SLOPPY WAY OF HANDLING
-    glaiveRushCheck(moveGroupObj);
-    getOppMoves($(this).closest(".poke-info").attr("id"));  //for when the defender's moves change
-});
 
 function getOppMoves(pokID, moveGroupObj) {
     var oppMoveOptions;
@@ -1127,16 +1146,12 @@ function getMoveDetails(moveInfo, maxMon) {
         category: moveInfo.find(".move-cat").val(),
         isCrit: moveInfo.find(".move-crit").prop("checked"),
         isZ: moveInfo.find(".move-z").prop("checked"),
-        hits: (defaultDetails.isMultiHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits").val()
-            : (defaultDetails.isTenMultiHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-10hits").val()
-                : (defaultDetails.oneTwoHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits2").val()
-                    : (defaultDetails.isTwoHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 2
-                        : (defaultDetails.isThreeHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 3
-                            : (moveName == "Beat Up" && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? 4
-                            : 1,
+        hits: (defaultDetails.hitRange && !defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon)
+            ? (defaultDetails.hitRange.length == 2 ? ~~moveInfo.find(".move-hits").val() : defaultDetails.hitRange)
+            : 1,
         isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon && moveInfo.find(".move-double").prop("checked")) ? 1 : 0,
-        tripleHits: (defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits3").val() : 0,
-        combinePledge: (moveName.includes(" Pledge") && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
+        tripleHits: (defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits").val() : 0,
+        combinePledge: (defaultDetails.isPledge && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
         timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
         usedOppMove: moveInfo.find(".move-opponent option:selected").text(),
         getsStellarBoost: moveInfo.find(".move-stellar").prop("checked"),
@@ -1174,6 +1189,8 @@ function Field() {
     var isTailwind = [$("#tailwindL").prop("checked"), $("#tailwindR").prop("checked")];
     var isSaltCure = [$("#saltCureL").prop("checked"), $("#saltCureR").prop("checked")];
     var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
+    var isSwamp = [$("#swampL").prop("checked"), $("#swampR").prop("checked")];
+    var isSeaFire = [$("#seaFireL").prop("checked"), $("#seaFireR").prop("checked")];
 
     this.getNeutralGas = function () {
         return isNeutralizingGas;
@@ -1187,6 +1204,9 @@ function Field() {
     this.getTerrain = function() {
         return terrain;
     };
+    this.getSwamp = function (i) {
+        return isSwamp[i];
+    }
     this.clearWeather = function() {
         weather = "";
     };
@@ -1194,11 +1214,11 @@ function Field() {
         terrain = "";
     };
     this.getSide = function (i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i], isSwamp[i], isSeaFire[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure, isAuroraVeil) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure, isAuroraVeil, isSwamp, isSeaFire) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -1221,6 +1241,8 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isTailwind = isTailwind;
     this.isSaltCure = isSaltCure;
     this.isAuroraVeil = isAuroraVeil;
+    this.isSwamp = isSwamp;
+    this.isSeaFire = isSeaFire;
 }
 
 var gen, pokedex, setdex, setdexCustom, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
@@ -1452,6 +1474,10 @@ function clearField() {
     $("#saltCureR").prop("checked", false);
     $("#auroraVeilL").prop("checked", false);
     $("#auroraVeilR").prop("checked", false);
+    $("#swampL").prop("checked", false);
+    $("#swampR").prop("checked", false);
+    $("#seaFireL").prop("checked", false);
+    $("#seaFireR").prop("checked", false);
 }
 
 function getSetOptions(p) {
@@ -1576,7 +1602,6 @@ $(document).ready(function () {
             return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
         }
     });
-    //SELECT2 CODE NEEDS TO BE CHANGED SO IT UPDATES WHEN CHANGED
     $(".ability").select2({
         dropdownAutoWidth: true,
         matcher: function (term, text) {

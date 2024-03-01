@@ -145,6 +145,11 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         eotText.push('Bad Dreams');
     }
 
+    if (field.isSeaFire && defender.ability !== 'Magic Guard' && [defender.type1, defender.type2].indexOf('Fire') === -1) {
+        eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
+        eotText.push('Sea of Fire damage');
+    }
+
     if (field.isGMaxField && defender.ability !== 'Magic Guard') {
         eot -= Math.floor(Math.floor(defender.maxHP / 6) * maxChip);
         eotText.push('G-Max field damage');

@@ -230,7 +230,8 @@ function getModifiedStat(stat, mod) {
 }
 
 //Speed Mods
-function getFinalSpeed(pokemon, weather, terrain, tailwind) {
+function getFinalSpeed(pokemon, weather, tailwind, swamp, terrain) {
+
     //1. Speed boosts and drops
     var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
     //2. Other Speed mods
@@ -264,7 +265,9 @@ function getFinalSpeed(pokemon, weather, terrain, tailwind) {
     }
     //g. Tailwind
     if (tailwind) otherSpeedMods *= 2;
-    //h. Protosynthesis, Quark Drive
+    //h. Grass/Water Pledge Swamp
+    if (swamp) otherSpeedMods *= 0.25;
+    //i. Protosynthesis, Quark Drive
     if (pokemon.paradoxAbilityBoost && pokemon.highestStat === 'sp')
         otherSpeedMods *= 1.5;
 
@@ -851,12 +854,19 @@ function HiddenPower(move, attacker, description) {
     var typeIndex = Math.floor(((attacker.ivs['hp'] & 1) + (attacker.ivs[AT] & 1) * 2 + (attacker.ivs[DF] & 1) * 4 + (attacker.ivs[SP] & 1) * 8 + (attacker.ivs[SA] & 1) * 16 + (attacker.ivs[SD] & 1) * 32) * 15 / 63);
     move.type = typeOrder[typeIndex];
     if (gen < 6) {
-        move.bp = Math.floor((((attacker.ivs['hp'] & 2) / 2) + ((attacker.ivs[AT] & 2) / 2) * 2 + ((attacker.ivs[DF] & 2) / 2) * 4 + ((attacker.ivs[SP] & 2) / 2) * 8 + ((attacker.ivs[SA] & 2) / 2) * 16 + ((attacker.ivs[SD] & 2) / 2) * 32) * 40 / 63);
+        move.bp = Math.floor((secondLeastSigBit(attacker.ivs['hp']) + (secondLeastSigBit(attacker.ivs[AT]) * 2) + (secondLeastSigBit(attacker.ivs[DF]) * 4) + (secondLeastSigBit(attacker.ivs[SP]) * 8) + (secondLeastSigBit(attacker.ivs[SA]) * 16) + (secondLeastSigBit(attacker.ivs[SD]) * 32)) * 40 / 63);
         description.moveBP = move.bp;
     }
     description.moveType = move.type;
 
     return [move, description];
+}
+
+function secondLeastSigBit(val) {
+    if (val & 2) {
+        return true;
+    }
+    return false;
 }
 
 function NaturalGift(move, attacker, description) {
@@ -1586,7 +1596,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
 function canTeraBoost60BP(move) {
     var priority = move.isPriority;
-    var multiHit = move.isMultiHit || move.isTenMultiHit || move.isTwoHit || move.isThreeHit || move.isTripleHit || move.name === "Dragon Darts";
+    var multiHit = move.hitCount ? true : false;
     var otherExceptions = ["Crush Grip", "Dragon Energy", "Electro Ball", "Eruption", "Flail", "Fling", "Grass Knot", "Gyro Ball",
         "Heat Crash", "Heavy Slam", "Low Kick", "Reversal", "Water Spout", "Hard Press"].indexOf(move.name) !== -1;
     return !priority && !multiHit && !otherExceptions;
