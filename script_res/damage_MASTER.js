@@ -1596,7 +1596,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
 function canTeraBoost60BP(move) {
     var priority = move.isPriority;
-    var multiHit = move.hitCount ? true : false;
+    var multiHit = move.hitRange ? true : false;
     var otherExceptions = ["Crush Grip", "Dragon Energy", "Electro Ball", "Eruption", "Flail", "Fling", "Grass Knot", "Gyro Ball",
         "Heat Crash", "Heavy Slam", "Low Kick", "Reversal", "Water Spout", "Hard Press"].indexOf(move.name) !== -1;
     return !priority && !multiHit && !otherExceptions;
