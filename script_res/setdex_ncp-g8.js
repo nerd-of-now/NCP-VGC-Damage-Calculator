@@ -819,7 +819,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Magic Guard",
-            "item": "LIfe Orb",
+            "item": "Life Orb",
             "moves": [
                 "Expanding Force",
                 "Dazzling Gleam",
@@ -1263,7 +1263,7 @@ var SETDEX_VGC2021 = {
             "evs": {
                 "hp": 252,
                 "at": 0,
-                "df": 80,
+                "df": 84,
                 "sa": 0,
                 "sd": 172,
                 "sp": 0
@@ -1660,7 +1660,7 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Aqua Jet",
                 "Rock Slide",
-                "Earthquale",
+                "Earthquake",
                 "Liquidation"
             ]
         }
@@ -1911,7 +1911,7 @@ var SETDEX_VGC2021 = {
             "evs": {
                 "hp": 252,
                 "at": 0,
-                "df": 0,
+                "df": 4,
                 "sa": 0,
                 "sd": 0,
                 "sp": 252
@@ -2831,8 +2831,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Calm",
-            "ability": "Coba Berry",
-            "item": "",
+            "item": "Coba Berry",
             "moves": [
                 "Struggle Bug",
                 "Heat Wave",
@@ -3394,7 +3393,7 @@ var SETDEX_VGC2021 = {
         }
     },
     "Chansey": {
-        "Mimimize go brrr": {
+        "Minimize go brrr": {
             "level": 50,
             "evs": {
                 "hp": 164,
@@ -3404,7 +3403,7 @@ var SETDEX_VGC2021 = {
                 "sd": 92,
                 "sp": 0
             },
-            "evs": {
+            "ivs": {
                 "at": 0,
                 "sp": 0
             },
@@ -4647,7 +4646,7 @@ var SETDEX_VGC2021 = {
             "evs": {
                 "hp": 252,
                 "at": 0,
-                "df": 0,
+                "df": 4,
                 "sa": 252,
                 "sd": 0,
                 "sp": 0
@@ -5980,7 +5979,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "Lighting Rod",
+            "ability": "Lightning Rod",
             "item": "",
             "moves": [
                 "Fake Out",
@@ -6971,8 +6970,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "ability": "Assault Vest",
-            "item": "",
+            "item": "Assault Vest",
             "moves": [
                 "Flash Cannon",
                 "Draco Meteor",
@@ -8406,7 +8404,7 @@ var SETDEX_VGC2021_S10 = {
                 "df": 188,
                 "sa": 4,
                 "sd": 60,
-                "sp": 5
+                "sp": 4
             },
             "ivs": {
                 "at": 0,
@@ -8835,7 +8833,7 @@ var SETDEX_VGC2021_S10 = {
             },
             "nature": "Relaxed",
             "ability": "Imposter",
-            "item": "Sitrus",
+            "item": "Sitrus Berry",
             "moves": [
                 "Transform",
                 "",
@@ -9649,7 +9647,7 @@ var SETDEX_VGC2021_S10 = {
             },
             "nature": "Calm",
             "ability": "Drizzle",
-            "item": "Sitrus",
+            "item": "Sitrus Berry",
             "moves": [
                 "Scald",
                 "Icy Wind",

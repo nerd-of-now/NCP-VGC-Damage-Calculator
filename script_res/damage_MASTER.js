@@ -612,7 +612,7 @@ function checkMoveTypeChange(move, field, attacker) {
             : attacker.type2 !== 'Typeless' && attacker.type2 !== "" ? attacker.type2
                 : 'Typeless';
     }
-    else if (move.name.includes(" Pledge") && move.name !== move.combinePledge) {
+    else if (move.isPledge && move.name !== move.combinePledge) {
         var bothPledgeNames = move.name + " " + move.combinePledge;
         move.type = bothPledgeNames.includes("Grass") && bothPledgeNames.includes("Fire") ? 'Fire'
             : bothPledgeNames.includes("Grass") && bothPledgeNames.includes("Water") ? 'Grass'
@@ -1469,7 +1469,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         bpMods.push(itemTypeMultiplier);
         description.attackerItem = attacker.item;
     }
-    else if (getItemDualTypeBoost(attacker.item, attacker.name).includes(move.type)) {
+    else if (getItemDualTypeBoost(attacker.item, attacker.name).indexOf(move.type) !== -1) {
         bpMods.push(0x1333);
         description.attackerItem = attacker.item;
     }
@@ -1480,7 +1480,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //l. Gems
-    else if (attacker.item === move.type + " Gem" && !move.name.includes(" Pledge")) {
+    else if (attacker.item === move.type + " Gem" && !move.isPledge) {
         var gemMultiplier = gen > 5 ? 0x14CD : 0x1800;
         bpMods.push(gemMultiplier);
         description.attackerItem = attacker.item;
