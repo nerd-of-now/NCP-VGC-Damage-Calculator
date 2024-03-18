@@ -1090,6 +1090,27 @@ var SETDEX_VGC2023 = {
         },
     },
     "Tsareena": {
+        "Tera Water Wide Lens": {
+            "level": 50,
+            "evs": {
+                "hp": 52,
+                "at": 236,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 212
+            },
+            "nature": "Adamant",
+            "ability": "Queenly Majesty",
+            "tera_type": "Water",
+            "item": "Wide Lens",
+            "moves": [
+                "Power Whip",
+                "Triple Axel",
+                "High Jump Kick",
+                "Trop Kick"
+            ]
+        },
         "Tera Rock Assault Vest": {
             "level": 50,
             "evs": {
@@ -2714,31 +2735,32 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Glaceon": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Glaceon": {
+        "Specs Snow Blizzard Spam": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Snow Cloak",
+            "tera_type": "Water",
+            "item": "Choice Specs",
+            "moves": [
+                "Blizzard",
+                "Freeze-Dry",
+                "Tera Blast",
+                "Shadow Ball"
+            ]
+        },
+    },
     "Sylveon": {
         "Tera Water Choice Specs": {
             "level": 50,
@@ -7906,23 +7928,45 @@ var SETDEX_VGC2023 = {
         },
     },
     "Basculegion": {
-        "Rain Adaptability Sweeper": {
+        "Scarf Adaptability Sweeper": {
             "level": 50,
             "evs": {
-                "hp": 4,
+                "hp": 0,
                 "at": 252,
                 "df": 0,
                 "sa": 0,
-                "sd": 0,
+                "sd": 4,
                 "sp": 252
             },
             "nature": "Adamant",
             "ability": "Adaptability",
-            "item": "Life Orb",
+            "tera_type": "Fairy",
+            "item": "Choice Scarf",
             "moves": [
                 "Wave Crash",
                 "Last Respects",
-                "Phantom Force",
+                "Tera Blast",
+                "Aqua Jet"
+            ]
+        },
+        "Tera Stellar Banded Swift Swim": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Swift Swim",
+            "tera_type": "Stellar",
+            "item": "Choice Band",
+            "moves": [
+                "Wave Crash",
+                "Last Respects",
+                "Flip Turn",
                 "Aqua Jet"
             ]
         },
@@ -9187,31 +9231,31 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Spectrier": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Spectrier": {
+        "Offensive Throat Spray": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 12,
+                "sa": 4,
+                "sd": 60,
+                "sp": 188
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Fairy",
+            "item": "Throat Spray",
+            "moves": [
+                "Shadow Ball",
+                "Draining Kiss",
+                "Snarl",
+                "Will-O-Wisp"
+            ]
+        },
+    },
 
     //Teal Mask DLC
 
@@ -9814,31 +9858,29 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Snorlax": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Snorlax": {
+        "Leftovers Thick Fat": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 252,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "ability": "Thick Fat",
+            "tera_type": "Ghost",
+            "item": "Leftovers",
+            "moves": [
+                "Heavy Slam",
+                "Heat Crash",
+                "High Horsepower",
+                "Double-Edge"
+            ]
+        },
+    },
     //"Ludicolo": {
     //    "": {
     //        "level": 50,
@@ -10059,31 +10101,29 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Mienshao": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Mienshao": {
+        "Tera Steel Offensive Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Inner Focus",
+            "tera_type": "Steel",
+            "item": "Focus Sash",
+            "moves": [
+                "Fake Out",
+                "Close Combat",
+                "Triple Axel",
+                "Stone Edge"
+            ]
+        },
+    },
     "Dusclops": {
         "Trick Room Support": {
             "level": 50,
@@ -10186,31 +10226,31 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Chandelure": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Chandelure": {
+        "Tera Grass Bulky Sitrus": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 172,
+                "sa": 4,
+                "sd": 84,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Flash Fire",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Heat Wave",
+                "Shadow Ball",
+                "Will-O-Wisp",
+                "Trick Room"
+            ]
+        },
+    },
     "Clefairy": {
         "Common Support": {
             "level": 50,
@@ -10237,31 +10277,32 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Clefable": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Clefable": {
+        "Clefairy but Unaware": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Unaware",
+            "tera_type": "Dragon",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Moonblast",
+                "Follow Me",
+                "Icy Wind",
+                "Protect"
+            ]
+        },
+    },
     "Milotic": {
         "Bulky Icy Wind Support": {
             "level": 50,
@@ -10759,32 +10800,32 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Exeggutor": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Exeggutor": {
+        "Offensive Life Orb Chlorophyll": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Psychic",
+            "ability": "Chlorophyll",
+            "item": "Life Orb",
+            "moves": [
+                "Expanding Force",
+                "Leaf Storm",
+                "Giga Drain",
+                "Tera Blast"
+            ]
+        },
+    },
     //"Exeggutor-Alola": {
     //    "": {
     //        "level": 50,
@@ -11146,32 +11187,31 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Comfey": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Comfey": {
+        "Priority Partner Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 156,
+                "sa": 36,
+                "sd": 60,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "tera_type": "Steel",
+            "item": "Leftovers",
+            "moves": [
+                "Draining Kiss",
+                "Protect",
+                "Floral Healing",
+                "Trick Room"
+            ]
+        },
+    },
     //"Vileplume": {
     //    "": {
     //        "level": 50,
@@ -11704,32 +11744,32 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Porygon-Z": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Porygon-Z": {
+        "Tera Fairy Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 0,
+                "df": 84,
+                "sa": 196,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Fairy",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+                "Tera Blast",
+                "Hyper Beam",
+                "Ice Beam",
+                "Thunderbolt"
+            ]
+        },
+    },
     //"Galvantula": {
     //    "": {
     //        "level": 50,
@@ -11934,32 +11974,32 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Venusaur": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Venusaur": {
+        "Offensive Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Fire",
+            "ability": "Chlorophyll",
+            "item": "Life Orb",
+            "moves": [
+                "Leaf Storm",
+                "Sludge Bomb",
+                "Earth Power",
+                "Tera Blast"
+            ]
+        },
+    },
     //"Blastoise": {
     //    "": {
     //        "level": 50,
@@ -12585,32 +12625,32 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Regice": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Regice": {
+        "More Specs Blizzard Spam": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Water",
+            "ability": "Ice Body",
+            "item": "Choice Specs",
+            "moves": [
+                "Blizzard",
+                "Thunderbolt",
+                "Ice Beam",
+                "Tera Blast"
+            ]
+        },
+    },
     "Registeel": {
         "Leftovers Body Press": {
             "level": 50,

@@ -156,6 +156,7 @@ var MOVES_RBY = {
         type: 'Grass',
         category: 'Special',
         zp: 120,
+        isHealing: true,
     },
     'Night Shade': {
         bp: 1,
@@ -368,7 +369,8 @@ var MOVES_RBY = {
     },
     'Recover': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Minimize': {
         type: 'Normal',
@@ -400,7 +402,8 @@ var MOVES_RBY = {
     },
     'Soft-Boiled': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Glare': {
         type: 'Normal',
@@ -429,7 +432,8 @@ var MOVES_RBY = {
     },
     'Rest': {
         type: 'Psychic',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Conversion': {
         type: 'Normal',
@@ -656,6 +660,7 @@ var MOVES_RBY = {
         bp: 20,
         type: 'Grass',
         category: 'Special',
+        isHealing: true,
     },
     'Poison Powder': {
         type: 'Poison',
@@ -801,6 +806,7 @@ var MOVES_RBY = {
         bp: 100,
         type: 'Psychic',
         category: 'Special',
+        isHealing: true,
     },
     'Barrage': {
         bp: 15,
@@ -814,6 +820,7 @@ var MOVES_RBY = {
         type: 'Bug',
         category: 'Physical',
         makesContact: true,
+        isHealing: true,
     },
     'Bubble': {
         bp: 20,
@@ -999,7 +1006,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     'Giga Drain': {
         bp: 60,
         type: 'Grass',
-        category: 'Special'
+        category: 'Special',
+        isHealing: true,
     },
     'Headbutt': {
         bp: 70,
@@ -1260,7 +1268,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     },
     'Milk Drink': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Sleep Talk': {
         type: 'Normal',
@@ -1289,15 +1298,18 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     },
     'Morning Sun': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Synthesis': {
         type: 'Grass',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Moonlight': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Rain Dance': {
         type: 'Water',
@@ -1794,7 +1806,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     },
     'Wish': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Assist': {
         type: 'Normal',
@@ -1851,7 +1864,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     },
     'Slack Off': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Aromatherapy': {
         type: 'Grass',
@@ -1905,6 +1919,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     'Swallow': {
         type: 'Normal',
         category: 'Status',
+        //isHealing: true,
     },
     'Nature Power': {
         bp: 1,
@@ -2217,7 +2232,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        isPunch: true
+        isPunch: true,
+        isHealing: true,
     },
     'Earth Power': {
         bp: 90,
@@ -2539,7 +2555,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     },
     'Roost': {
         type: 'Flying',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Gravity': {
         type: 'Psychic',
@@ -2547,7 +2564,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     },
     'Healing Wish': {
         type: 'Psychic',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Tailwind': {
         type: 'Flying',
@@ -2640,7 +2658,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     },
     'Lunar Dance': {
         type: 'Psychic',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Dark Void': {
         type: 'Dark',
@@ -2670,6 +2689,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Heal Order': {
         type: 'Bug',
         category: 'Status',
+        //isHealing: true,
     },
     'Feint': {
         bp: 50,
@@ -2915,7 +2935,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 75,
         type: 'Grass',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        isHealing: true,
     },
     'Hurricane': {
         bp: 120,
@@ -3204,6 +3225,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Psychic',
         category: 'Status',
         isPulse: true,
+        isHealing: true,
     },
     'Shift Gear': {
         type: 'Steel',
@@ -3392,7 +3414,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 50,
         type: 'Fairy',
         category: 'Special',
-        makesContact: true
+        makesContact: true,
+        isHealing: true,
     },
     'Flying Press': {
         bp: 80,
@@ -3424,7 +3447,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Oblivion Wing': {
         bp: 80,
         type: 'Flying',
-        category: 'Special'
+        category: 'Special',
+        isHealing: true,
     },
     'Phantom Force': {
         bp: 90,
@@ -3473,6 +3497,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Electric',
         category: 'Special',
         isSpread: true,
+        isHealing: true,
     },
     'Petal Blizzard': {
         bp: 90,
@@ -3988,7 +4013,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Shore Up': {
         type: 'Ground',
-        category: 'Status'
+        category: 'Status',
+        //isHealing: true,
     },
     'Baneful Bunker': {
         type: 'Poison',
@@ -3996,11 +4022,13 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Floral Healing': {
         type: 'Fairy',
-        category: 'Status'
+        category: 'Status',
+        isHealing: true,
     },
     'Strength Sap': {
         type: 'Grass',
-        category: 'Status'
+        category: 'Status',
+        isHealing: true,
     },
     'Spotlight': {
         type: 'Normal',
@@ -4123,6 +4151,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Purify': {
         type: 'Poison',
         category: 'Status',
+        isHealing: true,
     },
     'Tearful Look': {
         type: 'Normal',
@@ -4858,7 +4887,7 @@ var MOVES_SS_NATDEX = $.extend(true, {}, MOVES_SS, {});
 ].forEach(e => delete MOVES_SS[e]);
 
 var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
-    //Past move changes that aren't nerfs or buffs
+    //Past move changes
     'Cut': { isSlice: true, },
     'Razor Leaf': { isSlice: true, },
     'Slash': { isSlice: true, },
@@ -5037,6 +5066,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     'Lunar Blessing': {
         type: 'Psychic',
         category: 'Status',
+        //isHealing: true,
     },
     'Take Heart': {
         type: 'Psychic',
@@ -5120,6 +5150,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     'Revival Blessing': {
         type: 'Normal',
         category: 'Status',
+        //isHealing: true,
     },
     'Salt Cure': {
         bp: 40,
@@ -5274,6 +5305,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Physical',
         makesContact: true,
         isSlice: true,
+        isHealing: true,
     },
     'Double Shock': {
         bp: 120,
@@ -5353,6 +5385,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Special',
         hasSecondaryEffect: true,
         isSpread: true,
+        isHealing: true,
     },
     'Syrup Bomb': {
         bp: 60,

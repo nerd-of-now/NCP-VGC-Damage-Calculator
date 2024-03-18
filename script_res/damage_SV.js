@@ -70,11 +70,11 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     var defIsGrounded = pIsGrounded(defender, field);
 
     checkMoveTypeChange(move, field, attacker);
-    checkConditionalPriority(move, field.terrain);
+    checkConditionalPriority(move, field.terrain, attacker.ability);
     checkConditionalSpread(move, field.terrain, attacker, attIsGrounded);
     checkContactOverride(move, attacker);
 
-    if (attacker.isDynamax)
+    if (attacker.isDynamax && gen === 8)    //without the gen check a Dynamaxed Pokemon can lead to an error switching between gen 8 and either 7 or 9
         [move, isQuarteredByProtect, moveDescName] = MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field);
 
     if (move.name == "Nature Power" && attacker.item !== 'Assault Vest')

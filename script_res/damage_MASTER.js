@@ -426,13 +426,14 @@ function checkIntimidate(source, target) {
     if (source.ability === "Intimidate" && source.abilityOn) {
         var checkSimple = target.ability === "Simple" ? 1 : 0;
 
-        if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].indexOf(target.ability) !== -1
+        //Contrary & Guard Dog need to be first; these abilities supersede Clear Amulet but not Mirror Armor for some reason
+        if (["Contrary", "Guard Dog"].indexOf(target.ability) !== -1) {
+            target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
+        }
+        else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].indexOf(target.ability) !== -1
             || (["Inner Focus", "Oblivious", "Own Tempo", "Scrappy"].indexOf(target.ability) !== -1 && gen >= 8)
             || target.item === "Clear Amulet") {
             // no effect
-        }
-        else if (["Contrary", "Guard Dog"].indexOf(target.ability) !== -1) {
-            target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
         }
         else if (target.ability === "Mirror Armor") {
             source.boosts[AT] = Math.max(-6, source.boosts[AT] - 1);
@@ -663,8 +664,8 @@ function checkMoveTypeChange(move, field, attacker) {
     }
 }
 
-function checkConditionalPriority(move, terrain) {
-    if (move.name == "Grassy Glide" && terrain == "Grassy")
+function checkConditionalPriority(move, terrain, attackerAbility) {
+    if ((move.isHealing && attackerAbility == "Triage") || (move.name == "Grassy Glide" && terrain == "Grassy"))
         move.isPriority = true;
 }
 
@@ -854,7 +855,7 @@ function HiddenPower(move, attacker, description) {
     var typeIndex = Math.floor(((attacker.ivs['hp'] & 1) + (attacker.ivs[AT] & 1) * 2 + (attacker.ivs[DF] & 1) * 4 + (attacker.ivs[SP] & 1) * 8 + (attacker.ivs[SA] & 1) * 16 + (attacker.ivs[SD] & 1) * 32) * 15 / 63);
     move.type = typeOrder[typeIndex];
     if (gen < 6) {
-        move.bp = Math.floor((secondLeastSigBit(attacker.ivs['hp']) + (secondLeastSigBit(attacker.ivs[AT]) * 2) + (secondLeastSigBit(attacker.ivs[DF]) * 4) + (secondLeastSigBit(attacker.ivs[SP]) * 8) + (secondLeastSigBit(attacker.ivs[SA]) * 16) + (secondLeastSigBit(attacker.ivs[SD]) * 32)) * 40 / 63);
+        move.bp = Math.floor((secondLeastSigBit(attacker.ivs['hp']) + (secondLeastSigBit(attacker.ivs[AT]) * 2) + (secondLeastSigBit(attacker.ivs[DF]) * 4) + (secondLeastSigBit(attacker.ivs[SP]) * 8) + (secondLeastSigBit(attacker.ivs[SA]) * 16) + (secondLeastSigBit(attacker.ivs[SD]) * 32)) * 40 / 63) + 30;
         description.moveBP = move.bp;
     }
     description.moveType = move.type;
@@ -1586,7 +1587,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     tempBP = pokeRound(basePower * chainMods(bpMods) / 0x1000);
 
     //aa. Tera boost for moves with <60 BP
-    if (attacker.isTerastalize && (move.type === attacker.tera_type || (attacker.tera_type === 'Stellar' && move.stellarBoost)) && tempBP < 60 && canTeraBoost60BP(move)) {
+    if (attacker.isTerastalize && (move.type === attacker.tera_type || (attacker.tera_type === 'Stellar' && move.getsStellarBoost)) && tempBP < 60 && canTeraBoost60BP(move)) {
         bpMods.push(60 / tempBP * 0x1000);
         description.teraBPBoost = true;
     }
