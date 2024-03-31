@@ -7,14 +7,16 @@ var bounds = {
     "dvs":[0,15],
     "move-bp":[0,999]
 };
-isCrit = false;
-center_images = ["image_res/toge_normal.png", "image_res/toge_crit.png"]
-function checkCrit(crit) {
-    if(crit != isCrit) {
-        isCrit = crit;
-        $("#toge").attr("src", center_images[+isCrit])
-    }
-}
+
+//isCrit = false;
+//center_images = ["image_res/toge_normal.png", "image_res/toge_crit.png"]
+//function checkCrit(crit) {
+//    if(crit != isCrit) {
+//        isCrit = crit;
+//        $("#toge").attr("src", center_images[+isCrit])
+//    }
+//}
+
 for (var bounded in bounds) {
     if (bounds.hasOwnProperty(bounded)) {
         attachValidation(bounded, bounds[bounded][0], bounds[bounded][1]);
@@ -628,6 +630,10 @@ $(".set-selector").change(function() {
     var pokemonName, setName;
     var DOU = !$('#douswitch').is(":checked");
     pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
+    if (pokemonName === 'Spamton')
+        run_spamton();
+    else if (pokemonName === 'The Noise')
+        run_noise();
     setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
     var pokemon = pokedex[pokemonName];
     if (pokemon) {
@@ -922,7 +928,7 @@ $(".result-move").change(function() {
             else {
                 $("#damageValues").text("(" + result.damage.join(", ") + ")");
             }
-            checkCrit(result.crit)
+            //checkCrit(result.crit)
         }
     }
 });
@@ -1589,6 +1595,8 @@ function setStartup(p) {
 }
 
 $(document).ready(function () {
+    checkaprilfools();
+    //console.log(SETDEX_VGC2023);
     $(".stellar-btn").hide();
     getGen();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
