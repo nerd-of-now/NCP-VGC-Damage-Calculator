@@ -1,7 +1,7 @@
 //var isAFD = false;
 
 function checkaprilfools() {
-    if (new Date().toString().indexOf("Apr 1") != -1 /*true*/) {
+    if (new Date().toString().indexOf("Apr 01") != -1 /*true*/) {
         //isAFD = true;
         //Buckle the fuck up it's April Fools' Day
         //Toby Fox and Tour de Pizza please don't sue me
