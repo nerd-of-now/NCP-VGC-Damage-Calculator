@@ -1474,7 +1474,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         bpMods.push(0x1333);
         description.attackerItem = attacker.item;
     }
-    else if (attacker.item.indexOf(' Mask') !== -1 && attacker.name.indexOf('Ogerpon-') !== -1
+    else if (attacker.item.indexOf(' Mask') !== -1 && attacker.name && attacker.name.indexOf('Ogerpon-') !== -1
         && attacker.item.substring(0, attacker.item.indexOf(' Mask')) === attacker.name.substring(8)) {
         bpMods.push(0x1333);
         description.maskBoost = true;

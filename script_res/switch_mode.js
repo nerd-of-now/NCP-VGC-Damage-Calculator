@@ -75,7 +75,7 @@ $(function(){
 
 	$(".set-toggle").on("click", function () {
 		loadSets("#" + $(this).closest(".poke-info").prop("id"));
-    })
+	});
 })
 
 function loadTheme(color){
@@ -198,4 +198,15 @@ function loadSets(p) {
 	setStartup(p)
 	$(p + " .set-selector").val(getSetOptions(p)[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
 	$(p + " .set-selector").change();
+}
+
+function toggleAFD() {
+	if (!localStorage.getItem("isAFD")) {
+		localStorage.setItem("isAFD", true);
+		alert("April Fools' Day mode activated! (This just adds two joke characters to SV. Refresh to see them.)");
+	}
+	else {
+		localStorage.removeItem("isAFD");
+		alert("April Fools' Day mode deactivated. Refresh to see the change.");
+    }
 }
