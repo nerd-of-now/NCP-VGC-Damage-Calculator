@@ -14784,7 +14784,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sd": 145,
       "sp": 128
     },
-    "w": 355,
+    "w": 785,
     "ab": "Dauntless Shield",
     "isAlternateForme": true
   },
