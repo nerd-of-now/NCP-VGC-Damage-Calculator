@@ -12822,6 +12822,710 @@ var SETDEX_VGC2023 = {
 
     //GS Cup
 
+    //"Mewtwo": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Ho-Oh": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Lugia": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    "Kyogre": {
+        "Bro is Washed": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 4,
+                "sp": 12
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Grass",
+            "item": "Mystic Water",
+            "moves": [
+                "Water Spout",
+                "Origin Pulse",
+                "Ice Beam",
+                "Thunder"
+            ]
+        },
+    },
+    "Groudon": {
+        "Tera Fire Clear Amulet": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "tera_type": "Fire",
+            "item": "Clear Amulet",
+            "moves": [
+                "Precipice Blades",
+                "Heat Crash",
+                "Fire Punch",
+                "Rock Slide"
+            ]
+        },
+    },
+    "Rayquaza": {
+        "Tera Normal Life Orb Espeed": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 28
+            },
+            "nature": "Adamant",
+            "tera_type": "Normal",
+            "item": "Life Orb",
+            "moves": [
+                "Dragon Ascent",
+                "Extreme Speed",
+                "Swords Dance",
+                "Protect"
+            ]
+        },
+    },
+    //"Dialga": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Dialga-Origin": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Palkia": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Palkia-Origin": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Giratina": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Giratina-Origin": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Reshiram": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Zekrom": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Kyurem-Black": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    "Kyurem-White": {
+        "Tera Ice Specs Blizzard Spam": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Ice",
+            "item": "Choice Specs",
+            "moves": [
+                "Blizzard",
+                "Freeze-Dry",
+                "Earth Power",
+                "Fusion Flare"
+            ]
+        },
+    },
+    //"Solgaleo": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Lunala": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Necrozma-Dusk-Mane": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    //"Necrozma-Dawn-Wings": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    "Zacian": {
+        "Tera Ghost Swords Dance": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Ghost",
+            "item": "Rusted Sword",
+            "moves": [
+                "Behemoth Blade",
+                "Play Rough",
+                "Sacred Sword",
+                "Swords Dance"
+            ]
+        },
+    },
+    "Zamazenta": {
+        "Tera Ghost Body Press": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 100,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "tera_type": "Ghost",
+            "item": "Rusted Shield",
+            "moves": [
+                "Body Press",
+                "Behemoth Bash",
+                "Crunch",
+                "Iron Defense"
+            ]
+        },
+    },
+    //"Eternatus": {
+    //    "": {
+    //        "level": 50,
+    //        "evs": {
+    //            "hp": 0,
+    //            "at": 0,
+    //            "df": 0,
+    //            "sa": 0,
+    //            "sd": 0,
+    //            "sp": 0
+    //        },
+    //        "ivs": {
+    //            "at": 0,
+    //        },
+    //        "nature": "",
+    //        "tera_type": "",
+    //        "ability": "",
+    //        "item": "",
+    //        "moves": [
+    //            "",
+    //            "",
+    //            "",
+    //            ""
+    //        ]
+    //    },
+    //},
+    "Calyrex-Ice Rider": {
+        "The Only Set Ice Rider Needs": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "tera_type": "Water",
+            "item": "Clear Amulet",
+            "moves": [
+                "Glacial Lance",
+                "High Horsepower",
+                "Trick Room",
+                "Protect"
+            ]
+        },
+    },
+    "Calyrex-Shadow Rider": {
+        "Tera Fairy Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Fairy",
+            "item": "Life Orb",
+            "moves": [
+                "Astral Barrage",
+                "Expanding Force",
+                "Tera Blast",
+                "Draining Kiss"
+            ]
+        },
+    },
+    "Koraidon": {
+        "Tera Fire Clear Amulet": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Fire",
+            "item": "Clear Amulet",
+            "moves": [
+                "Collision Course",
+                "Flare Blitz",
+                "Flame Charge",
+                "Dragon Claw"
+            ]
+        },
+    },
+    "Miraidon": {
+        "Specs Tera Fairy": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Fairy",
+            "item": "Choice Specs",
+            "moves": [
+                "Electro Drift",
+                "Draco Meteor",
+                "Volt Switch",
+                "Dazzling Gleam"
+            ]
+        },
+    },
+    "Terapagos": {
+        "Calm Mind Lefties": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Leftovers",
+            "moves": [
+                "Tera Starstorm",
+                "Earth Power",
+                "Dark Pulse",
+                "Calm Mind"
+            ]
+        },
+    },
+
+    //base
+
     //"": {
     //    "": {
     //        "level": 50,
@@ -12848,4 +13552,5 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
+
 }
