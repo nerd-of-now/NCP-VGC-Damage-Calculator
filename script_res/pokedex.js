@@ -15045,7 +15045,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
           "sp": 80
       },
       "w": 200.0,
-      "ab": "Dragon\'s Maw",
+      "ab": "Dragon's Maw",
   },
   "Glastrier": {
       "t1": "Ice",
