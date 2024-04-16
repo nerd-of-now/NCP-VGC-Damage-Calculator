@@ -3836,6 +3836,7 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Calm",
             "ability": "Prankster",
+            "tera_type": "Ghost",
             "item": "Light Clay",
             "moves": [
                 "Dazzling Gleam",
@@ -12901,21 +12902,20 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Kyogre": {
-        "Bro is Washed": {
+        "Bro is not Washed": {
             "level": 50,
             "evs": {
-                "hp": 236,
+                "hp": 0,
                 "at": 0,
                 "df": 4,
                 "sa": 252,
-                "sd": 4,
-                "sp": 12
+                "sd": 0,
+                "sp": 252
             },
             "ivs": {
                 "at": 0,
             },
             "nature": "Modest",
-            "tera_type": "Grass",
             "item": "Mystic Water",
             "moves": [
                 "Water Spout",
@@ -12995,32 +12995,31 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Dialga-Origin": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Dialga-Origin": {
+        "Tera Fairy Trick Room": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Fairy",
+            "ability": "Telepathy",
+            "moves": [
+                "Flash Cannon",
+                "Draco Meteor",
+                "Dragon Pulse",
+                "Trick Room"
+            ]
+        },
+    },
     //"Palkia": {
     //    "": {
     //        "level": 50,
@@ -13376,32 +13375,31 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Eternatus": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Eternatus": {
+        "Cosmic Power Stall": {
+            "level": 50,
+            "evs": {
+                "hp": 220,
+                "at": 0,
+                "df": 196,
+                "sa": 4,
+                "sd": 84,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "tera_type": "Dark",
+            "item": "Leftovers",
+            "moves": [
+                "Sludge Bomb",
+                "Flamethrower",
+                "Recover",
+                "Cosmic Power"
+            ]
+        },
+    },
     "Calyrex-Ice Rider": {
         "The Only Set Ice Rider Needs": {
             "level": 50,
@@ -13485,9 +13483,6 @@ var SETDEX_VGC2023 = {
                 "sd": 0,
                 "sp": 252
             },
-            "ivs": {
-                "at": 0,
-            },
             "nature": "Timid",
             "tera_type": "Fairy",
             "item": "Choice Specs",
@@ -13511,7 +13506,7 @@ var SETDEX_VGC2023 = {
                 "sp": 4
             },
             "ivs": {
-                "at": 0,
+                "at": 15,
             },
             "nature": "Modest",
             "item": "Leftovers",

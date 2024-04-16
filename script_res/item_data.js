@@ -767,7 +767,7 @@ var LOCK_ITEM_LOOKUP = {
     'Mega Ampharos': 'Ampharosite',
     'Mega Banette': 'Banettite',
     'Mega Blastoise': 'Blastoisinite',
-    'Mega Blaziken': 'Blazkienite',
+    'Mega Blaziken': 'Blazikenite',
     'Mega Charizard X': 'Charizardite X',
     'Mega Charizard Y': 'Charizardite Y',
     'Mega Garchomp': 'Garchompite',

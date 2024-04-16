@@ -535,7 +535,7 @@ var POKEDEX_RBY = {
     "w": 120.0,
     "ab": "Chlorophyll"
   },
-  "Farfetch\u0027d": {
+  "Farfetch'd": {
     "t1": "Normal",
     "t2": "Flying",
     "bs": {
@@ -11428,7 +11428,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
   //attack buffs
   "Dugtrio": { "bs": { "at": 100 }},
   "Arbok": { "bs": { "at": 95 } },
-  "Farfetch\u0027d": { "bs": { "at": 90 } },
+  "Farfetch'd": { "bs": { "at": 90 } },
   "Crustle": { "bs": { "at": 105 } },
   "Beartic": { "bs": { "at": 130 } },
 
@@ -13110,6 +13110,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 34
     },
     "w": 8,
+    "ab": "Magnet Pull",
   },
   "Melmetal": {
     "t1": "Steel",
@@ -13167,6 +13168,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 90
     },
       "w": 24,
+      "ab": "Pastel Veil",
       "canEvolve": true,
   },
   "Rapidash-Galar": {
@@ -13252,6 +13254,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 60
     },
       "w": 17.5,
+      "ab": "Quick Feet",
       "canEvolve": true,
   },
   "Linoone-Galar": {
@@ -13280,6 +13283,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 50
     },
       "w": 40,
+      "ab": "Hustle",
       "canEvolve": true,
   },
   "Darmanitan-Galar": {
@@ -13326,6 +13330,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 30
     },
       "w": 1.5,
+      "ab": "Wandering Spirit",
       "canEvolve": true,
   },
   "Stunfisk-Galar": {
@@ -13488,6 +13493,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 45
     },
       "w": 8,
+      "ab": "Telepathy",
       "canEvolve": true,
   },
   "Dottler": {
@@ -13502,6 +13508,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 30
     },
       "w": 19.5,
+      "ab": "Telepathy",
       "canEvolve": true,
   },
   "Orbeetle": {
@@ -14800,6 +14807,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
       "sp": 130
     },
     "w": 950,
+    "ab": "Pressure",
   },
   "Kubfu": {
       "t1": "Fighting",

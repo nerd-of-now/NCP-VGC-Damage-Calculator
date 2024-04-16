@@ -1016,7 +1016,8 @@ function Pokemon(pokeInfo) {
 
     //Check for Tera form
     if (this.name && this.name.indexOf('Ogerpon') !== -1) {
-        var mask = pokeInfo.find("select.item").val().substring(0, pokeInfo.find("select.item").val().indexOf(" Mask"));
+        var itemCheck = pokeInfo.find("select.item").val();
+        var mask = itemCheck !== null ? itemCheck.substring(0, itemCheck.indexOf(" Mask")) : '';
 
         if (this.name.indexOf(mask) !== -1) {
             var maskTera = mask === 'Wellspring' ? 'Water'
