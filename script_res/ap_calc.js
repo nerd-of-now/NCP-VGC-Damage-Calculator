@@ -661,10 +661,15 @@ $(".set-selector").change(function() {
         var itemObj = pokeObj.find("select.item");
         if (pokemonName in setdex && setName in setdex[pokemonName]) {
             var set = setdex[pokemonName][setName];
-            if (setdexCustom !== [] && pokemonName in setdexCustom && setName in setdexCustom[pokemonName])
+            if (setdexCustom !== [] && pokemonName in setdexCustom && setName in setdexCustom[pokemonName]
+                && LEFT_SIDEBAR_NAMES.indexOf(setName) == -1 && RIGHT_SIDEBAR_NAMES.indexOf(setName) == -1) {
                 $(this).closest(".poke-info").find(".setCalc").val(setName);
-            else
+                $(this).closest(".poke-info").find(".delset").show();
+            }
+            else {
                 $(this).closest(".poke-info").find(".setCalc").val("My Calc Set");
+                $(this).closest(".poke-info").find(".delset").hide();
+            }
             if(DOU) pokeObj.find(".level").val(100);
             else pokeObj.find(".level").val(set.level);
             pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);
@@ -1263,8 +1268,8 @@ $(".gen").change(function () {
     switch (gen) {
         case 1: //Gen 1
             pokedex = POKEDEX_RBY;
-            setdex = SETDEX_RBY;
-            setdexCustom = [];
+            //setdex = SETDEX_RBY;
+            //setdexCustom = [];
             typeChart = TYPE_CHART_RBY;
             moves = MOVES_RBY;
             items = [];
@@ -1276,8 +1281,8 @@ $(".gen").change(function () {
             break;
         case 2: //Gen 2
             pokedex = POKEDEX_GSC;
-            setdex = SETDEX_GSC;
-            setdexCustom = [];
+            //setdex = SETDEX_GSC;
+            //setdexCustom = [];
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_GSC;
             items = ITEMS_GSC;
@@ -1289,8 +1294,8 @@ $(".gen").change(function () {
             break;
         case 3: //Gen 3
             pokedex = POKEDEX_ADV;
-            setdex = SETDEX_ADV;
-            setdexCustom = SETDEX_CUSTOM_ADV;
+            //setdex = SETDEX_ADV;
+            //setdexCustom = SETDEX_CUSTOM_ADV;
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_ADV;
             items = ITEMS_ADV;
@@ -1302,8 +1307,8 @@ $(".gen").change(function () {
             break;
         case 4: //Gen 4
             pokedex = POKEDEX_DPP;
-            setdex = SETDEX_DPP;
-            setdexCustom = SETDEX_CUSTOM_DPP;
+            //setdex = SETDEX_DPP;
+            //setdexCustom = SETDEX_CUSTOM_DPP;
             typeChart = TYPE_CHART_GSC;
             moves = MOVES_DPP;
             items = ITEMS_DPP;
@@ -1315,8 +1320,8 @@ $(".gen").change(function () {
             break;
         case 5: //Gen 5
             pokedex = POKEDEX_BW;
-            setdex = SETDEX_BW;
-            setdexCustom = SETDEX_CUSTOM_BW;
+            //setdex = SETDEX_BW;
+            //setdexCustom = SETDEX_CUSTOM_BW;
             typeChart = TYPE_CHART_BW;
             moves = MOVES_BW;
             items = ITEMS_BW;
@@ -1328,8 +1333,8 @@ $(".gen").change(function () {
             break;
         case 6: //Gen 6
             pokedex = POKEDEX_XY;
-            setdex = SETDEX_XY;
-            setdexCustom = SETDEX_CUSTOM_XY;
+            //setdex = SETDEX_XY;
+            //setdexCustom = SETDEX_CUSTOM_XY;
             typeChart = TYPE_CHART_XY;
             moves = MOVES_XY;
             items = ITEMS_XY;
@@ -1341,8 +1346,8 @@ $(".gen").change(function () {
             break;
         case 7: //Gen 7
             pokedex = POKEDEX_SM;
-            setdex = SETDEX_SM;
-            setdexCustom = SETDEX_CUSTOM_SM;
+            //setdex = SETDEX_SM;
+            //setdexCustom = SETDEX_CUSTOM_SM;
             typeChart = TYPE_CHART_XY;
             moves = MOVES_SM;
             items = ITEMS_SM;
@@ -1354,8 +1359,8 @@ $(".gen").change(function () {
             break;
         case 8: //Gen 8 SwSh+BDSP
             pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SS_NATDEX : POKEDEX_SS;
-            setdex = SETDEX_SS;
-            setdexCustom = SETDEX_CUSTOM_SS;
+            //setdex = SETDEX_SS;
+            //setdexCustom = SETDEX_CUSTOM_SS;
             typeChart = TYPE_CHART_XY;
             moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SS_NATDEX : MOVES_SS;
             items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SS_NATDEX : ITEMS_SS;
@@ -1367,8 +1372,8 @@ $(".gen").change(function () {
             break;
         case 9: //Gen 9 SV
             pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_SV_NATDEX :  POKEDEX_SV;
-            setdex = SETDEX_SV;
-            setdexCustom = SETDEX_CUSTOM_SV;
+            //setdex = SETDEX_SV;
+            //setdexCustom = SETDEX_CUSTOM_SV;
             typeChart = TYPE_CHART_SV;
             moves = (localStorage.getItem("dex") == "natdex") ? MOVES_SV_NATDEX : MOVES_SV;
             items = (localStorage.getItem("dex") == "natdex") ? ITEMS_SV_NATDEX : ITEMS_SV;
@@ -1379,6 +1384,11 @@ $(".gen").change(function () {
             calcStat = CALC_STAT_ADV;
             break;
     }
+    if (gen in ALL_SETDEX_CUSTOM)
+        setdexCustom = ALL_SETDEX_CUSTOM[gen];
+    else
+        setdexCustom = [];
+    loadSetdexScript();
     clearField();
     $(".gen-specific.g" + gen).show();
     $(".gen-specific").not(".g" + gen).hide();
@@ -1433,6 +1443,10 @@ $(".gen").change(function () {
     $("#p1 .set-selector").change();
     $("#p2 .set-selector").val(getSetOptions("#p2")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
     $("#p2 .set-selector").change();
+    $(".sidebarMon").hide();
+    $(".sidebarAdd").show();
+    loadSidebar(1);
+    loadSidebar(2);
 });
 
 function clearField() {
@@ -1504,31 +1518,55 @@ function getSetOptions(p) {
     pokeNames.sort();
     var setOptions = [];
     var idNum = 0;
-    var setdexUsed = $(p + " .set-toggle").prop("checked") && gen >= 5 ? setdexCustom : setdex;
-    for (var i = 0; i < pokeNames.length; i++) {
-        var pokeName = pokeNames[i];
-        setOptions.push({
-            pokemon: pokeName,
-            text: pokeName
-        });
-        if (pokeName in setdexUsed) {
-            var setNames = Object.keys(setdexUsed[pokeName]);
-            for (var j = 0; j < setNames.length; j++) {
-                var setName = setNames[j];
+    var usesCustom = $(p + " .set-toggle").prop("checked") && gen >= 3;
+    var setdexUsed = usesCustom ? setdexCustom : setdex;
+    if (!usesCustom) {
+        for (var i = 0; i < pokeNames.length; i++) {
+            var pokeName = pokeNames[i];
+            setOptions.push({
+                pokemon: pokeName,
+                text: pokeName
+            });
+            if (pokeName in setdexUsed) {
+                var setNames = Object.keys(setdexUsed[pokeName]);
+                for (var j = 0; j < setNames.length; j++) {
+                    var setName = setNames[j];
+                    setOptions.push({
+                        pokemon: pokeName,
+                        set: setName,
+                        text: pokeName + " (" + setName + ")",
+                        id: pokeName + " (" + setName + ")"
+                    });
+                }
+            }
+            setOptions.push({
+                pokemon: pokeName,
+                set: "Blank Set",
+                text: pokeName + " (Blank Set)",
+                id: pokeName + " (Blank Set)"
+            });
+        }
+    }
+    else {
+        for (var i = 0; i < pokeNames.length; i++) {
+            var pokeName = pokeNames[i];
+            if (pokeName in setdexUsed) {
                 setOptions.push({
                     pokemon: pokeName,
-                    set: setName,
-                    text: pokeName + " (" + setName + ")",
-                    id: pokeName + " (" + setName + ")"
+                    text: pokeName
                 });
+                var setNames = Object.keys(setdexUsed[pokeName]);
+                for (var j = 0; j < setNames.length; j++) {
+                    var setName = setNames[j];
+                    setOptions.push({
+                        pokemon: pokeName,
+                        set: setName,
+                        text: pokeName + " (" + setName + ")",
+                        id: pokeName + " (" + setName + ")"
+                    });
+                }
             }
         }
-        setOptions.push({
-            pokemon: pokeName,
-            set: "Blank Set",
-            text: pokeName + " (Blank Set)",
-            id: pokeName + " (Blank Set)"
-        });
     }
     return setOptions;
 }
@@ -1629,4 +1667,6 @@ $(document).ready(function () {
     $("#p1 .set-selector").change();
     $("#p2 .set-selector").val(getSetOptions("#p2")[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
     $("#p2 .set-selector").change();
+    loadSidebar(1);
+    loadSidebar(2);
 });

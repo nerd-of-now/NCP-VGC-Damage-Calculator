@@ -69,250 +69,26 @@ var saveToCalcFormes = [
     ['Terapagos-Stellar', 'Terapagos'],
 ];
 
-if (localStorage.custom_gen_3 != null) {
-    SETDEX_CUSTOM_ADV = JSON.parse(localStorage.custom_gen_3);
-    reloadADVScript();
-}
-if (localStorage.custom_gen_4 != null) {
-    SETDEX_CUSTOM_DPP = JSON.parse(localStorage.custom_gen_4);
-    reloadDPPScript();
-}
-if (localStorage.custom_gen_5 != null) {
-    SETDEX_CUSTOM_BW = JSON.parse(localStorage.custom_gen_5);
-    reloadBWScript();
-}
-if (localStorage.custom_gen_6 != null) {
-    SETDEX_CUSTOM_XY = JSON.parse(localStorage.custom_gen_6);
-    reloadXYScript();
-}
-if (localStorage.custom_gen_7 != null) {
-    SETDEX_CUSTOM_SM = JSON.parse(localStorage.custom_gen_7);
-    reloadSMScript();
-}
-if (localStorage.custom_gen_8 != null) {
-    SETDEX_CUSTOM_SS = JSON.parse(localStorage.custom_gen_8);
-    reloadSSScript();
-}
-if (localStorage.custom_gen_9 != null) {
-    SETDEX_CUSTOM_SV = JSON.parse(localStorage.custom_gen_9);
-    reloadSVScript();
-}
-
-if (readCookie("custom_gen_3") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_3"));
-    cookiesToLocalStorage(custom_cookies, 4);
-    eraseCookie("custom_gen_3");
-    reloadADVScript();
-}
-if (readCookie("custom_gen_4") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_4"));
-    cookiesToLocalStorage(custom_cookies, 4);
-    eraseCookie("custom_gen_4");
-    reloadDPPScript();
-}
-if (readCookie("custom_gen_5") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_5"));
-    cookiesToLocalStorage(custom_cookies, 5);
-    eraseCookie("custom_gen_5");
-    reloadBWScript();
-}
-if (readCookie("custom_gen_6") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_6"));
-    cookiesToLocalStorage(custom_cookies, 6);
-    eraseCookie("custom_gen_6");
-    reloadXYScript();
-}
-if (readCookie("custom_gen_7") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_7"));
-    cookiesToLocalStorage(custom_cookies, 7);
-    eraseCookie("custom_gen_7");
-    reloadSMScript();
-}
-if (readCookie("custom_gen_8") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_8"));
-    cookiesToLocalStorage(custom_cookies, 8);
-    eraseCookie("custom_gen_8");
-    reloadSSScript();
-}
-if (readCookie("custom_gen_84") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_84"));
-    cookiesToLocalStorage(custom_cookies, 8);
-    eraseCookie("custom_gen_84");
-    reloadSSScript();
-}
-if (readCookie("custom_gen_9") != null) {
-    custom_cookies = JSON.parse(readCookie("custom_gen_9"));
-    cookiesToLocalStorage(custom_cookies, 9);
-    eraseCookie("custom_gen_9");
-    reloadSVScript();
-}
-
-function cookiesToLocalStorage(custom_cookies, generation) {
-    for (p in custom_cookies) {
-        for (set in custom_cookies[p]) {
-            var customFormat = {
-                "level": custom_cookies[p][set].level,
-                "evs": {
-                    "hp": custom_cookies[p][set].evs.hp,
-                    "at": custom_cookies[p][set].evs.at,
-                    "df": custom_cookies[p][set].evs.df,
-                    "sa": custom_cookies[p][set].evs.sa,
-                    "sd": custom_cookies[p][set].evs.sd,
-                    "sp": custom_cookies[p][set].evs.sp,
-                },
-                "ivs": {
-                    "hp": custom_cookies[p][set].ivs.hp,
-                    "at": custom_cookies[p][set].ivs.at,
-                    "df": custom_cookies[p][set].ivs.df,
-                    "sa": custom_cookies[p][set].ivs.sa,
-                    "sd": custom_cookies[p][set].ivs.sd,
-                    "sp": custom_cookies[p][set].ivs.sp,
-                },
-                "nature": custom_cookies[p][set].nature,
-                "ability": custom_cookies[p][set].ability,
-                "item": custom_cookies[p][set].item,
-                "moves": custom_cookies[p][set].moves,
-                "tera_type": custom_cookies[p][set].tera_type,
-            }
-
-            saveSets(generation, customFormat, p, set);
-        }
-    }
-}
-
-//Check for any sets that have the old naming convention
-if (SETDEX_CUSTOM_SV["Tauros-Paldea"]) {
-    for (set in SETDEX_CUSTOM_SV["Tauros-Paldea"]) {
-        saveSets(9, SETDEX_CUSTOM_SV["Tauros-Paldea"][set], "Tauros-Paldea-Combat", set);
-    }
-    delete SETDEX_CUSTOM_SV["Tauros-Paldea"];
-}
-if (SETDEX_CUSTOM_SV["Tauros-Paldea-Water"]) {
-    for (set in SETDEX_CUSTOM_SV["Tauros-Paldea-Water"]) {
-        saveSets(9, SETDEX_CUSTOM_SV["Tauros-Paldea-Water"][set], "Tauros-Paldea-Aqua", set);
-    }
-    delete SETDEX_CUSTOM_SV["Tauros-Paldea-Water"];
-}
-if (SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"]) {
-    for (set in SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"]) {
-        saveSets(9, SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"][set], "Tauros-Paldea-Blaze", set);
-    }
-    delete SETDEX_CUSTOM_SV["Tauros-Paldea-Fire"];
+for (var i = 1; i <= 9; i++) {
+    if (localStorage["custom_gen_" + i] != null)
+        ALL_SETDEX_CUSTOM[i] = JSON.parse(localStorage["custom_gen_" + i]);
 }
 
 var deletecustom = function () {
     if (confirm("Warning: ALL custom sets from this generation will be deleted. This cannot be undone. Proceed?")) {
         gen = parseInt($('input[name="gen"]:checked').val());
         localStorage.removeItem("custom_gen_" + gen);
-        switch (gen) {
-            case 3:
-                SETDEX_CUSTOM_ADV = {};
-                reloadADVScript();
-                break;
-            case 4:
-                SETDEX_CUSTOM_DPP = {};
-                reloadDPPScript();
-                break;
-            case 5:
-                SETDEX_CUSTOM_BW = {};
-                reloadBWScript();
-                break;
-            case 6:
-                SETDEX_CUSTOM_XY = {};
-                reloadXYScript();
-                break;
-            case 7:
-                SETDEX_CUSTOM_SM = {};
-                reloadSMScript();
-                break;
-            case 8:
-                SETDEX_CUSTOM_SS = {};
-                reloadSSScript();
-                break;
-            case 9:
-                SETDEX_CUSTOM_SV = {};
-                reloadSVScript();
-                break;
-            default:
-                console.log("THIS SHOULDN\'T HAPPEN LOL");
-        }
+        ALL_SETDEX_CUSTOM[gen] = {};
+        loadSetdexScript();
         alert("Custom set deletion successful.");
     }
 }
 
 function saveSets(gen, customFormat, species, spreadName) {
-    switch (gen) {
-        case 3:
-            if (SETDEX_CUSTOM_ADV[species] == null)
-                SETDEX_CUSTOM_ADV[species] = {}
-            SETDEX_CUSTOM_ADV[species][spreadName] = customFormat
-            localStorage.custom_gen_3 = JSON.stringify(SETDEX_CUSTOM_ADV);
-            break;
-        case 4:
-            if (SETDEX_CUSTOM_DPP[species] == null)
-                SETDEX_CUSTOM_DPP[species] = {}
-            SETDEX_CUSTOM_DPP[species][spreadName] = customFormat
-            localStorage.custom_gen_4 = JSON.stringify(SETDEX_CUSTOM_DPP);
-            break;
-        case 5:
-            if (SETDEX_CUSTOM_BW[species] == null)
-                SETDEX_CUSTOM_BW[species] = {}
-            SETDEX_CUSTOM_BW[species][spreadName] = customFormat
-            localStorage.custom_gen_5 = JSON.stringify(SETDEX_CUSTOM_BW);
-            break;
-        case 6:
-            if (SETDEX_CUSTOM_XY[species] == null)
-                SETDEX_CUSTOM_XY[species] = {}
-            SETDEX_CUSTOM_XY[species][spreadName] = customFormat
-            localStorage.custom_gen_6 = JSON.stringify(SETDEX_CUSTOM_XY);
-            break;
-        case 7:
-            if (SETDEX_CUSTOM_SM[species] == null)
-                SETDEX_CUSTOM_SM[species] = {}
-            SETDEX_CUSTOM_SM[species][spreadName] = customFormat
-            localStorage.custom_gen_7 = JSON.stringify(SETDEX_CUSTOM_SM);
-            break;
-        case 8:
-            if (SETDEX_CUSTOM_SS[species] == null)
-                SETDEX_CUSTOM_SS[species] = {}
-            SETDEX_CUSTOM_SS[species][spreadName] = customFormat
-            localStorage.custom_gen_8 = JSON.stringify(SETDEX_CUSTOM_SS);
-            break;
-        case 9:
-            if (SETDEX_CUSTOM_SV[species] == null)
-                SETDEX_CUSTOM_SV[species] = {}
-            SETDEX_CUSTOM_SV[species][spreadName] = customFormat
-            localStorage.custom_gen_9 = JSON.stringify(SETDEX_CUSTOM_SV);
-            break;
-        default:
-            console.log("THIS SHOULDN\'T HAPPEN LOL");
-    }
-}
-
-function createCookie(name, value, days) {
-	var expires = "";
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days*24*60*60*1000));
-        expires = "; expires=" + date.toGMTString();
-	}
-    document.cookie = name + "=" + value + expires + "; path=/NCP-VGC-Damage-Calculator";
-    // !!! CHANGE PATH IF YOU TAKE THE CODE, OTHERWISE COOKIES WON'T BE PROPERLY DELETED !!!
-}
-
-function readCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	}
-	return null;
-}
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
+    if (ALL_SETDEX_CUSTOM[gen][species] == null)
+        ALL_SETDEX_CUSTOM[gen][species] = {};
+    ALL_SETDEX_CUSTOM[gen][species][spreadName] = customFormat;
+    localStorage['custom_gen_' + gen] = JSON.stringify(ALL_SETDEX_CUSTOM[gen]);
 }
 
 var savecustom = function()
@@ -509,36 +285,8 @@ var savecustom = function()
         }
         saveSets(gen, customFormat, species, spreadName);
     }
-    switch (gen) {
-        case 3:
-            reloadADVScript();
-            break;
-        case 4:
-            reloadDPPScript();
-            break;
-        case 5:
-            reloadBWScript();
-            break;
-        case 6:
-            reloadXYScript();
-            break;
-        case 7:
-            reloadSMScript();
-            break;
-        case 8:
-            reloadSSScript();
-            break;
-        case 84:
-            reloadBDSPScript();
-            break;
-        case 9:
-            reloadSVScript();
-            break;
-        default:
-            console.log("THIS SHOULDN\'T HAPPEN LOL");
-    }
-    document.getElementById("customMon").value = ""
-
+    loadSetdexScript();
+    document.getElementById("customMon").value = "";
 }
 
 
@@ -597,44 +345,19 @@ var savecalc = function (set, spreadName, accessIVs) {
     };
 
     saveSets(gen, customFormat, species, spreadName);
-    switch (gen) {
-        case 3:
-            reloadADVScript();
-            break;
-        case 4:
-            reloadDPPScript();
-            break;
-        case 5:
-            reloadBWScript()
-            break;
-        case 6:
-            reloadXYScript()
-            break;
-        case 7:
-            reloadSMScript()
-            break;
-        case 8:
-            reloadSSScript()
-            break;
-        case 9:
-            reloadSVScript()
-            break;
-        default:
-            console.log("THIS SHOULDN\'T HAPPEN LOL");
-    }
+    loadSetdexScript();
 }
 
-var savecalc1 = function () {
-    var p1 = new Pokemon($("#p1"));
-    var spreadName = document.getElementById('setName1').value;
-    accessIVs = $('#p1 input.ivs.calc-trigger').closest(".poke-info"); 
-    savecalc(p1, spreadName, accessIVs);
-}
-var savecalc2 = function () {
-    var p2 = new Pokemon($("#p2"));
-    var spreadName = document.getElementById('setName2').value;
-    accessIVs = $('#p2 input.ivs.calc-trigger').closest(".poke-info");
-    savecalc(p2, spreadName, accessIVs);
+function runSaveCalc(pnum) {
+    var setName = document.getElementById('setName' + pnum).value;
+    var monSet = new Pokemon($('#p' + pnum));
+    if (setName in setdex[monSet.name] && !(setName in setdexCustom[monSet.name]))
+        alert("Set names for Pokemon cannot match one of the calc's presets.\nPlease rename this set and try again.");
+    else if ((LEFT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[0].length <= parseInt(setName.slice(-1))*/)
+        || (RIGHT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[1].length <= parseInt(setName.slice(-1))*/))
+        alert("Set name matches naming convention for sidebars. Please use the sidebar buttons to add, save, and delete.");
+    else
+        savecalc(monSet, document.getElementById('setName' + pnum).value, $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"));
 }
 
 //Looked this up online, copies to clipboard without any input
@@ -798,13 +521,24 @@ var exportset = function (set, accessIVs) {
     //tempCSV();
 }
 
-var exportset1 = function () {
-    var p1 = new Pokemon($("#p1"));
-    accessIVs = $('#p1 input.ivs.calc-trigger').closest(".poke-info");
-    exportset(p1, accessIVs);
+function runExportSet(pnum) {
+    exportset(new Pokemon($('#p' + pnum)), $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"));
 }
-var exportset2 = function () {
-    var p2 = new Pokemon($("#p2"));
-    accessIVs = $('#p2 input.ivs.calc-trigger').closest(".poke-info");
-    exportset(p2, accessIVs);
+
+function deleteSet(species, spreadName) {
+    delete ALL_SETDEX_CUSTOM[gen][species][spreadName];
+    if (!(Object.keys(ALL_SETDEX_CUSTOM[gen][species]).length))
+        delete ALL_SETDEX_CUSTOM[gen][species];
+    localStorage["custom_gen_" + gen] = JSON.stringify(ALL_SETDEX_CUSTOM[gen]);
+    loadSetdexScript();
+}
+
+function runDeleteSet(pnum) {
+    var p = '#p' + pnum;
+    var fullSetName = $(p + ' input.set-selector').val();
+    var species = fullSetName.substring(0, fullSetName.indexOf(" (")), setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+    if (confirm("The following set will be deleted:\n" + fullSetName + "\n\nContinue?")) {
+        deleteSet(species, setName);
+        $(p).closest(".poke-info").find(".delset").hide();
+    }
 }

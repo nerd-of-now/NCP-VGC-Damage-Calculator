@@ -216,7 +216,7 @@ var SETDEX_VGC_BFD = {
     "Slowbro": {
 
     },
-    "Farfetch\u0027d": {
+    "Farfetch'd": {
 
     },
     "Dodrio": {

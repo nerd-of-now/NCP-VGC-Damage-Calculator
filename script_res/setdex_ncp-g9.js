@@ -2481,6 +2481,30 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Bellibolt": {
+        "Bruneaux's Reg F Sitrus Set": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 4,
+                "df": 204,
+                "sa": 52,
+                "sd": 12,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "ability": "Electromorphosis",
+            "tera_type": "Fairy",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Parabolic Charge",
+                "Thunderbolt",
+                "Muddy Water",
+                "Sucker Punch"
+            ]
+        },
         "WP Electromorphosis": {
             "level": 50,
             "evs": {

@@ -4915,6 +4915,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     'Hurricane': { isWind: true, },
     'Petal Blizzard': { isWind: true, },
     'Fairy Wind': { isWind: true, },
+    'Aeroblast': { isWind: true, },
     'Wicked Blow': { bp: 75, },
     'Grassy Glide': { bp: 55, },
     'Glacial Lance': { bp: 120, },

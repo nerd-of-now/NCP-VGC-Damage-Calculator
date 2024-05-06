@@ -830,7 +830,7 @@ function statusMoves(move, attacker, defender, description) {
 }
 
 function abilityIgnore(attacker, move, defAbility, description, defItem = "") {
-    if (['Shadow Shield', 'Full Metal Body', 'Prism Armor', 'As One',
+    if (['Shadow Shield', 'Full Metal Body', 'Prism Armor', 'As One', 'Protosynthesis', 'Quark Drive',
         'Tablets of Ruin', 'Vessel of Ruin', 'Sword of Ruin', 'Beads of Ruin'].indexOf(defAbility) == -1 && defItem !== "Ability Shield") {
         if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
             defAbility = "[ignored]";   //'[ignored]' is used as a check for ally abilities as well

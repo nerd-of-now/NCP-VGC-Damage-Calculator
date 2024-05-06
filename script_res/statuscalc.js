@@ -36,6 +36,7 @@ function addjokechars() {
     for (key in POKEDEX_AFD24) {
         POKEDEX_SV[key] = POKEDEX_AFD24[key];
         POKEDEX_SV_NATDEX[key] = POKEDEX_AFD24[key];
-        SETDEX_SV[key] = SETDEX_AFD24[key];
+        //SETDEX_SV[key] = SETDEX_AFD24[key];
     }
+    COMPONENTS[9].push(SETDEX_AFD24);
 }

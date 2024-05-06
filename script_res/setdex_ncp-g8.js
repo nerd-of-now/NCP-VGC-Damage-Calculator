@@ -98,7 +98,7 @@ var SETDEX_VGC2021 = {
                 "Icy Wind"
             ]
         },
-        "marc0fier0\'s Tornadus": {
+        "marc0fier0's Tornadus": {
             "level": 50,
             "evs": {
                 "hp": 164,
@@ -2700,7 +2700,7 @@ var SETDEX_VGC2021 = {
                 "Snarl"
             ]
         },
-        "DonVGC\'s PC2 Entei": {
+        "DonVGC's PC2 Entei": {
             "level": 50,
             "evs": {
                 "hp": 132,
@@ -2908,7 +2908,7 @@ var SETDEX_VGC2021 = {
                 "Volt Switch"
             ]
         },
-        "DonVGC\'s PC2 Raichu": {
+        "DonVGC's PC2 Raichu": {
             "level": 50,
             "evs": {
                 "hp": 132,
@@ -4015,7 +4015,7 @@ var SETDEX_VGC2021 = {
                 "Rock Slide"
             ]
         },
-        "nerd of now'\s Landorus": {
+        "nerd of now's Landorus": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5556,7 +5556,7 @@ var SETDEX_VGC2021 = {
                 "Dazzling Gleam"
             ]
         },
-        "Desu\'s PC1 Primarina": {
+        "Desu's PC1 Primarina": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -6147,7 +6147,7 @@ var SETDEX_VGC2021 = {
                 "Thunderbolt",
                 "Dazzling Gleam",
                 "Volt Switch",
-                "Nature\'s Madness"
+                "Nature's Madness"
             ]
         }
 
@@ -6416,7 +6416,7 @@ var SETDEX_VGC2021 = {
                 "Meteor Beam"
             ]
         },
-        "DonVGC\'s PC2 Celesteela": {
+        "DonVGC's PC2 Celesteela": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -7918,7 +7918,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "Dragon\'s Maw",
+            "ability": "Dragon's Maw",
             "item": "Dragon Fang",
             "moves": [
                 "Dragon Energy",
@@ -7941,7 +7941,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "Dragon\'s Maw",
+            "ability": "Dragon's Maw",
             "item": "Dragon Fang",
             "moves": [
                 "Dragon Energy",
@@ -8671,7 +8671,7 @@ var SETDEX_VGC2021_S10 = {
             "item": "Sitrus Berry",
             "moves": [
                 "Moonblast",
-                "Nature\'s Madness",
+                "Nature's Madness",
                 "Muddy Water",
                 "Icy Wind"
             ]
@@ -9377,7 +9377,7 @@ var SETDEX_VGC2021_S10 = {
                 "Volt Switch",
                 "Electroweb",
                 "Dazzling Gleam",
-                "Nature\'s Madness"
+                "Nature's Madness"
             ]
         },
 

@@ -3,7 +3,7 @@ body {
     font: 12px Verdana, sans-serif;
     background-color: #bbeedd;
     padding: 0 1em;
-    min-width: 100em;
+    min-width: 120em;
 }
 fieldset {
     float: left;
@@ -44,7 +44,7 @@ th {
 }
 .poke-info {
     /*width: 33.1em;*/
-    width: 30em;
+    width: 37em;
 }
 .field-info {
     width: 30em;
@@ -333,7 +333,21 @@ select.toxic-counter {
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
-
+button.pkmnsc {
+    width: 60px;
+    min-height: 44px;
+    text-align: center;
+}
+button.trashsc, button.editsc {
+    width: 24px;
+    height: 24px;
+}
+button.addsc {
+    width: 114.25px;
+}
+button.pkmnsc, button.trashsc, button.editsc, button.addsc{
+    cursor: pointer;
+}
 
 #mainResult {
     visibility: visible;
