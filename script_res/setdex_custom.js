@@ -72,6 +72,8 @@ var saveToCalcFormes = [
 for (var i = 1; i <= 9; i++) {
     if (localStorage["custom_gen_" + i] != null)
         ALL_SETDEX_CUSTOM[i] = JSON.parse(localStorage["custom_gen_" + i]);
+    else
+        ALL_SETDEX_CUSTOM[i] = {};
 }
 
 var deletecustom = function () {

@@ -60,12 +60,16 @@ function loadSidebar() {
     for (var i = 0; i < CURRENT_SIDEBARS.length; i++) {
         side = i == 0 ? 'l' : i == 1 ? 'r' : '';
         pID = '#pkmn' + side.toUpperCase();
-        for (var j = 0; j < CURRENT_SIDEBARS[i].length; j++) {
-            displayName = CURRENT_SIDEBARS[i][j];
-            teamslot = pID + (j + 1);
-            $(teamslot).prop('title', displayName);
-            getSidebarImg(teamslot + 'I', displayName);
-            $('#' + side + (j + 1)).show();
+        for (var j = 0; j < 6; j++) {
+            if (j < CURRENT_SIDEBARS[i].length) {
+                displayName = CURRENT_SIDEBARS[i][j];
+                teamslot = pID + (j + 1);
+                $(teamslot).prop('title', displayName);
+                getSidebarImg(teamslot + 'I', displayName);
+                $('#' + side + (j + 1)).show();
+            }
+            else
+                $('#' + side + (j + 1)).hide();
         }
         if (CURRENT_SIDEBARS[i].length == 6)
             $('#sb' + side.toUpperCase()).hide();
@@ -115,7 +119,7 @@ function loadSidebarSlot(pnum, teamnum) {
 }
 
 function shiftSidebar(pnum) {
-    console.log(ALL_SETDEX_CUSTOM[gen]);
+    //console.log(ALL_SETDEX_CUSTOM[gen]);
     var sidebar = CURRENT_SIDEBARS[pnum - 1];
     var tempHold = [{}, {}, {}, {}, {}, {},];
     var desyncStart = -1;
@@ -136,5 +140,5 @@ function shiftSidebar(pnum) {
             deleteSet(sidebar[i], side + ' Sidebar Slot ' + (i + 2));
         }
     }
-    console.log(ALL_SETDEX_CUSTOM[gen]);
+    //console.log(ALL_SETDEX_CUSTOM[gen]);
 }
