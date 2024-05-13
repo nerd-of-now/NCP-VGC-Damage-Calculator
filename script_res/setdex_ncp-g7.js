@@ -3,21 +3,195 @@ var SETDEX_GEN7 = {
     //KANTO
     "Venusaur": {
         //2018 mega, 2018, 2019
+        "2018 Bulky Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 124,
+                "sa": 76,
+                "sd": 52,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Overgrow",
+            "item": "Venusaurite",
+            "moves": [
+                "Sludge Bomb",
+                "Giga Drain",
+                "Energy Ball",
+                "Leech Seed"
+            ]
+        },
+        "Sun Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+                "Sludge Bomb",
+                "Energy Ball",
+                "Grass Knot",
+                "Hidden Power Fire"
+            ]
+        },
     },
     "Charizard": {
         //2018 mega x, 2018 mega y, 2019
+        "Bulky Mega Charizard X": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 76,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 188
+            },
+            "nature": "Adamant",
+            "ability": "Blaze",
+            "item": "Charizardite X",
+            "moves": [
+                "Flare Blitz",
+                "Thunder Punch",
+                "Dragon Dance",
+                "Roost"
+            ]
+        },
+        "Fast Mega Charizard Y": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+                "Heat Wave",
+                "Solar Beam",
+                "Overheat",
+                "Flamethrower"
+            ]
+        },
+        "2019 Firium Z Tailwind": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Solar Power",
+            "item": "Firium Z",
+            "moves": [
+                "Heat Wave",
+                "Overheat",
+                "Blast Burn",
+                "Tailwind"
+            ]
+        },
     },
     "Blastoise": {
         //2018 mega
+        "Somewhat Fast Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 100,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 156
+            },
+            "nature": "Modest",
+            "ability": "Torrent",
+            "item": "Blastoisinite",
+            "moves": [
+                "Water Spout",
+                "Ice Beam",
+                "Water Pulse",
+                "Fake Out"
+            ]
+        },
     },
     "Butterfree": {
         //2017
     },
     "Beedrill": {
         //2019 ultra mega
+        "Ultra Series Ballin' Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 20,
+                "sp": 236
+            },
+            "nature": "Jolly",
+            "ability": "Swarm",
+            "item": "Beedrillite",
+            "moves": [
+                "Poison Jab",
+                "U-turn",
+                "X-Scissor",
+                "Tailwind"
+            ]
+        },
     },
     "Pidgeot": {
-
+        "Max Speed Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Big Pecks",
+            "item": "Pidgeotite",
+            "moves": [
+                "Hurricane",
+                "Heat Wave",
+                "Hyper Beam",
+                "Hidden Power Ice"
+            ]
+        },
     },
     "Rattata": {
 
@@ -129,6 +303,29 @@ var SETDEX_GEN7 = {
     },
     "Haunter": {
         //2017
+        "Coping with no Levitate Gengar": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Levitate",
+            "item": "Focus Sash",
+            "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Thunderbolt",
+                "Will-O-Wisp"
+            ]
+        },
     },
     "Gengar": {
         //2018 mega, 2019 moon, 2019 ultra mega
@@ -1294,16 +1491,16 @@ var SETDEX_GEN7 = {
     "Crabominable": {
 
     },
-    "Oricorio-Fire": {
+    "Oricorio-Baile": {
 
     },
-    "Oricorio-Electric": {
+    "Oricorio-Pom-Pom": {
         //2017, 2018
     },
-    "Oricorio-Psychic": {
+    "Oricorio-Pa'u": {
 
     },
-    "Oricorio-Ghost": {
+    "Oricorio-Sensu": {
 
     },
     "Ribombee": {

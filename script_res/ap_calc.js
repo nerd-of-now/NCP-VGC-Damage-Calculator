@@ -670,8 +670,18 @@ $(".set-selector").change(function() {
                 $(this).closest(".poke-info").find(".setCalc").val("My Calc Set");
                 $(this).closest(".poke-info").find(".delset").hide();
             }
-            if(DOU) pokeObj.find(".level").val(100);
-            else pokeObj.find(".level").val(set.level);
+            if (DOU) {
+                if (set.level && set.level != 50)
+                    pokeObj.find(".level").val(set.level);
+                else
+                    pokeObj.find(".level").val(100);
+            }
+            else {
+                if (gen <= 6 && set.level && set.level < 50)
+                    pokeObj.find(".level").val(set.level);
+                else
+                    pokeObj.find(".level").val(50);
+            }
             pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);
             pokeObj.find(".hp .ivs").val((set.ivs && typeof set.ivs.hp !== "undefined") ? set.ivs.hp : 31);
             pokeObj.find(".hp .dvs").val((set.dvs && typeof set.dvs.hp !== "undefined") ? set.dvs.hp : 15);

@@ -29,6 +29,7 @@ var showdownToCalcFormes = [
     ["Genesect-Chill", "Genesect"],
     ["Genesect-Douse", "Genesect"],
     ["Genesect-Shock", "Genesect"],
+    ["Oricorio", "Oricorio-Baile"],
     ["Magearna-Original", "Magearna"],
     ["Toxtricity-Low-Key", "Toxtricity"],
     ["Toxtricity-Low-Key-Gmax", "Toxtricity-Gmax"],
@@ -56,6 +57,7 @@ var calcToShowdownFormes = [
     ["Gastrodon-East", "Gastrodon"],
     ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
     ["Indeedee", "Indeedee-M"],
+    ["Oricorio", "Oricorio-Baile"],
 ];
 
 var saveToCalcFormes = [
@@ -294,7 +296,7 @@ var savecustom = function()
 
 //Saves a custom set from within the calc
 var savecalc = function (set, spreadName, accessIVs) {
-    var moves=[]
+    var moves = [];
     species = set.name;
 
     checkGmax = species.indexOf("-Gmax", 0);
