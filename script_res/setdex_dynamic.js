@@ -1,5 +1,4 @@
 var CURRENT_SETDEX = {};
-var CURRENT_SETDEX_CUSTOM = {};
 var COMPONENTS = {
     1: [],
     2: [],

@@ -661,7 +661,7 @@ $(".set-selector").change(function() {
         var itemObj = pokeObj.find("select.item");
         if (pokemonName in setdex && setName in setdex[pokemonName]) {
             var set = setdex[pokemonName][setName];
-            if (setdexCustom !== [] && pokemonName in setdexCustom && setName in setdexCustom[pokemonName]
+            if ($.isEmptyObject(setdexCustom) == false && pokemonName in setdexCustom && setName in setdexCustom[pokemonName]
                 && LEFT_SIDEBAR_NAMES.indexOf(setName) == -1 && RIGHT_SIDEBAR_NAMES.indexOf(setName) == -1) {
                 $(this).closest(".poke-info").find(".setCalc").val(setName);
                 $(this).closest(".poke-info").find(".delset").show();
