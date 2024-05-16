@@ -122,7 +122,7 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
 
-    description.HPEVs = defender.HPEVs + " HP";
+    getHPInfo(description, defender);
 
     setDamageBuildDesc = setDamage(move, attacker, defender, description, isQuarteredByProtect, field);
     if (setDamageBuildDesc !== -1) return setDamageBuildDesc;

@@ -1,3 +1,7 @@
+:root {
+    --slider-color-p1: #23b928;
+    --slider-color-p2: #23b928;
+}
 /* general page styling */
 body {
     font: 12px Verdana, sans-serif;
@@ -277,7 +281,43 @@ select.toxic-counter {
     background-position: -18px -4px;
 }
 
+.hp-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #23b928 100%, #606060 0%);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+.hp-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    /*cursor: pointer;*/
+}
+#p1 .hp-bar::-webkit-slider-thumb {
+    background: var(--slider-color-p1);
+}
+#p2 .hp-bar::-webkit-slider-thumb {
+    background: var(--slider-color-p2);
+}
+.hp-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    /*cursor: pointer;*/
+}
+#p1 .hp-bar::-moz-range-thumb {
+    background: var(--slider-color-p1);
+}
 
+#p2 .hp-bar::-moz-range-thumb {
+    background: var(--slider-color-p2);
+}
 
 
 #autolevel {

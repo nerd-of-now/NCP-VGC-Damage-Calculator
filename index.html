@@ -57,33 +57,27 @@
             </div>
             <hr />
             <p><br /><br /></p>
-            <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- Damage Calc Ad (PROBABLY WILL REMAIN UNUSED) -->
             <!--<ins class="adsbygoogle"
-                 style="display:inline-block;width:728px;height:90px"
-                 data-ad-client="ca-pub-7571541875475494"
-                 data-ad-slot="3642617298"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>-->
-            <p>VGC 2024 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerd_of_now">@nerd_of_now</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboydev" target="_blank" rel="noopener noreferrer">@squirrelboydev</a>).</p>
-            <p>Regulation G is upon us! We are working on optimizing this calculator for the new format.
-            <!--<br><b><u>This calculator contains spoilers for the Indigo Disk DLC.</u></b> This includes Pokémon, moves, abilities, items, and the new Tera Type. Use at your own discretion.--></p>
-            <!--<br><p>Is there an important or relevant set missing? <a href="https://forms.gle/zBbEnvp2vZ2UADUJA" target="_blank" rel="noopener noreferrer">Give us your suggestion!</a></p>-->
-            
-            <p>If you like what we do here, please consider supporting us on <a href="https://www.buymeacoffee.com/NCPDamageCalc" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a><!--[HYPERLINK BLOCKED]-->!
-            <br>For any issues with or other suggestions for this version of the Damage Calculator, contact Alex on <a href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator/issues" target="_blank" rel="noopener noreferrer">Github</a> or <a href="https://twitter.com/nerd_of_now" target="_blank" rel="noopener noreferrer">Twitter</a>.</p>
-            <!-- OLD NUGGETBRIDGE ADS -->
-            <!-- ALSO OLD TRAINER TOWER ADS -->
-            <!-- <div class="banner"><script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
-            <!-- Damage Calc Header -->
-            <!-- <ins class="adsbygoogle"
              style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-2706545500271292"
-             data-ad-slot="2267027703"></ins>
+             data-ad-client="ca-pub-7571541875475494"
+             data-ad-slot="3642617298"></ins>
         <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script></div> -->
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>-->
+            <p>VGC 2024 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerd_of_now">@nerd_of_now</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboydev" target="_blank" rel="noopener noreferrer">@squirrelboydev</a>).</p>
+            <p>
+                Regulation G is upon us! This calculator will be kept up-to-date for the new format.
+                <!--<br><b><u>This calculator contains spoilers for the Indigo Disk DLC.</u></b> This includes Pokémon, moves, abilities, items, and the new Tera Type. Use at your own discretion.-->
+            </p>
+            <!--<br><p>Is there an important or relevant set missing? <a href="https://forms.gle/zBbEnvp2vZ2UADUJA" target="_blank" rel="noopener noreferrer">Give us your suggestion!</a></p>-->
+
+            <p>
+                If you like what we do here, please consider supporting us on <a href="https://www.buymeacoffee.com/NCPDamageCalc" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a><!--[HYPERLINK BLOCKED]-->!
+                <br>For any issues with or other suggestions for this version of the Damage Calculator, contact Alex on <a href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator/issues" target="_blank" rel="noopener noreferrer">Github</a> or <a href="https://twitter.com/nerd_of_now" target="_blank" rel="noopener noreferrer">Twitter</a>.
+            </p>
+
             <div class="move-result-group" title="Select a move to show detailed results.">
                 <div class="move-result-subgroup">
                     <div class="result-move-header"><span id="resultHeaderL">Pokémon 1's Moves (select one to show detailed results)</span></div>
@@ -108,7 +102,7 @@
                 <div class="panel-heading"><h4 class="panel-title">Pokémon 1</h4></div>
                 <div class="panel-body">
                     <input type="text" class="set-selector calc-trigger" />
-                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
+                    <div class="set-checkbox gen-specific g3 g4 g5 g6 g7 g8 g9">
                         <input type="checkbox" class="set-toggle" /> Custom sets only
                     </div>
                     <div class="info-group">
@@ -210,6 +204,8 @@
                         <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
                         <input class="max move-max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8" for="maxL" title="Dynamax this Pokémon?">Dynamax</label>
                         <input class="tera move-tera calc-trigger btn-input" type="checkbox" id="teraL" /><label class="btn btn-wide gen-specific g9" for="teraL" title="Terastalize this Pokémon?">Terastal</label>
+                        <br />
+                        <input class="hp-bar" type="range" min="0" max="714" step="1" value="714" />
                     </div>
                     <div class="move1">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -545,7 +541,7 @@
                 <div class="panel-heading"><h4 class="panel-title">Pokémon 2</h4></div>
                 <div class="panel-body">
                     <input type="text" class="set-selector calc-trigger" />
-                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
+                    <div class="set-checkbox gen-specific g3 g4 g5 g6 g7 g8 g9">
                         <input type="checkbox" class="set-toggle" /> Custom sets only
                     </div>
                     <div class="info-group">
@@ -647,6 +643,8 @@
                         <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
                         <input class="max move-max calc-trigger btn-input" type="checkbox" id="maxR" /><label class="btn btn-wide gen-specific g8" for="maxR" title="Dynamax this Pokémon?">Dynamax</label>
                         <input class="tera move-tera calc-trigger btn-input" type="checkbox" id="teraR" /><label class="btn btn-wide gen-specific g9" for="teraR" title="Terastalize this Pokémon?">Terastal</label>
+                        <br />
+                        <input class="hp-bar" type="range" min="0" max="714" step="1" value="714" />
                     </div>
                     <div class="move1">
                         <select class="move-selector calc-trigger small-select"></select>
@@ -717,56 +715,55 @@
                 <p><em>This calculator is based on the work of Tapin, Firestorm, squirrelboy1225, and DaWoblefet, whose work was in turn based on the work of Honko, gamut, and Zarel. It has been optimized for players in the current Pokémon Video Game Championship Series by nerd of now. <br />Many thanks to Nugget Bridge and Trainer Tower for hosting previous incarnations of this calculator in the past.</em></p>
             </div>
             <div id="april_fools"></div>
-            <button title="Say, what's this?" style="background: transparent; border: none !important; cursor:pointer; position: absolute; right: 0px; padding: 7px 8px" onclick="toggleAFD()">AFD</button>
+            <button title="Say, what's this?" style="background: transparent; border: none !important; cursor:pointer; position: absolute; right: 0px; padding: 7px 8px" onclick="toggleAFD()">&nbsp;&nbsp;&nbsp;</button>
         </div>
 
         <div style="display:inline-block;width:728px;height:30px" />
         <!-- Damage Calc Ad (PROBABLY WILL REMAIN UNUSED) -->
-        <!--<ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-7571541875475494"
-             data-ad-slot="3642617298"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>-->
-    </body>
+        <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-7571541875475494"
+         data-ad-slot="3642617298"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-    <script src="jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="script_res/switch_mode.js"></script>
-    <script type="text/javascript" src="script_res/select2.min.js"></script>
-    <script type="text/javascript" src="script_res/pokedex.js"></script>
-    <script type="text/javascript" src="script_res/setdex_showdown.js"></script>
-    <script type="text/javascript" src="script_res/setdex_globalLink.js"></script>
-    <script type="text/javascript" src="script_res/setdex_nuggetBridge.js"></script>
-    <script type="text/javascript" src="script_res/setdex_tt2017.js" id="TTScript"></script>
-    <script type="text/javascript" src="script_res/setdex_tt2018.js" id="TTScript"></script>
-    <script type="text/javascript" src="script_res/setdex_tt2019.js" id="TTScript"></script>
-    <script type="text/javascript" src="script_res/setdex_tt2020.js" id="TTScript"></script>
-    <script type="text/javascript" src="script_res/setdex_vgcbfd.js" id="NCPScript"></script>
-    <script type="text/javascript" src="script_res/setdex_ncp-g8.js" id="NCPScript"></script>
-    <script type="text/javascript" src="script_res/setdex_ncp-g9.js" id="NCPScript"></script>
-    <script type="text/javascript" src="script_res/setdex_smogon.js" id="SmogScript"></script>
-    <script type="text/javascript" src="script_res/setdex_dynamic.js"></script>
-    <script type="text/javascript" src="script_res/setdex_custom.js"></script>
-    <script type="text/javascript" src="script_res/stat_data.js"></script>
-    <script type="text/javascript" src="script_res/type_data.js"></script>
-    <script type="text/javascript" src="script_res/nature_data.js"></script>
-    <script type="text/javascript" src="script_res/ability_data.js"></script>
-    <script type="text/javascript" src="script_res/item_data.js"></script>
-    <script type="text/javascript" src="script_res/move_data.js"></script>
-    <script type="text/javascript" src="script_res/ap_calc.js"></script>
-    <script type="text/javascript" src="script_res/damage_MASTER.js"></script>
-    <script type="text/javascript" src="script_res/damage_SV.js"></script>
-    <script type="text/javascript" src="script_res/damage_xy.js"></script>
-    <script type="text/javascript" src="script_res/damage_dpp.js"></script>
-    <script type="text/javascript" src="script_res/damage_rse.js"></script>
-    <script type="text/javascript" src="script_res/damage_gsc.js"></script>
-    <script type="text/javascript" src="script_res/damage_rby.js"></script>
-    <script type="text/javascript" src="script_res/ko_chance.js"></script>
-    <script type="text/javascript" src="script_res/statuscalc.js"></script>
-    <script type="text/javascript" src="afd_res/spamton.js"></script>
-    <script type="text/javascript" src="afd_res/noise.js"></script>
-    <script type="text/javascript" src="afd_res/pokedex_afd24.js"></script>
-    <script type="text/javascript" src="afd_res/setdex_afd24.js"></script>
-    <script type="text/javascript" src="script_res/sidebars.js"></script>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="script_res/switch_mode.js"></script>
+        <script type="text/javascript" src="script_res/select2.min.js"></script>
+        <script type="text/javascript" src="script_res/pokedex.js"></script>
+        <script type="text/javascript" src="script_res/setdex_showdown.js"></script>
+        <script type="text/javascript" src="script_res/setdex_globalLink.js"></script>
+        <script type="text/javascript" src="script_res/setdex_nuggetBridge.js"></script>
+        <script type="text/javascript" src="script_res/setdex_tt2017.js" id="TTScript"></script>
+        <script type="text/javascript" src="script_res/setdex_tt2018.js" id="TTScript"></script>
+        <script type="text/javascript" src="script_res/setdex_tt2019.js" id="TTScript"></script>
+        <script type="text/javascript" src="script_res/setdex_tt2020.js" id="TTScript"></script>
+        <script type="text/javascript" src="script_res/setdex_ncp-g8.js" id="NCPScript"></script>
+        <script type="text/javascript" src="script_res/setdex_ncp-g9.js" id="NCPScript"></script>
+        <script type="text/javascript" src="script_res/setdex_smogon.js" id="SmogScript"></script>
+        <script type="text/javascript" src="script_res/setdex_dynamic.js"></script>
+        <script type="text/javascript" src="script_res/setdex_custom.js"></script>
+        <script type="text/javascript" src="script_res/stat_data.js"></script>
+        <script type="text/javascript" src="script_res/type_data.js"></script>
+        <script type="text/javascript" src="script_res/nature_data.js"></script>
+        <script type="text/javascript" src="script_res/ability_data.js"></script>
+        <script type="text/javascript" src="script_res/item_data.js"></script>
+        <script type="text/javascript" src="script_res/move_data.js"></script>
+        <script type="text/javascript" src="script_res/ap_calc.js"></script>
+        <script type="text/javascript" src="script_res/damage_MASTER.js"></script>
+        <script type="text/javascript" src="script_res/damage_SV.js"></script>
+        <script type="text/javascript" src="script_res/damage_xy.js"></script>
+        <script type="text/javascript" src="script_res/damage_dpp.js"></script>
+        <script type="text/javascript" src="script_res/damage_rse.js"></script>
+        <script type="text/javascript" src="script_res/damage_gsc.js"></script>
+        <script type="text/javascript" src="script_res/damage_rby.js"></script>
+        <script type="text/javascript" src="script_res/ko_chance.js"></script>
+        <script type="text/javascript" src="script_res/statuscalc.js"></script>
+        <script type="text/javascript" src="afd_res/spamton.js"></script>
+        <script type="text/javascript" src="afd_res/noise.js"></script>
+        <script type="text/javascript" src="afd_res/pokedex_afd24.js"></script>
+        <script type="text/javascript" src="afd_res/setdex_afd24.js"></script>
+        <script type="text/javascript" src="script_res/sidebars.js"></script>
+    </body>
 </html>

@@ -64,8 +64,8 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     var typeEffectiveness = typeEffect1 * typeEffect2;
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
-    
-    description.HPEVs = defender.HPEVs + " HP";
+
+    getHPInfo(description, defender);
 
     setDamageBuildDesc = setDamage(move, attacker, defender, description, false, field);
     if (setDamageBuildDesc !== -1) return setDamageBuildDesc;

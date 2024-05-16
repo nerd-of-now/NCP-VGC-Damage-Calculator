@@ -4605,7 +4605,7 @@ var SETDEX_VGC2023 = {
                 "Spirit Break",
                 "Reflect",
                 "Light Screen",
-                "Taunt"
+                "Foul Play"
             ]
         },
     },
@@ -8590,6 +8590,29 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Moltres-Galar": {
+        "Black Glasses Tailwind": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 76,
+                "sa": 12,
+                "sd": 100,
+                "sp": 76
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "tera_type": "Dark",
+            "item": "Black Glasses",
+            "moves": [
+                "Fiery Wrath",
+                "Foul Play",
+                "Snarl",
+                "Tailwind"
+            ]
+        },
         "Nasty Plot Sitrus": {
             "level": 50,
             "evs": {

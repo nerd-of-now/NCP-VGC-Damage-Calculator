@@ -47,7 +47,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defender.ability, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
 
-    description.HPEVs = defender.HPEVs + " HP";
+    getHPInfo(description, defender);
 
     setDamageBuildDesc = setDamage(move, attacker, defender, description, false, field);
     if (setDamageBuildDesc !== -1) return setDamageBuildDesc;

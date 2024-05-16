@@ -1,6 +1,6 @@
 //LIGHT AND DARK THEMES
 // Load theme according to localStorage
-if(localStorage.getItem("theme") == "dark"){
+if (localStorage.getItem("theme") == "dark" || (localStorage.getItem("theme") != "light" && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){
 	$("#switchTheme").html("Light theme");
 	$("#switchTheme").val("light");
 	loadTheme("dark");
@@ -195,7 +195,7 @@ function loadDex(dexMode) {
 }
 
 function loadSets(p) {
-	setStartup(p)
+	setStartup(p);
 	$(p + " .set-selector").val(getSetOptions(p)[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
 	$(p + " .set-selector").change();
 }

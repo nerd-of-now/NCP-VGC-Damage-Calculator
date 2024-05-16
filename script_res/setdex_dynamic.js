@@ -15,13 +15,19 @@ var COMPONENTS = {
         SETDEX_VGC2021_S10,
         SETDEX_VGC_BFD],
     9: [SETDEX_VGC2023],
-}
+};
 
 var ALL_SETDEX_CUSTOM = {};
 
 function loadSetdexScript() {
     console.log(ALL_SETDEX_CUSTOM[gen]);
     CURRENT_COMPONENTS = COMPONENTS[gen].concat(ALL_SETDEX_CUSTOM[gen]);
+
+    if (Object.keys(ALL_SETDEX_CUSTOM[gen]).length)
+        $(".set-checkbox").show();
+    else
+        $(".set-checkbox").hide();
+
     CURRENT_SETDEX = {};
 
     for (var i = 0; i < CURRENT_COMPONENTS.length; i++) {

@@ -38,7 +38,9 @@ function buildDescription(description) {
     if (description.attackerLevel) {
         output = output + 'Lv. ' + description.attackerLevel + ' ';
     }
-    output = appendIfSet(output, description.attackEVs);
+    if (!description.usesOppAtkStat) {
+        output = appendIfSet(output, description.attackEVs);
+    }
     output = appendIfSet(output, description.attackerItem);
     output = appendIfSet(output, description.attackerAbility);
     if (description.ruinSwordBeads) {
@@ -81,16 +83,16 @@ function buildDescription(description) {
         output += "(" + description.hits + " hits) ";
     }
     if (description.courseDriftSE) {
-        output+="(Super Effective) "
+        output += "(Super Effective) ";
     }
     if (description.teraBPBoost) {
-        output+="(Tera 60 BP Boost) "
+        output += "(Tera 60 BP Boost) ";
     }
     if (description.maskBoost) {
-        output += "(1.2x Mask Boost) "
+        output += "(1.2x Mask Boost) ";
     }
     if (description.stellarBoost) {
-        output += "(1st Use) "
+        output += "(1st Use) ";
     }
     output += "vs. ";
     if (description.defenseBoost) {
@@ -103,6 +105,9 @@ function buildDescription(description) {
         output = output + 'Lv. ' + description.defenderLevel + ' ';
     }
     output = appendIfSet(output, description.HPEVs);
+    if (description.usesOppAtkStat && description.attackEVs) {
+        output += "/ " + description.attackEVs + " ";
+    }
     if (description.defenseEVs) {
         output += "/ " + description.defenseEVs + " ";
     }
@@ -227,6 +232,10 @@ function getModifiedStat(stat, mod) {
     return mod > 0 ? Math.floor(stat * (2 + mod) / 2)
             : mod < 0 ? Math.floor(stat * 2 / (2 - mod))
             : stat;
+}
+
+function getHPInfo(description, defender) {
+    description.HPEVs = defender.HPEVs + " HP " + (defender.HPIVs < 31 ? defender.HPIVs + " IVs" : "");
 }
 
 //Speed Mods
@@ -1611,9 +1620,10 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     var usesDefenseStat = move.name === "Body Press";
     var attackStat = usesDefenseStat ? DF : move.category === "Physical" ? AT : SA;
     var isMidMoveAtkBoost = false;
-    description.attackEVs = attacker.evs[attackStat] +
-        (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
-        toSmogonStat(attackStat);
+    description.attackEVs = attackSource.evs[attackStat] +
+        (NATURES[attackSource.nature][0] === attackStat ? "+" : NATURES[attackSource.nature][1] === attackStat ? "-" : "") + " " +
+        toSmogonStat(attackStat) + (attackSource.ivs[attackStat] < 31 ? " " + attackSource.ivs[attackStat] + " IV" : "");
+    description.usesOppAtkStat = move.name === "Foul Play";
     //Spectral Thief and Meteor Beam aren't part of the calculations but are instead here to properly account for the boosts they give
     if (move.name === "Spectral Thief" && defender.boosts[attackStat] > 0) {
         attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]);
@@ -1767,7 +1777,8 @@ function calcDefense(move, attacker, defender, description, hitsPhysical, isCrit
     var defenseStat = hitsPhysical ? DF : SD;
     description.defenseEVs = defender.evs[defenseStat] +
         (NATURES[defender.nature][0] === defenseStat ? "+" : NATURES[defender.nature][1] === defenseStat ? "-" : "") + " " +
-        toSmogonStat(defenseStat);
+        toSmogonStat(defenseStat) + (defender.ivs[defenseStat] < 31 ? " " + defender.ivs[defenseStat] + " IV" : "");
+
     //b. Wonder Room
 
     //Spectral Thief isn't part of the calculations but is instead here to properly account for the boosts it takes

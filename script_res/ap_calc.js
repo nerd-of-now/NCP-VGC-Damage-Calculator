@@ -142,15 +142,29 @@ function calcEvTotal(poke) {
 function calcCurrentHP(poke, max, percent) {
     var current = Math.ceil(percent * max / 100);
     poke.find(".current-hp").val(current);
+    poke.find(".hp-bar").val(current);
 }
 function calcPercentHP(poke, max, current) {
     var percent = Math.floor(100 * current / max);
     poke.find(".percent-hp").val(percent);
 }
+function changeHPBarColor(bar, max, current) {
+    var percent = 100 * current / max;
+    var barColor = percent > 50 ? "#23b928" : percent > 20 ? "#fa9600" : "#ff503c";
+    bar.css("background", "linear-gradient(to right, " + barColor + " " + percent + "%, #606060 0%)");
+    var p = bar.closest(".poke-info").attr('id');
+    document.body.style.setProperty('--slider-color-' + p, barColor);
+}
+function updateHPBar(pokeObj, hpVal) {
+    pokeObj.find(".hp-bar").prop('max', pokeObj.find(".max-hp").text());
+    pokeObj.find(".hp-bar").val(hpVal);
+    changeHPBarColor(pokeObj.find(".hp-bar"), pokeObj.find(".max-hp").text(), pokeObj.find(".hp-bar").val());
+}
 $(".current-hp").keyup(function() {
     var max = $(this).parent().children(".max-hp").text();
     validate($(this), 0, max);
     var current = $(this).val();
+    $(this).parent().find(".hp-bar").val(current);
     calcPercentHP($(this).parent(), max, current);
 });
 $(".percent-hp").keyup(function() {
@@ -158,6 +172,11 @@ $(".percent-hp").keyup(function() {
     validate($(this), 0, 100);
     var percent = $(this).val();
     calcCurrentHP($(this).parent(), max, percent);
+});
+$(".hp-bar").on("input", function () {
+    $(this).parent().find(".current-hp").val($(this).val());
+    $(this).parent().find(".current-hp").keyup();
+    changeHPBarColor($(this), $(this).parent().children(".max-hp").text(), $(this).val());
 });
 
 $(".tera-type").bind("keyup change", function () {
@@ -1121,6 +1140,7 @@ function Pokemon(pokeInfo) {
     this.maxHP = ~~pokeInfo.find(".hp .total").text();
     this.curHP = ~~pokeInfo.find(".current-hp").val();
     this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
+    this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
     this.isDynamax = pokeInfo.find(".max").prop("checked");
     this.isTerastalize = pokeInfo.find(".tera").prop("checked");
     this.rawStats = {};
@@ -1398,10 +1418,10 @@ $(".gen").change(function () {
         setdexCustom = ALL_SETDEX_CUSTOM[gen];
     else
         setdexCustom = [];
-    loadSetdexScript();
     clearField();
     $(".gen-specific.g" + gen).show();
     $(".gen-specific").not(".g" + gen).hide();
+    loadSetdexScript();
     if (gen >= 8) {
         if (localStorage.getItem("dex") == "natdex") {
             for (i = 1; i <= 4; i++) {
