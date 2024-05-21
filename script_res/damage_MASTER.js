@@ -1274,21 +1274,17 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             break;
         //g.xi. Brine (Gen 4)
         case "Brine":
-            if (gen == 4) {
-                if (defender.curHP <= (defender.maxHP / 2)) {
-                    basePower *= 2;
-                    description.moveBP = basePower;
-                }
+            if (gen == 4 && defender.curHP <= (defender.maxHP / 2)) {
+                basePower = move.bp * 2;
+                description.moveBP = basePower;
             }
             else basePower = move.bp;
             break;
         //g.xii. Facade (Gens 3-4)
         case "Facade":
-            if (gen <= 4) {
-                if (["Burned", "Paralyzed", "Poisoned", "Badly Poisoned"].indexOf(attacker.status) !== -1) {
-                    basePower *= 2;
-                    description.moveBP = basePower;
-                }
+            if (gen <= 4 && ["Burned", "Paralyzed", "Poisoned", "Badly Poisoned"].indexOf(attacker.status) !== -1) {
+                basePower = move.bp * 2;
+                description.moveBP = basePower;
             }
             else basePower = move.bp;
             break;
