@@ -164,7 +164,6 @@ var ABILITIES_BW = ABILITIES_DPP.concat([
     'Moody',
     'Moxie',
     'Mummy',
-    'Overcoat',
     'Pickpocket',
     'Poison Touch',
     'Prankster',

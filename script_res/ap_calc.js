@@ -45,8 +45,6 @@ $(".max").bind("keyup change", function() {
 });
 $(".tera").bind("keyup change", function () {
     var poke = $(this).closest(".poke-info");
-    calcHP(poke);
-    calcStats(poke);
     teraStellarBtns(poke, $(this).prop("checked"), poke.find(".tera-type").val() === 'Stellar');
 });
 $(".nature").bind("keyup change", function() {
@@ -166,6 +164,7 @@ $(".current-hp").keyup(function() {
     var current = $(this).val();
     $(this).parent().find(".hp-bar").val(current);
     calcPercentHP($(this).parent(), max, current);
+    changeHPBarColor($(this).parent().find(".hp-bar"), max, current);
 });
 $(".percent-hp").keyup(function() {
     var max = $(this).parent().children(".max-hp").text();
@@ -808,11 +807,17 @@ $(".forme").change(function() {
     $(this).parent().siblings().find(".type2").val(typeof altForme.t2 != "undefined" ? altForme.t2 : "");
     $(this).parent().siblings().find(".weight").val(altForme.w);
     //$(this).parent().siblings().find(".canEvolve").val(altForme.canEvolve);
-    var STATS_WITH_HP = ["hp", "at", "df","sa","sd","sp"];
+    var STATS_WITH_HP = ["hp", "at", "df", "sa", "sd", "sp"];
+    var prevCurrHP = container.find(".current-hp").val(), prevMaxHP = container.find(".max-hp").text();
     for (var i = 0; i <STATS_WITH_HP.length; i++) {
         var baseStat = container.find("." + STATS_WITH_HP[i]).find(".base");
         baseStat.val(altForme.bs[STATS_WITH_HP[i]]);
         baseStat.keyup();
+    }
+    var newMaxHP = container.find(".max-hp").text();
+    if (prevMaxHP !== newMaxHP) {
+        container.find(".current-hp").val(Math.max(0, parseInt(prevCurrHP) + (parseInt(newMaxHP) - parseInt(prevMaxHP))));
+        container.find(".current-hp").keyup();
     }
 
     if (abilities.indexOf(altForme.ab) > -1) {
@@ -1079,6 +1084,10 @@ function Pokemon(pokeInfo) {
         pokeInfo.find(".tera-type").prop("disabled", true);
         if (this.name === 'Terapagos-Terastal') {
             pokeInfo.find(".tera").prop("disabled", false);
+            var notMaxHP = pokeInfo.find(".percent-hp").val() != "100";
+            if (notMaxHP) {
+                var prevCurrHP = pokeInfo.find(".current-hp").val(), prevMaxHP = pokeInfo.find(".max-hp").text();
+            }
             if (pokeInfo.find(".tera").prop("checked")) {
                 this.name = 'Terapagos-Stellar';
                 if (!terapagosCheck[pokeInfo.prop('id')]) {
@@ -1120,6 +1129,10 @@ function Pokemon(pokeInfo) {
                     terapagosCheck[pokeInfo.prop('id')] = false;
                 }
                 pokeInfo.find(".forme").prop("disabled", false);
+            }
+            if (notMaxHP) {
+                pokeInfo.find(".current-hp").val(Math.max(0, parseInt(prevCurrHP) + (parseInt(pokeInfo.find(".max-hp").text()) - parseInt(prevMaxHP))));
+                pokeInfo.find(".current-hp").keyup();
             }
         }
         else {
