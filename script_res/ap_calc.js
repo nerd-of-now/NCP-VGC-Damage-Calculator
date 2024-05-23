@@ -1085,8 +1085,10 @@ function Pokemon(pokeInfo) {
         if (this.name === 'Terapagos-Terastal') {
             pokeInfo.find(".tera").prop("disabled", false);
             var notMaxHP = pokeInfo.find(".percent-hp").val() != "100";
+            var doChangeHP = false;
             if (notMaxHP) {
-                var prevCurrHP = pokeInfo.find(".current-hp").val(), prevMaxHP = pokeInfo.find(".max-hp").text();
+                var prevCurrHP = pokeInfo.find(".current-hp").val();
+                var prevMaxHP = pokeInfo.find(".max-hp").text();
             }
             if (pokeInfo.find(".tera").prop("checked")) {
                 this.name = 'Terapagos-Stellar';
@@ -1107,6 +1109,7 @@ function Pokemon(pokeInfo) {
                     terapagosCheck[pokeInfo.prop('id')] = true;
                     removeWeather();
                     removeTerrain();
+                    doChangeHP = true;
                 }
                 pokeInfo.find(".forme").prop("disabled", true);
             }
@@ -1127,12 +1130,17 @@ function Pokemon(pokeInfo) {
                     pokeInfo.find("select.ability").val(pokedex['Terapagos-Terastal'].ab);
                     pokeInfo.find("select.ability").trigger('change.select2');
                     terapagosCheck[pokeInfo.prop('id')] = false;
+                    doChangeHP = true;
                 }
                 pokeInfo.find(".forme").prop("disabled", false);
             }
-            if (notMaxHP) {
-                pokeInfo.find(".current-hp").val(Math.max(0, parseInt(prevCurrHP) + (parseInt(pokeInfo.find(".max-hp").text()) - parseInt(prevMaxHP))));
-                pokeInfo.find(".current-hp").keyup();
+            if (notMaxHP && doChangeHP) {
+                var max = parseInt(pokeInfo.find(".max-hp").text());
+                var current = parseInt(prevCurrHP) + (max - parseInt(prevMaxHP));
+                pokeInfo.find(".current-hp").val(Math.max(0, current));
+                pokeInfo.find(".hp-bar").val(current);
+                calcPercentHP(pokeInfo, max, current);
+                changeHPBarColor(pokeInfo.find(".hp-bar"), max, current);
             }
         }
         else {
