@@ -839,15 +839,18 @@ function statusMoves(move, attacker, defender, description) {
 }
 
 function abilityIgnore(attacker, move, defAbility, description, defItem = "") {
-    if (['Shadow Shield', 'Full Metal Body', 'Prism Armor', 'As One', 'Protosynthesis', 'Quark Drive',
-        'Tablets of Ruin', 'Vessel of Ruin', 'Sword of Ruin', 'Beads of Ruin'].indexOf(defAbility) == -1 && defItem !== "Ability Shield") {
-        if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
-            defAbility = "[ignored]";   //'[ignored]' is used as a check for ally abilities as well
-            description.attackerAbility = attacker.ability;
-        }
-        else if (["Moongeist Beam", "Sunsteel Strike", "Photon Geyser", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom",
-            "Light That Burns the Sky", 'G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe'].indexOf(move.name) !== -1) {
-            defAbility = "[ignored]"; //works as a mold breaker
+    var isIgnoreable = ['Shadow Shield', 'Full Metal Body', 'Prism Armor', 'As One', 'Protosynthesis', 'Quark Drive',
+        'Tablets of Ruin', 'Vessel of Ruin', 'Sword of Ruin', 'Beads of Ruin'].indexOf(defAbility) == -1 && defItem !== "Ability Shield";
+    var isMoldBreaker = ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1;
+    var isIgnoreMove = ["Moongeist Beam", "Sunsteel Strike", "Photon Geyser", "Searing Sunraze Smash", "Menacing Moonraze Maelstrom",
+        "Light That Burns the Sky", 'G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe'].indexOf(move.name) !== -1;
+
+    if (isMoldBreaker || isIgnoreMove) {
+        move.ignoresFriendGuard = true;
+        if (isIgnoreable) {
+            defAbility = "[ignored]";
+            if (isMoldBreaker)
+                description.attackerAbility = attacker.ability;
         }
     }
 
@@ -1340,7 +1343,11 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
                 basePower = 2 * move.bp;
                 if (basePower !== move.bp) description.moveBP = basePower;
             }
-            else basePower = move.bp;
+            else {
+                basePower = move.bp;
+                if (basePower !== moves[move.name].bp && !description.moveBP)
+                    description.moveBP = basePower;
+            }
     }
 
     return [basePower, description];
@@ -1616,6 +1623,7 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     var usesDefenseStat = move.name === "Body Press";
     var attackStat = usesDefenseStat ? DF : move.category === "Physical" ? AT : SA;
     var isMidMoveAtkBoost = false;
+    var isContrary = attacker.ability === 'Contrary' ? -1 : 1;
     description.attackEVs = attackSource.evs[attackStat] +
         (NATURES[attackSource.nature][0] === attackStat ? "+" : NATURES[attackSource.nature][1] === attackStat ? "-" : "") + " " +
         toSmogonStat(attackStat) + (attackSource.ivs[attackStat] < 31 ? " " + attackSource.ivs[attackStat] + " IV" : "");
@@ -1625,8 +1633,8 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
         attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]);
         isMidMoveAtkBoost = true;
     }
-    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1 && attacker.boosts[attackStat] < 6) {
-        attacker.boosts[attackStat] += 1;
+    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1 && ((isContrary === -1 && attacker.boosts[attackStat] > -6) || attacker.boosts[attackStat] < 6)) {
+        attacker.boosts[attackStat] += (1 * isContrary);
         isMidMoveAtkBoost = true;
     }
     //b. Unaware
@@ -1638,7 +1646,7 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     else if (isMidMoveAtkBoost) {
         description.attackBoost = attacker.boosts[attackStat];
         attack = getModifiedStat(attackSource.rawStats[attackStat], attacker.boosts[attackStat]);
-        attacker.boosts[attackStat] -= 1;
+        attacker.boosts[attackStat] -= (1 * isContrary);
     }
     //c. Crit
     else if (attackSource.boosts[attackStat] === 0 || (isCritical && attackSource.boosts[attackStat] < 0)) {
@@ -2133,7 +2141,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //k. Friend Guard
-    if (field.isFriendGuard && defAbility !== '[ignored]') {
+    if (field.isFriendGuard && !move.ignoresFriendGuard) {
         finalMods.push(0xC00);
         description.isFriendGuard = true;
     }

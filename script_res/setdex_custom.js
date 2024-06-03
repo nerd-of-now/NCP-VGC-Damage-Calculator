@@ -357,8 +357,7 @@ function runSaveCalc(pnum) {
     var monSet = new Pokemon($('#p' + pnum));
     var actualName = $('#p' + pnum + " input.set-selector").val();
     actualName = actualName.substring(0, actualName.indexOf(' ('));
-    monSet.name = actualName;
-    if (setName in setdex[monSet.name] && !(setName in setdexCustom[monSet.name]))
+    if (setName in setdex[actualName] && !(setName in setdexCustom[actualName]))
         alert("Set names for Pokemon cannot match one of the calc's presets.\nPlease rename this set and try again.");
     else if ((LEFT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[0].length <= parseInt(setName.slice(-1))*/)
         || (RIGHT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[1].length <= parseInt(setName.slice(-1))*/))
