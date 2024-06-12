@@ -252,7 +252,7 @@ function getFinalSpeed(pokemon, weather, tailwind, swamp, terrain) {
     else if (["Macho Brace", "Iron Ball", "Power Anklet", "Power Band", "Power Belt", "Power Bracer", "Power Lens", "Power Weight", "Klutz Iron Ball"].indexOf(pokemon.item) !== -1) {
         otherSpeedMods *= 0.5;
     } //c. Quick Powder
-    else if (pokemon.name === "Ditto" && pokemon.item === "Quick Powder") {
+    else if (pokemon.name === "Ditto" && pokemon.item === "Quick Powder" && !pokemon.isTransformed) {
         otherSpeedMods *= 2;
     }
     //d. Quick Feet
@@ -704,7 +704,13 @@ function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
         else move.type = tempMove.type;
 
         var ZName = ZMOVES_LOOKUP[tempMove.type];
-        var SigZ = getSignatureZMove(attacker.item, attacker.name, tempMove.name);
+        var SigZ;
+        if (attacker.isTransformed) {
+            var tempSpecies = $("#p1").find(".transform").prop("checked") ? transformSpecies["p1"] : transformSpecies["p2"];
+            SigZ = getSignatureZMove(attacker.item, tempSpecies, move.name);
+        }
+        else
+            SigZ = getSignatureZMove(attacker.item, attacker.name, tempMove.name);
         if (SigZ !== -1) ZName = SigZ;
         //turning it into a generic single-target Z-move
         move = moves[ZName];
@@ -756,9 +762,11 @@ function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
         maxName = G_MAXMOVES_LOOKUP[attacker.name];
     }
     move = moves[maxName];
-    move.type = tempMove.type;
-    if (move == undefined) move = tempMove; //prevents crashing when switching between Gen VII and VIII, only used for such a case
-    move.name = maxName;
+    if (move == undefined) move = tempMove; //prevents crashing when switching between Gen VII and VIII, as well as for Typeless Max Moves
+    else {
+        move.type = tempMove.type;
+        move.name = maxName;
+    }
     if (['G-Max Drum Solo', 'G-Max Fireball', 'G-Max Hydrosnipe'].indexOf(maxName) == -1) {
         if (move.type == "Fighting" || move.type == "Poison") {
             if (tempMove.bp >= 150 || exceptions_100_fight.includes(tempMove.name)) move.bp = 100;
@@ -781,15 +789,16 @@ function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
     }
     if (move.name === "G-Max Wind Rage")
         move.ignoreScreens = true;
-    moveDescName = maxName + " (" + move.bp + " BP)";
-    if (tempMove.category == "Status") {
-        moveDescName = "Max Guard";
-        move.name = moveDescName;
+    if (maxName != undefined)
+        moveDescName = maxName + " (" + move.bp + " BP)";
+    if (tempMove.name == "(No Move)") {
+        moveDescName = "(No Move)";
         move.bp = 0;
         move.isCrit = false;
     }
-    else if (tempMove.name == "(No Move)") {
-        moveDescName = "(No Move)";
+    else if (tempMove.category == "Status") {
+        moveDescName = "Max Guard";
+        move.name = moveDescName;
         move.bp = 0;
         move.isCrit = false;
     }
@@ -1345,7 +1354,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             }
             else {
                 basePower = move.bp;
-                if (basePower !== moves[move.name].bp && !description.moveBP)
+                if (!move.isZ && basePower !== moves[move.name].bp && !description.moveBP)
                     description.moveBP = basePower;
             }
     }
@@ -1877,7 +1886,7 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
         description.defenderItem = defender.item;
     } //g. 2.0x Items
     else if ((defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical) ||
-        (defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical)) {
+        (defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical && !defender.isTransformed)) {
         dfMods.push(0x2000);
         description.defenderItem = defender.item;
     }

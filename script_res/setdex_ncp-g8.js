@@ -1920,9 +1920,8 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
             "item": "Choice Scarf",
-            "moves": []
+            "moves": ["Transform",]
         }
     },
     "Sharpedo": {

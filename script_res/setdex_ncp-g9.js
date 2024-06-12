@@ -3209,33 +3209,30 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Ditto": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Ditto": {
+        "Min Speed Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "ability": "Imposter",
+            "tera_type": "Ghost",
+            "item": "Choice Scarf",
+            "moves": [
+                "Transform"
+            ]
+        },
+    },
     "Arcanine": {
         "Fast Goggles Set": {
             "level": 50,

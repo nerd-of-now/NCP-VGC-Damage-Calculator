@@ -38,14 +38,155 @@ $(".level").keyup(function() {
     calcStats(poke);
 });
 
+var preTransformVars = { 'p1': {}, 'p2': {} };
+var transformSpecies = { 'p1': '', 'p2': '' };
+$(".transform").bind("keyup change", function () {
+    var pokeInfo = $(this).closest(".poke-info");
+    var pokeID = pokeInfo.attr("id");
+    if ($(this).prop("checked")) {
+        var otherPokeInfo = pokeID == "p1" ? $("#p2").closest(".poke-info") : $("#p1").closest(".poke-info");
+        var otherPokeName = otherPokeInfo.find("input.set-selector").val();
+        otherPokeName = otherPokeName.substring(0, otherPokeName.indexOf(" ("));
+        transformSpecies[pokeID] = otherPokeName;
+        preTransformVars[pokeID][".type1"] = pokeInfo.find(".type1").val();
+        preTransformVars[pokeID][".type2"] = pokeInfo.find(".type2").val();
+        pokeInfo.find(".type1").val(otherPokeInfo.find(".type1").val());
+        pokeInfo.find(".type2").val(otherPokeInfo.find(".type2").val());
+        for (var i = 0; i < STATS.length;i++) {
+            preTransformVars[pokeID]["." + STATS[i] + " .base"] = pokeInfo.find("." + STATS[i] + " .base").val();
+            if (gen >= 3) {
+                preTransformVars[pokeID]["." + STATS[i] + " .ivs"] = pokeInfo.find("." + STATS[i] + " .ivs").val();
+                preTransformVars[pokeID]["." + STATS[i] + " .evs"] = pokeInfo.find("." + STATS[i] + " .evs").val();
+            }
+            else
+                preTransformVars[pokeID]["." + STATS[i] + " .dvs"] = pokeInfo.find("." + STATS[i] + " .dvs").val();
+            preTransformVars[pokeID]["." + STATS[i] + " .boost"] = pokeInfo.find("." + STATS[i] + " .boost").val();
+            pokeInfo.find("." + STATS[i] + " .base").val(otherPokeInfo.find("." + STATS[i] + " .base").val());
+            if (gen >= 3) {
+                pokeInfo.find("." + STATS[i] + " .ivs").val(otherPokeInfo.find("." + STATS[i] + " .ivs").val());
+                pokeInfo.find("." + STATS[i] + " .evs").val(otherPokeInfo.find("." + STATS[i] + " .evs").val());
+            }
+            else
+                pokeInfo.find("." + STATS[i] + " .dvs").val(otherPokeInfo.find("." + STATS[i] + " .dvs").val());
+            pokeInfo.find("." + STATS[i] + " .boost").val(otherPokeInfo.find("." + STATS[i] + " .boost").val());
+        }
+        preTransformVars[pokeID][".nature"] = pokeInfo.find(".nature").val();
+        pokeInfo.find(".nature").val(otherPokeInfo.find(".nature").val());
+
+        var abilityObj = pokeInfo.find("select.ability");
+        preTransformVars[pokeID]["select.ability"] = abilityObj.val();
+        abilityObj.val(otherPokeInfo.find("select.ability").val());
+        abilityObj.change();
+
+        var moveObj;
+        for (var i = 0; i < 4; i++) {
+            moveSyn = ".move" + (i + 1) + " select.move-selector";
+            moveObj = pokeInfo.find(moveSyn);
+            preTransformVars[pokeID][moveSyn] = moveObj.val();
+            moveObj.val(otherPokeInfo.find(moveSyn).val());
+            moveObj.change();
+        }
+        preTransformVars[pokeID][".weight"] = pokeInfo.find(".weight").val();
+        pokeInfo.find(".weight").val(otherPokeInfo.find(".weight").val());
+        calcStats(pokeInfo);
+
+        pokeInfo.find(".editsc").prop("disabled", true);
+        pokeInfo.find(".addsc").prop("disabled", true);
+        pokeInfo.find(".setCalc").parent().children().prop("disabled", true);
+        console.log(preTransformVars[pokeID]);
+    }
+    else {
+        for (variable in preTransformVars[pokeID]) {
+            pokeInfo.find(variable).val(preTransformVars[pokeID][variable]);
+            if (variable.indexOf("ability") != -1 || variable.indexOf("move") != -1)
+                pokeInfo.find(variable).change();
+        }
+        calcStats(pokeInfo);
+
+        preTransformVars[pokeID] = {};
+        transformSpecies[pokeID] = '';
+        pokeInfo.find(".editsc").prop("disabled", false);
+        pokeInfo.find(".addsc").prop("disabled", false);
+        pokeInfo.find(".setCalc").parent().children().prop("disabled", false);
+    }
+    transformCheck($(this));
+});
+
 $(".max").bind("keyup change", function() {
     var poke = $(this).closest(".poke-info");
     calcHP(poke);
     calcStats(poke);
 });
 $(".tera").bind("keyup change", function () {
-    var poke = $(this).closest(".poke-info");
-    teraStellarBtns(poke, $(this).prop("checked"), poke.find(".tera-type").val() === 'Stellar');
+    var pokeInfo = $(this).closest(".poke-info");
+    var pokeName = pokeInfo.find("input.set-selector").val();
+    pokeName = pokeName.substring(0, pokeName.indexOf(" ("));
+    pokeName = (pokedex[pokeName] && pokedex[pokeName].formes) ? pokeInfo.find(".forme").val() : pokeName;
+    var isTera = $(this).prop("checked");
+    if (pokeName.indexOf("Ogerpon") !== -1) {
+        if (isTera) {
+            pokeInfo.find(".type1").val(pokedex[pokeName].t1);
+            pokeInfo.find(".type2").val(pokedex[pokeName].t2);
+            pokeInfo.find("select.ability").val("Embody Aspect");
+            pokeInfo.find("select.ability").trigger('change.select2');
+        }
+        else {
+            pokeInfo.find("select.ability").val(pokedex[pokeName].ab);
+            pokeInfo.find("select.ability").trigger('change.select2');
+        }
+    }
+    else if (pokeName.indexOf("Terapagos-") !== -1) {
+        var notMaxHP = pokeInfo.find(".percent-hp").val() != "100";
+        if (notMaxHP) {
+            var prevCurrHP = pokeInfo.find(".current-hp").val();
+            var prevMaxHP = pokeInfo.find(".max-hp").text();
+        }
+        if (isTera) {
+            pokeInfo.find(".type1").val(pokedex['Terapagos-Stellar'].t1);
+            pokeInfo.find(".type2").val(pokedex['Terapagos-Stellar'].t2);
+            pokeInfo.find(".hp .base").val(pokedex['Terapagos-Stellar'].bs.hp);
+            pokeInfo.find(".at .base").val(pokedex['Terapagos-Stellar'].bs.at);
+            pokeInfo.find(".df .base").val(pokedex['Terapagos-Stellar'].bs.df);
+            pokeInfo.find(".sa .base").val(pokedex['Terapagos-Stellar'].bs.sa);
+            pokeInfo.find(".sd .base").val(pokedex['Terapagos-Stellar'].bs.sd);
+            pokeInfo.find(".sp .base").val(pokedex['Terapagos-Stellar'].bs.sp);
+            calcHP(pokeInfo);
+            calcStats(pokeInfo);
+            pokeInfo.find(".weight").val(pokedex['Terapagos-Stellar'].w);
+            pokeInfo.find("select.ability").val(pokedex['Terapagos-Stellar'].ab);
+            pokeInfo.find("select.ability").trigger('change.select2');
+            removeWeather();
+            removeTerrain();
+            pokeInfo.find(".forme").prop("disabled", true);
+        }
+        else {
+            pokeInfo.find(".type1").val(pokedex['Terapagos-Terastal'].t1);
+            pokeInfo.find(".type2").val(pokedex['Terapagos-Terastal'].t2);
+            pokeInfo.find(".hp .base").val(pokedex['Terapagos-Terastal'].bs.hp);
+            pokeInfo.find(".at .base").val(pokedex['Terapagos-Terastal'].bs.at);
+            pokeInfo.find(".df .base").val(pokedex['Terapagos-Terastal'].bs.df);
+            pokeInfo.find(".sa .base").val(pokedex['Terapagos-Terastal'].bs.sa);
+            pokeInfo.find(".sd .base").val(pokedex['Terapagos-Terastal'].bs.sd);
+            pokeInfo.find(".sp .base").val(pokedex['Terapagos-Terastal'].bs.sp);
+            calcHP(pokeInfo);
+            calcStats(pokeInfo);
+            pokeInfo.find(".weight").val(pokedex['Terapagos-Terastal'].w);
+            pokeInfo.find("select.ability").val(pokedex['Terapagos-Terastal'].ab);
+            pokeInfo.find("select.ability").trigger('change.select2');
+            pokeInfo.find(".forme").prop("disabled", false);
+        }
+        if (notMaxHP) {
+            var max = parseInt(pokeInfo.find(".max-hp").text());
+            var current = parseInt(prevCurrHP) + (max - parseInt(prevMaxHP));
+            pokeInfo.find(".current-hp").val(Math.max(0, current));
+            pokeInfo.find(".hp-bar").val(current);
+            calcPercentHP(pokeInfo, max, current);
+            changeHPBarColor(pokeInfo.find(".hp-bar"), max, current);
+        }
+    }
+    else
+        teraStellarBtns(pokeInfo, isTera, pokeInfo.find(".tera-type").val() === 'Stellar');
+    transformCheck(pokeInfo.attr("id") == "p1" ? $("#p2") : $("#p1"));
 });
 $(".nature").bind("keyup change", function() {
     calcStats($(this).closest(".poke-info"));
@@ -257,6 +398,7 @@ $(".ability").bind("keyup change", function () {
         thisPoke.find(".ability-advanced").hide();
     thisPoke.find(".ability-proto-quark").hide();
     manualProtoQuark = false;
+    transformCheck(thisPoke);
 });
 
 $("#p1 select.ability").bind("keyup change", function() {
@@ -557,6 +699,7 @@ $(".move-selector").change(function() {
 
     //SLOPPY WAY OF HANDLING
     glaiveRushCheck(moveGroupObj);
+    transformCheck(moveGroupObj);
     getOppMoves($(this).closest(".poke-info").attr("id"));  //for when the defender's moves change
 });
 
@@ -596,6 +739,39 @@ function glaiveRushCheck(divValue) {    //divValue should accept any div class, 
     else {
         pInfo.find(".glaive-rush").hide();
         pInfo.find(".glaive-rush").prop("checked", false);
+    }
+}
+
+function transformCheck(divValue) {    //divValue should accept any div class, it's just meant to be a quick way to find which Pokemon it's checking
+    var pInfo = $(divValue).closest(".poke-info");
+    var pMoves = [pInfo.find(".move1").children("select.move-selector").val(),
+    pInfo.find(".move2").children("select.move-selector").val(),
+    pInfo.find(".move3").children("select.move-selector").val(),
+    pInfo.find(".move4").children("select.move-selector").val()];
+    var pAbility = pInfo.find("select.ability").val();
+    var transformObj = pInfo.find(".transform").parent();
+    var isTransformed = pInfo.find(".transform").prop("checked");
+    var otherPInfo = pInfo.attr("id") == "p1" ? $("#p2 .panel-body") : $("#p1 .panel-body");
+    var otherPName = otherPInfo.find("input.set-selector").val();
+    if (otherPName) {
+        otherPName = otherPName.substring(0, otherPName.indexOf(" ("));
+
+        if (pMoves.indexOf("Transform") != -1 || pAbility == "Imposter" || isTransformed) {
+            transformObj.show();
+        }
+        else {
+            transformObj.hide();
+            transformObj.prop("checked", false);
+        }
+        if (!isTransformed && (otherPInfo.find(".transform").prop("checked") || (otherPInfo.find("select.ability").val() == "Good as Gold" && pAbility != "Imposter")
+            || (otherPInfo.find(".tera").prop("checked") && (otherPName.indexOf("Ogerpon") != -1 || otherPName.indexOf("Terapagos") != -1)))) {
+            pInfo.find(".transform").prop("disabled", true);
+        }
+        else {
+            $(".transform").prop("disabled", false);
+            if (isTransformed)
+                otherPInfo.find(".transform").prop("disabled", true);
+        }
     }
 }
 
@@ -656,11 +832,13 @@ $(".set-selector").change(function() {
     var pokemon = pokedex[pokemonName];
     if (pokemon) {
         var pokeObj = $(this).closest(".poke-info");
+        var otherObj = pokeObj.attr("id") == "p1" ? $("#p2") : $("#p1");
 
         // If the sticky move was on this side, reset it
         if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
             stickyMoves.clearStickyMove();
         }
+        pokeObj.find(".transform").prop("checked", false);
 
         pokeObj.find(".type1").val(pokemon.t1);
         pokeObj.find(".type2").val(pokemon.t2);
@@ -756,6 +934,10 @@ $(".set-selector").change(function() {
         calcEvTotal(pokeObj);
         abilityObj.change();
         itemObj.change();
+        transformCheck(otherObj);
+        pokeObj.find(".editsc").prop("disabled", false);
+        pokeObj.find(".addsc").prop("disabled", false);
+        pokeObj.find(".setCalc").parent().children().prop("disabled", false);
     }
 });
 
@@ -1017,7 +1199,6 @@ function findDamageResult(resultMoveObj) {
     }
 }
 
-var terapagosCheck = {"p1": false, "p2": false};
 function Pokemon(pokeInfo) {
     var setName = pokeInfo.find("input.set-selector").val();
 
@@ -1045,7 +1226,8 @@ function Pokemon(pokeInfo) {
     }
 
     //Check for ability to Dynamax
-    if (["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].indexOf(this.name) !== -1) {
+    if (["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].indexOf(this.name) !== -1
+        || ["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].indexOf(transformSpecies[pokeInfo.attr('id')]) !== -1) {
         pokeInfo.find(".max").prop("checked", false);
         pokeInfo.find(".max").prop("disabled", true);
     }
@@ -1053,7 +1235,7 @@ function Pokemon(pokeInfo) {
         pokeInfo.find(".max").prop("disabled", false);
     }
 
-    //Check for Tera form
+    //Check for Tera related permissions (change Tera Type, Terastalize disabled for "baby" Terapagos)
     if (this.name && this.name.indexOf('Ogerpon') !== -1) {
         var itemCheck = pokeInfo.find("select.item").val();
         var mask = itemCheck !== null ? itemCheck.substring(0, itemCheck.indexOf(" Mask")) : '';
@@ -1065,18 +1247,7 @@ function Pokemon(pokeInfo) {
                         : 'Grass';
             pokeInfo.find(".tera-type").val(maskTera);
             pokeInfo.find(".tera-type").prop("disabled", true);
-            if (pokeInfo.find(".tera").prop("checked")) {
-                pokeInfo.find(".type1").val(pokedex[this.name].t1);
-                pokeInfo.find(".type2").val(pokedex[this.name].t2);
-                pokeInfo.find("select.ability").val("Embody Aspect");
-                pokeInfo.find("select.ability").trigger('change.select2');
-            }
-            else {
-                pokeInfo.find("select.ability").val(pokedex[this.name].ab);
-                pokeInfo.find("select.ability").trigger('change.select2');
-            }
         }
-        terapagosCheck[pokeInfo.prop('id')] = false;
         pokeInfo.find(".tera").prop("disabled", false);
     }
     else if (this.name && this.name.indexOf('Terapagos') !== -1) {
@@ -1084,64 +1255,6 @@ function Pokemon(pokeInfo) {
         pokeInfo.find(".tera-type").prop("disabled", true);
         if (this.name === 'Terapagos-Terastal') {
             pokeInfo.find(".tera").prop("disabled", false);
-            var notMaxHP = pokeInfo.find(".percent-hp").val() != "100";
-            var doChangeHP = false;
-            if (notMaxHP) {
-                var prevCurrHP = pokeInfo.find(".current-hp").val();
-                var prevMaxHP = pokeInfo.find(".max-hp").text();
-            }
-            if (pokeInfo.find(".tera").prop("checked")) {
-                this.name = 'Terapagos-Stellar';
-                if (!terapagosCheck[pokeInfo.prop('id')]) {
-                    pokeInfo.find(".type1").val(pokedex['Terapagos-Stellar'].t1);
-                    pokeInfo.find(".type2").val(pokedex['Terapagos-Stellar'].t2);
-                    pokeInfo.find(".hp .base").val(pokedex['Terapagos-Stellar'].bs.hp);
-                    pokeInfo.find(".at .base").val(pokedex['Terapagos-Stellar'].bs.at);
-                    pokeInfo.find(".df .base").val(pokedex['Terapagos-Stellar'].bs.df);
-                    pokeInfo.find(".sa .base").val(pokedex['Terapagos-Stellar'].bs.sa);
-                    pokeInfo.find(".sd .base").val(pokedex['Terapagos-Stellar'].bs.sd);
-                    pokeInfo.find(".sp .base").val(pokedex['Terapagos-Stellar'].bs.sp);
-                    calcHP(pokeInfo);
-                    calcStats(pokeInfo);
-                    pokeInfo.find(".weight").val(pokedex['Terapagos-Stellar'].w);
-                    pokeInfo.find("select.ability").val(pokedex['Terapagos-Stellar'].ab);
-                    pokeInfo.find("select.ability").trigger('change.select2');
-                    terapagosCheck[pokeInfo.prop('id')] = true;
-                    removeWeather();
-                    removeTerrain();
-                    doChangeHP = true;
-                }
-                pokeInfo.find(".forme").prop("disabled", true);
-            }
-            else {
-                this.name = 'Terapagos-Terastal';
-                if (terapagosCheck[pokeInfo.prop('id')]) {
-                    pokeInfo.find(".type1").val(pokedex['Terapagos-Terastal'].t1);
-                    pokeInfo.find(".type2").val(pokedex['Terapagos-Terastal'].t2);
-                    pokeInfo.find(".hp .base").val(pokedex['Terapagos-Terastal'].bs.hp);
-                    pokeInfo.find(".at .base").val(pokedex['Terapagos-Terastal'].bs.at);
-                    pokeInfo.find(".df .base").val(pokedex['Terapagos-Terastal'].bs.df);
-                    pokeInfo.find(".sa .base").val(pokedex['Terapagos-Terastal'].bs.sa);
-                    pokeInfo.find(".sd .base").val(pokedex['Terapagos-Terastal'].bs.sd);
-                    pokeInfo.find(".sp .base").val(pokedex['Terapagos-Terastal'].bs.sp);
-                    calcHP(pokeInfo);
-                    calcStats(pokeInfo);
-                    pokeInfo.find(".weight").val(pokedex['Terapagos-Terastal'].w);
-                    pokeInfo.find("select.ability").val(pokedex['Terapagos-Terastal'].ab);
-                    pokeInfo.find("select.ability").trigger('change.select2');
-                    terapagosCheck[pokeInfo.prop('id')] = false;
-                    doChangeHP = true;
-                }
-                pokeInfo.find(".forme").prop("disabled", false);
-            }
-            if (notMaxHP && doChangeHP) {
-                var max = parseInt(pokeInfo.find(".max-hp").text());
-                var current = parseInt(prevCurrHP) + (max - parseInt(prevMaxHP));
-                pokeInfo.find(".current-hp").val(Math.max(0, current));
-                pokeInfo.find(".hp-bar").val(current);
-                calcPercentHP(pokeInfo, max, current);
-                changeHPBarColor(pokeInfo.find(".hp-bar"), max, current);
-            }
         }
         else {
             pokeInfo.find(".tera").prop("disabled", true);
@@ -1150,8 +1263,10 @@ function Pokemon(pokeInfo) {
     else {
         pokeInfo.find(".tera-type").prop("disabled", false);
         pokeInfo.find(".forme").prop("disabled", false);
-        terapagosCheck[pokeInfo.prop('id')] = false;
-        pokeInfo.find(".tera").prop("disabled", false);
+        if (transformSpecies[pokeInfo.attr("id")].indexOf('Ogerpon') != -1 || transformSpecies[pokeInfo.attr("id")].indexOf('Terapagos') != -1)
+            pokeInfo.find(".tera").prop("disabled", true);
+        else
+            pokeInfo.find(".tera").prop("disabled", false);
     }
 
     this.type1 = pokeInfo.find(".type1").val();
@@ -1196,7 +1311,7 @@ function Pokemon(pokeInfo) {
     this.glaiveRushMod = pokeInfo.find(".glaive-rush").prop("checked");
     this.weight = +pokeInfo.find(".weight").val();
     this.canEvolve = pokedex[pokemonName] ? pokedex[pokemonName].canEvolve : false;
-
+    this.isTransformed = pokeInfo.find(".transform").prop("checked");
 }
 
 function getMoveDetails(moveInfo, maxMon) {
