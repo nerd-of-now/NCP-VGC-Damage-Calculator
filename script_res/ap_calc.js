@@ -263,7 +263,15 @@ function calcStats(poke) {
 
 function calcEvTotal(poke) {
     var total = 0;
-    poke.find('.evs').each(function (idx, elt) { total += 1*$(elt).val(); });
+    if (!poke.find('.transform').prop('checked'))
+        poke.find('.evs').each(function (idx, elt) { total += 1 * $(elt).val(); });
+    else {
+        var pID = poke.closest('.poke-info').attr('id');
+        total += 1 * poke.find('.hp .evs').val();
+        for (var i = 0; i < STATS.length; i++) {
+            total += 1 * preTransformVars[pID]['.' + STATS[i] + ' .evs'];
+        }
+    }
 
     var newClass = total > 510 ? 'overLimit' : 'underLimit';
 
@@ -1312,6 +1320,7 @@ function Pokemon(pokeInfo) {
     this.weight = +pokeInfo.find(".weight").val();
     this.canEvolve = pokedex[pokemonName] ? pokedex[pokemonName].canEvolve : false;
     this.isTransformed = pokeInfo.find(".transform").prop("checked");
+    if (this.isTransformed) this.name = this.name + " (" + transformSpecies[pokeInfo.attr("id")] + ")";
 }
 
 function getMoveDetails(moveInfo, maxMon) {

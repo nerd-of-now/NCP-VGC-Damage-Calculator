@@ -252,7 +252,7 @@ function getFinalSpeed(pokemon, weather, tailwind, swamp, terrain) {
     else if (["Macho Brace", "Iron Ball", "Power Anklet", "Power Band", "Power Belt", "Power Bracer", "Power Lens", "Power Weight", "Klutz Iron Ball"].indexOf(pokemon.item) !== -1) {
         otherSpeedMods *= 0.5;
     } //c. Quick Powder
-    else if (pokemon.name === "Ditto" && pokemon.item === "Quick Powder" && !pokemon.isTransformed) {
+    else if (pokemon.name === "Ditto" && pokemon.item === "Quick Powder") {
         otherSpeedMods *= 2;
     }
     //d. Quick Feet
@@ -1496,7 +1496,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.attackerItem = attacker.item;
     }
     else if (attacker.item.indexOf(' Mask') !== -1 && attacker.name && attacker.name.indexOf('Ogerpon-') !== -1
-        && attacker.item.substring(0, attacker.item.indexOf(' Mask')) === attacker.name.substring(8)) {
+        && attacker.item.substring(0, attacker.item.indexOf(' Mask')) === attacker.name.substring(8) && attacker.name.indexOf('(') === -1) {
         bpMods.push(0x1333);
         description.maskBoost = true;
     }
@@ -1777,7 +1777,7 @@ function calcAtMods(move, attacker, defAbility, description, field) {
     } //j. 1.5x Items
     else if ((attacker.item === "Choice Band" && move.category === "Physical" && !attacker.isDynamax) ||
         (attacker.item === "Choice Specs" && move.category === "Special" && !attacker.isDynamax) ||
-        (attacker.item === "Soul Dew" && ["Latias", "Latios"].indexOf(attacker.name) && move.category === 'Special' && gen <= 6)) {
+        (attacker.item === "Soul Dew" && ["Latias", "Latios"].indexOf(attacker.name) !== -1 && move.category === 'Special' && gen <= 6)) {
         atMods.push(0x1800);
         description.attackerItem = attacker.item;
     }
@@ -1881,12 +1881,12 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
     //f. 1.5x Items
     if ((defender.item === "Assault Vest" && !hitsPhysical) ||
         (defender.item === "Eviolite" && defender.canEvolve) ||
-        (defender.item === "Soul Dew" && ["Latias", "Latios"].indexOf(defender.name) && !hitsPhysical && gen <= 6)) {
+        (defender.item === "Soul Dew" && ["Latias", "Latios"].indexOf(defender.name) !== -1 && !hitsPhysical && gen <= 6)) {
         dfMods.push(0x1800);
         description.defenderItem = defender.item;
     } //g. 2.0x Items
     else if ((defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical) ||
-        (defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical && !defender.isTransformed)) {
+        (defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical)) {
         dfMods.push(0x2000);
         description.defenderItem = defender.item;
     }

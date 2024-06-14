@@ -267,7 +267,7 @@ function calcDefenseDfModsGen4(isPhysical, defender, description, isCritical, de
     }
 
     if ((defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !isPhysical) ||
-        (defender.item === "Metal Powder" && defender.name === "Ditto" && !defender.isTransformed)) {
+        (defender.item === "Metal Powder" && defender.name === "Ditto")) {
         defense = Math.floor(defense * 1.5);
         description.defenderItem = defender.item;
     } else if (defender.item === "DeepSeaScale" && defender.name === "Clamperl" && !isPhysical) {
