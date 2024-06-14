@@ -1262,6 +1262,7 @@ function Pokemon(pokeInfo) {
         pokeInfo.find(".tera-type").val('Stellar');
         pokeInfo.find(".tera-type").prop("disabled", true);
         if (this.name === 'Terapagos-Terastal') {
+            if (pokeInfo.find(".tera").prop("checked")) this.name = 'Terapagos-Stellar';
             pokeInfo.find(".tera").prop("disabled", false);
         }
         else {
