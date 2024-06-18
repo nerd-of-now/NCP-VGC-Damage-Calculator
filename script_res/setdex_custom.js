@@ -95,201 +95,233 @@ function saveSets(gen, customFormat, species, spreadName) {
     localStorage['custom_gen_' + gen] = JSON.stringify(ALL_SETDEX_CUSTOM[gen]);
 }
 
-var savecustom = function()
-{
-    gen = parseInt($('input[name="gen"]:checked').val());
-	//first, to parse it all from the PS format
-	var string = document.getElementById('customMon').value
-	var spreadName = document.getElementById('spreadName').value
-	if(spreadName == '')
+function handleAjax(strURL){
+    return $.ajax({
+        type: 'GET',
+        url: strURL
+    });
+}
+
+var savecustom = function () {
+    //first, to parse it all from the PS format
+    var string = document.getElementById('customMon').value
+    var spreadName = document.getElementById('spreadName').value
+    if (spreadName == '')
         spreadName = "My Custom Set";
-    //if ('https://pokepast.es/'.indexOf(string) !== -1) {
-    //    $.ajax({ url: 'string', success: function (data) { alert(data); } });
-    //}
-
-    //numPokemon separates individual Pokemon so user can add multiple Pokemon at once under the same set name
-    var numPokemon = string.split('\n\n')
-    numPokemon = numPokemon.filter(element => element)
-
-    for (var a = 0; a < numPokemon.length; a++) {
-        var lines = numPokemon[a].split('\n');
-        var species = "";
-        var item = "";
-        var ability = "";
-        var level = 50;
-        var EVs = [0, 0, 0, 0, 0, 0];
-        var IVs = [31, 31, 31, 31, 31, 31];
-        var nature = "Serious";
-        var moves = [];
-
-        /*	Pokemon Showdown Export Format
-    0	Nickname (Species) @ Item
-    1	Ability: Name
-    2	Level: #
-    3	Tera Type: #
-    4	EVs: # Stat / # Stat / # Stat
-    5	Serious Nature
-    6	IVs: # Stat
-    7	- Move Name
-    8	- Move Name
-    9	- Move Name
-    10	- Move Name
-        */
-
-        //The calc won't save gender until there's a new viable, calc-relevant thing in the games. Or Rivalry has a niche again
-        if (lines[0].indexOf('(M)') != -1) {
-            lines[0] = lines[0].substring(0, lines[0].indexOf('(M)') - 1) +
-                lines[0].substring(lines[0].indexOf('(M)') + 3, lines[0].length);
-        }
-        else if (lines[0].indexOf('(F)') != -1) {
-            lines[0] = lines[0].substring(0, lines[0].indexOf('(F)')) +
-                lines[0].substring(lines[0].indexOf('(F)') + 3, lines[0].length);
-        }
-        if (lines[0].indexOf('(') != -1) {
-            firstParenth = lines[0].lastIndexOf('(');
-            lastParenth = lines[0].lastIndexOf(')');
-            species = lines[0].substring(firstParenth + 1, lastParenth).trim();
-        }
-        else
-            species = lines[0].split('@')[0].trim(); //species is always first
-
-        checkGmax = species.indexOf("-Gmax", 0);
-        checkMega = species.indexOf("-Mega", 0);
-        checkPrimal = species.indexOf("-Primal", 0);
-        if (checkGmax != -1)
-            species = species.substring(0, checkGmax);
-        if (checkMega != -1)
-            species = species.substring(0, checkMega);
-        if (checkPrimal != -1)
-            species = species.substring(0, checkPrimal);
-        for (var i = 0; i < showdownToCalcFormes.length; ++i) {
-            if (species == showdownToCalcFormes[i][0])
-                species = showdownToCalcFormes[i][1]
-        }
-
-        var tera_type = pokedex[species].t1;
-
-        if (lines[0].indexOf('@') != -1)
-            item = lines[0].substring(lines[0].indexOf('@') + 1).trim(); //item is always after @
-        ability = lines[1].substring(lines[1].indexOf(' ') + 1).trim(); //ability is always second
-        if (lines.length > 2) {
-            for (var i = 2; i < lines.length; ++i) {
-                if (lines[i].indexOf("Level") != -1) {
-                    level = lines[2].split(' ')[1].trim(); //level is sometimes third but uh not always
-                }
-                if (lines[i].indexOf("Tera Type") != -1) {
-                    tera_type = lines[i].split(' ')[2].trim(); //
-                }
-                if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
-                {
-                    evList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
-                    for (var j = 0; j < evList.length; ++j) {
-                        evList[j] = evList[j].trim();
-                        evListElements = evList[j].split(' ');
-                        if (evListElements[1] == "HP")
-                            EVs[0] = parseInt(evListElements[0])
-                        else if (evListElements[1] == "Atk")
-                            EVs[1] = parseInt(evListElements[0])
-                        else if (evListElements[1] == "Def")
-                            EVs[2] = parseInt(evListElements[0])
-                        else if (evListElements[1] == "SpA")
-                            EVs[3] = parseInt(evListElements[0])
-                        else if (evListElements[1] == "SpD")
-                            EVs[4] = parseInt(evListElements[0])
-                        else if (evListElements[1] == "Spe")
-                            EVs[5] = parseInt(evListElements[0])
-                    }
-
-                }
-                if (lines[i].indexOf("IVs") != -1) //if EVs are in this line
-                {
-                    ivList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
-                    for (var j = 0; j < ivList.length; ++j) {
-                        ivList[j] = ivList[j].trim();
-                        ivListElements = ivList[j].split(' ');
-                        if (ivListElements[1] == "HP")
-                            IVs[0] = parseInt(ivListElements[0])
-                        else if (ivListElements[1] == "Atk")
-                            IVs[1] = parseInt(ivListElements[0])
-                        else if (ivListElements[1] == "Def")
-                            IVs[2] = parseInt(ivListElements[0])
-                        else if (ivListElements[1] == "SpA")
-                            IVs[3] = parseInt(ivListElements[0])
-                        else if (ivListElements[1] == "SpD")
-                            IVs[4] = parseInt(ivListElements[0])
-                        else if (ivListElements[1] == "Spe")
-                            IVs[5] = parseInt(ivListElements[0])
-                    }
-
-                }
-                if (lines[i].indexOf("Nature") != -1) //if nature is in this line
-                {
-                    nature = lines[i].split(' ')[0].trim()
-                }
-                if (lines[i].indexOf("- ") != -1) { //if there is a move in this line
-                    var nextMove = lines[i].substring(lines[i].indexOf(' ') + 1).trim()
-                    nextMove = nextMove.replace('[', '')
-                    nextMove = nextMove.replace(']', '')
-                    moves.push(nextMove)
-                }
-
-            }
-        }
-
-        //now, to save it
-        /* Sample Calculator Format:
-      "Yanmega": {
-        "Common Showdown": {
-          "level": 50,
-          "evs": {
-            "hp": 0,
-            "at": 0,
-            "df": 0,
-            "sa": 252,
-            "sd": 4,
-            "sp": 252
-          },
-          "nature": "Modest",
-          "ability": "",
-          "item": "",
-          "moves": [
-            "Air Slash",
-            "Bug Buzz",
-            "Giga Drain",
-            "Hidden Power Ice"
-          ]
-        }
-      }
-      */
-
-
-        customFormat = {
-            "level": level,
-            "evs": {
-                "hp": EVs[0],
-                "at": EVs[1],
-                "df": EVs[2],
-                "sa": EVs[3],
-                "sd": EVs[4],
-                "sp": EVs[5],
-            },
-            "ivs": {
-                "hp": IVs[0],
-                "at": IVs[1],
-                "df": IVs[2],
-                "sa": IVs[3],
-                "sd": IVs[4],
-                "sp": IVs[5],
-            },
-            "nature": nature,
-            "ability": ability,
-            "tera_type": tera_type,
-            "item": item,
-            "moves": moves,
-        }
-        saveSets(gen, customFormat, species, spreadName);
+    if (string.trim() == "https://pokepast.es/a78c282608ad27df") {
+        alert("Did you just try to stickbug the Damage Calc? lol");
+        document.getElementById("customMon").value = "";
     }
-    loadSetdexScript();
+    else if (string.trim().indexOf('https://pokepast.es/') === 0) {
+        handleAjax(string.trim() + '/json')
+            .done(function (data) {
+                console.log(data);
+                if (data['title'].length && spreadName == 'My Custom Set')
+                    spreadName = data['title'];
+                string = data['paste'];
+                string = string.replaceAll('\r', '');
+                processSave(string, spreadName);
+            })
+            .fail(function () {
+                alert("PokePaste link is invalid.");
+            });
+    }
+    else
+        processSave(string, spreadName);
+};
+
+function processSave(string, spreadName) {
+    //numPokemon separates individual Pokemon so user can add multiple Pokemon at once under the same set name
+    var numPokemon = string.split('\n\n');
+    numPokemon = numPokemon.filter(element => element);
+
+    try {
+        for (var a = 0; a < numPokemon.length; a++) {
+            var lines = numPokemon[a].split('\n');
+            var species = "";
+            var item = "";
+            var ability = "";
+            var level = 50;
+            var EVs = [0, 0, 0, 0, 0, 0];
+            var IVs = [31, 31, 31, 31, 31, 31];
+            var nature = "Serious";
+            var moves = [];
+
+            /*	Pokemon Showdown Export Format
+        0	Nickname (Species) @ Item
+        1	Ability: Name
+        2	Level: #
+        3	Tera Type: #
+        4	EVs: # Stat / # Stat / # Stat
+        5	Serious Nature
+        6	IVs: # Stat
+        7	- Move Name
+        8	- Move Name
+        9	- Move Name
+        10	- Move Name
+            */
+
+            //The calc won't save gender until there's a new viable, calc-relevant thing in the games. Or Rivalry has a niche again
+            if (lines[0].indexOf('(M)') != -1) {
+                lines[0] = lines[0].substring(0, lines[0].indexOf('(M)') - 1) +
+                    lines[0].substring(lines[0].indexOf('(M)') + 3, lines[0].length);
+            }
+            else if (lines[0].indexOf('(F)') != -1) {
+                lines[0] = lines[0].substring(0, lines[0].indexOf('(F)')) +
+                    lines[0].substring(lines[0].indexOf('(F)') + 3, lines[0].length);
+            }
+            if (lines[0].indexOf('(') != -1) {
+                firstParenth = lines[0].lastIndexOf('(');
+                lastParenth = lines[0].lastIndexOf(')');
+                species = lines[0].substring(firstParenth + 1, lastParenth).trim();
+            }
+            else
+                species = lines[0].split('@')[0].trim(); //species is always first
+
+            checkGmax = species.indexOf("-Gmax", 0);
+            checkMega = species.indexOf("-Mega", 0);
+            checkPrimal = species.indexOf("-Primal", 0);
+            if (checkGmax != -1)
+                species = species.substring(0, checkGmax);
+            if (checkMega != -1)
+                species = species.substring(0, checkMega);
+            if (checkPrimal != -1)
+                species = species.substring(0, checkPrimal);
+            for (var i = 0; i < showdownToCalcFormes.length; ++i) {
+                if (species == showdownToCalcFormes[i][0])
+                    species = showdownToCalcFormes[i][1]
+            }
+
+            var tera_type = pokedex[species].t1;
+
+            if (lines[0].indexOf('@') != -1)
+                item = lines[0].substring(lines[0].indexOf('@') + 1).trim(); //item is always after @
+            ability = lines[1].substring(lines[1].indexOf(' ') + 1).trim(); //ability is always second
+            if (lines.length > 2) {
+                for (var i = 2; i < lines.length; ++i) {
+                    if (lines[i].indexOf("Level") != -1) {
+                        level = lines[2].split(' ')[1].trim(); //level is sometimes third but uh not always
+                    }
+                    if (lines[i].indexOf("Tera Type") != -1) {
+                        tera_type = lines[i].split(' ')[2].trim(); //
+                    }
+                    if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
+                    {
+                        evList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
+                        for (var j = 0; j < evList.length; ++j) {
+                            evList[j] = evList[j].trim();
+                            evListElements = evList[j].split(' ');
+                            if (evListElements[1] == "HP")
+                                EVs[0] = parseInt(evListElements[0])
+                            else if (evListElements[1] == "Atk")
+                                EVs[1] = parseInt(evListElements[0])
+                            else if (evListElements[1] == "Def")
+                                EVs[2] = parseInt(evListElements[0])
+                            else if (evListElements[1] == "SpA")
+                                EVs[3] = parseInt(evListElements[0])
+                            else if (evListElements[1] == "SpD")
+                                EVs[4] = parseInt(evListElements[0])
+                            else if (evListElements[1] == "Spe")
+                                EVs[5] = parseInt(evListElements[0])
+                        }
+
+                    }
+                    if (lines[i].indexOf("IVs") != -1) //if EVs are in this line
+                    {
+                        ivList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
+                        for (var j = 0; j < ivList.length; ++j) {
+                            ivList[j] = ivList[j].trim();
+                            ivListElements = ivList[j].split(' ');
+                            if (ivListElements[1] == "HP")
+                                IVs[0] = parseInt(ivListElements[0])
+                            else if (ivListElements[1] == "Atk")
+                                IVs[1] = parseInt(ivListElements[0])
+                            else if (ivListElements[1] == "Def")
+                                IVs[2] = parseInt(ivListElements[0])
+                            else if (ivListElements[1] == "SpA")
+                                IVs[3] = parseInt(ivListElements[0])
+                            else if (ivListElements[1] == "SpD")
+                                IVs[4] = parseInt(ivListElements[0])
+                            else if (ivListElements[1] == "Spe")
+                                IVs[5] = parseInt(ivListElements[0])
+                        }
+
+                    }
+                    if (lines[i].indexOf("Nature") != -1) //if nature is in this line
+                    {
+                        nature = lines[i].split(' ')[0].trim()
+                    }
+                    if (lines[i].indexOf("- ") != -1) { //if there is a move in this line
+                        var nextMove = lines[i].substring(lines[i].indexOf(' ') + 1).trim()
+                        nextMove = nextMove.replace('[', '')
+                        nextMove = nextMove.replace(']', '')
+                        moves.push(nextMove)
+                    }
+
+                }
+            }
+
+            //now, to save it
+            /* Sample Calculator Format:
+          "Yanmega": {
+            "Common Showdown": {
+              "level": 50,
+              "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+              },
+              "nature": "Modest",
+              "ability": "",
+              "item": "",
+              "moves": [
+                "Air Slash",
+                "Bug Buzz",
+                "Giga Drain",
+                "Hidden Power Ice"
+              ]
+            }
+          }
+          */
+
+
+            customFormat = {
+                "level": level,
+                "evs": {
+                    "hp": EVs[0],
+                    "at": EVs[1],
+                    "df": EVs[2],
+                    "sa": EVs[3],
+                    "sd": EVs[4],
+                    "sp": EVs[5],
+                },
+                "ivs": {
+                    "hp": IVs[0],
+                    "at": IVs[1],
+                    "df": IVs[2],
+                    "sa": IVs[3],
+                    "sd": IVs[4],
+                    "sp": IVs[5],
+                },
+                "nature": nature,
+                "ability": ability,
+                "tera_type": tera_type,
+                "item": item,
+                "moves": moves,
+            }
+            if (gen != 9)
+                delete customFormat["tera_type"];
+            saveSets(gen, customFormat, species, spreadName);
+        }
+        loadSetdexScript();
+        alert("Set(s) saved.");
+    }
+    catch (x) {
+        alert("Paste couldn't be processed. Please make sure that the contents are only Pokemon.");
+    }
     document.getElementById("customMon").value = "";
 }
 
@@ -347,6 +379,8 @@ var savecalc = function (set, spreadName, accessIVs) {
         "moves": moves,
         "tera_type": set.tera_type,
     };
+    if (gen != 9)
+        delete customFormat["tera_type"];
 
     saveSets(gen, customFormat, species, spreadName);
     loadSetdexScript();
