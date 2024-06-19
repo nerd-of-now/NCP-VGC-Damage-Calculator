@@ -104,8 +104,8 @@ function handleAjax(strURL){
 
 var savecustom = function () {
     //first, to parse it all from the PS format
-    var string = document.getElementById('customMon').value
-    var spreadName = document.getElementById('spreadName').value
+    var string = document.getElementById('customMon').value;
+    var spreadName = document.getElementById('spreadName').value;
     if (spreadName == '')
         spreadName = "My Custom Set";
     if (string.trim() == "https://pokepast.es/a78c282608ad27df") {
@@ -115,12 +115,19 @@ var savecustom = function () {
     else if (string.trim().indexOf('https://pokepast.es/') === 0) {
         handleAjax(string.trim() + '/json')
             .done(function (data) {
+                var setGen = gen;
                 console.log(data);
                 if (data['title'].length && spreadName == 'My Custom Set')
                     spreadName = data['title'];
+                if (data['notes'].length && data['notes'].indexOf("Format: gen") == 0 && !isNaN(1 * data['notes'][11])) {
+                    if (isNaN(1 * data['notes'][12]))   //check for double digits
+                        setGen = 1 * data['notes'][11];
+                    else    //if this code is somehow still used when we reach gen 100 then y'all in the future can code it yourselves lol
+                        setGen = 1 * (data['notes'][11] + data['notes'][12]);
+                }
                 string = data['paste'];
                 string = string.replaceAll('\r', '');
-                processSave(string, spreadName);
+                processSave(string, spreadName, setGen);
             })
             .fail(function () {
                 alert("PokePaste link is invalid.");
@@ -130,7 +137,7 @@ var savecustom = function () {
         processSave(string, spreadName);
 };
 
-function processSave(string, spreadName) {
+function processSave(string, spreadName, setGen = gen) {
     //numPokemon separates individual Pokemon so user can add multiple Pokemon at once under the same set name
     var numPokemon = string.split('\n\n');
     numPokemon = numPokemon.filter(element => element);
@@ -192,7 +199,7 @@ function processSave(string, spreadName) {
                     species = showdownToCalcFormes[i][1]
             }
 
-            var tera_type = pokedex[species].t1;
+            var tera_type = setGen == 9 ? POKEDEX_SV_NATDEX[species].t1 : '';
 
             if (lines[0].indexOf('@') != -1)
                 item = lines[0].substring(lines[0].indexOf('@') + 1).trim(); //item is always after @
@@ -308,15 +315,15 @@ function processSave(string, spreadName) {
                 },
                 "nature": nature,
                 "ability": ability,
-                "tera_type": tera_type,
                 "item": item,
                 "moves": moves,
             }
-            if (gen != 9)
-                delete customFormat["tera_type"];
-            saveSets(gen, customFormat, species, spreadName);
+            if (setGen == 9)
+                customFormat["tera_type"] = tera_type;
+            saveSets(setGen, customFormat, species, spreadName);
         }
-        loadSetdexScript();
+        if (setGen == gen)
+            loadSetdexScript();
         alert("Set(s) saved.");
     }
     catch (x) {
@@ -377,10 +384,9 @@ var savecalc = function (set, spreadName, accessIVs) {
         "ability": set.ability,
         "item": set.item,
         "moves": moves,
-        "tera_type": set.tera_type,
     };
-    if (gen != 9)
-        delete customFormat["tera_type"];
+    if (gen == 9)
+        customFormat["tera_type"] = set.tera_type;
 
     saveSets(gen, customFormat, species, spreadName);
     loadSetdexScript();

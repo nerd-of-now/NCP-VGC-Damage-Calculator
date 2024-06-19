@@ -7273,6 +7273,52 @@ var SETDEX_VGC2023 = {
         },
     },
     "Chi-Yu": {
+        "Tera Ground Choice Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Ground",
+            "item": "Choice Scarf",
+            "moves": [
+                "Heat Wave",
+                "Tera Blast",
+                "Dark Pulse",
+                "Overheat"
+            ]
+        },
+        "Tera Fire Covert Cloak": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Fire",
+            "item": "Covert Cloak",
+            "moves": [
+                "Heat Wave",
+                "Snarl",
+                "Dark Pulse",
+                "Overheat"
+            ]
+        },
         "Bold Choice Specs": {
             "level": 50,
             "evs": {
@@ -7292,29 +7338,6 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Heat Wave",
                 "Snarl",
-                "Dark Pulse",
-                "Overheat"
-            ]
-        },
-        "Life Orb Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Timid",
-            "tera_type": "Ghost",
-            "item": "Life Orb",
-            "moves": [
-                "Heat Wave",
-                "Flamethrower",
                 "Dark Pulse",
                 "Overheat"
             ]
@@ -12248,6 +12271,48 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Incineroar": {
+        "Max Speed Safety Goggles": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 4,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Ghost",
+            "ability": "Intimidate",
+            "item": "Safety Goggles",
+            "moves": [
+                "Flare Blitz",
+                "Knock Off",
+                "Fake Out",
+                "Parting Shot"
+            ]
+        },
+        "Tera Grass Assault Vest": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 0,
+                "df": 188,
+                "sa": 0,
+                "sd": 92,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "tera_type": "Grass",
+            "ability": "Intimidate",
+            "item": "Assault Vest",
+            "moves": [
+                "Flare Blitz",
+                "Knock Off",
+                "Fake Out",
+                "U-turn"
+            ]
+        },
         "Ol' Reliable Bulky Sitrus": {
             "level": 50,
             "evs": {
