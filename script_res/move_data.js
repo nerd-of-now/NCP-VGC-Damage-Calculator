@@ -3982,7 +3982,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Physical',
         type: 'Bug',
         makesContact: true,
-        bp: '90',
+        bp: 90,
         isPriority: true,
     },
     'Sparkling Aria': {

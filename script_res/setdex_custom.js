@@ -63,6 +63,7 @@ var calcToShowdownFormes = [
 var saveToCalcFormes = [
     ["Darmanitan-Zen", "Darmanitan"],
     ["Darmanitan-Galar-Zen", "Darmanitan-Galar"],
+    ["Aegislash-Shield", "Aegislash"],
     ["Zygarde-Complete", "Zygarde"],
     ["Zacian-Crowned", "Zacian"],
     ["Zamazenta-Crowned", "Zamazenta"],
@@ -350,8 +351,12 @@ var savecalc = function (set, spreadName, accessIVs) {
     }
     else if (checkGmax != -1)
         species = species.substring(0, checkGmax);
-    else if (checkMega != -1)
+    else if (checkMega != -1) {
         species = species.substring(5);
+        checkMegaXY = species.indexOf(" ");
+        if (checkMegaXY != -1)
+            species = species.substring(0, checkMegaXY);
+    }
     else
         species = species.substring(6);
 

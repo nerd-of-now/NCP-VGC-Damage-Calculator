@@ -2047,7 +2047,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             for (j = 0; j < 16; j++) {
                 if (typeof (move.tripleHit3) !== 'undefined' && move.tripleHit3 === false) {
                     for (k = 0; k < 16; k++) {
-                        tripleDamage[(16 * i) + (16 * j) + k] = damage[i] + childDamage[j] + child2Damage[k];
+                        tripleDamage[(256 * i) + (16 * j) + k] = damage[i] + childDamage[j] + child2Damage[k];
                     }
                 }
                 else {
@@ -2097,10 +2097,10 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
         description.isAuroraVeil = true;
     }
-    else if (field.isReflect && move.category === "Physical" && !isCritical && !move.ignoresScreens) {
+    else if (field.isReflect && hitsPhysical && !isCritical && !move.ignoresScreens) {
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
         description.isReflect = true;
-    } else if (field.isLightScreen && move.category === "Special" && !isCritical) {
+    } else if (field.isLightScreen && !hitsPhysical && !isCritical) {
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
         description.isLightScreen = true;
     }

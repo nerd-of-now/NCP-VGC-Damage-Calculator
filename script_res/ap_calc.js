@@ -288,8 +288,10 @@ function calcEvTotal(poke) {
 
 function calcCurrentHP(poke, max, percent) {
     var current = Math.ceil(percent * max / 100);
+    var hpBar = poke.find(".hp-bar");
     poke.find(".current-hp").val(current);
-    poke.find(".hp-bar").val(current);
+    hpBar.val(current);
+    changeHPBarColor(hpBar, max, current);
 }
 function calcPercentHP(poke, max, current) {
     var percent = Math.floor(100 * current / max);
@@ -676,9 +678,6 @@ $(".move-selector").change(function() {
 
     if (move.hitRange && move.hitRange.length == 2) {
         showHits(move.hitRange, moveGroupObj);
-        //if (moveName == 'Dragon Darts' && $('#douswitch').is(":checked")) {
-        //    moveGroupObj.children(".move-hits").hide();
-        //}
     }
     else {
         moveGroupObj.children(".move-hits").hide();

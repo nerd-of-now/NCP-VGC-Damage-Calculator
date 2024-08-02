@@ -78,7 +78,7 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
         }
     }
     
-    if (move.name === "Explosion" || move.name === "Selfdestruct") {
+    if (move.name === "Explosion" || move.name === "Self-Destruct") {
         df = Math.floor(df / 2);
     }
     
@@ -108,7 +108,7 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
         description.defenderItem = defender.item;
     }
     
-    var baseDamage = Math.floor(Math.floor(Math.floor(2 * lv / 5 + 2) * Math.max(1, at) * move.bp / Math.max(1, df)) / 50);
+    var baseDamage = Math.floor(Math.floor((Math.floor((2 * lv) / 5 + 2) * Math.max(1, at) * move.bp) / Math.max(1, df)) / 50);
     
     if (move.isCrit) {
         baseDamage *= 2;

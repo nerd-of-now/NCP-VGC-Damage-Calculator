@@ -9554,6 +9554,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 53.0,
     "ab": "Stance Change",
+    "isAlternateForme": true
   },
   "Aegislash-Shield": {
     "t1": "Steel",

@@ -13512,7 +13512,53 @@ var SETDEX_VGC2023 = {
         },
     },
     "Calyrex-Shadow Rider": {
-        "Focus Sash Tera Ghost": {
+        "ck49's Top 4 Regs CM Cloak": {
+            "level": 50,
+            "evs": {
+                "hp": 180,
+                "at": 0,
+                "df": 84,
+                "sa": 84,
+                "sd": 4,
+                "sp": 156
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Fairy",
+            "item": "Covert Cloak",
+            "moves": [
+                "Astral Barrage",
+                "Draining Kiss",
+                "Nasty Plot",
+                "Protect"
+            ]
+        },
+        "Tera Normal Sitrus": {
+            "level": 50,
+            "evs": {
+                "hp": 84,
+                "at": 0,
+                "df": 12,
+                "sa": 156,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Normal",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Astral Barrage",
+                "Psyshock",
+                "Psychic",
+                "Expanding Force"
+            ]
+        },
+        "Choice Specs Tera Ghost": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -13527,35 +13573,12 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Timid",
             "tera_type": "Ghost",
-            "item": "Focus Sash",
+            "item": "Choice Specs",
             "moves": [
                 "Astral Barrage",
                 "Expanding Force",
-                "Psyshock",
+                "Pollen Puff",
                 "Shadow Ball"
-            ]
-        },
-        "Tera Fairy Life Orb": {
-            "level": 50,
-            "evs": {
-                "hp": 0,
-                "at": 0,
-                "df": 4,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Timid",
-            "tera_type": "Fairy",
-            "item": "Life Orb",
-            "moves": [
-                "Astral Barrage",
-                "Expanding Force",
-                "Tera Blast",
-                "Draining Kiss"
             ]
         },
     },
