@@ -928,7 +928,7 @@ var SETDEX_VGC2023 = {
             "item": "Safety Goggles",
             "moves": [
                 "Super Fang",
-                "U-turn",
+                "Feint",
                 "Beat Up",
                 "Follow Me"
             ]
@@ -950,7 +950,7 @@ var SETDEX_VGC2023 = {
                 "Population Bomb",
                 "Follow Me",
                 "Protect",
-                "Tidy Up"
+                "Bite"
             ]
         },
     },
@@ -971,7 +971,7 @@ var SETDEX_VGC2023 = {
             "item": "Safety Goggles",
             "moves": [
                 "Super Fang",
-                "U-turn",
+                "Feint",
                 "Beat Up",
                 "Follow Me"
             ]
@@ -993,7 +993,7 @@ var SETDEX_VGC2023 = {
                 "Population Bomb",
                 "Follow Me",
                 "Protect",
-                "Tidy Up"
+                "Bite"
             ]
         },
     },
@@ -1199,6 +1199,7 @@ var SETDEX_VGC2023 = {
                 "sp": 252
             },
             "nature": "Jolly",
+            "tera_type": "Ghost",
             "ability": "Sand Rush",
             "item": "Focus Sash",
             "moves": [
@@ -5360,33 +5361,27 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Stonjouner": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Stonjourner": {
+        "WACKA's Top 16 Rock": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Focus Sash",
+            "moves": [
+                "Rock Slide",
+                "Low Kick",
+                "Wide Guard",
+                "Protect"
+            ]
+        },
+    },
     //"Eiscue": {
     //    "": {
     //        "level": 50,
@@ -6221,13 +6216,13 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Defiant",
-            "tera_type": "Flying",
+            "tera_type": "Fire",
             "item": "Assault Vest",
             "moves": [
                 "Kowtow Cleave",
                 "Iron Head",
                 "Sucker Punch",
-                "Tera Blast"
+                "Low Kick"
             ]
         },
     },
@@ -6304,7 +6299,7 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Dondozo": {
-        "Tera Grass Offensive": {
+        "Tera Grass Oblivious": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -6322,7 +6317,7 @@ var SETDEX_VGC2023 = {
                 "Tera Blast",
                 "Earthquake",
                 "Wave Crash",
-                "Protect"
+                "Order Up"
             ]
         },
         "Kenji Yabata's 2023 Worlds Cut (No Tatsu)": {
@@ -7746,27 +7741,27 @@ var SETDEX_VGC2023 = {
         },
     },
     "Braviary-Hisui": {
-        "Sheer Force Life Orb": {
+        "Tinted Lens Psyspam": {
             "level": 50,
             "evs": {
-                "hp": 252,
+                "hp": 12,
                 "at": 0,
-                "df": 0,
+                "df": 4,
                 "sa": 252,
                 "sd": 4,
-                "sp": 0
+                "sp": 236
             },
             "ivs": {
                 "at": 0,
             },
             "nature": "Modest",
-            "ability": "Sheer Force",
-            "tera_type": "Fairy",
+            "ability": "Tinted Lens",
+            "tera_type": "Psychic",
             "item": "Life Orb",
             "moves": [
+                "Expanding Force",
+                "Hurricane",
                 "Esper Wing",
-                "Air Slash",
-                "Heat Wave",
                 "Dazzling Gleam"
             ]
         },
@@ -8038,32 +8033,28 @@ var SETDEX_VGC2023 = {
             ]
         },
     },
-    //"Overqwil": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Overqwil": {
+        "HobbitVGC's NAIC LOrb Overqwil": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "tera_type": "Poison",
+            "item": "Life Orb",
+            "moves": [
+                "Gunk Shot",
+                "Crunch",
+                "Acid Spray",
+                "Protect"
+            ]
+        },
+    },
     "Carbink": {
         "Trick Room Body Press": {
             "level": 50,
@@ -8169,6 +8160,27 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Chesnaught": {
+        "Belly Drum paired with Rillaboom": {
+            "level": 50,
+            "evs": {
+                "hp": 116,
+                "at": 100,
+                "df": 36,
+                "sa": 0,
+                "sd": 196,
+                "sp": 60
+            },
+            "nature": "Adamant",
+            "tera_type": "Fire",
+            "ability": "Bulletproof",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Grassy Glide",
+                "Drain Punch",
+                "Belly Drum",
+                "Spiky Shield"
+            ]
+        },
         "Budget(?) Ferrothorn": {
             "level": 50,
             "evs": {
@@ -8189,7 +8201,7 @@ var SETDEX_VGC2023 = {
             "moves": [
                 "Body Press",
                 "Leech Seed",
-                "Protect",
+                "Spiky Shield",
                 "Iron Defense"
             ]
         },
@@ -9876,31 +9888,30 @@ var SETDEX_VGC2023 = {
     //        ]
     //    },
     //},
-    //"Conkeldurr": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Conkeldurr": {
+        "Min Speed AV": {
+            "level": 50,
+            "evs": {
+                "hp": 116,
+                "at": 164,
+                "df": 0,
+                "sa": 0,
+                "sd": 228,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Assault Vest",
+            "moves": [
+                "Drain Punch",
+                "Mach Punch",
+                "Ice Punch",
+                "Knock Off"
+            ]
+        },
+    },
     //"Morpeko": {
     //    "": {
     //        "level": 50,
@@ -10738,7 +10749,7 @@ var SETDEX_VGC2023 = {
         },
     },
     "Ursaluna-Bloodmoon": {
-        "Trick Room Special Offense": {
+        "Trick Room Offense": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -10753,6 +10764,52 @@ var SETDEX_VGC2023 = {
                 "sp": 0,
             },
             "nature": "Quiet",
+            "tera_type": "Normal",
+            "item": "Life Orb",
+            "moves": [
+                "Hyper Voice",
+                "Earth Power",
+                "Blood Moon",
+                "Vacuum Wave"
+            ]
+        },
+        "Modest Turbo Bear": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Normal",
+            "item": "Life Orb",
+            "moves": [
+                "Hyper Voice",
+                "Earth Power",
+                "Blood Moon",
+                "Vacuum Wave"
+            ]
+        },
+        "Timid Turbo Bear": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
             "tera_type": "Normal",
             "item": "Life Orb",
             "moves": [
