@@ -64,8 +64,8 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "ability": "Compound Eyes",
+            "item": "Focus Sash",
             "moves": [
                 "Pollen Puff",
                 "Hurricane",
@@ -89,8 +89,8 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "ability": "Prankster",
+            "item": "Focus Sash",
             "moves": [
                 "Hurricane",
                 "Air Slash",
@@ -112,11 +112,13 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Prankster",
             "item": "Sitrus Berry",
             "moves": [
                 "Air Slash",
-                "Brutal Swing"
+                "Brutal Swing",
+                "Taunt",
+                "Tailwind"
             ]
         },
         "Life Orb Tornadus": {
@@ -133,7 +135,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Prankster",
             "item": "Life Orb",
             "moves": [
                 "Hurricane",
@@ -159,7 +161,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Bold",
             "ability": "Levitate",
-            "item": "",
+            "item": "Sitrus Berry",
             "moves": [
                 "Psychic",
                 "Ice Beam",
@@ -180,8 +182,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "ability": "Super Luck",
+            "item": "Scope Lens",
             "moves": [
                 "Sucker Punch",
                 "Play Rough",
@@ -206,7 +208,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Overgrow",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Dragon Pulse",
                 "Leaf Storm",
@@ -274,7 +276,8 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Earthquake",
                 "Fly",
-                "Rock Slide"
+                "Rock Slide",
+                "Swords Dance"
             ]
         },
         "AV Landorus-Therian": {
@@ -353,7 +356,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
+            "ability": "Shell Armor",
             "item": "Life Orb",
             "moves": [
                 "Freeze-Dry",
@@ -376,8 +379,8 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
-            "item": "",
+            "ability": "Shell Armor",
+            "item": "Light Clay",
             "moves": [
                 "Freeze-Dry",
                 "Hydro Pump",
@@ -420,7 +423,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Relaxed",
-            "ability": "",
+            "ability": "Shadow Tag",
             "item": "Eviolite",
             "moves": [
                 "Psychic",
@@ -442,11 +445,11 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
-            "item": "",
+            "ability": "Rock Head",
+            "item": "Assault Vest",
             "moves": [
                 "Iron Head",
-                "High Horsepower",
+                "Head Smash",
                 "Rock Slide",
                 "Body Press"
             ]
@@ -468,8 +471,8 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Relaxed",
-            "ability": "",
-            "item": "",
+            "ability": "Regenerator",
+            "item": "Sitrus Berry",
             "moves": [
                 "Scald",
                 "Ice Beam",
@@ -589,7 +592,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Jolly",
             "ability": "Hustle",
-            "item": "",
+            "item": "Life Orb",
             "moves": [
                 "Iron Head",
                 "X-Scissor",
@@ -611,7 +614,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Clear Body",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Rock Slide",
                 "Stomping Tantrum",
@@ -654,7 +657,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
+            "ability": "Inner Focus",
             "item": "Black Sludge",
             "moves": [
                 "Brave Bird",
@@ -679,7 +682,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Frisk",
             "item": "Choice Specs",
             "moves": [
                 "Draco Meteor",
@@ -701,8 +704,8 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Calm",
-            "ability": "",
-            "item": "",
+            "ability": "Shadow Tag",
+            "item": "Mental Herb",
             "moves": [
                 "Psyshock",
                 "Psychic",
@@ -721,8 +724,8 @@ var SETDEX_VGC2021 = {
                 "sp": 220
             },
             "nature": "Calm",
-            "ability": "",
-            "item": "",
+            "ability": "Shadow Tag",
+            "item": "Focus Sash",
             "moves": [
                 "Psyshock",
                 "Psychic",
@@ -892,8 +895,8 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Relaxed",
-            "ability": "",
-            "item": "",
+            "ability": "Clear Body",
+            "item": "Leftovers",
             "moves": [
                 "Dazzling Gleam",
                 "Moonblast",
@@ -984,13 +987,13 @@ var SETDEX_VGC2021 = {
                 "sp": 164
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Unburden",
             "item": "Psychic Seed",
             "moves": [
                 "Shadow Ball",
                 "Acrobatics",
-                "",
-                ""
+                "Tailwind",
+                "Will-O-Wisp"
             ]
         }
     },
@@ -1087,7 +1090,9 @@ var SETDEX_VGC2021 = {
             "item": "Sitrus Berry",
             "moves": [
                 "Burning Jealousy",
-                "Body Press"
+                "Body Press",
+                "Yawn",
+                "Protect"
             ]
         },
     },
@@ -1129,7 +1134,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Clear Body",
-            "item": "",
+            "item": "Black Sludge",
             "moves": [
                 "Sludge Bomb",
                 "Scald",
@@ -1150,7 +1155,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Oblivious",
             "item": "Life Orb",
             "moves": [
                 "Self-Destruct",
@@ -1200,8 +1205,8 @@ var SETDEX_VGC2021 = {
                 "sp": 0,
             },
             "nature": "Brave",
-            "ability": "",
-            "item": "",
+            "ability": "Arena Trap",
+            "item": "Eviolite",
             "moves": [
                 "Rock Slide",
                 "Earthquake",
@@ -1222,8 +1227,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "ability": "Stance Change",
+            "item": "Focus Sash",
             "moves": [
                 "Shadow Claw",
                 "Iron Head",
@@ -1248,7 +1253,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Brave",
             "ability": "Levitate",
-            "item": "",
+            "item": "Sitrus Berry",
             "moves": [
                 "Rock Slide",
                 "Zen Headbutt",
@@ -1272,7 +1277,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Brave",
-            "ability": "",
+            "ability": "Harvest",
             "item": "Sitrus Berry",
             "moves": [
                 "Horn Leech",
@@ -1345,8 +1350,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "ability": "Illusion",
+            "item": "Focus Sash",
             "moves": [
                 "Flamethrower",
                 "Sucker Punch",
@@ -1368,11 +1373,12 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Dry Skin",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Ice Beam",
                 "Fake Out",
-                "Expanding Force"
+                "Expanding Force",
+                "Lovely Kiss"
             ]
         }
     },
@@ -1388,7 +1394,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Inner Focus",
             "item": "Lum Berry",
             "moves": [
                 "Fake Out",
@@ -1533,11 +1539,11 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Rock Head",
             "item": "Assault Vest",
             "moves": [
                 "Wood Hammer",
-                "Rock Slide",
+                "Head Smash",
                 "Sucker Punch",
                 "Earthquake"
             ]
@@ -1558,7 +1564,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Natural Cure",
             "item": "Life Orb",
             "moves": [
                 "Ice Beam",
@@ -1612,6 +1618,9 @@ var SETDEX_VGC2021 = {
             "item": "Sitrus Berry",
             "moves": [
                 "Aqua Jet",
+                "Belly Drum",
+                "Play Rough",
+                "Liquidation"
             ]
         }
     },
@@ -1656,7 +1665,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Brave",
             "ability": "Solid Rock",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Aqua Jet",
                 "Rock Slide",
@@ -1677,8 +1686,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "ability": "Justified",
+            "item": "Life Orb",
             "moves": [
                 "Close Combat",
                 "Psycho Cut",
@@ -1702,9 +1711,12 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Sludge Bomb",
+                "Taunt",
+                "Will-O-Wisp",
+                "Protect"
             ]
         },
         "Shuca Weezing": {
@@ -1724,6 +1736,9 @@ var SETDEX_VGC2021 = {
             "item": "Shuca Berry",
             "moves": [
                 "Sludge Bomb",
+                "Taunt",
+                "Will-O-Wisp",
+                "Protect"
             ]
         },
     },
@@ -1761,8 +1776,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "ability": "Prankster",
+            "item": "Focus Sash",
             "moves": [
                 "Fake Out",
                 "Snarl",
@@ -1848,7 +1863,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "No Guard",
             "item": "Lum Berry",
             "moves": [
                 "Dynamic Punch",
@@ -1895,7 +1910,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
+            "ability": "Justified",
             "item": "Life Orb",
             "moves": [
                 "Iron Head",
@@ -1936,8 +1951,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "",
-            "item": "",
+            "ability": "Speed Boost",
+            "item": "Choice Band",
             "moves": [
                 "Crunch",
                 "Liquidation",
@@ -2033,12 +2048,13 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Bold",
-            "ability": "",
+            "ability": "Serene Grace",
             "item": "Babiri Berry",
             "moves": [
                 "Dazzling Gleam",
                 "Air Slash",
-                "Flamethrower"
+                "Flamethrower",
+                "Follow Me"
             ]
         },
         "Crit Kiss": {
@@ -2055,12 +2071,13 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
-            "item": "",
+            "ability": "Super Luck",
+            "item": "Scope Lens",
             "moves": [
                 "Dazzling Gleam",
                 "Air Slash",
-                "Heat Wave"
+                "Heat Wave",
+                "Follow Me"
             ]
         }
     },
@@ -2152,8 +2169,8 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Bold",
-            "ability": "",
-            "item": "",
+            "ability": "Prankster",
+            "item": "Light Clay",
             "moves": [
                 "Foul Play",
                 "Dazzling Gleam",
@@ -2221,7 +2238,8 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Hyper Voice",
                 "Quick Attack",
-                "Mystical Fire"
+                "Mystical Fire",
+                "Protect"
             ]
         }
     },
@@ -2233,15 +2251,15 @@ var SETDEX_VGC2021 = {
                 "at": 4,
                 "df": 252,
                 "sa": 0,
-                "sd": 00,
+                "sd": 0,
                 "sp": 0
             },
             "ivs": {
                 "sp": 0,
             },
             "nature": "Relaxed",
-            "ability": "",
-            "item": "",
+            "ability": "Sheer Force",
+            "item": "Assault Vest",
             "moves": [
                 "Earthquake",
                 "Rock Slide",
@@ -2265,8 +2283,8 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
-            "item": "",
+            "ability": "Analytic",
+            "item": "Grassy Seed",
             "moves": [
                 "Flash Cannon",
                 "Thunderbolt",
@@ -2338,7 +2356,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Quiet",
-            "ability": "",
+            "ability": "Oblivious",
             "item": "Sitrus Berry",
             "moves": [
                 "Scald",
@@ -2404,8 +2422,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "ability": "Unburden",
+            "item": "Psychic Seed",
             "moves": [
                 "Brave Bird",
                 "Close Combat",
@@ -2429,12 +2447,13 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "ability": "Prankster",
+            "item": "Focus Sash",
             "moves": [
                 "Moonblast",
                 "Dazzling Gleam",
                 "Energy Ball",
+                "Tailwind"
             ]
         }
     },
@@ -2478,7 +2497,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Sludge Bomb",
                 "Shadow Ball",
@@ -2502,8 +2521,7 @@ var SETDEX_VGC2021 = {
                 "sa": 0,
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Fake Out",
                 "Throat Chop",
@@ -2528,7 +2546,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Brave",
             "ability": "Sand Stream",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Rock Slide",
                 "Earthquake",
@@ -2600,9 +2618,12 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Bold",
             "ability": "Sturdy",
-            "item": "",
+            "item": "Mental Herb",
             "moves": [
                 "Struggle Bug",
+                "Guard Split",
+                "Toxic",
+                "Protect"
             ]
         }
     },
@@ -2715,7 +2736,8 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Sacred Fire",
                 "Stone Edge",
-                "Extreme Speed"
+                "Extreme Speed",
+                "Protect"
             ]
         },
     },
@@ -2734,7 +2756,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Relaxed",
-            "ability": "",
+            "ability": "Pressure",
             "item": "Eviolite",
             "moves": [
                 "Night Shade",
@@ -2899,7 +2921,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Lightning Rod",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Fake Out",
                 "Thunderbolt",
@@ -2940,7 +2962,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Speed Boost",
             "item": "Life Orb",
             "moves": [
                 "Flare Blitz",
@@ -2965,11 +2987,13 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Unburden",
             "item": "Psychic Seed",
             "moves": [
                 "Dazzling Gleam",
                 "Flamethrower",
+                "Fake Tears",
+                "After You"
             ]
         }
     },
@@ -2988,7 +3012,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Brave",
-            "ability": "",
+            "ability": "Iron Barbs",
             "item": "Assault Vest",
             "moves": [
                 "Gyro Ball",
@@ -3011,10 +3035,13 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Bold",
-            "ability": "",
+            "ability": "Iron Barbs",
             "item": "Leftovers",
             "moves": [
-                "Body Press"
+                "Body Press",
+                "Iron Defense",
+                "Leech Seed",
+                "Protect"
             ]
         },
     },
@@ -3197,7 +3224,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Brave",
             "ability": "Solid Rock",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Rock Slide",
                 "High Horsepower",
@@ -3217,7 +3244,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Solid Rock",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Rock Slide",
                 "High Horsepower",
@@ -3238,8 +3265,8 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Bold",
-            "ability": "",
-            "item": "",
+            "ability": "Prankster",
+            "item": "Mental Herb",
             "moves": [
                 "Fake Out",
                 "Expanding Force",
@@ -3263,7 +3290,7 @@ var SETDEX_VGC2021 = {
                 "sa": 0,
             },
             "nature": "Jolly",
-            "ability": "",
+            "ability": "Anger Point",
             "item": "Life Orb",
             "moves": [
                 "Earthquake",
@@ -3288,7 +3315,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Inner Focus",
             "item": "Assault Vest",
             "moves": [
                 "Thunderbolt",
@@ -3382,7 +3409,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Jolly",
             "ability": "Oblivious",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Earthquake",
                 "Icicle Crash",
@@ -3407,7 +3434,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Relaxed",
-            "ability": "",
+            "ability": "Healer",
             "item": "Eviolite",
             "moves": [
                 "Seismic Toss",
@@ -3432,7 +3459,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Sassy",
-            "ability": "",
+            "ability": "Regenerator",
             "item": "Figy Berry",
             "moves": [
                 "Sludge Bomb",
@@ -3455,7 +3482,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Regenerator",
             "moves": [
                 "Sludge Bomb",
                 "Energy Ball",
@@ -3508,6 +3535,8 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Foul Play",
                 "Snarl",
+                "Helping Hand",
+                "Moonlight"
             ]
         }
     },
@@ -3524,7 +3553,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Inner Focus",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Extreme Speed",
                 "Dragon Claw",
@@ -3545,7 +3574,6 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Leaf Blade",
@@ -3567,7 +3595,6 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
             "item": "Lum Berry",
             "moves": [
                 "Rock Slide",
@@ -3612,7 +3639,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Sniper",
-            "item": "",
+            "item": "Scope Lens",
             "moves": [
                 "Cross Poison",
                 "Knock Off",
@@ -3654,7 +3681,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Sand Rush",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Rock Slide",
                 "Iron Head",
@@ -3698,12 +3725,12 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Calm",
-            "ability": "",
             "item": "Sitrus Berry",
             "moves": [
                 "Thunderbolt",
                 "Electroweb",
                 "Sludge Wave",
+                "Eerie Impulse"
             ]
         }
     },
@@ -3719,8 +3746,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Careful",
-            "ability": "",
-            "item": "",
+            "item": "Eject Button",
             "moves": [
                 "Foul Play",
                 "Fake Out",
@@ -3791,7 +3817,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Static",
             "item": "Life Orb",
             "moves": [
                 "Thunderbolt",
@@ -3816,7 +3842,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Flame Body",
             "item": "Safety Goggles",
             "moves": [
                 "Burn Up",
@@ -3866,7 +3892,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "ability": "",
+            "ability": "Vital Spirit",
             "item": "Assault Vest",
             "moves": [
                 "Flamethrower",
@@ -3889,7 +3915,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Quiet",
             "ability": "Snow Warning",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Blizzard",
                 "Ice Shard",
@@ -3914,7 +3940,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0,
             },
             "nature": "Quiet",
-            "ability": "",
+            "ability": "Cursed Body",
             "item": "Kasib Berry",
             "moves": [
                 "Scald",
@@ -4033,7 +4059,8 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Earth Power",
                 "Weather Ball",
-                "Sludge Bomb"
+                "Sludge Bomb",
+                "Protect"
             ]
         },
     },
@@ -4052,7 +4079,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Bold",
-            "ability": "",
+            "ability": "Friend Guard",
             "item": "Eviolite",
             "moves": [
                 "Moonblast",
@@ -4078,7 +4105,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Defeatist",
-            "item": "",
+            "item": "Power Herb",
             "moves": [
                 "Meteor Beam",
                 "Air Slash",
@@ -4146,7 +4173,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
+            "ability": "Rough Skin",
             "item": "Life Orb",
             "moves": [
                 "Earthquake",
@@ -4167,7 +4194,7 @@ var SETDEX_VGC2021 = {
                 "sp": 4
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Rough Skin",
             "item": "Assault Vest",
             "moves": [
                 "Earthquake",
@@ -4193,7 +4220,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Chlorophyll",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Leaf Storm",
                 "Pollen Puff",
@@ -4218,7 +4245,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Levitate",
-            "item": "",
+            "item": "Wiki Berry",
             "moves": [
                 "Draco Meteor",
                 "Psychic",
@@ -4310,7 +4337,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Jolly",
             "ability": "Mold Breaker",
-            "item": "",
+            "item": "Life Orb",
             "moves": [
                 "Dragon Claw",
                 "Earthquake",
@@ -4356,7 +4383,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Bold",
-            "ability": "",
+            "ability": "Healer",
             "item": "Leftovers",
             "moves": [
                 "Seismic Toss",
@@ -4379,7 +4406,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Clear Body",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Iron Head",
                 "Stomping Tantrum",
@@ -4444,7 +4471,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Drizzle",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Scald",
                 "Hurricane",
@@ -4487,7 +4514,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Gale Wings",
             "item": "Sharp Beak",
             "moves": [
                 "Brave Bird",
@@ -4513,7 +4540,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Flash Fire",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Shadow Ball",
                 "Heat Wave",
@@ -4534,7 +4561,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Rock Head",
             "item": "Choice Scarf",
             "moves": [
                 "Head Smash",
@@ -4559,8 +4586,8 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "ability": "Trace",
+            "item": "Choice Scarf",
             "moves": [
                 "Mystical Fire",
                 "Expanding Force",
@@ -4584,11 +4611,13 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Relaxed",
-            "ability": "",
+            "ability": "Aroma Veil",
             "item": "Babiri Berry",
             "moves": [
                 "Moonblast",
                 "Dazzling Gleam",
+                "Trick Room",
+                "Protect"
             ]
         }
     },
@@ -4608,7 +4637,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Storm Drain",
-            "item": "",
+            "item": "Power Herb",
             "moves": [
                 "Giga Drain",
                 "Meteor Beam",
@@ -4655,7 +4684,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Levitate",
-            "item": "",
+            "item": "Assault Vest",
             "moves": [
                 "Psyshock",
                 "Earth Power",
@@ -4679,7 +4708,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Natural Cure",
             "item": "Life Orb",
             "moves": [
                 "Sludge Bomb",
@@ -4745,7 +4774,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Careful",
-            "ability": "",
+            "ability": "Insomnia",
             "item": "Leftovers",
             "moves": [
                 "Phantom Force",
@@ -4818,7 +4847,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Jolly",
             "ability": "Sand Stream",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Rock Slide",
                 "Lash Out",
@@ -4838,7 +4867,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Sand Stream",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Rock Slide",
                 "Lash Out",
@@ -4862,8 +4891,8 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "ability": "Unburden",
+            "item": "Psychic Seed",
             "moves": [
                 "Bug Buzz",
                 "Acid Spray",
@@ -4907,7 +4936,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Quiet",
             "ability": "Clear Body",
-            "item": "",
+            "item": "Life Orb",
             "moves": [
                 "Ancient Power",
                 "Thunderbolt",
@@ -4931,8 +4960,8 @@ var SETDEX_VGC2021 = {
                 "sa": 0,
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "ability": "Inner Focus",
+            "item": "Focus Sash",
             "moves": [
                 "Fake Out",
                 "Surf",
@@ -5050,7 +5079,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Drought",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Precipice Blades",
                 "Fire Punch",
@@ -5119,7 +5148,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Fairy Aura",
-            "item": "",
+            "item": "Power Herb",
             "moves": [
                 "Moonblast",
                 "Dazzling Gleam",
@@ -5142,7 +5171,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Fairy Aura",
-            "item": "",
+            "item": "Power Herb",
             "moves": [
                 "Moonblast",
                 "Dazzling Gleam",
@@ -5190,7 +5219,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
+            "ability": "Telepathy",
             "item": "Life Orb",
             "moves": [
                 "Roar of Time",
@@ -5216,7 +5245,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
+            "ability": "Telepathy",
             "item": "Life Orb",
             "moves": [
                 "Spacial Rend",
@@ -5239,7 +5268,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Telepathy",
             "item": "Iapapa Berry",
             "moves": [
                 "Shadow Force",
@@ -5335,7 +5364,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Teravolt",
-            "item": "",
+            "item": "Life Orb",
             "moves": [
                 "Fusion Bolt",
                 "Bolt Strike",
@@ -5361,7 +5390,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Turboblaze",
-            "item": "",
+            "item": "Assault Vest",
             "moves": [
                 "Fusion Flare",
                 "Blue Flare",
@@ -5383,7 +5412,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
+            "ability": "Regenerator",
             "item": "Assault Vest",
             "moves": [
                 "Brave Bird",
@@ -5409,8 +5438,8 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
-            "item": "",
+            "ability": "Multiscale",
+            "item": "Weakness Policy",
             "moves": [
                 "Aeroblast",
                 "Earth Power",
@@ -5458,8 +5487,8 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
-            "item": "",
+            "ability": "Long Reach",
+            "item": "Focus Sash",
             "moves": [
                 "Spirit Shackle",
                 "Sucker Punch",
@@ -5525,7 +5554,9 @@ var SETDEX_VGC2021 = {
             "item": "Sitrus Berry",
             "moves": [
                 "Flare Blitz",
-                "Fake Out"
+                "Fake Out",
+                "Parting Shot",
+                "Taunt"
             ]
         }
     },
@@ -5574,7 +5605,8 @@ var SETDEX_VGC2021 = {
             "moves": [
                 "Hydro Cannon",
                 "Moonblast",
-                "Blizzard"
+                "Blizzard",
+                "Protect"
             ]
         },
     },
@@ -5594,12 +5626,12 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "ability": "",
             "item": "Figy Berry",
             "moves": [
                 "Bug Buzz",
                 "Thunderbolt",
-                "Air Slash"
+                "Air Slash",
+                "Protect"
             ]
         },
     },
@@ -5619,8 +5651,7 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Pollen Puff",
                 "Moonblast",
@@ -5643,7 +5674,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Jolly",
             "ability": "Sand Rush",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Rock Slide",
                 "Accelerock",
@@ -5669,7 +5700,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Quiet",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Mud Shot",
@@ -5765,7 +5795,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
             "item": "Figy Berry",
             "moves": [
                 "Leaf Blade",
@@ -5788,8 +5817,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Fake Out",
                 "Sludge Bomb",
@@ -5811,7 +5839,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
             "item": "Assault Vest",
             "moves": [
                 "Power Whip",
@@ -5837,13 +5864,12 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Bold",
-            "ability": "",
             "item": "Babiri Berry",
             "moves": [
                 "Draining Kiss",
                 "Giga Drain",
-                "",
-                ""
+                "Floral Healing",
+                "Trick Room"
             ]
         },
         "Sash Set": {
@@ -5860,13 +5886,12 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Draining Kiss",
                 "Giga Drain",
-                "",
-                ""
+                "Floral Healing",
+                "Trick Room"
             ]
         },
     },
@@ -5884,7 +5909,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Defiant",
-            "item": "",
+            "item": "Assault Vest",
             "moves": [
                 "Close Combat",
                 "Earthquake",
@@ -5906,8 +5931,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
-            "item": "",
+            "item": "Assault Vest",
             "moves": [
                 "Liquidation",
                 "Leech Life",
@@ -5979,7 +6003,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Lightning Rod",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Fake Out",
                 "Nuzzle",
@@ -6001,8 +6025,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Careful",
-            "ability": "",
-            "item": "",
+            "item": "Safety Goggles",
             "moves": [
                 "Shadow Claw",
                 "Shadow Sneak",
@@ -6021,7 +6044,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Shadow Claw",
@@ -6071,7 +6093,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Soundproof",
-            "item": "",
+            "item": "Throat Spray",
             "moves": [
                 "Body Press",
                 "Clanging Scales",
@@ -6120,10 +6142,12 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Electric Surge",
-            "item": "",
+            "item": "Light Clay",
             "moves": [
                 "Electroweb",
-                "Volt Switch"
+                "Volt Switch",
+                "Reflect",
+                "Light Screen"
             ]
         },
         "AV Koko": {
@@ -6214,7 +6238,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Naughty",
             "ability": "Grassy Surge",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Dazzling Gleam",
                 "Horn Leech",
@@ -6288,8 +6312,7 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "ability": "",
-            "item": "",
+            "item": "Power Herb",
             "moves": [
                 "Sludge Bomb",
                 "Meteor Beam",
@@ -6311,8 +6334,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Close Combat",
                 "U-turn",
@@ -6331,8 +6353,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "",
-            "item": "",
+            "item": "Life Orb",
             "moves": [
                 "Lunge",
                 "High Jump Kick",
@@ -6357,7 +6378,6 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Rising Voltage",
@@ -6383,7 +6403,6 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
             "item": "Assault Vest",
             "moves": [
                 "Flash Cannon",
@@ -6406,7 +6425,6 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Modest",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Flash Cannon",
@@ -6429,11 +6447,12 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Relaxed",
-            "ability": "",
             "item": "Leftovers",
             "moves": [
                 "Heavy Slam",
-                "Flamethrower"
+                "Flamethrower",
+                "Leech Seed",
+                "Protect"
             ]
         }
     },
@@ -6450,7 +6469,6 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
             "item": "Assault Vest",
             "moves": [
                 "Leaf Blade",
@@ -6471,8 +6489,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Leaf Blade",
                 "Sacred Sword",
@@ -6521,7 +6538,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Snow Warning",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Blizzard",
                 "Freeze-Dry",
@@ -6595,8 +6612,7 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Brave",
-            "ability": "",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Gyro Ball",
                 "Rock Slide",
@@ -6619,7 +6635,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Lonely",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Gyro Ball",
@@ -6644,7 +6659,6 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
             "item": "Choice Scarf",
             "moves": [
                 "Mind Blown",
@@ -6669,7 +6683,6 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Draco Meteor",
@@ -6680,29 +6693,6 @@ var SETDEX_VGC2021 = {
         },
     },
     "Lunala": {
-        "Default Set": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
-            },
-            "ivs": {
-                "at": 0
-            },
-            "nature": "Timid",
-            "ability": "Shadow Shield",
-            "item": "",
-            "moves": [
-                "Moongeist Beam",
-                "Expanding Force",
-                "Moonblast",
-                "Psyshock"
-            ]
-        },
         "Trick Room Lunala": {
             "level": 50,
             "evs": {
@@ -6719,7 +6709,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Quiet",
             "ability": "Shadow Shield",
-            "item": "",
+            "item": "Safety Goggles",
             "moves": [
                 "Moongeist Beam",
                 "Expanding Force",
@@ -6742,7 +6732,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Timid",
             "ability": "Shadow Shield",
-            "item": "",
+            "item": "Power Herb",
             "moves": [
                 "Moongeist Beam",
                 "Expanding Force",
@@ -6764,7 +6754,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Full Metal Body",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Sunsteel Strike",
                 "Earthquake",
@@ -6810,7 +6800,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Quiet",
             "ability": "Prism Armor",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Photon Geyser",
                 "Earth Power",
@@ -6832,7 +6822,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Adamant",
             "ability": "Power Construct",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Thousand Arrows",
                 "Stone Edge",
@@ -6856,8 +6846,8 @@ var SETDEX_VGC2021 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "ability": "",
-            "item": "",
+            "ability": "Steam Engine",
+            "item": "Weakness Policy",
             "moves": [
                 "Heat Wave",
                 "Meteor Beam",
@@ -6876,8 +6866,8 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "ability": "",
-            "item": "",
+            "ability": "Steam Engine",
+            "item": "Weakness Policy",
             "moves": [
                 "Flare Blitz",
                 "Rock Slide",
@@ -6950,7 +6940,9 @@ var SETDEX_VGC2021 = {
             "item": "Safety Goggles",
             "moves": [
                 "Breaking Swipe",
-                "Surf"
+                "Surf",
+                "Will-O-Wisp",
+                "Light Screen"
             ]
         }
     },
@@ -7095,7 +7087,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Jolly",
             "ability": "Swift Swim",
-            "item": "",
+            "item": "Life Orb",
             "moves": [
                 "Liquidation",
                 "Close Combat",
@@ -7141,7 +7133,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Adamant",
-            "ability": "",
             "item": "Passho Berry",
             "moves": [
                 "Earthquake",
@@ -7167,11 +7158,12 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Psychic Surge",
-            "item": "",
+            "item": "Psychic Seed",
             "moves": [
                 "Expanding Force",
                 "Mystical Fire",
                 "Dazzling Gleam",
+                "Follow Me"
             ]
         },
         "Bulky Indeedee": {
@@ -7194,6 +7186,7 @@ var SETDEX_VGC2021 = {
                 "Expanding Force",
                 "Mystical Fire",
                 "Dazzling Gleam",
+                "Follow Me"
             ]
         },
     },
@@ -7213,7 +7206,7 @@ var SETDEX_VGC2021 = {
             },
             "nature": "Modest",
             "ability": "Psychic Surge",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Expanding Force",
                 "Mystical Fire",
@@ -7279,8 +7272,7 @@ var SETDEX_VGC2021 = {
                 "sp": 36
             },
             "nature": "Careful",
-            "ability": "",
-            "item": "",
+            "item": "Light Clay",
             "moves": [
                 "Spirit Break",
                 "Fake Out",
@@ -7299,7 +7291,6 @@ var SETDEX_VGC2021 = {
                 "sp": 20
             },
             "nature": "Careful",
-            "ability": "",
             "item": "Babiri Berry",
             "moves": [
                 "Spirit Break",
@@ -7352,6 +7343,7 @@ var SETDEX_VGC2021 = {
                 "Brave Bird",
                 "Iron Head",
                 "Body Press",
+                "Roost"
             ]
         },
     },
@@ -7393,7 +7385,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Relaxed",
-            "ability": "",
             "item": "Babiri Berry",
             "moves": [
                 "Dazzling Gleam",
@@ -7419,7 +7410,6 @@ var SETDEX_VGC2021 = {
                 "sp": 0
             },
             "nature": "Quiet",
-            "ability": "",
             "item": "Life Orb",
             "moves": [
                 "Expanding Force",
@@ -7545,10 +7535,12 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
+            "item": "Focus Sash",
             "moves": [
                 "Surging Strikes",
                 "Close Combat",
-                "Aqua Jet"
+                "Aqua Jet",
+                "Detect"
             ]
         },
         "Choice Band Set": {
@@ -7583,10 +7575,12 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
+            "item": "Focus Sash",
             "moves": [
                 "Wicked Blow",
                 "Close Combat",
-                "Sucker Punch"
+                "Sucker Punch",
+                "Detect"
             ]
         },
         "Choice Band Set": {
@@ -7674,11 +7668,12 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
-            "item": "",
+            "item": "Focus Sash",
             "moves": [
                 "Sludge Bomb",
                 "Dazzling Gleam",
                 "Flamethrower",
+                "Taunt"
             ]
         },
         "Babiri Weezing": {
@@ -7700,6 +7695,7 @@ var SETDEX_VGC2021 = {
                 "Sludge Bomb",
                 "Dazzling Gleam",
                 "Flamethrower",
+                "Taunt"
             ]
         },
     },
@@ -7801,7 +7797,7 @@ var SETDEX_VGC2021 = {
                 "sp": 132
             },
             "nature": "Modest",
-            "item": "",
+            "item": "Weakness Policy",
             "moves": [
                 "Fiery Wrath",
                 "Hurricane",
@@ -7894,11 +7890,13 @@ var SETDEX_VGC2021 = {
                 "at": 0
             },
             "nature": "Timid",
+            "item": "Light Clay",
             "ability": "Transistor",
             "moves": [
                 "Thunderbolt",
                 "Volt Switch",
-                "Electroweb"
+                "Electroweb",
+                "Light Screen"
             ]
         },
     },
@@ -8010,7 +8008,7 @@ var SETDEX_VGC2021 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "item": "",
+            "item": "Rusted Sword",
             "moves": [
                 "Behemoth Blade",
                 "Play Rough",
@@ -8031,7 +8029,7 @@ var SETDEX_VGC2021 = {
                 "sp": 156
             },
             "nature": "Impish",
-            "item": "",
+            "item": "Rusted Shield",
             "moves": [
                 "Behemoth Bash",
                 "Close Combat",
@@ -8835,9 +8833,6 @@ var SETDEX_VGC2021_S10 = {
             "item": "Sitrus Berry",
             "moves": [
                 "Transform",
-                "",
-                "",
-                ""
             ]
         },
 
@@ -10755,7 +10750,6 @@ var SETDEX_VGC2022_S13 = {
                 "sp": 0
             },
             "nature": "Brave",
-            "ability": "",
             "item": "Assault Vest",
             "moves": [
                 "Double Iron Bash",
@@ -10778,7 +10772,6 @@ var SETDEX_VGC2022_S13 = {
                 "sp": 4
             },
             "nature": "Adamant",
-            "ability": "",
             "item": "Sitrus Berry",
             "moves": [
                 "Power Whip",
@@ -11926,7 +11919,7 @@ var SETDEX_VGC_BFD = {
             "ivs": {
                 "at": 0
             },
-            "nature": "",
+            "nature": "Modest",
             "ability": "Drizzle",
             "item": "Focus Sash",
             "moves": [
@@ -12860,7 +12853,7 @@ var SETDEX_VGC_BFD = {
             },
             "nature": "Timid",
             "ability": "Levitate",
-            "item": "",
+            "item": "Choice Specs",
             "moves": [
                 "Thunderbolt",
                 "Overheat",
