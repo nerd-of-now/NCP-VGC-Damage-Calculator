@@ -103,7 +103,7 @@ function handleAjax(strURL){
     });
 }
 
-var savecustom = function () {
+var savecustom = function (sidebarUsed = 0) {
     //first, to parse it all from the PS format
     var string = document.getElementById('customMon').value;
     var spreadName = document.getElementById('spreadName').value;
@@ -128,17 +128,22 @@ var savecustom = function () {
                 }
                 string = data['paste'];
                 string = string.replaceAll('\r', '');
-                processSave(string, spreadName, setGen);
+                processSave(string, spreadName, sidebarUsed, setGen);
             })
             .fail(function () {
                 alert("PokePaste link is invalid.");
             });
     }
     else
-        processSave(string, spreadName);
+        processSave(string, spreadName, sidebarUsed);
 };
 
-function processSave(string, spreadName, setGen = gen) {
+function processSave(string, spreadName, sidebarUsed, setGen = gen) {
+    if (string == "") {
+        alert("Paste is empty.");
+        return;
+    }
+    var sidebarCleared = false;
     //numPokemon separates individual Pokemon so user can add multiple Pokemon at once under the same set name
     var numPokemon = string.split('\n\n');
     numPokemon = numPokemon.filter(element => element);
@@ -205,10 +210,12 @@ function processSave(string, spreadName, setGen = gen) {
             if (lines[0].indexOf('@') != -1)
                 item = lines[0].substring(lines[0].indexOf('@') + 1).trim(); //item is always after @
             ability = lines[1].substring(lines[1].indexOf(' ') + 1).trim(); //ability is always second
+            if (ability.indexOf('As One (') != -1)
+                ability = 'As One';
             if (lines.length > 2) {
                 for (var i = 2; i < lines.length; ++i) {
                     if (lines[i].indexOf("Level") != -1) {
-                        level = lines[2].split(' ')[1].trim(); //level is sometimes third but uh not always
+                        level = parseInt(lines[2].split(' ')[1].trim()); //level is sometimes third but uh not always
                     }
                     if (lines[i].indexOf("Tera Type") != -1) {
                         tera_type = lines[i].split(' ')[2].trim(); //
@@ -322,9 +329,24 @@ function processSave(string, spreadName, setGen = gen) {
             if (setGen == 9)
                 customFormat["tera_type"] = tera_type;
             saveSets(setGen, customFormat, species, spreadName);
+            if (sidebarUsed && a < 6) {
+                if (!sidebarCleared && CURRENT_SIDEBARS[sidebarUsed - 1].length) {
+                    removeSidebarTeam(sidebarUsed);
+                }
+                sidebarCleared = true;
+                sidebarNames = sidebarUsed == 1 ? LEFT_SIDEBAR_NAMES : RIGHT_SIDEBAR_NAMES;
+                CURRENT_SIDEBARS[sidebarUsed - 1].push(species);
+                localStorage['g' + setGen + '_sidebars'] = JSON.stringify(CURRENT_SIDEBARS);
+                saveSets(setGen, customFormat, species, sidebarNames[a]);
+            }
         }
         if (setGen == gen)
             loadSetdexScript();
+        if (sidebarUsed) {
+            reloadSidebar(sidebarUsed);
+            if (CURRENT_SIDEBARS[sidebarUsed - 1].length == 6)
+                $('#sb' + (sidebarUsed == 1 ? 'L' : 'R')).hide();
+        }
         alert("Set(s) saved.");
     }
     catch (x) {
@@ -333,9 +355,17 @@ function processSave(string, spreadName, setGen = gen) {
     document.getElementById("customMon").value = "";
 }
 
+function saveCustomSidebar(pnum) {
+    var confirmSave = true;
+    if (CURRENT_SIDEBARS[pnum - 1].length)
+        confirmSave = confirm("The " + (pnum == 1 ? "left" : "right") + " panel has a team loaded already. Saving to that panel will delete the team. Continue?");
+    if (confirmSave)
+        savecustom(pnum);
+}
+
 
 //Saves a custom set from within the calc
-var savecalc = function (set, spreadName, accessIVs) {
+var savecalc = function (set, spreadName, accessIVs, p) {
     var moves = [];
     species = set.name;
 
@@ -395,6 +425,8 @@ var savecalc = function (set, spreadName, accessIVs) {
 
     saveSets(gen, customFormat, species, spreadName);
     loadSetdexScript();
+    //load set that was just saved
+    loadPreset(p, species + " (" + spreadName + ")");
 }
 
 function runSaveCalc(pnum) {
@@ -408,7 +440,7 @@ function runSaveCalc(pnum) {
         || (RIGHT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[1].length <= parseInt(setName.slice(-1))*/))
         alert("Set name matches naming convention for sidebars. Please use the sidebar buttons to add, save, and delete.");
     else
-        savecalc(monSet, document.getElementById('setName' + pnum).value, $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"));
+        savecalc(monSet, document.getElementById('setName' + pnum).value, $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"), "#p" + pnum);
 }
 
 //Looked this up online, copies to clipboard without any input
@@ -591,5 +623,30 @@ function runDeleteSet(pnum) {
     if (confirm("The following set will be deleted:\n" + fullSetName + "\n\nContinue?")) {
         deleteSet(species, setName);
         $(p).closest(".poke-info").find(".delset").hide();
+    }
+}
+
+function storedSetFixes() {
+    var changesMade = false;
+    for (var i = 9; i >= 1; i--) {
+        if (localStorage["custom_gen_" + i] != null) {
+            tempCustom = JSON.parse(localStorage["custom_gen_" + i]);
+            for (mon in tempCustom) {
+                for (set in tempCustom[mon]) {
+                    if (tempCustom[mon][set]["level"] && typeof tempCustom[mon][set]["level"] !== "number") {
+                        tempCustom[mon][set]["level"] = parseInt(tempCustom[mon][set]["level"]);
+                        changesMade = true;
+                    }
+                    if (tempCustom[mon][set]["ability"] && tempCustom[mon][set]["ability"].indexOf("As One (") != -1) {
+                        tempCustom[mon][set]["ability"] = "As One";
+                        changesMade = true;
+                    }
+                }
+            }
+            if (changesMade) {
+                localStorage["custom_gen_" + i] = JSON.stringify(tempCustom);
+                changesMade = false;
+            }
+        }
     }
 }

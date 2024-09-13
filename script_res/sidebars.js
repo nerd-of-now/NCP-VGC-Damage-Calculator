@@ -143,11 +143,11 @@ function shiftSidebar(pnum) {
     //console.log(ALL_SETDEX_CUSTOM[gen]);
 }
 
-//function removeSidebarTeam(pnum) {
-//    for (i = 1; i < CURRENT_SIDEBARS[pnum - 1].length + 1; i++) {
-//        removeSidebarSlot(pnum, i);
-//    }
-//}
+function removeSidebarTeam(pnum) {
+    for (var i = CURRENT_SIDEBARS[pnum - 1].length; i > 0; i--) {
+        removeSidebarSlot(pnum, i);
+    }
+}
 
 //function importSidebarTeam(pnum) {
 //    teamNames = pnum == 1 ? LEFT_SIDEBAR_NAMES : pnum == 2 ? RIGHT_SIDEBAR_NAMES : [];

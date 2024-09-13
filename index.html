@@ -68,7 +68,7 @@
         </script>-->
             <p>VGC 2024 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerd_of_now">@nerd_of_now</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboydev" target="_blank" rel="noopener noreferrer">@squirrelboydev</a>).</p>
             <p>
-                Regulation G is upon us! This calculator will be kept up-to-date for the new format.
+                Regulation H has banned all Legendary and Paradox Pokémon! This calculator will try to be kept up-to-date for the new format.
                 <!--<br><b><u>This calculator contains spoilers for the Indigo Disk DLC.</u></b> This includes Pokémon, moves, abilities, items, and the new Tera Type. Use at your own discretion.-->
             </p>
             <!--<br><p>Is there an important or relevant set missing? <a href="https://forms.gle/zBbEnvp2vZ2UADUJA" target="_blank" rel="noopener noreferrer">Give us your suggestion!</a></p>-->
@@ -133,6 +133,10 @@
                         </div>
                     </div>
                     <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="float:right;">
+                        <!--<div class="sidebarTeam" id="tL">
+                            <input class="namet" value="Untitled" />
+                            <button class="renamet" id="renameL" type="button" title="Rename the current team.">Rename</button>
+                        </div>-->
                         <div class="sidebarSlot hide" id="l1">
                             <button class="pkmnsc" id="pkmnL1" type="button" onclick="loadSidebarSlot(1,1)"><img id="pkmnL1I" src="image_res/empty-slot.png"></button>
                             <button class="editsc" id="editL1" type="button" onclick="editSidebarSlot(1,1)" title="Overwrite this slot with what's currently in the panel."><img width="10" height="10" src="image_res/save.png" /></button>
@@ -330,7 +334,7 @@
                         <input class="btn-input calc-trigger" type="checkbox" name="aura" value="Fairy Aura" id="fairy-aura" /><label class="btn btn-wide btn-mid" for="fairy-aura">Fairy Aura</label>
                         <input class="btn-input calc-trigger" type="checkbox" name="aura" value="Dark Aura" id="dark-aura" /><label class="btn btn-wide btn-right" for="dark-aura">Dark Aura</label>
                     </div>
-                    <div class="gen-specific g9" style="width: 21em; margin: 5px auto;" title="Select the current active Ruin abilities.">
+                    <div class="gen-specific g9 ruin-group" style="width: 21em; margin: 5px auto;" title="Select the current active Ruin abilities.">
                         <input class="btn-input calc-trigger" type="checkbox" name="ruin" value="Tablets of Ruin" id="tablets-of-ruin" /><label class="btn btn-xxxxwide btn-left" for="tablets-of-ruin">Tablets of Ruin <u>(-Atk)</u></label>
                         <input class="btn-input calc-trigger" type="checkbox" name="ruin" value="Vessel of Ruin" id="vessel-of-ruin" /><label class="btn btn-xxxxwide btn-right" for="vessel-of-ruin">Vessel of Ruin <u>(-SpA)</u></label>
                         <br />
@@ -538,6 +542,9 @@
                     <textarea rows="9" cols="36" id="customMon"></textarea>
                     <br>
                     <button type="button" onclick="savecustom()">Save</button> <button type="button" onclick="deletecustom()">Delete All Custom Sets</button>
+                    <br>
+                    <br>
+                    <button type="button" onclick="saveCustomSidebar(1)">Import to Left Team</button> <button type="button" style="float:right" onclick="saveCustomSidebar(2)">Import to Right Team</button>
                     <p> If you encounter a bug, please report it!</p>
                 </div>
             </div>
