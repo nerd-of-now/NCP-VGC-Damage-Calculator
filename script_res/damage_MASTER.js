@@ -553,6 +553,15 @@ function checkEmbodyAspect(pokemon) {
     }
 }
 
+//If we play VGC on Legends Z-A and they bring back Ash Greninja I should just delete this function
+function checkBattleBond(pokemon) {
+    if (pokemon.ability === 'Battle Bond' && pokemon.abilityOn && gen == 9) {
+        pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
+        pokemon.boosts[SA] = Math.min(6, pokemon.boosts[SA] + 1);
+        pokemon.boosts[SP] = Math.min(6, pokemon.boosts[SP] + 1);
+    }
+}
+
 //CONSIDER AN ALL ENCOMPASSING FUNCTION FOR BOOSTS
 
 function checkInfiltrator(attacker, affectedSide) {

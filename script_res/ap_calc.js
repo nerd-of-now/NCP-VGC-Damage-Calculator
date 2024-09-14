@@ -386,7 +386,7 @@ $(".ability").bind("keyup change", function () {
     autoSetTerrain()
 
     var ab = $(this).val();
-    var ABILITY_TOGGLE_OFF = ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Electromorphosis', 'Wind Power', 'Sand Spit', 'Seed Sower'];
+    var ABILITY_TOGGLE_OFF = gen >= 9 ? ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit', 'Electromorphosis', 'Wind Power', 'Seed Sower', 'Battle Bond'] : ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit'];
     var ABILITY_TOGGLE_ON = gen >= 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero', 'Intrepid Sword', 'Dauntless Shield', 'Supersweet Syrup'] : ['Intimidate', 'Slow Start'];
     if (ABILITY_TOGGLE_OFF.indexOf(ab) !== -1) {
         thisPoke.find(".abilityToggle").show();
@@ -1844,4 +1844,5 @@ $(document).ready(function () {
     $("#p2 .set-selector").change();
     loadSidebar(1);
     loadSidebar(2);
+    storedSetFixes();
 });
