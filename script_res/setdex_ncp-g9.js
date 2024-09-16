@@ -1,5 +1,5 @@
 
-var SETDEX_VGC2023 = {
+var SETDEX_GEN9 = {
     "Meowscarada": {
         "Sash Set": {
             "level": 50,
@@ -5863,7 +5863,7 @@ var SETDEX_VGC2023 = {
                 "Detect"
             ]
         },
-        "Scrappy Choice Scarf": {
+        "Stellar Scrappy Sash": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -5873,15 +5873,15 @@ var SETDEX_VGC2023 = {
                 "sd": 4,
                 "sp": 252
             },
-            "nature": "Jolly",
+            "nature": "Adamant",
             "ability": "Scrappy",
-            "tera_type": "Fighting",
-            "item": "Choice Scarf",
+            "tera_type": "Stellar",
+            "item": "Focus Sash",
             "moves": [
                 "Close Combat",
                 "Brave Bird",
-                "Liquidation",
-                "U-turn"
+                "Throat Chop",
+                "Wide Guard"
             ]
         },
     },
@@ -8047,7 +8047,7 @@ var SETDEX_VGC2023 = {
         },
     },
     "Basculegion": {
-        "Scarf Adaptability Sweeper": {
+        "Scarf Adaptability": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8059,16 +8059,15 @@ var SETDEX_VGC2023 = {
             },
             "nature": "Adamant",
             "ability": "Adaptability",
-            "tera_type": "Fairy",
             "item": "Choice Scarf",
             "moves": [
                 "Wave Crash",
                 "Last Respects",
-                "Tera Blast",
+                "Flip Turn",
                 "Aqua Jet"
             ]
         },
-        "Tera Stellar Banded Swift Swim": {
+        "Banded Swift Swim": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8078,9 +8077,8 @@ var SETDEX_VGC2023 = {
                 "sd": 4,
                 "sp": 252
             },
-            "nature": "Jolly",
+            "nature": "Adamant",
             "ability": "Swift Swim",
-            "tera_type": "Stellar",
             "item": "Choice Band",
             "moves": [
                 "Wave Crash",
@@ -8134,6 +8132,27 @@ var SETDEX_VGC2023 = {
                 "Dire Claw",
                 "Close Combat",
                 "Acrobatics",
+                "Fake Out"
+            ]
+        },
+        "Tera Stellar Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Stellar",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+                "Dire Claw",
+                "Close Combat",
+                "Throat Chop",
                 "Fake Out"
             ]
         },
@@ -8484,6 +8503,29 @@ var SETDEX_VGC2023 = {
     //    },
     //},
     "Typhlosion-Hisui": {
+        "Choice Specs Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Blaze",
+            "item": "Choice Specs",
+            "moves": [
+                "Heat Wave",
+                "Eruption",
+                "Overheat",
+                "Shadow Ball"
+            ]
+        },
         "Scarf Eruption Set": {
             "level": 50,
             "evs": {
@@ -12211,7 +12253,7 @@ var SETDEX_VGC2023 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "tera_type": "Fairy",
+            "tera_type": "Grass",
             "ability": "Stamina",
             "item": "Assault Vest",
             "moves": [
@@ -12219,6 +12261,30 @@ var SETDEX_VGC2023 = {
                 "Draco Meteor",
                 "Electro Shot",
                 "Body Press"
+            ]
+        },
+        "Fast Sturdy Power Herb": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Electric",
+            "ability": "Sturdy",
+            "item": "Power Herb",
+            "moves": [
+                "Electro Shot",
+                "Flash Cannon",
+                "Draco Meteor",
+                "Dragon Pulse"
             ]
         },
     },

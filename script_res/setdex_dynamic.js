@@ -14,7 +14,7 @@ var COMPONENTS = {
         SETDEX_VGC2021,
         SETDEX_VGC2021_S10,
         SETDEX_VGC_BFD],
-    9: [SETDEX_VGC2023],
+    9: [SETDEX_GEN9],
 };
 
 var ALL_SETDEX_CUSTOM = {};
