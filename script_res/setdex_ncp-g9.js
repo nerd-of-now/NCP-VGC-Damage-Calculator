@@ -4331,7 +4331,7 @@ var SETDEX_GEN9 = {
             "moves": [
                 "Lumina Crash",
                 "Dazzling Gleam",
-                "Calm Mind",
+                "Expanding Force",
                 "Protect"
             ]
         },
@@ -4531,6 +4531,30 @@ var SETDEX_GEN9 = {
                 "Roost"
             ]
         },
+        "Special LO Tailwind": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Intimidate",
+            "tera_type": "Steel",
+            "item": "Life Orb",
+            "moves": [
+                "Draco Meteor",
+                "Heat Wave",
+                "Tailwind",
+                "Hurricane"
+            ]
+        },
         "Tera Steel Dragon Dance": {
             "level": 50,
             "evs": {
@@ -4550,30 +4574,6 @@ var SETDEX_GEN9 = {
                 "Dual Wingbeat",
                 "Iron Head",
                 "Dragon Dance"
-            ]
-        },
-        "Special LO Tailwind": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
-            },
-            "ivs": {
-                "at": 0,
-            },
-            "nature": "Timid",
-            "ability": "Intimidate",
-            "tera_type": "Steel",
-            "item": "Life Orb",
-            "moves": [
-                "Draco Meteor",
-                "Heat Wave",
-                "Tailwind",
-                "Hurricane"
             ]
         },
     },
@@ -4618,7 +4618,7 @@ var SETDEX_GEN9 = {
             "nature": "Quiet",
             "ability": "Magic Bounce",
             "tera_type": "Fire",
-            "item": "Covert Cloak",
+            "item": "Life Orb",
             "moves": [
                 "Expanding Force",
                 "Dazzling Gleam",
@@ -4969,7 +4969,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Dragapult": {
-        "Choice Band Set": {
+        "Adamant Banded Tera Dragon": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -4978,6 +4978,26 @@ var SETDEX_GEN9 = {
                 "sa": 0,
                 "sd": 0,
                 "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Clear Body",
+            "item": "Choice Band",
+            "moves": [
+                "Dragon Darts",
+                "Outrage",
+                "Phantom Force",
+                "U-turn"
+            ]
+        },
+        "PokeAlex's NAIC 23 1st Banded Tera Steel": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 28,
+                "sp": 212
             },
             "nature": "Jolly",
             "ability": "Clear Body",
@@ -12277,7 +12297,7 @@ var SETDEX_GEN9 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "tera_type": "Electric",
+            "tera_type": "Stellar",
             "ability": "Sturdy",
             "item": "Power Herb",
             "moves": [
@@ -12494,7 +12514,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Serperior": {
-        "Jamie Boyt Spread with Tera Stellar": {
+        "Jamie Boyt Spread with Tera Fire": {
             "level": 50,
             "evs": {
                 "hp": 116,
@@ -12505,7 +12525,7 @@ var SETDEX_GEN9 = {
                 "sp": 252
             },
             "nature": "Timid",
-            "tera_type": "Stellar",
+            "tera_type": "Fire",
             "ability": "Contrary",
             "item": "Wide Lens",
             "moves": [
