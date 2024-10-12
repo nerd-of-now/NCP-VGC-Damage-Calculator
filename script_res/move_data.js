@@ -1545,7 +1545,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        ignoreScreens: true,
+        ignoresScreens: true,
     },
     'Doom Desire': {
         bp: 120,
@@ -3788,7 +3788,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         bp: 85,
         isBite: true,
-        ignoreScreens: true,
+        ignoresScreens: true,
     },
     'Fleur Cannon': {
         category: 'Special',
@@ -5214,7 +5214,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        ignoreScreens: true,
+        ignoresScreens: true,
     },
     'Make It Rain': {
         bp: 120,

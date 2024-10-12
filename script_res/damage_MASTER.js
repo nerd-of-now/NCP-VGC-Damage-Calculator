@@ -797,7 +797,7 @@ function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
         }
     }
     if (move.name === "G-Max Wind Rage")
-        move.ignoreScreens = true;
+        move.ignoresScreens = true;
     if (maxName != undefined)
         moveDescName = maxName + " (" + move.bp + " BP)";
     if (tempMove.name == "(No Move)") {
