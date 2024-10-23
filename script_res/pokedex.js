@@ -18090,7 +18090,7 @@ var POKEDEX_SV = {};
     'Dipplin', 'Poltchageist', 'Sinistcha', 'Okidogi', 'Munkidori', 'Fezandipiti', 'Ogerpon',
     //Forms for Teal Mask Pokemon
     'Sandshrew-Alola', 'Sandslash-Alola', 'Vulpix-Alola', 'Ninetales-Alola', 'Geodude-Alola', 'Graveler-Alola', 'Golem-Alola', 'Weezing-Galar', 'Shaymin-Sky',
-    'Ursaluna-Bloodmoon', 'Ogerpon-Hearthflame', 'Ogerpon-Wellspring', 'Ogerpon-Cornerstone',
+    'Morpeko-Hangry', 'Ursaluna-Bloodmoon', 'Ogerpon-Hearthflame', 'Ogerpon-Wellspring', 'Ogerpon-Cornerstone',
     //Indigo Disk DLC Pokemon
     'Bulbasaur', 'Ivysaur', 'Venusaur', 'Squirtle', 'Wartortle', 'Blastoise', 'Oddish', 'Gloom', 'Vileplume', 'Tentacool', 'Tentacruel', 'Doduo', 'Dodrio',
     'Seel', 'Dewgong', 'Exeggcute', 'Exeggutor', 'Hitmonlee', 'Hitmonchan', 'Rhyhorn', 'Rhydon', 'Horsea', 'Seadra', 'Electabuzz', 'Magmar', 'Lapras',
@@ -18107,7 +18107,7 @@ var POKEDEX_SV = {};
     'Iron Boulder', 'Iron Crown', 'Terapagos', 'Pecharunt',
     //Forms for Indigo Disk Pokemon
     'Exeggutor-Alola', 'Deoxys-Attack', 'Deoxys-Defense', 'Deoxys-Speed', 'Kyurem-Black', 'Kyurem-White', 'Necrozma-Dusk-Mane', 'Necrozma-Dawn-Wings',
-    'Terapagos-Terastal','Terapagos-Stellar',
+    'Minior-Up', 'Minior-Down', 'Terapagos-Terastal','Terapagos-Stellar',
 ].forEach(e => POKEDEX_SV[e] = POKEDEX_SV_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex
