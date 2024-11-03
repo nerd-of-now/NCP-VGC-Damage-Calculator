@@ -682,8 +682,9 @@ function checkMoveTypeChange(move, field, attacker) {
     }
 }
 
-function checkConditionalPriority(move, terrain, attackerAbility) {
-    if ((move.isHealing && attackerAbility == "Triage") || (move.name == "Grassy Glide" && terrain == "Grassy"))
+function checkConditionalPriority(move, terrain, attacker, attIsGrounded) {
+    if ((move.isHealing && attacker.ability == "Triage") || (move.name == "Grassy Glide" && terrain == "Grassy" && attIsGrounded)
+        || (move.type == "Flying" && attacker.ability == "Gale Wings" && (gen == 6 || attacker.curHP == attacker.maxHP)))
         move.isPriority = true;
 }
 

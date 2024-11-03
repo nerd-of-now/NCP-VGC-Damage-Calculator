@@ -72,7 +72,7 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     var defIsGrounded = pIsGrounded(defender, field);
 
     checkMoveTypeChange(move, field, attacker);
-    checkConditionalPriority(move, field.terrain, attacker.ability);
+    checkConditionalPriority(move, field.terrain, attacker, attIsGrounded);
     checkConditionalSpread(move, field.terrain, attacker, attIsGrounded);
     checkContactOverride(move, attacker);
 
