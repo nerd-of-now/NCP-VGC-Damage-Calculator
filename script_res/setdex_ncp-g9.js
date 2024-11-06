@@ -4239,6 +4239,29 @@ var SETDEX_GEN9 = {
     //        ]
     //    },
     //},
+    "Scyther": {
+        "The Flamigo that beats only other Flamigo": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Technician",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Dual Wingbeat",
+                "Close Combat",
+                "Feint",
+                "Thief"
+            ]
+        },
+    },
     "Scizor": {
         "Swords Dance Set": {
             "level": 50,
@@ -5906,6 +5929,27 @@ var SETDEX_GEN9 = {
         },
     },
     "Dragonite": {
+        "Tera Steel Loaded Dice": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Multiscale",
+            "tera_type": "Steel",
+            "item": "Loaded Dice",
+            "moves": [
+                "Extreme Speed",
+                "Scale Shot",
+                "Iron Head",
+                "Ice Spinner"
+            ]
+        },
         "Tera Normal Choice Band": {
             "level": 50,
             "evs": {
@@ -5925,6 +5969,27 @@ var SETDEX_GEN9 = {
                 "Outrage",
                 "Stomping Tantrum",
                 "Aerial Ace"
+            ]
+        },
+        "Tera Flying Assault Vest": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 36
+            },
+            "nature": "Adamant",
+            "ability": "Multiscale",
+            "tera_type": "Flying",
+            "item": "Assault Vest",
+            "moves": [
+                "Extreme Speed",
+                "Tera Blast",
+                "Stomping Tantrum",
+                "Low Kick"
             ]
         },
         "Tera Normal Assault Vest": {
@@ -9552,31 +9617,32 @@ var SETDEX_GEN9 = {
     //        ]
     //    },
     //},
-    //"Yanmega": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Yanmega": {
+        "Sash Tailwind Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Ghost",
+            "ability": "Speed Boost",
+            "item": "Focus Sash",
+            "moves": [
+                "Bug Buzz",
+                "Air Slash",
+                "Tailwind",
+                "Hypnosis"
+            ]
+        },
+    },
     //"Mightyena": {
     //    "": {
     //        "level": 50,
@@ -11000,6 +11066,29 @@ var SETDEX_GEN9 = {
             "nature": "Timid",
             "tera_type": "Normal",
             "item": "Life Orb",
+            "moves": [
+                "Hyper Voice",
+                "Earth Power",
+                "Blood Moon",
+                "Vacuum Wave"
+            ]
+        },
+        "Nails' GC Winning AV": {
+            "level": 50,
+            "evs": {
+                "hp": 140,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 116,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Normal",
+            "item": "Assault Vest",
             "moves": [
                 "Hyper Voice",
                 "Earth Power",
