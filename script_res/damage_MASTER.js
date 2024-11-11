@@ -704,6 +704,7 @@ function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
         if (field.isProtect) {
             isQuarteredByProtect = true;
         }
+        if (attacker.ability == 'Parental Bond') attacker.ability = '';
     }
     else if (move.isZ) {
         var tempMove = move;
@@ -750,6 +751,7 @@ function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
         if (field.isProtect) {
             isQuarteredByProtect = true;
         }
+        if (attacker.ability == 'Parental Bond') attacker.ability = '';
     }
     return [move, isQuarteredByProtect, moveDescName];
 }
@@ -816,6 +818,7 @@ function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
     move.category = tempMove.category;
     move.hits = 1;
     if (field.isProtect && ["G-Max One Blow", "G-Max Rapid Flow"].indexOf(maxName) == -1) isQuarteredByProtect = true;
+    if (attacker.ability == 'Parental Bond') attacker.ability = '';
 
     return [move, isQuarteredByProtect, moveDescName];
 }
@@ -1020,14 +1023,12 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
         var moveName = move.usedOppMove ? move.usedOppMove : '(No Move)';
         var counteredMove = moves[moveName];
         counteredMove.name = moveName;
-        counteredMove.hits = 1;
-        if (counteredMove.isTripleHit)
-            counteredMove.tripleHit3 = true;
-        else if (defender.ability === 'Parental Bond' && (field.format === "Singles" || !counteredMove.isSpread))
-            defender.isChild = true;
+        counteredMove.hits = move.hits;
         if (counteredMove.category !== 'Status') {
             if (gen <= 3) counteredMove.category = typeChart[counteredMove.type].category;
             counteredResult = GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);
+            if (Array.isArray(counteredResult.damage[0]))
+                counteredResult.damage = counteredResult.damage[counteredResult.damage.length - 1];
             if (gen > 3 || counteredMove.name.indexOf('Hidden Power') === -1) {
                 if (['Counter', 'Mirror Coat'].indexOf(move.name) !== -1 && move.category == counteredMove.category) {
                     for (i = 0; i < counteredResult.damage.length; i++) {
@@ -1053,6 +1054,11 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
             }
             else {
                 return { "damage": [0], "description": buildDescription(description) };
+            }
+            if (isParentBond) {
+                for (var i = 0; i < counteredResult.damage.length; i++) {
+                    counteredResult.damage[i] *= 2;
+                }
             }
             return counteredResult;
         }
@@ -1342,10 +1348,8 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //i.vi. Triple Kick, Triple Axel 
         case "Triple Kick":
         case "Triple Axel":
-            if (move.tripleHit3)
-                basePower = move.bp * 3;
-            else if (move.tripleHit2)
-                basePower = move.bp * 2;
+            if (move.currTripleHit)
+                basePower = move.bp * move.currTripleHit;
             else
                 basePower = move.bp;
             break;
@@ -1993,41 +1997,8 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     [finalMod, description] = calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility, hitsPhysical);
     finalMods = chainMods(finalMod);
 
-    var damage = [], pbDamage = [];
-    var child, childDamage, j;
-    var childMove, child2Damage, tripleDamage = [];
+    var damage = [], additionalDamage = [], allDamage = [];
 
-    if (typeof (move.tripleHit2) === 'undefined') {
-        if (move.isTripleHit) {
-            if (move.tripleHits > 1) {
-                childMove = move;
-                childMove.tripleHit2 = true;
-                childDamage = GET_DAMAGE_HANDLER(attacker, defender, childMove, field).damage;
-                if (move.tripleHits > 2) {
-                    childMove.tripleHit3 = true;
-                    child2Damage = GET_DAMAGE_HANDLER(attacker, defender, childMove, field).damage;
-                    childMove.tripleHit3 = false;
-                }
-                childMove.tripleHit2 = false;
-            }
-            description.hits = move.tripleHits;
-        }
-        else if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
-            child = JSON.parse(JSON.stringify(attacker));
-            child.ability = '';
-            child.isChild = true;
-            childMove = move;
-            if (move.name === 'Power-Up Punch') {
-                child.boosts[AT] = Math.min(6, child.boosts[AT] + 1);
-                child.stats[AT] = getModifiedStat(child.rawStats[AT], child.boosts[AT]);
-            }
-            else if (move.name === 'Assurance') {
-                childMove.isDouble = 1;
-            }
-            childDamage = GET_DAMAGE_HANDLER(child, defender, childMove, field).damage;
-            description.attackerAbility = attacker.ability;
-        }
-    }
     //GENERAL MODS CONTINUED
     for (var i = 0; i < 16; i++) { //e. Rand mod
         damage[i] = Math.floor(baseDamage * (85 + i) / 100);
@@ -2051,50 +2022,26 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         //l. Max Damage Check
         if (damage[i] > 65535)
             damage[i] %= 65536;
+    }
 
-        //Parental Bond child hit and Triple Kick/Axel second/third hit logic
-        if (typeof (move.tripleHit2) !== 'undefined' && move.tripleHit2 === false && move.isTripleHit) {
-            for (j = 0; j < 16; j++) {
-                if (typeof (move.tripleHit3) !== 'undefined' && move.tripleHit3 === false) {
-                    for (k = 0; k < 16; k++) {
-                        tripleDamage[(256 * i) + (16 * j) + k] = damage[i] + childDamage[j] + child2Damage[k];
-                    }
-                }
-                else {
-                    tripleDamage[(16 * i) + j] = damage[i] + childDamage[j];
-                }
-            }
+    if (!move.isNextMove) {
+        if (checkAddCalcQualifications(attacker, defender, move, field)) {
+            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
+            allDamage[0] = damage;
         }
-        else if (attacker.ability === "Parental Bond" && move.hits === 1 && !move.isTripleHit && (field.format === "Singles" || !move.isSpread)) {
-            for (j = 0; j < 16; j++) {
-                pbDamage[(16 * i) + j] = damage[i] + childDamage[j];
+        else
+            allDamage = damage;
+        if (additionalDamage.length) {
+            for (var i = 0; i < additionalDamage.length; i++) {
+                allDamage[i + 1] = additionalDamage[i];
             }
         }
     }
-    // Return a bit more info if this is a Parental Bond usage.
-    if (pbDamage.length) {
-        return {
-            "damage": pbDamage.sort(numericSort),
-            "parentDamage": damage,
-            "childDamage": childDamage,
-            "description": buildDescription(description)
-        };
-    }
-
-    if (tripleDamage.length) {
-        return {
-            "damage": tripleDamage.sort(numericSort),
-            "parentDamage": damage,
-            "childDamage": childDamage,
-            "child2Damage": move.tripleHits > 2 ? child2Damage : -1,
-            "description": buildDescription(description)
-        };
-    }
+    else
+        allDamage = damage;
 
     return {
-        "damage": pbDamage.length ? pbDamage.sort(numericSort) :
-            tripleDamage.length ? tripleDamage.sort(numericSort) :
-                damage,
+        "damage": allDamage,
         "description": buildDescription(description)
     };
 }
@@ -2201,4 +2148,54 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
     //r.ii. Earthquake
     //r.iii. Surf, Whirlpool
     return [finalMods, description];
+}
+
+//All conditions I can think of:
+//-Using Triple Kick/Axel (move changes BP depending on which # kick it's on)
+//-Attacking with Parental Bond ("child" damage is a reduced general mod)
+//-Multiscale/Shadow Shield (first hit deals reduced damage)
+//-Stamina (each physical hit increases Defense until it reaches +6; yes it's any hit when playing but only physical hits are relevant in the calc)
+//-Kee/Maranga Berry (first hit increases Defense/Special Defense by +1)
+//-Weak Armor (each physical hit decreases Defense until it reaches -6)
+//-Seed Sower (sets Grassy Terrain after the first hit)
+//-Gooey/Tangling Hair (contact moves decreases attacker's Speed, only relevant for Defiant)
+//-Cotton Down (any move decreases attacker's Speed, only relevant for Defiant)
+//-Sand Spit (sets sandstorm after the first hit, only relevant for a Rock-type defender)
+//-Luminous Moss (first hit of a Water attack increases Special Defense by +1, only relevant for Water Shuriken)
+//Current focus is just the first two cases
+function checkAddCalcQualifications(attacker, defender, move, field) {
+    return (move.isTripleHit && move.hits > 1)
+        || (attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread));
+}
+
+//Inefficient for what it does now but should be a good setup for when more conditions are added
+function additionalDamageCalcs(attacker, defender, move, field, description) {
+    var nextAttacker = attacker, nextDefender = defender, nextMove, nextField = field;
+    var allAdditionalDamages = [];
+    if (attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread)) {
+        nextAttacker = JSON.parse(JSON.stringify(attacker));
+        nextAttacker.ability = '';
+        nextAttacker.isChild = true;
+        nextMove = move;
+        //Look into changing this to an attribute in move_data (array or dictionary along the lines of:[stat(s) affected, # of stages, target of stat changes])
+        if (move.name === 'Power-Up Punch') {
+            nextAttacker.boosts[AT] = Math.min(6, nextAttacker.boosts[AT] + 1);
+            nextAttacker.stats[AT] = getModifiedStat(nextAttacker.rawStats[AT], nextAttacker.boosts[AT]);
+        }
+        else if (move.name === 'Assurance') {
+            nextMove.isDouble = 1;
+        }
+        description.attackerAbility = attacker.ability;
+        move.hits = 2;  //this persists for properly displaying .result-move and for calculations with function getKOChanceText()
+        description.hits = move.hits;
+    }
+    for (var i = 0; i < move.hits - 1; i++) {
+        nextMove = JSON.parse(JSON.stringify(move));
+        nextMove.isNextMove = true;
+        if (move.isTripleHit) {
+            nextMove.currTripleHit = i + 2;
+        }
+        allAdditionalDamages[i] = GET_DAMAGE_HANDLER(nextAttacker, nextDefender, nextMove, nextField).damage;
+    }
+    return allAdditionalDamages;
 }

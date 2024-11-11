@@ -40,7 +40,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     if (move.bp === 0 || move.category === "Status") {
         return statusMoves(move, attacker, defender, description);
     }
-    
+
     var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight);
     var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight) : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
@@ -51,8 +51,8 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 
     setDamageBuildDesc = setDamage(move, attacker, defender, description, false, field);
     if (setDamageBuildDesc !== -1) return setDamageBuildDesc;
-    
-    if (move.hits > 1) {
+
+    if (move.hitRange) {
         description.hits = move.hits;
     }
 
@@ -147,34 +147,34 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         at = pokedex[attacker.name].bs.at;
         df = pokedex[defender.name].bs.df;
     }
-    
+
     var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * at * bp / df) / 50);
-    
+
     if (attacker.status === "Burned" && isPhysical && attacker.ability !== "Guts") {
         baseDamage = Math.floor(baseDamage / 2);
         description.isBurned = true;
     }
-    
+
     if (!isCritical) {
-        var screenMultiplier = field.format !== "Singles" ? (2/3) : (1/2);
+        var screenMultiplier = field.format !== "Singles" ? (2 / 3) : (1 / 2);
         if (isPhysical && field.isReflect) {
-            baseDamage = Math.floor(baseDamage * screenMultiplier); 
+            baseDamage = Math.floor(baseDamage * screenMultiplier);
             description.isReflect = true;
         } else if (!isPhysical && field.isLightScreen) {
-            baseDamage = Math.floor(baseDamage * screenMultiplier); 
+            baseDamage = Math.floor(baseDamage * screenMultiplier);
             description.isLightScreen = true;
         }
     }
 
     if (field.format !== "Singles" && move.isSpread && !move.isGen3Spread) {
-        baseDamage = Math.floor(baseDamage * 1/2);
+        baseDamage = Math.floor(baseDamage * 1 / 2);
     }
-    
+
     if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {
         baseDamage = Math.floor(baseDamage * 1.5);
         description.weather = field.weather;
     } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
-            (move.name === "Solar Beam" && ["Rain", "Sand", "Hail"].indexOf(field.weather) !== -1)) {
+        (move.name === "Solar Beam" && ["Rain", "Sand", "Hail"].indexOf(field.weather) !== -1)) {
         baseDamage = Math.floor(baseDamage / 2);
         description.weather = field.weather;
     }
@@ -183,65 +183,45 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 1.5);
         description.attackerAbility = "Flash Fire";
     }
-    
+
     baseDamage = Math.max(1, baseDamage) + 2;
-    
+
     if (isCritical) {
         baseDamage *= 2;
         description.isCritical = true;
     }
-    
+
     if (field.isHelpingHand) {
         baseDamage = Math.floor(baseDamage * 1.5);
         description.isHelpingHand = true;
     }
-    
+
     if (move.type === attacker.type1 || move.type === attacker.type2) {
         baseDamage = Math.floor(baseDamage * 1.5);
     }
-    
+
     baseDamage = Math.floor(baseDamage * typeEffectiveness);
-    
-    var damage = [];
-    var j, childDamage, childMove, child2Damage, tripleDamage = [];
-    if (typeof (move.tripleHit2) === 'undefined' && move.isTripleHit) {
-        if (move.tripleHits > 1) {
-            childMove = move;
-            childMove.tripleHit2 = true;
-            childDamage = GET_DAMAGE_HANDLER(attacker, defender, childMove, field).damage;
-            if (move.tripleHits > 2) {
-                childMove.tripleHit3 = true;
-                child2Damage = GET_DAMAGE_HANDLER(attacker, defender, childMove, field).damage;
-                childMove.tripleHit3 = false;
-            }
-            childMove.tripleHit2 = false;
-        }
-        description.hits = move.tripleHits;
-    }
+
+    var damage = [], additionalDamage = [], allDamage = [];
     for (var i = 85; i <= 100; i++) {
         damage[i - 85] = Math.max(1, Math.floor(baseDamage * i / 100));
-        //Triple Kick second/third hit logic
-        if (typeof (move.tripleHit2) !== 'undefined' && move.tripleHit2 === false && move.isTripleHit) {
-            for (j = 0; j < 16; j++) {
-                if (typeof (move.tripleHit3) !== 'undefined' && move.tripleHit3 === false) {
-                    for (k = 0; k < 16; k++) {
-                        tripleDamage[(16 * (i - 85)) + (16 * j) + k] = damage[i - 85] + childDamage[j] + child2Damage[k];
-                    }
-                }
-                else {
-                    tripleDamage[(16 * (i - 85)) + j] = damage[i - 85] + childDamage[j];
-                }
+    }
+
+    if (!move.isNextMove) {
+        if (checkAddCalcQualifications(attacker, defender, move, field)) {
+            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
+            allDamage[0] = damage;
+        }
+        else
+            allDamage = damage;
+        if (additionalDamage.length) {
+            for (var i = 0; i < additionalDamage.length; i++) {
+                allDamage[i + 1] = additionalDamage[i];
             }
         }
     }
-    if (tripleDamage.length) {
-        return {
-            "damage": tripleDamage.sort(numericSort),
-            "parentDamage": damage,
-            "childDamage": childDamage,
-            "child2Damage": move.tripleHits > 2 ? child2Damage : -1,
-            "description": buildDescription(description)
-        };
-    }
-    return {"damage":damage, "description":buildDescription(description)};
+    else
+        allDamage = damage;
+
+    return { "damage": allDamage, "description": buildDescription(description) };
 }

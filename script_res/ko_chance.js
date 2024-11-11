@@ -1,5 +1,5 @@
-function getKOChanceText(damage, move, defender, field, isBadDreams) {
-    if (isNaN(damage[0])) {
+function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
+    if (isNaN(damageIn[0]) && !Array.isArray(damageIn[0])) {
        return 'something broke; please tell nerd of now';
     }
     if (move.name == "Pain Split" && !move.painMax) {
@@ -8,7 +8,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     if (move.category == "Status" && ['Me First', '(No Move)'].indexOf(move.name) == -1) {
         return "It's a status move, it won't deal damage.";
     }
-    if (damage[damage.length-1] === 0) {
+    if (damageIn[damageIn.length-1] === 0) {
         if (field.weather === "Harsh Sun" && move.type === "Water") {
             return 'the Water-Type attack evaporated in the harsh sunlight';
         } else if (field.weather === "Heavy Rain" && move.type === "Fire") {
@@ -20,11 +20,20 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     var hasFigy = defender.item === 'Figy Berry' || defender.item === 'Aguav Berry' || defender.item === 'Iapapa Berry' || defender.item === 'Mago Berry' || defender.item === 'Wiki Berry';
     var gluttony = defender.ability === "Gluttony";
     var ripen = (defender.ability === "Ripen") ? 2 : 1;
-    if ((damage.length !== 256 || (!hasSitrus && !hasFigy)) && damage[0] >= defender.curHP) {
+    var figyDiv = gen <= 6 ? 8 : gen == 7 ? 2 : 3;
+    var multihit = move.hits > 1 || (damageIn.length > 1 && Array.isArray(damageIn[0]));
+
+    //convert each array to a dictionary here
+    var damage = damageArrToDict(damageIn, move.hits), damageNums = [];
+    for (eachVal in damage) {
+        damageNums.push(parseInt(eachVal));
+    }
+
+    if ((!multihit || (!hasSitrus && !hasFigy)) && damage[damageNums[0]] >= defender.curHP) {
         return 'guaranteed OHKO';
-    } else if (damage.length === 256 && hasSitrus && damage[0] >= defender.curHP + Math.floor(ripen * defender.maxHP / 4)) {
+    } else if (multihit && hasSitrus && damage[damageNums[0]] >= defender.curHP + Math.floor(ripen * defender.maxHP / 4)) {
         return 'guaranteed OHKO';
-    } else if (damage.length === 256 && hasFigy && damage[0] >= defender.curHP + Math.floor(ripen * defender.maxHP / 3)) {
+    } else if (multihit && hasFigy && damage[damageNums[0]] >= defender.curHP + Math.floor(ripen * defender.maxHP / figyDiv)) {
         return 'guaranteed OHKO';
     }
 
@@ -35,8 +44,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         hazards += Math.floor(effectiveness * defender.maxHP / 8);
         hazardText.push('Stealth Rock');
     }
-    if ([defender.type1, defender.type2].indexOf('Flying') === -1 &&
-        ['Magic Guard', 'Levitate'].indexOf(defender.ability) === -1 && ['Air Balloon', 'Heavy-Duty Boots'].indexOf(defender.item) === -1) {
+    if (pIsGrounded(defender, field) && defender.ability !== 'Magic Guard' && defender.item !== "Heavy-Duty Boots") {
         if (field.spikes === 1) {
             hazards += Math.floor(defender.maxHP / 8);
             if (gen === 2) {
@@ -108,8 +116,7 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         }
     }
     if (field.terrain === "Grassy") {
-        if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
-                defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
+        if (pIsGrounded(defender, field)) {
             eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Grassy Terrain recovery');
         }
@@ -166,27 +173,28 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         }
     }
 
-    // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
-    var qualifier = '';
-    if (move.hits > 1 && !move.isTripleHit) {
-        qualifier = 'approx. ';
-        damage = squashMultihit(damage, move.hits);
-    }
+    //// multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
+    //// ...is what would be the case if not for using dictionaries to simulate probability combinations
+    //var qualifier = '';
+    //if (move.hits > 1 && !move.isTripleHit) {
+    //    qualifier = 'approx. ';
+    //    damage = squashMultihit(damage, move.hits);
+    //}
 
-    var multihit = damage.length === 256 || move.hits > 1;
-    var c = getKOChance(damage, multihit, defender.curHP - hazards, 0, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, gluttony, ripen);
+    var c = getKOChance(damage, multihit, defender.curHP - hazards, 0, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
     var afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
-    if (c === 1) {
+    var percNumText = '';
+    if (c > 0.9999999999999) {
         return 'guaranteed OHKO' + afterText;
     }
     else if (c > 0 && eot >= 0) {
-        if (move.hits >= 8) {    //sv
-            if(c >= .9375)
-                return 'very high chance to OHKO' + afterText;                                  //sv
-            else if (c <= .0625)
-                return 'very low chance to OHKO' + afterText;                                   //sv
-        }
-        return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;
+        if (c < 0.0001)
+            percNumText = '<0.01';
+        else if (c > 0.9999)
+            percNumText = '>99.99';
+        else
+            percNumText = Math.round(c * 10000) / 100;
+        return percNumText + '% chance to OHKO' + afterText;
     }
 
     if (hasSitrus && move.name !== 'Knock Off') {
@@ -200,32 +208,40 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
         else eotText.push('pinch berry recovery');
     }
 
-    c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, gluttony, ripen);
+    c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
     afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
-    if (c === 1) {
+    if (c > 0.9999999999999) {
         return 'guaranteed OHKO' + afterText;
     } else if (c > 0) {
-        if (move.hits >= 8 && Math.round(c * 1000) / 10 > 93)    //sv    //This if statement isn't expected to happen, but is accounted for just in case
-            return 'very high chance to OHKO' + afterText;                                  //sv
-        return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;
+        if (c < 0.0001)
+            percNumText = '<0.01';
+        else if (c > 0.9999)
+            percNumText = '>99.99';
+        else
+            percNumText = Math.round(c * 10000) / 100;
+        return percNumText + '% chance to OHKO' + afterText;
     }
 
     var i;
     for (i = 2; i <= 4; i++) {
-        c = getKOChance(damage, multihit, defender.curHP - hazards, eot, i, defender.maxHP, toxicCounter, hasSitrus, hasFigy, gluttony, ripen);
-        if (c === 1) {
+        c = getKOChance(damage, multihit, defender.curHP - hazards, eot, i, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
+        if (c > 0.9999999999999) {
             return 'guaranteed ' + i + 'HKO' + afterText;
         } else if (c > 0) {
-            var pct = Math.round(c * 1000) / 10;
-            var chance = pct > 93 && move.hits >= 8 ? "very high" : pct ? qualifier + pct + '%' : 'Miniscule';  //sv
-            return chance + ' chance to ' + i + 'HKO' + afterText;
+            if (c < 0.0001)
+                percNumText = '<0.01';
+            else if (c > 0.9999)
+                percNumText = '>99.99';
+            else
+                percNumText = Math.round(c * 10000) / 100;
+            return percNumText + '% chance to ' + i + 'HKO' + afterText;
         }
     }
 
     for (i = 5; i <= 9; i++) {
-        if (predictTotal(damage[0], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, hasSitrus, hasFigy, gluttony, ripen) >= defender.curHP - hazards) {
+        if (predictTotal(damageNums[0], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, hasSitrus, hasFigy, figyDiv, gluttony, ripen) >= defender.curHP - hazards) {
             return 'guaranteed ' + i + 'HKO' + afterText;
-        } else if (predictTotal(damage[damage.length-1], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, hasSitrus, hasFigy, gluttony, ripen) >= defender.curHP - hazards) {
+        } else if (predictTotal(damageNums[damageNums.length-1], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, hasSitrus, hasFigy, figyDiv, gluttony, ripen) >= defender.curHP - hazards) {
             return 'possible ' + i + 'HKO' + afterText;
         }
     }
@@ -233,69 +249,146 @@ function getKOChanceText(damage, move, defender, field, isBadDreams) {
     return 'possibly the worst move ever';
 }
 
-function getKOChance(damage, multihit, hp, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, gluttony, ripen) {
-    var n = damage.length;
-    var minDamage = damage[0];
-    var maxDamage = damage[n-1];
-    var i;
+function damageArrToDict(damageArr, hits) {
+    var pivotSpread = {}, addedSpread = {}, tempSpread = {}, totalSpread = {};
+    var tempKey = 0, is2dArr = Array.isArray(damageArr[0]), damageArrL = damageArr.length;
+    var divisor = Math.pow(16, hits);
+    if (!is2dArr) {
+        pivotSpread = arrayToInstanceDict(damageArr);
+        addedSpread = pivotSpread;
+    }
+    else {
+        pivotSpread = arrayToInstanceDict(damageArr[1]);
+        addedSpread = arrayToInstanceDict(damageArr[0]);
+    }
+    for (var i = 0; i < hits - 1; i++) {
+        if (is2dArr && i != 0) {
+            //this if-else statement assumes that, if the number of 2D arrays is less than the number of hits, all of the remaining hits use the last array calculated
+            if (damageArrL - 1 >= i + 1)
+                pivotSpread = arrayToInstanceDict(damageArr[i + 1]);
+            else
+                pivotSpread = arrayToInstanceDict(damageArr[damageArrL - 1]);
+        }
+        for (pivotNum in pivotSpread) {
+            for (addedNum in addedSpread) {
+                tempKey = parseInt(pivotNum) + parseInt(addedNum);
+                if (tempKey in tempSpread)
+                    tempSpread[tempKey] = tempSpread[tempKey] + (pivotSpread[pivotNum] * addedSpread[addedNum]);
+                else
+                    tempSpread[tempKey] = pivotSpread[pivotNum] * addedSpread[addedNum];
+            }
+        }
+        addedSpread = sortByKeys(tempSpread);
+        tempSpread = {};
+    }
+    for (finalNum in addedSpread) {
+        totalSpread[finalNum] = addedSpread[finalNum] / divisor;
+    }
+    return totalSpread;
+}
+
+function arrayToInstanceDict(arr) {
+    var returnArr = {};
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] in returnArr)
+            returnArr[arr[i]] = returnArr[arr[i]] + 1;
+        else
+            returnArr[arr[i]] = 1;
+    }
+    return returnArr;
+}
+
+function sortByKeys(dict) {
+    var sorted = [], tempDict = {};
+
+    for (key in dict)
+        sorted[sorted.length] = key;
+    sorted.sort(numericSort);
+
+    for (var i = 0; i < sorted.length; i++)
+        tempDict[sorted[i]] = dict[sorted[i]];
+
+    return tempDict;
+}
+
+//Note: hits !== move.hits, hits refers to the number of times an attack is used in a row
+function getKOChance(damage, multihit, hp, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen) {
+    var damageKeys = Object.keys(damage);
+    var minDamage = parseInt(damageKeys[0]);
+    var maxDamage = parseInt(damageKeys[damageKeys.length - 1]);
     if (hits === 1) {
         if ((!multihit || !hasSitrus) && maxDamage < hp) {
             return 0;
         } else if (multihit && hasSitrus && maxDamage < hp + Math.floor(ripen * maxHP / 4)) {
             return 0;
-        } else if (multihit && hasFigy && maxDamage < hp + Math.floor(ripen * maxHP / 3)) {
+        } else if (multihit && hasFigy && maxDamage < hp + Math.floor(ripen * maxHP / figyDiv)) {
             return 0;
         }
-        for (i = 0; i < n; i++) {
-            if ((!multihit || (!hasSitrus && !hasFigy)) && damage[i] >= hp) {
-                return (n-i)/n;
-            } else if (multihit && hasSitrus && damage[i] >= hp + Math.floor(ripen * maxHP / 4)) {
-                return (n-i)/n;
-            } else if (multihit && hasFigy && damage[i] >= hp + Math.floor(ripen * maxHP / 3)) {
-                return (n-i)/n;
+
+        var returnChance = 1;
+        for (damageNum in damage) {
+            damageNum = parseInt(damageNum);
+            if ((!multihit || (!hasSitrus && !hasFigy)) && damageNum >= hp) {
+                return returnChance;
+            } else if (multihit && hasSitrus && damageNum >= hp + Math.floor(ripen * maxHP / 4)) {
+                return returnChance;
+            } else if (multihit && hasFigy && damageNum >= hp + Math.floor(ripen * maxHP / figyDiv)) {
+                return returnChance;
             }
+            returnChance -= damage[damageNum];
         }
     }
-    /*
-    if (predictTotal(maxDamage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, hasFigy, gluttony) < hp) {
-        return 0;
-    } else if (predictTotal(minDamage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, hasFigy, gluttony) >= hp) {
-        return 1;
-    }*/
-    var toxicDamage = 0;
-    if (toxicCounter > 0) {
-        toxicDamage = Math.floor(toxicCounter * maxHP / 16);
-        toxicCounter++;
-    }
-    var sum = 0;
-    var lastC = 0;
-    for (i = 0; i < n; i++) {
-        if ((hp - damage[i] <= maxHP / 2) && hasSitrus) {
-            hp += Math.floor(ripen * maxHP / 4);
-            hasSitrus = false;
-        }
-        else if (((hp - damage[i] <= maxHP / 4) && hasFigy && !gluttony) || ((hp - damage[i] <= maxHP / 2) && hasFigy && gluttony)) {
-            hp += Math.floor(ripen * maxHP / 3);
-            hasFigy = false;
-        }
-        var c;
-        if (i === 0 || damage[i] !== damage[i-1]) {
-            c = getKOChance(damage, multihit, hp - damage[i] + eot - toxicDamage, eot, hits - 1, maxHP, toxicCounter, hasSitrus, hasFigy, gluttony, ripen);
-        } else {
-            c = lastC;
-        }
-        if (c === 1) {
-            sum += (n-i);
-            break;
-        } else {
-            sum += c;
-        }
-        lastC = c;
-    }
-    return sum/n;
+    var sum = verifyKOChance(damage, hp, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
+    return sum;
 }
 
-function predictTotal(damage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, hasFigy, gluttony, ripen) {
+function verifyKOChance(damage, targetHP, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen) {
+    var pivotSpread = {}, addedSpread = {}, tempSpread = {}, totalSpread = {};
+    var tempKey = 0, finalNum = 0;
+    pivotSpread = damage;
+    addedSpread = pivotSpread;
+    toxicCounter++;
+    for (var i = 0; i < hits - 1; i++) {
+        for (pivotNum in pivotSpread) {
+            for (addedNum in addedSpread) {
+                tempKey = parseInt(pivotNum) + parseInt(addedNum) - eot;
+                if (toxicCounter > 1) {
+                    tempKey += Math.floor(toxicCounter * maxHP / 16);
+                    if (i == 0)
+                        tempKey += Math.floor((toxicCounter - 1) * maxHP / 16);
+                    toxicCounter++;
+                }
+
+                if (tempKey in tempSpread)
+                    tempSpread[tempKey] = tempSpread[tempKey] + (pivotSpread[pivotNum] * addedSpread[addedNum]);
+                else
+                    tempSpread[tempKey] = pivotSpread[pivotNum] * addedSpread[addedNum];
+            }
+        }
+        addedSpread = sortByKeys(tempSpread);
+        tempSpread = {};
+    }
+    for (spreadNum in addedSpread) {
+        finalNum = parseInt(spreadNum);
+        if (hits > 1) {
+            if (hasSitrus && (finalNum <= maxHP / 2)) {
+                finalNum -= Math.floor(ripen * maxHP / 4);
+            }
+            else if (hasFigy && (finalNum <= maxHP / (gen >= 7 && !gluttony ? 4 : 2))) {
+                finalNum -= Math.floor(ripen * maxHP / figyDiv);
+            }
+        }
+        totalSpread[finalNum] = addedSpread[spreadNum];
+    }
+    var sum = 0;
+    for (finalNum in totalSpread) {
+        if (finalNum >= targetHP)
+            sum += totalSpread[finalNum];
+    }
+    return sum;
+}
+
+function predictTotal(damage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, hasFigy, figyDiv, gluttony, ripen) {
     var total = 0;
     for (var i = 0; i < hits; i++) {
         total += damage;
@@ -303,8 +396,8 @@ function predictTotal(damage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, has
             total -= Math.floor(ripen * maxHP / 4);
             hasSitrus = false;
         }
-        else if (((hp - total <= maxHP / 4) && hasFigy && !gluttony) || ((hp - total <= maxHP / 2) && hasFigy && gluttony)) {
-            hp += Math.floor(ripen * maxHP / 3);
+        else if ((hp - total <= maxHP / (gen >= 7 && !gluttony ? 4 : 2)) && hasFigy) {
+            hp += Math.floor(ripen * maxHP / figyDiv);
             hasFigy = false;
         }
         if (i < hits - 1) {
@@ -317,6 +410,28 @@ function predictTotal(damage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, has
     return total;
 }
 
+function serializeText(arr) {
+    if (arr.length === 0) {
+        return '';
+    }
+    else if (arr.length === 1) {
+        return arr[0];
+    }
+    else if (arr.length === 2) {
+        return arr[0] + " and " + arr[1];
+    }
+    else {
+        var text = '';
+        for (var i = 0; i < arr.length - 1; i++) {
+            text += arr[i] + ', ';
+        }
+        return text + 'and ' + arr[arr.length - 1];
+    }
+}
+
+
+
+//squashMultihit should be obsolete, but the code will stay in case something goes wrong with the new implementation and it needs to have something to fall back on
 function squashMultihit(d, hits) {
     if (d.length === 1) {
         return [d[0] * hits];
@@ -432,21 +547,5 @@ function squashMultihit(d, hits) {
     } else {
         console.log("Unexpected # of possible damage values: " + d.length);
         return d;
-    }
-}
-
-function serializeText(arr) {
-    if (arr.length === 0) {
-        return '';
-    } else if (arr.length === 1) {
-        return arr[0];
-    } else if (arr.length === 2) {
-        return arr[0] + " and " + arr[1];
-    } else {
-        var text = '';
-        for (var i = 0; i < arr.length-1; i++) {
-            text += arr[i] + ', ';
-        }
-        return text + 'and ' + arr[arr.length-1];
     }
 }

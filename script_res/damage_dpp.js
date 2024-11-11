@@ -70,7 +70,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     setDamageBuildDesc = setDamage(move, attacker, defender, description, false, field);
     if (setDamageBuildDesc !== -1) return setDamageBuildDesc;
     
-    if (move.hits > 1) {
+    if (move.hitRange) {
         description.hits = move.hits;
     }
     var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";
@@ -402,22 +402,7 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
 }
 
 function calcFinalDamageGen4(baseDamage, attacker, defender, field, move, description, stabMod, typeEffect1, typeEffect2, filterMod, ebeltMod, tintedMod, berryMod) {
-    var damage = [];
-    var j, childDamage, childMove, child2Damage, tripleDamage = [];
-    if (typeof (move.tripleHit2) === 'undefined' && move.isTripleHit) {
-        if (move.tripleHits > 1) {
-            childMove = move;
-            childMove.tripleHit2 = true;
-            childDamage = GET_DAMAGE_HANDLER(attacker, defender, childMove, field).damage;
-            if (move.tripleHits > 2) {
-                childMove.tripleHit3 = true;
-                child2Damage = GET_DAMAGE_HANDLER(attacker, defender, childMove, field).damage;
-                childMove.tripleHit3 = false;
-            }
-            childMove.tripleHit2 = false;
-        }
-        description.hits = move.tripleHits;
-    }
+    var damage = [], additionalDamage = [], allDamage = [];
 
     for (var i = 0; i < 16; i++) {
         damage[i] = Math.floor(baseDamage * (85 + i) / 100);
@@ -429,30 +414,23 @@ function calcFinalDamageGen4(baseDamage, attacker, defender, field, move, descri
         damage[i] = Math.floor(damage[i] * tintedMod);
         damage[i] = Math.floor(damage[i] * berryMod);
         damage[i] = Math.max(1, damage[i]);
-        //Triple Kick second/third hit logic
-        if (typeof (move.tripleHit2) !== 'undefined' && move.tripleHit2 === false && move.isTripleHit) {
-            for (j = 0; j < 16; j++) {
-                if (typeof (move.tripleHit3) !== 'undefined' && move.tripleHit3 === false) {
-                    for (k = 0; k < 16; k++) {
-                        tripleDamage[(16 * i) + (16 * j) + k] = damage[i] + childDamage[j] + child2Damage[k];
-                    }
-                }
-                else {
-                    tripleDamage[(16 * i) + j] = damage[i] + childDamage[j];
-                }
+    }
+
+    if (!move.isNextMove) {
+        if (checkAddCalcQualifications(attacker, defender, move, field)) {
+            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
+            allDamage[0] = damage;
+        }
+        else
+            allDamage = damage;
+        if (additionalDamage.length) {
+            for (var i = 0; i < additionalDamage.length; i++) {
+                allDamage[i + 1] = additionalDamage[i];
             }
         }
     }
+    else
+        allDamage = damage;
 
-    if (tripleDamage.length) {
-        return {
-            "damage": tripleDamage.sort(numericSort),
-            "parentDamage": damage,
-            "childDamage": childDamage,
-            "child2Damage": move.tripleHits > 2 ? child2Damage : -1,
-            "description": buildDescription(description)
-        };
-    }
-
-    return { "damage": damage, "description": buildDescription(description) };
+    return { "damage": allDamage, "description": buildDescription(description) };
 }

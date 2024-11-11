@@ -129,7 +129,7 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     setDamageBuildDesc = setDamage(move, attacker, defender, description, isQuarteredByProtect, field);
     if (setDamageBuildDesc !== -1) return setDamageBuildDesc;
 
-    if (move.hits > 1) {
+    if (move.hitRange) {
         description.hits = move.hits;
     }
     var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";

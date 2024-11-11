@@ -1075,6 +1075,32 @@ for (var i = 0; i < 4; i++) {
     });
 }
 
+function calcMinMaxDamage(damage, hits) {
+    var minDamage = 0, maxDamage = 0;
+    if (damage[0].length) {
+        for (var i = 0; i < hits; i++) {
+            if (i < damage.length) {
+                minDamage += damage[i][0];
+                maxDamage += damage[i][damage[i].length - 1];
+            }
+            else {
+                minDamage += damage[damage.length - 1][0];
+                maxDamage += damage[damage.length - 1][damage[damage.length - 1].length - 1];
+            }
+        }
+    }
+    else if (hits > 1) {
+        minDamage = damage[0] * hits;
+        maxDamage = damage[damage.length - 1] * hits;
+    }
+    else {
+        minDamage = damage[0];
+        maxDamage = damage[damage.length - 1];
+    }
+    
+    return [minDamage, maxDamage];
+}
+
 var damageResults;
 function calculate() {
     var p1 = new Pokemon($("#p1"));
@@ -1087,14 +1113,17 @@ function calculate() {
     for (var i = 0; i < 4; i++) {
         p1.moves[i].painMax = (p1.moves[i].name === "Pain Split" && p1.isDynamax);
         result = damageResults[0][i];
-        minDamage = result.damage[0] * p1.moves[i].hits;
-        maxDamage = result.damage[result.damage.length-1] * p1.moves[i].hits;
+        [minDamage, maxDamage] = calcMinMaxDamage(result.damage, p1.moves[i].hits);
         minPercent = Math.floor(minDamage * 1000 / p2.maxHP) / 10;
         maxPercent = Math.floor(maxDamage * 1000 / p2.maxHP) / 10;
-        result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
+        if (minPercent != maxPercent)
+            result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
+        else
+            result.damageText = minDamage + " (" + maxPercent + "%)";
         result.koChanceText = p1.moves[i].bp === 0 && p1.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                   : getKOChanceText(result.damage, p1.moves[i], p2, field.getSide(1), p1.ability === 'Bad Dreams');
-        result.crit = p1.moves[i].isCrit
+        //result.crit = p1.moves[i].isCrit
+        result.hits = p1.moves[i].hits;
         if(p1.moves[i].isMLG && !($("#p1").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p1").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>"; //dank memes
         }
@@ -1107,14 +1136,14 @@ function calculate() {
 
         p2.moves[i].painMax = (p2.moves[i].name === "Pain Split" && p2.isDynamax);
         result = damageResults[1][i];
-        minDamage = result.damage[0] * p2.moves[i].hits;
-        maxDamage = result.damage[result.damage.length-1] * p2.moves[i].hits;
+        [minDamage, maxDamage] = calcMinMaxDamage(result.damage, p2.moves[i].hits);
         minPercent = Math.floor(minDamage * 1000 / p1.maxHP) / 10;
         maxPercent = Math.floor(maxDamage * 1000 / p1.maxHP) / 10;
         result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
         result.koChanceText = p2.moves[i].bp === 0 && p2.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
                 : getKOChanceText(result.damage, p2.moves[i], p1, field.getSide(0), p2.ability === 'Bad Dreams');
-        result.crit = p2.moves[i].isCrit
+        //result.crit = p2.moves[i].isCrit
+        result.hits = p2.moves[i].hits;
         if (p2.moves[i].isMLG && !($("#p2").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p2").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>";
         }
@@ -1130,7 +1159,7 @@ function calculate() {
     } else {
         stickyMoves.setSelectedMove(bestResult.prop("id"));
     }
-    temp_crit = bestResult.crit;
+    //temp_crit = bestResult.crit;
     bestResult.prop("checked", true);
     bestResult.change();
     $("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
@@ -1142,16 +1171,26 @@ $(".result-move").change(function() {
         var result = findDamageResult($(this));
         if (result) {
             $("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
-            if (result.parentDamage) {
-                if (result.child2Damage && result.child2Damage !== -1) {
-                    $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
-                        "; Second hit: " + result.childDamage.join(", ") +
-                        "; Third hit: " + result.child2Damage.join(", ") + ")");
+            if (result.damage.length > 1 && Array.isArray(result.damage[0])) {
+                var damageValText = '(', placeText = '';
+                for (var i = 0; i < result.damage.length; i++) {
+                    switch (i) {
+                        case 0:
+                            placeText = 'st';
+                            break;
+                        case 1:
+                            placeText = 'nd';
+                            break;
+                        case 2:
+                            placeText = 'rd';
+                            break;
+                        default:
+                            placeText = 'th';
+                    }
+                    isLastDmg = i == result.damage.length - 1;
+                    damageValText += (i + 1) + placeText + ' hit' + (isLastDmg && result.damage.length < result.hits ? ' onwards' : '') + ': ' + result.damage[i].join(', ') + (isLastDmg ? ')' : '; ');
                 }
-                else {
-                    $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
-                        "; Second hit: " + result.childDamage.join(", ") + ")");
-                }
+                $("#damageValues").text(damageValText);
             }
             else {
                 $("#damageValues").text("(" + result.damage.join(", ") + ")");
@@ -1333,11 +1372,10 @@ function getMoveDetails(moveInfo, maxMon) {
         category: moveInfo.find(".move-cat").val(),
         isCrit: moveInfo.find(".move-crit").prop("checked"),
         isZ: moveInfo.find(".move-z").prop("checked"),
-        hits: (defaultDetails.hitRange && !defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon)
+        hits: (defaultDetails.hitRange && !moveInfo.find(".move-z").prop("checked") && !maxMon)
             ? (defaultDetails.hitRange.length == 2 ? ~~moveInfo.find(".move-hits").val() : defaultDetails.hitRange)
             : 1,
         isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon && moveInfo.find(".move-double").prop("checked")) ? 1 : 0,
-        tripleHits: (defaultDetails.isTripleHit && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-hits").val() : 0,
         combinePledge: (defaultDetails.isPledge && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
         timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
         usedOppMove: moveInfo.find(".move-opponent option:selected").text(),
