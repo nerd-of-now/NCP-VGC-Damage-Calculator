@@ -8200,7 +8200,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Sneasler": {
-        "Tera Flying Unburden Acrobatics": {
+        "Tera Dark Unburden Dark Move": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8211,13 +8211,13 @@ var SETDEX_GEN9 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "tera_type": "Flying",
+            "tera_type": "Dark",
             "item": "Psychic Seed",
             "moves": [
                 "Dire Claw",
                 "Close Combat",
-                "Acrobatics",
-                "Fake Out"
+                "Throat Chop",
+                "Lash Out"
             ]
         },
         "Tera Stellar Sash": {
@@ -8291,7 +8291,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Charizard": {
-        "Life Orb Sun Set": {
+        "Choice Specs Sun Set": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8311,7 +8311,7 @@ var SETDEX_GEN9 = {
                 "Heat Wave",
                 "Overheat",
                 "Air Slash",
-                "Solar Beam"
+                "Weather Ball"
             ]
         },
     },
@@ -8636,6 +8636,26 @@ var SETDEX_GEN9 = {
         },
     },
     "Samurott-Hisui": {
+        "Tera Ghost AV": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 172,
+                "df": 12,
+                "sa": 0,
+                "sd": 4,
+                "sp": 84
+            },
+            "nature": "Adamant",
+            "ability": "Sharpness",
+            "item": "Assault Vest",
+            "moves": [
+                "Knock Off",
+                "Aqua Cutter",
+                "Sacred Sword",
+                "Sucker Punch"
+            ]
+        },
         "Bulky Sitrus Attacker": {
             "level": 50,
             "evs": {
@@ -10314,31 +10334,28 @@ var SETDEX_GEN9 = {
     //        ]
     //    },
     //},
-    //"Gliscor": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Gliscor": {
+        "Tera Water Poison Heal": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "tera_type": "Water",
+            "item": "Poison Heal",
+            "moves": [
+                "High Horsepower",
+                "Dual Wingbeat",
+                "Facade",
+                "Earthquake"
+            ]
+        },
+    },
     //"Mandibuzz": {
     //    "": {
     //        "level": 50,
@@ -12565,7 +12582,7 @@ var SETDEX_GEN9 = {
                 "sp": 252
             },
             "nature": "Adamant",
-            "tera_type": "Steel",
+            "tera_type": "Ghost",
             "ability": "Speed Boost",
             "item": "Clear Amulet",
             "moves": [
