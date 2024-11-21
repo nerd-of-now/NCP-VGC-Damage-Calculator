@@ -184,7 +184,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     var c = getKOChance(damage, multihit, defender.curHP - hazards, 0, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
     var afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
     var percNumText = '';
-    if (c > 0.9999999999999) {
+    if (c === 1) {
         return 'guaranteed OHKO' + afterText;
     }
     else if (c > 0 && eot >= 0) {
@@ -210,7 +210,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
 
     c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
     afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
-    if (c > 0.9999999999999) {
+    if (c === 1) {
         return 'guaranteed OHKO' + afterText;
     } else if (c > 0) {
         if (c < 0.0001)
@@ -225,7 +225,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     var i;
     for (i = 2; i <= 4; i++) {
         c = getKOChance(damage, multihit, defender.curHP - hazards, eot, i, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
-        if (c > 0.9999999999999) {
+        if (c === 1) {
             return 'guaranteed ' + i + 'HKO' + afterText;
         } else if (c > 0) {
             if (c < 0.0001)
@@ -380,12 +380,15 @@ function verifyKOChance(damage, targetHP, eot, hits, maxHP, toxicCounter, hasSit
         }
         totalSpread[finalNum] = addedSpread[spreadNum];
     }
-    var sum = 0;
+    var returnSum = 0, probabilitySum = 0;
     for (finalNum in totalSpread) {
         if (finalNum >= targetHP)
-            sum += totalSpread[finalNum];
+            returnSum += totalSpread[finalNum];
+        probabilitySum += totalSpread[finalNum];
     }
-    return sum;
+    if (returnSum === probabilitySum)
+        returnSum = 1;
+    return returnSum;
 }
 
 function predictTotal(damage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, hasFigy, figyDiv, gluttony, ripen) {
