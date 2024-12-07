@@ -2162,9 +2162,9 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
 //-Cotton Down (any move decreases attacker's Speed, only relevant for Defiant)
 //-Sand Spit (sets sandstorm after the first hit, only relevant for a Rock-type defender)
 //-Luminous Moss (first hit of a Water attack increases Special Defense by +1, only relevant for Water Shuriken)
-//Current focus is just the first two cases
+//Current implementation is just the first three cases
 function checkAddCalcQualifications(attacker, defender, move, field) {
-    return (move.isTripleHit && move.hits > 1)
+    return ((move.isTripleHit || (['Multiscale', 'Shadow Shield'].indexOf(defender.ability) !== -1 && defender.curHP === defender.maxHP)) && move.hits > 1)
         || (attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread));
 }
 
@@ -2172,6 +2172,12 @@ function checkAddCalcQualifications(attacker, defender, move, field) {
 function additionalDamageCalcs(attacker, defender, move, field, description) {
     var nextAttacker = attacker, nextDefender = defender, nextMove, nextField = field;
     var allAdditionalDamages = [];
+    var uniqueHits = 1;
+    if (['Multiscale', 'Shadow Shield'].indexOf(defender.ability) !== -1 && defender.curHP === defender.maxHP && move.hits > 1) {
+        nextDefender = JSON.parse(JSON.stringify(defender));
+        nextDefender.ability = '';
+        uniqueHits = 2;
+    }
     if (attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread)) {
         nextAttacker = JSON.parse(JSON.stringify(attacker));
         nextAttacker.ability = '';
@@ -2187,9 +2193,13 @@ function additionalDamageCalcs(attacker, defender, move, field, description) {
         }
         description.attackerAbility = attacker.ability;
         move.hits = 2;  //this persists for properly displaying .result-move and for calculations with function getKOChanceText()
+        uniqueHits = 2;
         description.hits = move.hits;
     }
-    for (var i = 0; i < move.hits - 1; i++) {
+    else if (move.isTripleHit) {
+        uniqueHits = move.hits;
+    }
+    for (var i = 0; i < uniqueHits - 1; i++) {
         nextMove = JSON.parse(JSON.stringify(move));
         nextMove.isNextMove = true;
         if (move.isTripleHit) {
