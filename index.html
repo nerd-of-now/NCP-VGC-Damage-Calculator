@@ -167,6 +167,10 @@
                         <div class="sidebarAdd" id="sbL">
                             <button class="addsc" id="addL" type="button" onclick="addSidebarSlot(1)" title="Add the current Pokémon to the sidebar.">+</button>
                         </div>
+                        <div class="sidebarExportDelete hide" id="edL">
+                            <button class="halfsc" id="exportL" type="button" onclick="exportSidebarTeam(1)" title="Export all Pokémon sets on the sidebar.">Export Team</button>
+                            <button class="halfsc" id="deleteL" type="button" onclick="clearSidebar(1)" title="Remove all Pokémon sets on the sidebar."><img width="10" height="10" src="image_res/scorch.png" /></button>
+                        </div>
                     </div>
                     <div class="info-group">
                         <table>
@@ -612,6 +616,10 @@
                         </div>
                         <div class="sidebarAdd" id="sbR">
                             <button class="addsc" id="addR" type="button" onclick="addSidebarSlot(2)" title="Add the current Pokémon to the sidebar.">+</button>
+                        </div>
+                        <div class="sidebarExportDelete hide" id="edR">
+                            <button class="halfsc" id="exportR" type="button" onclick="exportSidebarTeam(2)" title="Export all Pokémon sets on the sidebar.">Export Team</button>
+                            <button class="halfsc" id="deleteR" type="button" onclick="clearSidebar(2)" title="Remove all Pokémon sets on the sidebar."><img width="10" height="10" src="image_res/scorch.png" /></button>
                         </div>
                     </div>
                     <div class="info-group">

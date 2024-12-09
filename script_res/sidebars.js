@@ -13,14 +13,13 @@ function addSidebarSlot(pnum) {
     var teamnum = CURRENT_SIDEBARS[pnum - 1].length;
     var spreadName = side + ' Sidebar Slot ' + teamnum;
     //save custom set to calc
-    savecalc(new Pokemon($('#p' + pnum)), spreadName, $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"));
+    savecalc(new Pokemon($('#p' + pnum)), spreadName, '#p' + pnum);
     side = pnum == 1 ? 'l' : pnum == 2 ? 'r' : '';
     var pID = '#pkmn' + side.toUpperCase() + teamnum;
     $(pID).prop('title', displayName);
     getSidebarImg(pID + 'I', displayName);
     $('#' + side + teamnum).show();
-    if (teamnum == 6)
-        $('#sb' + side.toUpperCase()).hide();
+    checkVisibleButtons(pnum);
 }
 
 function editSidebarSlot(pnum, teamnum) {
@@ -31,7 +30,7 @@ function editSidebarSlot(pnum, teamnum) {
     deleteSet(CURRENT_SIDEBARS[pnum - 1][teamnum - 1], spreadName);
     CURRENT_SIDEBARS[pnum - 1][teamnum - 1] = displayName;
     localStorage['g' + gen + '_sidebars'] = JSON.stringify(CURRENT_SIDEBARS);
-    savecalc(new Pokemon($('#p' + pnum)), spreadName, $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"));
+    savecalc(new Pokemon($('#p' + pnum)), spreadName, '#p' + pnum);
     var pID = '#pkmn' + (pnum == 1 ? 'L' : pnum == 2 ? 'R' : '') + teamnum;
     $(pID).prop('title', displayName);
     getSidebarImg(pID + 'I', displayName);
@@ -41,13 +40,12 @@ function removeSidebarSlot(pnum, teamnum) {
     var monName = CURRENT_SIDEBARS[pnum - 1][teamnum - 1];
     var side = pnum == 1 ? 'Left' : pnum == 2 ? 'Right' : '';
     var spreadName = side + ' Sidebar Slot ' + teamnum;
-    if (CURRENT_SIDEBARS[pnum - 1].length == 6)
-        $('#sb' + (pnum == 1 ? 'L' : pnum == 2 ? 'R' : '')).show();
     CURRENT_SIDEBARS[pnum - 1].splice(teamnum - 1, 1);
     localStorage['g' + gen + '_sidebars'] = JSON.stringify(CURRENT_SIDEBARS);
     $('#' + (pnum == 1 ? 'l' : pnum == 2 ? 'r' : '') + (CURRENT_SIDEBARS[pnum - 1].length + 1)).hide();
     deleteSet(monName, spreadName);
     shiftSidebar(pnum);
+    checkVisibleButtons(pnum);
     reloadSidebar(pnum);
 }
 
@@ -71,8 +69,7 @@ function loadSidebar() {
             else
                 $('#' + side + (j + 1)).hide();
         }
-        if (CURRENT_SIDEBARS[i].length == 6)
-            $('#sb' + side.toUpperCase()).hide();
+        checkVisibleButtons(i + 1);
     }
 }
 
@@ -149,6 +146,35 @@ function removeSidebarTeam(pnum) {
     }
 }
 
-//function importSidebarTeam(pnum) {
-//    teamNames = pnum == 1 ? LEFT_SIDEBAR_NAMES : pnum == 2 ? RIGHT_SIDEBAR_NAMES : [];
-//}
+function exportSidebarTeam(pnum) {
+    var monName = '', setdexName = '', tempSet;
+    var teamExportText = '';
+    for (var i = 0; i < CURRENT_SIDEBARS[pnum - 1].length; i++) {
+        monName = CURRENT_SIDEBARS[pnum - 1][i];
+        setdexName = pnum == 1 ? LEFT_SIDEBAR_NAMES[i] : RIGHT_SIDEBAR_NAMES[i];
+        tempSet = setdex[monName][setdexName];
+        tempSet.name = monName;
+        teamExportText += exportset(tempSet) + (i != CURRENT_SIDEBARS[pnum - 1].length - 1 ? "\n\n" : "");
+    }
+    Clipboard_CopyTo(teamExportText);
+}
+
+function clearSidebar(pnum) {
+    if (confirm("Delete the " + (pnum == 1 ? "left" : pnum == 2 ? "right" : "ERROR") + " team?"))
+        removeSidebarTeam(pnum);
+}
+
+function checkVisibleButtons(pnum) {
+    var side = pnum == 1 ? 'L' : pnum == 2 ? 'R' : '';
+    var teamnum = CURRENT_SIDEBARS[pnum - 1].length;
+
+    if (teamnum == 6)
+        $('#sb' + side).hide();
+    else
+        $('#sb' + side).show();
+
+    if (teamnum == 0)
+        $('#ed' + side).hide();
+    else
+        $('#ed' + side).show();
+}

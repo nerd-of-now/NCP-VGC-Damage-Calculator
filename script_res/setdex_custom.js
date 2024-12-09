@@ -80,8 +80,10 @@ for (var i = 1; i <= 9; i++) {
 }
 
 var deletecustom = function () {
-    if (confirm("Warning: ALL custom sets from this generation will be deleted. This cannot be undone. Proceed?")) {
+    if (confirm("Warning: ALL custom sets from this generation will be deleted, including sidebar teams. This cannot be undone. Proceed?")) {
         gen = parseInt($('input[name="gen"]:checked').val());
+        removeSidebarTeam(1);
+        removeSidebarTeam(2);
         localStorage.removeItem("custom_gen_" + gen);
         ALL_SETDEX_CUSTOM[gen] = {};
         loadSetdexScript();
@@ -344,8 +346,7 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
             loadSetdexScript();
         if (sidebarUsed) {
             reloadSidebar(sidebarUsed);
-            if (CURRENT_SIDEBARS[sidebarUsed - 1].length == 6)
-                $('#sb' + (sidebarUsed == 1 ? 'L' : 'R')).hide();
+            checkVisibleButtons(sidebarUsed);
         }
         alert("Set(s) saved.");
     }
@@ -365,7 +366,7 @@ function saveCustomSidebar(pnum) {
 
 
 //Saves a custom set from within the calc
-var savecalc = function (set, spreadName, accessIVs, p) {
+var savecalc = function (set, spreadName, p) {
     var moves = [];
     species = set.name;
 
@@ -408,12 +409,12 @@ var savecalc = function (set, spreadName, accessIVs, p) {
             "sp": set.evs[STATS[4]],
         },
         "ivs": {
-            "hp": parseInt(accessIVs.find(".hp .ivs").val()),
-            "at": parseInt(accessIVs.find(".at .ivs").val()),
-            "df": parseInt(accessIVs.find(".df .ivs").val()),
-            "sa": parseInt(accessIVs.find(".sa .ivs").val()),
-            "sd": parseInt(accessIVs.find(".sd .ivs").val()),
-            "sp": parseInt(accessIVs.find(".sp .ivs").val()),
+            "hp": set.HPIVs,
+            "at": set.ivs[STATS[0]],
+            "df": set.ivs[STATS[1]],
+            "sa": set.ivs[STATS[2]],
+            "sd": set.ivs[STATS[3]],
+            "sp": set.ivs[STATS[4]],
         },
         "nature": set.nature,
         "ability": set.ability,
@@ -440,7 +441,7 @@ function runSaveCalc(pnum) {
         || (RIGHT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[1].length <= parseInt(setName.slice(-1))*/))
         alert("Set name matches naming convention for sidebars. Please use the sidebar buttons to add, save, and delete.");
     else
-        savecalc(monSet, document.getElementById('setName' + pnum).value, $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"), "#p" + pnum);
+        savecalc(monSet, document.getElementById('setName' + pnum).value, "#p" + pnum);
 }
 
 //Looked this up online, copies to clipboard without any input
@@ -454,7 +455,7 @@ function Clipboard_CopyTo(value) {
 }
 
 //Exports sets by copying them to clipboard. Might adjust later depending on how successful it is
-var exportset = function (set, accessIVs) {
+var exportset = function (set) {
     /* Formatting Example:
      *Rillaboom-Gmax @ Assault Vest
      *Ability: Grassy Surge
@@ -497,11 +498,14 @@ var exportset = function (set, accessIVs) {
     //    set.evs[STATS[3]].toString() + " SpD / " +
     //    set.evs[STATS[4]].toString() + " Spe ";
 
+    var HPEVs = set.HPEVs != undefined ? set.HPEVs : set.evs["hp"] != undefined ? set.evs["hp"] : -1;
+    var HPIVs = set.HPIVs != undefined ? set.HPIVs : set.ivs["hp"] != undefined ? set.ivs["hp"] : -1;
+
     exEVs = "";
     hasEVs = false;
-    if (set.HPEVs) {
+    if (HPEVs) {
         hasEVs = true;
-        exEVs = exEVs + set.HPEVs.toString() + " HP ";
+        exEVs = exEVs + HPEVs.toString() + " HP ";
     }
     if (set.evs[STATS[0]]) {
         if (hasEVs)
@@ -549,47 +553,47 @@ var exportset = function (set, accessIVs) {
 
     exIVs = "";
     hasIVs = false;
-    if (accessIVs.find(".hp .ivs").val() != 31) {
+    if (HPIVs != 31) {
         hasIVs = true;
-        exIVs = exIVs + accessIVs.find(".hp .ivs").val().toString() + " HP ";
+        exIVs = exIVs + HPIVs.toString() + " HP ";
     }
-    if (accessIVs.find(".at .ivs").val() != 31) {
+    if (set.ivs[STATS[0]] != 31) {
         if (hasIVs)
             exIVs = exIVs + "/ ";
-        exIVs = exIVs + accessIVs.find(".at .ivs").val().toString() + " Atk ";
+        exIVs = exIVs + set.ivs[STATS[0]].toString() + " Atk ";
         hasIVs = true;
     }
-    if (accessIVs.find(".df .ivs").val() != 31) {
+    if (set.ivs[STATS[1]] != 31) {
         if (hasIVs)
             exIVs = exIVs + "/ ";
-        exIVs = exIVs + accessIVs.find(".df .ivs").val().toString() + " Def ";
+        exIVs = exIVs + set.ivs[STATS[1]].toString() + " Def ";
         hasIVs = true;
     }
-    if (accessIVs.find(".sa .ivs").val() != 31) {
+    if (set.ivs[STATS[2]] != 31) {
         if (hasIVs)
             exIVs = exIVs + "/ ";
-        exIVs = exIVs + accessIVs.find(".sa .ivs").val().toString() + " SpA ";
+        exIVs = exIVs + set.ivs[STATS[2]].toString() + " SpA ";
         hasIVs = true;
     }
-    if (accessIVs.find(".sd .ivs").val() != 31) {
+    if (set.ivs[STATS[3]] != 31) {
         if (hasIVs)
             exIVs = exIVs + "/ ";
-        exIVs = exIVs + accessIVs.find(".sd .ivs").val().toString() + " SpD ";
+        exIVs = exIVs + set.ivs[STATS[3]].toString() + " SpD ";
         hasIVs = true;
     }
-    if (accessIVs.find(".sp .ivs").val() != 31) {
+    if (set.ivs[STATS[4]] != 31) {
         if (hasIVs)
             exIVs = exIVs + "/ ";
-        exIVs = exIVs + accessIVs.find(".sp .ivs").val().toString() + " Spe ";
+        exIVs = exIVs + set.ivs[STATS[4]].toString() + " Spe ";
         hasIVs = true;
     }
     if (hasIVs) {
         exIVs = "IVs: " + exIVs + "\n";
     }
-    exMoves = ["- " + set.moves[0].name,
-        "- " + set.moves[1].name,
-        "- " + set.moves[2].name,
-        "- " + set.moves[3].name,];
+    exMoves = ["- " + (set.moves[0].name ? set.moves[0].name : set.moves[0]),
+        "- " + (set.moves[1].name ? set.moves[1].name : set.moves[1]),
+        "- " + (set.moves[2].name ? set.moves[2].name : set.moves[2]),
+        "- " + (set.moves[3].name ? set.moves[3].name : set.moves[3])];
     exMoveset = "";
     for (i = 0; i < exMoves.length; i++) {
         if (exMoves[i] !== "- (No Move)") {
@@ -600,12 +604,13 @@ var exportset = function (set, accessIVs) {
     exSpeciesAndItem = exSpecies + exItem + "\n";
 
     exportText = exSpeciesAndItem + exAbility + exLevel + exTera + exEVs + exNature + exIVs + exMoveset;
-    Clipboard_CopyTo(exportText);
-    //tempCSV();
+    return exportText;
 }
 
 function runExportSet(pnum) {
-    exportset(new Pokemon($('#p' + pnum)), $('#p' + pnum + ' input.ivs.calc-trigger').closest(".poke-info"));
+    var exportText = exportset(new Pokemon($('#p' + pnum)));
+    Clipboard_CopyTo(exportText);
+    //tempCSV();
 }
 
 function deleteSet(species, spreadName) {
