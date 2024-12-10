@@ -1864,6 +1864,27 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
+        "Fairy Loaded Dice": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Rough Skin",
+            "tera_type": "Fairy",
+            "item": "Loaded Dice",
+            "moves": [
+                "Stomping Tantrum",
+                "Earthquake",
+                "Scale Shot",
+                "Protect"
+            ]
+        },
         "Scarf Set": {
             "level": 50,
             "evs": {
@@ -1952,6 +1973,30 @@ var SETDEX_GEN9 = {
                 "Hurricane",
                 "Tailwind",
                 "Wide Guard",
+                "Weather Ball"
+            ]
+        },
+        "Max Speed Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Drizzle",
+            "tera_type": "Ghost",
+            "item": "Choice Scarf",
+            "moves": [
+                "Hurricane",
+                "Muddy Water",
+                "Ice Beam",
                 "Weather Ball"
             ]
         },
@@ -2349,6 +2394,26 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
+        "Speedy Coaching Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 180,
+                "at": 52,
+                "df": 12,
+                "sa": 0,
+                "sd": 12,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Defiant",
+            "item": "Safety Goggles",
+            "moves": [
+                "Final Gambit",
+                "Close Combat",
+                "Rage Fist",
+                "Coaching"
+            ]
+        },
     },
     //"Medicham": {
     //    "": {
@@ -2449,6 +2514,30 @@ var SETDEX_GEN9 = {
                 "Armor Cannon",
                 "Trick Room",
                 "Wide Guard"
+            ]
+        },
+        "Weak Armor WP": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Weak Armor",
+            "tera_type": "Psychic",
+            "item": "Weakness Policy",
+            "moves": [
+                "Expanding Force",
+                "Armor Cannon",
+                "Heat Wave",
+                "Endure"
             ]
         },
         "Porengan's Stellar Meteor Beam": {
@@ -2636,7 +2725,8 @@ var SETDEX_GEN9 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "Wind Power",
+            "ability": "Competitive",
+            "tera_type": "Ghost",
             "item": "Focus Sash",
             "moves": [
                 "Thunderbolt",
@@ -3179,11 +3269,11 @@ var SETDEX_GEN9 = {
         "Sitrus Berry Set": {
             "level": 50,
             "evs": {
-                "hp": 236,
+                "hp": 244,
                 "at": 0,
                 "df": 156,
                 "sa": 0,
-                "sd": 116,
+                "sd": 108,
                 "sp": 0
             },
             "ivs": {
@@ -3931,7 +4021,31 @@ var SETDEX_GEN9 = {
             "item": "Focus Sash",
             "moves": [
                 "Expanding Force",
-                "Dazzling Gleam",
+                "Tera Blast",
+                "Trick",
+                "Dazzling Gleam"
+            ]
+        },
+        "Sash Imprison Trick Room": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Psychic Surge",
+            "tera_type": "Fighting",
+            "item": "Focus Sash",
+            "moves": [
+                "Expanding Force",
+                "Tera Blast",
                 "Trick Room",
                 "Imprison"
             ]
@@ -5383,6 +5497,27 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Tyranitar": {
+        "Tera Flying AV": {
+            "level": 50,
+            "evs": {
+                "hp": 196,
+                "at": 140,
+                "df": 12,
+                "sa": 0,
+                "sd": 28,
+                "sp": 132
+            },
+            "nature": "Adamant",
+            "ability": "Sand Stream",
+            "tera_type": "Flying",
+            "item": "Assault Vest",
+            "moves": [
+                "Rock Slide",
+                "Knock Off",
+                "Low Kick",
+                "Tera Blast"
+            ]
+        },
         "EternalSnowman's AV Tera Psychic": {
             "level": 50,
             "evs": {
@@ -7231,17 +7366,17 @@ var SETDEX_GEN9 = {
         "Nasty Plot Leftovers": {
             "level": 50,
             "evs": {
-                "hp": 236,
+                "hp": 132,
                 "at": 0,
-                "df": 44,
-                "sa": 52,
-                "sd": 28,
-                "sp": 148
+                "df": 4,
+                "sa": 116,
+                "sd": 4,
+                "sp": 252
             },
             "ivs": {
                 "at": 0,
             },
-            "nature": "Modest",
+            "nature": "Timid",
             "ability": "Good as Gold",
             "tera_type": "Dragon",
             "item": "Leftovers",
@@ -7269,6 +7404,30 @@ var SETDEX_GEN9 = {
             "ability": "Good as Gold",
             "tera_type": "Steel",
             "item": "Choice Specs",
+            "moves": [
+                "Make It Rain",
+                "Shadow Ball",
+                "Power Gem",
+                "Thunderbolt"
+            ]
+        },
+        "Choice Scarf Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Good as Gold",
+            "tera_type": "Flying",
+            "item": "Choice Scarf",
             "moves": [
                 "Make It Rain",
                 "Shadow Ball",
@@ -8306,7 +8465,8 @@ var SETDEX_GEN9 = {
             },
             "nature": "Timid",
             "ability": "Solar Power",
-            "item": "Life Orb",
+            "tera_type": "Ghost",
+            "item": "Choice Specs",
             "moves": [
                 "Heat Wave",
                 "Overheat",
@@ -10347,7 +10507,7 @@ var SETDEX_GEN9 = {
             },
             "nature": "Adamant",
             "tera_type": "Water",
-            "item": "Poison Heal",
+            "item": "Toxic Orb",
             "moves": [
                 "High Horsepower",
                 "Dual Wingbeat",
@@ -10939,6 +11099,29 @@ var SETDEX_GEN9 = {
                 "Aurora Veil",
                 "Blizzard",
                 "Moonblast",
+                "Freeze-Dry"
+            ]
+        },
+        "Agati's Joinville 1st Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 100,
+                "at": 0,
+                "df": 132,
+                "sa": 164,
+                "sd": 4,
+                "sp": 108
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Ice",
+            "item": "Choice Specs",
+            "moves": [
+                "Blizzard",
+                "Moonblast",
+                "Ice Beam",
                 "Freeze-Dry"
             ]
         },
@@ -11603,6 +11786,30 @@ var SETDEX_GEN9 = {
                 "Energy Ball",
                 "Tailwind",
                 "Sunny Day"
+            ]
+        },
+        "Bulky Covert Cloak": {
+            "level": 50,
+            "evs": {
+                "hp": 156,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 204,
+                "sp": 148
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Ghost",
+            "ability": "Prankster",
+            "item": "Covert Cloak",
+            "moves": [
+                "Moonblast",
+                "Light Screen",
+                "Tailwind",
+                "Encore"
             ]
         },
     },
@@ -12592,6 +12799,30 @@ var SETDEX_GEN9 = {
                 "Brave Bird"
             ]
         },
+        "Special Sash Support": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Ghost",
+            "ability": "Speed Boost",
+            "item": "Focus Sash",
+            "moves": [
+                "Heat Wave",
+                "Aura Sphere",
+                "Vacuum Wave",
+                "Coaching"
+            ]
+        },
     },
     //"Swampert": {
     //    "": {
@@ -12734,7 +12965,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Primarina": {
-        "Tera Grass Life Orb": {
+        "Tera Poison Sitrus": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -12748,14 +12979,14 @@ var SETDEX_GEN9 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "tera_type": "Grass",
+            "tera_type": "Poison",
             "ability": "Liquid Voice",
-            "item": "Life Orb",
+            "item": "Sitrus Berry",
             "moves": [
                 "Hyper Voice",
                 "Moonblast",
                 "Dazzling Gleam",
-                "Energy Ball"
+                "Water Pledge"
             ]
         },
     },
@@ -13405,7 +13636,30 @@ var SETDEX_GEN9 = {
         },
     },
     "Kyogre": {
-        "Bro is not Washed": {
+        "Shiliang Tang's NAIC AV Set": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 236,
+                "sd": 4,
+                "sp": 12
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Grass",
+            "item": "Assault Vest",
+            "moves": [
+                "Water Spout",
+                "Origin Pulse",
+                "Ice Beam",
+                "Thunder"
+            ]
+        },
+        "Max Speed Mystic Water": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -13418,7 +13672,7 @@ var SETDEX_GEN9 = {
             "ivs": {
                 "at": 0,
             },
-            "nature": "Modest",
+            "nature": "Timid",
             "tera_type": "Grass",
             "item": "Mystic Water",
             "moves": [
@@ -13838,7 +14092,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Zamazenta": {
-        "Tera Ghost Body Press": {
+        "Bulky Tera Ghost": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -13856,6 +14110,26 @@ var SETDEX_GEN9 = {
                 "Behemoth Bash",
                 "Heavy Slam",
                 "Iron Defense"
+            ]
+        },
+        "Faster Tera Dragon": {
+            "level": 50,
+            "evs": {
+                "hp": 156,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 0,
+                "sp": 196
+            },
+            "nature": "Impish",
+            "tera_type": "Dragon",
+            "item": "Rusted Shield",
+            "moves": [
+                "Body Press",
+                "Heavy Slam",
+                "Wide Guard",
+                "Behemoth Bash"
             ]
         },
     },
@@ -13885,21 +14159,41 @@ var SETDEX_GEN9 = {
         },
     },
     "Calyrex-Ice Rider": {
-        "The Only Spread Ice Rider Needs": {
+        "Tera Fire Min Speed": {
             "level": 50,
             "evs": {
-                "hp": 252,
-                "at": 252,
+                "hp": 244,
+                "at": 164,
                 "df": 0,
                 "sa": 0,
-                "sd": 4,
+                "sd": 100,
                 "sp": 0
             },
             "ivs": {
                 "sp": 0,
             },
             "nature": "Brave",
-            "tera_type": "Water",
+            "tera_type": "Fire",
+            "item": "Clear Amulet",
+            "moves": [
+                "Glacial Lance",
+                "High Horsepower",
+                "Close Combat",
+                "Trick Room"
+            ]
+        },
+        "Tera Normal Adamant": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 116,
+                "df": 4,
+                "sa": 0,
+                "sd": 132,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "tera_type": "Normal",
             "item": "Clear Amulet",
             "moves": [
                 "Glacial Lance",
