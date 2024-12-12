@@ -207,21 +207,134 @@ var SETDEX_GEN7 = {
     },
     "Pikachu": {
         //2017
+        "Jhufself's Top 8 Collinsville Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 4,
+                "sa": 236,
+                "sd": 28,
+                "sp": 236
+            },
+            "ivs": {
+                "at": 30,
+            },
+            "nature": "Timid",
+            "ability": "Lightning Rod",
+            "item": "Light Ball",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Ice",
+                "Fake Out",
+                "Protect"
+            ]
+        },
     },
     "Raichu": {
         //2018, 2019
+        "Support Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "ability": "Lightning Rod",
+            "item": "Focus Sash",
+            "moves": [
+                "Volt Switch",
+                "Nuzzle",
+                "Fake Out",
+                "Encore"
+            ]
+        },
     },
     "Sandslash": {
 
     },
     "Nidoqueen": {
         //2018
+        "hirosipoke's 1st Japan Nats": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 4,
+                "sp": 236
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Sheer Force",
+            "item": "Life Orb",
+            "moves": [
+                "Sludge Bomb",
+                "Earth Power",
+                "Ice Beam",
+                "Protect"
+            ]
+        }
     },
     "Nidoking": {
         //2018
+        "Fast Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Sheer Force",
+            "item": "Life Orb",
+            "moves": [
+                "Sludge Bomb",
+                "Earth Power",
+                "Ice Beam",
+                "Protect"
+            ]
+        },
     },
     "Clefairy": {
         //2017, 2018
+        "Slow Bulky Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 188,
+                "sa": 0,
+                "sd": 68,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0,
+            },
+            "nature": "Sassy",
+            "ability": "Friend Guard",
+            "item": "Eviolite",
+            "moves": [
+                "Follow Me",
+                "Heal Pulse",
+                "After You",
+                "Protect"
+            ]
+        },
     },
     "Clefable": {
 
@@ -234,6 +347,29 @@ var SETDEX_GEN7 = {
     },
     "Vileplume": {
         //2019 sun
+        "Sun Series Disruptor": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+                "Sludge Bomb",
+                "Grass Knot",
+                "Sleep Powder",
+                "Strength Sap"
+            ]
+        },
     },
     "Parasect": {
 
@@ -249,15 +385,144 @@ var SETDEX_GEN7 = {
     },
     "Psyduck": {
         //2019 sun
+        "Ashton used it that one time it was funny :)": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Cloud Nine",
+            "item": "Eviolite",
+            "moves": [
+                "Icy Wind",
+                "Disable",
+                "Encore",
+                "Light Screen"
+            ]
+        },
     },
     "Golduck": {
         //2017
+        "2017 Rain Sweeper": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Swift Swim",
+            "item": "Waterium Z",
+            "moves": [
+                "Hydro Pump",
+                "Scald",
+                "Ice Beam",
+                "Protect"
+            ]
+        },
+        "Tman's Golduck": {
+            "level": 50,
+            "evs": {
+                "hp": 100,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 28,
+                "sp": 124
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Swift Swim",
+            "item": "Waterium Z",
+            "moves": [
+                "Hydro Pump",
+                "Scald",
+                "Ice Beam",
+                "Protect"
+            ]
+        },
     },
     "Primeape": {
         //2018
+        "Defiant Adrenaline Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Defiant",
+            "item": "Adrenaline Orb",
+            "moves": [
+                "Close Combat",
+                "Poison Jab",
+                "Ice Punch",
+                "Rock Tomb"
+            ]
+        },
     },
     "Arcanine": {
-        //2017, 2018
+        //2017
+        "Lexicon's Iapapa Arcanine": {
+            "level": 50,
+            "evs": {
+                "hp": 76,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 12,
+                "sp": 164
+            },
+            "nature": "Adamant",
+            "ability": "Intimidate",
+            "item": "Figy Berry",
+            "moves": [
+                "Flare Blitz",
+                "Extreme Speed",
+                "Helping Hand",
+                "Protect"
+            ]
+        },
+        "Choice Band Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Intimidate",
+            "item": "Choice Band",
+            "moves": [
+                "Flare Blitz",
+                "Extreme Speed",
+                "Wild Charge",
+                "Close Combat"
+            ]
+        },
     },
     "Poliwrath": {
         //2017
@@ -286,7 +551,7 @@ var SETDEX_GEN7 = {
     "Slowbro": {
         //2017
     },
-    "Farfetch\u0027d": {
+    "Farfetch'd": {
 
     },
     "Dodrio": {
@@ -329,6 +594,94 @@ var SETDEX_GEN7 = {
     },
     "Gengar": {
         //2018 mega, 2019 moon, 2019 ultra mega
+        "Offensive Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Gengarite",
+            "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Icy Wind",
+                "Protect"
+            ]
+        },
+        "emforbes' Worlds 2nd Defensive Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 140,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 236,
+                "sp": 132
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Gengarite",
+            "moves": [
+                "Shadow Ball",
+                "Substitute",
+                "Perish Song",
+                "Protect"
+            ]
+        },
+        "Offensive Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Focus Sash",
+            "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Hidden Power Ice",
+                "Icy Wind"
+            ]
+        },
+        "Ghostium Destiny Bond": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 52,
+                "sa": 204,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Ghostium Z",
+            "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Destiny Bond",
+                "Icy Wind"
+            ]
+        },
     },
     "Hypno": {
 
@@ -359,12 +712,119 @@ var SETDEX_GEN7 = {
     },
     "Chansey": {
         //2017, 2018
+        "Bulky Support": {
+            "level": 50,
+            "evs": {
+                "hp": 164,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 92,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Natural Cure",
+            "item": "Eviolite",
+            "moves": [
+                "Seismic Toss",
+                "Toxic",
+                "Soft-Boiled",
+                "Heal Pulse"
+            ]
+        },
+        "Minimize Menace": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "ability": "Healer",
+            "item": "Eviolite",
+            "moves": [
+                "Minimize",
+                "Defense Curl",
+                "Soft-Boiled",
+                "Protect"
+            ]
+        },
     },
     "Tangela": {
 
     },
     "Kangaskhan": {
         //2017, 2018 mega, 2019 ultra mega
+        "Specially Bulky Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 36,
+                "at": 212,
+                "df": 4,
+                "sa": 0,
+                "sd": 236,
+                "sp": 20
+            },
+            "nature": "Adamant",
+            "ability": "Scrappy",
+            "item": "Kangaskhanite",
+            "moves": [
+                "Fake Out",
+                "Low Kick",
+                "Sucker Punch",
+                "Return"
+            ]
+        },
+        "Fast Mega Bite": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Scrappy",
+            "item": "Kangaskhanite",
+            "moves": [
+                "Fake Out",
+                "Double-Edge",
+                "Bite",
+                "Low Kick"
+            ]
+        },
+        "Offensive Normalium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 12,
+                "sp": 236
+            },
+            "nature": "Adamant",
+            "ability": "Scrappy",
+            "item": "Normalium Z",
+            "moves": [
+                "Double-Edge",
+                "Fake Out",
+                "Sucker Punch",
+                "Circle Throw"
+            ]
+        },
     },
     "Seaking": {
 
@@ -380,6 +840,26 @@ var SETDEX_GEN7 = {
     },
     "Jynx": {
         //2019 ultra
+        "Fast Sash Support": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 4,
+                "sa": 4,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "ability": "Dry Skin",
+            "item": "Focus Sash",
+            "moves": [
+                "Icy Wind",
+                "Fake Out",
+                "Skill Swap",
+                "Lovely Kiss"
+            ]
+        },
     },
     "Electabuzz": {
 
@@ -389,21 +869,135 @@ var SETDEX_GEN7 = {
     },
     "Pinsir": {
         //2018 mega
+        "Jolly Offensive Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Hyper Cutter",
+            "item": "Pinsirite",
+            "moves": [
+                "Return",
+                "Feint",
+                "Close Combat",
+                "X-Scissor"
+            ]
+        },
     },
     "Tauros": {
 
     },
     "Gyarados": {
         //2017, 2018 mega
+        "DD Flyinium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 236,
+                "df": 100,
+                "sa": 0,
+                "sd": 4,
+                "sp": 164
+            },
+            "nature": "Jolly",
+            "item": "Flyinium Z",
+            "moves": [
+                "Waterfall",
+                "Bounce",
+                "Ice Fang",
+                "Dragon Dance"
+            ]
+        },
+        "DD Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 228,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Gyaradosite",
+            "moves": [
+                "Waterfall",
+                "Crunch",
+                "Dragon Dance",
+                "Protect"
+            ]
+        },
     },
     "Lapras": {
-        
+
     },
     "Ditto": {
-
+        "Timid Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 12,
+                "sp": 244
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Scarf",
+            "moves": [
+                "Transform",
+            ]
+        },
     },
     "Eevee": {
         //2017, 2018
+        "Physical Evoboost": {
+            "level": 50,
+            "evs": {
+                "hp": 204,
+                "at": 4,
+                "df": 4,
+                "sa": 0,
+                "sd": 140,
+                "sp": 156
+            },
+            "nature": "Jolly",
+            "item": "Eevium Z",
+            "moves": [
+                "Last Resort",
+                "Quick Attack",
+                "Baton Pass",
+                "Protect"
+            ]
+        },
+        "Special Evoboost": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 44,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "item": "Eevium Z",
+            "moves": [
+                "Last Resort",
+                "Baton Pass",
+                "Stored Power",
+                "Protect"
+            ]
+        },
     },
     "Vaporeon": {
 
@@ -422,24 +1016,258 @@ var SETDEX_GEN7 = {
     },
     "Aerodactyl": {
         //2019 ultra mega
+        "Edu's T16 Worlds Mega Offense Support": {
+            "level": 50,
+            "evs": {
+                "hp": 84,
+                "at": 252,
+                "df": 20,
+                "sa": 0,
+                "sd": 4,
+                "sp": 148
+            },
+            "nature": "Jolly",
+            "ability": "Pressure",
+            "item": "Aerodactylite",
+            "moves": [
+                "Rock Slide",
+                "Iron Head",
+                "Tailwind",
+                "Wide Guard"
+            ]
+        },
     },
     "Snorlax": {
         //2017, 2018
+        "Belly Drum Lax": {
+            "level": 50,
+            "evs": {
+                "hp": 164,
+                "at": 92,
+                "df": 252,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "item": "Figy Berry",
+            "moves": [
+                "Return",
+                "Earthquake",
+                "Belly Drum",
+                "Recycle"
+            ]
+        },
+        "Curse Lax": {
+            "level": 50,
+            "evs": {
+                "hp": 68,
+                "at": 196,
+                "df": 252,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Figy Berry",
+            "moves": [
+                "Return",
+                "High Horsepower",
+                "Curse",
+                "Recycle"
+            ]
+        },
+        "Turbo Lax": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Figy Berry",
+            "moves": [
+                "Return",
+                "High Horsepower",
+                "Belly Drum",
+                "Protect"
+            ]
+        },
     },
     "Articuno": {
 
     },
     "Zapdos": {
         //2018
+        "Fast Electrium": {
+            "level": 50,
+            "evs": {
+                "hp": 44,
+                "at": 0,
+                "df": 4,
+                "sa": 204,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Electrium Z",
+            "moves": [
+                "Thunderbolt",
+                "Heat Wave",
+                "Hidden Power Ice",
+                "Taileind"
+            ]
+        },
+        "Bulky Terrain Seed": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 12,
+                "sa": 36,
+                "sd": 84,
+                "sp": 124
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Misty Seed",
+            "moves": [
+                "Thunderbolt",
+                "Heat Wave",
+                "Roost",
+                "Tailwind"
+            ]
+        },
+        "Specially Defensive Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 12,
+                "sa": 4,
+                "sd": 172,
+                "sp": 76
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Wiki Berry",
+            "moves": [
+                "Thunderbolt",
+                "Heat Wave",
+                "Roost",
+                "Tailwind"
+            ]
+        },
     },
     "Moltres": {
         //2019 sun
+        "Rain Based Goggles": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 0,
+                "df": 4,
+                "sa": 164,
+                "sd": 76,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Safety Goggles",
+            "moves": [
+                "Burn Up",
+                "Hurricane",
+                "Tailwind",
+                "Roar"
+            ]
+        },
     },
     "Dragonite": {
         //2017
+        "Choice Band Multiscale": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Choice Band",
+            "moves": [
+                "Extreme Speed",
+                "Dragon Claw",
+                "Fire Punch",
+                "Earthquake"
+            ]
+        },
     },
     "Mewtwo": {
         //2019 sun, 2019 ultra mega y
+        "Psyspam Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "moves": [
+                "Psystrike",
+                "Aura Sphere",
+                "Shadow Ball",
+                "Ice Beam"
+            ]
+        },
+        "Mega Y Skill Swap": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Mewtwonite Y",
+            "moves": [
+                "Psystrike",
+                "Aura Sphere",
+                "Shadow Ball",
+                "Skill Swap"
+            ]
+        },
     },
 
     //JOHTO
@@ -1678,4 +2506,30 @@ var SETDEX_GEN7 = {
     "Marowak-Alola": {
         //2017, 2018
     },
+
+    //base
+
+        //"": {
+        //    "level": 50,
+        //    "evs": {
+        //        "hp": 0,
+        //        "at": 0,
+        //        "df": 0,
+        //        "sa": 0,
+        //        "sd": 0,
+        //        "sp": 0
+        //    },
+        //    "ivs": {
+        //        "at": 0,
+        //    },
+        //    "nature": "",
+        //    "ability": "",
+        //    "item": "",
+        //    "moves": [
+        //        "",
+        //        "",
+        //        "",
+        //        ""
+        //    ]
+        //},
 };
