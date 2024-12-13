@@ -526,9 +526,52 @@ var SETDEX_GEN7 = {
     },
     "Poliwrath": {
         //2017
+        "Normalium Belly Drum": {
+            "level": 50,
+            "evs": {
+                "hp": 44,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 204
+            },
+            "nature": "Adamant",
+            "ability": "Swift Swim",
+            "item": "Normalium Z",
+            "moves": [
+                "Waterfall",
+                "Earthquake",
+                "Brick Break",
+                "Belly Drum"
+            ]
+        },
     },
     "Alakazam": {
         //2018 mega
+        "Max Speed Offensive Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Inner Focus",
+            "item": "Alakazite",
+            "moves": [
+                "Psychic",
+                "Focus Blast",
+                "Shadow Ball",
+                "Encore"
+            ]
+        },
     },
     "Machamp": {
 
@@ -547,9 +590,57 @@ var SETDEX_GEN7 = {
     },
     "Slowpoke": {
         //2017
+        "WP Torkoal Enabler": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "ability": "Oblivious",
+            "item": "Eviolite",
+            "moves": [
+                "Surf",
+                "Heal Pulse",
+                "Sunny Day",
+                "Trick Room"
+            ]
+        },
     },
     "Slowbro": {
         //2017
+        "Bulky Trick Room": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 0,
+                "sa": 20,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "ability": "Oblivious",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Scald",
+                "Psychic",
+                "Flamethrower",
+                "Trick Room"
+            ]
+        },
     },
     "Farfetch'd": {
 
@@ -559,6 +650,29 @@ var SETDEX_GEN7 = {
     },
     "Dewgong": {
         //2018
+        "Perish Trap Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Sassy",
+            "ability": "Thick Fat",
+            "item": "Iapapa Berry",
+            "moves": [
+                "Fake Out",
+                "Perish Song",
+                "Disable",
+                "Protect"
+            ]
+        },
     },
     "Muk": {
 
@@ -697,6 +811,28 @@ var SETDEX_GEN7 = {
     },
     "Marowak": {
         //2018
+        "Trick Room Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Thick Club",
+            "moves": [
+                "Bonemerang",
+                "Knock Off",
+                "Rock Slide",
+                "Earthquake"
+            ]
+        },
     },
     "Hitmonlee": {
 
@@ -1066,7 +1202,7 @@ var SETDEX_GEN7 = {
             "evs": {
                 "hp": 68,
                 "at": 196,
-                "df": 252,
+                "df": 244,
                 "sa": 0,
                 "sd": 0,
                 "sp": 0
@@ -1127,7 +1263,7 @@ var SETDEX_GEN7 = {
                 "Thunderbolt",
                 "Heat Wave",
                 "Hidden Power Ice",
-                "Taileind"
+                "Tailwind"
             ]
         },
         "Bulky Terrain Seed": {
@@ -2272,7 +2408,7 @@ var SETDEX_GEN7 = {
     "Trevenant": {
 
     },
-    "Gourgeist": {
+    "Gourgeist-Super": {
 
     },
     "Avalugg": {
@@ -2484,27 +2620,270 @@ var SETDEX_GEN7 = {
     },
     "Raichu-Alola": {
         //2017
+        "Aloraichium Terrain Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "item": "Aloraichium Z",
+            "moves": [
+                "Thunderbolt",
+                "Psychic",
+                "Electro Ball",
+                "Fake Out"
+            ]
+        },
     },
     "Sandslash-Alola": {
         //2017
+        "Groundium Hail Sweeper": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Groundium Z",
+            "moves": [
+                "Icicle Crash",
+                "Iron Head",
+                "Earthquake",
+                "Protect"
+            ]
+        },
     },
     "Ninetales-Alola": {
         //2017, 2018
+        "Offensive Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Focus Sash",
+            "moves": [
+                "Blizzard",
+                "Freeze-Dry",
+                "Icy Wind",
+                "Moonblast"
+            ]
+        },
+        "Bulky Light Clay": {
+            "level": 50,
+            "evs": {
+                "hp": 100,
+                "at": 0,
+                "df": 4,
+                "sa": 4,
+                "sd": 148,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Light Clay",
+            "moves": [
+                "Freeze-Dry",
+                "Icy Wind",
+                "Aurora Veil",
+                "Encore"
+            ]
+        },
     },
     "Persian-Alola": {
         //2017, 2019 ultra
+        "ApplePie's Persian": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 68,
+                "sa": 4,
+                "sd": 204,
+                "sp": 228
+            },
+            "nature": "Timid",
+            "ability": "Fur Coat",
+            "item": "Figy Berry",
+            "moves": [
+                "Fake Out",
+                "Foul Play",
+                "Taunt",
+                "Parting Shot"
+            ]
+        },
+        "Meanvgc's Worlds T8 Glasses": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 4,
+                "df": 20,
+                "sa": 0,
+                "sd": 100,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Black Glasses",
+            "moves": [
+                "Foul Play",
+                "Fake Out",
+                "Parting Shot",
+                "Taunt"
+            ]
+        },
     },
     "Golem-Alola": {
         //2017
+        "Max Speed Offensive Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Focus Sash",
+            "moves": [
+                "Explosion",
+                "Double-Edge",
+                "Rock Slide",
+                "Stone Edge"
+            ]
+        },
     },
     "Muk-Alola": {
         //2017
+        "Standard Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "ability": "Gluttony",
+            "item": "Figy Berry",
+            "moves": [
+                "Gunk Shot",
+                "Knock Off",
+                "Poison Jab",
+                "Shadow Sneak"
+            ]
+        },
     },
     "Exeggutor-Alola": {
         //2017
+        "Bulky Harvest TR": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 52,
+                "sa": 4,
+                "sd": 196,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Sassy",
+            "ability": "Harvest",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Wood Hammer",
+                "Draco Meteor",
+                "Flamethrower",
+                "Trick Room"
+            ]
+        },
     },
     "Marowak-Alola": {
         //2017, 2018
+        "Trick Room Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Thick Club",
+            "moves": [
+                "Flare Blitz",
+                "Shadow Bone",
+                "Bonemerang",
+                "Rock Slide"
+            ]
+        },
+        "barudoru's Worlds 1st Bulky": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 20,
+                "df": 4,
+                "sa": 0,
+                "sd": 156,
+                "sp": 76
+            },
+            "nature": "Careful",
+            "item": "Thick Club",
+            "moves": [
+                "Shadow Bone",
+                "Flare Blitz",
+                "Brick Break",
+                "Protect"
+            ]
+        },
+        "Playmaker's Hartford T16 Fast Perish": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 92,
+                "df": 4,
+                "sa": 0,
+                "sd": 28,
+                "sp": 132
+            },
+            "nature": "Careful",
+            "item": "Thick Club",
+            "moves": [
+                "Shadow Bone",
+                "Flare Blitz",
+                "Perish Song",
+                "Protect"
+            ]
+        },
     },
 
     //base
