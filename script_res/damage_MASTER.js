@@ -2054,10 +2054,10 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
         description.isAuroraVeil = true;
     }
-    else if (field.isReflect && hitsPhysical && !isCritical && !move.ignoresScreens) {
+    else if (field.isReflect && move.category === "Physical" && !isCritical && !move.ignoresScreens) {  //Note: Reflect/Light Screen stop physical/special moves respectively, NOT moves that hit physical/special
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
         description.isReflect = true;
-    } else if (field.isLightScreen && !hitsPhysical && !isCritical) {
+    } else if (field.isLightScreen && move.category === "Special" && !isCritical) {
         finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800);
         description.isLightScreen = true;
     }
