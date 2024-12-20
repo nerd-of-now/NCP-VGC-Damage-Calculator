@@ -371,10 +371,10 @@ function verifyKOChance(damage, targetHP, eot, hits, maxHP, toxicCounter, hasSit
     for (spreadNum in addedSpread) {
         finalNum = parseInt(spreadNum);
         if (hits > 1) {
-            if (hasSitrus && (finalNum <= maxHP / 2)) {
+            if (hasSitrus && (finalNum >= maxHP / 2)) {
                 finalNum -= Math.floor(ripen * maxHP / 4);
             }
-            else if (hasFigy && (finalNum <= maxHP / (gen >= 7 && !gluttony ? 4 : 2))) {
+            else if (hasFigy && (finalNum >= maxHP / (gen >= 7 && !gluttony ? 4 : 2))) {
                 finalNum -= Math.floor(ripen * maxHP / figyDiv);
             }
         }
