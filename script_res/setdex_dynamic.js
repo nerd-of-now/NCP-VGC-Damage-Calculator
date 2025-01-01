@@ -4,7 +4,7 @@ var COMPONENTS = {
     2: [],
     3: [],
     4: [],
-    5: [],
+    5: [SETDEX_GEN5],
     6: [SETDEX_SHOWDOWN,
         SETDEX_NUGGETBRIDGE],
     7: [SETDEX_TT2019],

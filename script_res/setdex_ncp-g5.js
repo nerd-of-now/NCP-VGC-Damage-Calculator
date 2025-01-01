@@ -292,6 +292,29 @@ var SETDEX_GEN5 = {
     },
     "Politoed": {
         //2012-13
+        "Sitrus Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 180,
+                "sa": 76,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Scald",
+                "Icy Wind",
+                "Encore",
+                "Helping Hand"
+            ]
+        },
     },
     "Jumpluff": {
 
@@ -346,6 +369,25 @@ var SETDEX_GEN5 = {
     },
     "Scizor": {
         //2012-13
+        "Cybertron's T16 US Nats Steel Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 84
+            },
+            "nature": "Adamant",
+            "item": "Steel Gem",
+            "moves": [
+                "Bullet Punch",
+                "Bug Bite",
+                "Swords Dance",
+                "Protect"
+            ]
+        },
     },
     "Shuckle": {
 
@@ -388,6 +430,29 @@ var SETDEX_GEN5 = {
     },
     "Kingdra": {
         //2012-13
+        "Sub Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Swift Swim",
+            "item": "Life Orb",
+            "moves": [
+                "Muddy Water",
+                "Draco Meteor",
+                "Hydro Pump",
+                "Substitute"
+            ]
+        },
     },
     "Donphan": {
 
@@ -403,6 +468,25 @@ var SETDEX_GEN5 = {
     },
     "Hitmontop": {
         //2012-13
+        "Fighting Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "item": "Fighting Gem",
+            "moves": [
+                "Close Combat",
+                "Sucker Punch",
+                "Fake Out",
+                "Feint"
+            ]
+        },
     },
     "Miltank": {
 
@@ -421,6 +505,47 @@ var SETDEX_GEN5 = {
     },
     "Tyranitar": {
         //2012-13
+        "Choice Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Choice Scarf",
+            "moves": [
+                "Crunch",
+                "Rock Slide",
+                "Ice Punch",
+                "Low Kick"
+            ]
+        },
+        "Ray Rizzo's Worlds 1st Chople": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 124,
+                "df": 36,
+                "sa": 0,
+                "sd": 96,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Adamant",
+            "item": "Chople Berry",
+            "moves": [
+                "Rock Slide",
+                "Low Kick",
+                "Fire Punch",
+                "Protect"
+            ]
+        },
     },
     "Lugia": {
 
@@ -474,6 +599,25 @@ var SETDEX_GEN5 = {
     },
     "Breloom": {
         //2012-13
+        "Focus Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Focus Sash",
+            "moves": [
+                "Bullet Seed",
+                "Mach Punch",
+                "Superpower",
+                "Spore"
+            ]
+        },
     },
     "Slaking": {
 
@@ -488,7 +632,7 @@ var SETDEX_GEN5 = {
 
     },
     "Hariyama": {
-        
+
     },
     "Azurill": {
 
@@ -645,6 +789,28 @@ var SETDEX_GEN5 = {
     },
     "Metagross": {
         //2012-13
+        "Ray Rizzo's Worlds 1st Lum Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 116,
+                "df": 4,
+                "sa": 0,
+                "sd": 136,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 14,
+            },
+            "nature": "Adamant",
+            "item": "Lum Berry",
+            "moves": [
+                "Meteor Mash",
+                "Zen Headbutt",
+                "Earthquake",
+                "Protect"
+            ]
+        },
     },
     "Regirock": {
 
@@ -660,6 +826,52 @@ var SETDEX_GEN5 = {
     },
     "Latios": {
         //2012-13
+        "Le Dragon Gem Draco": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Dragon Gem",
+            "moves": [
+                "Draco Meteor",
+                "Psychic",
+                "Ice Beam",
+                "Psyshock"
+            ]
+        },
+        "Timid Life Orb HP Ground": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30,
+                "sd": 30
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "moves": [
+                "Draco Meteor",
+                "Psychic",
+                "Hidden Power Ground",
+                "Psyshock"
+            ]
+        },
     },
     "Kyogre": {
 
@@ -814,7 +1026,7 @@ var SETDEX_GEN5 = {
         //2012-13
     },
     "Yanmega": {
-        //2912
+        //2012
     },
     "Leafeon": {
 
@@ -860,6 +1072,28 @@ var SETDEX_GEN5 = {
     },
     "Rotom-Wash": {
         //2012-13
+        "Cybertron's Worlds T4 Will-O-Miss": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 116,
+                "sd": 140,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Thunderbolt",
+                "Hydro Pump",
+                "Light Screen",
+                "Will-O-Wisp"
+            ]
+        },
     },
     "Uxie": {
 
@@ -878,6 +1112,50 @@ var SETDEX_GEN5 = {
     },
     "Heatran": {
         //2012-13
+        "Fire Gem Eruption": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Quiet",
+            "item": "Fire Gem",
+            "moves": [
+                "Eruption",
+                "Heat Wave",
+                "Earth Power",
+                "Overheat"
+            ]
+        },
+        "Meanvgc's Worlds 1st Speedy Sub": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 4,
+                "sa": 36,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Leftovers",
+            "moves": [
+                "Heat Wave",
+                "Earth Power",
+                "Substitute",
+                "Protect"
+            ]
+        },
     },
     "Regigigas": {
 
@@ -890,6 +1168,51 @@ var SETDEX_GEN5 = {
     },
     "Cresselia": {
         //2012-13
+        "Cybertron's T4 Worlds Chesto Resto": {
+            "level": 50,
+            "evs": {
+                "hp": 220,
+                "at": 0,
+                "df": 36,
+                "sa": 156,
+                "sd": 96,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "item": "Chesto Berry",
+            "moves": [
+                "Psyshock",
+                "Ice Beam",
+                "Rest",
+                "Trick Room"
+            ]
+        },
+        "Expert Belt Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 92,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 20,
+                "sp": 144
+            },
+            "ivs": {
+                "at": 2,
+            },
+            "nature": "Modest",
+            "item": "Expert Belt",
+            "moves": [
+                "Psychic",
+                "Hidden Power Fire",
+                "Icy Wind",
+                "Psyshock"
+            ]
+        },
     },
 
     //UNOVA
@@ -946,6 +1269,29 @@ var SETDEX_GEN5 = {
     },
     "Conkeldurr": {
         //2011-13
+        "Cybertron's Worlds T4 LO Iron Fist": {
+            "level": 50,
+            "evs": {
+                "hp": 68,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 188,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "ability": "Iron Fist",
+            "item": "Life Orb",
+            "moves": [
+                "Hammer Arm",
+                "Ice Punch",
+                "Mach Punch",
+                "Protect"
+            ]
+        },
     },
     "Palpitoad": {
 
@@ -988,6 +1334,28 @@ var SETDEX_GEN5 = {
     },
     "Scrafty": {
         //2011, 2013
+        "Slow Dark Gem Intimidate": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Dark Gem",
+            "moves": [
+                "Crunch",
+                "Drain Punch",
+                "Fake Out",
+                "Ice Punch"
+            ]
+        },
     },
     "Sigilyph": {
         //2011
@@ -1036,6 +1404,29 @@ var SETDEX_GEN5 = {
     },
     "Amoonguss": {
         //2011-13
+        "Lum Berry Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 100,
+                "sa": 0,
+                "sd": 156,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Regenerator",
+            "item": "Lum Berry",
+            "moves": [
+                "Giga Drain",
+                "Spore",
+                "Rage Powder",
+                "Protect"
+            ]
+        },
     },
     "Jellicent": {
         //2011-13
@@ -1117,12 +1508,97 @@ var SETDEX_GEN5 = {
     },
     "Tornadus": {
         //2011, 2013
+        "Defiant Gem Acrobatics": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Defiant",
+            "item": "Flying Gem",
+            "moves": [
+                "Acrobatics",
+                "Superpower",
+                "U-turn",
+                "Tailwind"
+            ]
+        },
     },
     "Tornadus-Therian": {
 
     },
     "Thundurus": {
         //2011-13
+        "Full Bulk Sitrus": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 16,
+                "sa": 0,
+                "sd": 188,
+                "sp": 52
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30
+            },
+            "nature": "Calm",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Ice",
+                "Thunder Wave",
+                "Taunt"
+            ]
+        },
+        "Scott Glaza's T16 US Nats Electric Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 196,
+                "at": 0,
+                "df": 0,
+                "sa": 20,
+                "sd": 236,
+                "sp": 56
+            },
+            "ivs": {
+                "at": 3,
+            },
+            "nature": "Calm",
+            "item": "Electric Gem",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Ice",
+                "Taunt",
+                "Thunder Wave"
+            ]
+        },
+        "Life Orb Physical Defiant": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+                "Wild Charge",
+                "Crunch",
+                "Superpower",
+                "U-turn"
+            ]
+        },
     },
     "Thundurus-Therian": {
         //2013
@@ -1138,6 +1614,25 @@ var SETDEX_GEN5 = {
     },
     "Landorus-Therian": {
         //2013
+        "Sash Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Focus Sash",
+            "moves": [
+                "Earthquake",
+                "U-turn",
+                "Rock Slide",
+                "Stone Edge"
+            ]
+        },
     },
     "Kyurem": {
 
@@ -1148,4 +1643,29 @@ var SETDEX_GEN5 = {
     "Kyurem-White": {
 
     },
-},
+    //base
+
+    //"": {
+    //    "level": 50,
+    //    "evs": {
+    //        "hp": 0,
+    //        "at": 0,
+    //        "df": 0,
+    //        "sa": 0,
+    //        "sd": 0,
+    //        "sp": 0
+    //    },
+    //    "ivs": {
+    //        "at": 0,
+    //    },
+    //    "nature": "",
+    //    "ability": "",
+    //    "item": "",
+    //    "moves": [
+    //        "",
+    //        "",
+    //        "",
+    //        ""
+    //    ]
+    //},
+};
