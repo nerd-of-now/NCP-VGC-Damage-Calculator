@@ -12596,7 +12596,7 @@ var SETDEX_GEN9 = {
                 "Body Press"
             ]
         },
-        "Fast Sturdy Power Herb": {
+        "Stellar Sturdy Power Herb": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -12616,6 +12616,30 @@ var SETDEX_GEN9 = {
             "moves": [
                 "Electro Shot",
                 "Flash Cannon",
+                "Draco Meteor",
+                "Dragon Pulse"
+            ]
+        },
+        "Electric Stalwart Power Herb": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Electric",
+            "ability": "Stalwart",
+            "item": "Power Herb",
+            "moves": [
+                "Electro Shot",
+                "Thunderbolt",
                 "Draco Meteor",
                 "Dragon Pulse"
             ]
