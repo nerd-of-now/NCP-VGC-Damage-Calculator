@@ -93,11 +93,15 @@ var defaultHiddenPowerSD = {
 };
 
 function verifyHiddenPowerType(hpName, ivs) {
-    var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
-    var typeIndex = Math.floor(((ivs[0] & 1) + (ivs[1] & 1) * 2 + (ivs[2] & 1) * 4 + (ivs[3] & 1) * 8 + (ivs[4] & 1) * 16 + (ivs[5] & 1) * 32) * 15 / 63);
-    var hpType = typeOrder[typeIndex];
+    return calcHiddenPower(ivs) == hpName.substring(hpName.lastIndexOf(" ") + 1, hpName.length);
+}
 
-    return hpType == hpName.substring(hpName.lastIndexOf(" ") + 1, hpName.length);
+//The IV ordering is: HP, Attack, Defense, Speed, Special Attack, Special Defense
+function calcHiddenPower(ivs) {
+    var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var typeIndex = Math.floor(((ivs[0] & 1) + (ivs[1] & 1) * 2 + (ivs[2] & 1) * 4 + (ivs[5] & 1) * 8 + (ivs[3] & 1) * 16 + (ivs[4] & 1) * 32) * 15 / 63);
+
+    return typeOrder[typeIndex];
 }
 
 for (var i = 1; i <= 9; i++) {
@@ -300,13 +304,18 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
                         var nextMove = lines[i].substring(lines[i].indexOf(' ') + 1).trim()
                         nextMove = nextMove.replace('[', '')
                         nextMove = nextMove.replace(']', '')
-                        moves.push(nextMove)
-                        if (nextMove.indexOf("Hidden Power ") !== -1 && gen <= 6 && !verifyHiddenPowerType(nextMove, IVs)) {
-                            var typeHidden = nextMove.substring(nextMove.lastIndexOf(" ") + 1, nextMove.length);
-                            for (var j = 0; j < defaultHiddenPowerSD[typeHidden]['ivs'].length; j++) {
-                                IVs[j] = defaultHiddenPowerSD[typeHidden]['ivs'][j];
+                        if (nextMove.indexOf("Hidden Power") !== -1) {
+                            if (nextMove == "Hidden Power") {
+                                nextMove = "Hidden Power " + calcHiddenPower(IVs);
+                            }
+                            else if (nextMove.indexOf("Hidden Power ") !== -1 && gen <= 6 && !verifyHiddenPowerType(nextMove, IVs)) {
+                                var typeHidden = nextMove.substring(nextMove.lastIndexOf(" ") + 1, nextMove.length);
+                                for (var j = 0; j < defaultHiddenPowerSD[typeHidden]['ivs'].length; j++) {
+                                    IVs[j] = defaultHiddenPowerSD[typeHidden]['ivs'][j];
+                                }
                             }
                         }
+                        moves.push(nextMove)
                     }
 
                 }
