@@ -72,6 +72,34 @@ var saveToCalcFormes = [
     ['Terapagos-Stellar', 'Terapagos'],
 ];
 
+//For importing Hidden Power sets since for some reason Showdown neither explicitly puts IVs in the import that matches their default NOR uses an algorithm for said defaults
+var defaultHiddenPowerSD = {
+    "Fighting": { "ivs": [31, 31, 30, 30, 30, 30], "dvs": [-1, 12, 12, -1, -1, -1] },
+    "Flying": { "ivs": [30, 30, 30, 30, 30, 31], "dvs": [-1, 12, 13, -1, -1, -1] },
+    "Poison": { "ivs": [31, 31, 30, 30, 30, 31], "dvs": [-1, 12, 14, -1, -1, -1] },
+    "Ground": { "ivs": [31, 31, 31, 30, 30, 31], "dvs": [-1, 12, -1, -1, -1, -1] },
+    "Rock": { "ivs": [31, 31, 30, 31, 30, 30], "dvs": [-1, 13, 12, -1, -1, -1] },
+    "Bug": { "ivs": [31, 30, 30, 31, 30, 31], "dvs": [-1, 13, 13, -1, -1, -1] },
+    "Ghost": { "ivs": [31, 31, 30, 31, 30, 31], "dvs": [-1, 13, 14, -1, -1, -1] },
+    "Steel": { "ivs": [31, 31, 31, 31, 30, 31], "dvs": [-1, 13, -1, -1, -1, -1] },
+    "Fire": { "ivs": [31, 30, 31, 30, 31, 30], "dvs": [-1, 14, 12, -1, -1, -1] },
+    "Water": { "ivs": [31, 30, 30, 30, 31, 31], "dvs": [-1, 14, 13, -1, -1, -1] },
+    "Grass": { "ivs": [31, 30, 31, 30, 31, 31], "dvs": [-1, 14, 14, -1, -1, -1] },
+    "Electric": { "ivs": [31, 31, 31, 30, 31, 31], "dvs": [-1, 14, -1, -1, -1, -1] },
+    "Psychic": { "ivs": [31, 30, 31, 31, 31, 30], "dvs": [-1, -1, 12, -1, -1, -1] },
+    "Ice": { "ivs": [31, 30, 30, 31, 31, 31], "dvs": [-1, -1, 13, -1, -1, -1] },
+    "Dragon": { "ivs": [31, 30, 31, 31, 31, 31], "dvs": [-1, -1, 14, -1, -1, -1] },
+    "Dark": { "ivs": [31, 31, 31, 31, 31, 31], "dvs": [-1, -1, -1, -1, -1, -1] },
+};
+
+function verifyHiddenPowerType(hpName, ivs) {
+    var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var typeIndex = Math.floor(((ivs[0] & 1) + (ivs[1] & 1) * 2 + (ivs[2] & 1) * 4 + (ivs[3] & 1) * 8 + (ivs[4] & 1) * 16 + (ivs[5] & 1) * 32) * 15 / 63);
+    var hpType = typeOrder[typeIndex];
+
+    return hpType == hpName.substring(hpName.lastIndexOf(" ") + 1, hpName.length);
+}
+
 for (var i = 1; i <= 9; i++) {
     if (localStorage["custom_gen_" + i] != null)
         ALL_SETDEX_CUSTOM[i] = JSON.parse(localStorage["custom_gen_" + i]);
@@ -273,6 +301,12 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
                         nextMove = nextMove.replace('[', '')
                         nextMove = nextMove.replace(']', '')
                         moves.push(nextMove)
+                        if (nextMove.indexOf("Hidden Power ") !== -1 && gen <= 6 && !verifyHiddenPowerType(nextMove, IVs)) {
+                            var typeHidden = nextMove.substring(nextMove.lastIndexOf(" ") + 1, nextMove.length);
+                            for (var j = 0; j < defaultHiddenPowerSD[typeHidden]['ivs'].length; j++) {
+                                IVs[j] = defaultHiddenPowerSD[typeHidden]['ivs'][j];
+                            }
+                        }
                     }
 
                 }
