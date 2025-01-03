@@ -53,6 +53,28 @@ var SETDEX_GEN5 = {
     },
     "Ninetales": {
         //2012-13
+        "Fast Fire Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Fire Gem",
+            "moves": [
+                "Overheat",
+                "Heat Wave",
+                "Solar Beam",
+                "Protect"
+            ]
+        },
     },
     "Wigglytuff": {
 
@@ -157,10 +179,52 @@ var SETDEX_GEN5 = {
 
     },
     "Rhydon": {
-        //2012
+        //2013
+        "Ben Gould's Worlds T4 Sub Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 156,
+                "df": 4,
+                "sa": 0,
+                "sd": 116,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "item": "Eviolite",
+            "moves": [
+                "Rock Slide",
+                "Drill Run",
+                "Substitute",
+                "Protect"
+            ]
+        },
     },
     "Chansey": {
         //2012
+        "Defensive Wall": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 12,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Healer",
+            "item": "Eviolite",
+            "moves": [
+                "Seismic Toss",
+                "Toxic",
+                "Soft-Boiled",
+                "Protect"
+            ]
+        },
     },
     "Tangela": {
 
@@ -197,6 +261,44 @@ var SETDEX_GEN5 = {
     },
     "Gyarados": {
         //2012-13
+        "Water Gem DD": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 44,
+                "df": 4,
+                "sa": 0,
+                "sd": 36,
+                "sp": 188
+            },
+            "nature": "Adamant",
+            "item": "Water Gem",
+            "moves": [
+                "Waterfall",
+                "Ice Fang",
+                "Stone Edge",
+                "Dragon Dance"
+            ]
+        },
+        "Wacan Berry Support": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 52,
+                "df": 92,
+                "sa": 0,
+                "sd": 116,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "item": "Wacan Berry",
+            "moves": [
+                "Waterfall",
+                "Thunder Wave",
+                "Taunt",
+                "Protect"
+            ]
+        },
     },
     "Lapras": {
 
@@ -233,6 +335,55 @@ var SETDEX_GEN5 = {
     },
     "Zapdos": {
         //2012-13
+        "HP Ice Sitrus Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 124
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30
+            },
+            "nature": "Modest",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Ice",
+                "Heat Wave",
+                "Tailwind"
+            ]
+        },
+        "HP Flying Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 8,
+                "at": 0,
+                "df": 0,
+                "sa": 248,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "hp": 30,
+                "at": 2,
+                "df": 30,
+                "sa": 30,
+                "sd": 30
+            },
+            "nature": "Modest",
+            "item": "Choice Specs",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Flying",
+                "Heat Wave",
+                "Volt Switch"
+            ]
+        },
     },
     "Moltres": {
 
@@ -394,6 +545,26 @@ var SETDEX_GEN5 = {
     },
     "Heracross": {
         //2012
+        "Bug Gem Megahorn": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 60,
+                "df": 4,
+                "sa": 0,
+                "sd": 188,
+                "sp": 12
+            },
+            "nature": "Adamant",
+            "ability": "Guts",
+            "item": "Bug Gem",
+            "moves": [
+                "Megahorn",
+                "Close Combat",
+                "Feint",
+                "Protect"
+            ]
+        },
     },
     "Sneasel": {
 
@@ -713,6 +884,25 @@ var SETDEX_GEN5 = {
     },
     "Sableye": {
         //2012
+        "Swagger Foul Play": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 236,
+                "sp": 20
+            },
+            "nature": "Careful",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Foul Play",
+                "Fake Out",
+                "Swagger",
+                "Will-O-Wisp"
+            ]
+        },
     },
     "Mawile": {
 
@@ -854,6 +1044,54 @@ var SETDEX_GEN5 = {
     },
     "Salamence": {
         //2012-13
+        "HP Flying Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 8,
+                "at": 0,
+                "df": 0,
+                "sa": 248,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "hp": 30,
+                "at": 30,
+                "df": 30,
+                "sa": 30,
+                "sd": 30
+            },
+            "nature": "Modest",
+            "item": "Choice Scarf",
+            "moves": [
+                "Draco Meteor",
+                "Hidden Power Flying",
+                "Fire Blast",
+                "Rock Slide"
+            ]
+        },
+        "Dragon Gem Draco": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Dragon Gem",
+            "moves": [
+                "Draco Meteor",
+                "Heat Wave",
+                "Dragon Pulse",
+                "Protect"
+            ]
+        },
     },
     "Metagross": {
         //2012-13
@@ -891,6 +1129,28 @@ var SETDEX_GEN5 = {
     },
     "Latias": {
         //2012-13
+        "Bulky Haban Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 4,
+                "sa": 172,
+                "sd": 52,
+                "sp": 36
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Haban Berry",
+            "moves": [
+                "Dragon Pulse",
+                "Psyshock",
+                "Draco Meteor",
+                "Recover"
+            ]
+        },
     },
     "Latios": {
         //2012-13
@@ -957,6 +1217,25 @@ var SETDEX_GEN5 = {
     },
     "Infernape": {
         //2012
+        "Sash Mixed Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 172,
+                "df": 0,
+                "sa": 84,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Naive",
+            "item": "Focus Sash",
+            "moves": [
+                "Close Combat",
+                "Overheat",
+                "Heat Wave",
+                "Fake Out"
+            ]
+        },
     },
     "Empoleon": {
 
@@ -1180,7 +1459,26 @@ var SETDEX_GEN5 = {
 
     },
     "Rhyperior": {
-
+        //2013
+        "Ground Gem Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "item": "Ground Gem",
+            "moves": [
+                "Rock Slide",
+                "Earthquake",
+                "Drill Run",
+                "Fire Punch"
+            ]
+        },
     },
     "Tangrowth": {
 
@@ -1276,6 +1574,29 @@ var SETDEX_GEN5 = {
     },
     "Rotom-Heat": {
         //2012
+        "Fire Gem Overheat": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 0,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30
+            },
+            "nature": "Modest",
+            "item": "Fire Gem",
+            "moves": [
+                "Thunderbolt",
+                "Overheat",
+                "Hidden Power Grass",
+                "Protect"
+            ]
+        },
     },
     "Rotom-Fan": {
 
@@ -1448,6 +1769,25 @@ var SETDEX_GEN5 = {
     },
     "Liepard": {
         //2013
+        "Dark Gem Foul Play": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 4,
+                "df": 116,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Dark Gem",
+            "moves": [
+                "Foul Play",
+                "Fake Out",
+                "Swagger",
+                "Encore"
+            ]
+        },
     },
     "Simisage": {
 
@@ -1632,6 +1972,28 @@ var SETDEX_GEN5 = {
     },
     "Gothitelle": {
         //2011, 2013
+        "Shadow Tag Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 100,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Psychic",
+                "Psyshock",
+                "Trick Room",
+                "Helping Hand"
+            ]
+        },
     },
     "Reuniclus": {
         //2011-12
@@ -1650,6 +2012,47 @@ var SETDEX_GEN5 = {
     },
     "Escavalier": {
         //2011-13
+        "Brendan Zheng's Worlds 1st Choice Band": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "item": "Choice Band",
+            "moves": [
+                "Megahorn",
+                "Iron Head",
+                "X-Scissor",
+                "Protect"
+            ]
+        },
+        "Bug Gem Substitute": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 244,
+                "df": 0,
+                "sa": 0,
+                "sd": 28,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Bug Gem",
+            "moves": [
+                "Megahorn",
+                "Iron Head",
+                "Substitute",
+                "Protect"
+            ]
+        },
     },
     "Amoonguss": {
         //2011-13
@@ -1733,7 +2136,29 @@ var SETDEX_GEN5 = {
 
     },
     "Ferrothorn": {
-        //2011
+        //2011, 2013
+        "Atk/SpD Invested": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 156,
+                "df": 0,
+                "sa": 0,
+                "sd": 108,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Sassy",
+            "item": "Leftovers",
+            "moves": [
+                "Power Whip",
+                "Gyro Ball",
+                "Leech Seed",
+                "Protect"
+            ]
+        },
     },
     "Klinklang": {
 
@@ -1773,6 +2198,25 @@ var SETDEX_GEN5 = {
     },
     "Bisharp": {
         //2012-13
+        "Dark Gem Bulk": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 220,
+                "df": 12,
+                "sa": 0,
+                "sd": 4,
+                "sp": 28
+            },
+            "nature": "Adamant",
+            "item": "Dark Gem",
+            "moves": [
+                "Night Slash",
+                "Sucker Punch",
+                "Low Kick",
+                "Protect"
+            ]
+        },
     },
     "Braviary": {
 
@@ -2040,6 +2484,29 @@ var SETDEX_GEN5 = {
     },
     "Landorus": {
         //2011, 2013
+        "kingofmars' US Nats 1st LO Sheer Force": {
+            "level": 50,
+            "evs": {
+                "hp": 72,
+                "at": 0,
+                "df": 0,
+                "sa": 204,
+                "sd": 92,
+                "sp": 140
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30
+            },
+            "nature": "Modest",
+            "item": "Life Orb",
+            "moves": [
+                "Earth Power",
+                "Hidden Power Ice",
+                "Psychic",
+                "Protect"
+            ]
+        },
     },
     "Landorus-Therian": {
         //2013
