@@ -496,12 +496,80 @@ var SETDEX_GEN5 = {
     },
     "Raikou": {
         //2012
+        "dingram's Shuca Raikou": {
+            "level": 50,
+            "evs": {
+                "hp": 28,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 228
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30
+            },
+            "nature": "Timid",
+            "item": "Shuca Berry",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Ice",
+                "Snarl",
+                "Protect"
+            ]
+        },
     },
     "Entei": {
         //2012
     },
     "Suicune": {
         //2012
+        "Fast Tailwind Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 12,
+                "sd": 4,
+                "sp": 236
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Scald",
+                "Ice Beam",
+                "Snarl",
+                "Tailwind"
+            ]
+        },
+        "Calm Mind Lefties": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 60,
+                "sa": 136,
+                "sd": 60,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30
+            },
+            "nature": "Bold",
+            "item": "Leftovers",
+            "moves": [
+                "Scald",
+                "Hidden Power Grass",
+                "Icy Wind",
+                "Calm Mind"
+            ]
+        },
     },
     "Tyranitar": {
         //2012-13
@@ -934,6 +1002,50 @@ var SETDEX_GEN5 = {
     },
     "Gastrodon": {
         //2012-13
+        "Bulky Sitrus Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 220,
+                "at": 0,
+                "df": 148,
+                "sa": 0,
+                "sd": 140,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Muddy Water",
+                "Earth Power",
+                "Ice Beam",
+                "Recover"
+            ]
+        },
+        "Offensive Ground Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Ground Gem",
+            "moves": [
+                "Earth Power",
+                "Ice Beam",
+                "Muddy Water",
+                "Protect"
+            ]
+        },
     },
     "Ambipom": {
 
@@ -973,6 +1085,44 @@ var SETDEX_GEN5 = {
     },
     "Garchomp": {
         //2012
+        "Ray Rizzo's Worlds 1st Haban Sub": {
+            "level": 50,
+            "evs": {
+                "hp": 36,
+                "at": 116,
+                "df": 4,
+                "sa": 0,
+                "sd": 196,
+                "sp": 156
+            },
+            "nature": "Jolly",
+            "item": "Haban Berry",
+            "moves": [
+                "Dragon Claw",
+                "Earthquake",
+                "Substitute",
+                "Protect"
+            ]
+        },
+        "Yache 3 Attacks": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Yache Berry",
+            "moves": [
+                "Dragon Claw",
+                "Earthquake",
+                "Rock Slide",
+                "Protect"
+            ]
+        },
     },
     "Riolu": {
 
@@ -1000,6 +1150,25 @@ var SETDEX_GEN5 = {
     },
     "Abomasnow": {
         //2012-13
+        "Sash Mixed Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 0
+            },
+            "nature": "Mild",
+            "item": "Focus Sash",
+            "moves": [
+                "Blizzard",
+                "Giga Drain",
+                "Wood Hammer",
+                "Ice Shard"
+            ]
+        },
     },
     "Weavile": {
         //2013
@@ -1024,6 +1193,28 @@ var SETDEX_GEN5 = {
     },
     "Togekiss": {
         //2012-13
+        "Sitrus Support": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 76,
+                "sa": 4,
+                "sd": 116,
+                "sp": 76
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Air Slash",
+                "Follow Me",
+                "Tailwind",
+                "Protect"
+            ]
+        },
     },
     "Yanmega": {
         //2012
@@ -1039,6 +1230,25 @@ var SETDEX_GEN5 = {
     },
     "Mamoswine": {
         //2013
+        "Meanvgc's Worlds 1st Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 124,
+                "at": 44,
+                "df": 100,
+                "sa": 0,
+                "sd": 44,
+                "sp": 196
+            },
+            "nature": "Adamant",
+            "item": "Choice Scarf",
+            "moves": [
+                "Icicle Spear",
+                "Earthquake",
+                "Icicle Crash",
+                "Rock Slide"
+            ]
+        },
     },
     "Porygon-Z": {
 
@@ -1203,6 +1413,8 @@ var SETDEX_GEN5 = {
             },
             "ivs": {
                 "at": 2,
+                "sa": 30,
+                "sp": 30
             },
             "nature": "Modest",
             "item": "Expert Belt",
@@ -1263,13 +1475,32 @@ var SETDEX_GEN5 = {
     },
     "Excadrill": {
         //2011-13
+        "Sash SD Sand Rush": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Focus Sash",
+            "moves": [
+                "Earthquake",
+                "Rock Slide",
+                "Swords Dance",
+                "Protect"
+            ]
+        },
     },
     "Audino": {
         //2011
     },
     "Conkeldurr": {
         //2011-13
-        "Cybertron's Worlds T4 LO Iron Fist": {
+        "Cybertron's Worlds T4 Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 68,
@@ -1283,10 +1514,28 @@ var SETDEX_GEN5 = {
                 "sp": 0,
             },
             "nature": "Brave",
-            "ability": "Iron Fist",
             "item": "Life Orb",
             "moves": [
                 "Hammer Arm",
+                "Ice Punch",
+                "Mach Punch",
+                "Protect"
+            ]
+        },
+        "Meanvgc's Worlds 1st Sitrus": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 32,
+                "df": 12,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Drain Punch",
                 "Ice Punch",
                 "Mach Punch",
                 "Protect"
@@ -1430,6 +1679,52 @@ var SETDEX_GEN5 = {
     },
     "Jellicent": {
         //2011-13
+        "Water Gem Water Spout": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Water Gem",
+            "moves": [
+                "Water Spout",
+                "Shadow Ball",
+                "Hydro Pump",
+                "Ice Beam"
+            ]
+        },
+        "Bulky Cursed Body": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 236,
+                "sa": 0,
+                "sd": 20,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "ability": "Cursed Body",
+            "item": "Leftovers",
+            "moves": [
+                "Scald",
+                "Shadow Ball",
+                "Ice Beam",
+                "Trick Room"
+            ]
+        },
     },
     "Alomomola": {
 
@@ -1493,15 +1788,100 @@ var SETDEX_GEN5 = {
     },
     "Hydreigon": {
         //2011-13
+        "Timid Dragon Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Dragon Gem",
+            "moves": [
+                "Draco Meteor",
+                "Dark Pulse",
+                "Flamethrower",
+                "Earth Power"
+            ]
+        },
     },
     "Volcarona": {
         //2011-13
+        "Bug Gem Quiver Dance": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 0,
+                "df": 20,
+                "sa": 212,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Bug Gem",
+            "moves": [
+                "Bug Buzz",
+                "Heat Wave",
+                "Fiery Dance",
+                "Quiver Dance"
+            ]
+        },
+        "Rage Powder Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 36,
+                "sd": 100,
+                "sp": 116
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Lum Berry",
+            "moves": [
+                "Heat Wave",
+                "Bug Buzz",
+                "Overheat",
+                "Rage Powder"
+            ]
+        },
     },
     "Cobalion": {
         //2011
     },
     "Terrakion": {
         //2011-13
+        "Fighting Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Fighting Gem",
+            "moves": [
+                "Close Combat",
+                "Rock Slide",
+                "Stone Edge",
+                "Protect"
+            ]
+        },
     },
     "Virizion": {
         //2011
@@ -1519,7 +1899,6 @@ var SETDEX_GEN5 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "ability": "Defiant",
             "item": "Flying Gem",
             "moves": [
                 "Acrobatics",
@@ -1569,6 +1948,7 @@ var SETDEX_GEN5 = {
             },
             "ivs": {
                 "at": 3,
+                "sp": 30
             },
             "nature": "Calm",
             "item": "Electric Gem",
@@ -1602,6 +1982,55 @@ var SETDEX_GEN5 = {
     },
     "Thundurus-Therian": {
         //2013
+        "HP Flying Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 8,
+                "at": 0,
+                "df": 0,
+                "sa": 248,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "hp": 30,
+                "at": 2,
+                "df": 30,
+                "sa": 30,
+                "sd": 30
+            },
+            "nature": "Timid",
+            "item": "Choice Specs",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Flying",
+                "Grass Knot",
+                "Volt Switch"
+            ]
+        },
+        "HP Ice Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30
+            },
+            "nature": "Modest",
+            "item": "Life Orb",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Ice",
+                "Psychic",
+                "Thunder"
+            ]
+        },
     },
     "Reshiram": {
 
@@ -1645,27 +2074,27 @@ var SETDEX_GEN5 = {
     },
     //base
 
-    //"": {
-    //    "level": 50,
-    //    "evs": {
-    //        "hp": 0,
-    //        "at": 0,
-    //        "df": 0,
-    //        "sa": 0,
-    //        "sd": 0,
-    //        "sp": 0
-    //    },
-    //    "ivs": {
-    //        "at": 0,
-    //    },
-    //    "nature": "",
-    //    "ability": "",
-    //    "item": "",
-    //    "moves": [
-    //        "",
-    //        "",
-    //        "",
-    //        ""
-    //    ]
-    //},
+        //"": {
+        //    "level": 50,
+        //    "evs": {
+        //        "hp": 0,
+        //        "at": 0,
+        //        "df": 0,
+        //        "sa": 0,
+        //        "sd": 0,
+        //        "sp": 0
+        //    },
+        //    "ivs": {
+        //        "at": 0,
+        //    },
+        //    "nature": "",
+        //    "ability": "",
+        //    "item": "",
+        //    "moves": [
+        //        "",
+        //        "",
+        //        "",
+        //        ""
+        //    ]
+        //},
 };
