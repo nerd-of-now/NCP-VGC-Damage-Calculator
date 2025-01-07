@@ -178,6 +178,13 @@ th {
 }
 
 /* pokemon info */
+select.hidden-power {
+    width:120px;
+    font: 12px Verdana, sans-serif;
+}
+.hidden-power-type {
+    text-align:center;
+}
 .poke-info label {
     display: inline-block;
     width: 6em;

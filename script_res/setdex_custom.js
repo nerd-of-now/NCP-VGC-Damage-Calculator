@@ -93,15 +93,16 @@ var defaultHiddenPowerSD = {
 };
 
 function verifyHiddenPowerType(hpName, ivs) {
-    return calcHiddenPower(ivs) == hpName.substring(hpName.lastIndexOf(" ") + 1, hpName.length);
+    return calcHiddenPower(ivs).type == hpName.substring(hpName.lastIndexOf(" ") + 1, hpName.length);
 }
 
 //The IV ordering is: HP, Attack, Defense, Speed, Special Attack, Special Defense
 function calcHiddenPower(ivs) {
     var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
     var typeIndex = Math.floor(((ivs[0] & 1) + (ivs[1] & 1) * 2 + (ivs[2] & 1) * 4 + (ivs[5] & 1) * 8 + (ivs[3] & 1) * 16 + (ivs[4] & 1) * 32) * 15 / 63);
+    var basePower = gen >= 6 ? 60 : Math.floor((secondLeastSigBit(ivs[0]) + (secondLeastSigBit(ivs[1]) * 2) + (secondLeastSigBit(ivs[2]) * 4) + (secondLeastSigBit(ivs[5]) * 8) + (secondLeastSigBit(ivs[3]) * 16) + (secondLeastSigBit(ivs[4]) * 32)) * 40 / 63) + 30;
 
-    return typeOrder[typeIndex];
+    return { type: typeOrder[typeIndex], bp: basePower};
 }
 
 for (var i = 1; i <= 9; i++) {

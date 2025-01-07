@@ -899,9 +899,9 @@ function HiddenPower(move, attacker, description) {
 
 function secondLeastSigBit(val) {
     if (val & 2) {
-        return true;
+        return 1;
     }
-    return false;
+    return 0;
 }
 
 function NaturalGift(move, attacker, description) {

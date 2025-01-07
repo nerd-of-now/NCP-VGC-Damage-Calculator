@@ -705,7 +705,7 @@ $(".move-selector").change(function() {
     moveGroupObj.children(".move-z").prop("checked", false);
 
     //SLOPPY WAY OF HANDLING
-    glaiveRushCheck(moveGroupObj);
+    userMovesCheck(moveGroupObj);
     transformCheck(moveGroupObj);
     getOppMoves($(this).closest(".poke-info").attr("id"));  //for when the defender's moves change
 });
@@ -733,21 +733,180 @@ function showHits(hitBounds, moveGroupObj) {
     }
 }
 
-//sloppy check for Glaive Rush checkbox
-function glaiveRushCheck(divValue) {    //divValue should accept any div class, it's just meant to be a quick way to find which Pokemon it's checking
-    pInfo = $(divValue).closest(".poke-info");
-    pMoves = [pInfo.find(".move1").children("select.move-selector").val(),
+var dontCheckHiddenPower = false;    //necessary when more than one move is getting changed at once
+
+//sloppy check for Glaive Rush checkbox and Hidden Power menu
+function userMovesCheck(divValue) {    //divValue should accept any div class, it's just meant to be a quick way to find which Pokemon it's checking
+    var pInfo = $(divValue).closest(".poke-info");
+    var pMoves = [pInfo.find(".move1").children("select.move-selector").val(),
         pInfo.find(".move2").children("select.move-selector").val(),
         pInfo.find(".move3").children("select.move-selector").val(),
         pInfo.find(".move4").children("select.move-selector").val()];
 
-    if (pMoves.indexOf("Glaive Rush") != -1)
-        pInfo.find(".glaive-rush").show();
+    if ("Glaive Rush" in moves) {
+        if (pMoves.includes("Glaive Rush"))
+            pInfo.find(".glaive-rush").show();
+        else {
+            pInfo.find(".glaive-rush").hide();
+            pInfo.find(".glaive-rush").prop("checked", false);
+        }
+    }
     else {
         pInfo.find(".glaive-rush").hide();
         pInfo.find(".glaive-rush").prop("checked", false);
     }
+    if ("Hidden Power Ice" in moves && gen <= 6 && !dontCheckHiddenPower) {   //any Hidden Power type should do
+        var isHP = -1;
+        for (var i = 0; i < pMoves.length; i++) {
+            if (pMoves[i].includes("Hidden Power ")) {
+                isHP = i;
+                break;
+            }
+        }
+        if (isHP !== -1) {
+            hiddenPowerCheck(pInfo, pMoves[isHP]);
+            pInfo.find(".hidden-power").show();
+        }
+        else {
+            pInfo.find(".hidden-power").hide();
+        }
+    }
+    else {
+        pInfo.find(".hidden-power").hide();
+    }
 }
+
+var DynamicLookupHP = {};
+
+function hiddenPowerCheck(pInfo, hpName) {
+    var hpType = hpName.substring(hpName.lastIndexOf(" ") + 1, hpName.length);
+    var hpIVs = defaultHiddenPowerSD[hpType]["ivs"];
+    var orderIV = ['hp', 'at', 'df', 'sa', 'sd', 'sp'];
+    var comboIVs = {};
+    var verifyIVsTemp = [];
+
+    //check for hidden power dropdown visibility and what type is currently loaded
+    //if the dropdown is visible AND the loaded type == hpType, return without doing anything
+    var selectHP = pInfo.find(".hidden-power");
+    var selectTypeHP = selectHP.find(".hidden-power-type");
+    if (!selectHP.is(":visible") || hpType != selectTypeHP.text()) {
+        for (var i = 0; i < orderIV.length; i++) {
+            verifyIVsTemp[i] = pInfo.find("." + orderIV[i] + " .ivs").val();
+        }
+        if (!verifyHiddenPowerType(hpType, verifyIVsTemp)) {
+            for (var i = 0; i < orderIV.length; i++) {
+                pInfo.find("." + orderIV[i] + " .ivs").val(hpIVs[i]);
+            }
+        }
+        if (!(hpType in DynamicLookupHP)) {
+            DynamicLookupHP[hpType] = setDictHP(hpType);
+        }
+        comboIVs = DynamicLookupHP[hpType];
+        //since bp is determined by the second least significant bit, all min ivs will consistently be 2 more in gens 3-5 than in gens 6 and beyond
+        if (gen >= 6) {
+            for (ivSpec in comboIVs) {
+                if (ivSpec == 'max IVs') {
+                    continue;
+                }
+                for (var i = 0; i < Object.keys(comboIVs[ivSpec]).length; i++) {
+                    if (ivSpec.includes('atk')) {
+                        comboIVs[ivSpec][i].at -= 2;
+                    }
+                    if (ivSpec.includes('speed')) {
+                        comboIVs[ivSpec][i].sp -= 2;
+                    }
+                }
+            }
+        }
+        selectTypeHP.text('HP ' + hpType + " IVs");
+        //take the ivs from each part and match them up with each optgroup
+        var optgroups = {
+            'min atk': selectHP.find(".min-atk"),
+            'min atk+speed': selectHP.find(".min-atk-spe"),
+            'max IVs': selectHP.find(".max-ivs"),
+            'min speed': selectHP.find(".min-spe")
+        };
+        var ivsOption;
+        for (ivSpecifics in comboIVs) {
+            optgroups[ivSpecifics].empty();
+            for (exactSpreads in comboIVs[ivSpecifics]) {
+                ivsOption = $("<option></option>");
+                ivsOption.val(JSON.stringify(comboIVs[ivSpecifics][exactSpreads]));
+                var optionText=''
+                for (iv in comboIVs[ivSpecifics][exactSpreads]) {
+                    optionText += comboIVs[ivSpecifics][exactSpreads][iv] + (iv != 'sp' ? '/' : '');
+                }
+                ivsOption.text(optionText);
+                optgroups[ivSpecifics].append(ivsOption);
+            }
+        }
+    }
+
+}
+
+function setDictHP(typeHP) {
+    //order: min atk, min atk+spe, max all, min spe
+    var baseIVCases = [{ 'hp': 31, 'at': 0, 'df': 31, 'sa': 31, 'sd': 31, 'sp': 31 },
+    { 'hp': 31, 'at': 0, 'df': 31, 'sa': 31, 'sd': 31, 'sp': 0 },
+    { 'hp': 31, 'at': 31, 'df': 31, 'sa': 31, 'sd': 31, 'sp': 31 },
+    { 'hp': 31, 'at': 31, 'df': 31, 'sa': 31, 'sd': 31, 'sp': 0 }];
+    //type ordering reflects order with hidden power
+    var typeCases = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var changeIVCase = ['min atk', 'min atk+speed', 'max IVs', 'min speed'];
+    var typeIndex = typeCases.indexOf(typeHP);
+    var ivArrays = {};
+    for (var i = 0; i < baseIVCases.length; i++) {
+        ivArrays[changeIVCase[i]] = HiddenPowerRange(baseIVCases[i], typeIndex, baseIVCases[i]['at'] < 30, baseIVCases[i]['sp'] < 30, /*gen < 6*/ true);
+    }
+    return ivArrays;
+}
+
+function HiddenPowerRange(ivs, type, minAtk, minSpe, isPreGen6) {
+    //reminder:type=floor(((HPIV&1)+(ATIV&1)*2+(DFIV&1)*4+(SPIV&1)*8+(SAIV&1)*16+(SDIV&1)*32)*15/63)
+    //reverse:stats=ceil(type*63/15)
+    var statRange = {};
+    var ivAllCombos = {};
+    targetRange = [Math.ceil(type * 63 / 15), Math.ceil((type + 1) * 63 / 15) - 1];
+    if (targetRange[1] > 63) targetRange[1] = 63;   //only relevant for Dark type Hidden Power
+    for (stat in ivs) {
+        if (isPreGen6 && !(ivs[stat] & 2)) { //70 BP check for gens 3-5
+            if (((minAtk && stat == 'at') || (minSpe && stat == 'sp')) && ivs[stat] > 1)
+                ivs[stat] -= 2;
+            else
+                ivs[stat] += 2;
+        }
+        if (ivs[stat] & 1)
+            statRange[stat] = [ivs[stat] - 1, ivs[stat]];
+        else
+            statRange[stat] = [ivs[stat], ivs[stat] + 1];
+    }
+    //after the second for loop, ivAllCombos contains every single possible IV combination that will lead to the right type
+    var trueIndex = 0;
+    for (var i = targetRange[0]; i <= targetRange[1]; i++) {
+        trueIndex = i - targetRange[0];
+        ivAllCombos[trueIndex] = {
+            'hp': statRange['hp'][i & 1],
+            'at': statRange['at'][(i >> 1) & 1],
+            'df': statRange['df'][(i >> 2) & 1],
+            'sa': statRange['sa'][(i >> 4) & 1],
+            'sd': statRange['sd'][(i >> 5) & 1],
+            'sp': statRange['sp'][(i >> 3) & 1]
+        };
+    }
+    return ivAllCombos;
+}
+
+$(".hidden-power").change(function () {
+    if (!($(this).val().includes("HP "))) {
+        var selectedIVs = JSON.parse($(this).val());
+        var pInfo = $(this).closest(".poke-info");
+        for (currStat in selectedIVs) {
+            pInfo.find("." + currStat + " .ivs").val(selectedIVs[currStat]);
+        }
+        calcHP(pInfo);
+        calcStats(pInfo);
+    }
+});
 
 function transformCheck(divValue) {    //divValue should accept any div class, it's just meant to be a quick way to find which Pokemon it's checking
     var pInfo = $(divValue).closest(".poke-info");
@@ -862,6 +1021,7 @@ $(".set-selector").change(function() {
         var moveObj;
         var abilityObj = pokeObj.find("select.ability");
         var itemObj = pokeObj.find("select.item");
+        dontCheckHiddenPower = true;
         if (pokemonName in setdex && setName in setdex[pokemonName]) {
             var set = setdex[pokemonName][setName];
             if ($.isEmptyObject(setdexCustom) == false && pokemonName in setdexCustom && setName in setdexCustom[pokemonName]
@@ -897,6 +1057,8 @@ $(".set-selector").change(function() {
             setSelectValueIfValid(abilityObj, set.ability, pokemon.ab ? pokemon.ab : "");   //necessary check; custom sets with abilities different to defaults will have the default ability instead, and custom sets with non-existent abilities won't default to (other)
             setSelectValueIfValid(itemObj, set.item, "");
             for (i = 0; i < 4; i++) {
+                if (i == 3)
+                    dontCheckHiddenPower = false;
                 moveObj = pokeObj.find(".move" + (i+1) + " select.move-selector");
                 setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
                 moveObj.change();
@@ -920,6 +1082,8 @@ $(".set-selector").change(function() {
             setSelectValueIfValid(abilityObj, pokemon.ab, "");  //necessary check; blank abilities won't update to their defaults otherwise
             itemObj.val("");
             for (i = 0; i < 4; i++) {
+                if (i == 3)
+                    dontCheckHiddenPower = false;
                 moveObj = pokeObj.find(".move" + (i+1) + " select.move-selector");
                 moveObj.val("(No Move)");
                 moveObj.change();
