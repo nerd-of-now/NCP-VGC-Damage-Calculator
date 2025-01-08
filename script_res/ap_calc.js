@@ -797,6 +797,8 @@ function hiddenPowerCheck(pInfo, hpName) {
             for (var i = 0; i < orderIV.length; i++) {
                 pInfo.find("." + orderIV[i] + " .ivs").val(hpIVs[i]);
             }
+            calcHP(pInfo);
+            calcStats(pInfo);
         }
         if (!(hpType in DynamicLookupHP)) {
             DynamicLookupHP[hpType] = setDictHP(hpType);
