@@ -5,9 +5,55 @@ var SETDEX_GEN5 = {
     },
     "Charizard": {
         //2013
+        "HP Ground Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30,
+                "sd": 30
+            },
+            "nature": "Timid",
+            "item": "Choice Specs",
+            "moves": [
+                "Heat Wave",
+                "Overheat",
+                "Air Slash",
+                "Hidden Power Ground"
+            ]
+        },
     },
     "Blastoise": {
         //2013
+        "Wacan Follow Me": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 36,
+                "sa": 180,
+                "sd": 36,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Wacan Berry",
+            "moves": [
+                "Scald",
+                "Icy Wind",
+                "Follow Me",
+                "Protect"
+            ]
+        },
     },
     "Butterfree": {
 
@@ -105,6 +151,25 @@ var SETDEX_GEN5 = {
     },
     "Arcanine": {
         //2012-13
+        "Choice Band Coverage": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Choice Band",
+            "moves": [
+                "Flare Blitz",
+                "Close Combat",
+                "Extreme Speed",
+                "Crunch"
+            ]
+        },
     },
     "Poliwrath": {
 
@@ -114,6 +179,25 @@ var SETDEX_GEN5 = {
     },
     "Machamp": {
         //2013
+        "Enigne's Senior Worlds 1st Sitrus": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 76,
+                "df": 100,
+                "sa": 0,
+                "sd": 76,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Dynamic Punch",
+                "Stone Edge",
+                "Wide Guard",
+                "Protect"
+            ]
+        },
     },
     "Victreebel": {
 
@@ -133,7 +217,7 @@ var SETDEX_GEN5 = {
     "Slowbro": {
 
     },
-    "Farfetch\u0027d": {
+    "Farfetch'd": {
 
     },
     "Dodrio": {
@@ -153,6 +237,28 @@ var SETDEX_GEN5 = {
     },
     "Gengar": {
         //2013
+        "Sash 3 Attacks": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Focus Sash",
+            "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Icy Wind",
+                "Protect"
+            ]
+        },
     },
     "Hypno": {
 
@@ -165,6 +271,28 @@ var SETDEX_GEN5 = {
     },
     "Exeggutor": {
         //2012
+        "Wolfe's Worlds 2nd Harvest Power Swap": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 28,
+                "sa": 0,
+                "sd": 236,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Leaf Storm",
+                "Psyshock",
+                "Power Swap",
+                "Protect"
+            ]
+        },
     },
     "Marowak": {
 
@@ -249,9 +377,55 @@ var SETDEX_GEN5 = {
     },
     "Electabuzz": {
         //2013
+        "Follow Me Support": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 204,
+                "sa": 0,
+                "sd": 60,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Static",
+            "item": "Eviolite",
+            "moves": [
+                "Electroweb",
+                "Follow Me",
+                "Helping Hand",
+                "Protect"
+            ]
+        },
     },
     "Magmar": {
         //2013
+        "Follow Me Support": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 132,
+                "sa": 0,
+                "sd": 132,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "ability": "Flame Body",
+            "item": "Eviolite",
+            "moves": [
+                "Overheat",
+                "Follow Me",
+                "Will-O-Wisp",
+                "Protect"
+            ]
+        },
     },
     "Pinsir": {
 
@@ -329,6 +503,28 @@ var SETDEX_GEN5 = {
     },
     "Snorlax": {
         //2012
+        "Slow Choice Band": {
+            "level": 50,
+            "evs": {
+                "hp": 28,
+                "at": 252,
+                "df": 228,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Choice Band",
+            "moves": [
+                "Double-Edge",
+                "Self-Destruct",
+                "Earthquake",
+                "Fire Punch"
+            ]
+        },
     },
     "Articuno": {
 
@@ -390,6 +586,44 @@ var SETDEX_GEN5 = {
     },
     "Dragonite": {
         //2012
+        "Lum Berry Physical": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 204,
+                "df": 20,
+                "sa": 0,
+                "sd": 52,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "item": "Lum Berry",
+            "moves": [
+                "Dragon Claw",
+                "Extreme Speed",
+                "Fire Punch",
+                "Superpower"
+            ]
+        },
+        "Special Dragon Gem Rain": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Modest",
+            "item": "Dragon Gem",
+            "moves": [
+                "Draco Meteor",
+                "Hurricane",
+                "Extreme Speed",
+                "Protect"
+            ]
+        },
     },
     "Mewtwo": {
 
@@ -909,6 +1143,30 @@ var SETDEX_GEN5 = {
     },
     "Aron": {
         //2012-13
+        "Level 1 F.E.A.R. Shell Bell": {
+            "level": 1,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 4
+            },
+            "ivs": {
+                "sd": 0,
+                "sp": 0
+            },
+            "nature": "Brave",
+            "ability": "Sturdy",
+            "item": "Shell Bell",
+            "moves": [
+                "Endeavor",
+                "Toxic",
+                "Stealth Rock",
+                "Protect"
+            ]
+        },
     },
     "Aggron": {
 
