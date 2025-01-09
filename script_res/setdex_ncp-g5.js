@@ -653,6 +653,25 @@ var SETDEX_GEN5 = {
     },
     "Crobat": {
         //2012
+        "Acrobatics Support": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Flying Gem",
+            "moves": [
+                "Acrobatics",
+                "U-turn",
+                "Tailwind",
+                "Taunt"
+            ]
+        },
     },
     "Lanturn": {
 
@@ -698,6 +717,29 @@ var SETDEX_GEN5 = {
                 "Icy Wind",
                 "Encore",
                 "Helping Hand"
+            ]
+        },
+        "Water Gem HP Grass": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30
+            },
+            "nature": "Modest",
+            "item": "Water Gem",
+            "moves": [
+                "Hydro Pump",
+                "Ice Beam",
+                "Hidden Power Grass",
+                "Protect"
             ]
         },
     },
@@ -864,6 +906,28 @@ var SETDEX_GEN5 = {
     },
     "Porygon2": {
         //2012
+        "Bulky Trace TR": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 204,
+                "sa": 0,
+                "sd": 52,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "item": "Eviolite",
+            "moves": [
+                "Ice Beam",
+                "Toxic",
+                "Recover",
+                "Trick Room"
+            ]
+        },
     },
     "Stantler": {
 
@@ -1051,6 +1115,28 @@ var SETDEX_GEN5 = {
     },
     "Ludicolo": {
         //2012-13
+        "Life Orb Rain Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Life Orb",
+            "moves": [
+                "Giga Drain",
+                "Hydro Pump",
+                "Ice Beam",
+                "Scald"
+            ]
+        },
     },
     "Shiftry": {
 
@@ -1269,6 +1355,28 @@ var SETDEX_GEN5 = {
     },
     "Dusclops": {
         //2012
+        "Trick Room Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 164,
+                "sa": 0,
+                "sd": 92,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "item": "Eviolite",
+            "moves": [
+                "Night Shade",
+                "Pain Split",
+                "Will-O-Wisp",
+                "Trick Room"
+            ]
+        },
     },
     "Tropius": {
 
@@ -1709,6 +1817,25 @@ var SETDEX_GEN5 = {
     },
     "Weavile": {
         //2013
+        "Fast Fake Out Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Focus Sash",
+            "moves": [
+                "Night Slash",
+                "Ice Punch",
+                "Ice Shard",
+                "Fake Out"
+            ]
+        },
     },
     "Magnezone": {
 
@@ -1774,6 +1901,30 @@ var SETDEX_GEN5 = {
     },
     "Yanmega": {
         //2012
+        "Speed Boost Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30,
+                "sd": 30
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "moves": [
+                "Bug Buzz",
+                "Air Slash",
+                "Hidden Power Ground",
+                "Protect"
+            ]
+        },
     },
     "Leafeon": {
 
@@ -1826,9 +1977,57 @@ var SETDEX_GEN5 = {
     },
     "Rotom-Mow": {
         //2012
+        "Trick Choice Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 4,
+                "sp": 240
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30,
+                "sp": 30
+            },
+            "nature": "Modest",
+            "item": "Choice Scarf",
+            "moves": [
+                "Thunderbolt",
+                "Leaf Storm",
+                "Hidden Power Fire",
+                "Trick"
+            ]
+        },
     },
     "Rotom-Frost": {
         //2012
+        "Scarf Blizzard Spam": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 0,
+                "df": 4,
+                "sa": 248,
+                "sd": 4,
+                "sp": 240
+            },
+            "ivs": {
+                "at": 2,
+                "sa": 30,
+                "sp": 30
+            },
+            "nature": "Modest",
+            "item": "Choice Scarf",
+            "moves": [
+                "Thunderbolt",
+                "Blizzard",
+                "Hidden Power Fire",
+                "Trick"
+            ]
+        },
     },
     "Rotom-Heat": {
         //2012
@@ -2255,6 +2454,29 @@ var SETDEX_GEN5 = {
     },
     "Reuniclus": {
         //2011-12
+        "Life Orb TR": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "item": "Life Orb",
+            "moves": [
+                "Psyshock",
+                "Shadow Ball",
+                "Focus Blast",
+                "Trick Room"
+            ]
+        },
     },
     "Swanna": {
 
@@ -2429,6 +2651,28 @@ var SETDEX_GEN5 = {
     },
     "Chandelure": {
         //2011-12
+        "Offensive Sash TR": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Focus Sash",
+            "moves": [
+                "Heat Wave",
+                "Shadow Ball",
+                "Trick Room",
+                "Protect"
+            ]
+        },
     },
     "Haxorus": {
         //2011
@@ -2447,6 +2691,25 @@ var SETDEX_GEN5 = {
     },
     "Mienshao": {
         //2011
+        "Eiganjo's Flying Gem Acrobatics": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Flying Gem",
+            "moves": [
+                "Drain Punch",
+                "Acrobatics",
+                "Fake Out",
+                "Wide Guard"
+            ]
+        },
     },
     "Druddigon": {
         //2011
@@ -2587,6 +2850,25 @@ var SETDEX_GEN5 = {
     },
     "Virizion": {
         //2011
+        "Fast Fighting Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Fighting Gem",
+            "moves": [
+                "Close Combat",
+                "Leaf Blade",
+                "Stone Edge",
+                "Protect"
+            ]
+        },
     },
     "Tornadus": {
         //2011, 2013
