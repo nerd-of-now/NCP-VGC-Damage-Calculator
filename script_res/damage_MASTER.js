@@ -192,12 +192,8 @@ function addLevelDesc(attacker, defender, description) {
         description.defenderLevel = defender.level;
 }
 
-function getMoveEffectiveness(move, type, otherType, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds, isTeraShell, defIsTera) {
-    if (isTeraShell && typeChart[move.type][type] >= 0.5) {
-        description.defenderAbility = 'Tera Shell';
-        return 0.5;
-    }
-    else if (move.type == "Stellar" && defIsTera) {
+function getMoveEffectiveness(move, type, otherType, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds, defIsTera) {
+    if (move.type == "Stellar" && defIsTera) {
         return 2;
     }
     else if ((isForesight || isScrappy) && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
@@ -949,6 +945,14 @@ function ateIzeTypeChange(move, attacker, description) {
     }
 
     return [move, description, isBoosted];
+}
+
+function checkTeraShell(isTeraShell, description, typeEffectiveness) {
+    if (isTeraShell && typeEffectiveness > 0.5) {
+        description.defenderAbility = 'Tera Shell';
+        typeEffectiveness = 0.5;
+    }
+    return typeEffectiveness;
 }
 
 function immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness) {

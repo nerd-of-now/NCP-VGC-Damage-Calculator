@@ -118,11 +118,12 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
         [move, description, ateIzeBoosted] = ateIzeTypeChange(move, attacker, description);
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds", defAbility === 'Tera Shell' && defender.curHP === defender.maxHP, defender.isTerastalize);
-    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 && move.type !== 'Stellar' ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds", defAbility === 'Tera Shell' && defender.curHP === defender.maxHP, defender.isTerastalize) : 1;
+    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds", defender.isTerastalize);
+    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 && move.type !== 'Stellar' ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds", defender.isTerastalize) : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
+    typeEffectiveness = checkTeraShell(defAbility === 'Tera Shell' && defender.curHP === defender.maxHP, description, typeEffectiveness);
 
     getHPInfo(description, defender);
 
