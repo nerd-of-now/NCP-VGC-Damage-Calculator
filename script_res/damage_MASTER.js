@@ -913,9 +913,11 @@ function NaturalGift(move, attacker, description) {
 
 function ateIzeTypeChange(move, attacker, description) {
     var isBoosted = false;
-    if (attacker.ability === "Liquid Voice" && move.isSound) {
-        move.type = "Water";
-        description.attackerAbility = attacker.ability;
+    if (attacker.ability === "Liquid Voice") {
+        if (move.isSound) {
+            move.type = "Water";
+            description.attackerAbility = attacker.ability;
+        }
     }
     else {
         if (attacker.ability !== "Normalize" && move.type === "Normal") { //Z-Moves don't receive -ate type changes
