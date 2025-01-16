@@ -931,7 +931,7 @@ function ateIzeTypeChange(move, attacker, description) {
                 case "Refrigerate":
                     move.type = "Ice";
                     break;
-                default:    //Galvanize
+                case "Galvanize":
                     move.type = "Electric";
             }
             if (attacker.isDynamax)
@@ -1948,7 +1948,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     }
     //e. Crit mod
     if (isCritical) {
-        baseDamage = Math.floor(baseDamage * 1.5);
+        baseDamage = Math.floor(baseDamage * (gen >= 6 ? 1.5 : 2));
         description.isCritical = isCritical;
     }
     // the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
