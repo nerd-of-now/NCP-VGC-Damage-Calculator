@@ -200,7 +200,9 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 1.5);
     }
 
-    baseDamage = Math.floor(baseDamage * typeEffectiveness);
+    //type modifiers are calculated separately for each type
+    baseDamage = Math.floor(baseDamage * typeEffect1);
+    baseDamage = Math.floor(baseDamage * typeEffect2);
 
     var damage = [], additionalDamage = [], allDamage = [];
     for (var i = 85; i <= 100; i++) {
