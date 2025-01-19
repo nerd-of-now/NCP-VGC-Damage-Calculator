@@ -36,11 +36,11 @@ th {
 .big-text {
     display: inline-block;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.2em;
     margin: 0.5em 0;
 }
 .small-text {
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 .panel {
     float: left;
