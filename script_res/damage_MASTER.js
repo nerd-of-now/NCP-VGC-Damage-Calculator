@@ -2108,7 +2108,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         description.defenderAbility = defAbility;
     }
     //j. Ice Scales
-    if (defAbility === "Ice Scales" && ((!hitsPhysical && !move.makesContact) || move.dealsPhysicalDamage)) {
+    if (defAbility === "Ice Scales" && move.category === "Special"){
         finalMods.push(0x800);
         description.defenderAbility = defAbility;
     }
