@@ -43,8 +43,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 
     var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight);
     var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight) : 1;
-    var typeEffectiveness = typeEffect1 * typeEffect2;
-    immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defender.ability, typeEffectiveness);
+    immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defender.ability, typeEffect1 * typeEffect2);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
 
     getHPInfo(description, defender);
