@@ -66,31 +66,39 @@ function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
 
 function GET_DAMAGE_SV(attacker, defender, move, field) {
     var moveDescName = move.name;
-    var isQuarteredByProtect = false;
+    var isQuarteredByProtect = false, isMeFirst = false;
 
     var attIsGrounded = pIsGrounded(attacker, field);
     var defIsGrounded = pIsGrounded(defender, field);
 
+    if (move.name == 'Me First')
+        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName, attacker.isDynamax);
+
     checkMoveTypeChange(move, field, attacker);
     checkConditionalPriority(move, field.terrain, attacker, attIsGrounded);
     checkConditionalSpread(move, field.terrain, attacker, attIsGrounded);
-    checkContactOverride(move, attacker);
 
     if (attacker.isDynamax && gen === 8)    //without the gen check a Dynamaxed Pokemon can lead to an error switching between gen 8 and either 7 or 9
         [move, isQuarteredByProtect, moveDescName] = MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field);
-
-    if (move.name == "Nature Power" && attacker.item !== 'Assault Vest')
+    else if (move.name == "Nature Power" && attacker.item !== 'Assault Vest')
         [move, moveDescName] = NaturePower(move, field, moveDescName);
-    else if (move.name == 'Me First' && !move.isMeFirst)
-        [move, moveDescName] = checkMeFirst(move, moveDescName);
 
     if (move.isZ || move.isSignatureZ)
         [move, isQuarteredByProtect, moveDescName] = ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName);
+
+    //Needs to be after the Z-move check since Light That Burns The Sky can change category
+    if (usesPhysicalAttack(attacker, defender, move)) {
+        move.category = "Physical";
+    }
+
+    //Placed here so 1) Me First moves get contact, and 2) physical Shell Side Arm gets contact
+    checkContactOverride(move, attacker);
 
     attacker_name = attacker.name;
     if (attacker_name && attacker_name.includes("-Gmax")) attacker_name = attacker_name.substring(0, attacker_name.indexOf('-Gmax'));
     defender_name = defender.name;
     if (defender_name && defender_name.includes("-Gmax")) defender_name = defender_name.substring(0, defender_name.indexOf('-Gmax'));
+
     var description = {
         "attackerName": attacker_name,
         "moveName": moveDescName,
@@ -141,15 +149,8 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     var basePower;
     [basePower, description] = basePowerFunc(move, description, turnOrder, attacker, defender, field, attIsGrounded, defIsGrounded, defAbility);
 
-    //BP Modifiers are where physical and special are first checked for so this is as late as this check can go! (Contact as well)
-    if (usesPhysicalAttack(attacker, defender, move)) {
-        move.category = "Physical";
-        if (move.name === "Shell Side Arm")
-            move.makesContact = true;
-    }
-
     var bpMods;
-    [bpMods, description, move] = calcBPMods(attacker, defender, field, move, description, ateIzeBoosted, basePower, attIsGrounded, defIsGrounded, turnOrder, defAbility);
+    [bpMods, description, move] = calcBPMods(attacker, defender, field, move, description, ateIzeBoosted, basePower, attIsGrounded, defIsGrounded, turnOrder, defAbility, isMeFirst);
 
     basePower = Math.max(1, pokeRound(basePower * chainMods(bpMods) / 0x1000));
 

@@ -692,6 +692,8 @@ function checkConditionalSpread(move, terrain, attacker, attIsGrounded) {
 function checkContactOverride(move, attacker) {
     if (move.makesContact && (attacker.item === 'Protective Pads' || (attacker.item === 'Punching Glove' && move.isPunch) || attacker.ability === "Long Reach"))
         move.makesContact = false;
+    else if (move.name === "Shell Side Arm" && move.category === "Physical")
+        move.makesContact = true;
 }
 
 function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
@@ -836,15 +838,18 @@ function NaturePower(move, field, moveDescName) {         //Rename Nature Power 
     return [move, moveDescName];
 }
 
-function checkMeFirst(move, moveDescName) {
-    var meFirstZ = move.isZ;
-    moveName = move.usedOppMove;
-    move = moves[move.usedOppMove];
-    move.name = moveName;
-    move.isMeFirst = true;
-    move.isZ = meFirstZ;
-    moveDescName = move.name;
-    return [move, moveDescName];
+function checkMeFirst(move, moveDescName, isDynamax) {
+    var moveName = move.usedOppMove;
+    var cannotCall = ['Beak Blast', 'Belch', 'Chatter', 'Counter', 'Covet', 'Focus Punch', 'Metal Burst', 'Mirror Coat', 'Shell Trap', 'Struggle', 'Thief'].includes(moveName);
+    var meFirstZ = move.isZ, isMeFirst = false;
+    if (!cannotCall && moves[moveName].category !== 'Status' && !isDynamax) {
+        move = moves[moveName];
+        move.name = moveName;
+        isMeFirst = true;
+        move.isZ = meFirstZ;
+        moveDescName = moveName;
+    }
+    return [move, moveDescName, isMeFirst];
 }
 
 function statusMoves(move, attacker, defender, description) {
@@ -1383,7 +1388,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
 }
 
 //2. BP Mods
-function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted, basePower, attIsGrounded, defIsGrounded, turnOrder, defAbility) {
+function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted, basePower, attIsGrounded, defIsGrounded, turnOrder, defAbility, isMeFirst) {
     var bpMods = [];
     var isAttackerAura = attacker.ability === (move.type + " Aura");
     var isDefenderAura = defAbility === (move.type + " Aura");
@@ -1536,10 +1541,9 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //n. Me First
-    if (move.isMeFirst) {
+    if (isMeFirst) {
         bpMods.push(0x1800);
         description.meFirst = true;
-        move.isMeFirst = false;
     }
 
     //o. Knock Off
@@ -2000,7 +2004,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     var applyBurn = (attacker.status === "Burned" && move.category === "Physical" && attacker.ability !== "Guts" && !move.ignoresBurn);
     description.isBurned = applyBurn;
     var finalMod;
-    [finalMod, description] = calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility, hitsPhysical);
+    [finalMod, description] = calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility);
     finalMods = chainMods(finalMod);
 
     var damage = [], additionalDamage = [], allDamage = [];
@@ -2053,7 +2057,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
 }
 
 //9. Finals Damage Mods
-function calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility, hitsPhysical) {
+function calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility) {
     var finalMods = [];
     //a. Screens/Aurora Veil
     if (field.isAuroraVeil && !isCritical && !move.ignoresScreens) {

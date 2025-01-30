@@ -27,16 +27,18 @@ function CALCULATE_ALL_MOVES_DPP(p1, p2, field) {
 
 function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     var moveDescName = move.name;
+    var isMeFirst = false;
 
     var attIsGrounded = pIsGrounded(attacker, field);
     var defIsGrounded = pIsGrounded(defender, field);
+
+    if (move.name == 'Me First')
+        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName);
 
     checkMoveTypeChange(move, field, attacker);
 
     if (move.name == "Nature Power")
         [move, moveDescName] = NaturePower(move, field, moveDescName);
-    else if (move.name == 'Me First' && !move.isMeFirst)
-        [move, moveDescName] = checkMeFirst(move, moveDescName);
 
     var description = {
         "attackerName": attacker.name,
@@ -79,7 +81,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     ////////// BASE POWER //////////
     ////////////////////////////////
     var basePower;
-    [basePower, description] = basePowerFunc(move, description, turnOrder, attacker, defender, field, attIsGrounded, defIsGrounded, defAbility);
+    [basePower, description] = basePowerFunc(move, description, turnOrder, attacker, defender, field, attIsGrounded, defIsGrounded, defAbility, isMeFirst);
 
     var isPhysical = move.category === "Physical";
     [basePower, description] = calcBPModsGen4(attacker, field, move, description, basePower, defAbility, isPhysical);
