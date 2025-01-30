@@ -106,13 +106,19 @@ function getSidebarImg(teamslotI, displayName) {
 function loadPreset(p, fullSetName) {
     $(p + " .set-selector").val(fullSetName);
     $(p + " .set-selector").change();
-    $(p + " .set-selector").find('.select2-chosen').text(fullSetName);
+    $(p + " .set-selector").find('.select2-chosen').text(fullSetName);  //used when the dropdown list doesn't contain the set it's loading
 }
 
 function loadSidebarSlot(pnum, teamnum) {
-    var p = '#p' + pnum;
-    var slotName = (CURRENT_SIDEBARS[pnum - 1][teamnum - 1]) + (pnum == 1 ? ' (Left' : pnum == 2 ? ' (Right' : '') + ' Sidebar Slot ' + teamnum + ')';
-    loadPreset(p, slotName);
+    var speciesName = CURRENT_SIDEBARS[pnum - 1][teamnum - 1];
+    if (speciesName in pokedex) {
+        var slotName = speciesName + (pnum == 1 ? ' (Left' : pnum == 2 ? ' (Right' : '') + ' Sidebar Slot ' + teamnum + ')';
+        var p = '#p' + pnum;
+        loadPreset(p, slotName);
+    }
+    else {
+        alert('This Pokemon is not available in this mode. Switch to National Dex mode to select this Pokemon.');
+    }
 }
 
 function shiftSidebar(pnum) {
