@@ -1976,6 +1976,30 @@ var SETDEX_GEN9 = {
                 "Weather Ball"
             ]
         },
+        "Slow Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Drizzle",
+            "tera_type": "Grass",
+            "item": "Life Orb",
+            "moves": [
+                "Hurricane",
+                "Weather Ball",
+                "Wide Guard",
+                "Protect"
+            ]
+        },
         "Max Speed Scarf": {
             "level": 50,
             "evs": {
@@ -2000,7 +2024,7 @@ var SETDEX_GEN9 = {
                 "Weather Ball"
             ]
         },
-        "Bulky Damp Rock Set": {
+        "Bulky Damp Rock": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2224,33 +2248,29 @@ var SETDEX_GEN9 = {
             ]
         },
     },
-    //"Dugtrio": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "tera_type": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Dugtrio": {
+        "Rajan why": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Arena Trap",
+            "tera_type": "Grass",
+            "item": "Focus Sash",
+            "moves": [
+                "Endeavor",
+                "Stomping Tantrum",
+                "Helping Hand",
+                "Protect"
+            ]
+        },
+    },
     "Torkoal": {
         "Charcoal Set": {
             "level": 50,
@@ -4002,7 +4022,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Indeedee-M": {
-        "Sash Imprison Trick Room": {
+        "Tera Psychic Scarf": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -4018,7 +4038,7 @@ var SETDEX_GEN9 = {
             "nature": "Modest",
             "ability": "Psychic Surge",
             "tera_type": "Psychic",
-            "item": "Focus Sash",
+            "item": "Choice Scarf",
             "moves": [
                 "Expanding Force",
                 "Tera Blast",
@@ -11073,7 +11093,7 @@ var SETDEX_GEN9 = {
             "moves": [
                 "Ivy Cudgel",
                 "Horn Leech",
-                "Wood Hammer",
+                "Power Whip",
                 "Follow Me"
             ]
         },
@@ -11759,7 +11779,7 @@ var SETDEX_GEN9 = {
                 "Muddy Water",
                 "Draco Meteor",
                 "Hurricane",
-                "Hydro Pump"
+                "Weather Ball"
             ]
         },
     },
@@ -13015,7 +13035,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Gouging Fire": {
-        "STOP USING FLARE BLITZ, USE HEAT CRASH": {
+        "Regulation F Clear Amulet": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -13035,7 +13055,7 @@ var SETDEX_GEN9 = {
                 "Dragon Claw"
             ]
         },
-        "Speed Booster Support, WITH HEAT CRASH": {
+        "Speed Booster Support": {
             "level": 50,
             "evs": {
                 "hp": 196,
@@ -13049,10 +13069,10 @@ var SETDEX_GEN9 = {
             "tera_type": "Fairy",
             "item": "Booster Energy",
             "moves": [
-                "Heat Crash",
+                "Flare Blitz",
                 "Breaking Swipe",
                 "Howl",
-                "Burning Bulwark"
+                "Protect"
             ]
         },
     },
@@ -13256,7 +13276,7 @@ var SETDEX_GEN9 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "tera_type": "Fire",
+            "tera_type": "Normal",
             "item": "Life Orb",
             "moves": [
                 "Psyblade",
@@ -13683,6 +13703,29 @@ var SETDEX_GEN9 = {
                 "Thunder"
             ]
         },
+        "Calm Mind Leftovers": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 0,
+                "df": 140,
+                "sa": 76,
+                "sd": 12,
+                "sp": 148
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Grass",
+            "item": "Leftovers",
+            "moves": [
+                "Origin Pulse",
+                "Ice Beam",
+                "Calm Mind",
+                "Protect"
+            ]
+        },
         "Max Speed Mystic Water": {
             "level": 50,
             "evs": {
@@ -13706,9 +13749,51 @@ var SETDEX_GEN9 = {
                 "Thunder"
             ]
         },
+        "Tera Water Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Scarf",
+            "moves": [
+                "Water Spout",
+                "Origin Pulse",
+                "Ice Beam",
+                "Thunder"
+            ]
+        },
     },
     "Groudon": {
-        "Tera Fire Clear Amulet": {
+        "Bulky Assault Vest": {
+            "level": 50,
+            "evs": {
+                "hp": 188,
+                "at": 76,
+                "df": 12,
+                "sa": 0,
+                "sd": 124,
+                "sp": 108
+            },
+            "nature": "Adamant",
+            "tera_type": "Fire",
+            "item": "Assault Vest",
+            "moves": [
+                "Precipice Blades",
+                "Heat Crash",
+                "Thunder Punch",
+                "High Horsepower"
+            ]
+        },
+        "Basic Clear Amulet": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -13726,6 +13811,26 @@ var SETDEX_GEN9 = {
                 "Heat Crash",
                 "Fire Punch",
                 "Rock Slide"
+            ]
+        },
+        "Bo1 Surprise Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Fire",
+            "item": "Choice Scarf",
+            "moves": [
+                "Precipice Blades",
+                "Heat Crash",
+                "Thunder Punch",
+                "Crunch"
             ]
         },
     },
@@ -14057,7 +14162,7 @@ var SETDEX_GEN9 = {
                 "sp": 0,
             },
             "nature": "Brave",
-            "tera_type": "Grass",
+            "tera_type": "Normal",
             "item": "Clear Amulet",
             "moves": [
                 "Sunsteel Strike",
@@ -14094,7 +14199,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Zacian": {
-        "Tera Ghost Swords Dance": {
+        "Tera Fairy Fast Offense": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -14105,7 +14210,6 @@ var SETDEX_GEN9 = {
                 "sp": 252
             },
             "nature": "Jolly",
-            "tera_type": "Ghost",
             "item": "Rusted Sword",
             "moves": [
                 "Behemoth Blade",
@@ -14114,9 +14218,49 @@ var SETDEX_GEN9 = {
                 "Swords Dance"
             ]
         },
+        "Tera Ground Tera Blast": {
+            "level": 50,
+            "evs": {
+                "hp": 108,
+                "at": 204,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 188
+            },
+            "nature": "Jolly",
+            "tera_type": "Ground",
+            "item": "Rusted Sword",
+            "moves": [
+                "Behemoth Blade",
+                "Tera Blast",
+                "Sacred Sword",
+                "Protect"
+            ]
+        },
     },
     "Zamazenta": {
-        "Bulky Tera Ghost": {
+        "MichaelderBeaste's Worlds T4 Max Speed": {
+            "level": 50,
+            "evs": {
+                "hp": 92,
+                "at": 4,
+                "df": 156,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Impish",
+            "tera_type": "Dragon",
+            "item": "Rusted Shield",
+            "moves": [
+                "Body Press",
+                "Heavy Slam",
+                "Wide Guard",
+                "Protect"
+            ]
+        },
+        "Bulky Tera Grass": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -14127,13 +14271,13 @@ var SETDEX_GEN9 = {
                 "sp": 0
             },
             "nature": "Impish",
-            "tera_type": "Ghost",
+            "tera_type": "Grass",
             "item": "Rusted Shield",
             "moves": [
                 "Body Press",
-                "Behemoth Bash",
                 "Heavy Slam",
-                "Iron Defense"
+                "Behemoth Bash",
+                "Wide Guard"
             ]
         },
         "Faster Tera Dragon": {
@@ -14228,6 +14372,29 @@ var SETDEX_GEN9 = {
         },
     },
     "Calyrex-Shadow Rider": {
+        "Tera Dark Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 28,
+                "at": 0,
+                "df": 4,
+                "sa": 220,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Dark",
+            "item": "Life Orb",
+            "moves": [
+                "Astral Barrage",
+                "Psychic",
+                "Dark Pulse",
+                "Expanding Force"
+            ]
+        },
         "ck49's Top 4 Regs CM Cloak": {
             "level": 50,
             "evs": {
@@ -14299,7 +14466,27 @@ var SETDEX_GEN9 = {
         },
     },
     "Koraidon": {
-        "Tera Fire Clear Amulet": {
+        "AndrewFVGC's San Antonio T4 Scale Shot": {
+            "level": 50,
+            "evs": {
+                "hp": 116,
+                "at": 196,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 196
+            },
+            "nature": "Adamant",
+            "tera_type": "Fire",
+            "item": "Loaded Dice",
+            "moves": [
+                "Collision Course",
+                "Flare Blitz",
+                "Scale Shot",
+                "Protect"
+            ]
+        },
+        "Jolly Max Clear Amulet": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -14316,7 +14503,27 @@ var SETDEX_GEN9 = {
                 "Collision Course",
                 "Flare Blitz",
                 "Flame Charge",
-                "Scale Shot"
+                "Dragon Claw"
+            ]
+        },
+        "Bulkier Clear Amulet": {
+            "level": 50,
+            "evs": {
+                "hp": 204,
+                "at": 68,
+                "df": 20,
+                "sa": 0,
+                "sd": 20,
+                "sp": 196
+            },
+            "nature": "Adamant",
+            "tera_type": "Fire",
+            "item": "Clear Amulet",
+            "moves": [
+                "Collision Course",
+                "Flare Blitz",
+                "Flame Charge",
+                "Helping Hand"
             ]
         },
     },
@@ -14405,7 +14612,29 @@ var SETDEX_GEN9 = {
                 "Hyper Beam"
             ]
         },
-        "Calm Mind Lefties": {
+        "Calm Mind Sub": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 0,
+                "df": 52,
+                "sa": 132,
+                "sd": 4,
+                "sp": 148
+            },
+            "ivs": {
+                "at": 15,
+            },
+            "nature": "Bold",
+            "item": "Leftovers",
+            "moves": [
+                "Tera Starstorm",
+                "Substitute",
+                "Protect",
+                "Calm Mind"
+            ]
+        },
+        "Calm Mind + Coverage Move": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -14419,11 +14648,11 @@ var SETDEX_GEN9 = {
                 "at": 15,
             },
             "nature": "Modest",
-            "item": "Leftovers",
+            "item": "Covert Cloak",
             "moves": [
                 "Tera Starstorm",
                 "Earth Power",
-                "Dark Pulse",
+                "Flamethrower",
                 "Calm Mind"
             ]
         },
