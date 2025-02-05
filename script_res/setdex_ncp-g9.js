@@ -3063,6 +3063,55 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Farigiraf": {
+        "ceree's Worlds 1st Tera Water Electric Seed": {
+            "level": 50,
+            "evs": {
+                "hp": 204,
+                "at": 0,
+                "df": 164,
+                "sa": 4,
+                "sd": 108,
+                "sp": 28
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Armor Tail",
+            "tera_type": "Water",
+            "item": "Electric Seed",
+            "moves": [
+                "Foul Play",
+                "Psychic Noise",
+                "Helping Hand",
+                "Trick Room"
+            ]
+        },
+        "zee's NAIC T16 Twin Beam Electric Seed": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 52,
+                "sa": 84,
+                "sd": 116,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 22,
+            },
+            "nature": "Modest",
+            "ability": "Armor Tail",
+            "tera_type": "Ground",
+            "item": "Electric Seed",
+            "moves": [
+                "Foul Play",
+                "Twin Beam",
+                "Helping Hand",
+                "Trick Room"
+            ]
+        },
         "Bulky Support": {
             "level": 50,
             "evs": {
@@ -6598,6 +6647,27 @@ var SETDEX_GEN9 = {
                 "Order Up"
             ]
         },
+        "45mice's Worlds T16 Defenseive Body Press": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 4,
+                "df": 196,
+                "sa": 0,
+                "sd": 148,
+                "sp": 156
+            },
+            "nature": "Impish",
+            "ability": "Unaware",
+            "tera_type": "Grass",
+            "item": "Leftovers",
+            "moves": [
+                "Body Press",
+                "Wave Crash",
+                "Order Up",
+                "Protect"
+            ]
+        },
         "Kenji Yabata's 2023 Worlds Cut (No Tatsu)": {
             "level": 50,
             "evs": {
@@ -6753,27 +6823,27 @@ var SETDEX_GEN9 = {
         },
     },
     "Scream Tail": {
-        "Trick Room Disruption": {
+        "Speed Booster Encore Disable": {
             "level": 50,
             "evs": {
-                "hp": 212,
+                "hp": 244,
                 "at": 0,
-                "df": 164,
+                "df": 68,
                 "sa": 0,
-                "sd": 132,
-                "sp": 0
+                "sd": 0,
+                "sp": 196
             },
             "ivs": {
                 "at": 0,
             },
-            "nature": "Bold",
-            "item": "Sitrus Berry",
-            "tera_type": "Steel",
+            "nature": "Timid",
+            "item": "Booster Energy",
+            "tera_type": "Normal",
             "moves": [
                 "Dazzling Gleam",
                 "Disable",
                 "Encore",
-                "Trick Room"
+                "Thunder Wave"
             ]
         },
         "Wolfe's Orlando 1st Perish Trap": {
@@ -6794,6 +6864,29 @@ var SETDEX_GEN9 = {
                 "Disable",
                 "Protect",
                 "Perish Song"
+            ]
+        },
+        "Sitrus Disruption": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 164,
+                "sa": 0,
+                "sd": 132,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "item": "Sitrus Berry",
+            "tera_type": "Steel",
+            "moves": [
+                "Dazzling Gleam",
+                "Disable",
+                "Encore",
+                "Trick Room"
             ]
         },
     },
@@ -7024,6 +7117,26 @@ var SETDEX_GEN9 = {
         },
     },
     "Iron Treads": {
+        "Tera Ghost Life Orb with Miraidon": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Life Orb",
+            "tera_type": "Ghost",
+            "moves": [
+                "High Horsepower",
+                "Iron Head",
+                "Steel Roller",
+                "Knock Off"
+            ]
+        },
         "Tera Flying Assault Vest": {
             "level": 50,
             "evs": {
@@ -7179,6 +7292,29 @@ var SETDEX_GEN9 = {
         },
     },
     "Iron Jugulis": {
+        "Tera Water Rain Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 36,
+                "sa": 4,
+                "sd": 148,
+                "sp": 68
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Booster Energy",
+            "tera_type": "Water",
+            "moves": [
+                "Snarl",
+                "Hurricane",
+                "Tailwind",
+                "Protect"
+            ]
+        },
         "Tera Poison Tailwind Support": {
             "level": 50,
             "evs": {
@@ -7481,6 +7617,29 @@ var SETDEX_GEN9 = {
         },
     },
     "Wo-Chien": {
+        "Shiliang Tang's NAIC Faster Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 44,
+                "sa": 4,
+                "sd": 20,
+                "sp": 188
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "tera_type": "Poison",
+            "item": "Leftovers",
+            "moves": [
+                "Pollen Puff",
+                "Ruination",
+                "Leech Seed",
+                "Protect"
+            ]
+        },
         "Defensive Leftovers": {
             "level": 50,
             "evs": {
@@ -7548,6 +7707,26 @@ var SETDEX_GEN9 = {
         },
     },
     "Ting-Lu": {
+        "Bulky Rocky Helmet": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 4,
+                "df": 36,
+                "sa": 4,
+                "sd": 236,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "tera_type": "Fairy",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Ruination",
+                "Sand Tomb",
+                "Snarl",
+                "Stealth Rock"
+            ]
+        },
         "Assault Vest Set": {
             "level": 50,
             "evs": {
@@ -7661,7 +7840,27 @@ var SETDEX_GEN9 = {
         },
     },
     "Roaring Moon": {
-        "Speed Booster Tailwind": {
+        "Defensive Speed Booster Tailwind": {
+            "level": 50,
+            "evs": {
+                "hp": 164,
+                "at": 68,
+                "df": 108,
+                "sa": 0,
+                "sd": 4,
+                "sp": 164
+            },
+            "nature": "Jolly",
+            "tera_type": "Flying",
+            "item": "Booster Energy",
+            "moves": [
+                "Acrobatics",
+                "Knock Off",
+                "Tailwind",
+                "Breaking Swipe"
+            ]
+        },
+        "More Offensive Speed Booster": {
             "level": 50,
             "evs": {
                 "hp": 28,
@@ -8695,6 +8894,26 @@ var SETDEX_GEN9 = {
                 "Grassy Glide"
             ]
         },
+        "Max Speed Drum Beating AV": {
+            "level": 50,
+            "evs": {
+                "hp": 140,
+                "at": 84,
+                "df": 4,
+                "sa": 0,
+                "sd": 28,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Fire",
+            "item": "Assault Vest",
+            "moves": [
+                "Fake Out",
+                "Drum Beating",
+                "U-turn",
+                "Grassy Glide"
+            ]
+        },
         "Miracle Seed Tera Grass": {
             "level": 50,
             "evs": {
@@ -9177,6 +9396,26 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Heatran": {
+        "Tera Bug Mixed Zoom Lens": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 4,
+                "df": 108,
+                "sa": 4,
+                "sd": 148,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "tera_type": "Bug",
+            "item": "Zoom Lens",
+            "moves": [
+                "Magma Storm",
+                "Heavy Slam",
+                "Will-O-Wisp",
+                "Protect"
+            ]
+        },
         "Offensive Life Orb": {
             "level": 50,
             "evs": {
@@ -9403,7 +9642,31 @@ var SETDEX_GEN9 = {
         },
     },
     "Landorus": {
-        "Offensive Life Orb": {
+        "unironicpanda/tsltang's San Antonio 1st/2nd Water Bulky": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 4,
+                "sa": 124,
+                "sd": 4,
+                "sp": 132
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Sheer Force",
+            "tera_type": "Water",
+            "item": "Life Orb",
+            "moves": [
+                "Sandsear Storm",
+                "Earth Power",
+                "Sludge Bomb",
+                "Psychic"
+            ]
+        },
+        "Timid Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -9693,7 +9956,30 @@ var SETDEX_GEN9 = {
         },
     },
     "Regidrago": {
-        "Dragon Fang Set": {
+        "Tera Ghost Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Ghost",
+            "item": "Life Orb",
+            "moves": [
+                "Dragon Energy",
+                "Draco Meteor",
+                "Tera Blast",
+                "Earth Power"
+            ]
+        },
+        "Tera Steel Dragon Fang": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9716,7 +10002,7 @@ var SETDEX_GEN9 = {
                 "Earth Power"
             ]
         },
-        "Choice Scarf Set": {
+        "Tera Dragon Choice Scarf": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -11000,6 +11286,25 @@ var SETDEX_GEN9 = {
         },
     },
     "Ogerpon": {
+        "Shiliang Tang's Worlds T16 Bullet Seed Support": {
+            "level": 50,
+            "evs": {
+                "hp": 76,
+                "at": 156,
+                "df": 44,
+                "sa": 0,
+                "sd": 20,
+                "sp": 212
+            },
+            "nature": "Adamant",
+            "item": "Loaded Dice",
+            "moves": [
+                "Bullet Seed",
+                "Follow Me",
+                "Encore",
+                "Spiky Shield"
+            ]
+        },
         "Max Speed Sash": {
             "level": 50,
             "evs": {
@@ -11059,6 +11364,42 @@ var SETDEX_GEN9 = {
         },
     },
     "Ogerpon-Hearthflame": {
+        "ceree's Worlds 1st Offense/Defense Balance": {
+            "level": 50,
+            "evs": {
+                "hp": 188,
+                "at": 76,
+                "df": 52,
+                "sa": 0,
+                "sd": 4,
+                "sp": 188
+            },
+            "nature": "Adamant",
+            "moves": [
+                "Ivy Cudgel",
+                "Wood Hammer",
+                "Follow Me",
+                "Spiky Shield"
+            ]
+        },
+        "unironicpanda/tsltang's San Antonio 1st/2nd Max Defense": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 12,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 20
+            },
+            "nature": "Impish",
+            "moves": [
+                "Ivy Cudgel",
+                "Horn Leech",
+                "Follow Me",
+                "Spiky Shield"
+            ]
+        },
         "All-Out Offense": {
             "level": 50,
             "evs": {
@@ -11197,6 +11538,54 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Weezing-Galar": {
+        "45mice's Worlds T16 Poison Spread": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 4,
+                "sd": 236,
+                "sp": 12
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "ability": "Neutralizing Gas",
+            "tera_type": "Grass",
+            "item": "Mental Herb",
+            "moves": [
+                "Dazzling Gleam",
+                "Poison Gas",
+                "Toxic Spikes",
+                "Protect"
+            ]
+        },
+        "Tera Fire Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 116,
+                "at": 0,
+                "df": 4,
+                "sa": 196,
+                "sd": 116,
+                "sp": 76
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Neutralizing Gas",
+            "tera_type": "Fire",
+            "item": "Choice Specs",
+            "moves": [
+                "Sludge Bomb",
+                "Dazzling Gleam",
+                "Strange Steam",
+                "Flamethrower"
+            ]
+        },
         "General Disruption": {
             "level": 50,
             "evs": {
@@ -11652,6 +12041,30 @@ var SETDEX_GEN9 = {
                 "Guillotine"
             ]
         },
+        "Slow Decorate": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "tera_type": "Grass",
+            "ability": "Own Tempo",
+            "item": "Focus Sash",
+            "moves": [
+                "Fake Out",
+                "Follow Me",
+                "Spore",
+                "Decorate"
+            ]
+        },
     },
     //"Alcremie": {
     //    "": {
@@ -11986,6 +12399,29 @@ var SETDEX_GEN9 = {
                 "Bug Bite"
             ]
         },
+        "Leftovers Infestation": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "tera_type": "Grass",
+            "item": "Leftovers",
+            "moves": [
+                "Liquidation",
+                "Infestation",
+                "Wide Guard",
+                "Protect"
+            ]
+        },
     },
     //"Hitmonlee": {
     //    "": {
@@ -12188,32 +12624,32 @@ var SETDEX_GEN9 = {
     //        ]
     //    },
     //},
-    //"Bastiodon": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Bastiodon": {
+        "Courtesy of SolCal": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 76,
+                "sa": 0,
+                "sd": 180,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Calm",
+            "tera_type": "Grass",
+            "item": "Covert Cloak",
+            "moves": [
+                "Foul Play",
+                "Body Press",
+                "Wide Guard",
+                "Iron Defense"
+            ]
+        },
+    },
     "Cinccino": {
         "Technician Loaded Dice Setup": {
             "level": 50,
@@ -12386,6 +12822,30 @@ var SETDEX_GEN9 = {
                 "Ice Beam",
                 "Recover",
                 "Trick Room",
+            ]
+        },
+        "Tera Ground Coverage": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 164,
+                "sa": 0,
+                "sd": 92,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Bold",
+            "tera_type": "Ground",
+            "ability": "Trace",
+            "item": "Eviolite",
+            "moves": [
+                "Tera Blast",
+                "Foul Play",
+                "Recover",
+                "Eerie Impulse"
             ]
         },
         "Bolt Beam Trick Room": {
@@ -12692,6 +13152,30 @@ var SETDEX_GEN9 = {
         },
     },
     "Venusaur": {
+        "Tera Ghost Sash Sleep Powder": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Ghost",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+                "Grass Knot",
+                "Sludge Bomb",
+                "Sleep Powder",
+                "Protect"
+            ]
+        },
         "Offensive Life Orb": {
             "level": 50,
             "evs": {
@@ -12986,6 +13470,27 @@ var SETDEX_GEN9 = {
                 "U-turn"
             ]
         },
+        "Physically Defensive Rocky Helmet": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 4,
+                "df": 196,
+                "sa": 0,
+                "sd": 52,
+                "sp": 12
+            },
+            "nature": "Impish",
+            "tera_type": "Grass",
+            "ability": "Intimidate",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Knock Off",
+                "Fake Out",
+                "Will-O-Wisp",
+                "Parting Shot"
+            ]
+        },
         "Ol' Reliable Bulky Sitrus": {
             "level": 50,
             "evs": {
@@ -13100,6 +13605,28 @@ var SETDEX_GEN9 = {
                 "Snarl"
             ]
         },
+        "Fast Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 20,
+            },
+            "nature": "Modest",
+            "item": "Life Orb",
+            "moves": [
+                "Thunderbolt",
+                "Draco Meteor",
+                "Thunderclap",
+                "Volt Switch"
+            ]
+        },
         "Booster Energy Offense": {
             "level": 50,
             "evs": {
@@ -13114,7 +13641,6 @@ var SETDEX_GEN9 = {
                 "at": 20,
             },
             "nature": "Modest",
-            "tera_type": "Electric",
             "item": "Booster Energy",
             "moves": [
                 "Thunderbolt",
@@ -13170,6 +13696,29 @@ var SETDEX_GEN9 = {
         },
     },
     "Iron Crown": {
+        "Tera Ground Life Orb with Miraidon": {
+            "level": 50,
+            "evs": {
+                "hp": 28,
+                "at": 0,
+                "df": 20,
+                "sa": 204,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 20,
+            },
+            "nature": "Timid",
+            "tera_type": "Ground",
+            "item": "Life Orb",
+            "moves": [
+                "Tachyon Cutter",
+                "Psyshock",
+                "Tera Blast",
+                "Volt Switch"
+            ]
+        },
         "Psyspam SpAtk Booster": {
             "level": 50,
             "evs": {
@@ -13280,7 +13829,7 @@ var SETDEX_GEN9 = {
             "item": "Life Orb",
             "moves": [
                 "Psyblade",
-                "Close Combat",
+                "Megahorn",
                 "Leaf Blade",
                 "Sacred Sword"
             ]
@@ -13528,32 +14077,28 @@ var SETDEX_GEN9 = {
             ]
         },
     },
-    //"Cobalion": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "ivs": {
-    //            "at": 0,
-    //        },
-    //        "nature": "",
-    //        "tera_type": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Cobalion": {
+        "Offense Zamazenta at home (with Miraidon)": {
+            "level": 50,
+            "evs": {
+                "hp": 164,
+                "at": 4,
+                "df": 244,
+                "sa": 0,
+                "sd": 4,
+                "sp": 92
+            },
+            "nature": "Impish",
+            "tera_type": "Dragon",
+            "item": "Electric Seed",
+            "moves": [
+                "Body Press",
+                "Heavy Slam",
+                "Iron Defense",
+                "Taunt"
+            ]
+        },
+    },
     "Terrakion": {
         "Life Orb Tera Grass": {
             "level": 50,
