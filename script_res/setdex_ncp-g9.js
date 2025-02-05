@@ -11385,7 +11385,7 @@ var SETDEX_GEN9 = {
         "unironicpanda/tsltang's San Antonio 1st/2nd Max Defense": {
             "level": 50,
             "evs": {
-                "hp": 228,
+                "hp": 220,
                 "at": 12,
                 "df": 252,
                 "sa": 0,
