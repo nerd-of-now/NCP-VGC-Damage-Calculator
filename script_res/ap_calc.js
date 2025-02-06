@@ -103,7 +103,7 @@ $(".transform").bind("keyup change", function () {
     else {
         for (variable in preTransformVars[pokeID]) {
             pokeInfo.find(variable).val(preTransformVars[pokeID][variable]);
-            if (variable.indexOf("ability") != -1 || variable.indexOf("move") != -1)
+            if (variable.includes("ability") || variable.includes("move"))
                 pokeInfo.find(variable).change();
         }
         calcStats(pokeInfo);
@@ -130,7 +130,7 @@ $(".tera").bind("keyup change", function () {
     pokeName = pokeName.substring(0, pokeName.indexOf(" ("));
     pokeName = (pokedex[pokeName] && pokedex[pokeName].formes) ? pokeInfo.find(".forme").val() : pokeName;
     var isTera = $(this).prop("checked");
-    if (pokeName.indexOf("Ogerpon") !== -1) {
+    if (pokeName.includes("Ogerpon")) {
         if (isTera) {
             pokeInfo.find(".type1").val(pokedex[pokeName].t1);
             pokeInfo.find(".type2").val(pokedex[pokeName].t2);
@@ -142,7 +142,7 @@ $(".tera").bind("keyup change", function () {
             pokeInfo.find("select.ability").trigger('change.select2');
         }
     }
-    else if (pokeName.indexOf("Terapagos-") !== -1) {
+    else if (pokeName.includes("Terapagos-")) {
         var notMaxHP = pokeInfo.find(".percent-hp").val() != "100";
         if (notMaxHP) {
             var prevCurrHP = pokeInfo.find(".current-hp").val();
@@ -342,7 +342,7 @@ $(".tera-type").bind("keyup change", function () {
 });
 
 function teraStellarBtns(poke, isTera, isStellar) {
-    if (isTera && isStellar && poke.find("input.set-selector").val().indexOf('Terapagos') === -1) {
+    if (isTera && isStellar && !poke.find("input.set-selector").val().includes('Terapagos')) {
         for (i = 1; i <= 4; i++) {
             poke.find(".move" + i + " .stellar-btn").show();
             poke.find(".move" + i + " .move-stellar").prop("checked", true);
@@ -388,18 +388,18 @@ $(".ability").bind("keyup change", function () {
         thisPoke.find(".ability-supreme").hide();
     thisPoke.find(".ability-supreme").val(0);
 
-    autoSetAura()
-    autoSetRuin()
-    autoSetTerrain()
+    autoSetAura();
+    autoSetRuin();
+    autoSetTerrain();
 
     var ab = $(this).val();
     var ABILITY_TOGGLE_OFF = gen >= 9 ? ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit', 'Electromorphosis', 'Wind Power', 'Seed Sower', 'Battle Bond'] : ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit'];
     var ABILITY_TOGGLE_ON = gen >= 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero', 'Intrepid Sword', 'Dauntless Shield', 'Supersweet Syrup'] : ['Intimidate', 'Slow Start'];
-    if (ABILITY_TOGGLE_OFF.indexOf(ab) !== -1) {
+    if (ABILITY_TOGGLE_OFF.includes(ab)) {
         thisPoke.find(".abilityToggle").show();
         thisPoke.find(".abilityToggle").prop("checked", false);
     }
-    else if (ABILITY_TOGGLE_ON.indexOf(ab) !== -1) {
+    else if (ABILITY_TOGGLE_ON.includes(ab)) {
         thisPoke.find(".abilityToggle").show();
         thisPoke.find(".abilityToggle").prop("checked", true);
     }
@@ -407,7 +407,7 @@ $(".ability").bind("keyup change", function () {
         thisPoke.find(".abilityToggle").hide();
     }
     var STAT_BOOST_VARY = ['Protosynthesis', 'Quark Drive'];
-    if (STAT_BOOST_VARY.indexOf(ab) !== -1) {
+    if (STAT_BOOST_VARY.includes(ab)) {
         thisPoke.find(".ability-advanced").show();
         thisPoke.find(".ability-advanced").prop("checked", false);
     }
@@ -511,19 +511,19 @@ function autoSetTerrain() {
     var abOn1 = $("#p1").find(".abilityToggle").prop("checked")
     var abOn2 = $("#p2").find(".abilityToggle").prop("checked")
     //Grassy Terrain check is first due to the need to check for abilityToggle with Seed Sower
-    if ([ability1, ability2].indexOf("Grassy Surge") !== -1 || (ability1 == "Seed Sower" && abOn1) || (ability2 == "Seed Sower" && abOn2)) {
+    if ([ability1, ability2].includes("Grassy Surge") || (ability1 == "Seed Sower" && abOn1) || (ability2 == "Seed Sower" && abOn2)) {
         $("input:radio[id='grassy']").prop("checked", true);
         lastTerrain = 'grassy';
     }
-    else if ([ability1, ability2].indexOf("Electric Surge") != -1 || [ability1, ability2].indexOf("Hadron Engine") != -1) {
+    else if ([ability1, ability2].includes("Electric Surge") || [ability1, ability2].includes("Hadron Engine")) {
         $("input:radio[id='electric']").prop("checked", true);
         lastTerrain = 'electric';
     }
-    else if ([ability1, ability2].indexOf("Misty Surge") !== -1) {
+    else if ([ability1, ability2].includes("Misty Surge")) {
         $("input:radio[id='misty']").prop("checked", true);
         lastTerrain = 'misty';
     }
-    else if ([ability1, ability2].indexOf("Psychic Surge") !== -1) {
+    else if ([ability1, ability2].includes("Psychic Surge")) {
         $("input:radio[id='psychic']").prop("checked", true);
         lastTerrain = 'psychic';
     }
@@ -537,7 +537,7 @@ function removeTerrain() {
 
 function autosetWeather(ability, i, abOn) {
     var currentWeather = $("input:radio[name='weather']:checked").val();
-    if (lastAutoWeather.indexOf(currentWeather) === -1 || currentWeather === "") {
+    if (!lastAutoWeather.includes(currentWeather) || currentWeather === "") {
         lastManualWeather = currentWeather;
         lastAutoWeather[1-i] = "";
     }
@@ -563,13 +563,13 @@ function autosetWeather(ability, i, abOn) {
     if (ability in autoWeatherAbilities) {
         lastAutoWeather[i] = autoWeatherAbilities[ability];
         if (currentWeather === "Strong Winds") {
-            if (lastAutoWeather.indexOf("Strong Winds") === -1) {
+            if (!lastAutoWeather.includes("Strong Winds")) {
                 newWeather = lastAutoWeather[i];
             }
-        } else if (primalWeather.indexOf(currentWeather) > -1) {
-            if (lastAutoWeather[i] === "Strong Winds" || primalWeather.indexOf(lastAutoWeather[i]) > -1) {
+        } else if (primalWeather.includes(currentWeather)) {
+            if (lastAutoWeather[i] === "Strong Winds" || primalWeather.includes(lastAutoWeather[i])) {
                 newWeather = lastAutoWeather[i];
-            } else if (primalWeather.indexOf(lastAutoWeather[1-i]) > -1) {
+            } else if (primalWeather.includes(lastAutoWeather[1-i])) {
                 newWeather = lastAutoWeather[1-i];
             } else {
                 newWeather = lastAutoWeather[i];
@@ -581,14 +581,14 @@ function autosetWeather(ability, i, abOn) {
         lastAutoWeather[i] = "";
         newWeather = lastAutoWeather[1-i] !== "" ? lastAutoWeather[1-i] : lastManualWeather;
     }
-    if (newWeather === "Strong Winds" || primalWeather.indexOf(newWeather) > -1) {
+    if (newWeather === "Strong Winds" || primalWeather.includes(newWeather)) {
         //$("input:radio[name='weather']").prop("disabled", true);
         //edited out by squirrelboy1225 for doubles!
         $("input:radio[name='weather'][value='" + newWeather + "']").prop("disabled", false);
     } else if (typeof newWeather != "undefined") {
         for (var k = 0, n = $("input:radio[name='weather']").length; k < n; k++) {
             var val = $("input:radio[name='weather']")[k].value;
-            if (primalWeather.indexOf(val) === -1 && val !== "Strong Winds") {
+            if (!primalWeather.includes(val) && val !== "Strong Winds") {
                 $("input:radio[name='weather']")[k].disabled = false;
             } else {
                 //$("input:radio[name='weather']")[k].disabled = true;
@@ -624,7 +624,7 @@ function autoSetType(p, item) {
     var pokName = name.substring(0, name.indexOf(" ("));
 
     if (ab == "RKS System" && pokName == "Silvally") {
-        if (item.indexOf("Memory") != -1) {
+        if (item.includes("Memory")) {
             $(p + " .type1").val(getMemoryType(item));
         }
         else {
@@ -632,9 +632,9 @@ function autoSetType(p, item) {
         }
     }
     else if (ab == "Multitype" && pokName == "Arceus") {
-        if (item.indexOf("Plate") != -1)
+        if (item.includes("Plate"))
             $(p + " .type1").val(getItemBoostType(item));
-        else if (item.indexOf("ium Z") != -1 && getZType(item) !== '')
+        else if (item.includes("ium Z") && getZType(item) !== '')
             $(p + " .type1").val(getZType(item));
         else
             $(p + " .type1").val('Normal');
@@ -931,7 +931,7 @@ function transformCheck(divValue) {    //divValue should accept any div class, i
     if (otherPName) {
         otherPName = otherPName.substring(0, otherPName.indexOf(" ("));
 
-        if (pMoves.indexOf("Transform") != -1 || pAbility == "Imposter" || isTransformed) {
+        if (pMoves.includes("Transform") || pAbility == "Imposter" || isTransformed) {
             transformObj.show();
         }
         else {
@@ -939,7 +939,7 @@ function transformCheck(divValue) {    //divValue should accept any div class, i
             transformObj.prop("checked", false);
         }
         if (!isTransformed && (otherPInfo.find(".transform").prop("checked") || (otherPInfo.find("select.ability").val() == "Good as Gold" && pAbility != "Imposter")
-            || (otherPInfo.find(".tera").prop("checked") && (otherPName.indexOf("Ogerpon") != -1 || otherPName.indexOf("Terapagos") != -1)))) {
+            || (otherPInfo.find(".tera").prop("checked") && (otherPName.includes("Ogerpon") || otherPName.includes("Terapagos"))))) {
             pInfo.find(".transform").prop("disabled", true);
         }
         else {
@@ -1135,13 +1135,13 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
         // Repurpose the previous filtering code to provide the "different default" logic
         if (set.item) {
-            if ((set.item.indexOf('ite') !== -1 && set.item.indexOf('ite Y') === -1) ||
-                (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
-                (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
-                (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
-                (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
+            if ((set.item.includes('ite') && !set.item.includes('ite Y')) ||
+                (pokemonName === "Groudon" && set.item.includes("Red Orb")) ||
+                (pokemonName === "Kyogre" && set.item.includes("Blue Orb")) ||
+                (pokemonName === "Meloetta" && set.moves.includes("Relic Song")) ||
+                (pokemonName === "Rayquaza" && set.moves.includes("Dragon Ascent"))) {
                 defaultForme = 1;
-            } else if (set.item.indexOf('ite Y') !== -1) {
+            } else if (set.item.includes('ite Y')) {
                 defaultForme = 2;
             }
         }
@@ -1149,7 +1149,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
     if (pokemonName === "Palafin" || pokemonName === "Terapagos")
         defaultForme = 1;
-    else if (gen == 8 && !defaultForme && gmaxDefaults.indexOf(pokemonName) != -1)
+    else if (gen == 8 && !defaultForme && gmaxDefaults.includes(pokemonName))
         defaultForme = pokedex[pokemonName].formes.indexOf(pokemonName + "-Gmax");
 
     var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
@@ -1187,9 +1187,9 @@ $(".forme").change(function () {
         container.find(".current-hp").keyup();
     }
 
-    if (abilities.indexOf(altForme.ab) > -1) {
+    if (abilities.includes(altForme.ab)) {
         container.find(".ability").val(altForme.ab);
-    } else if (setName !== "Blank Set" && abilities.indexOf(setdex[pokemonName][setName].ability) > -1) {
+    } else if (setName !== "Blank Set" && abilities.includes(setdex[pokemonName][setName].ability)) {
         container.find(".ability").val(setdex[pokemonName][setName].ability);
     } else {
         container.find(".ability").val("");
@@ -1406,9 +1406,9 @@ var stickyMoves = (function () {
         },
         getSelectedSide: function () {
             if (lastClicked) {
-                if (lastClicked.indexOf('resultMoveL') !== -1) {
+                if (lastClicked.includes('resultMoveL')) {
                     return 'p1';
-                } else if (lastClicked.indexOf('resultMoveR') !== -1) {
+                } else if (lastClicked.includes('resultMoveR')) {
                     return 'p2';
                 }
             }
@@ -1431,7 +1431,7 @@ function findDamageResult(resultMoveObj) {
 function Pokemon(pokeInfo) {
     var setName = pokeInfo.find("input.set-selector").val();
 
-    if (setName.indexOf("(") === -1) {
+    if (!setName.includes("(")) {
         this.name = setName;
     } else {
         var pokemonName = setName.substring(0, setName.indexOf(" ("));
@@ -1455,8 +1455,8 @@ function Pokemon(pokeInfo) {
     }
 
     //Check for ability to Dynamax
-    if (["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].indexOf(this.name) !== -1
-        || ["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].indexOf(transformSpecies[pokeInfo.attr('id')]) !== -1) {
+    if (["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].includes(this.name)
+        || ["Zacian", "Zacian-Crowned", "Zamazenta", "Zamazenta-Crowned", "Eternatus"].includes(transformSpecies[pokeInfo.attr('id')])) {
         pokeInfo.find(".max").prop("checked", false);
         pokeInfo.find(".max").prop("disabled", true);
     }
@@ -1465,11 +1465,11 @@ function Pokemon(pokeInfo) {
     }
 
     //Check for Tera related permissions (change Tera Type, Terastalize disabled for "baby" Terapagos)
-    if (this.name && this.name.indexOf('Ogerpon') !== -1) {
+    if (this.name && this.name.includes('Ogerpon')) {
         var itemCheck = pokeInfo.find("select.item").val();
         var mask = itemCheck !== null ? itemCheck.substring(0, itemCheck.indexOf(" Mask")) : '';
 
-        if (this.name.indexOf(mask) !== -1) {
+        if (this.name.includes(mask)) {
             var maskTera = mask === 'Wellspring' ? 'Water'
                 : mask === 'Hearthflame' ? 'Fire'
                     : mask === 'Cornerstone' ? 'Rock'
@@ -1479,7 +1479,7 @@ function Pokemon(pokeInfo) {
         }
         pokeInfo.find(".tera").prop("disabled", false);
     }
-    else if (this.name && this.name.indexOf('Terapagos') !== -1) {
+    else if (this.name && this.name.includes('Terapagos')) {
         pokeInfo.find(".tera-type").val('Stellar');
         pokeInfo.find(".tera-type").prop("disabled", true);
         if (this.name === 'Terapagos-Terastal') {
@@ -1493,7 +1493,7 @@ function Pokemon(pokeInfo) {
     else {
         pokeInfo.find(".tera-type").prop("disabled", false);
         pokeInfo.find(".forme").prop("disabled", false);
-        if (transformSpecies[pokeInfo.attr("id")].indexOf('Ogerpon') != -1 || transformSpecies[pokeInfo.attr("id")].indexOf('Terapagos') != -1)
+        if (transformSpecies[pokeInfo.attr("id")].includes('Ogerpon') || transformSpecies[pokeInfo.attr("id")].includes('Terapagos'))
             pokeInfo.find(".tera").prop("disabled", true);
         else
             pokeInfo.find(".tera").prop("disabled", false);
@@ -1799,11 +1799,11 @@ $(".gen").change(function () {
         }
     }
     var types = Object.keys(typeChart);
-    if (types.indexOf('Typeless') !== -1)
+    if (types.includes('Typeless'))
         types.splice(types.indexOf('Typeless'), 1);
     var teraTypes = $.extend(true, [], types);
     if (gen >= 2) types.push('Typeless');
-    if (types.indexOf('Stellar') !== -1)
+    if (types.includes('Stellar'))
         types.splice(types.indexOf('Stellar'), 1);
     var typeOptions = getSelectOptions(types);
     var teraTypeOptions = getSelectOptions(teraTypes);
@@ -1993,7 +1993,7 @@ function setStartup(p) {
                 //    results.push(setOptions[i]);
                 //}
                 if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
-                    return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
+                    return pokeName.indexOf(term) === 0 || pokeName.includes("-" + term) || pokeName.includes(" " + term);
                 }))
                     results.push(setOptions[i]);
             }
@@ -2030,21 +2030,21 @@ $(document).ready(function () {
         dropdownAutoWidth:true,
         matcher: function(term, text) {
             // 2nd condition is for Hidden Power
-            return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
+            return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().includes(" " + term.toUpperCase());
         }
     });
     $(".ability").select2({
         dropdownAutoWidth: true,
         matcher: function (term, text) {
             // 2nd condition is just in case
-            return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
+            return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().includes(" " + term.toUpperCase());
         }
     });
     $(".item").select2({
         dropdownAutoWidth: true,
         matcher: function (term, text) {
             // 2nd condition is for shorthands like Choice items
-            return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
+            return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().includes(" " + term.toUpperCase());
         }
     });
     resetSetSelectors();
