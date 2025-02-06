@@ -1,7 +1,7 @@
 
 var SETDEX_GEN9 = {
     "Meowscarada": {
-        "Sash Set": {
+        "Sash Overgrow": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -168,7 +168,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Lokix": {
-        "Choice Band Set": {
+        "Stellar Choice Band": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -191,7 +191,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Jumpluff": {
-        "Tailwind Support Set": {
+        "Cloak Tailwind Support": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -238,7 +238,7 @@ var SETDEX_GEN9 = {
                 "Tailwind"
             ]
         },
-        "Sharp Beak Set": {
+        "Tera Flying Sharp Beak": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -261,7 +261,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Pawmot": {
-        "Sash Set": {
+        "Basic Focus Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -415,7 +415,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Vivillon": {
-        "Remember Butterfree?": {
+        "Compound Eyes Hurricane Sleep Powder": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -435,6 +435,30 @@ var SETDEX_GEN9 = {
             "moves": [
                 "Hurricane",
                 "Pollen Puff",
+                "Rage Powder",
+                "Sleep Powder"
+            ]
+        },
+        "Friend Guard Tailwind": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Friend Guard",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Pollen Puff",
+                "Tailwind",
                 "Rage Powder",
                 "Sleep Powder"
             ]
@@ -566,7 +590,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Azumarill": {
-        "Belly Drum Set": {
+        "Standard Belly Drum": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -834,7 +858,7 @@ var SETDEX_GEN9 = {
                 "Wide Guard"
             ]
         },
-        "Life Orb Set": {
+        "Life Orb Max Speed": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1019,7 +1043,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Raichu": {
-        "Sash Set": {
+        "Basic Focus Sash": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -1504,7 +1528,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Lilligant": {
-        "Sash Set": {
+        "Standard Sash Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1530,7 +1554,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Breloom": {
-        "Sash Set": {
+        "Standard Sash Set": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1766,7 +1790,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Salazzle": {
-        "Sash Set": {
+        "Basic Focus Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -1885,7 +1909,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Scarf Set": {
+        "Tera Ground Scarf": {
             "level": 50,
             "evs": {
                 "hp": 36,
@@ -1929,7 +1953,7 @@ var SETDEX_GEN9 = {
                 "Recover"
             ]
         },
-        "MeLuCa's Tera Poison Support": {
+        "MeLuCa's San Diego 1st Tera Poison Support": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -2050,7 +2074,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Gyarados": {
-        "Bulky Support Set": {
+        "Tera Steel Bulky Support": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2272,7 +2296,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Torkoal": {
-        "Charcoal Set": {
+        "Tera Fire Charcoal": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2373,7 +2397,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Annihilape": {
-        "Choice Scarf Set": {
+        "Choice Scarf Final Gambit": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2393,7 +2417,7 @@ var SETDEX_GEN9 = {
                 "Shadow Claw"
             ]
         },
-        "Bulk Up Set": {
+        "Bulk Up Leftovers": {
             "level": 50,
             "evs": {
                 "hp": 180,
@@ -2586,7 +2610,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Ceruledge": {
-        "Bulk Up Set": {
+        "Bulk Up Clear Amulet": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -2636,7 +2660,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Bellibolt": {
-        "Bruneaux's Reg F Sitrus Set": {
+        "Bruneaux's Reg F Sitrus": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -2709,7 +2733,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Toxicroak": {
-        "Bulky AV Set": {
+        "Bulky Assault Vest": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -2731,7 +2755,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Kilowattrel": {
-        "Tailwind Sash Set": {
+        "Tailwind Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -3063,7 +3087,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Farigiraf": {
-        "ceree's Worlds 1st Tera Water Electric Seed": {
+        "ceree's 24 Worlds 1st Tera Water Electric Seed": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -3287,7 +3311,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Grafaiai": {
-        "Doodle Support Set": {
+        "Doodle Support": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -3335,7 +3359,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Amoonguss": {
-        "Sitrus Berry Set": {
+        "Standard Sitrus Berry": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -3438,7 +3462,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Arcanine": {
-        "Fast Goggles Set": {
+        "Tera Water Goggles": {
             "level": 50,
             "evs": {
                 "hp": 236,
@@ -3459,7 +3483,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Bulky Sitrus Set": {
+        "Tera Grass Bulky Sitrus": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -3480,7 +3504,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Tera Normal Band Set": {
+        "Tera Normal Band": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -3501,7 +3525,7 @@ var SETDEX_GEN9 = {
                 "Crunch"
             ]
         },
-        "Chuppa's & D'Angelo's San Diego AV": {
+        "Chuppa's & D'Angelo's San Diego 1st AV": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -3605,7 +3629,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Altaria": {
-        "(Probably) Motoki Agano's Day 2 Worlds Gravity Support": {
+        "agano_pokemon's 24 Worlds Day 2 GravSing": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -3708,7 +3732,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Tauros-Paldea-Aqua": {
-        "Life Orb Set": {
+        "Tera Water Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -3750,7 +3774,7 @@ var SETDEX_GEN9 = {
                 "Earthquake"
             ]
         },
-        "Mirror Herb Set": {
+        "Tera Grass Mirror Herb": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -3877,7 +3901,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Murkrow": {
-        "Eviolite Set": {
+        "Eviolite Bulk": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -3901,7 +3925,7 @@ var SETDEX_GEN9 = {
                 "Haze"
             ]
         },
-        "Sash Brave Bird Set": {
+        "Sash Brave Bird": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -4001,7 +4025,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Mimikyu": {
-        "Trick Room Set": {
+        "Trick Room Safety Goggles": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -4022,7 +4046,7 @@ var SETDEX_GEN9 = {
                 "Will-O-Wisp"
             ]
         },
-        "Life Orb Set": {
+        "Tera Ghost Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -4168,7 +4192,7 @@ var SETDEX_GEN9 = {
                 "Seed Bomb"
             ]
         },
-        "Emilio Forbes' 2023 Worlds Top 16 Sash": {
+        "Emilio Forbes' 23 Worlds T16 Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -4244,7 +4268,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Lurantis": {
-        "TR Sitrus Set": {
+        "TR Sitrus": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -4446,7 +4470,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Scizor": {
-        "Swords Dance Set": {
+        "Tera Steel Swords Dance": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -4467,7 +4491,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Choice Band Set": {
+        "Tera Steel Choice Band": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -4541,7 +4565,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Sash Hypnosis Set": {
+        "Sash Hypnosis": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -4784,7 +4808,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Tinkaton": {
-        "Assault Vest Set": {
+        "Assault Vest Own Tempo": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -4922,7 +4946,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Choice Band Set": {
+        "Choice Band Max Speed": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5195,7 +5219,7 @@ var SETDEX_GEN9 = {
                 "U-turn"
             ]
         },
-        "PokeAlex's NAIC 23 1st Banded Tera Steel": {
+        "PokeAlex's 23 NAIC 1st Banded Tera Steel": {
             "level": 50,
             "evs": {
                 "hp": 12,
@@ -5216,7 +5240,7 @@ var SETDEX_GEN9 = {
                 "U-turn"
             ]
         },
-        "Choice Specs Set": {
+        "Choice Specs Tera Steel": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5242,7 +5266,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Glimmora": {
-        "Meteor Beam Set": {
+        "Standard Meteor Beam": {
             "level": 50,
             "evs": {
                 "hp": 20,
@@ -5287,7 +5311,7 @@ var SETDEX_GEN9 = {
                 "Energy Ball"
             ]
         },
-        "Emilio's Specs Set": {
+        "Emilio's Specs Tera Grass": {
             "level": 50,
             "evs": {
                 "hp": 20,
@@ -5361,7 +5385,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Rotom-Heat": {
-        "Specs Set": {
+        "Basic Choice Specs": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5587,7 +5611,7 @@ var SETDEX_GEN9 = {
                 "Tera Blast"
             ]
         },
-        "EternalSnowman's AV Tera Psychic": {
+        "EternalSnowman's Sacramento 1st Psychic AV": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5652,7 +5676,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Stonjourner": {
-        "WACKA's Top 16 Rock": {
+        "WACKA's Orlando T16 Rock": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -5779,7 +5803,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Slowking": {
-        "Trick Room Set": {
+        "Basic Trick Room": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -6387,7 +6411,6 @@ var SETDEX_GEN9 = {
                 "at": 0,
             },
             "nature": "Timid",
-            "ability": "Levitate",
             "tera_type": "Fairy",
             "item": "Focus Sash",
             "moves": [
@@ -6399,7 +6422,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Cetitan": {
-        "Belly Drum Set": {
+        "Basic Belly Drum": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -6420,7 +6443,7 @@ var SETDEX_GEN9 = {
                 "Liquidation"
             ]
         },
-        "Assault Vest Set": {
+        "Assault Vest Tera Water": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -6510,7 +6533,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Kingambit": {
-        "Black Glasses Set SUGGESTION BY ASHTONCOXGAZ": {
+        "Black Glasses SUGGESTION BY ASHTONCOXGAZ": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -6531,7 +6554,7 @@ var SETDEX_GEN9 = {
                 "Assurance"
             ]
         },
-        "Assault Vest Set": {
+        "Assault Vest Tera Fire": {
             "level": 50,
             "evs": {
                 "hp": 188,
@@ -6647,7 +6670,7 @@ var SETDEX_GEN9 = {
                 "Order Up"
             ]
         },
-        "45mice's Worlds T16 Defenseive Body Press": {
+        "45mice's 24 Worlds T16 Defense Body Press": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -6668,7 +6691,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Kenji Yabata's 2023 Worlds Cut (No Tatsu)": {
+        "Kenji Yabata's 23 Worlds Cut (No Tatsu)": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -6680,7 +6703,6 @@ var SETDEX_GEN9 = {
             },
             "nature": "Careful",
             "ability": "Unaware",
-            "tera_type": "Water",
             "item": "Leftovers",
             "moves": [
                 "Wave Crash",
@@ -6689,7 +6711,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Mixed Life Orb Set": {
+        "Mixed Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -6732,7 +6754,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Tatsugiri": {
-        "Choice Scarf Set": {
+        "Standard Choice Scarf": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -6756,7 +6778,7 @@ var SETDEX_GEN9 = {
                 "Dragon Pulse"
             ]
         },
-        "Sash Set": {
+        "Standard Sash": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -6782,7 +6804,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Great Tusk": {
-        "Sash Set": {
+        "Standard Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -6801,7 +6823,7 @@ var SETDEX_GEN9 = {
                 "Ice Spinner"
             ]
         },
-        "Choice Scarf Set": {
+        "Standard Choice Scarf": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -6891,7 +6913,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Brute Bonnet": {
-        "Offensive Support Set": {
+        "Offensive Support": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -6931,7 +6953,7 @@ var SETDEX_GEN9 = {
                 "Rage Powder"
             ]
         },
-        "Ashton's Runner-Up Bonnet": {
+        "Ashton's Orlando 2nd Speedy Sitrus": {
             "level": 50,
             "evs": {
                 "hp": 180,
@@ -7022,7 +7044,7 @@ var SETDEX_GEN9 = {
                 "Thunderbolt"
             ]
         },
-        "Specs Set": {
+        "Timid Choice Specs": {
             "level": 50,
             "evs": {
                 "hp": 100,
@@ -7069,7 +7091,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Sandy Shocks": {
-        "Life Orb Set": {
+        "Basic Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -7092,7 +7114,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Tera Ice Specs Set": {
+        "Tera Ice Specs": {
             "level": 50,
             "evs": {
                 "hp": 36,
@@ -7159,7 +7181,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Iron Bundle": {
-        "Fast Booster Energy Set": {
+        "Fast Booster Energy": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -7182,7 +7204,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Bulky Speed Booster Set": {
+        "Bulky Speed Booster": {
             "level": 50,
             "evs": {
                 "hp": 44,
@@ -7205,7 +7227,7 @@ var SETDEX_GEN9 = {
                 "Encore"
             ]
         },
-        "Snow Specs Set": {
+        "Snow Choice Specs": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -7230,7 +7252,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Iron Hands": {
-        "ceree's Worlds 1st Bug AV": {
+        "ceree's 24 Worlds 1st Bug AV": {
             "level": 50,
             "evs": {
                 "hp": 76,
@@ -7338,7 +7360,7 @@ var SETDEX_GEN9 = {
                 "Protect"
             ]
         },
-        "Life Orb Set": {
+        "Life Orb Tera Ground": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -7496,7 +7518,7 @@ var SETDEX_GEN9 = {
                 "Earthquake"
             ]
         },
-        "MeLuCa's Loaded Dice Icicle Spear": {
+        "MeLuCa's San Diego 1st Icicle Spear": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -7543,7 +7565,7 @@ var SETDEX_GEN9 = {
                 "Nasty Plot"
             ]
         },
-        "Choice Specs Set": {
+        "Choice Specs Tera Steel": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -7567,7 +7589,7 @@ var SETDEX_GEN9 = {
                 "Thunderbolt"
             ]
         },
-        "Choice Scarf Set": {
+        "Choice Scarf Max Speed": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -7591,7 +7613,7 @@ var SETDEX_GEN9 = {
                 "Thunderbolt"
             ]
         },
-        "Toler Webb's 1st Metal Coat": {
+        "Toler Webb's Knoxville 1st Metal Coat": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -7617,7 +7639,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Wo-Chien": {
-        "Shiliang Tang's NAIC Faster Support": {
+        "Shiliang Tang's 24 NAIC T8 Fast Support": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -7727,7 +7749,7 @@ var SETDEX_GEN9 = {
                 "Stealth Rock"
             ]
         },
-        "Assault Vest Set": {
+        "Offensive Assault Vest": {
             "level": 50,
             "evs": {
                 "hp": 100,
@@ -7902,7 +7924,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Iron Valiant": {
-        "Yuta's Worlds 2nd Speed Booster Support": {
+        "Yuta's 24 Worlds 2nd Booster Support": {
             "level": 50,
             "evs": {
                 "hp": 204,
@@ -7922,7 +7944,7 @@ var SETDEX_GEN9 = {
                 "Wide Guard"
             ]
         },
-        "Mixed Sash Set": {
+        "Offensive Mixed Sash": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8093,7 +8115,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Arcanine-Hisui": {
-        "Choice Band Set": {
+        "Tera Normal Choice Band": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8114,7 +8136,7 @@ var SETDEX_GEN9 = {
                 "Rock Slide"
             ]
         },
-        "Assault Vest Set": {
+        "Assault Vest Tera Fairy": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -8137,7 +8159,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Electrode-Hisui": {
-        "Choice Specs Set": {
+        "Choice Specs Tera Grass": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8236,7 +8258,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Zoroark-Hisui": {
-        "Tera Fighting Sash Set": {
+        "Tera Fighting Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8462,7 +8484,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Kleavor": {
-        "Scarf Set": {
+        "Scarf Max Speed": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8621,7 +8643,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Overqwil": {
-        "HobbitVGC's NAIC LOrb Overqwil": {
+        "HobbitVGC's 24 NAIC T8 Life Orb": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -8669,7 +8691,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Charizard": {
-        "Choice Specs Sun Set": {
+        "Choice Specs Sun": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8822,7 +8844,30 @@ var SETDEX_GEN9 = {
         },
     },
     "Greninja": {
-        "Choice Specs Set": {
+        "Loaded Dice Arch Enabler": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 4,
+                "sa": 4,
+                "sd": 36,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Torrent",
+            "item": "Loaded Dice",
+            "moves": [
+                "Water Shuriken",
+                "Dark Pulse",
+                "Icy Wind",
+                "Haze"
+            ]
+        },
+        "Choice Specs Protean": {
             "level": 50,
             "evs": {
                 "hp": 0,
@@ -8874,7 +8919,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Rillaboom": {
-        "Assault Vest Set": {
+        "Standard Assault Vest": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -8987,7 +9032,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Typhlosion-Hisui": {
-        "Choice Specs Set": {
+        "Choice Specs Modest": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9010,7 +9055,7 @@ var SETDEX_GEN9 = {
                 "Shadow Ball"
             ]
         },
-        "Scarf Eruption Set": {
+        "Scarf Eruption Timid": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9099,7 +9144,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Articuno": {
-        "Patrick Donegan's Worlds Day 2 Snowbelle": {
+        "Patrick Donegan's 23 Worlds Day 2 Snowbelle": {
             "level": 50,
             "evs": {
                 "hp": 212,
@@ -9123,7 +9168,7 @@ var SETDEX_GEN9 = {
                 "Roost"
             ]
         },
-        "Nikhil Reddy's Specs 4 Ice Attacks": {
+        "Nikhil Reddy's Utrecht 1st Mono Ice Specs": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9148,7 +9193,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Articuno-Galar": {
-        "Jamie Boyt's Gda\u0144sk Tera Ground": {
+        "Jamie Boyt's Gda\u0144sk T16 Tera Ground": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9224,7 +9269,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Zapdos-Galar": {
-        "Choice Scarf Set": {
+        "Choice Scarf Tera Flying": {
             "level": 50,
             "evs": {
                 "hp": 60,
@@ -9439,7 +9484,7 @@ var SETDEX_GEN9 = {
                 "Flamethrower"
             ]
         },
-        "Kenji Miura's 2023 Worlds Top 16 Magma Storm": {
+        "Kenji Miura's 23 Worlds T16 Magma Storm": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -9489,7 +9534,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Tornadus": {
-        "Offensive Tailwind Set": {
+        "Offensive Tailwind": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9513,7 +9558,7 @@ var SETDEX_GEN9 = {
                 "Tailwind"
             ]
         },
-        "Mattie Morgan's 2023 Worlds Top 8 Bulky Set": {
+        "Mattie Morgan's 23 Worlds T8 Bulky Aguav": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9537,7 +9582,7 @@ var SETDEX_GEN9 = {
                 "Tailwind"
             ]
         },
-        "Thiago Lattanzi's 2024 LAIC Finalist Bulky Set": {
+        "Thiago Lattanzi's 24 LAIC 2nd Max Defense": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -9642,7 +9687,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Landorus": {
-        "unironicpanda/tsltang's San Antonio 1st/2nd Water Bulky": {
+        "The Tangs' San Antonio 1st/2nd Bulky Water": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -9869,7 +9914,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Urshifu-Rapid Strike": {
-        "Mystic Water Set": {
+        "Tera Stellar Sash": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9879,17 +9924,17 @@ var SETDEX_GEN9 = {
                 "sd": 0,
                 "sp": 252
             },
-            "nature": "Jolly",
-            "tera_type": "Water",
-            "item": "Mystic Water",
+            "nature": "Adamant",
+            "tera_type": "Stellar",
+            "item": "Focus Sash",
             "moves": [
                 "Surging Strikes",
                 "Close Combat",
                 "Aqua Jet",
-                "Rock Slide"
+                "U-turn"
             ]
         },
-        "Scarf Set": {
+        "Standard Scarf": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -9907,6 +9952,26 @@ var SETDEX_GEN9 = {
                 "Close Combat",
                 "Aqua Jet",
                 "U-turn"
+            ]
+        },
+        "Basic Mystic Water": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Water",
+            "item": "Mystic Water",
+            "moves": [
+                "Surging Strikes",
+                "Close Combat",
+                "Aqua Jet",
+                "Rock Slide"
             ]
         },
     },
@@ -10026,7 +10091,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Glastrier": {
-        "Assault Vest Set": {
+        "Assault Vest Tera Poison": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -11196,7 +11261,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Okidogi": {
-        "Assault Vest Set": {
+        "Assault Vest Tera Dragon": {
             "level": 50,
             "evs": {
                 "hp": 196,
@@ -11217,7 +11282,7 @@ var SETDEX_GEN9 = {
                 "Upper Hand"
             ]
         },
-        "Bulk Up Set": {
+        "Bulk Up Leftovers": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -11286,7 +11351,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Ogerpon": {
-        "Shiliang Tang's Worlds T16 Bullet Seed Support": {
+        "Shiliang Tang's 24 Worlds T16 Bullet Support": {
             "level": 50,
             "evs": {
                 "hp": 76,
@@ -11364,7 +11429,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Ogerpon-Hearthflame": {
-        "ceree's Worlds 1st Offense/Defense Balance": {
+        "ceree's 24 Worlds 1st Balanced Spread": {
             "level": 50,
             "evs": {
                 "hp": 188,
@@ -11382,7 +11447,7 @@ var SETDEX_GEN9 = {
                 "Spiky Shield"
             ]
         },
-        "unironicpanda/tsltang's San Antonio 1st/2nd Max Defense": {
+        "The Tangs' San Antonio 1st/2nd Max Defense": {
             "level": 50,
             "evs": {
                 "hp": 220,
@@ -11538,7 +11603,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Weezing-Galar": {
-        "45mice's Worlds T16 Poison Spread": {
+        "45mice's 24 Worlds T16 Poison Spread": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -12197,7 +12262,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Whimsicott": {
-        "Sash Tailwind Set": {
+        "Sash Tailwind": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -13649,29 +13714,6 @@ var SETDEX_GEN9 = {
                 "Calm Mind"
             ]
         },
-        "Lexicon's Goggles Raging Bolt": {
-            "level": 50,
-            "evs": {
-                "hp": 180,
-                "at": 0,
-                "df": 68,
-                "sa": 100,
-                "sd": 4,
-                "sp": 156
-            },
-            "ivs": {
-                "at": 20,
-            },
-            "nature": "Modest",
-            "tera_type": "Water",
-            "item": "Safety Goggles",
-            "moves": [
-                "Thunderbolt",
-                "Draco Meteor",
-                "Thunderclap",
-                "Protect"
-            ]
-        },
     },
     "Iron Boulder": {
         "Tera Grass Life Orb": {
@@ -13814,7 +13856,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Iron Leaves": {
-        "Life Orb Set": {
+        "Life Orb Tera Normal": {
             "level": 50,
             "evs": {
                 "hp": 4,
@@ -13862,7 +13904,7 @@ var SETDEX_GEN9 = {
     //    },
     //},
     "Entei": {
-        "Lexicon's Tera Grass Entei": {
+        "Lexicon's Portland 1st Tera Grass AV": {
             "level": 50,
             "evs": {
                 "hp": 68,
@@ -14225,7 +14267,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Kyogre": {
-        "Shiliang Tang's NAIC AV Set": {
+        "Shiliang Tang's NAIC T8 AV": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -14785,7 +14827,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Zamazenta": {
-        "MichaelderBeaste's Worlds T4 Max Speed": {
+        "MichaelderBeaste's 24 Worlds T4 Max Speed": {
             "level": 50,
             "evs": {
                 "hp": 92,
@@ -14940,7 +14982,7 @@ var SETDEX_GEN9 = {
                 "Expanding Force"
             ]
         },
-        "ck49's Top 4 Regs CM Cloak": {
+        "ck49's Los Angeles T4 CM Cloak": {
             "level": 50,
             "evs": {
                 "hp": 180,
@@ -15073,7 +15115,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Miraidon": {
-        "ceree's Worlds 1st Fairy Specs": {
+        "ceree's 24 Worlds 1st Fairy Specs": {
             "level": 50,
             "evs": {
                 "hp": 44,
