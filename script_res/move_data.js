@@ -73,7 +73,7 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        recoilHP: [1, 4],
     },
     'Drill Peck': {
         bp: 80,
@@ -125,7 +125,7 @@ var MOVES_RBY = {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        hasCrash: true
     },
     'Hydro Pump': {
         bp: 120,
@@ -157,6 +157,7 @@ var MOVES_RBY = {
         category: 'Special',
         zp: 120,
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Night Shade': {
         bp: 1,
@@ -232,7 +233,7 @@ var MOVES_RBY = {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true,
+        recoilHP: [1, 4],
     },
     'Surf': {
         bp: 95,
@@ -589,7 +590,7 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true,
+        recoilHP: [1, 4],
     },
     'Poison Sting': {
         bp: 15,
@@ -661,6 +662,7 @@ var MOVES_RBY = {
         type: 'Grass',
         category: 'Special',
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Poison Powder': {
         type: 'Poison',
@@ -807,6 +809,7 @@ var MOVES_RBY = {
         type: 'Psychic',
         category: 'Special',
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Barrage': {
         bp: 15,
@@ -821,6 +824,7 @@ var MOVES_RBY = {
         category: 'Physical',
         makesContact: true,
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Bubble': {
         bp: 20,
@@ -892,7 +896,7 @@ var MOVES_RBY = {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        hasCrash: true
     },
     'Thrash': {
         bp: 90,
@@ -945,7 +949,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 60,
         type: 'Rock',
         category: 'Special',
-        hasSecondaryEffect: true
+        hasSecondaryEffect: true,
+        makesContact: true,
     },
     'Cross Chop': {
         bp: 100,
@@ -980,7 +985,6 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 60,
         type: 'Dark',
         category: 'Physical',
-        makesContact: true
     },
     'Flail': {
         bp: 1,
@@ -1008,6 +1012,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Grass',
         category: 'Special',
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Headbutt': {
         bp: 70,
@@ -1507,6 +1512,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     //Past move changes
     'Low Kick': { bp: 1, },
+    'Double-Edge': { recoilHP: [1, 3], },
 
     //RSEFRLG moves
     'Aerial Ace': {
@@ -1582,7 +1588,6 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 40,
         type: 'Normal',
         category: 'Physical',
-        makesContact: true,
         hasSecondaryEffect: true,
         isPriority: true,
     },
@@ -1642,7 +1647,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     'Overheat': {
         bp: 140,
         type: 'Fire',
-        category: 'Special'
+        category: 'Special',
+        makesContact: true,
     },
     'Poison Fang': {
         bp: 50,
@@ -1714,7 +1720,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         category: 'Physical',
         makesContact: true,
         hasSecondaryEffect: true,
-        hasRecoil: true
+        recoilHP: [1, 3],
     },
     'Water Pulse': {
         bp: 60,
@@ -2062,8 +2068,6 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 40,
         type: 'Normal',
         category: 'Physical',
-        makesContact: true
-        //technically not true for gen 3 but it doesn't come up
     },
     'Magical Leaf': {
         bp: 60,
@@ -2087,6 +2091,11 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Astonish': { miniDoubleBP: false, },
     'Extrasensory': { miniDoubleBP: false, },
     'Needle Arm': { miniDoubleBP: false, },
+    'Feint Attack': { makesContact: true },
+    'Fake Out': { makesContact: true },
+    'Covet': { makesContact: true },
+    'Overheat': { makesContact: false },
+    'Ancient Power': { makesContact: false },
 
     //DPPt moves
     'Air Slash': {
@@ -2134,7 +2143,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Flying',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        recoilHP: [1, 3],
     },
     'Brine': {
         bp: 65,
@@ -2234,6 +2243,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         makesContact: true,
         isPunch: true,
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Earth Power': {
         bp: 90,
@@ -2262,7 +2272,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true,
         hasSecondaryEffect: true,
-        hasRecoil: true
+        recoilHP: [1, 3],
     },
     'Flash Cannon': {
         bp: 80,
@@ -2328,7 +2338,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Rock',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        recoilHP: [1, 2],
     },
     'Ice Fang': {
         bp: 65,
@@ -2527,7 +2537,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Grass',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        recoilHP: [1, 3],
     },
     'X-Scissor': {
         bp: 80,
@@ -2916,7 +2926,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        recoilHP: [1, 4],
     },
     'Heavy Slam': {
         bp: 1,
@@ -2937,6 +2947,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true,
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Hurricane': {
         bp: 120,
@@ -3119,7 +3130,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Electric',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true
+        recoilHP: [1, 4],
     },
     'Fire Pledge': {
         bp: 50,
@@ -3416,6 +3427,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         category: 'Special',
         makesContact: true,
         isHealing: true,
+        drainHP: [3, 4]
     },
     'Flying Press': {
         bp: 80,
@@ -3449,6 +3461,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Flying',
         category: 'Special',
         isHealing: true,
+        drainHP: [3, 4]
     },
     'Phantom Force': {
         bp: 90,
@@ -3498,6 +3511,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         category: 'Special',
         isSpread: true,
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Petal Blizzard': {
         bp: 90,
@@ -3698,7 +3712,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 140,
         type: 'Fairy',
         category: 'Special',
-        hasRecoil: true
+        recoilHP: [1, 2],
     },
 });
 
@@ -4973,13 +4987,12 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Water',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true,
+        recoilHP: [1, 3],
     },
     'Chloroblast': {
         bp: 150,
         type: 'Grass',
         category: 'Special',
-        hasRecoil: true,
     },
     'Mountain Gale': {
         bp: 100,
@@ -5090,7 +5103,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Physical',
         makesContact: true,
         hasSecondaryEffect: true,
-        hasRecoil: true,
+        hasCrash: true,
     },
     'Last Respects': {
         bp: 50,
@@ -5307,6 +5320,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         makesContact: true,
         isSlice: true,
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Double Shock': {
         bp: 120,
@@ -5387,6 +5401,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         hasSecondaryEffect: true,
         isSpread: true,
         isHealing: true,
+        drainHP: [1, 2]
     },
     'Syrup Bomb': {
         bp: 60,
@@ -5473,7 +5488,8 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Electric',
         category: 'Physical',
         makesContact: true,
-        hasRecoil: true,
+        hasCrash: true,
+        miniDoubleBP: true,
     },
     'Psychic Noise': {
         bp: 75,

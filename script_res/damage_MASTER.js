@@ -1415,8 +1415,8 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         bpMods.push(ateIzeMultiplier);
         description.attackerAbility = attacker.ability;
     }
-    //c.ii Reckless, Iron Fist                                          (Same deal)
-    else if ((attacker.ability === "Reckless" && move.hasRecoil) || (attacker.ability === "Iron Fist" && move.isPunch)) {
+    //c.ii Reckless, Iron Fist                                          (Same deal; hasRecoil shouldn't ever be true, but it's still checked for unknown recoil amount)
+    else if ((attacker.ability === "Reckless" && (move.hasRecoil || move.recoilHP || move.hasCrash)) || (attacker.ability === "Iron Fist" && move.isPunch)) {
         bpMods.push(0x1333);
         description.attackerAbility = attacker.ability;
     }
@@ -2182,7 +2182,7 @@ function checkAddCalcQualifications(attacker, defender, move, field) {
 function additionalDamageCalcs(attacker, defender, move, field, description) {
     var nextAttacker = attacker, nextDefender = defender, nextMove, nextField = field;
     var allAdditionalDamages = [];
-    var uniqueHits = 1;
+    var uniqueHits = 1;     //Keeps track of the number of unique hits that need to be calculated, done to minimize redundant function calls
     if (['Multiscale', 'Shadow Shield'].indexOf(defender.ability) !== -1 && defender.curHP === defender.maxHP && move.hits > 1) {
         nextDefender = JSON.parse(JSON.stringify(defender));
         nextDefender.ability = '';
