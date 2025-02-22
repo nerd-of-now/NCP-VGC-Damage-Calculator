@@ -993,6 +993,50 @@ function getOppMoves(pokID, moveGroupObj) {
     }
 }
 
+function restrictIVs(pokeObj, pokemonName) {
+    var STATS_WITH_HP = ["hp", "at", "df", "sa", "sd", "sp"];
+    var changedIVs = [];
+    switch (pokemonName) {
+        case 'Koraidon':
+        case 'Miraidon':
+            //set HP/Def/SpD min to 25, step to 6
+            changedIVs = [25, 31, 25, 31, 25, 31];
+            break;
+        case 'Ogerpon':
+        case 'Ogerpon-Wellspring':
+        case 'Ogerpon-Hearthflame':
+        case 'Ogerpon-Cornerstone':
+            //set Def/SpA/SpD min to 20, step to 11
+            changedIVs = [31, 31, 20, 20, 20, 31];
+            break;
+        case 'Gouging Fire':
+        case 'Raging Bolt':
+        case 'Iron Boulder':
+        case 'Iron Crown':
+            //set all stats min to 20, step to 11
+            changedIVs = [20, 20, 20, 20, 20, 20];
+            break;
+        case 'Terapagos':
+            //set Atk min to 15, step to 16
+            changedIVs = [31, 15, 31, 31, 31, 31];
+            break;
+    }
+    if (changedIVs.length) {
+        for (i = 0; i < 6; i++) {
+            pokeObj.find('.' + STATS_WITH_HP[i] + ' .ivs').attr({ 'min': changedIVs[i], 'step': 31 - changedIVs[i] });
+        }
+        changeIVsRange[pokeObj.attr('id')] = true;
+    }
+    else {
+        for (i = 0; i < 6; i++) {
+            pokeObj.find('.' + STATS_WITH_HP[i] + ' .ivs').attr({ 'min': 0, 'step': 1 });
+        }
+        changeIVsRange[pokeObj.attr('id')] = false;
+    }
+}
+
+var changeIVsRange = { 'p1': false, 'p2': false };
+
 // auto-update set details on select
 $(".set-selector").change(function () {
     calcQueue++;
@@ -1119,6 +1163,10 @@ $(".set-selector").change(function () {
         pokeObj.find(".editsc").prop("disabled", false);
         pokeObj.find(".addsc").prop("disabled", false);
         pokeObj.find(".setCalc").parent().children().prop("disabled", false);
+        //list for Pokemon with fixed IVs to lock in for the user
+        var fixedIVsList = ['Koraidon', 'Miraidon', 'Ogerpon', 'Ogerpon-Wellspring', 'Ogerpon-Hearthflame', 'Ogerpon-Cornerstone', 'Gouging Fire', 'Raging Bolt', 'Iron Boulder', 'Iron Crown', 'Terapagos'];
+        if (fixedIVsList.includes(pokemonName) || changeIVsRange[pokeObj.attr('id')])
+            restrictIVs(pokeObj, pokemonName);
     }
 
     calcQueue--;
