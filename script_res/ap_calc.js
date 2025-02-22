@@ -1281,6 +1281,101 @@ function calcMinMaxDamage(damage, hits) {
     return [minDamage, maxDamage];
 }
 
+//NOTE: returning a negative number indicates that the move heals more damage overall for the user
+function calcUserHP(move, user, target, minDamage, maxDamage) {
+    var userMinDamage = 0, userMaxDamage = 0;
+    var targetMax = target.curHP;   //done because the user cannot heal/take more HP than what they can get from the target
+    var usedMin = Math.min(minDamage, targetMax), usedMax = Math.min(maxDamage, targetMax);
+    var userItem = user.item;
+
+    //Move check
+    if (move.recoilHP) {
+        if (!["Rock Head", "Magic Guard"].includes(user.ability)) {
+            var recoilMod = move.recoilHP[0] / move.recoilHP[1];
+            userMinDamage = pokeRound(usedMin * recoilMod);
+            userMaxDamage = pokeRound(usedMax * recoilMod);
+        }
+    }
+    else if (move.drainHP) {
+        var drainMod = move.drainHP[0] / move.drainHP[1];
+        var liquidOoze = target.ability == "Liquid Ooze" && (gen >= 5 || move.name != "Dream Eater");
+        var doesHeal = !liquidOoze ? -1 : user.ability == "Magic Guard" ? 0 : 1;
+
+        userMinDamage = pokeRound(usedMin * drainMod);
+        userMaxDamage = pokeRound(usedMax * drainMod);
+
+        if (userItem == "Big Root") {
+            var bigRootMod = gen >= 5 ? 5324 / 4096 : 1.3;
+            userMinDamage = Math.round(userMinDamage * bigRootMod);
+            userMaxDamage = Math.round(userMaxDamage * bigRootMod);
+        }
+
+        userMinDamage = doesHeal * userMinDamage;
+        userMaxDamage = doesHeal * userMaxDamage;
+    }
+    else if (move.costHP) {
+        if (costHP[2] == "roundDown") {
+            if (move.name != "Curse" || user.t1 == 'Ghost' || user.t2 == 'Ghost') {
+                userMinDamage = Math.floor(user.maxHP * (move.costHP[0] / move.costHP[1]));
+                userMaxDamage = userMinDamage;
+            }
+        }
+        else {
+            userMinDamage = Math.ceil(user.maxHP * (move.costHP[0] / move.costHP[1]));
+            userMaxDamage = userMinDamage;
+        }
+    }
+    else if (move.name == "Pain Split") {
+        userMinDamage = -1 * minDamage;
+        userMaxDamage = -1 * maxDamage;
+    }
+    else if (move.name == "Strength Sap") {
+        if (target.boosts[AT] > -6) {
+            var doesHeal = target.ability != "Liquid Ooze" ? -1 : user.ability == "Magic Guard" ? 0 : 1;
+            userMinDamage = target.stats[AT];
+            if (userItem == "Big Root") {
+                var bigRootMod = gen >= 5 ? 5324 / 4096 : 1.3;
+                userMinDamage = Math.round(userMinDamage * bigRootMod);
+            }
+
+            userMinDamage = doesHeal * userMinDamage;
+            userMaxDamage = userMinDamage;
+        }
+    }
+    else if (user.name == "Alcremie-Gmax" && user.isDynamax && move.type == "Fairy" && move.category != "Status") { //G-Max Finale
+        userMinDamage = -1 * pokeRound(user.maxHP / 6);
+        userMaxDamage = userMinDamage;
+    }
+
+    //Opponent ability check
+    if (["Rough Skin", "Iron Barbs"].includes(target.ability) && move.makesContact) {
+        userMinDamage += Math.floor(user.maxHP / 8);
+        userMaxDamage += Math.floor(user.maxHP / 8);
+    }
+
+    //User item check
+    if (userItem == "Shell Bell") {
+        userMinDamage -= Math.floor(usedMin / 8);
+        userMaxDamage -= Math.floor(usedMax / 8);
+    }
+    else if (userItem == "Life Orb") {
+        userMinDamage += Math.floor(user.maxHP / 10);
+        userMaxDamage += Math.floor(user.maxHP / 10);
+    }
+
+    //Opponent item check
+    if (target.item == "Rocky Helmet") {
+        userMinDamage += Math.floor(user.maxHP / 6);
+        userMaxDamage += Math.floor(user.maxHP / 6);
+    }
+    else if ((target.item == "Jaboca Berry" && move.category == "Physical") || (target.item == "Rowap Berry" && move.category == "Special")) {
+        userMinDamage += Math.floor(user.maxHP / 8);
+        userMaxDamage += Math.floor(user.maxHP / 8);
+    }
+
+    return [userMinDamage, userMaxDamage];
+}
+
 var damageResults;
 function calculate() {
     if (calcQueue) return;
