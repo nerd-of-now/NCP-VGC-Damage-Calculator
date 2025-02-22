@@ -442,7 +442,8 @@ var MOVES_RBY = {
     },
     'Substitute': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        costHP: [1, 4, 'roundDown']
     },
     'Pound': {
         bp: 35,
@@ -1211,7 +1212,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     },
     'Curse': {
         type: '???',
-        category: 'Status'
+        category: 'Status',
+        costHP: [1, 4, 'roundDown']
     },
     'Cotton Spore': {
         type: 'Grass',
@@ -1228,7 +1230,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     },
     'Belly Drum': {
         type: 'Normal',
-        category: 'Status'
+        category: 'Status',
+        costHP: [1, 2, 'roundDown']
     },
     'Spikes': {
         type: 'Ground',
@@ -4182,7 +4185,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 150,
         type: 'Fire',
         category: 'Special',
-        isSpread: true
+        isSpread: true,
+        costHP: [1, 2, 'roundUp']
     },
     'Plasma Fists': {
         bp: 100,
@@ -4406,6 +4410,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 140,
         type: 'Steel',
         category: 'Special',
+        costHP: [1, 2, 'roundUp']
     },
     'No Retreat': {
         type: 'Fighting',
@@ -4417,7 +4422,8 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
     },
     'Clangorous Soul': {
         type: 'Dragon',
-        category: 'Status'
+        category: 'Status',
+        costHP: [1, 3, 'roundDown']
     },
     'Decorate': {
         type: 'Fairy',
@@ -4993,6 +4999,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         bp: 150,
         type: 'Grass',
         category: 'Special',
+        costHP: [1, 2, 'roundUp']
     },
     'Mountain Gale': {
         bp: 100,
@@ -5194,6 +5201,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     'Fillet Away': {
         type: 'Normal',
         category: 'Status',
+        costHP: [1, 2, 'roundDown']
     },
     'Kowtow Cleave': {
         bp: 85,
@@ -5255,6 +5263,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
     'Shed Tail': {
         type: 'Normal',
         category: 'Status',
+        costHP: [1, 2, 'roundUp']
     },
     'Chilly Reception': {
         type: 'Ice',
