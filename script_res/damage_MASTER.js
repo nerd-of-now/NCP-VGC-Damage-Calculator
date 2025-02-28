@@ -1019,7 +1019,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         description.terrain = field.terrain;
         return { "damage": [0], "description": buildDescription(description) };
     }
-    if (move.name === 'Dream Eater' && defender.status !== 'Asleep') {
+    if (move.name === 'Dream Eater' && defender.status !== 'Asleep' && defAbility !== 'Comatose') {
         return { "damage": [0], "description": buildDescription(description) };
     }
 
@@ -1256,7 +1256,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //g.ii. Hex
         case "Hex":
         case "Infernal Parade":
-            basePower = move.bp * (defender.status !== "Healthy" ? 2 : 1);
+            basePower = move.bp * (defender.status !== "Healthy" || defAbility === 'Comatose' ? 2 : 1);
             if (basePower !== move.bp) description.moveBP = basePower;
             break;
         //g.iii. Smelling Salts
@@ -1266,7 +1266,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             break;
         //g.iv. Wake-Up Slap
         case "Wake-Up Slap":
-            basePower = move.bp * (defender.status === "Asleep" ? 2 : 1);
+            basePower = move.bp * (defender.status === "Asleep" || defAbility === 'Comatose' ? 2 : 1);
             if (basePower !== move.bp) description.moveBP = basePower;
             break;
         //g.v. Weather Ball

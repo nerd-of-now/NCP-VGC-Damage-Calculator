@@ -147,7 +147,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
             eot -= Math.floor(Math.floor(defender.maxHP / burnDmgDivider) * maxChip);
             eotText.push('burn damage');
         }
-    } else if (defender.status === 'Asleep' && isBadDreams && defender.ability !== 'Magic Guard') {
+    } else if ((defender.status === 'Asleep' || defender.ability === 'Comatose') && isBadDreams && defender.ability !== 'Magic Guard') {
         eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
         eotText.push('Bad Dreams');
     }
