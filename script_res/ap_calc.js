@@ -418,16 +418,18 @@ $(".ability").bind("keyup change", function () {
     transformCheck(thisPoke);
 });
 
-$("#p1 select.ability").bind("keyup change", function() {
-    autosetWeather($(this).val(), 0, $("#p1").find(".abilityToggle").prop("checked"));
-    if ($(this).val() == 'Teraform Zero') {
+$("#p1 select.ability").bind("keyup change", function () {
+    var tempAb = $(this).val();
+    autosetWeather(tempAb, 0, $("#p1").find(".abilityToggle").prop("checked"));
+    if (tempAb == 'Teraform Zero') {
         removeWeather();
         removeTerrain();
     }
 });
-$("#p2 select.ability").bind("keyup change", function() {
-    autosetWeather($(this).val(), 1, $("#p2").find(".abilityToggle").prop("checked"));
-    if ($(this).val() == 'Teraform Zero') {
+$("#p2 select.ability").bind("keyup change", function () {
+    var tempAb = $(this).val();
+    autosetWeather(tempAb, 1, $("#p2").find(".abilityToggle").prop("checked"));
+    if (tempAb == 'Teraform Zero') {
         removeWeather();
         removeTerrain();
     }
@@ -1449,7 +1451,7 @@ function calculate() {
                   : getKOChanceText(result.damage, p1.moves[i], p2, field.getSide(1), p1.ability === 'Bad Dreams');
         //result.crit = p1.moves[i].isCrit
         result.hits = p1.moves[i].hits;
-        if(p1.moves[i].isMLG && !($("#p1").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p1").find(".max").prop("checked"))){
+        if(p1.moves[i].isOHKO && !($("#p1").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p1").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>"; //dank memes
         }
         $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
@@ -1469,7 +1471,7 @@ function calculate() {
                 : getKOChanceText(result.damage, p2.moves[i], p1, field.getSide(0), p2.ability === 'Bad Dreams');
         //result.crit = p2.moves[i].isCrit
         result.hits = p2.moves[i].hits;
-        if (p2.moves[i].isMLG && !($("#p2").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p2").find(".max").prop("checked"))){
+        if (p2.moves[i].isOHKO && !($("#p2").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p2").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>";
         }
         $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));

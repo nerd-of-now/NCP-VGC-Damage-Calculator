@@ -501,7 +501,7 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isMLG: true,
+        isOHKO: true,
         zp: 180
     },
     'Razor Wind': {
@@ -583,7 +583,7 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        isMLG: true,
+        isOHKO: true,
         zp: 180
     },
     'Take Down': {
@@ -695,7 +695,7 @@ var MOVES_RBY = {
         bp: 1,
         type: 'Ground',
         category: 'Physical',
-        isMLG: true,
+        isOHKO: true,
         zp: 180
     },
     'Confusion': {
@@ -2042,7 +2042,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 1,
         type: 'Ice',
         category: 'Special',
-        isMLG: true,
+        isOHKO: true,
         zp: 180
     },
     'Bullet Seed': {

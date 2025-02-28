@@ -1004,6 +1004,10 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
             description.attackerAbility = attacker.ability;
         return { "damage": [0], "description": buildDescription(description) };
     }
+    if (move.isOHKO && defAbility === "Sturdy") {
+        description.defenderAbility = defAbility;
+        return { "damage": [0], "description": buildDescription(description) };
+    }
     if (move.name === "Fling" && cantFlingItem(attacker.item, attacker.name, defAbility)) {
         description.attackerItem = attacker.item;
         return { "damage": [0], "description": buildDescription(description) };
@@ -1134,7 +1138,7 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
     }
 
     //f. OHKO moves
-    if (move.isMLG) {
+    if (move.isOHKO) {
         if (move.name == 'Sheer Cold' && [defender.type1, defender.type2].indexOf('Ice') !== -1)
             return { "damage": [0], "description": buildDescription(description) };
         else
