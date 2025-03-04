@@ -374,11 +374,23 @@ function setHitsVal(poke, ab, item) {
     }
 }
 
-var lastAura = [false, false, false]
 var manualProtoQuark;
+var lastManualField = {
+    'weather': '',
+    'aura': [false, false, false],
+    'terrain': '',
+    'neutralgas': false,
+    'ruin': [false, false, false, false],
+};
+var lastAutoField = {   //shouldn't apply to aura/gas/ruin since they can all coexist
+    'weather': ['', ''],
+    'terrain': ['', ''],
+};
 $(".ability").bind("keyup change", function () {
     thisPoke = $(this).closest(".poke-info");
-    autoSetNeutralGas();
+    setIndependentField('neutralgas');
+    setIndependentField('aura');
+    setIndependentField('ruin');
 
     setHitsVal(thisPoke, $(this).val(), thisPoke.find("select.item").val());
 
@@ -387,10 +399,6 @@ $(".ability").bind("keyup change", function () {
     else
         thisPoke.find(".ability-supreme").hide();
     thisPoke.find(".ability-supreme").val(0);
-
-    autoSetAura();
-    autoSetRuin();
-    autoSetTerrain();
 
     var ab = $(this).val();
     var ABILITY_TOGGLE_OFF = gen >= 9 ? ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit', 'Electromorphosis', 'Wind Power', 'Seed Sower', 'Battle Bond'] : ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit'];
@@ -419,16 +427,20 @@ $(".ability").bind("keyup change", function () {
 });
 
 $("#p1 select.ability").bind("keyup change", function () {
+    //if ($("input:checkbox[id='neutralizingGas']").prop("checked")) return;
     var tempAb = $(this).val();
-    autosetWeather(tempAb, 0, $("#p1").find(".abilityToggle").prop("checked"));
+    setField(tempAb, 0, $("#p1").find(".abilityToggle").prop("checked"), 'weather');
+    setField(tempAb, 0, $("#p1").find(".abilityToggle").prop("checked"), 'terrain');
     if (tempAb == 'Teraform Zero') {
         removeWeather();
         removeTerrain();
     }
 });
 $("#p2 select.ability").bind("keyup change", function () {
+    //if ($("input:checkbox[id='neutralizingGas']").prop("checked")) return;
     var tempAb = $(this).val();
-    autosetWeather(tempAb, 1, $("#p2").find(".abilityToggle").prop("checked"));
+    setField(tempAb, 1, $("#p2").find(".abilityToggle").prop("checked"), 'weather');
+    setField(tempAb, 1, $("#p2").find(".abilityToggle").prop("checked"), 'terrain');
     if (tempAb == 'Teraform Zero') {
         removeWeather();
         removeTerrain();
@@ -438,16 +450,16 @@ $("#p2 select.ability").bind("keyup change", function () {
 $("#p1 .abilityToggle").bind("keyup change", function () {
     ab = $("#p1").find("select.ability").val();
     if (ab === "Sand Spit")
-        autosetWeather(ab, 0, $(this).prop("checked"));
+        setField(ab, 0, $("#p1").find(".abilityToggle").prop("checked"), 'weather');
     else if (ab === "Seed Sower")
-        autoSetTerrain()
+        setField(ab, 0, $("#p1").find(".abilityToggle").prop("checked"), 'terrain');
 });
 $("#p2 .abilityToggle").bind("keyup change", function () {
     ab = $("#p2").find("select.ability").val();
     if (ab === "Sand Spit")
-        autosetWeather(ab, 0, $(this).prop("checked"));
+        setField(ab, 1, $("#p2").find(".abilityToggle").prop("checked"), 'weather');
     else if (ab === "Seed Sower")
-        autoSetTerrain()
+        setField(ab, 1, $("#p2").find(".abilityToggle").prop("checked"), 'terrain');
 });
 
 var lastHighestStat = [0,0];
@@ -464,153 +476,136 @@ $(".ability-advanced").bind("keyup change", function () {
     $("#p2 .ability-proto-quark").val(lastHighestStat[1]);
 });
 
-var lastTerrain = "noterrain";
-var lastManualWeather = "";
-var lastAutoWeather = ["", ""];
-function autoSetAura()
-{
-    var ability1 = $("#p1 select.ability").val()
-    var ability2 = $("#p2 select.ability").val()
 
-        if (ability1 == "Fairy Aura" || ability2 == "Fairy Aura")
-            $("input:checkbox[id='fairy-aura']").prop("checked", true)
+$(".independent-field").bind("keyup change", function () {
+    var fieldType = $(this).attr('name');
+    if (fieldType == "auras") {
+        var auraIndex = ['Fairy Aura', 'Dark Aura', 'Aura Break'].indexOf($(this).val());
+        lastManualField['aura'][auraIndex] = $(this).prop("checked");
+    }
+    else if (fieldType == "neutralgas") {
+        lastManualField['neutralgas'] = $(this).prop("checked");
+        //if (!lastManualField['neutralgas']) {
+        //    setField($("#p1").find("select.ability").val(), 0, $("#p1").find(".abilityToggle").prop("checked"), 'weather');
+        //    setField($("#p2").find("select.ability").val(), 0, $("#p2").find(".abilityToggle").prop("checked"), 'terrain');
+        //    setField($("#p1").find("select.ability").val(), 0, $("#p1").find(".abilityToggle").prop("checked"), 'weather');
+        //    setField($("#p2").find("select.ability").val(), 0, $("#p2").find(".abilityToggle").prop("checked"), 'terrain');
+        //}
+    }
+    else if (fieldType == "ruin") {
+        var ruinIndex = ['Tablets of Ruin', 'Vessel of Ruin', 'Sword of Ruin', 'Beads of Ruin'].indexOf($(this).val());
+        lastManualField['ruin'][ruinIndex] = $(this).prop("checked");
+    }
+});
+
+function setIndependentField(fieldType) {
+    var ability1 = $("#p1 select.ability").val();
+    var ability2 = $("#p2 select.ability").val();
+
+    if (fieldType === "aura") {
+        if ([ability1, ability2].includes("Fairy Aura"))
+            $("input:checkbox[id='fairy-aura']").prop("checked", true);
         else
-            $("input:checkbox[id='fairy-aura']").prop("checked", lastAura[0])
-        if (ability1 == "Dark Aura" || ability2 == "Dark Aura")
-            $("input:checkbox[id='dark-aura']").prop("checked", true)
+            $("input:checkbox[id='fairy-aura']").prop("checked", lastManualField['aura'][0]);
+        if ([ability1, ability2].includes("Dark Aura"))
+            $("input:checkbox[id='dark-aura']").prop("checked", true);
         else
-            $("input:checkbox[id='dark-aura']").prop("checked", lastAura[1])
-        if (ability1 == "Aura Break" || ability2 == "Aura Break")
-            $("input:checkbox[id='aura-break']").prop("checked", true)
+            $("input:checkbox[id='dark-aura']").prop("checked", lastManualField['aura'][1]);
+        if ([ability1, ability2].includes("Aura Break"))
+            $("input:checkbox[id='aura-break']").prop("checked", true);
         else
-            $("input:checkbox[id='aura-break']").prop("checked", lastAura[2])
+            $("input:checkbox[id='aura-break']").prop("checked", lastManualField['aura'][2]);
+    }
+    else if (fieldType === "neutralgas") {
+        if ([ability1, ability2].includes("Neutralizing Gas"))
+            $("input:checkbox[id='neutralizingGas']").prop("checked", true);
+        else
+            $("input:checkbox[id='neutralizingGas']").prop("checked", lastManualField['neutralgas']);
+    }
+    else if (fieldType === "ruin") {
+        if ([ability1, ability2].includes("Tablets of Ruin"))
+            $("input:checkbox[id='tablets-of-ruin']").prop("checked", true);
+        else
+            $("input:checkbox[id='tablets-of-ruin']").prop("checked", lastManualField['ruin'][0]);
+        if ([ability1, ability2].includes("Vessel of Ruin"))
+            $("input:checkbox[id='vessel-of-ruin']").prop("checked", true);
+        else
+            $("input:checkbox[id='vessel-of-ruin']").prop("checked", lastManualField['ruin'][1]);
+        if ([ability1, ability2].includes("Sword of Ruin"))
+            $("input:checkbox[id='sword-of-ruin']").prop("checked", true);
+        else
+            $("input:checkbox[id='sword-of-ruin']").prop("checked", lastManualField['ruin'][2]);
+        if ([ability1, ability2].includes("Beads of Ruin"))
+            $("input:checkbox[id='beads-of-ruin']").prop("checked", true);
+        else
+            $("input:checkbox[id='beads-of-ruin']").prop("checked", lastManualField['ruin'][3]);
+    }
 }
 
-function autoSetRuin() {
-    var ability1 = $("#p1 select.ability").val()
-    var ability2 = $("#p2 select.ability").val()
-
-    if (ability1 == "Tablets of Ruin" || ability2 == "Tablets of Ruin")
-        $("input:checkbox[id='tablets-of-ruin']").prop("checked", true)
-    else
-        $("input:checkbox[id='tablets-of-ruin']").prop("checked", false)
-    if (ability1 == "Vessel of Ruin" || ability2 == "Vessel of Ruin")
-        $("input:checkbox[id='vessel-of-ruin']").prop("checked", true)
-    else
-        $("input:checkbox[id='vessel-of-ruin']").prop("checked", false)
-    if (ability1 == "Sword of Ruin" || ability2 == "Sword of Ruin")
-        $("input:checkbox[id='sword-of-ruin']").prop("checked", true)
-    else
-        $("input:checkbox[id='sword-of-ruin']").prop("checked", false)
-    if (ability1 == "Beads of Ruin" || ability2 == "Beads of Ruin")
-        $("input:checkbox[id='beads-of-ruin']").prop("checked", true)
-    else
-        $("input:checkbox[id='beads-of-ruin']").prop("checked", false)
-}
-function autoSetTerrain() {
-    var ability1 = $("#p1 select.ability").val()
-    var ability2 = $("#p2 select.ability").val()
-    var abOn1 = $("#p1").find(".abilityToggle").prop("checked")
-    var abOn2 = $("#p2").find(".abilityToggle").prop("checked")
-    //Grassy Terrain check is first due to the need to check for abilityToggle with Seed Sower
-    if ([ability1, ability2].includes("Grassy Surge") || (ability1 == "Seed Sower" && abOn1) || (ability2 == "Seed Sower" && abOn2)) {
-        $("input:radio[id='grassy']").prop("checked", true);
-        lastTerrain = 'grassy';
+function setField(ability, i, abOn, fieldType) {
+    var autoAbilities = {};
+    var currentField, newField;
+    if (fieldType == "weather") {
+        var primalWeather = ["Harsh Sun", "Heavy Rain", "Strong Winds"];
+        autoAbilities = {
+            "Drought": "Sun",
+            "Drizzle": "Rain",
+            "Sand Stream": "Sand",
+            "Snow Warning": "Hail",
+            //"Sand Spit": "Sand",
+            "Desolate Land": "Harsh Sun",
+            "Primordial Sea": "Heavy Rain",
+            "Delta Stream": "Strong Winds",
+            "Orichalcum Pulse": "Sun",
+        };
+        if (gen >= 9) autoAbilities["Snow Warning"] = "Snow";
+        if (ability === "Sand Spit" && abOn)
+            autoAbilities["Sand Spit"] = "Sand";
+        currentField = $("input:radio[name='weather']:checked").val();
     }
-    else if ([ability1, ability2].includes("Electric Surge") || [ability1, ability2].includes("Hadron Engine")) {
-        $("input:radio[id='electric']").prop("checked", true);
-        lastTerrain = 'electric';
+    else if (fieldType == "terrain") {
+        autoAbilities = {
+            "Grassy Surge": "Grassy",
+            "Misty Surge": "Misty",
+            "Electric Surge": "Electric",
+            "Psychic Surge": "Psychic",
+            //"Seed Sower": "Grassy",
+            "Hadron Engine": "Electric",
+        };
+        if (ability === "Seed Sower" && abOn)
+            autoAbilities["Seed Sower"] = "Grassy";
+        currentField = $("input:radio[name='terrain']:checked").val();
     }
-    else if ([ability1, ability2].includes("Misty Surge")) {
-        $("input:radio[id='misty']").prop("checked", true);
-        lastTerrain = 'misty';
+    else {
+        alert("Entered function setField with unaccounted fieldType.\nIf you see this and you aren't coding this, tell nerd of now");
+        return;
     }
-    else if ([ability1, ability2].includes("Psychic Surge")) {
-        $("input:radio[id='psychic']").prop("checked", true);
-        lastTerrain = 'psychic';
+    if (!lastAutoField[fieldType].includes(currentField) || currentField === "") {
+        lastManualField[fieldType] = currentField;
+        lastAutoField[fieldType][1 - i] = "";
     }
-    else
-        $("input:radio[id='noterrain']").prop("checked", true);
-}
-
-function removeTerrain() {
-    $("input:radio[id='noterrain']").prop("checked", true);
-}
-
-function autosetWeather(ability, i, abOn) {
-    var currentWeather = $("input:radio[name='weather']:checked").val();
-    if (!lastAutoWeather.includes(currentWeather) || currentWeather === "") {
-        lastManualWeather = currentWeather;
-        lastAutoWeather[1-i] = "";
-    }
-
-    var primalWeather = ["Harsh Sun", "Heavy Rain"];
-    var autoWeatherAbilities = {
-        "Drought": "Sun",
-        "Drizzle": "Rain",
-        "Sand Stream": "Sand",
-        "Snow Warning": "Hail",
-        //"Sand Spit": "Sand",
-        "Desolate Land": "Harsh Sun",
-        "Primordial Sea": "Heavy Rain",
-        "Delta Stream": "Strong Winds",
-        "Orichalcum Pulse": "Sun",
-    };
-    var newWeather;
-
-    if (gen >= 9) autoWeatherAbilities["Snow Warning"] = "Snow";
-    if (ability === "Sand Spit" && abOn)
-        autoWeatherAbilities["Sand Spit"] = "Sand";
-
-    if (ability in autoWeatherAbilities) {
-        lastAutoWeather[i] = autoWeatherAbilities[ability];
-        if (currentWeather === "Strong Winds") {
-            if (!lastAutoWeather.includes("Strong Winds")) {
-                newWeather = lastAutoWeather[i];
-            }
-        } else if (primalWeather.includes(currentWeather)) {
-            if (lastAutoWeather[i] === "Strong Winds" || primalWeather.includes(lastAutoWeather[i])) {
-                newWeather = lastAutoWeather[i];
-            } else if (primalWeather.includes(lastAutoWeather[1-i])) {
-                newWeather = lastAutoWeather[1-i];
-            } else {
-                newWeather = lastAutoWeather[i];
-            }
-        } else {
-            newWeather = lastAutoWeather[i];
-        }
-    } else {
-        lastAutoWeather[i] = "";
-        newWeather = lastAutoWeather[1-i] !== "" ? lastAutoWeather[1-i] : lastManualWeather;
-    }
-    if (newWeather === "Strong Winds" || primalWeather.includes(newWeather)) {
-        //$("input:radio[name='weather']").prop("disabled", true);
-        //edited out by squirrelboy1225 for doubles!
-        $("input:radio[name='weather'][value='" + newWeather + "']").prop("disabled", false);
-    } else if (typeof newWeather != "undefined") {
-        for (var k = 0, n = $("input:radio[name='weather']").length; k < n; k++) {
-            var val = $("input:radio[name='weather']")[k].value;
-            if (!primalWeather.includes(val) && val !== "Strong Winds") {
-                $("input:radio[name='weather']")[k].disabled = false;
-            } else {
-                //$("input:radio[name='weather']")[k].disabled = true;
-                //edited out by squirrelboy1225 for doubles!
-            }
+    if (ability in autoAbilities) {
+        lastAutoField[fieldType][i] = autoAbilities[ability];
+        newField = lastAutoField[fieldType][i];
+        if (fieldType === "weather" && primalWeather.includes(currentField) && !primalWeather.includes(lastAutoField[fieldType][i]) && primalWeather.includes(lastAutoField[fieldType][1 - i])) {
+            newField = lastAutoField[fieldType][1 - i];
         }
     }
-    $("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+    else {
+        lastAutoField[fieldType][i] = "";
+        newField = lastAutoField[fieldType][1 - i] !== "" ? lastAutoField[fieldType][1 - i] : lastManualField[fieldType];
+    }
+    //if (!$("input:checkbox[id='neutralizingGas']").prop("checked"))
+    //    $("input:radio[name='" + fieldType + "'][value='" + newField + "']").prop("checked", true);
+    $("input:radio[name='" + fieldType + "'][value='" + newField + "']").prop("checked", true);
 }
 
 function removeWeather() {
     $("input:radio[name='weather'][value='']").prop("checked", true);
 }
 
-function autoSetNeutralGas() {
-    var ability1 = $("#p1 select.ability").val()
-    var ability2 = $("#p2 select.ability").val()
-    if ((ability1 == "Neutralizing Gas" || ability2 == "Neutralizing Gas")) {
-        $("input:checkbox[id='neutralizingGas']").prop("checked", true);
-    }
+function removeTerrain() {
+    $("input:radio[id='noterrain']").prop("checked", true);
 }
 
 $(".item").bind("keyup change", function () {
@@ -1971,6 +1966,7 @@ $(".gen").change(function () {
 });
 
 function clearField() {
+    calcQueue++;
     $("#doubles").prop("checked", true);
     $("#clear").prop("checked", true);
     $("#gscClear").prop("checked", true);
@@ -1991,7 +1987,9 @@ function clearField() {
     $("#helpingHandR").prop("checked", false);
     $("#friendGuardL").prop("checked", false);
     $("#friendGuardR").prop("checked", false);
-    $("#neutralizingGas").prop("checked", false);
+    //$("#neutralizingGas").prop("checked", false);
+    $(".independent-field").prop("checked", false);
+    $(".independent-field").change();
     $("#steelySpiritL").prop("checked", false);
     $("#steelySpiritR").prop("checked", false);
     $("#gMaxHazardL").prop("checked", false);
@@ -2020,6 +2018,7 @@ function clearField() {
     $("#swampR").prop("checked", false);
     $("#seaFireL").prop("checked", false);
     $("#seaFireR").prop("checked", false);
+    calcQueue--;
 }
 
 function getSetOptions(p) {
