@@ -2,7 +2,7 @@ var ITEMS_GSC = [
     'Berry',
     'Berry Juice',
     'Black Belt',
-    'BlackGlasses',
+    'Black Glasses',
     'Charcoal',
     'Dragon Fang',
     'Gold Berry',
@@ -15,17 +15,17 @@ var ITEMS_GSC = [
     'Metal Powder',
     'Miracle Seed',
     'Mystic Water',
-    'NeverMeltIce',
+    'Never-Melt Ice',
     'Pink Bow',
     'Poison Barb',
     'Polkadot Bow',
     'Sharp Beak',
-    'SilverPowder',
+    'Silver Powder',
     'Soft Sand',
     'Spell Tag',
     'Stick',
     'Thick Club',
-    'TwistedSpoon',
+    'Twisted Spoon',
     //NO FUNCT
     'Bright Powder',
     'Lucky Punch',
@@ -34,8 +34,8 @@ var ITEMS_GSC = [
 
 var ITEMS_ADV = ITEMS_GSC.concat([
     'Choice Band',
-    'DeepSeaScale',
-    'DeepSeaTooth',
+    'Deep Sea Scale',
+    'Deep Sea Tooth',
     'Oran Berry',
     'Silk Scarf',
     'Sitrus Berry',
@@ -264,13 +264,6 @@ var ITEMS_XY_NO_MEGA = ITEMS_BW_NO_GEMS.concat([
     'Snowball',
     'Weakness Policy',
 ]);
-
-ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('BlackGlasses'), 1, 'Black Glasses');
-ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('DeepSeaScale'), 1, 'Deep Sea Scale');
-ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('DeepSeaTooth'), 1, 'Deep Sea Tooth');
-ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('NeverMeltIce'), 1, 'Never-Melt Ice');
-ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('SilverPowder'), 1, 'Silver Powder');
-ITEMS_XY_NO_MEGA.splice(ITEMS_XY_NO_MEGA.indexOf('TwistedSpoon'), 1, 'Twisted Spoon');
 
 var ITEMS_XY = ITEMS_XY_NO_MEGA.concat(ITEMS_MEGA_STONES);
 
