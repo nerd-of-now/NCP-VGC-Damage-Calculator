@@ -80,7 +80,25 @@ var SETDEX_GEN5 = {
 
     },
     "Raichu": {
-
+        "Sash Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 4,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "item": "Focus Sash",
+            "moves": [
+                "Fake Out",
+                "Volt Switch",
+                "Encore",
+                "Helping Hand"
+            ]
+        },
     },
     "Sandslash": {
 
@@ -295,7 +313,28 @@ var SETDEX_GEN5 = {
         },
     },
     "Marowak": {
-
+        "Trick Room Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Thick Club",
+            "moves": [
+                "Bonemerang",
+                "Rock Slide",
+                "Fire Punch",
+                "Protect"
+            ]
+        },
     },
     "Hitmonlee": {
 
@@ -1248,7 +1287,7 @@ var SETDEX_GEN5 = {
             "item": "Shell Bell",
             "moves": [
                 "Endeavor",
-                "Toxic",
+                "Iron Head",
                 "Stealth Rock",
                 "Protect"
             ]
@@ -1342,7 +1381,28 @@ var SETDEX_GEN5 = {
 
     },
     "Milotic": {
-
+        "Seriously why was this allowed on VR": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 60,
+                "sa": 68,
+                "sd": 116,
+                "sp": 12
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Leftovers",
+            "moves": [
+                "Scald",
+                "Ice Beam",
+                "Recover",
+                "Protect"
+            ]
+        },
     },
     "Castform": {
 
@@ -1717,7 +1777,28 @@ var SETDEX_GEN5 = {
 
     },
     "Bronzong": {
-
+        "Super Slow TR Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Macho Brace",
+            "moves": [
+                "Gyro Ball",
+                "Trick Room",
+                "Skill Swap",
+                "Safeguard"
+            ]
+        },
     },
     "Mime Jr.": {
 
@@ -2359,6 +2440,25 @@ var SETDEX_GEN5 = {
     },
     "Whimsicott": {
         //2011
+        "Beat Up Tailwind Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Focus Sash",
+            "moves": [
+                "Endeavor",
+                "Beat Up",
+                "Tailwind",
+                "Safeguard"
+            ]
+        },
     },
     "Lilligant": {
 
@@ -2684,7 +2784,29 @@ var SETDEX_GEN5 = {
 
     },
     "Accelgor": {
-
+        "Bug Gem Unburden": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30,
+            },
+            "nature": "Modest",
+            "item": "Bug Gem",
+            "moves": [
+                "Bug Buzz",
+                "Acid Spray",
+                "Hidden Power Ice",
+                "Encore"
+            ]
+        },
     },
     "Stunfisk": {
 
