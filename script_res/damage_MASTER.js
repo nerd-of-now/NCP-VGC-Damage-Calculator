@@ -2187,11 +2187,6 @@ function additionalDamageCalcs(attacker, defender, move, field, description) {
     var nextAttacker = attacker, nextDefender = defender, nextMove, nextField = field;
     var allAdditionalDamages = [];
     var uniqueHits = 1;     //Keeps track of the number of unique hits that need to be calculated, done to minimize redundant function calls
-    if (['Multiscale', 'Shadow Shield'].indexOf(defender.ability) !== -1 && defender.curHP === defender.maxHP && move.hits > 1) {
-        nextDefender = JSON.parse(JSON.stringify(defender));
-        nextDefender.ability = '';
-        uniqueHits = 2;
-    }
     if (attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread)) {
         nextAttacker = JSON.parse(JSON.stringify(attacker));
         nextAttacker.ability = '';
@@ -2212,6 +2207,13 @@ function additionalDamageCalcs(attacker, defender, move, field, description) {
     }
     else if (move.isTripleHit) {
         uniqueHits = move.hits;
+    }
+    if (['Multiscale', 'Shadow Shield'].indexOf(defender.ability) !== -1 && defender.curHP === defender.maxHP && move.hits > 1) {
+        nextDefender = JSON.parse(JSON.stringify(defender));
+        nextDefender.ability = '';
+        if (uniqueHits === 1) {
+            uniqueHits = 2;
+        }
     }
     for (var i = 0; i < uniqueHits - 1; i++) {
         nextMove = JSON.parse(JSON.stringify(move));
