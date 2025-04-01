@@ -2419,6 +2419,49 @@ var SETDEX_GEN5 = {
                 "Protect"
             ]
         },
+        "2011 TR Guts": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 44,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "ability": "Guts",
+            "item": "Flame Orb",
+            "moves": [
+                "Drain Punch",
+                "Rock Slide",
+                "Mach Punch",
+                "Detect"
+            ]
+        },
+        "Ray Rizzo's Worlds 1st Leftovers": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 12,
+                "df": 20,
+                "sa": 0,
+                "sd": 164,
+                "sp": 60
+            },
+            "nature": "Adamant",
+            "ability": "Guts",
+            "item": "Leftovers",
+            "moves": [
+                "Drain Punch",
+                "Rock Slide",
+                "Mach Punch",
+                "Detect"
+            ]
+        },
     },
     "Palpitoad": {
 
@@ -2468,6 +2511,25 @@ var SETDEX_GEN5 = {
     },
     "Krookodile": {
         //2011
+        "Matteo Gini's Worlds 2nd Sash Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 164,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 92
+            },
+            "nature": "Adamant",
+            "item": "Focus Sash",
+            "moves": [
+                "Earthquake",
+                "Crunch",
+                "Rock Slide",
+                "Protect"
+            ]
+        },
     },
     "Darmanitan": {
         //2011
@@ -2495,6 +2557,29 @@ var SETDEX_GEN5 = {
             },
             "nature": "Brave",
             "item": "Dark Gem",
+            "moves": [
+                "Crunch",
+                "Drain Punch",
+                "Fake Out",
+                "Ice Punch"
+            ]
+        },
+        "2011 Moxie Chople": {
+            "level": 50,
+            "evs": {
+                "hp": 156,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 100
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Adamant",
+            "ability": "Moxie",
+            "item": "Chople Berry",
             "moves": [
                 "Crunch",
                 "Drain Punch",
@@ -2659,6 +2744,29 @@ var SETDEX_GEN5 = {
                 "Protect"
             ]
         },
+        "Cybertron's Senior US Nats 1st Max Speed": {
+            "level": 50,
+            "evs": {
+                "hp": 100,
+                "at": 0,
+                "df": 36,
+                "sa": 100,
+                "sd": 20,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Effect Spore",
+            "item": "Coba Berry",
+            "moves": [
+                "Giga Drain",
+                "Spore",
+                "Rage Powder",
+                "Protect"
+            ]
+        },
     },
     "Jellicent": {
         //2011-13
@@ -2739,12 +2847,57 @@ var SETDEX_GEN5 = {
                 "Protect"
             ]
         },
+        "Curse Substitute": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 12,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Leftovers",
+            "moves": [
+                "Power Whip",
+                "Gyro Ball",
+                "Curse",
+                "Substitute"
+            ]
+        },
     },
     "Klinklang": {
 
     },
     "Eelektross": {
         //2011
+        "Matteo Gini's Worlds 2nd Special Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 92,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 164
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30,
+            },
+            "nature": "Modest",
+            "item": "Life Orb",
+            "moves": [
+                "Thunderbolt",
+                "Flamethrower",
+                "Hidden Power Ice",
+                "Protect"
+            ]
+        },
     },
     "Beheeyem": {
 
@@ -2773,9 +2926,70 @@ var SETDEX_GEN5 = {
                 "Protect"
             ]
         },
+        "Faster Offensive Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Focus Sash",
+            "moves": [
+                "Heat Wave",
+                "Shadow Ball",
+                "Overheat",
+                "Protect"
+            ]
+        },
     },
     "Haxorus": {
         //2011
+        "Scarf Rivalry": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Rivalry",
+            "item": "Choice Scarf",
+            "moves": [
+                "Dual Chop",
+                "Outrage",
+                "Earthquake",
+                "Rock Slide"
+            ]
+        },
+        "DD Mold Breaker": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Lum Berry",
+            "moves": [
+                "Dual Chop",
+                "Earthquake",
+                "Rock Slide",
+                "Dragon Dance"
+            ]
+        },
     },
     "Beartic": {
 
@@ -2949,7 +3163,6 @@ var SETDEX_GEN5 = {
         //2011
     },
     "Terrakion": {
-        //2011-13
         "Fighting Gem": {
             "level": 50,
             "evs": {
@@ -2967,6 +3180,47 @@ var SETDEX_GEN5 = {
                 "Rock Slide",
                 "Stone Edge",
                 "Protect"
+            ]
+        },
+        "Ray Rizzo's Worlds 1st Max Speed Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 212,
+                "df": 12,
+                "sa": 0,
+                "sd": 12,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Choice Scarf",
+            "moves": [
+                "Rock Slide",
+                "Sacred Sword",
+                "Close Combat",
+                "Earthquake"
+            ]
+        },
+        "The Infamous 183 Speed Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 18,
+            },
+            "nature": "Adamant",
+            "item": "Choice Scarf",
+            "moves": [
+                "Rock Slide",
+                "Close Combat",
+                "Sacred Sword",
+                "Earthquake"
             ]
         },
     },
@@ -3011,6 +3265,26 @@ var SETDEX_GEN5 = {
                 "Superpower",
                 "U-turn",
                 "Tailwind"
+            ]
+        },
+        "Gem Acrobatics but Prankster": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "ability": "Prankster",
+            "item": "Flying Gem",
+            "moves": [
+                "Acrobatics",
+                "U-turn",
+                "Tailwind",
+                "Taunt"
             ]
         },
     },
@@ -3083,6 +3357,32 @@ var SETDEX_GEN5 = {
                 "Crunch",
                 "Superpower",
                 "U-turn"
+            ]
+        },
+        "Max/Max HP Flying Electric Gem": {
+            "level": 50,
+            "evs": {
+                "hp": 8,
+                "at": 0,
+                "df": 0,
+                "sa": 248,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "hp": 30,
+                "at": 2,
+                "df": 30,
+                "sa": 30,
+                "sd": 30,
+            },
+            "nature": "Timid",
+            "item": "Electric Gem",
+            "moves": [
+                "Thunderbolt",
+                "Hidden Power Flying",
+                "Thunder Wave",
+                "Substitute"
             ]
         },
     },
@@ -3167,6 +3467,26 @@ var SETDEX_GEN5 = {
                 "Hidden Power Ice",
                 "Psychic",
                 "Protect"
+            ]
+        },
+        "2011 Physical Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Sand Force",
+            "item": "Life Orb",
+            "moves": [
+                "Earthquake",
+                "Rock Slide",
+                "U-turn",
+                "Explosion"
             ]
         },
     },
