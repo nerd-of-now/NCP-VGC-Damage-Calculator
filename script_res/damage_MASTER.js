@@ -1411,6 +1411,16 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //b. Rivalry
+    if (attacker.ability == "Rivalry" && attacker.rivalryGender != '') {
+        if (attacker.rivalryGender == 'Same') {
+            bpMods.push(0x1400);
+            description.attackerAbility = 'Rivalry (1.25x)';
+        }
+        else if (attacker.rivalryGender == 'Opposite') {
+            bpMods.push(0x0C00);
+            description.attackerAbility = 'Rivalry (0.75x)';
+        }
+    }
 
     //c. 1.2x Abilities
     //c.i. Galvanize, Aerilate, Pixilate, Refrigerate, Normalize        (Technically Normalize is separate but it doesn't hurt to handle it where it is now)

@@ -400,6 +400,12 @@ $(".ability").bind("keyup change", function () {
         thisPoke.find(".ability-supreme").hide();
     thisPoke.find(".ability-supreme").val(0);
 
+    if ($(this).val() === "Rivalry")
+        thisPoke.find(".ability-rivalry").show();
+    else
+        thisPoke.find(".ability-rivalry").hide();
+    thisPoke.find(".ability-rivalry").val('');
+
     var ab = $(this).val();
     var ABILITY_TOGGLE_OFF = gen >= 9 ? ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit', 'Electromorphosis', 'Wind Power', 'Seed Sower', 'Battle Bond'] : ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit'];
     var ABILITY_TOGGLE_ON = gen >= 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero', 'Intrepid Sword', 'Dauntless Shield', 'Supersweet Syrup'] : ['Intimidate', 'Slow Start'];
@@ -1668,6 +1674,7 @@ function Pokemon(pokeInfo) {
     this.ability = pokeInfo.find("select.ability").val();
     this.abilityOn = pokeInfo.find(".abilityToggle").prop("checked");
     this.supremeOverlord = ~~pokeInfo.find(".ability-supreme").val();
+    this.rivalryGender = pokeInfo.find(".ability-rivalry").val();
     this.highestStat = pokeInfo.find(".ability-advanced").prop("checked") ? ~~pokeInfo.find(".ability-proto-quark").val() : -1;
     this.item = pokeInfo.find("select.item").val();
     this.status = pokeInfo.find(".status").val();

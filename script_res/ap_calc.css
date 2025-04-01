@@ -209,6 +209,9 @@ select.hidden-power {
 select.ability-supreme, select.ability-proto-quark {
     width: 4.5em;
 }
+select.ability-rivalry {
+    width: 8em;
+}
 select.toxic-counter {
     width: 4.5em;
 }

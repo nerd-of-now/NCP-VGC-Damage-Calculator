@@ -135,7 +135,8 @@ function calcBPModsGen4(attacker, field, move, description, basePower, defAbilit
     if ((attacker.item === "Muscle Band" && isPhysical) || (attacker.item === "Wise Glasses" && !isPhysical)) {
         basePower = Math.floor(basePower * 1.1);
         description.attackerItem = attacker.item;
-    } else if (getItemBoostType(attacker.item) === move.type ||
+    }
+    else if (getItemBoostType(attacker.item) === move.type ||
         getItemDualTypeBoost(attacker.item, attacker.name).includes(move.type)) {
         basePower = Math.floor(basePower * 1.2);
         description.attackerItem = attacker.item;
@@ -145,12 +146,23 @@ function calcBPModsGen4(attacker, field, move, description, basePower, defAbilit
     //d. Mud Sport (floored)
     //e. Water Sport (floored)
 
-    //f. User Abilities (Rivalry not included)
-    if ((attacker.ability === "Reckless" && move.hasRecoil) ||
+    //f. User Abilities
+    if (attacker.ability == "Rivalry" && attacker.rivalryGender != '') {
+        if (attacker.rivalryGender == 'Same') {
+            basePower = Math.floor(basePower * 1.25);
+            description.attackerAbility = 'Rivalry (1.25x)';
+        }
+        else if (attacker.rivalryGender == 'Opposite') {
+            basePower = Math.floor(basePower * 0.75);
+            description.attackerAbility = 'Rivalry (0.75x)';
+        }
+    }
+    else if ((attacker.ability === "Reckless" && move.hasRecoil) ||
         (attacker.ability === "Iron Fist" && move.isPunch)) {
         basePower = Math.floor(basePower * 1.2);
         description.attackerAbility = attacker.ability;
-    } else if ((attacker.curHP <= attacker.maxHP / 3 &&
+    }
+    else if ((attacker.curHP <= attacker.maxHP / 3 &&
         ((attacker.ability === "Overgrow" && move.type === "Grass") ||
             (attacker.ability === "Blaze" && move.type === "Fire") ||
             (attacker.ability === "Torrent" && move.type === "Water") ||
@@ -165,7 +177,8 @@ function calcBPModsGen4(attacker, field, move, description, basePower, defAbilit
         (defAbility === "Heatproof" && move.type === "Fire")) {
         basePower = Math.floor(basePower * 0.5);
         description.defenderAbility = defAbility;
-    } else if (defAbility === "Dry Skin" && move.type === "Fire") {
+    }
+    else if (defAbility === "Dry Skin" && move.type === "Fire") {
         basePower = Math.floor(basePower * 1.25);
         description.defenderAbility = defAbility;
     }
@@ -184,14 +197,17 @@ function calcAttackAtModsGen4(isPhysical, attacker, description, isCritical, def
     var rawAttack = attacker.rawStats[attackStat];
     if (attackBoost === 0 || (isCritical && attackBoost < 0)) {
         attack = rawAttack;
-    } else if (defAbility === "Unaware") {
+    }
+    else if (defAbility === "Unaware") {
         attack = rawAttack;
         description.defenderAbility = defAbility;
-    } else if (attacker.ability === "Simple") {
+    }
+    else if (attacker.ability === "Simple") {
         attack = getSimpleModifiedStat(rawAttack, attackBoost);
         description.attackerAbility = attacker.ability;
         description.attackBoost = attackBoost;
-    } else {
+    }
+    else {
         attack = getModifiedStat(rawAttack, attackBoost);
         description.attackBoost = attackBoost;
     }
@@ -199,7 +215,8 @@ function calcAttackAtModsGen4(isPhysical, attacker, description, isCritical, def
     if (isPhysical && (attacker.ability === "Pure Power" || attacker.ability === "Huge Power")) {
         attack *= 2;
         description.attackerAbility = attacker.ability;
-    } else if (field.weather === "Sun" && (isPhysical ? attacker.ability === "Flower Gift" : attacker.ability === "Solar Power")) {
+    }
+    else if (field.weather === "Sun" && (isPhysical ? attacker.ability === "Flower Gift" : attacker.ability === "Solar Power")) {
         attack = Math.floor(attack * 1.5);
         description.attackerAbility = attacker.ability;
         description.weather = field.weather;
@@ -223,7 +240,8 @@ function calcAttackAtModsGen4(isPhysical, attacker, description, isCritical, def
         (attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && !isPhysical)) {
         attack = Math.floor(attack * 1.5);
         description.attackerItem = attacker.item;
-    } else if ((attacker.item === "Light Ball" && attacker.name === "Pikachu") ||
+    }
+    else if ((attacker.item === "Light Ball" && attacker.name === "Pikachu") ||
         (attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak") && isPhysical) ||
         (attacker.item === "DeepSeaTooth" && attacker.name === "Clamperl" && !isPhysical)) {
         attack *= 2;
@@ -243,14 +261,17 @@ function calcDefenseDfModsGen4(isPhysical, defender, description, isCritical, de
     var rawDefense = defender.rawStats[defenseStat];
     if (defenseBoost === 0 || (isCritical && defenseBoost > 0)) {
         defense = rawDefense;
-    } else if (attacker.ability === "Unaware") {
+    }
+    else if (attacker.ability === "Unaware") {
         defense = rawDefense;
         description.attackerAbility = attacker.ability;
-    } else if (defAbility === "Simple") {
+    }
+    else if (defAbility === "Simple") {
         defense = getSimpleModifiedStat(rawDefense, defenseBoost);
         description.defenderAbility = defAbility;
         description.defenseBoost = defenseBoost;
-    } else {
+    }
+    else {
         defense = getModifiedStat(rawDefense, defenseBoost);
         description.defenseBoost = defenseBoost;
     }
@@ -258,11 +279,13 @@ function calcDefenseDfModsGen4(isPhysical, defender, description, isCritical, de
     if (defAbility === "Marvel Scale" && defender.status !== "Healthy" && isPhysical) {
         defense = Math.floor(defense * 1.5);
         description.defenderAbility = defAbility;
-    } else if (defAbility === "Flower Gift" && field.weather === "Sun" && !isPhysical) {
+    }
+    else if (defAbility === "Flower Gift" && field.weather === "Sun" && !isPhysical) {
         defense = Math.floor(defense * 1.5);
         description.defenderAbility = defAbility;
         description.weather = field.weather;
-    } else if (field.isFlowerGiftSpD && field.weather === "Sun" && !isPhysical) {
+    }
+    else if (field.isFlowerGiftSpD && field.weather === "Sun" && !isPhysical) {
         defense = Math.floor(defense * 1.5);
         description.isFlowerGiftSpD = true;
         description.weather = field.weather;
@@ -272,7 +295,8 @@ function calcDefenseDfModsGen4(isPhysical, defender, description, isCritical, de
         (defender.item === "Metal Powder" && defender.name === "Ditto")) {
         defense = Math.floor(defense * 1.5);
         description.defenderItem = defender.item;
-    } else if (defender.item === "DeepSeaScale" && defender.name === "Clamperl" && !isPhysical) {
+    }
+    else if (defender.item === "DeepSeaScale" && defender.name === "Clamperl" && !isPhysical) {
         defense *= 2;
         description.defenderItem = defender.item;
     }
@@ -308,7 +332,8 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
         if (isPhysical && field.isReflect) {
             baseDamage = Math.floor(baseDamage * screenMultiplier);
             description.isReflect = true;
-        } else if (!isPhysical && field.isLightScreen) {
+        }
+        else if (!isPhysical && field.isLightScreen) {
             baseDamage = Math.floor(baseDamage * screenMultiplier);
             description.isLightScreen = true;
         }
@@ -323,7 +348,8 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
     if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {
         baseDamage = Math.floor(baseDamage * 1.5);
         description.weather = field.weather;
-    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
+    }
+    else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
         (["Rain", "Sand", "Hail"].indexOf(field.weather) !== -1 && move.name === "Solar Beam")) {
         baseDamage = Math.floor(baseDamage * 0.5);
         description.weather = field.weather;
@@ -342,7 +368,8 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
         if (attacker.ability === "Sniper") {
             baseDamage *= 3;
             description.attackerAbility = attacker.ability;
-        } else {
+        }
+        else {
             baseDamage *= 2;
         }
         description.isCritical = isCritical;
@@ -368,7 +395,8 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
         if (attacker.ability === "Adaptability") {
             stabMod = 2;
             description.attackerAbility = attacker.ability;
-        } else {
+        }
+        else {
             stabMod = 1.5;
         }
     }
