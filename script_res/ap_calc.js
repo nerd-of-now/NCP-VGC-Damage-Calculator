@@ -1975,6 +1975,7 @@ $(".gen").change(function () {
 function clearField() {
     calcQueue++;
     $("#doubles").prop("checked", true);
+    $("#noterrain").prop("checked", true);
     $("#clear").prop("checked", true);
     $("#gscClear").prop("checked", true);
     $("#gravity").prop("checked", false);
