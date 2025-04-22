@@ -2344,6 +2344,29 @@ var SETDEX_GEN5 = {
     },
     "Zebstrika": {
         //2011, 2013
+        "Life Orb Lightning Rod": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 2,
+                "df": 30,
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "moves": [
+                "Thunderbolt",
+                "Volt Switch",
+                "Hidden Power Ice",
+                "Overheat"
+            ]
+        },
     },
     "Gigalith": {
 
@@ -2500,6 +2523,28 @@ var SETDEX_GEN5 = {
                 "Beat Up",
                 "Tailwind",
                 "Safeguard"
+            ]
+        },
+        "2011 Bulky Sitrus Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 12,
+                "sa": 4,
+                "sd": 20,
+                "sp": 220
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Giga Drain",
+                "Charm",
+                "Light Screen",
+                "Encore"
             ]
         },
     },
@@ -2667,7 +2712,28 @@ var SETDEX_GEN5 = {
 
     },
     "Vanilluxe": {
-
+        "2011 Modest Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 52,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 4,
+                "sp": 196
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Choice Scarf",
+            "moves": [
+                "Ice Beam",
+                "Blizzard",
+                "Icy Wind",
+                "Sheer Cold"
+            ]
+        },
     },
     "Sawsbuck": {
 
@@ -2814,6 +2880,28 @@ var SETDEX_GEN5 = {
                 "Shadow Ball",
                 "Ice Beam",
                 "Trick Room"
+            ]
+        },
+        "2011 Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Scarf",
+            "moves": [
+                "Water Spout",
+                "Shadow Ball",
+                "Blizzard",
+                "Hydro Pump"
             ]
         },
     },
@@ -3111,6 +3199,28 @@ var SETDEX_GEN5 = {
                 "Earth Power"
             ]
         },
+        "Timid Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Scarf",
+            "moves": [
+                "Dragon Pulse",
+                "Dark Pulse",
+                "Draco Meteor",
+                "Fire Blast"
+            ]
+        },
     },
     "Volcarona": {
         //2011-13
@@ -3198,28 +3308,6 @@ var SETDEX_GEN5 = {
                 "Rock Slide",
                 "Sacred Sword",
                 "Close Combat",
-                "Earthquake"
-            ]
-        },
-        "The Infamous 183 Speed Scarf": {
-            "level": 50,
-            "evs": {
-                "hp": 252,
-                "at": 252,
-                "df": 4,
-                "sa": 0,
-                "sd": 0,
-                "sp": 0
-            },
-            "ivs": {
-                "sp": 18,
-            },
-            "nature": "Adamant",
-            "item": "Choice Scarf",
-            "moves": [
-                "Rock Slide",
-                "Close Combat",
-                "Sacred Sword",
                 "Earthquake"
             ]
         },
