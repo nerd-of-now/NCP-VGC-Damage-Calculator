@@ -426,6 +426,7 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
         || (defender.item === 'Chilan Berry' && move.name === 'Struggle')) {
         berryMod = 0.5;
         description.defenderItem = defender.item;
+        defender.consumeResistBerry = true;
     }
 
     return calcFinalDamageGen4(baseDamage, attacker, defender, field, move, description, stabMod, typeEffect1, typeEffect2, filterMod, ebeltMod, tintedMod, berryMod);
@@ -447,7 +448,15 @@ function calcFinalDamageGen4(baseDamage, attacker, defender, field, move, descri
     }
 
     if (!move.isNextMove) {
-        if (checkAddCalcQualifications(attacker, defender, move, field)) {
+        var addQualList = checkAddCalcQualifications(attacker, defender, move, field, hitsPhysical);
+        var addCalcQualified = false;
+        for (check in addQualList) {
+            if (addQualList[check]) {
+                addCalcQualified = true;
+                break;
+            }
+        }
+        if (addCalcQualified) {
             additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
             allDamage[0] = damage;
         }

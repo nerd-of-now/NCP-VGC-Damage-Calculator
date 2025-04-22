@@ -1652,6 +1652,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Fire',
         category: 'Special',
         makesContact: true,
+        statChange: ['special attack', -2, 'user'],
     },
     'Poison Fang': {
         bp: 50,
@@ -1664,7 +1665,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     'Psycho Boost': {
         bp: 140,
         type: 'Psychic',
-        category: 'Special'
+        category: 'Special',
+        statChange: ['special attack', -2, 'user'],
     },
     'Revenge': {
         bp: 60,
@@ -1715,7 +1717,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 120,
         type: 'Fighting',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        statChange: ['attack', -1, 'user'], //also lowers defense, but isn't relevant to anything in the calculations
     },
     'Volt Tackle': {
         bp: 120,
@@ -2224,7 +2227,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Draco Meteor': {
         bp: 140,
         type: 'Dragon',
-        category: 'Special'
+        category: 'Special',
+        statChange: ['special attack', -2, 'user'],
     },
     'Dragon Pulse': {
         bp: 90,
@@ -2385,7 +2389,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Leaf Storm': {
         bp: 140,
         type: 'Grass',
-        category: 'Special'
+        category: 'Special',
+        statChange: ['special attack', -2, 'user'],
     },
     'Magma Storm': {
         bp: 120,
@@ -2801,7 +2806,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Poison',
         category: 'Special',
         hasSecondaryEffect: true,
-        isBullet: true
+        isBullet: true,
+        statChange: ['special defense', -2, 'target'],
     },
     'Acrobatics': {
         bp: 55,
@@ -3486,7 +3492,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         category: 'Physical',
         makesContact: true,
         hasSecondaryEffect: true,
-        isPunch: true
+        isPunch: true,
+        statChange: ['attack', 1, 'user'],
     },
     'Water Shuriken': {
         bp: 15,
@@ -3811,6 +3818,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Special',
         type: 'Fairy',
         bp: 130,
+        statChange: ['special attack', -2, 'user'],
     },
     'Shell Trap': {
         category: 'Special',
@@ -3948,6 +3956,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         bp: 80,
         hasSecondaryEffect: true,
+        statChange: ['defense', -1, 'target'],
     },
     'Lunge': {
         category: 'Physical',
@@ -4240,6 +4249,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isSpread: true,
         isSignatureZ: true,
         hasSecondaryEffect: true,
+        //is actually an omniboost, but Parental Bond can't use Z-moves, so it's not relevant to calculations
     },
 });
 
@@ -4370,12 +4380,14 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Grass',
         category: 'Special',
         hasSecondaryEffect: true,
+        statChange: ['special defense', -2, 'target'],
     },
     'Grav Apple': {
         bp: 80,
         type: 'Grass',
         category: 'Physical',
         hasSecondaryEffect: true,
+        statChange: ['defense', -1, 'target'],
     },
     'Spirit Break': {
         bp: 75,
@@ -4795,6 +4807,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         category: 'Physical',
         makesContact: true,
         hasSecondaryEffect: true,
+        statChange: ['defense', -1, 'target'],
     },
 });
 
@@ -4982,6 +4995,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Psychic',
         category: 'Special',
         hasSecondaryEffect: true,
+        statChange: ['special attack', 1, 'user'],
     },
     'Raging Fury': {
         bp: 120,
@@ -5123,6 +5137,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Psychic',
         category: 'Special',
         hasSecondaryEffect: true,
+        statChange: ['special defense', -2, 'target'],
     },
     'Order Up': {
         bp: 80,
@@ -5222,6 +5237,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         category: 'Special',
         isSound: true,
         hasSecondaryEffect: true,
+        statChange: ['special attack', 1, 'user'],
     },
     'Aqua Step': {
         bp: 80,
@@ -5242,6 +5258,7 @@ var MOVES_SV_NATDEX = $.extend(true, {}, MOVES_SS_NATDEX, {
         type: 'Steel',
         category: 'Special',
         isSpread: true,
+        statChange: ['special attack', -1, 'user'],
     },
     'Ruination': {
         bp: 1,

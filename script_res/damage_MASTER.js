@@ -393,6 +393,19 @@ function checkKlutz(pokemon) {
     }
 }
 
+//UNUSED CURRENTLY
+function checkWhiteHerb(pokemon) {
+    if (pokemon.item === 'White Herb') {
+        var boostsLen = pokemon.boosts.length;
+        for (i = 0; i < boostsLen; i++) {
+            if (pokemon.boosts[i] < 0) {
+                pokemon.boosts[i] = 0;
+            }
+        }
+        pokemon.item = '';
+    }
+}
+
 function checkSeeds(pokemon, terrain) {
     if (pokemon.item === terrain + ' Seed') {
         if (['Electric', 'Grassy'].indexOf(terrain) !== -1)
@@ -414,6 +427,47 @@ function checkParadoxAbilities(pokemon, terrain, weather) {
             pokemon.item = '';
         }
     }
+}
+
+//UNUSED CURRENTLY
+function changeStatBoosts(interactionArray, stat, numStages) {
+    var isNotSelf = interactionArray.length == 2;
+    var source = interactionArray[0], target = isNotSelf ? interactionArray[1] : interactionArray[0];
+    if (target.ability == 'Mirror Armor' && isNotSelf && numStages < 0) {
+        var mirrorSwitch = source;
+        source = target;
+        target = mirrorSwitch;
+    }
+    var statMultiplier = target.ability == 'Simple' ? 2 : target.ability == 'Contrary' ? -1 : 1;
+    numStages *= statMultiplier;
+    if (numStages < 0) {
+        if (isNotSelf && (['Clear Body', 'White Smoke', 'Full Metal Body'].includes(target.ability) || (target.ability == 'Hyper Cutter' && stat == AT) || (target.ability == 'Big Pecks' && stat == DF) || target.item == 'Clear Amulet')) {
+            //no effect
+        }
+        else {
+            target.boosts[stat] = Math.max(-6, target.boosts[stat] + numStages);
+
+            if (target.ability == 'Defiant') {
+                target.boosts[AT] = Math.min(6, target.boosts[AT] + 2);
+            }
+            else if (target.ability == 'Competitive') {
+                target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
+            }
+
+            //if (numStages < 0 && target.item == 'White Herb') {
+            //    target.boosts[stat] = 0;
+            //    target.item == '';
+            //}
+        }
+    }
+    else if (numStages > 0) {
+        target.boosts[stat] = Math.min(6, target.boosts[stat] + numStages);
+    }
+    else {
+        alert("Entered changeStatBoosts with zero stat changes");
+    }
+
+    return !isNotSelf ? source : !mirrorSwitch ? [source, target] : [target, source];
 }
 
 function checkSupersweetSyrup(source, target) {
@@ -2048,9 +2102,24 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             damage[i] %= 65536;
     }
 
+    //if (defAbility === 'Sand Spit' && field.weather !== 'Sand' && !(['Harsh Sun', 'Heavy Rain', 'Strong Winds'].includes(defAbility))) {
+    //    field.weather = 'Sand';
+    //}
+    //else if (defAbility === 'Seed Sower' && field.terrain !== 'Grassy') {
+    //    field.terrain = 'Grassy';
+    //}
+
     if (!move.isNextMove) {
-        if (checkAddCalcQualifications(attacker, defender, move, field)) {
-            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
+        var addQualList = checkAddCalcQualifications(attacker, defender, move, field, hitsPhysical);
+        var addCalcQualified = false;
+        for (check in addQualList) {
+            if (addQualList[check]) {
+                addCalcQualified = true;
+                break;
+            }
+        }
+        if (addCalcQualified) {
+            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description, addQualList);
             allDamage[0] = damage;
         }
         else
@@ -2166,6 +2235,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
             finalMods.push(0x800);
         }
         description.defenderItem = defender.item;
+        defender.consumeResistBerry = true;
     }
     //r. Doubled damage (These likely won't be added since Minimize/Dig/Dive are hardly ever used)
     //r.i. Body Slam, Stomp, Dragon Rush, Steamroller, Heat Crash, Heavy Slam, Flying Press, Malicious Moonsault
@@ -2176,36 +2246,81 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
 
 //All conditions I can think of:
 //-Using Triple Kick/Axel (move changes BP depending on which # kick it's on)
+//-Resist berries (only active for the first hit)
 //-Attacking with Parental Bond ("child" damage is a reduced general mod)
 //-Multiscale/Shadow Shield (first hit deals reduced damage)
 //-Stamina (each physical hit increases Defense until it reaches +6; yes it's any hit when playing but only physical hits are relevant in the calc)
 //-Kee/Maranga Berry (first hit increases Defense/Special Defense by +1)
 //-Weak Armor (each physical hit decreases Defense until it reaches -6)
-//-Seed Sower (sets Grassy Terrain after the first hit)
 //-Gooey/Tangling Hair (contact moves decreases attacker's Speed, only relevant for Defiant)
 //-Cotton Down (any move decreases attacker's Speed, only relevant for Defiant)
-//-Sand Spit (sets sandstorm after the first hit, only relevant for a Rock-type defender)
-//-Luminous Moss (first hit of a Water attack increases Special Defense by +1, only relevant for Water Shuriken)
-//Current implementation is just the first three cases
-function checkAddCalcQualifications(attacker, defender, move, field) {
-    return ((move.isTripleHit || (['Multiscale', 'Shadow Shield'].indexOf(defender.ability) !== -1 && defender.curHP === defender.maxHP)) && move.hits > 1)
-        || (attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread));
+//Current implementation has all of the above use cases
+//Not implemented (and no plans to do so in the near future):
+//-Sand Spit/Seed Sower
+//-Liechi/Ganlon/Petaya/Grepa/Salac Berries
+//-Crush Grip/Wring Out
+function checkAddCalcQualifications(attacker, defender, move, field, hitsPhysical) {
+    var addQualList = {
+        triple: false,
+        resistBerry: false,
+        multiscale: false,
+        weakArmor: false,
+        parentalBond: attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread),
+        gooey: false,
+        kee: false,
+        maranga: false,
+        moss: false,
+        stamina: false,
+    };
+    if (move.hits > 1 || addQualList['parentalBond']) {
+        addQualList['triple'] = move.isTripleHit && !addQualList['parentalBond'];
+        addQualList['resistBerry'] = defender.consumeResistBerry;
+        addQualList['multiscale'] = ['Multiscale', 'Shadow Shield'].includes(defender.ability) && defender.curHP === defender.maxHP;
+        addQualList['weakArmor'] = defender.ability === 'Weak Armor' && hitsPhysical && defender.boosts[DF] > -6;
+        addQualList['gooey'] = (['Gooey', 'Tangling Hair'].includes(defender.ability) && move.makesContact) || defender.ability === 'Cotton Down' && (['Defiant', 'Competitive'].includes(attacker.ability) || ['Electro Ball', 'Gyro Ball'].includes(move.name)) && defender.boosts[SP] > -6;
+        addQualList['kee'] = defender.item === 'Kee Berry' && hitsPhysical && defender.boosts[DF] < 6;
+        addQualList['maranga'] = defender.item === 'Maranga Berry' && !hitsPhysical && defender.boosts[SD] < 6;
+        addQualList['moss'] = defender.item === 'Luminous Moss' && move.type == 'Water' && !hitsPhysical && defender.boosts[SD] < 6;
+        addQualList['stamina'] = defender.ability === 'Stamina' && hitsPhysical && defender.boosts[DF] < 6;
+    }
+    return addQualList;
 }
 
 //Inefficient for what it does now but should be a good setup for when more conditions are added
-function additionalDamageCalcs(attacker, defender, move, field, description) {
-    var nextAttacker = attacker, nextDefender = defender, nextMove, nextField = field;
+function additionalDamageCalcs(attacker, defender, move, field, description, addQualList) {
+    var nextAttacker = JSON.parse(JSON.stringify(attacker)), nextDefender = JSON.parse(JSON.stringify(defender)), nextMove = JSON.parse(JSON.stringify(move));
     var allAdditionalDamages = [];
     var uniqueHits = 1;     //Keeps track of the number of unique hits that need to be calculated, done to minimize redundant function calls
-    if (attacker.ability === "Parental Bond" && move.hits === 1 && !move.hitRange && (field.format === "Singles" || !move.isSpread)) {
-        nextAttacker = JSON.parse(JSON.stringify(attacker));
+    if (addQualList['parentalBond']) {
         nextAttacker.ability = '';
         nextAttacker.isChild = true;
         nextMove = move;
-        //Look into changing this to an attribute in move_data (array or dictionary along the lines of:[stat(s) affected, # of stages, target of stat changes])
-        if (move.name === 'Power-Up Punch') {
-            nextAttacker.boosts[AT] = Math.min(6, nextAttacker.boosts[AT] + 1);
-            nextAttacker.stats[AT] = getModifiedStat(nextAttacker.rawStats[AT], nextAttacker.boosts[AT]);
+
+        if (moves[move.name]['statChange']) {
+            var statChange = moves[move.name]['statChange'];
+            var affectedStat, numStages = statChange[1], recipient = statChange[2] === 'user' ? nextAttacker : nextDefender;
+            switch (statChange[0]) {
+                case 'attack':
+                    affectedStat = AT;
+                    break;
+                case 'defense':
+                    affectedStat = DF;
+                    break;
+                case 'special attack':
+                    affectedStat = SA;
+                    break;
+                case 'special defense':
+                    affectedStat = SD;
+                    break;
+            }
+            if (numStages > 0) {
+                recipient.boosts[affectedStat] = Math.min(6, recipient.boosts[affectedStat] + numStages);
+                //recipient = changeStatBoosts([recipient], affectedStat, numStages);
+            }
+            else {  //TODO: check opponent for: clear/full metal body/white smoke, hyper cutter/big pecks, amulet/cloak, simple, contrary, mirror armor
+                recipient.boosts[affectedStat] = Math.max(-6, recipient.boosts[affectedStat] + numStages);
+            }
+            recipient.stats[affectedStat] = getModifiedStat(recipient.rawStats[affectedStat], recipient.boosts[affectedStat]);
         }
         else if (move.name === 'Assurance') {
             nextMove.isDouble = 1;
@@ -2215,23 +2330,80 @@ function additionalDamageCalcs(attacker, defender, move, field, description) {
         uniqueHits = 2;
         description.hits = move.hits;
     }
-    else if (move.isTripleHit) {
+    else if (addQualList['triple']) {
         uniqueHits = move.hits;
     }
-    if (['Multiscale', 'Shadow Shield'].indexOf(defender.ability) !== -1 && defender.curHP === defender.maxHP && move.hits > 1) {
-        nextDefender = JSON.parse(JSON.stringify(defender));
+    if (addQualList['multiscale']) {
         nextDefender.ability = '';
         if (uniqueHits === 1) {
             uniqueHits = 2;
         }
     }
+    else if (addQualList['weakArmor']) {
+        uniqueHits = Math.max(uniqueHits, Math.min(-1 * (-6 - defender.boosts[DF]) + 1, move.hits), Math.min(Math.ceil((6 - defender.boosts[SP]) / 2) + 1, move.hits));
+        description.defenderAbility = defender.ability;
+    }
+    else if (addQualList['gooey']) {
+        uniqueHits = Math.max(uniqueHits, Math.min(-1 * (-6 - attacker.boosts[SP]) + 1, move.hits));
+        description.defenderAbility = defender.ability;
+        if (['Defiant', 'Competitive'].includes(attacker.ability)) {
+            var boostStat = attacker.ability === 'Defiant' ? AT : SA;
+            uniqueHits = Math.max(uniqueHits, Math.min(Math.ceil((6 - attacker.boosts[boostStat]) / 2) + 1, move.hits));
+            description.attackerAbility = attacker.ability;
+        }
+    }
+    else if (addQualList['stamina']) {
+        uniqueHits = Math.max(uniqueHits, Math.min(6 - defender.boosts[DF] + 1, move.hits));
+        description.defenderAbility = defender.ability;
+    }
+    if (addQualList['kee']) {
+        nextDefender.boosts[DF] = Math.min(6, nextDefender.boosts[DF] + 1);
+        nextDefender.stats[DF] = getModifiedStat(nextDefender.rawStats[DF], nextDefender.boosts[DF]);
+        if (uniqueHits === 1) {
+            uniqueHits = 2;
+        }
+        description.defenderItem = defender.item;
+    }
+    else if (addQualList['maranga'] || addQualList['moss']) {
+        nextDefender.boosts[SD] = Math.min(6, nextDefender.boosts[SD] + 1);
+        nextDefender.stats[SD] = getModifiedStat(nextDefender.rawStats[SD], nextDefender.boosts[SD]);
+        if (uniqueHits === 1) {
+            uniqueHits = 2;
+        }
+        description.defenderItem = defender.item;
+    }
+    else if (addQualList['resistBerry']) {
+        nextDefender.item = '';
+        if (uniqueHits === 1) {
+            uniqueHits = 2;
+        }
+    }
+    nextMove.isNextMove = true;
+
     for (var i = 0; i < uniqueHits - 1; i++) {
-        nextMove = JSON.parse(JSON.stringify(move));
-        nextMove.isNextMove = true;
-        if (move.isTripleHit) {
+        if (addQualList['gooey']) {
+            nextAttacker.boosts[SP] = Math.max(-6, attacker.boosts[SP] - 1);
+            nextAttacker.stats[SP] = getModifiedStat(nextAttacker.rawStats[SP], nextAttacker.boosts[SP]);
+            if (['Defiant', 'Competitive'].includes(attacker.ability)) {
+                boostStat = attacker.ability === 'Defiant' ? AT : SA;
+                nextAttacker.boosts[boostStat] = Math.min(6, attacker.boosts[boostStat] + 2);
+                nextAttacker.stats[boostStat] = getModifiedStat(nextAttacker.rawStats[boostStat], nextAttacker.boosts[boostStat]);
+            }
+        }
+        else if (addQualList['weakArmor']) {
+            nextDefender.boosts[SP] = Math.min(6, nextDefender.boosts[SP] + 2);
+            nextDefender.stats[SP] = getModifiedStat(nextDefender.rawStats[SP], nextDefender.boosts[SP]);
+            nextDefender.boosts[DF] = Math.max(-6, nextDefender.boosts[DF] - 1);
+            nextDefender.stats[DF] = getModifiedStat(nextDefender.rawStats[DF], nextDefender.boosts[DF]);
+        }
+        else if (addQualList['stamina']) {
+            nextDefender.boosts[DF] = Math.min(6, nextDefender.boosts[DF] + 1);
+            nextDefender.stats[DF] = getModifiedStat(nextDefender.rawStats[DF], nextDefender.boosts[DF]);
+        }
+        if (addQualList['triple']) {
             nextMove.currTripleHit = i + 2;
         }
-        allAdditionalDamages[i] = GET_DAMAGE_HANDLER(nextAttacker, nextDefender, nextMove, nextField).damage;
+        allAdditionalDamages[i] = GET_DAMAGE_HANDLER(nextAttacker, nextDefender, nextMove, field).damage;
     }
     return allAdditionalDamages;
 }

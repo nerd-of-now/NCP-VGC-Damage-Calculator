@@ -209,7 +209,15 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     }
 
     if (!move.isNextMove) {
-        if (checkAddCalcQualifications(attacker, defender, move, field)) {
+        var addQualList = checkAddCalcQualifications(attacker, defender, move, field, hitsPhysical);
+        var addCalcQualified = false;
+        for (check in addQualList) {
+            if (addQualList[check]) {
+                addCalcQualified = true;
+                break;
+            }
+        }
+        if (addCalcQualified) {
             additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
             allDamage[0] = damage;
         }
