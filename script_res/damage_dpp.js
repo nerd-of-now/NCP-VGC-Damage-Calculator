@@ -429,10 +429,10 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
         defender.consumeResistBerry = true;
     }
 
-    return calcFinalDamageGen4(baseDamage, attacker, defender, field, move, description, stabMod, typeEffect1, typeEffect2, filterMod, ebeltMod, tintedMod, berryMod);
+    return calcFinalDamageGen4(baseDamage, attacker, defender, field, move, description, stabMod, typeEffect1, typeEffect2, filterMod, ebeltMod, tintedMod, berryMod, isPhysical);
 }
 
-function calcFinalDamageGen4(baseDamage, attacker, defender, field, move, description, stabMod, typeEffect1, typeEffect2, filterMod, ebeltMod, tintedMod, berryMod) {
+function calcFinalDamageGen4(baseDamage, attacker, defender, field, move, description, stabMod, typeEffect1, typeEffect2, filterMod, ebeltMod, tintedMod, berryMod, isPhysical) {
     var damage = [], additionalDamage = [], allDamage = [];
 
     for (var i = 0; i < 16; i++) {
@@ -448,7 +448,7 @@ function calcFinalDamageGen4(baseDamage, attacker, defender, field, move, descri
     }
 
     if (!move.isNextMove) {
-        var addQualList = checkAddCalcQualifications(attacker, defender, move, field, hitsPhysical);
+        var addQualList = checkAddCalcQualifications(attacker, defender, move, field, isPhysical);
         var addCalcQualified = false;
         for (check in addQualList) {
             if (addQualList[check]) {
@@ -457,7 +457,7 @@ function calcFinalDamageGen4(baseDamage, attacker, defender, field, move, descri
             }
         }
         if (addCalcQualified) {
-            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
+            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description, addQualList);
             allDamage[0] = damage;
         }
         else

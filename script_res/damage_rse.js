@@ -209,7 +209,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     }
 
     if (!move.isNextMove) {
-        var addQualList = checkAddCalcQualifications(attacker, defender, move, field, hitsPhysical);
+        var addQualList = checkAddCalcQualifications(attacker, defender, move, field, isPhysical);
         var addCalcQualified = false;
         for (check in addQualList) {
             if (addQualList[check]) {
@@ -218,7 +218,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
             }
         }
         if (addCalcQualified) {
-            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description);
+            additionalDamage = additionalDamageCalcs(attacker, defender, move, field, description, addQualList);
             allDamage[0] = damage;
         }
         else
