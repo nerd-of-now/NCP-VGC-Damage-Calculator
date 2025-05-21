@@ -11928,6 +11928,31 @@ var SETDEX_GEN9 = {
     //        ]
     //    },
     //},
+    "Rhydon": {
+        "Miraidon Wall": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 12,
+                "sa": 0,
+                "sd": 244,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "tera_type": "Fairy",
+            "item": "Eviolite",
+            "moves": [
+                "High Horsepower",
+                "Rock Slide",
+                "Crunch",
+                "Protect"
+            ]
+        },
+    },
     //"Rhyperior": {
     //    "": {
     //        "level": 50,
@@ -13854,6 +13879,25 @@ var SETDEX_GEN9 = {
                 "Dragon Pulse"
             ]
         },
+        "Masayoshi Kuroo's Melbourne 1st AV Jet": {
+            "level": 50,
+            "evs": {
+                "hp": 108,
+                "at": 0,
+                "df": 0,
+                "sa": 164,
+                "sd": 0,
+                "sp": 236
+            },
+            "nature": "Timid",
+            "item": "Assault Vest",
+            "moves": [
+                "Hydro Steam",
+                "Draco Meteor",
+                "Snarl",
+                "Aqua Jet"
+            ]
+        },
     },
     "Iron Leaves": {
         "Life Orb Tera Normal": {
@@ -14710,7 +14754,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Lunala": {
-        "Tera Fairy Meteor Beam": {
+        "Tera Water Psyspam Meteor Beam": {
             "level": 50,
             "evs": {
                 "hp": 252,
@@ -14724,13 +14768,36 @@ var SETDEX_GEN9 = {
                 "at": 0,
             },
             "nature": "Modest",
-            "tera_type": "Fairy",
+            "tera_type": "Water",
             "item": "Power Herb",
             "moves": [
                 "Moongeist Beam",
                 "Meteor Beam",
+                "Expanding Force",
+                "Wide Guard"
+            ]
+        },
+        "Tang Team Fairy Electric Seed": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 0,
+                "df": 172,
+                "sa": 180,
+                "sd": 12,
+                "sp": 12
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Fairy",
+            "item": "Power Herb",
+            "moves": [
+                "Moongeist Beam",
                 "Moonblast",
-                "Expanding Force"
+                "Trick Room",
+                "Wide Guard"
             ]
         },
     },
@@ -14827,7 +14894,7 @@ var SETDEX_GEN9 = {
         },
     },
     "Zamazenta": {
-        "MichaelderBeaste's 24 Worlds T4 Max Speed": {
+        "Michael Kelsch's 24 Worlds T4 Max Speed": {
             "level": 50,
             "evs": {
                 "hp": 92,
@@ -14914,6 +14981,26 @@ var SETDEX_GEN9 = {
         },
     },
     "Calyrex-Ice Rider": {
+        "MDB's Utrecht 1st Bulky Leech Seed": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 36,
+                "df": 4,
+                "sa": 0,
+                "sd": 196,
+                "sp": 20
+            },
+            "nature": "Adamant",
+            "tera_type": "Water",
+            "item": "Clear Amulet",
+            "moves": [
+                "Glacial Lance",
+                "Leech Seed",
+                "Trick Room",
+                "Protect"
+            ]
+        },
         "Tera Fire Min Speed": {
             "level": 50,
             "evs": {
@@ -14959,6 +15046,29 @@ var SETDEX_GEN9 = {
         },
     },
     "Calyrex-Shadow Rider": {
+        "Basic Sash Tera Ghost": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Astral Barrage",
+                "Psychic",
+                "Pollen Puff",
+                "Protect"
+            ]
+        },
         "Tera Dark Life Orb": {
             "level": 50,
             "evs": {
@@ -15053,6 +15163,26 @@ var SETDEX_GEN9 = {
         },
     },
     "Koraidon": {
+        "Jolly Max Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Fire",
+            "item": "Life Orb",
+            "moves": [
+                "Close Combat",
+                "Flare Blitz",
+                "Flame Charge",
+                "Dragon Claw"
+            ]
+        },
         "AndrewFVGC's San Antonio T4 Scale Shot": {
             "level": 50,
             "evs": {
@@ -15071,26 +15201,6 @@ var SETDEX_GEN9 = {
                 "Flare Blitz",
                 "Scale Shot",
                 "Protect"
-            ]
-        },
-        "Jolly Max Clear Amulet": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Jolly",
-            "tera_type": "Fire",
-            "item": "Clear Amulet",
-            "moves": [
-                "Collision Course",
-                "Flare Blitz",
-                "Flame Charge",
-                "Dragon Claw"
             ]
         },
         "Bulkier Clear Amulet": {
@@ -15133,6 +15243,26 @@ var SETDEX_GEN9 = {
                 "Draco Meteor",
                 "Volt Switch",
                 "Dazzling Gleam"
+            ]
+        },
+        "Tang Team AV Tera Electric": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 20,
+                "sa": 212,
+                "sd": 4,
+                "sp": 20
+            },
+            "nature": "Modest",
+            "tera_type": "Electric",
+            "item": "Assault Vest",
+            "moves": [
+                "Electro Drift",
+                "Draco Meteor",
+                "Volt Switch",
+                "Snarl"
             ]
         },
         "Modest Specs Tera Electric": {
