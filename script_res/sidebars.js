@@ -13,7 +13,7 @@ function addSidebarSlot(pnum) {
     var teamnum = CURRENT_SIDEBARS[pnum - 1].length;
     var spreadName = side + ' Sidebar Slot ' + teamnum;
     //save custom set to calc
-    savecalc(new Pokemon($('#p' + pnum)), spreadName, '#p' + pnum);
+    savecalc(new Pokemon($('#p' + pnum)), spreadName, '#p' + pnum, displayName);
     side = pnum == 1 ? 'l' : pnum == 2 ? 'r' : '';
     var pID = '#pkmn' + side.toUpperCase() + teamnum;
     $(pID).prop('title', displayName);
@@ -30,7 +30,7 @@ function editSidebarSlot(pnum, teamnum) {
     deleteSet(CURRENT_SIDEBARS[pnum - 1][teamnum - 1], spreadName);
     CURRENT_SIDEBARS[pnum - 1][teamnum - 1] = displayName;
     localStorage['g' + gen + '_sidebars'] = JSON.stringify(CURRENT_SIDEBARS);
-    savecalc(new Pokemon($('#p' + pnum)), spreadName, '#p' + pnum);
+    savecalc(new Pokemon($('#p' + pnum)), spreadName, '#p' + pnum, displayName);
     var pID = '#pkmn' + (pnum == 1 ? 'L' : pnum == 2 ? 'R' : '') + teamnum;
     $(pID).prop('title', displayName);
     getSidebarImg(pID + 'I', displayName);

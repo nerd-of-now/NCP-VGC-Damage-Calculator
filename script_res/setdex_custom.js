@@ -3,6 +3,7 @@ var showdownToCalcFormes = [
     ["Gourgeist", "Gourgeist-Average"],
     ["Groudon-Primal", "Groudon"],
     ["Kyogre-Primal", "Kyogre"],
+    ["Zygarde-10", "Zygarde-10%"],
     ["Zygarde-Complete", "Zygarde"],
     ["Zacian-Crowned", "Zacian"],
     ["Zamazenta-Crowned", "Zamazenta"],
@@ -49,6 +50,7 @@ var showdownToCalcFormes = [
 var calcToShowdownFormes = [
     ["Pumpkaboo", "Pumpkaboo-Average"],
     ["Gourgeist", "Gourgeist-Average"],
+    ["Zygarde-10", "Zygarde-10%"],
     ["Urshifu", "Urshifu-Single Strike"],
     ["Urshifu-Rapid-Strike", "Urshifu-Rapid Strike"],
     ["Calyrex-Ice", "Calyrex-Ice Rider"],
@@ -60,17 +62,18 @@ var calcToShowdownFormes = [
     ["Oricorio", "Oricorio-Baile"],
 ];
 
-var saveToCalcFormes = [
-    ["Darmanitan-Zen", "Darmanitan"],
-    ["Darmanitan-Galar-Zen", "Darmanitan-Galar"],
-    ["Aegislash-Shield", "Aegislash"],
-    ["Zygarde-Complete", "Zygarde"],
-    ["Zacian-Crowned", "Zacian"],
-    ["Zamazenta-Crowned", "Zamazenta"],
-    ["Palafin-Hero", "Palafin"],
-    ['Terapagos-Terastal', 'Terapagos'],
-    ['Terapagos-Stellar', 'Terapagos'],
-];
+//var saveToCalcFormes = [      //SHOULD BE DEPRECATED
+//    ["Darmanitan-Zen", "Darmanitan"],
+//    ["Darmanitan-Galar-Zen", "Darmanitan-Galar"],
+//    ["Aegislash-Shield", "Aegislash"],
+//    ["Aegislash-Blade", "Aegislash"],
+//    ["Zygarde-Complete", "Zygarde"],
+//    ["Zacian-Crowned", "Zacian"],
+//    ["Zamazenta-Crowned", "Zamazenta"],
+//    ["Palafin-Hero", "Palafin"],
+//    ['Terapagos-Terastal', 'Terapagos'],
+//    ['Terapagos-Stellar', 'Terapagos'],
+//];
 
 //For importing Hidden Power sets since for some reason Showdown neither explicitly puts IVs in the import that matches their default NOR uses an algorithm for said defaults
 var defaultHiddenPowerSD = {
@@ -410,19 +413,19 @@ function saveCustomSidebar(pnum) {
 
 
 //Saves a custom set from within the calc
-var savecalc = function (set, spreadName, p) {
+var savecalc = function (set, spreadName, p, species) {
     var moves = [];
-    species = set.name;
+    //species = set.name;   //SHOULD BE DEPRECATED
 
     checkGmax = species.indexOf("-Gmax", 0);
     checkMega = species.indexOf("Mega ", 0);
     checkPrimal = species.indexOf("Primal ", 0);
 
     if (checkGmax == -1 && checkMega == -1 && checkPrimal == -1) {
-        for (var i = 0; i < saveToCalcFormes.length; ++i) {
-            if (species == saveToCalcFormes[i][0])
-                species = saveToCalcFormes[i][1];
-        }
+        //for (var i = 0; i < saveToCalcFormes.length; ++i) {   //SHOULD BE DEPRECATED
+        //    if (species == saveToCalcFormes[i][0])
+        //        species = saveToCalcFormes[i][1];
+        //}
     }
     else if (checkGmax != -1)
         species = species.substring(0, checkGmax);
@@ -479,13 +482,13 @@ function runSaveCalc(pnum) {
     var monSet = new Pokemon($('#p' + pnum));
     var actualName = $('#p' + pnum + " input.set-selector").val();
     actualName = actualName.substring(0, actualName.indexOf(' ('));
-    if (setName in setdex[actualName] && !(setName in setdexCustom[actualName]))
+    if (actualName in setdex && setName in setdex[actualName] && !(actualName in setdexCustom && setName in setdexCustom[actualName]))
         alert("Set names for Pokemon cannot match one of the calc's presets.\nPlease rename this set and try again.");
     else if ((LEFT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[0].length <= parseInt(setName.slice(-1))*/)
         || (RIGHT_SIDEBAR_NAMES.indexOf(setName) != -1/* && CURRENT_SIDEBARS[1].length <= parseInt(setName.slice(-1))*/))
         alert("Set name matches naming convention for sidebars. Please use the sidebar buttons to add, save, and delete.");
     else
-        savecalc(monSet, document.getElementById('setName' + pnum).value, "#p" + pnum);
+        savecalc(monSet, document.getElementById('setName' + pnum).value, "#p" + pnum, actualName);
 }
 
 //Looked this up online, copies to clipboard without any input
@@ -494,7 +497,7 @@ function Clipboard_CopyTo(value) {
     tempText.value = value;
     document.body.appendChild(tempText);
     tempText.select();
-    document.execCommand("copy");
+    document.execCommand("copy");   //technically deprecated but everything still supports it and not everything supports the new function that copies
     document.body.removeChild(tempText);
 }
 
@@ -504,6 +507,7 @@ var exportset = function (set) {
      *Rillaboom-Gmax @ Assault Vest
      *Ability: Grassy Surge
      *Level: 50
+     *Tera Type: Grass
      *EVs: 172 HP / 252 Atk / 4 Def / 0 SpA / 4 SpD / 76 Spe
      *Adamant Nature
      *IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
