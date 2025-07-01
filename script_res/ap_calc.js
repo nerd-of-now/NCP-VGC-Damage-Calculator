@@ -822,10 +822,10 @@ function hiddenPowerCheck(pInfo, hpName) {
                 }
                 for (var i = 0, n = Object.keys(comboIVs[ivSpec]).length; i < n; i++) {
                     if (ivSpec.includes('atk')) {
-                        comboIVs[ivSpec][i].at -= 2;
+                        comboIVs[ivSpec][i].at %= 2;
                     }
                     if (ivSpec.includes('speed')) {
-                        comboIVs[ivSpec][i].sp -= 2;
+                        comboIVs[ivSpec][i].sp %= 2;
                     }
                 }
             }
@@ -868,7 +868,7 @@ function setDictHP(typeHP) {
     var typeIndex = typeCases.indexOf(typeHP);
     var ivArrays = {};
     for (var i = 0, n = baseIVCases.length; i < n; i++) {
-        ivArrays[changeIVCase[i]] = HiddenPowerRange(baseIVCases[i], typeIndex, baseIVCases[i]['at'] < 30, baseIVCases[i]['sp'] < 30, /*gen < 6*/ true);
+        ivArrays[changeIVCase[i]] = HiddenPowerRange(baseIVCases[i], typeIndex, baseIVCases[i]['at'] < 30, baseIVCases[i]['sp'] < 30, gen < 6);
     }
     return ivArrays;
 }
