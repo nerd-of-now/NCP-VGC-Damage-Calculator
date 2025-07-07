@@ -14754,6 +14754,29 @@ var SETDEX_GEN9 = {
         },
     },
     "Lunala": {
+        "Tang Team Fairy Electric Seed": {
+            "level": 50,
+            "evs": {
+                "hp": 132,
+                "at": 0,
+                "df": 172,
+                "sa": 180,
+                "sd": 12,
+                "sp": 12
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Fairy",
+            "item": "Electric Seed",
+            "moves": [
+                "Moongeist Beam",
+                "Moonblast",
+                "Trick Room",
+                "Wide Guard"
+            ]
+        },
         "Tera Water Psyspam Meteor Beam": {
             "level": 50,
             "evs": {
@@ -14777,27 +14800,27 @@ var SETDEX_GEN9 = {
                 "Wide Guard"
             ]
         },
-        "Tang Team Fairy Electric Seed": {
+        "45mice's NAIC Top 16 Lefties CM": {
             "level": 50,
             "evs": {
-                "hp": 132,
+                "hp": 92,
                 "at": 0,
-                "df": 172,
-                "sa": 180,
-                "sd": 12,
-                "sp": 12
+                "df": 204,
+                "sa": 108,
+                "sd": 4,
+                "sp": 100
             },
             "ivs": {
                 "at": 0,
             },
             "nature": "Modest",
             "tera_type": "Fairy",
-            "item": "Power Herb",
+            "item": "Leftovers",
             "moves": [
                 "Moongeist Beam",
                 "Moonblast",
-                "Trick Room",
-                "Wide Guard"
+                "Protect",
+                "Calm Mind"
             ]
         },
     },
@@ -14993,7 +15016,7 @@ var SETDEX_GEN9 = {
             },
             "nature": "Adamant",
             "tera_type": "Water",
-            "item": "Clear Amulet",
+            "item": "Leftovers",
             "moves": [
                 "Glacial Lance",
                 "Leech Seed",
@@ -15265,6 +15288,26 @@ var SETDEX_GEN9 = {
                 "Snarl"
             ]
         },
+        "Scarf Tera Electric": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Timid",
+            "tera_type": "Electric",
+            "item": "Choice Scarf",
+            "moves": [
+                "Electro Drift",
+                "Draco Meteor",
+                "Volt Switch",
+                "Snarl"
+            ]
+        },
         "Modest Specs Tera Electric": {
             "level": 50,
             "evs": {
@@ -15283,26 +15326,6 @@ var SETDEX_GEN9 = {
                 "Draco Meteor",
                 "Volt Switch",
                 "Discharge"
-            ]
-        },
-        "Specs Tera Fairy": {
-            "level": 50,
-            "evs": {
-                "hp": 4,
-                "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Timid",
-            "tera_type": "Fairy",
-            "item": "Choice Specs",
-            "moves": [
-                "Electro Drift",
-                "Draco Meteor",
-                "Volt Switch",
-                "Dazzling Gleam"
             ]
         },
     },
