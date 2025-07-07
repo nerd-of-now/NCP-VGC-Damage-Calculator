@@ -430,6 +430,9 @@ function checkParadoxAbilities(pokemon, terrain, weather) {
 }
 
 //UNUSED CURRENTLY
+//interactionArray: list of all mons involved. If its length is only 1, then it's a self-targetting boost.
+//stat: the stat affected. Only supports a single stat as is implemented currently, may change in the future.
+//numStages: number of intended stages to boost/drop the stat. The function will adjust actual number of stages.
 function changeStatBoosts(interactionArray, stat, numStages) {
     var isNotSelf = interactionArray.length == 2;
     var source = interactionArray[0], target = isNotSelf ? interactionArray[1] : interactionArray[0];
@@ -454,10 +457,10 @@ function changeStatBoosts(interactionArray, stat, numStages) {
                 target.boosts[SA] = Math.min(6, target.boosts[SA] + 2);
             }
 
-            //if (numStages < 0 && target.item == 'White Herb') {
-            //    target.boosts[stat] = 0;
-            //    target.item == '';
-            //}
+            if (numStages < 0 && target.item == 'White Herb') {
+                target.boosts[stat] = 0;
+                target.item == '';
+            }
         }
     }
     else if (numStages > 0) {
@@ -603,7 +606,7 @@ function checkEmbodyAspect(pokemon) {
     }
 }
 
-//If we play VGC on Legends Z-A and they bring back Ash Greninja I should just delete this function
+//If we play VGC on a game with Ash Greninja I should just delete this function
 function checkBattleBond(pokemon) {
     if (pokemon.ability === 'Battle Bond' && pokemon.abilityOn && gen == 9) {
         pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
@@ -2074,6 +2077,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     var finalMod;
     [finalMod, description] = calcFinalMods(move, attacker, defender, field, description, isCritical, typeEffectiveness, defAbility);
     finalMods = chainMods(finalMod);
+    var reSortDamage = false;
 
     var damage = [], additionalDamage = [], allDamage = [];
 
@@ -2098,8 +2102,14 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         //k. Min Damage Check
         damage[i] = Math.max(1, damage[i]);
         //l. Max Damage Check
-        if (damage[i] > 65535)
+        if (damage[i] > 65535) {
             damage[i] %= 65536;
+            reSortDamage = true;
+        }
+    }
+
+    if (reSortDamage) {
+        damage.sort(numericSort);
     }
 
     //if (defAbility === 'Sand Spit' && field.weather !== 'Sand' && !(['Harsh Sun', 'Heavy Rain', 'Strong Winds'].includes(defAbility))) {
