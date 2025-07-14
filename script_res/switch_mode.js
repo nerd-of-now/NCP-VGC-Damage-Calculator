@@ -76,6 +76,23 @@ $(function(){
 	$(".set-toggle").on("click", function () {
 		loadSets("#" + $(this).closest(".poke-info").prop("id"));
 	});
+
+	//GEN 7 SET TEMP
+	$("#gen7sets").on("click", function () {
+		if ($(this).is(":checked")) {
+			COMPONENTS[7][0] = SETDEX_TT2019;
+			tempSetName = "Abomasnow (Default Set)";
+		}
+		else {
+			COMPONENTS[7][0] = SETDEX_GEN7;
+			tempSetName = "Abomasnow (Mega Hard TR)";		//Yes tempSetName is lazy but it's only temporary so it's fine
+		}
+		loadSetdexScript();
+		if (!$("#p1" + " .set-toggle").prop("checked"))
+			loadPreset("#p1", tempSetName);
+		if (!$("#p2" + " .set-toggle").prop("checked"))
+			loadPreset("#p2", tempSetName);
+	});
 })
 
 function loadTheme(color){

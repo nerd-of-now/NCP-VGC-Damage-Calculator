@@ -258,7 +258,7 @@ var SETDEX_TT2019 = {
             ]
         }
     },
-    "Landorus-T": {
+    "Landorus-Therian": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -1072,7 +1072,7 @@ var SETDEX_TT2019 = {
             ]
         }
     },
-    "Rotom-C": {
+    "Rotom-Mow": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -3311,7 +3311,7 @@ var SETDEX_TT2019 = {
             ]
         }
     },
-    "Rotom-F": {
+    "Rotom-Frost": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -3420,7 +3420,7 @@ var SETDEX_TT2019 = {
             ]
         }
     },
-    "Rotom-S": {
+    "Rotom-Fan": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -3754,7 +3754,7 @@ var SETDEX_TT2019 = {
             ]
         }
     },
-    "Rotom-H": {
+    "Rotom-Heat": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -5260,7 +5260,7 @@ var SETDEX_TT2019 = {
             ]
         },
     },
-    "Rotom-W": {
+    "Rotom-Wash": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -6136,7 +6136,7 @@ var SETDEX_TT2019 = {
             ]
         }
     },
-    "Tornadus-T": {
+    "Tornadus-Therian": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -7825,7 +7825,7 @@ var SETDEX_TT2019 = {
             ]
         }
     },
-    "Thundurus-T": {
+    "Thundurus-Therian": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -8567,7 +8567,7 @@ var SETDEX_TT2019 = {
         }
     },
 
-    "Giratina-O": {
+    "Giratina-Origin": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -8590,7 +8590,7 @@ var SETDEX_TT2019 = {
         }
     },
 
-    "Kyurem-W": {
+    "Kyurem-White": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -8613,7 +8613,7 @@ var SETDEX_TT2019 = {
         }
     },
 
-    "Kyurem-B": {
+    "Kyurem-Black": {
         "Default Set": {
             "level": 50,
             "evs": {

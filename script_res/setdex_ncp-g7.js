@@ -3,27 +3,26 @@ var SETDEX_GEN7 = {
     //KANTO
     "Venusaur": {
         //2018 mega, 2018, 2019
-        "2018 Bulky Mega": {
+        "Pd0nZ's Prague T8 Bulky Mega": {
             "level": 50,
             "evs": {
-                "hp": 252,
+                "hp": 244,
                 "at": 0,
                 "df": 124,
                 "sa": 76,
                 "sd": 52,
-                "sp": 4
+                "sp": 12
             },
             "ivs": {
                 "at": 0,
             },
             "nature": "Bold",
-            "ability": "Overgrow",
             "item": "Venusaurite",
             "moves": [
                 "Sludge Bomb",
-                "Giga Drain",
                 "Energy Ball",
-                "Leech Seed"
+                "Leech Seed",
+                "Protect"
             ]
         },
         "Sun Offense": {
@@ -52,26 +51,6 @@ var SETDEX_GEN7 = {
     },
     "Charizard": {
         //2018 mega x, 2018 mega y, 2019
-        "Bulky Mega Charizard X": {
-            "level": 50,
-            "evs": {
-                "hp": 244,
-                "at": 76,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 188
-            },
-            "nature": "Adamant",
-            "ability": "Blaze",
-            "item": "Charizardite X",
-            "moves": [
-                "Flare Blitz",
-                "Thunder Punch",
-                "Dragon Dance",
-                "Roost"
-            ]
-        },
         "Fast Mega Charizard Y": {
             "level": 50,
             "evs": {
@@ -93,6 +72,92 @@ var SETDEX_GEN7 = {
                 "Solar Beam",
                 "Overheat",
                 "Flamethrower"
+            ]
+        },
+        "DaWoblefet's NAIC T16 Sub Mega Y": {
+            "level": 50,
+            "evs": {
+                "hp": 156,
+                "at": 0,
+                "df": 36,
+                "sa": 84,
+                "sd": 4,
+                "sp": 228
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+                "Heat Wave",
+                "Overheat",
+                "Substitute",
+                "Protect"
+            ]
+        },
+        "Paul Chua's Worlds T16 Fast Bulk Mega Y": {
+            "level": 50,
+            "evs": {
+                "hp": 108,
+                "at": 0,
+                "df": 36,
+                "sa": 100,
+                "sd": 12,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+                "Heat Wave",
+                "Overheat",
+                "Tailwind",
+                "Protect"
+            ]
+        },
+        "Jamie Boyt's Malmo 1st Coverage DD Mega X": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 76,
+                "df": 4,
+                "sa": 0,
+                "sd": 20,
+                "sp": 156
+            },
+            "nature": "Adamant",
+            "ability": "Blaze",
+            "item": "Charizardite X",
+            "moves": [
+                "Flare Blitz",
+                "Thunder Punch",
+                "Dragon Dance",
+                "Protect"
+            ]
+        },
+        "Diego Montes' Nashville T16 Bulk Toxic Mega X": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 44,
+                "df": 4,
+                "sa": 0,
+                "sd": 212,
+                "sp": 4
+            },
+            "nature": "Careful",
+            "ability": "Blaze",
+            "item": "Charizardite X",
+            "moves": [
+                "Flare Blitz",
+                "Roost",
+                "Toxic",
+                "Protect"
             ]
         },
         "2019 Firium Z Tailwind": {
@@ -752,6 +817,28 @@ var SETDEX_GEN7 = {
                 "Protect"
             ]
         },
+        "Picklesword's SLC 1st Modest Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 116,
+                "at": 0,
+                "df": 4,
+                "sa": 156,
+                "sd": 4,
+                "sp": 228
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Gengarite",
+            "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Icy Wind",
+                "Protect"
+            ]
+        },
         "Offensive Sash": {
             "level": 50,
             "evs": {
@@ -892,7 +979,7 @@ var SETDEX_GEN7 = {
                 "Minimize",
                 "Defense Curl",
                 "Soft-Boiled",
-                "Protect"
+                "Seismic Toss"
             ]
         },
     },
@@ -901,7 +988,7 @@ var SETDEX_GEN7 = {
     },
     "Kangaskhan": {
         //2017, 2018 mega, 2019 ultra mega
-        "Specially Bulky Mega": {
+        "Paul Chua's NAIC T4 Specially Bulky Mega": {
             "level": 50,
             "evs": {
                 "hp": 36,
@@ -919,6 +1006,25 @@ var SETDEX_GEN7 = {
                 "Low Kick",
                 "Sucker Punch",
                 "Return"
+            ]
+        },
+        "Tomohiro Seki's Worlds T8 Drain Punch Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 84,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 44,
+                "sp": 124
+            },
+            "nature": "Adamant",
+            "item": "Kangaskhanite",
+            "moves": [
+                "Return",
+                "Drain Punch",
+                "Sucker Punch",
+                "Fake Out"
             ]
         },
         "Fast Mega Bite": {
@@ -1288,7 +1394,7 @@ var SETDEX_GEN7 = {
                 "Tailwind"
             ]
         },
-        "Specially Defensive Berry": {
+        "Specially Defensive Pinch Berry": {
             "level": 50,
             "evs": {
                 "hp": 244,
@@ -1442,18 +1548,102 @@ var SETDEX_GEN7 = {
     },
     "Ampharos": {
         //2018 mega
+        "Slow Offensive Mega I guess": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "item": "Ampharosite",
+            "moves": [
+                "Thunderbolt",
+                "Dragon Pulse",
+                "Hidden Power Ice",
+                "Protect"
+            ]
+        },
     },
     "Bellossom": {
 
     },
     "Azumarill": {
         //2018
+        "James Baek's Toronto 1st Sitrus BD": {
+            "level": 50,
+            "evs": {
+                "hp": 196,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 52
+            },
+            "nature": "Adamant",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Aqua Jet",
+                "Play Rough",
+                "Belly Drum",
+                "Protect"
+            ]
+        },
+        "Justin Frys' T32 NAIC AV Coverage": {
+            "level": 50,
+            "evs": {
+                "hp": 196,
+                "at": 252,
+                "df": 20,
+                "sa": 0,
+                "sd": 36,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "item": "Assault Vest",
+            "moves": [
+                "Aqua Jet",
+                "Play Rough",
+                "Knock Off",
+                "Superpower"
+            ]
+        },
     },
     "Sudowoodo": {
 
     },
     "Politoed": {
         //2017, 2018
+        "emforbes' Worlds 2nd Slow Perish": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 148,
+                "sa": 80,
+                "sd": 28,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "item": "Wiki Berry",
+            "moves": [
+                "Scald",
+                "Perish Song",
+                "Encore",
+                "Protect"
+            ]
+        },
     },
     "Jumpluff": {
         //2019 ultra
@@ -1499,6 +1689,29 @@ var SETDEX_GEN7 = {
     },
     "Steelix": {
         //2018 mega
+        "That One Sand TR Mega That Wolfe Used": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "ability": "Sturdy",
+            "item": "Steelixite",
+            "moves": [
+                "Heavy Slam",
+                "Earthquake",
+                "Rock Slide",
+                "Gyro Ball"
+            ]
+        },
     },
     "Granbull": {
 
@@ -1508,12 +1721,116 @@ var SETDEX_GEN7 = {
     },
     "Scizor": {
         //2017, 2018 mega
+        "Bulky Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "nature": "Adamant",
+            "item": "Scizorite",
+            "moves": [
+                "Bug Bite",
+                "Bullet Punch",
+                "Swords Dance",
+                "Protect"
+            ]
+        },
+        "Carson Confer's Worlds T16 Fast Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 244,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Scizorite",
+            "moves": [
+                "Bug Bite",
+                "Bullet Punch",
+                "Swords Dance",
+                "Protect"
+            ]
+        },
     },
     "Shuckle": {
         //2017, 2018
+        "Chansey's Partner-in-Crime": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "ability": "Sturdy",
+            "item": "Safety Goggles",
+            "moves": [
+                "Guard Split",
+                "Knock Off",
+                "Toxic",
+                "Protect"
+            ]
+        },
+        "Psychium Power Trick TR": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 252,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "ability": "Contrary",
+            "item": "Psychium Z",
+            "moves": [
+                "Rock Slide",
+                "Gyro Ball",
+                "Power Trick",
+                "Protect"
+            ]
+        },
     },
     "Heracross": {
         //2018 mega
+        "Mega that needs speed control": {
+            "level": 50,
+            "evs": {
+                "hp": 140,
+                "at": 196,
+                "df": 4,
+                "sa": 0,
+                "sd": 52,
+                "sp": 116
+            },
+            "nature": "Adamant",
+            "ability": "Guts",
+            "item": "Heracronite",
+            "moves": [
+                "Pin Missile",
+                "Close Combat",
+                "Bullet Seed",
+                "Rock Blast"
+            ]
+        },
     },
     "Sneasel": {
 
@@ -1550,12 +1867,78 @@ var SETDEX_GEN7 = {
     },
     "Kingdra": {
         //2018
+        "Waterium Rain Sweeper": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Waterium Z",
+            "moves": [
+                "Muddy Water",
+                "Hydro Pump",
+                "Draco Meteor",
+                "Ice Beam"
+            ]
+        },
     },
     "Donphan": {
 
     },
     "Porygon2": {
         //2017, 2018
+        "Bolt Beam TR": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 76,
+                "sa": 0,
+                "sd": 188,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Eviolite",
+            "moves": [
+                "Ice Beam",
+                "Thunderbolt",
+                "Recover",
+                "Trick Room"
+            ]
+        },
+        "Mixed Attacker TR": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 4,
+                "df": 92,
+                "sa": 36,
+                "sd": 132,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Quiet",
+            "item": "Eviolite",
+            "moves": [
+                "Return",
+                "Ice Beam",
+                "Recover",
+                "Trick Room"
+            ]
+        },
     },
     "Stantler": {
 
@@ -1583,6 +1966,120 @@ var SETDEX_GEN7 = {
     },
     "Tyranitar": {
         //2018, 2018 mega
+        "DD Darkinium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Darkinium Z",
+            "moves": [
+                "Rock Slide",
+                "Crunch",
+                "Dragon Dance",
+                "Protect"
+            ]
+        },
+        "DD Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Tyranitarite",
+            "moves": [
+                "Rock Slide",
+                "Crunch",
+                "Dragon Dance",
+                "Protect"
+            ]
+        },
+        "Mega with Coverage": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 92,
+                "df": 4,
+                "sa": 0,
+                "sd": 156,
+                "sp": 4
+            },
+            "nature": "Adamant",
+            "item": "Tyranitarite",
+            "moves": [
+                "Rock Slide",
+                "Crunch",
+                "Superpower",
+                "Ice Punch"
+            ]
+        },
+        "Animus' NAIC T16 Taunt WP": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 12,
+                "sp": 68
+            },
+            "nature": "Adamant",
+            "item": "Weakness Policy",
+            "moves": [
+                "Rock Slide",
+                "Crunch",
+                "Taunt",
+                "Protect"
+            ]
+        },
+        "MajorBowman's NAIC T16 LOrb Foul Play": {
+            "level": 50,
+            "evs": {
+                "hp": 108,
+                "at": 252,
+                "df": 36,
+                "sa": 0,
+                "sd": 4,
+                "sp": 108
+            },
+            "nature": "Adamant",
+            "item": "Life Orb",
+            "moves": [
+                "Rock Slide",
+                "Crunch",
+                "Foul Play",
+                "Protect"
+            ]
+        },
+        "Mixed Choice Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 180,
+                "df": 0,
+                "sa": 76,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Naive",
+            "item": "Choice Scarf",
+            "moves": [
+                "Rock Slide",
+                "Assurance",
+                "Ice Beam",
+                "Low Kick"
+            ]
+        },
     },
     "Lugia": {
         //2019 moon
@@ -1594,12 +2091,74 @@ var SETDEX_GEN7 = {
     //HOENN
     "Sceptile": {
         //2018 mega
+        "Three Attacks Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Unburden",
+            "item": "Sceptilite",
+            "moves": [
+                "Leaf Storm",
+                "Dragon Pulse",
+                "Hidden Power Ice",
+                "Detect"
+            ]
+        },
     },
     "Blaziken": {
         //2018, 2018 mega
+        "Mega Physical Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Blazikenite",
+            "moves": [
+                "Flare Blitz",
+                "Superpower",
+                "Rock Slide",
+                "Swords Dance"
+            ]
+        },
     },
     "Swampert": {
         //2018 mega
+        "Dedicated Mega Rain Sweeper": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Damp",
+            "item": "Swampertite",
+            "moves": [
+                "Waterfall",
+                "Earthquake",
+                "Superpower",
+                "Rock Slide"
+            ]
+        },
     },
     "Mightyena": {
 
@@ -1615,6 +2174,44 @@ var SETDEX_GEN7 = {
     },
     "Ludicolo": {
         //2018, 2019 sun, 2019 moon
+        "Waterium Rain Sweeper": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Modest",
+            "item": "Waterium Z",
+            "moves": [
+                "Hydro Pump",
+                "Energy Ball",
+                "Ice Beam",
+                "Fake Out"
+            ]
+        },
+        "Yanqing Sun's 2nd Roanoke Bulky AV": {
+            "level": 50,
+            "evs": {
+                "hp": 156,
+                "at": 0,
+                "df": 52,
+                "sa": 156,
+                "sd": 4,
+                "sp": 140
+            },
+            "nature": "Modest",
+            "item": "Assault Vest",
+            "moves": [
+                "Scald",
+                "Energy Ball",
+                "Ice Beam",
+                "Fake Out"
+            ]
+        },
     },
     "Shiftry": {
 
@@ -1627,9 +2224,53 @@ var SETDEX_GEN7 = {
     },
     "Pelipper": {
         //2017
+        "Sash Offensive Tailwind": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Focus Sash",
+            "moves": [
+                "Scald",
+                "Hurricane",
+                "Tailwind",
+                "Protect"
+            ]
+        },
     },
     "Gardevoir": {
         //2018 mega
+        "James Evans' Seniors Worlds 1st Bulky Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 124,
+                "sa": 36,
+                "sd": 60,
+                "sp": 52
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Gardevoirite",
+            "moves": [
+                "Hyper Voice",
+                "Psyshock",
+                "Trick Room",
+                "Protect"
+            ]
+        },
     },
     "Masquerain": {
 
@@ -1666,6 +2307,28 @@ var SETDEX_GEN7 = {
     },
     "Mawile": {
         //2018 mega, 2019 mega
+        "TR Mega Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 116,
+                "df": 0,
+                "sa": 0,
+                "sd": 140,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Mawilite",
+            "moves": [
+                "Iron Head",
+                "Play Rough",
+                "Sucker Punch",
+                "Rock Slide"
+            ]
+        },
     },
     "Aron": {
 
@@ -1678,6 +2341,51 @@ var SETDEX_GEN7 = {
     },
     "Manectric": {
         //2018 mega, 2019 mega
+        "Fast Offensive Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "",
+            "item": "Manectite",
+            "moves": [
+                "Volt Switch",
+                "Overheat",
+                "Snarl",
+                "Hidden Power Ice"
+            ]
+        },
+        "Zee's Charlotte T8 Mega Bulky Rain Dance": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 20,
+                "sa": 4,
+                "sd": 20,
+                "sp": 220
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Manectite",
+            "moves": [
+                "Volt Switch",
+                "Overheat",
+                "Rain Dance",
+                "Protect"
+            ]
+        },
     },
     "Plusle": {
 
@@ -1705,9 +2413,55 @@ var SETDEX_GEN7 = {
     },
     "Camerupt": {
         //2018 mega
+        "Hard TR Mega (Nature Power w/Bulu)": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "item": "Cameruptite",
+            "moves": [
+                "Heat Wave",
+                "Earth Power",
+                "Flamethrower",
+                "Nature Power"
+            ]
+        },
     },
     "Torkoal": {
         //2017, 2018
+        "Specs Hard TR": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "item": "Choice Specs",
+            "moves": [
+                "Eruption",
+                "Heat Wave",
+                "Flamethrower",
+                "Solar Beam"
+            ]
+        },
     },
     "Grumpig": {
 
@@ -1759,6 +2513,28 @@ var SETDEX_GEN7 = {
     },
     "Milotic": {
         //2018
+        "Basic Pinch Berry Support": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 132,
+                "sa": 4,
+                "sd": 68,
+                "sp": 68
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Wiki Berry",
+            "moves": [
+                "Scald",
+                "Icy Wind",
+                "Recover",
+                "Haze"
+            ]
+        },
     },
     "Castform": {
 
@@ -1804,9 +2580,123 @@ var SETDEX_GEN7 = {
     },
     "Salamence": {
         //2017, 2018 mega, 2019 ultra mega
+        "ralfdude's Worlds 1st Mega Fast DD": {
+            "level": 50,
+            "evs": {
+                "hp": 44,
+                "at": 228,
+                "df": 4,
+                "sa": 0,
+                "sd": 4,
+                "sp": 228
+            },
+            "nature": "Jolly",
+            "item": "Salamencite",
+            "moves": [
+                "Double-Edge",
+                "Dragon Dance",
+                "Roost",
+                "Protect"
+            ]
+        },
+        "hirosipoke's Japan Nats 1st Mega SpDef DD": {
+            "level": 50,
+            "evs": {
+                "hp": 84,
+                "at": 68,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 100
+            },
+            "nature": "Adamant",
+            "item": "Salamencite",
+            "moves": [
+                "Return",
+                "Dragon Dance",
+                "Roost",
+                "Protect"
+            ]
+        },
+        "Justin Frys' NAIC T32 Mega DD Bulky Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 116,
+                "at": 252,
+                "df": 60,
+                "sa": 0,
+                "sd": 52,
+                "sp": 28
+            },
+            "nature": "Adamant",
+            "item": "Salamencite",
+            "moves": [
+                "Frustration",
+                "Earthquake",
+                "Dragon Dance",
+                "Protect"
+            ]
+        },
+        "Mega Mixed Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 84,
+                "df": 0,
+                "sa": 172,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Hasty",
+            "item": "Salamencite",
+            "moves": [
+                "Double-Edge",
+                "Hyper Voice",
+                "Flamethrower",
+                "Draco Meteor"
+            ]
+        },
     },
     "Metagross": {
         //2017, 2018 mega, 2019 ultra mega
+        "Standard Fast Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Metagrossite",
+            "moves": [
+                "Iron Head",
+                "Stomping Tantrum",
+                "Ice Punch",
+                "Protect"
+            ]
+        },
+        "Serapis' NAIC 1st Bulkier Mega": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 148,
+                "df": 4,
+                "sa": 0,
+                "sd": 36,
+                "sp": 148
+            },
+            "nature": "Adamant",
+            "item": "Metagrossite",
+            "moves": [
+                "Iron Head",
+                "Zen Headbutt",
+                "Stomping Tantrum",
+                "Protect"
+            ]
+        },
     },
     "Regirock": {
 
@@ -1819,6 +2709,50 @@ var SETDEX_GEN7 = {
     },
     "Latias": {
         //2018, 2018 mega
+        "emforbes' Worlds 2nd Psychium": {
+            "level": 50,
+            "evs": {
+                "hp": 76,
+                "at": 0,
+                "df": 4,
+                "sa": 156,
+                "sd": 20,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Psychium Z",
+            "moves": [
+                "Psychic",
+                "Ice Beam",
+                "Icy Wind",
+                "Protect"
+            ]
+        },
+        "Tman's NAIC T32 Mega CM": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 44,
+                "sa": 28,
+                "sd": 12,
+                "sp": 180
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Latiasite",
+            "moves": [
+                "Psyshock",
+                "Icy Wind",
+                "Calm Mind",
+                "Roost"
+            ]
+        },
     },
     "Latios": {
 
@@ -1845,6 +2779,25 @@ var SETDEX_GEN7 = {
     },
     "Staraptor": {
         //2018
+        "Scarf Final Gambit": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Choice Scarf",
+            "moves": [
+                "Brave Bird",
+                "Close Combat",
+                "U-turn",
+                "Final Gambit"
+            ]
+        },
     },
     "Bibarel": {
 
@@ -1884,12 +2837,119 @@ var SETDEX_GEN7 = {
     },
     "Gastrodon": {
         //2017, 2018, 2019 ultra
+        "ralfdude's Worlds 1st Bulky Groundium": {
+            "level": 50,
+            "evs": {
+                "hp": 180,
+                "at": 0,
+                "df": 212,
+                "sa": 84,
+                "sd": 28,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Groundium Z",
+            "moves": [
+                "Earth Power",
+                "Ice Beam",
+                "Recover",
+                "Protect"
+            ]
+        },
+        "nerd of now's Toronto T8 Expert Belt": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 84,
+                "sa": 188,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Expert Belt",
+            "moves": [
+                "Earth Power",
+                "Ice Beam",
+                "Scald",
+                "Recover"
+            ]
+        },
+        "Basic Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 0,
+                "df": 164,
+                "sa": 60,
+                "sd": 52,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Wiki Berry",
+            "moves": [
+                "Earth Power",
+                "Ice Beam",
+                "Clear Smog",
+                "Icy Wind"
+            ]
+        },
     },
     "Ambipom": {
 
     },
     "Drifblim": {
         //2017
+        "SHADEViera's Invitational 1st Timid": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 132,
+                "sa": 204,
+                "sd": 4,
+                "sp": 164
+            },
+            "nature": "Timid",
+            "item": "Psychic Seed",
+            "moves": [
+                "Shadow Ball",
+                "Tailwind",
+                "Will-O-Wisp",
+                "Rain Dance"
+            ]
+        },
+        "Serapis' NAIC 1st Bulkier Spread": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 156,
+                "sa": 44,
+                "sd": 124,
+                "sp": 180
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Psychic Seed",
+            "moves": [
+                "Shadow Ball",
+                "Tailwind",
+                "Will-O-Wisp",
+                "Rain Dance"
+            ]
+        },
     },
     "Lopunny": {
 
@@ -1950,6 +3010,28 @@ var SETDEX_GEN7 = {
     },
     "Abomasnow": {
         //2018 mega
+        "Mega Hard TR": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 12,
+                "df": 4,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Quiet",
+            "item": "Abomasite",
+            "moves": [
+                "Blizzard",
+                "Energy Ball",
+                "Ice Shard",
+                "Giga Drain"
+            ]
+        },
     },
     "Weavile": {
         //2018
@@ -1962,6 +3044,29 @@ var SETDEX_GEN7 = {
     },
     "Rhyperior": {
         //2018
+        "Specially Defensive Rockium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 4,
+                "df": 0,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "ability": "Lightning Rod",
+            "item": "Rockium Z",
+            "moves": [
+                "Rock Slide",
+                "Drill Run",
+                "Rock Wrecker",
+                "Protect"
+            ]
+        },
     },
     "Tangrowth": {
 
@@ -2016,12 +3121,78 @@ var SETDEX_GEN7 = {
     },
     "Rotom-Heat": {
         //2018
+        "Serapis' NAIC 1st Electrium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 12,
+                "sa": 76,
+                "sd": 60,
+                "sp": 108
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Electrium Z",
+            "moves": [
+                "Thunderbolt",
+                "Overheat",
+                "Ally Switch",
+                "Protect"
+            ]
+        },
+        "riopaser's Valencia 1st Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 4,
+                "sa": 116,
+                "sd": 4,
+                "sp": 132
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Mago Berry",
+            "moves": [
+                "Thunderbolt",
+                "Overheat",
+                "Ally Switch",
+                "Protect"
+            ]
+        },
     },
     "Rotom-Fan": {
 
     },
     "Rotom-Wash": {
         //2018
+        "Basic Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 28,
+                "sa": 36,
+                "sd": 52,
+                "sp": 140
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Wiki Berry",
+            "moves": [
+                "Thunderbolt",
+                "Hydro Pump",
+                "Will-O-Wisp",
+                "Protect"
+            ]
+        },
     },
     "Uxie": {
 
@@ -2040,6 +3211,72 @@ var SETDEX_GEN7 = {
     },
     "Heatran": {
         //2018, 2019 sun
+        "Basic Shuca Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Shuca Berry",
+            "moves": [
+                "Heat Wave",
+                "Earth Power",
+                "Flamethrower",
+                "Flash Cannon"
+            ]
+        },
+        "Tomohiro Seki's Worlds T8 Terrain LOrb": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 4,
+                "sa": 252,
+                "sd": 4,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Life Orb",
+            "moves": [
+                "Heat Wave",
+                "Earth Power",
+                "Nature Power",
+                "Protect"
+            ]
+        },
+        "Akihiro Takahashi's Worlds T32 Firium": {
+            "level": 50,
+            "evs": {
+                "hp": 212,
+                "at": 0,
+                "df": 4,
+                "sa": 244,
+                "sd": 12,
+                "sp": 36
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Firium Z",
+            "moves": [
+                "Heat Wave",
+                "Earth Power",
+                "Hidden Power Ice",
+                "Protect"
+            ]
+        },
     },
     "Regigigas": {
 
@@ -2052,6 +3289,73 @@ var SETDEX_GEN7 = {
     },
     "Cresselia": {
         //2018
+        "Donghun Youm's Charlotte T8 Psychium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 228,
+                "sd": 28,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "",
+            "item": "Psychium Z",
+            "moves": [
+                "Psychic",
+                "Ice Beam",
+                "Helping Hand",
+                "Trick Room"
+            ]
+        },
+        "Paul Chua's Worlds T16 Pinch Berry Support": {
+            "level": 50,
+            "evs": {
+                "hp": 196,
+                "at": 0,
+                "df": 156,
+                "sa": 0,
+                "sd": 156,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Calm",
+            "item": "Aguav Berry",
+            "moves": [
+                "Icy Wind",
+                "Trick Room",
+                "Helping Hand",
+                "Ally Switch"
+            ]
+        },
+        "hirosipoke's Japan Nats 1st Sitrus Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 196,
+                "at": 0,
+                "df": 0,
+                "sa": 244,
+                "sd": 0,
+                "sp": 68
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Psyshock",
+                "Icy Wind",
+                "Helping Hand",
+                "Ally Switch"
+            ]
+        },
     },
 
     //UNOVA
@@ -2102,6 +3406,25 @@ var SETDEX_GEN7 = {
     },
     "Excadrill": {
         //2018, 2019 ultra
+        "Sand Rush Groundium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Groundium Z",
+            "moves": [
+                "Earthquake",
+                "Iron Head",
+                "Rock Slide",
+                "Drill Run"
+            ]
+        },
     },
     "Audino": {
         //2018, 2018 mega
@@ -2129,6 +3452,50 @@ var SETDEX_GEN7 = {
     },
     "Whimsicott": {
         //2017, 2018, 2019 ultra
+        "Sash Disruption": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Focus Sash",
+            "moves": [
+                "Moonblast",
+                "Tailwind",
+                "Encore",
+                "Fake Tears"
+            ]
+        },
+        "Barudoru's Worlds 1st Priority Normalium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Normalium Z",
+            "moves": [
+                "Nature Power",
+                "Tailwind",
+                "Charm",
+                "Protect"
+            ]
+        },
     },
     "Lilligant": {
         //2017, 2019 sun, 2019 moon
@@ -2177,6 +3544,52 @@ var SETDEX_GEN7 = {
     },
     "Gothitelle": {
         //2018
+        "UncleLou's Collinsville T8 Supportive": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 20,
+                "sa": 0,
+                "sd": 244,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 9
+            },
+            "nature": "Sassy",
+            "item": "Iapapa Berry",
+            "moves": [
+                "Trick Room",
+                "Heal Pulse",
+                "Taunt",
+                "Protect"
+            ]
+        },
+        "Yusei Matsuno's Worlds T4 Competitive Z": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 12,
+                "sa": 116,
+                "sd": 140,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Competitive",
+            "item": "Psychium Z",
+            "moves": [
+                "Psychic",
+                "Trick Room",
+                "Helping Hand",
+                "Protect"
+            ]
+        },
     },
     "Reuniclus": {
 
@@ -2198,6 +3611,75 @@ var SETDEX_GEN7 = {
     },
     "Amoonguss": {
         //2018, 2019 sun, 2019 moon, 2019 ultra
+        "Special Defense Invested": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 84,
+                "sa": 0,
+                "sd": 188,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "item": "Wiki Berry",
+            "moves": [
+                "Sludge Bomb",
+                "Spore",
+                "Rage Powder",
+                "Protect"
+            ]
+        },
+        "Defense Invested": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 196,
+                "sa": 0,
+                "sd": 76,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Relaxed",
+            "item": "Wiki Berry",
+            "moves": [
+                "Clear Smog",
+                "Giga Drain",
+                "Spore",
+                "Rage Powder"
+            ]
+        },
+        "Yusei Matsuno's Worlds T4 Occa Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 164,
+                "at": 0,
+                "df": 188,
+                "sa": 0,
+                "sd": 156,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Calm",
+            "item": "Occa Berry",
+            "moves": [
+                "Energy Ball",
+                "Spore",
+                "Rage Powder",
+                "Protect"
+            ]
+        },
     },
     "Jellicent": {
         //2018
@@ -2234,6 +3716,28 @@ var SETDEX_GEN7 = {
     },
     "Accelgor": {
         //2019 ultra
+        "Turbo Unburden Support": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Psychic Seed",
+            "moves": [
+                "Final Gambit",
+                "Acid Spray",
+                "Struggle Bug",
+                "Encore"
+            ]
+        },
     },
     "Stunfisk": {
 
@@ -2249,9 +3753,66 @@ var SETDEX_GEN7 = {
     },
     "Bisharp": {
         //2018
+        "Sash Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Focus Sash",
+            "moves": [
+                "Sucker Punch",
+                "Iron Head",
+                "Knock Off",
+                "Assurance"
+            ]
+        },
     },
     "Braviary": {
         //2017, 2018
+        "Offensive Flyinium": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Flyinium Z",
+            "moves": [
+                "Brave Bird",
+                "Superpower",
+                "Tailwind",
+                "Protect"
+            ]
+        },
+        "Pinch Berry Support": {
+            "level": 50,
+            "evs": {
+                "hp": 116,
+                "at": 76,
+                "df": 116,
+                "sa": 0,
+                "sd": 4,
+                "sp": 196
+            },
+            "nature": "Adamant",
+            "item": "Mago Berry",
+            "moves": [
+                "Brave Bird",
+                "Tailwind",
+                "Whirlwind",
+                "Protect"
+            ]
+        },
     },
     "Mandibuzz": {
         //2017, 2019 ultra
@@ -2300,6 +3861,161 @@ var SETDEX_GEN7 = {
     },
     "Landorus-Therian": {
         //2018, 2019 moon, 2019 ultra
+        "Standard Groundium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Groundium Z",
+            "moves": [
+                "Earthquake",
+                "Rock Slide",
+                "U-turn",
+                "Protect"
+            ]
+        },
+        "Physical AV": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 76,
+                "df": 60,
+                "sa": 0,
+                "sd": 12,
+                "sp": 132
+            },
+            "nature": "Adamant",
+            "item": "Assault Vest",
+            "moves": [
+                "Earthquake",
+                "Rock Slide",
+                "Superpower",
+                "Knock Off"
+            ]
+        },
+        "Physical Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "item": "Choice Scarf",
+            "moves": [
+                "Earthquake",
+                "Rock Slide",
+                "Superpower",
+                "U-turn"
+            ]
+        },
+        "Mixed Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 4,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Modest",
+            "item": "Choice Scarf",
+            "moves": [
+                "Earth Power",
+                "Hidden Power Ice",
+                "Sludge Bomb",
+                "Stone Edge"
+            ]
+        },
+        "Tomohiro Seki's Worlds T8 Choice Band": {
+            "level": 50,
+            "evs": {
+                "hp": 68,
+                "at": 252,
+                "df": 4,
+                "sa": 0,
+                "sd": 84,
+                "sp": 100
+            },
+            "nature": "Adamant",
+            "item": "Choice Band",
+            "moves": [
+                "Earthquake",
+                "Stone Edge",
+                "Superpower",
+                "U-turn"
+            ]
+        },
+        "Meanvgc's Worlds T8 Mixed AV": {
+            "level": 50,
+            "evs": {
+                "hp": 100,
+                "at": 0,
+                "df": 4,
+                "sa": 220,
+                "sd": 156,
+                "sp": 28
+            },
+            "nature": "Modest",
+            "item": "Assault Vest",
+            "moves": [
+                "Earth Power",
+                "Hidden Power Ice",
+                "Rock Tomb",
+                "U-turn"
+            ]
+        },
+        "emforbes' Worlds 2nd Careful Groundium": {
+            "level": 50,
+            "evs": {
+                "hp": 164,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 236,
+                "sp": 108
+            },
+            "nature": "Careful",
+            "item": "Groundium Z",
+            "moves": [
+                "Earthquake",
+                "Rock Tomb",
+                "U-turn",
+                "Protect"
+            ]
+        },
+        "Majorbowman's NAIC T16 Special Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 228,
+                "at": 0,
+                "df": 44,
+                "sa": 196,
+                "sd": 12,
+                "sp": 28
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Iapapa Berry",
+            "moves": [
+                "Earth Power",
+                "Hidden Power Ice",
+                "Sludge Bomb",
+                "Protect"
+            ]
+        },
     },
     "Kyurem": {
 
@@ -2356,6 +4072,50 @@ var SETDEX_GEN7 = {
     },
     "Aegislash": {
         //2018
+        "Mixed Ghostium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 12,
+                "df": 4,
+                "sa": 236,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Quiet",
+            "item": "Ghostium Z",
+            "moves": [
+                "Shadow Ball",
+                "Sacred Sword",
+                "Shadow Sneak",
+                "King's Shield"
+            ]
+        },
+        "PinkSylvie's Zelda Challenge T8 Sub Toxic": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 44,
+                "sa": 12,
+                "sd": 100,
+                "sp": 100
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Leftovers",
+            "moves": [
+                "Shadow Ball",
+                "Substitute",
+                "Toxic",
+                "King's Shield"
+            ]
+        },
     },
     "Aromatisse": {
 
@@ -2436,6 +4196,82 @@ var SETDEX_GEN7 = {
     },
     "Incineroar": {
         //2017, 2018, 2019 sun, 2019 moon, 2019 ultra
+        "Offensive Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 4,
+                "df": 100,
+                "sa": 0,
+                "sd": 148,
+                "sp": 12
+            },
+            "nature": "Adamant",
+            "item": "Figy Berry",
+            "moves": [
+                "Flare Blitz",
+                "Knock Off",
+                "U-turn",
+                "Fake Out"
+            ]
+        },
+        "Pd0nZ's Prague T8 Offensive AV": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 92,
+                "df": 4,
+                "sa": 0,
+                "sd": 116,
+                "sp": 44
+            },
+            "nature": "Adamant",
+            "item": "Assault Vest",
+            "moves": [
+                "Flare Blitz",
+                "Knock Off",
+                "Low Kick",
+                "Fake Out"
+            ]
+        },
+        "Incinium Z": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 116,
+                "df": 4,
+                "sa": 0,
+                "sd": 100,
+                "sp": 36
+            },
+            "nature": "Adamant",
+            "item": "Incinium Z",
+            "moves": [
+                "Flare Blitz",
+                "Darkest Lariat",
+                "Fake Out",
+                "Taunt"
+            ]
+        },
+        "ralfdude's Worlds 1st Snarl Snatch": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 4,
+                "df": 12,
+                "sa": 0,
+                "sd": 156,
+                "sp": 100
+            },
+            "nature": "Careful",
+            "item": "Figy Berry",
+            "moves": [
+                "Flare Blitz",
+                "Snarl",
+                "Fake Out",
+                "Snatch"
+            ]
+        },
     },
     "Primarina": {
 
@@ -2490,6 +4326,28 @@ var SETDEX_GEN7 = {
     },
     "Lurantis": {
         //2018
+        "Donghun Youm's Charlotte T8 Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 196,
+                "df": 12,
+                "sa": 0,
+                "sd": 44,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Figy Berry",
+            "moves": [
+                "Leaf Blade",
+                "Superpower",
+                "Knock Off",
+                "Protect"
+            ]
+        },
     },
     "Shiinotic": {
 
@@ -2541,6 +4399,47 @@ var SETDEX_GEN7 = {
     },
     "Mimikyu": {
         //2017, 2018, 2019 ultra
+        "SD TR Mimikium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Mimikium Z",
+            "moves": [
+                "Play Rough",
+                "Shadow Sneak",
+                "Trick Room",
+                "Swords Dance"
+            ]
+        },
+        "Destiny Bond Ghostium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Ghostium Z",
+            "moves": [
+                "Shadow Claw",
+                "Taunt",
+                "Trick Room",
+                "Destiny Bond"
+            ]
+        },
     },
     "Bruxish": {
 
@@ -2553,18 +4452,295 @@ var SETDEX_GEN7 = {
     },
     "Kommo-o": {
         //2018, 2019 ultra
+        "James Baek's Toronto 1st Modest Sub": {
+            "level": 50,
+            "evs": {
+                "hp": 84,
+                "at": 0,
+                "df": 4,
+                "sa": 164,
+                "sd": 20,
+                "sp": 236
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Kommonium Z",
+            "moves": [
+                "Clanging Scales",
+                "Flamethrower",
+                "Substitute",
+                "Protect"
+            ]
+        },
+        "Sanvy's Worlds T16 Timid Sub": {
+            "level": 50,
+            "evs": {
+                "hp": 20,
+                "at": 0,
+                "df": 4,
+                "sa": 220,
+                "sd": 20,
+                "sp": 244
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Kommonium Z",
+            "moves": [
+                "Clanging Scales",
+                "Flamethrower",
+                "Substitute",
+                "Protect"
+            ]
+        },
+        "Mixed Attacker": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Modest",
+            "item": "Kommonium Z",
+            "moves": [
+                "Clanging Scales",
+                "Close Combat",
+                "Flamethrower",
+                "Protect"
+            ]
+        },
     },
     "Tapu Koko": {
         //2017, 2018, 2019 sun, 2019 moon, 2019 ultra
+        "Standard Electrium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Electrium Z",
+            "moves": [
+                "Thunderbolt",
+                "Dazzling Gleam",
+                "Volt Switch",
+                "Protect"
+            ]
+        },
+        "Life Orb Special": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "moves": [
+                "Thunderbolt",
+                "Dazzling Gleam",
+                "Volt Switch",
+                "Hidden Power Ice"
+            ]
+        },
+        "ralfdude's Worlds 1st Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 60,
+                "at": 0,
+                "df": 20,
+                "sa": 164,
+                "sd": 12,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Choice Specs",
+            "moves": [
+                "Thunderbolt",
+                "Dazzling Gleam",
+                "Discharge",
+                "Volt Switch"
+            ]
+        },
     },
     "Tapu Lele": {
         //2017, 2018, 2019 sun, 2019 moon, 2019 ultra
+        "Ally Switch Psychium": {
+            "level": 50,
+            "evs": {
+                "hp": 12,
+                "at": 0,
+                "df": 4,
+                "sa": 236,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Psychium Z",
+            "moves": [
+                "Psychic",
+                "Moonblast",
+                "Ally Switch",
+                "Protect"
+            ]
+        },
+        "Scarf Lele": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Choice Scarf",
+            "moves": [
+                "Psychic",
+                "Moonblast",
+                "Dazzling Gleam",
+                "Shadow Ball"
+            ]
+        },
+        "Offensive Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Life Orb",
+            "moves": [
+                "Psychic",
+                "Moonblast",
+                "Taunt",
+                "Protect"
+            ]
+        },
     },
     "Tapu Bulu": {
         //2017, 2018
+        "Scarf Bulu": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Choice Scarf",
+            "moves": [
+                "Wood Hammer",
+                "Superpower",
+                "Rock Slide",
+                "Horn Leech"
+            ]
+        },
+        "Jeraru's Japan Nats T4 Pinch Berry Whirlwind": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 76,
+                "df": 4,
+                "sa": 0,
+                "sd": 156,
+                "sp": 20
+            },
+            "nature": "Adamant",
+            "item": "Figy Berry",
+            "moves": [
+                "Wood Hammer",
+                "Horn Leech",
+                "Whirlwind",
+                "Protect"
+            ]
+        },
     },
     "Tapu Fini": {
         //2017, 2018, 2019 sun, 2019 moon, 2019 ultra
+        "CM Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 236,
+                "at": 0,
+                "df": 4,
+                "sa": 204,
+                "sd": 12,
+                "sp": 52
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Wiki Berry",
+            "moves": [
+                "Muddy Water",
+                "Moonblast",
+                "Calm Mind",
+                "Protect"
+            ]
+        },
+        "Zee's Charlotte T8 Haze Waterium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 12,
+                "sa": 228,
+                "sd": 12,
+                "sp": 4
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Waterium Z",
+            "moves": [
+                "Muddy Water",
+                "Moonblast",
+                "Haze",
+                "Protect"
+            ]
+        },
     },
     "Solgaleo": {
         //2019 moon, 2019 ultra
@@ -2574,6 +4750,95 @@ var SETDEX_GEN7 = {
     },
     "Nihilego": {
         //2017, 2018, 2019 ultra
+        "Timid Life Orb": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Life Orb",
+            "moves": [
+                "Power Gem",
+                "Sludge Bomb",
+                "Hidden Power Ice",
+                "Protect"
+            ]
+        },
+        "Acid Spray Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "item": "Focus Sash",
+            "moves": [
+                "Power Gem",
+                "Sludge Bomb",
+                "Acid Spray",
+                "Protect"
+            ]
+        },
+        "Jeraru's Japan Nats T4 Quiet TR Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 156,
+                "at": 0,
+                "df": 252,
+                "sa": 100,
+                "sd": 0,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0
+            },
+            "nature": "Quiet",
+            "item": "Wiki Berry",
+            "moves": [
+                "Power Gem",
+                "Sludge Bomb",
+                "Trick Room",
+                "Protect"
+            ]
+        },
+        "Timid Rockium": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "item": "Rockium Z",
+            "moves": [
+                "Power Gem",
+                "Sludge Bomb",
+                "Clear Smog",
+                "Protect"
+            ]
+        },
     },
     "Buzzwole": {
         //2017
@@ -2586,9 +4851,161 @@ var SETDEX_GEN7 = {
     },
     "Celesteela": {
         //2017, 2018, 2019 ultra
+        "Mixed Coverage Leftovers": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 0,
+                "df": 108,
+                "sa": 0,
+                "sd": 148,
+                "sp": 0
+            },
+            "nature": "Sassy",
+            "item": "Leftovers",
+            "moves": [
+                "Heavy Slam",
+                "Flamethrower",
+                "Leech Seed",
+                "Protect"
+            ]
+        },
+        "Diabolical Sub Leech Seed": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 100,
+                "sa": 0,
+                "sd": 164,
+                "sp": 0
+            },
+            "nature": "Impish",
+            "item": "Leftovers",
+            "moves": [
+                "Heavy Slam",
+                "Leech Seed",
+                "Substitute",
+                "Protect"
+            ]
+        },
+        "Zee's Charlotte T8 Misty Seed Acro": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 84,
+                "df": 4,
+                "sa": 0,
+                "sd": 148,
+                "sp": 28
+            },
+            "nature": "Careful",
+            "item": "Misty Seed",
+            "moves": [
+                "Heavy Slam",
+                "Acrobatics",
+                "Leech Seed",
+                "Protect"
+            ]
+        },
     },
     "Kartana": {
         //2017, 2018, 2019 sun, 2019 moon, 2019 ultra
+        "Animus' NAIC T16 Fast Grassium": {
+            "level": 50,
+            "evs": {
+                "hp": 68,
+                "at": 108,
+                "df": 4,
+                "sa": 0,
+                "sd": 76,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Grassium Z",
+            "moves": [
+                "Leaf Blade",
+                "Sacred Sword",
+                "Tailwind",
+                "Detect"
+            ]
+        },
+        "AV Kart": {
+            "level": 50,
+            "evs": {
+                "hp": 68,
+                "at": 0,
+                "df": 0,
+                "sa": 0,
+                "sd": 252,
+                "sp": 188
+            },
+            "nature": "Jolly",
+            "item": "Assault Vest",
+            "moves": [
+                "Leaf Blade",
+                "Smart Strike",
+                "Sacred Sword",
+                "Knock Off"
+            ]
+        },
+        "Offensive Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "item": "Focus Sash",
+            "moves": [
+                "Leaf Blade",
+                "Sacred Sword",
+                "Knock Off",
+                "Detect"
+            ]
+        },
+        "ralfdude's Worlds 1st Adamant Grassium": {
+            "level": 50,
+            "evs": {
+                "hp": 28,
+                "at": 4,
+                "df": 4,
+                "sa": 0,
+                "sd": 244,
+                "sp": 228
+            },
+            "nature": "Adamant",
+            "item": "Grassium Z",
+            "moves": [
+                "Leaf Blade",
+                "Sacred Sword",
+                "Tailwind",
+                "Detect"
+            ]
+        },
+        "Majorbowman's NAIC T16 Tailwind Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 4,
+                "df": 4,
+                "sa": 0,
+                "sd": 252,
+                "sp": 76
+            },
+            "nature": "Jolly",
+            "item": "Aguav Berry",
+            "moves": [
+                "Leaf Blade",
+                "Sacred Sword",
+                "Tailwind",
+                "Detect"
+            ]
+        },
     },
     "Guzzlord": {
 
@@ -2607,6 +5024,96 @@ var SETDEX_GEN7 = {
     },
     "Stakataka": {
         //2018, 2019 sun, 2019 moon, 2019 ultra
+        "Atk Beast Boost LOrb": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "df": 17,
+                "sp": 0
+            },
+            "nature": "Lonely",
+            "item": "Life Orb",
+            "moves": [
+                "Gyro Ball",
+                "Rock Slide",
+                "Trick Room",
+                "Protect"
+            ]
+        },
+        "Tman's NAIC T32 Pinch Berry": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 28,
+                "sa": 0,
+                "sd": 236,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Sassy",
+            "item": "Aguav Berry",
+            "moves": [
+                "Gyro Ball",
+                "Rock Slide",
+                "Trick Room",
+                "Protect"
+            ]
+        },
+        "Ultra Series Shuca": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 12,
+                "df": 0,
+                "sa": 0,
+                "sd": 252,
+                "sp": 0
+            },
+            "ivs": {
+                "sp": 0,
+            },
+            "nature": "Sassy",
+            "item": "Shuca Berry",
+            "moves": [
+                "Gyro Ball",
+                "Rock Slide",
+                "Trick Room",
+                "Wide Guard"
+            ]
+        },
+        "Penguin2142's Worlds 1st Lonely Rockium": {
+            "level": 50,
+            "evs": {
+                "hp": 252,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 0
+            },
+            "ivs": {
+                "df": 17,
+                "sp": 0
+            },
+            "nature": "Lonely",
+            "item": "Rockium Z",
+            "moves": [
+                "Gyro Ball",
+                "Stone Edge",
+                "Trick Room",
+                "Protect"
+            ]
+        },
     },
     "Blacephalon": {
         //2018
@@ -2865,7 +5372,7 @@ var SETDEX_GEN7 = {
                 "Protect"
             ]
         },
-        "Playmaker's Hartford T16 Fast Perish": {
+        "Donghun Youm's Hartford T16 Fast Perish": {
             "level": 50,
             "evs": {
                 "hp": 252,

@@ -7,7 +7,7 @@ var COMPONENTS = {
     5: [SETDEX_GEN5],
     6: [SETDEX_SHOWDOWN,
         SETDEX_NUGGETBRIDGE],
-    7: [SETDEX_TT2019],
+    7: [SETDEX_GEN7],
     //Gen 8 onwards doesn't need to be updated
     8: [SETDEX_VGC2022_S13,
         SETDEX_VGC2022,
