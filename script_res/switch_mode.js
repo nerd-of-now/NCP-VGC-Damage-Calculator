@@ -28,6 +28,8 @@ if (localStorage.getItem("level") == true) {
 //GEN TOGGLING
 //Load the generation according to localStorage
 //see function getGen() in ap_calc.js
+var isCustomMods = false;
+var confirmCustomMods = false;
 
 $(function(){
 
@@ -93,7 +95,37 @@ $(function(){
 		if (!$("#p2" + " .set-toggle").prop("checked"))
 			loadPreset("#p2", tempSetName);
 	});
+
+	$("#toggleCustMods").click(function () {
+		if (!confirmCustomMods) {
+			if (confirm("This feature is more technical and is intended for testing mechanics. Continue?")) {
+				confirmCustomMods = true;
+				toggleCustomModifiers($(this).is(":checked"));
+			}
+			else {
+				$(this).prop("checked", false);
+			}
+		}
+		else {
+			toggleCustomModifiers($(this).is(":checked"));
+		}
+	});
+
 })
+
+function toggleCustomModifiers(custModsOn) {
+	if (custModsOn) {
+		$(".custom-mods-group").show();
+		isCustomMods = true;
+	}
+	else {
+		$(".custom-mods-group").hide();
+		isCustomMods = false;
+	}
+	if (!$.isEmptyObject(mechanicsTests)) {
+		calculate();
+	}
+}
 
 function loadTheme(color){
 	$('body').removeClass();

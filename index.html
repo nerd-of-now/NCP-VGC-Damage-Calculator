@@ -33,7 +33,7 @@
     <body class="dark">
         <div class="header">
             <div class="wrapper">
-                <span class="header-logo"><a href="http://nimbasacitypost.com" target="_blank" rel="noopener noreferrer"><img src="image_res/Logo Nimbasa City Post White Text PNG.png" alt="Nimbasa City Post" style="height: 45px;padding-top: 5px;" /></a></span><span class="nav"><a href="http://nimbasacitypost.com" target="_blank" rel="noopener noreferrer">Home</a> | <a href="http://play.pokemonshowdown.com/vgc" target="_blank" rel="noopener noreferrer">Showdown</a> | <a href="https://statcrusher.com/" target="_blank" rel="noopener noreferrer">StatCrusher</a> | <a href="https://docs.google.com/spreadsheets/d/1axlwmzPA49rYkqXh7zHvAtSP-TKbM0ijGYBPRflLSWw" target="_blank" rel="noopener noreferrer">VGCPastes Repository</a> | <a href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator" target="_blank" rel="noopener noreferrer">GitHub Page</a> | <a href="https://www.nimbasacitypost.com/2019/12/vgc-resources.html" target="_blank" rel="noopener noreferrer">Other VGC Resources</a><button class="btn" id="switchTheme">Dark theme</button><input class="btn-input" type="checkbox" id="switchDex" /><label class="btn dex-change gen-specific g8 g9" for="switchDex" title="Include Pokémon that aren't in this gen?">National Dex</label></span>
+                <span class="header-logo"><a href="http://nimbasacitypost.com" target="_blank" rel="noopener noreferrer"><img src="image_res/Logo Nimbasa City Post White Text PNG.png" alt="Nimbasa City Post" style="height: 45px;padding-top: 5px;" /></a></span><span class="nav"><a href="http://nimbasacitypost.com" target="_blank" rel="noopener noreferrer">Home</a> | <a href="http://play.pokemonshowdown.com/vgc" target="_blank" rel="noopener noreferrer">Showdown</a> | <a href="https://statcrusher.com/" target="_blank" rel="noopener noreferrer">StatCrusher</a> | <a href="https://docs.google.com/spreadsheets/d/1axlwmzPA49rYkqXh7zHvAtSP-TKbM0ijGYBPRflLSWw" target="_blank" rel="noopener noreferrer">VGCPastes Repository</a> | <a href="https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator" target="_blank" rel="noopener noreferrer">GitHub Page</a> | <a href="https://www.nimbasacitypost.com/2019/12/vgc-resources.html" target="_blank" rel="noopener noreferrer">Other VGC Resources</a><button class="btn" id="switchTheme">Dark theme</button><input class="btn-input" type="checkbox" id="switchDex" /><label class="btn dex-change gen-specific g8 g9" for="switchDex" title="Include Pokémon that aren't in this gen?">National Dex</label><input class="btn-input" type="checkbox" id="toggleCustMods" /><label class="btn dex-change gen-specific g5 g6 g7 g8 g9" for="toggleCustMods" title="Enable custom modifiers? (Technical; intended for mechanics testing)">Custom Mods</label></span>
                 <div style="clear:both"></div>
             </div>
         </div>
@@ -101,7 +101,11 @@
             </div>
             <div class="main-result-group">
                 <div class="big-text"><span id="mainResult" onclick="Clipboard_CopyTo(this.textContent)" title="Click to copy the result.">Loading...</span></div>
-                <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console [Ctrl+Shift+I on Google Chrome].)</span></div>
+                <div class="small-text">
+                    <span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console [Ctrl+Shift+I on Google Chrome].)</span>
+                    <br />
+                    <span id="customModValues" style="display: none;">(If this is seen then I think I did something wrong)</span>
+                </div>
             </div>
             <div class="panel poke-info" id="p1">
                 <div class="panel-heading"><h4 class="panel-title">Pokémon 1</h4></div>
@@ -146,9 +150,9 @@
                     </div>
                     <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="float:right;">
                         <!--<div class="sidebarTeam" id="tL">
-                        <input class="namet" value="Untitled" />
-                        <button class="renamet" id="renameL" type="button" title="Rename the current team.">Rename</button>
-                    </div>-->
+            <input class="namet" value="Untitled" />
+            <button class="renamet" id="renameL" type="button" title="Rename the current team.">Rename</button>
+        </div>-->
                         <div class="sidebarSlot hide" id="l1">
                             <button class="pkmnsc" id="pkmnL1" type="button" onclick="loadSidebarSlot(1,1)"><img id="pkmnL1I" src="image_res/empty-slot.png"></button>
                             <button class="editsc" id="editL1" type="button" onclick="editSidebarSlot(1,1)" title="Overwrite this slot with what's currently in the panel."><img width="10" height="10" src="image_res/save.png" /></button>
@@ -552,7 +556,11 @@
                             <input class="btn-input calc-trigger" type="checkbox" id="foresightR" /><label class="btn btn-wide" for="foresightR">Foresight</label>
                         </div>
                     </div>
-
+                    <div class="hide gen-specific g5 g6 g7 g8 g9 custom-mods-group" style="float:left;">
+                        <button class="custom-mod-add" id="cMAdd" type="button" onclick="newCustomMod()" title="Add a custom modifier. (Affects both sides)"><b>New Modifier</b></button>
+                        <div class="custom-modifiers" id="cMod"></div>
+                    </div>
+                    <br style="clear:both;" />
                     <p>Please enter your custom set here.</p>
                     Spread Name: <input type="text" id="spreadName" style="width: 60%" value="My Custom Set">
                     <br>

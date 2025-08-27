@@ -34,6 +34,53 @@ function validate(obj, min, max) {
     obj.val(Math.max(min, Math.min(max, ~~obj.val())));
 }
 
+$(document).on("keyup", ".custmod", function () {
+    validate($(this), 0, 262144);
+    checkCustomMods();
+    calculate();
+});
+$(document).on("change", ".cmodtype", function () {
+    checkCustomMods();
+    calculate();
+});
+
+//add the following to the cModSelect string once implemented:
+//<option value="gnMod">General Mod</option>
+function newCustomMod() {
+    let cModField = "#cMod";
+    let cModDiv = '<div class="cmodlist">';
+    let cModSelect = '<select class="cmodtype calc-trigger"><option value="bpMod">Base Power Mod</option><option value="atMod">Attack Mod</option><option value="dfMod">Defense Mod</option><option value="fnMod">Final Mod</option></select>';
+    let cModInput = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="custmod calc-trigger" min="0" max="1048576" value="4096" /><b>&nbsp;&nbsp;/&nbsp;&nbsp;4096</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+    let cModButton = '<button class="delmod" type="button" onclick="deleteCustomMod(this)" title="Remove custom modifier."><b>X</b></button>';
+    let cModDivEnd = '</div>';
+    $(cModField).append(cModDiv + cModSelect + cModInput + cModButton + cModDivEnd);
+    checkCustomMods();
+}
+
+function deleteCustomMod(divID) {
+    $(divID).parent().remove();
+    checkCustomMods();
+    calculate();
+}
+
+var mechanicsTests = { };
+function checkCustomMods() {
+    let modsList = $("#cMod").children().toArray();
+    const indexChildSelect = 0, indexChildInput = 1;
+    mechanicsTests= {};
+    for (i in modsList) {
+        let modifier = modsList[i];
+        let modifierType = modifier.children[indexChildSelect].value;
+        let modifierVal = modifier.children[indexChildInput].value;
+        if (modifierVal != 4096) {
+            if (!(modifierType + 's' in mechanicsTests)) {
+                mechanicsTests[modifierType + 's'] = [];
+            }
+            mechanicsTests[modifierType + 's'].push(modifierVal);
+        }
+    }
+}
+
 // auto-calc stats and current HP on change
 $(".level").keyup(function() {
     var poke = $(this).closest(".poke-info");
@@ -1524,6 +1571,29 @@ $(".result-move").change(function() {
             else {
                 $("#damageValues").text("(" + result.damage.join(", ") + ")");
             }
+            if (!$.isEmptyObject(mechanicsTests)) {
+                const modsInEnglish = { "bpMods": "Base Power", "atMods": "Attack", "dfMods": "Defense", "fnMods": "Final" };
+                var custModText = "";
+                for (let modifierType in mechanicsTests) {
+                    if (custModText != "") {
+                        custModText += "; ";
+                    }
+                    else {
+                        custModText = "CUSTOM MODIFIERS: ";
+                    }
+                    custModText += modsInEnglish[modifierType] + ": ";
+                    var totalMods = mechanicsTests[modifierType].length;
+                    for (let i = 0; i < totalMods; i++) {
+                        custModText += mechanicsTests[modifierType][i];
+                        if (i < totalMods - 1 && totalMods > 1) {
+                            custModText += ", ";
+                        }
+                    }
+                }
+                //console.log(custModText);
+                $("#customModValues").text(custModText);
+            }
+
             //checkCrit(result.crit)
         }
     }
@@ -1690,6 +1760,14 @@ function Pokemon(pokeInfo) {
     this.canEvolve = pokedex[pokemonName] ? pokedex[pokemonName].canEvolve : false;
     this.isTransformed = pokeInfo.find(".transform").prop("checked");
     if (this.isTransformed) this.name = this.name + " (" + transformSpecies[pokeInfo.attr("id")] + ")";
+    if (!$.isEmptyObject(mechanicsTests) && isCustomMods) {
+        this.customModifiers = mechanicsTests;
+        this.hasCustomModifiers = true;
+        $("#customModValues").show();
+    }
+    else {
+        $("#customModValues").hide();
+    }
 }
 
 function getMoveDetails(moveInfo, maxMon) {
@@ -1917,6 +1995,14 @@ $(".gen").change(function () {
     $(".gen-specific.g" + gen).show();
     $(".gen-specific").not(".g" + gen).hide();
     loadSetdexScript();
+    if (gen >= 5) {
+        if (isCustomMods) {
+            $(".custom-mods-group").show();
+        }
+        else {
+            $(".custom-mods-group").hide();
+        }
+    }
     if (gen >= 8) {
         if (localStorage.getItem("dex") == "natdex") {
             for (i = 1; i <= 4; i++) {

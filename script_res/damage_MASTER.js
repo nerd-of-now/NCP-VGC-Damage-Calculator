@@ -154,6 +154,9 @@ function buildDescription(description) {
     if (description.isQuarteredByProtect) {
         output += " through Protect";
     }
+    if (description.isMechanicsTest) {
+        output += " with custom modifiers";
+    }
 
     return output;
 }
@@ -1708,6 +1711,15 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
         description.teraBPBoost = true;
     }
 
+    //MECHANICS TESTING
+    if (attacker.hasCustomModifiers && attacker.customModifiers['bpMods']) {
+        let customBPMods = attacker.customModifiers['bpMods'];
+        for (let i = 0; i < customBPMods.length; i++) {
+            bpMods.push(customBPMods[i]);
+        }
+        description.isMechanicsTest = true;
+    }
+
     return [bpMods, description, move];
 }
 
@@ -1876,6 +1888,16 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         atMods.push(0x1800);
         description.attackerItem = attacker.item;
     }
+
+    //MECHANICS TESTING
+    if (attacker.hasCustomModifiers && attacker.customModifiers['atMods']) {
+        let customATMods = attacker.customModifiers['atMods'];
+        for (let i = 0; i < customATMods.length; i++) {
+            atMods.push(customATMods[i]);
+        }
+        description.isMechanicsTest = true;
+    }
+
     return [atMods, description];
 }
 
@@ -1985,6 +2007,16 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
         dfMods.push(0x2000);
         description.defenderItem = defender.item;
     }
+
+    //MECHANICS TESTING
+    if (defender.hasCustomModifiers && defender.customModifiers['dfMods']) {
+        let customDFMods = defender.customModifiers['dfMods'];
+        for (let i = 0; i < customDFMods.length; i++) {
+            dfMods.push(customDFMods[i]);
+        }
+        description.isMechanicsTest = true;
+    }
+
     return [dfMods, description];
 }
 
@@ -2251,6 +2283,16 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
     //r.i. Body Slam, Stomp, Dragon Rush, Steamroller, Heat Crash, Heavy Slam, Flying Press, Malicious Moonsault
     //r.ii. Earthquake
     //r.iii. Surf, Whirlpool
+
+    //MECHANICS TESTING
+    if (attacker.hasCustomModifiers && attacker.customModifiers['fnMods']) {
+        let customFinalMods = attacker.customModifiers['fnMods'];
+        for (let i = 0; i < customFinalMods.length; i++) {
+            finalMods.push(customFinalMods[i]);
+        }
+        description.isMechanicsTest = true;
+    }
+
     return [finalMods, description];
 }
 
