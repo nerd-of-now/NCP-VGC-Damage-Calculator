@@ -160,7 +160,7 @@ function exportSidebarTeam(pnum) {
         setdexName = pnum == 1 ? LEFT_SIDEBAR_NAMES[i] : RIGHT_SIDEBAR_NAMES[i];
         tempSet = setdex[monName][setdexName];
         tempSet.name = monName;
-        teamExportText += exportset(tempSet) + (i != CURRENT_SIDEBARS[pnum - 1].length - 1 ? "\n\n" : "");
+        teamExportText += exportset(tempSet) + (i != CURRENT_SIDEBARS[pnum - 1].length - 1 ? "\n" : "");
     }
     Clipboard_CopyTo(teamExportText);
 }
