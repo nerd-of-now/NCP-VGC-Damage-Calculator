@@ -1786,7 +1786,7 @@ function getMoveDetails(moveInfo, maxMon) {
         isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon && moveInfo.find(".move-double").prop("checked")) ? 1 : 0,
         combinePledge: (defaultDetails.isPledge && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
         timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
-        usedOppMove: moveInfo.find(".move-opponent option:selected").text(),
+        usedOppMoveIndex: moveInfo.find(".move-opponent").prop("selectedIndex"),
         getsStellarBoost: moveInfo.find(".move-stellar").prop("checked"),
     });
 }

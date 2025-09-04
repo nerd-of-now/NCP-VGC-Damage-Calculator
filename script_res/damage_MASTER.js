@@ -1095,10 +1095,7 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
     var isParentBond = attacker.ability === "Parental Bond";
     //a. Counterattacks (Counter, Mirror Coat, Metal Burst, Comeuppance, Bide)
     if (['Counter', 'Mirror Coat', 'Metal Burst', 'Comeuppance'].indexOf(move.name) !== -1) {
-        var moveName = move.usedOppMove ? move.usedOppMove : '(No Move)';
-        var counteredMove = moves[moveName];
-        counteredMove.name = moveName;
-        counteredMove.hits = move.hits;
+        var counteredMove = defender.moves[move.usedOppMoveIndex];
         if (counteredMove.category !== 'Status') {
             if (gen <= 3) counteredMove.category = typeChart[counteredMove.type].category;
             counteredResult = GET_DAMAGE_HANDLER(defender, attacker, counteredMove, field);
