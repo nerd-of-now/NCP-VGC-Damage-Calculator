@@ -1022,6 +1022,11 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         makesContact: true,
         hasSecondaryEffect: true
     },
+    'Hidden Power': {
+        bp: 60,
+        type: 'Normal',
+        category: 'Special'
+    },
     'Hidden Power Bug': {
         bp: 70,
         type: 'Bug',

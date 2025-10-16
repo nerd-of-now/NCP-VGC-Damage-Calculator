@@ -1414,7 +1414,14 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //i. Other
         //i.i. Beat Up
         //i.ii. Echoed Voice
-        //i.iii. Hidden Power (I think it's for pre Gen VI?)
+        //i.iii. Hidden Power (ONLY APPLIES TO THE HIDDEN POWER THAT DOESN'T SPECIFY ITS TYPE; BP is actually calculated earlier for ease of use, so this is just for the description)
+        case "Hidden Power":
+            basePower = move.bp;
+            if (gen < 6) {
+                description.moveBP = basePower;
+            }
+            description.moveType = move.type;
+            break;
         //i.iv. Magnitude
         //i.v. Present
         //i.vi. Triple Kick, Triple Axel 
@@ -1440,8 +1447,9 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             }
             else {
                 basePower = move.bp;
-                if (!move.isZ && basePower !== moves[move.name].bp && !description.moveBP)
+                if (!move.isZ && basePower !== moves[move.name].bp && !description.moveBP) {
                     description.moveBP = basePower;
+                }
             }
     }
 

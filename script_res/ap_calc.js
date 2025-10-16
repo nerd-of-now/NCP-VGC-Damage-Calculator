@@ -266,6 +266,9 @@ $(".sp .base, .sp .evs, .sp .ivs").bind("keyup change", function() {
 $(".evs").bind("keyup change", function() {
     calcEvTotal($(this).closest(".poke-info"));
 });
+$(".ivs").bind("keyup change", function () {
+    customHiddenPower(this);
+});
 $(".sl .base").keyup(function() {
     calcStat($(this).closest(".poke-info"), 'sl');
 });
@@ -765,6 +768,7 @@ $(".move-selector").change(function() {
     userMovesCheck(moveGroupObj);
     transformCheck(moveGroupObj);
     getOppMoves($(this).closest(".poke-info").attr("id"));  //for when the defender's moves change
+    customHiddenPower(moveGroupObj);
 });
 
 function showHits(hitBounds, moveGroupObj) {
@@ -966,6 +970,41 @@ $(".hidden-power").change(function () {
         calcStats(pInfo);
     }
 });
+
+function customHiddenPower(divValue) {
+    var pInfo = $(divValue).closest(".poke-info");
+    var pMoves = [pInfo.find(".move1 select.move-selector").val(),
+        pInfo.find(".move2 select.move-selector").val(),
+        pInfo.find(".move3 select.move-selector").val(),
+        pInfo.find(".move4 select.move-selector").val()];
+    var movesWithHP = [];
+    for (let i = 0; i < pMoves.length; i++) {
+        if (pMoves[i] == 'Hidden Power') {
+            movesWithHP.push(i);
+        }
+    }
+    if (!movesWithHP.length) {
+        return;
+    }
+    var ivs = {};
+    let tempStats = ['hp', AT, DF, SP, SA, SD];
+    for (let i in tempStats) {
+        ivs[tempStats[i]] = pInfo.find("." + tempStats[i] + " .ivs").val();
+    }
+    var typeOrder = ['Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark'];
+    var typeIndex = Math.floor(((ivs['hp'] & 1) + (ivs[AT] & 1) * 2 + (ivs[DF] & 1) * 4 + (ivs[SP] & 1) * 8 + (ivs[SA] & 1) * 16 + (ivs[SD] & 1) * 32) * 15 / 63);
+    var hpType = typeOrder[typeIndex];
+    var hpBP = 60;
+    if (gen < 6) {
+        hpBP = Math.floor((secondLeastSigBit(ivs['hp']) + (secondLeastSigBit(ivs[AT]) * 2) + (secondLeastSigBit(ivs[DF]) * 4) + (secondLeastSigBit(ivs[SP]) * 8) + (secondLeastSigBit(ivs[SA]) * 16) + (secondLeastSigBit(ivs[SD]) * 32)) * 40 / 63) + 30;
+    }
+    for (let i = 0; i < movesWithHP.length; i++) {
+        pInfo.find(".move" + (movesWithHP[i] + 1) + " .move-type").val(hpType);
+        if (gen < 6) {
+            pInfo.find(".move" + (movesWithHP[i] + 1) + " .move-bp").val(hpBP);
+        }
+    }
+}
 
 function transformCheck(divValue) {    //divValue should accept any div class, it's just meant to be a quick way to find which Pokemon it's checking
     var pInfo = $(divValue).closest(".poke-info");
@@ -1502,7 +1541,7 @@ function calculate() {
         if(p1.moves[i].isOHKO && !($("#p1").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p1").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>"; //dank memes
         }
-        $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
+        $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power ", "HP "));
         $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%");
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
@@ -1522,7 +1561,7 @@ function calculate() {
         if (p2.moves[i].isOHKO && !($("#p2").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p2").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>";
         }
-        $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
+        $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power ", "HP "));
         $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%");
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
