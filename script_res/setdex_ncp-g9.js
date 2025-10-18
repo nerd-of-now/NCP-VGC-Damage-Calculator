@@ -1,4 +1,3 @@
-
 var SETDEX_GEN9 = {
     "Meowscarada": {
         "Sash Overgrow": {
@@ -2513,28 +2512,28 @@ var SETDEX_GEN9 = {
     //        ]
     //    },
     //},
-    //"Lucario": {
-    //    "": {
-    //        "level": 50,
-    //        "evs": {
-    //            "hp": 0,
-    //            "at": 0,
-    //            "df": 0,
-    //            "sa": 0,
-    //            "sd": 0,
-    //            "sp": 0
-    //        },
-    //        "nature": "",
-    //        "ability": "",
-    //        "item": "",
-    //        "moves": [
-    //            "",
-    //            "",
-    //            "",
-    //            ""
-    //        ]
-    //    },
-    //},
+    "Lucario": {
+        "Tera Stellar Sash Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Jolly",
+            "tera_type": "Stellar",
+            "item": "Focus Sash",
+            "moves": [
+                "Close Combat",
+                "Meteor Mash",
+                "Extreme Speed",
+                "Detect"
+            ]
+        },
+    },
     "Armarouge": {
         "Life Orb Trick Room": {
             "level": 50,
@@ -8552,26 +8551,6 @@ var SETDEX_GEN9 = {
         },
     },
     "Basculegion": {
-        "Scarf Adaptability": {
-            "level": 50,
-            "evs": {
-                "hp": 0,
-                "at": 252,
-                "df": 0,
-                "sa": 0,
-                "sd": 4,
-                "sp": 252
-            },
-            "nature": "Adamant",
-            "ability": "Adaptability",
-            "item": "Choice Scarf",
-            "moves": [
-                "Wave Crash",
-                "Last Respects",
-                "Flip Turn",
-                "Aqua Jet"
-            ]
-        },
         "Banded Swift Swim": {
             "level": 50,
             "evs": {
@@ -8585,6 +8564,47 @@ var SETDEX_GEN9 = {
             "nature": "Adamant",
             "ability": "Swift Swim",
             "item": "Choice Band",
+            "moves": [
+                "Wave Crash",
+                "Last Respects",
+                "Flip Turn",
+                "Aqua Jet"
+            ]
+        },
+        "Tera Ghost Sash Adaptability": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Adaptability",
+            "tera_type": "Ghost",
+            "item": "Focus Sash",
+            "moves": [
+                "Liquidation",
+                "Last Respects",
+                "Protect",
+                "Aqua Jet"
+            ]
+        },
+        "Scarf Adaptability": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 252,
+                "df": 0,
+                "sa": 0,
+                "sd": 4,
+                "sp": 252
+            },
+            "nature": "Adamant",
+            "ability": "Adaptability",
+            "item": "Choice Scarf",
             "moves": [
                 "Wave Crash",
                 "Last Respects",
@@ -8620,6 +8640,26 @@ var SETDEX_GEN9 = {
         },
     },
     "Sneasler": {
+        "Swords Dance Grassy Seed Acrobatics": {
+            "level": 50,
+            "evs": {
+                "hp": 172,
+                "at": 92,
+                "df": 108,
+                "sa": 0,
+                "sd": 4,
+                "sp": 132
+            },
+            "nature": "Adamant",
+            "tera_type": "Flying",
+            "item": "Grassy Seed",
+            "moves": [
+                "Acrobatics",
+                "Close Combat",
+                "Swords Dance",
+                "Protect"
+            ]
+        },
         "Tera Dark Unburden Dark Move": {
             "level": 50,
             "evs": {
@@ -11697,23 +11737,45 @@ var SETDEX_GEN9 = {
         },
     },
     "Ursaluna-Bloodmoon": {
-        "Trick Room Offense": {
+        "Leftovers Yawn": {
             "level": 50,
             "evs": {
-                "hp": 244,
+                "hp": 164,
                 "at": 0,
-                "df": 0,
-                "sa": 252,
-                "sd": 12,
-                "sp": 0
+                "df": 4,
+                "sa": 36,
+                "sd": 164,
+                "sp": 140
             },
             "ivs": {
                 "at": 0,
-                "sp": 0,
             },
-            "nature": "Quiet",
-            "tera_type": "Normal",
-            "item": "Life Orb",
+            "nature": "Modest",
+            "tera_type": "Electric",
+            "item": "Leftovers",
+            "moves": [
+                "Earth Power",
+                "Blood Moon",
+                "Yawn",
+                "Protect"
+            ]
+        },
+        "Tera Water AV": {
+            "level": 50,
+            "evs": {
+                "hp": 148,
+                "at": 0,
+                "df": 12,
+                "sa": 116,
+                "sd": 180,
+                "sp": 52
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "tera_type": "Water",
+            "item": "Assault Vest",
             "moves": [
                 "Hyper Voice",
                 "Earth Power",
@@ -11783,6 +11845,30 @@ var SETDEX_GEN9 = {
             "nature": "Modest",
             "tera_type": "Normal",
             "item": "Assault Vest",
+            "moves": [
+                "Hyper Voice",
+                "Earth Power",
+                "Blood Moon",
+                "Vacuum Wave"
+            ]
+        },
+        "Trick Room Offense": {
+            "level": 50,
+            "evs": {
+                "hp": 244,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 12,
+                "sp": 0
+            },
+            "ivs": {
+                "at": 0,
+                "sp": 0,
+            },
+            "nature": "Quiet",
+            "tera_type": "Normal",
+            "item": "Life Orb",
             "moves": [
                 "Hyper Voice",
                 "Earth Power",
