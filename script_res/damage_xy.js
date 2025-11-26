@@ -47,7 +47,7 @@ function GET_DAMAGE_XY(attacker, defender, move, field) {
     var isMeFirst = false;
 
     if (move.name == 'Me First')
-        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName);
+        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName, defender);
 
     checkMoveTypeChange(move, field, attacker);
 

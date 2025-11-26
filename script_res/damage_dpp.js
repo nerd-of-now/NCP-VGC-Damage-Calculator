@@ -33,7 +33,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     var defIsGrounded = pIsGrounded(defender, field);
 
     if (move.name == 'Me First')
-        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName);
+        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName, defender);
 
     checkMoveTypeChange(move, field, attacker);
 

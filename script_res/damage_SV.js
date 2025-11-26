@@ -72,7 +72,7 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     var defIsGrounded = pIsGrounded(defender, field);
 
     if (move.name == 'Me First')
-        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName, attacker.isDynamax);
+        [move, moveDescName, isMeFirst] = checkMeFirst(move, moveDescName, defender, attacker.isDynamax);
 
     checkMoveTypeChange(move, field, attacker);
     checkConditionalPriority(move, field.terrain, attacker, attIsGrounded);
