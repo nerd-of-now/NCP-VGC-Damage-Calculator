@@ -188,6 +188,15 @@ function loadDex(dexMode) {
 	clearField();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
+	loadSetdexScript();
+	if (gen >= 5) {
+		if (isCustomMods) {
+			$(".custom-mods-group").show();
+		}
+		else {
+			$(".custom-mods-group").hide();
+		}
+	}
 	if (gen >= 8) {
 		if (localStorage.getItem("dex") == "vgcdex") {
 			for (i = 1; i <= 4; i++) {
