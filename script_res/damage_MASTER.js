@@ -828,7 +828,7 @@ function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
         "Super Fang", "Present", "Spit Up", "Psywave", "Mirror Coat", "Metal Burst"];
     var tempMove = move;
     var maxName = MAXMOVES_LOOKUP[tempMove.type];
-    if (G_MAXMOVES_TYPE[attacker.name] == tempMove.type) {
+    if (G_MAXMOVES_TYPE[attacker.name] == tempMove.type && attacker.gmax_factor) {
         maxName = G_MAXMOVES_LOOKUP[attacker.name];
     }
     move = moves[maxName];

@@ -11474,7 +11474,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
             "sp": 90
         },
         "w": 430.0,
-        "ab": "Primordial Sea"
+        "ab": "Primordial Sea",
+        "isAlternateForme": true
     },
     "Primal Groudon": {
         "t1": "Ground",
@@ -11488,7 +11489,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
             "sp": 90
         },
         "w": 999.7,
-        "ab": "Desolate Land"
+        "ab": "Desolate Land",
+        "isAlternateForme": true
     },
     "Mega Rayquaza": {
         "t1": "Dragon",
@@ -13550,24 +13552,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 800,
         "ab": "Iron Fist",
-        "formes": [
-            "Melmetal",
-            "Melmetal-Gmax",
-        ]
-    },
-    "Melmetal-Gmax": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 135,
-            "at": 143,
-            "df": 143,
-            "sa": 80,
-            "sd": 65,
-            "sp": 34
-        },
-        "w": 800,
-        "ab": "Iron Fist",
-        "isAlternateForme": true,
     },
     "Grookey": {
         "t1": "Grass",
@@ -13609,10 +13593,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 90,
         "ab": "Grassy Surge",
-        "formes": [
-            "Rillaboom",
-            "Rillaboom-Gmax",
-        ]
     },
     "Scorbunny": {
         "t1": "Fire",
@@ -13654,10 +13634,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 33,
         "ab": "Libero",
-        "formes": [
-            "Cinderace",
-            "Cinderace-Gmax",
-        ]
     },
     "Sobble": {
         "t1": "Water",
@@ -13699,10 +13675,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 45.2,
         "ab": "Sniper",
-        "formes": [
-            "Inteleon",
-            "Inteleon-Gmax",
-        ]
     },
     "Blipbug": {
         "t1": "Bug",
@@ -13746,25 +13718,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 40.8,
         "ab": "Frisk",
-        "formes": [
-            "Orbeetle",
-            "Orbeetle-Gmax",
-        ]
-    },
-    "Orbeetle-Gmax": {
-        "t1": "Bug",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 60,
-            "at": 45,
-            "df": 110,
-            "sa": 80,
-            "sd": 120,
-            "sp": 90
-        },
-        "w": 40.8,
-        "ab": "Frisk",
-        "isAlternateForme": true,
     },
     "Rookidee": {
         "t1": "Flying",
@@ -13806,26 +13759,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
             "sp": 67
         },
         "w": 75,
-            "ab": "Mirror Armor",
-            "formes": [
-                "Corviknight",
-                "Corviknight-Gmax"
-            ],
-        },
-    "Corviknight-Gmax": {
-            "t1": "Flying",
-            "t2": "Steel",
-            "bs": {
-                "hp": 98,
-                "at": 87,
-                "df": 105,
-                "sa": 53,
-                "sd": 85,
-                "sp": 67
-            },
-            "w": 75,
-            "ab": "Mirror Armor",
-            "isAlternateForme": true,
+        "ab": "Mirror Armor",
     },
     "Skwovet": {
         "t1": "Normal",
@@ -13962,22 +13896,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 8.5,
         "ab": "Swift Swim",
-        "formes": ["Drednaw", "Drednaw-Gmax"],
-    },
-    "Drednaw-Gmax": {
-        "t1": "Water",
-        "t2": "Rock",
-        "bs": {
-            "hp": 90,
-            "at": 115,
-            "df": 90,
-            "sa": 48,
-            "sd": 68,
-            "sp": 74
-        },
-        "w": 8.5,
-        "ab": "Swift Swim",
-        "isAlternateForme": true,
     },
     "Yamper": {
         "t1": "Electric",
@@ -14048,22 +13966,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 310.5,
         "ab": "Steam Engine",
-        "formes": ["Coalossal", "Coalossal-Gmax"],
-    },
-    "Coalossal-Gmax": {
-        "t1": "Rock",
-        "t2": "Fire",
-        "bs": {
-            "hp": 110,
-            "at": 80,
-            "df": 120,
-            "sa": 80,
-            "sd": 90,
-            "sp": 30
-        },
-        "w": 310.5,
-        "ab": "Steam Engine",
-        "isAlternateForme": true,
     },
     "Applin": {
         "t1": "Grass",
@@ -14093,25 +13995,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 1,
         "ab": "Hustle",
-        "formes": [
-            "Flapple",
-            "Flapple-Gmax",
-        ]
-    },
-    "Flapple-Gmax": {
-        "t1": "Grass",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 70,
-            "at": 110,
-            "df": 80,
-            "sa": 95,
-            "sd": 60,
-            "sp": 70
-        },
-        "w": 1,
-        "ab": "Hustle",
-        "isAlternateForme": true,
     },
     "Appletun": {
         "t1": "Grass",
@@ -14126,25 +14009,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 13,
         "ab": "Thick Fat",
-        "formes": [
-            "Appletun",
-            "Appletun-Gmax",
-        ]
-    },
-    "Appletun-Gmax": {
-        "t1": "Grass",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 110,
-            "at": 85,
-            "df": 80,
-            "sa": 100,
-            "sd": 80,
-            "sp": 30
-        },
-        "w": 13,
-        "ab": "Thick Fat",
-        "isAlternateForme": true,
     },
     "Silicobra": {
         "t1": "Ground",
@@ -14172,24 +14036,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 65.5,
         "ab": "Sand Spit",
-        "formes": [
-            "Sandaconda",
-            "Sandaconda-Gmax",
-        ]
-    },
-    "Sandaconda-Gmax": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 72,
-            "at": 107,
-            "df": 125,
-            "sa": 65,
-            "sd": 70,
-            "sp": 71
-        },
-        "w": 65.5,
-        "ab": "Sand Spit",
-        "isAlternateForme": true,
     },
     "Cramorant": {
         "t1": "Flying",
@@ -14260,25 +14106,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 40,
         "ab": "Punk Rock",
-        "formes": [
-            "Toxtricity",
-            "Toxtricity-Gmax",
-        ]
-    },
-    "Toxtricity-Gmax": {
-        "t1": "Electric",
-        "t2": "Poison",
-        "bs": {
-            "hp": 75,
-            "at": 98,
-            "df": 70,
-            "sa": 114,
-            "sd": 70,
-            "sp": 75
-        },
-        "w": 40,
-        "ab": "Punk Rock",
-        "isAlternateForme": true,
     },
     "Sizzlipede": {
         "t1": "Fire",
@@ -14308,25 +14135,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 120,
         "ab": "White Smoke",
-        "formes": [
-            "Centiskorch",
-            "Centiskorch-Gmax",
-        ]
-    },
-    "Centiskorch-Gmax": {
-        "t1": "Fire",
-        "t2": "Bug",
-        "bs": {
-            "hp": 100,
-            "at": 115,
-            "df": 65,
-            "sa": 90,
-            "sd": 90,
-            "sp": 65
-        },
-        "w": 120,
-        "ab": "White Smoke",
-        "isAlternateForme": true,
     },
     "Clobbopus": {
         "t1": "Fighting",
@@ -14423,25 +14231,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 5.1,
         "ab": "Magic Bounce",
-        "formes": [
-            "Hatterene",
-            "Hatterene-Gmax",
-        ]
-    },
-    "Hatterene-Gmax": {
-        "t1": "Psychic",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 57,
-            "at": 90,
-            "df": 95,
-            "sa": 136,
-            "sd": 103,
-            "sp": 29
-        },
-        "w": 5.1,
-        "ab": "Magic Bounce",
-        "isAlternateForme": true,
     },
     "Impidimp": {
         "t1": "Dark",
@@ -14486,25 +14275,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 61,
         "ab": "Prankster",
-        "formes": [
-            "Grimmsnarl",
-            "Grimmsnarl-Gmax",
-        ]
-    },
-    "Grimmsnarl-Gmax": {
-        "t1": "Dark",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 95,
-            "at": 120,
-            "df": 65,
-            "sa": 95,
-            "sd": 75,
-            "sp": 60
-        },
-        "w": 61,
-        "ab": "Prankster",
-        "isAlternateForme": true,
     },
     "Obstagoon": {
         "t1": "Dark",
@@ -14613,24 +14383,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 0.5,
         "ab": "Sweet Veil",
-        "formes": [
-            "Alcremie",
-            "Alcremie-Gmax",
-        ]
-    },
-    "Alcremie-Gmax": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 65,
-            "at": 60,
-            "df": 75,
-            "sa": 110,
-            "sd": 121,
-            "sp": 64
-        },
-        "w": 0.5,
-        "ab": "Sweet Veil",
-        "isAlternateForme": true,
     },
     "Falinks": {
         "t1": "Fighting",
@@ -14731,7 +14483,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         "ab": "Ice Face",
         "isAlternateForme": true,
     },
-    "Indeedee-M": {
+    "Indeedee": {
         "t1": "Psychic",
         "t2": "Normal",
         "bs": {
@@ -14818,24 +14570,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 650,
         "ab": "Sheer Force",
-        "formes": [
-            "Copperajah",
-            "Copperajah-Gmax",
-        ]
-    },
-    "Copperajah-Gmax": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 122,
-            "at": 130,
-            "df": 69,
-            "sa": 80,
-            "sd": 69,
-            "sp": 30
-        },
-        "w": 650,
-        "ab": "Sheer Force",
-        "isAlternateForme": true,
     },
     "Dracozolt": {
         "t1": "Electric",
@@ -14906,25 +14640,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 40,
         "ab": "Stalwart",
-        "formes": [
-            "Duraludon",
-            "Duraludon-Gmax",
-        ]
-    },
-    "Duraludon-Gmax": {
-        "t1": "Steel",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 70,
-            "at": 95,
-            "df": 115,
-            "sa": 120,
-            "sd": 50,
-            "sp": 85
-        },
-        "w": 40,
-        "ab": "Stalwart",
-        "isAlternateForme": true,
     },
     "Dreepy": {
         "t1": "Dragon",
@@ -14982,10 +14697,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 110,
         "ab": "Intrepid Sword",
-        "formes": [
-            "Zacian-Crowned",
-            "Zacian"
-        ]
     },
     "Zacian-Crowned": {
         "t1": "Fairy",
@@ -15000,7 +14711,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 355,
         "ab": "Intrepid Sword",
-        "isAlternateForme": true
     },
     "Zamazenta": {
         "t1": "Fighting",
@@ -15014,10 +14724,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 210,
         "ab": "Dauntless Shield",
-        "formes": [
-            "Zamazenta-Crowned",
-            "Zamazenta"
-        ]
     },
     "Zamazenta-Crowned": {
         "t1": "Fighting",
@@ -15032,7 +14738,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 785,
         "ab": "Dauntless Shield",
-        "isAlternateForme": true
     },
     "Eternatus": {
         "t1": "Poison",
@@ -15104,25 +14809,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 105,
         "ab": "Unseen Fist",
-        "formes": [
-            "Urshifu-Single Strike",
-            "Urshifu-Single Strike-Gmax",
-        ]
-    },
-    "Urshifu-Single Strike-Gmax": {
-        "t1": "Fighting",
-        "t2": "Dark",
-        "bs": {
-            "hp": 100,
-            "at": 130,
-            "df": 100,
-            "sa": 63,
-            "sd": 60,
-            "sp": 97
-        },
-        "w": 105,
-        "ab": "Unseen Fist",
-        "isAlternateForme": true,
     },
     "Urshifu-Rapid Strike": {
         "t1": "Fighting",
@@ -15137,25 +14823,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 105,
         "ab": "Unseen Fist",
-        "formes": [
-            "Urshifu-Rapid Strike",
-            "Urshifu-Rapid Strike-Gmax",
-        ]
-    },
-    "Urshifu-Rapid Strike-Gmax": {
-        "t1": "Fighting",
-        "t2": "Water",
-        "bs": {
-            "hp": 100,
-            "at": 130,
-            "df": 100,
-            "sa": 63,
-            "sd": 60,
-            "sp": 97
-        },
-        "w": 105,
-        "ab": "Unseen Fist",
-        "isAlternateForme": true,
     },
     "Zarude": {
         "t1": "Dark",
@@ -15170,48 +14837,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 70,
         "ab": "Leaf Guard",
-    },
-    "Rillaboom-Gmax": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 100,
-            "at": 125,
-            "df": 90,
-            "sa": 60,
-            "sd": 70,
-            "sp": 85
-        },
-        "w": 90,
-        "ab": "Grassy Surge",
-        "isAlternateForme": true
-    },
-    "Cinderace-Gmax": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 80,
-            "at": 116,
-            "df": 75,
-            "sa": 65,
-            "sd": 75,
-            "sp": 119
-        },
-        "w": 33,
-        "ab": "Libero",
-        "isAlternateForme": true
-    },
-    "Inteleon-Gmax": {
-        "t1": "Water",
-        "bs": {
-            "hp": 70,
-            "at": 85,
-            "df": 65,
-            "sa": 125,
-            "sd": 65,
-            "sp": 120
-        },
-        "w": 45.2,
-        "ab": "Sniper",
-        "isAlternateForme": true
     },
     //Crown Tundra DLC additions
     "Slowking-Galar": {
@@ -15364,192 +14989,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         "w": 53.6,
         "ab": "As One"
     },
-    //GMAX FORMS (save for Galar Pokemon)
-    "Venusaur": { "formes": ["Venusaur", "Mega Venusaur", "Venusaur-Gmax"] },
-    "Charizard": { "ab": "Solar Power", "formes": ["Charizard", "Mega Charizard X", "Mega Charizard Y", "Charizard-Gmax"] },
-    "Blastoise": { "formes": ["Blastoise", "Mega Blastoise", "Blastoise-Gmax"] },
-    "Butterfree": { "formes": ["Butterfree", "Butterfree-Gmax"] },
-    "Pikachu": { "formes": ["Pikachu", "Pikachu-Gmax"] },
-    "Meowth": { "formes": ["Meowth", "Meowth-Gmax"] },
-    "Gengar": { "formes": ["Gengar", "Mega Gengar", "Gengar-Gmax"] },
-    "Kingler": { "formes": ["Kingler", "Kingler-Gmax"] },
-    "Lapras": { "formes": ["Lapras", "Lapras-Gmax"] },
-    "Eevee": { "formes": ["Eevee", "Eevee-Gmax"] },
-    "Snorlax": { "formes": ["Snorlax", "Snorlax-Gmax"] },
-    "Garbodor": { "formes": ["Garbodor", "Garbodor-Gmax"] },
-    "Venusaur-Gmax": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 82,
-            "df": 83,
-            "sa": 100,
-            "sd": 100,
-            "sp": 80,
-        },
-        "w": 100.0,
-        "ab": "Chlorophyll",
-        "isAlternateForme": true,
-    },
-    "Charizard-Gmax": {
-        "t1": "Fire",
-        "t2": "Flying",
-        "bs": {
-            "hp": 78,
-            "at": 84,
-            "df": 78,
-            "sa": 109,
-            "sd": 85,
-            "sp": 100
-        },
-        "w": 90.5,
-        "ab": "Solar Power",
-        "isAlternateForme": true,
-    },
-    "Blastoise-Gmax": {
-        "t1": "Water",
-        "bs": {
-            "hp": 79,
-            "at": 83,
-            "df": 100,
-            "sa": 85,
-            "sd": 105,
-            "sp": 78,
-        },
-        "w": 85.5,
-        "ab": "Torrent",
-        "isAlternateForme": true,
-    },
-    "Butterfree-Gmax": {
-        "t1": "Bug",
-        "t2": "Flying",
-        "bs": {
-            "hp": 60,
-            "at": 45,
-            "df": 50,
-            "sa": 90,
-            "sd": 80,
-            "sp": 70,
-        },
-        "w": 32.0,
-        "ab": "Compound Eyes",
-        "isAlternateForme": true,
-    },
-    "Pikachu-Gmax": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 35,
-            "at": 55,
-            "df": 40,
-            "sa": 50,
-            "sd": 50,
-            "sp": 90
-        },
-        "w": 6.0,
-        "ab": "Lightning Rod",
-        "isAlternateForme": true,
-    },
-    "Meowth-Gmax": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 35,
-            "sa": 40,
-            "sd": 40,
-            "sp": 90,
-        },
-        "w": 4.2,
-        "ab": "Unnerve",
-        "isAlternateForme": true,
-    },
-    "Gengar-Gmax": {
-        "t1": "Ghost",
-        "t2": "Poison",
-        "bs": {
-            "hp": 60,
-            "at": 65,
-            "df": 60,
-            "sa": 130,
-            "sd": 75,
-            "sp": 110,
-        },
-        "w": 40.5,
-        "ab": "Cursed Body",
-        "isAlternateForme": true,
-    },
-    "Kingler-Gmax": {
-        "t1": "Water",
-        "bs": {
-            "hp": 55,
-            "at": 130,
-            "df": 115,
-            "sa": 50,
-            "sd": 50,
-            "sp": 75,
-        },
-        "w": 60.0,
-        "ab": "Hyper Cutter",
-        "isAlternateForme": true,
-    },
-    "Lapras-Gmax": {
-        "t1": "Water",
-        "t2": "Ice",
-        "bs": {
-            "hp": 130,
-            "at": 85,
-            "df": 80,
-            "sa": 85,
-            "sd": 95,
-            "sp": 60,
-        },
-        "w": 220.0,
-        "ab": "Shell Armor",
-        "isAlternateForme": true,
-    },
-    "Eevee-Gmax": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 55,
-            "at": 55,
-            "df": 50,
-            "sa": 45,
-            "sd": 65,
-            "sp": 55,
-        },
-        "w": 6.5,
-        "ab": "Adaptability",
-        "isAlternateForme": true,
-    },
-    "Snorlax-Gmax": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 160,
-            "at": 110,
-            "df": 65,
-            "sa": 65,
-            "sd": 110,
-            "sp": 30,
-        },
-        "w": 460.0,
-        "ab": "Gluttony",
-        "isAlternateForme": true,
-    },
-    "Garbodor-Gmax": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 95,
-            "df": 82,
-            "sa": 60,
-            "sd": 82,
-            "sp": 75
-        },
-        "w": 107.3,
-        "ab": "Aftermath",
-        "isAlternateForme": true,
-    },
 
     //BASE STAT CHANGES
     "Aegislash": { "bs": { "df": 140, "sd": 140 } },
@@ -15567,11 +15006,13 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     "Raikou": { "ab": "Inner Focus" },
     "Entei": { "ab": "Inner Focus" },
     "Suicune": { "ab": "Inner Focus" },
-
-    //Unrelated to any changes
-    "Primal Kyogre": { "isAlternateForme": true },
-    "Primal Groudon": { "isAlternateForme": true },
 });
+
+var GMAX_LIST = ['Charizard', 'Butterfree', 'Pikachu', 'Meowth', 'Machamp', 'Gengar', 'Kingler', 'Lapras', 'Eevee', 'Snorlax',
+    'Garbodor', 'Melmetal', 'Corviknight', 'Orbeetle', 'Drednaw', 'Coalossal', 'Flapple', 'Appletun', 'Sandaconda', 'Toxtricity',
+    'Centiskorch', 'Hatterene', 'Grimmsnarl', 'Alcremie', 'Copperajah', 'Duraludon',
+    'Venusaur', 'Blastoise', 'Rillaboom', 'Cinderace', 'Inteleon', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike',
+];
 
 var POKEDEX_SS = $.extend(true, {}, POKEDEX_SS_NATDEX, {
     "Venusaur": { "formes": null },
@@ -15625,18 +15066,20 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SS_NATDEX, {
     "Necrozma-Dawn-Wings": { "formes": null },
     "Necrozma-Dusk-Mane": { "formes": null },});
 
-POKEDEX_SS["Venusaur"].formes = ['Venusaur', 'Venusaur-Gmax'];
-POKEDEX_SS["Charizard"].formes = ['Charizard', 'Charizard-Gmax'];
-POKEDEX_SS["Blastoise"].formes = ['Blastoise', 'Blastoise-Gmax'];
-POKEDEX_SS["Gengar"].formes = ['Gengar', 'Gengar-Gmax'];
-
 ["Rattata-Alola", "Raticate-Alola", "Geodude-Alola", "Graveler-Alola", "Golem-Alola", "Grimer-Alola", "Muk-Alola", "Snivy", "Servine",
     "Serperior", "Tepig", "Pignite", "Emboar", "Oshawott", "Dewott", "Samurott", "Patrat", "Watchog", "Pansage", "Simisage", "Pansear",
     "Simisear", "Panpour", "Simipour", "Blitzle", "Zebstrika", "Sewaddle", "Swadloon", "Leavanny", "Ducklett", "Swanna", "Deerling",
     "Sawsbuck", "Alomomola", "Tynamo", "Eelektrik", "Eelektross", "Meloetta", "Chespin", "Quilladin", "Chesnaught", "Fennekin",
     "Braixen", "Delphox", "Froakie", "Frogadier", "Greninja", "Scatterbug", "Spewpa", "Vivillon", "Litleo", "Pyroar", "Flabebe", "Floette",
     "Florges", "Skiddo", "Gogoat", "Furfrou", "Hoopa", "Hoopa-Unbound", "Pikipek", "Trumbeak", "Toucannon", "Yungoos", "Gumshoos",
-    "Crabrawler", "Crabominable", "Oricorio-Pom-Pom", "Oricorio-Baile", "Oricorio-Sensu", "Oricorio-Pa'u", "Minior", "Komala", "Bruxish"
+    "Crabrawler", "Crabominable", "Oricorio-Pom-Pom", "Oricorio-Baile", "Oricorio-Sensu", "Oricorio-Pa'u", "Minior", "Komala", "Bruxish",
+    "Mega Venusaur", "Mega Charizard X", "Mega Charizard Y", "Mega Blastoise", "Mega Beedrill", "Mega Pidgeot", "Mega Alakazam", "Mega Slowbro",
+    "Mega Gengar", "Mega Pinsir", "Mega Kangaskhan", "Mega Gyarados", "Mega Aerodactyl", "Mega Mewtwo X", "Mega Mewtwo Y", "Mega Ampharos",
+    "Mega Steelix", "Mega Scizor", "Mega Heracross", "Mega Houndoom", "Mega Tyranitar", "Mega Sceptile", "Mega Blaziken", "Mega Swampert",
+    "Mega Gardevoir", "Mega Sableye", "Mega Mawile", "Mega Aggron", "Mega Medicham", "Mega Manectric", "Mega Sharpedo", "Mega Camerupt",
+    "Mega Altaria", "Mega Banette", "Mega Absol", "Mega Glalie", "Mega Salamence", "Mega Metagross", "Mega Latias", "Mega Latios",
+    "Primal Kyogre", "Primal Groudon", "Mega Rayquaza", "Mega Lopunny", "Mega Garchomp", "Mega Lucario", "Mega Abomasnow", "Mega Gallade",
+    "Mega Audio", "Mega Diancie", "Ultra Necrozma"
 ].forEach(e => delete POKEDEX_SS[e]);
 
 
@@ -16047,12 +15490,6 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
 });
 
 var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
-    //Minor Nat Dex Housekeeping
-    "Venusaur": { "formes": null },
-    "Charizard": { "formes": null },
-    "Blastoise": { "formes": null },
-    "Gengar": { "formes": null },
-
     //Past Pokemon Changes
     "Primeape": { "canEvolve": true, },
     "Dunsparce": { "canEvolve": true, },
@@ -17244,7 +16681,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 39.2,
         "ab": "Serene Grace",
     },
-    "Dudunsparce-Big": {
+    "Dudunsparce-Three-Segment": {
         "t1": "Normal",
         "bs": {
             "hp": 125,
@@ -17926,6 +17363,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         'formes': [
             'Terapagos',
             'Terapagos-Terastal',
+            'Terapagos-Stellar',
         ],
     },
     "Terapagos-Terastal": {
@@ -17972,17 +17410,6 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
     },
 });
 
-['Butterfree', 'Pikachu', 'Meowth', 'Machamp', 'Kingler', 'Lapras', 'Eevee', 'Snorlax', 'Garbodor', 'Melmetal',
-    'Corviknight', 'Orbeetle', 'Drednaw', 'Coalossal', 'Flapple', 'Appletun', 'Sandaconda', 'Toxtricity', 'Centiskorch', 'Hatterene',
-    'Grimmsnarl', 'Alcremie', 'Copperajah', 'Duraludon', 'Rillaboom', 'Cinderace', 'Inteleon', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike'
-].forEach(e => POKEDEX_SV_NATDEX[e].formes = null);
-
-
-POKEDEX_SV_NATDEX["Venusaur"].formes = ["Venusaur", "Mega Venusaur"];
-POKEDEX_SV_NATDEX["Charizard"].formes = ["Charizard", "Mega Charizard X", "Mega Charizard Y"];
-POKEDEX_SV_NATDEX["Blastoise"].formes = ["Blastoise", "Mega Blastoise"];
-POKEDEX_SV_NATDEX["Gengar"].formes = ["Gengar", "Mega Gengar"];
-
 var POKEDEX_SV = {};
 [
     //Initial Pokemon Programmed into Scarlet and Violet
@@ -18021,7 +17448,7 @@ var POKEDEX_SV = {};
     'Corviknight', 'Chewtle', 'Drednaw', 'Rolycoly', 'Carkol', 'Coalossal', 'Applin', 'Flapple', 'Appletun', 'Silicobra',
     'Sandaconda', 'Arrokuda', 'Barraskewda', 'Toxel', 'Toxtricity', 'Sinistea', 'Polteageist', 'Hatenna', 'Hattrem', 'Hatterene',
     'Impidimp', 'Morgrem', 'Grimmsnarl', 'Perrserker', 'Falinks', 'Pincurchin', 'Snom', 'Frosmoth', 'Stonjourner', 'Eiscue',
-    'Indeedee-M', 'Cufant', 'Copperajah', 'Dreepy', 'Drakloak', 'Dragapult', 'Zacian', 'Zamazenta', 'Eternatus', 'Kubfu',
+    'Indeedee', 'Cufant', 'Copperajah', 'Dreepy', 'Drakloak', 'Dragapult', 'Zacian', 'Zamazenta', 'Eternatus', 'Kubfu',
     'Urshifu-Single Strike', 'Zarude', 'Regieleki', 'Regidrago', 'Glastrier', 'Spectrier', 'Calyrex', 'Wyrdeer', 'Kleavor', 'Ursaluna',
     'Basculegion', 'Sneasler', 'Overqwil', 'Enamorus', 'Sprigatito', 'Floragato', 'Meowscarada', 'Fuecoco', 'Crocalor', 'Skeledirge',
     'Quaxly', 'Quaxwell', 'Quaquaval', 'Lechonk', 'Oinkologne', 'Dudunsparce', 'Tarountula', 'Spidops', 'Nymble', 'Lokix',
@@ -18041,7 +17468,7 @@ var POKEDEX_SV = {};
     'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Basculin-White-Striped', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
     'Meloetta-Pirouette', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Oricorio-Pom-Pom', "Oricorio-Pa'u", 'Oricorio-Sensu', 'Lycanroc-Midnight', 'Lycanroc-Dusk',
     'Eiscue-Noice', 'Indeedee-F', 'Zacian-Crowned', 'Zamazenta-Crowned', 'Urshifu-Rapid Strike', 'Calyrex-Ice Rider', 'Calyrex-Shadow Rider', 'Basculegion-F', 'Enamorus-Therian', 'Oinkologne-F',
-    'Dudunsparce-Big', 'Palafin-Hero', 'Maushold-Four', 'Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea',
+    'Dudunsparce-Three-Segment', 'Palafin-Hero', 'Maushold-Four', 'Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea',
     //Teal Mask DLC Pokemon
     'Ekans', 'Arbok', 'Sandshrew', 'Sandslash', 'Clefairy', 'Clefable', 'Vulpix', 'Ninetales', 'Poliwag', 'Poliwhirl', 'Poliwrath', 'Bellsprout', 'Weepinbell', 'Victreebel',
     'Geodude', 'Graveler', 'Golem', 'Koffing', 'Weezing', 'Snorlax', 'Sentret', 'Furret', 'Hoothoot', 'Noctowl', 'Spinarak', 'Ariados', 'Cleffa', 'Politoed', 'Aipom',

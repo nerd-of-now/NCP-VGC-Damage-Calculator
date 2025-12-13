@@ -7190,7 +7190,7 @@ var SETDEX_VGC2021 = {
             ]
         },
     },
-    "Indeedee-M": {
+    "Indeedee": {
         "Standard Set": {
             "level": 50,
             "evs": {
@@ -7996,7 +7996,7 @@ var SETDEX_VGC2021 = {
             ]
         },
     },
-    "Zacian": {
+    "Zacian-Crowned": {
         "Default Set": {
             "level": 50,
             "evs": {
@@ -8017,7 +8017,7 @@ var SETDEX_VGC2021 = {
             ]
         },
     },
-    "Zamazenta": {
+    "Zamazenta-Crowned": {
         "Default Set": {
             "level": 50,
             "evs": {

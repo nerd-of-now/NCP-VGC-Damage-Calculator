@@ -87,13 +87,60 @@ function reloadSidebar(pnum) {
 }
 
 function getSidebarImg(teamslotI, displayName) {
-    for (var i = 0; i < calcToShowdownFormes.length; i++) {
-        if (displayName == calcToShowdownFormes[i][1])
-            displayName = calcToShowdownFormes[i][0];
+    let fallbackName = displayName;
+    let pIndex = teamslotI[5] == 'L' ? 0 : teamslotI[5] == 'R' ? 1 : -1;
+    let slotIndex = parseInt(teamslotI[6]) - 1;
+    let setName = pIndex == 0 ? LEFT_SIDEBAR_NAMES[slotIndex] : pIndex == 1 ? RIGHT_SIDEBAR_NAMES[slotIndex] : -1;
+    let setDetails = setdex[displayName][setName];
+
+    if (displayName in calcToShowdownFormes) {
+        displayName = calcToShowdownFormes[displayName];
     }
-    if (['Urshifu', 'Urshifu-Rapid-Strike'].indexOf(displayName) == -1) {
+
+    if (setDetails.item in MEGA_STONE_USER_LOOKUP && MEGA_STONE_USER_LOOKUP[setDetails.item].includes(displayName)) {
+        if (setDetails.item.includes(" Orb")) {
+            displayName = displayName + '-Primal';
+        }
+        else if (displayName == "Floette-Eternal") {
+            displayName = "Floette-Mega";
+        }
+        else if (!(displayName.includes("Zygarde"))) {
+            displayName = displayName + '-Mega';
+            let checkMegaXYZ = setDetails.item.indexOf(" ");
+            if (checkMegaXYZ != -1) {
+                displayName = displayName + "-" + setDetails.item.substring(checkMegaXYZ + 1);
+            }
+        }
+    }
+    else if (displayName == "Rayquaza" && setDetails.moves.includes("Dragon Ascent") && "Mega Rayquaza" in pokedex) {
+        displayName = "Rayquaza-Mega";
+    }
+    else if (displayName == "Meloetta" && setDetails.moves.includes("Relic Song")) {
+        displayName = 'Meloetta-Pirouette';
+    }
+    else if (displayName == "Keldeo" && setDetails.moves.includes("Secret Sword")) {
+        displayName = 'Keldeo-Resolute';
+    }
+    else if (displayName.includes("Darmanitan") && setDetails.ability == "Zen Mode") {
+        displayName = displayName + "-Zen";
+    }
+    else if (displayName == "Greninja" && setDetails.ability == "Battle Bond" &&  "Ash-Greninja" in pokedex) {
+        displayName = 'Greninja-Ash';
+    }
+    else if (setDetails.gmax_factor) {
+        displayName = displayName + '-Gmax';
+    }
+
+    if (!(['Urshifu', 'Urshifu-Rapid-Strike'].includes(displayName))) {
         displayName = displayName.replace(' ', '-').toLowerCase();
-        $(teamslotI).prop('src', 'https://www.smogon.com/forums/media/minisprites/' + displayName + '.png');
+        $(teamslotI).prop('src', 'https://www.smogon.com/forums/media/minisprites/' + displayName + '.png')
+            .on('error', function () {
+                fallbackName = fallbackName.replace(' ', '-').toLowerCase();
+                $(teamslotI).prop('src', 'https://www.smogon.com/forums/media/minisprites/' + fallbackName + '.png')
+                    .on('error', function () {
+                        $(teamslotI).prop('src', 'image_res/empty-slot.png');
+                    });
+            });
     }
     else if (displayName == 'Urshifu') {
         $(teamslotI).prop('src', 'image_res/urshifu-single.png');

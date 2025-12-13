@@ -65,7 +65,7 @@
         </script>-->
             <p>VGC 2025 calculator maintainenance by Alex Collins (<a href="https://twitter.com/nerd_of_now">@nerd_of_now</a>). Basis of the calculator by Jake White (<a href="https://twitter.com/squirrelboydev" target="_blank" rel="noopener noreferrer">@squirrelboydev</a>).</p>
             <p>
-                Regulation H has returned for official VGC events (No Legendary/Paradox Pokémon allowed). We have also added Regulation J sets for Mythical Pokémon!
+                Regulation F will be the last format for official VGC events before Pokémon Champions! The format includes all Sub-Legendary Pokémon and non-Legendary Paradox Pokémon.
                 <!--With VGC 2018 getting its own ladder for the month, Gen 7 sets have been updated to be better tuned to the format!-->
                 <!--<br><b><u>This calculator contains spoilers for the Indigo Disk DLC.</u></b> This includes Pokémon, moves, abilities, items, and the new Tera Type. Use at your own discretion.-->
             </p>
@@ -122,6 +122,10 @@
                         <input type="checkbox" class="set-toggle" /> Custom sets only
                     </div>
                     <div class="info-group">
+                        <!--<div class="sidebarTeam" id="tL" style="float:right;">
+                            <input class="namet" value="Untitled" style="width:100px;"/>
+                            <button class="renamet" id="renameL" type="button" title="Rename the current team.">Rename</button>
+                        </div>-->
                         <div>
                             <label>Type</label>
                             <select class="type1 terrain-trigger calc-trigger"></select>
@@ -149,10 +153,6 @@
                         </div>
                     </div>
                     <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="float:right;">
-                        <!--<div class="sidebarTeam" id="tL">
-            <input class="namet" value="Untitled" />
-            <button class="renamet" id="renameL" type="button" title="Rename the current team.">Rename</button>
-        </div>-->
                         <div class="sidebarSlot hide" id="l1">
                             <button class="pkmnsc" id="pkmnL1" type="button" onclick="loadSidebarSlot(1,1)"><img id="pkmnL1I" src="image_res/empty-slot.png"></button>
                             <button class="editsc" id="editL1" type="button" onclick="editSidebarSlot(1,1)" title="Overwrite this slot with what's currently in the panel."><img width="10" height="10" src="image_res/save.png" /></button>
@@ -232,6 +232,7 @@
                         <label>Current HP</label>
                         <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
                         <input class="max move-max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8" for="maxL" title="Dynamax this Pokémon?">Dynamax</label>
+                        <img class="gmax-icon gen-specific g8" width="30" height="21" src="image_res/gigantamax-icon.png"><input class="gmax move-max calc-trigger gen-specific g8" type="checkbox" id="gmaxL" title="Give this Pokémon the Gigantamax factor?" />
                         <input class="tera move-tera calc-trigger btn-input" type="checkbox" id="teraL" /><label class="btn btn-wide gen-specific g9" for="teraL" title="Terastalize this Pokémon?">Terastal</label>
                         <br />
                         <input class="hp-bar" type="range" min="0" max="714" step="1" value="714" />
@@ -694,6 +695,7 @@
                         <label>Current HP</label>
                         <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
                         <input class="max move-max calc-trigger btn-input" type="checkbox" id="maxR" /><label class="btn btn-wide gen-specific g8" for="maxR" title="Dynamax this Pokémon?">Dynamax</label>
+                        <img class="gmax-icon gen-specific g8" width="30" height="21" src="image_res/gigantamax-icon.png"><input class="gmax move-max calc-trigger gen-specific g8" type="checkbox" id="gmaxL" title="Give this Pokémon the Gigantamax factor?" />
                         <input class="tera move-tera calc-trigger btn-input" type="checkbox" id="teraR" /><label class="btn btn-wide gen-specific g9" for="teraR" title="Terastalize this Pokémon?">Terastal</label>
                         <br />
                         <input class="hp-bar" type="range" min="0" max="714" step="1" value="714" />

@@ -1,79 +1,63 @@
-var showdownToCalcFormes = [
-    ["Pumpkaboo", "Pumpkaboo-Average"],
-    ["Gourgeist", "Gourgeist-Average"],
-    ["Groudon-Primal", "Groudon"],
-    ["Kyogre-Primal", "Kyogre"],
-    ["Zygarde-10", "Zygarde-10%"],
-    ["Zygarde-Complete", "Zygarde"],
-    ["Zacian-Crowned", "Zacian"],
-    ["Zamazenta-Crowned", "Zamazenta"],
-    ["Urshifu", "Urshifu-Single Strike"],
-    ["Urshifu-Rapid-Strike", "Urshifu-Rapid Strike"],
-    ["Calyrex-Ice", "Calyrex-Ice Rider"],
-    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],
-    ["Pikachu-Rock-Star", "Pikachu"],
-    ["Pikachu-Belle", "Pikachu"],
-    ["Pikachu-Pop-Star", "Pikachu"],
-    ["Pikachu-PhD", "Pikachu"],
-    ["Pikachu-Libre", "Pikachu"],
-    ["Shellos-East", "Shellos"],
-    ["Gastrodon-East", "Gastrodon"],
-    ["Basculin-Blue-Striped", "Basculin"],
-    ["Deerling-Summer", "Deerling"],
-    ["Deerling-Autumn", "Deerling"],
-    ["Deerling-Winter", "Deerling"],
-    ["Sawsbuck-Summer", "Sawsbuck"],
-    ["Sawsbuck-Autumn", "Sawsbuck"],
-    ["Sawsbuck-Winter", "Sawsbuck"],
-    ["Keldeo-Resolute", "Keldeo"],
-    ["Genesect-Burn", "Genesect"],
-    ["Genesect-Chill", "Genesect"],
-    ["Genesect-Douse", "Genesect"],
-    ["Genesect-Shock", "Genesect"],
-    ["Oricorio", "Oricorio-Baile"],
-    ["Magearna-Original", "Magearna"],
-    ["Toxtricity-Low-Key", "Toxtricity"],
-    ["Toxtricity-Low-Key-Gmax", "Toxtricity-Gmax"],
-    ["Sinistea-Antique", "Sinistea"],
-    ["Polteageist-Antique", "Polteageist"],
-    ["Indeedee", "Indeedee-M"],
-    ["Zarude-Dada", "Zarude"],
-    ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
-    ["Tatsugiri-Droopy", "Tatsugiri"],
-    ["Tatsugiri-Stretchy", "Tatsugiri"],
-    ["Poltchageist-Artisan", "Poltchageist"],
-    ['Sinistcha-Masterpiece', 'Sinistcha'],
-    ['Terapagos-Terastal', 'Terapagos'],
-    ['Terapagos-Stellar', 'Terapagos'],
-];
+var showdownToCalcFormes = {
+    "Pumpkaboo": "Pumpkaboo-Average",
+    "Gourgeist": "Gourgeist-Average",
+    "Groudon-Primal": "Groudon",
+    "Kyogre-Primal": "Kyogre",
+    "Zygarde-10": "Zygarde-10%",
+    "Zygarde-Complete": "Zygarde",
+    "Lycanroc": "Lycanroc-Midday",
+    "Urshifu": "Urshifu-Single Strike",
+    "Urshifu-Rapid-Strike": "Urshifu-Rapid Strike",
+    "Calyrex-Ice": "Calyrex-Ice Rider",
+    "Calyrex-Shadow": "Calyrex-Shadow Rider",
+    "Pikachu-Rock-Star": "Pikachu",
+    "Pikachu-Belle": "Pikachu",
+    "Pikachu-Pop-Star": "Pikachu",
+    "Pikachu-PhD": "Pikachu",
+    "Pikachu-Libre": "Pikachu",
+    "Shellos-East": "Shellos",
+    "Gastrodon-East": "Gastrodon",
+    "Basculin-Blue-Striped": "Basculin",
+    "Deerling-Summer": "Deerling",
+    "Deerling-Autumn": "Deerling",
+    "Deerling-Winter": "Deerling",
+    "Sawsbuck-Summer": "Sawsbuck",
+    "Sawsbuck-Autumn": "Sawsbuck",
+    "Sawsbuck-Winter": "Sawsbuck",
+    "Keldeo-Resolute": "Keldeo",
+    "Genesect-Burn": "Genesect",
+    "Genesect-Chill": "Genesect",
+    "Genesect-Douse": "Genesect",
+    "Genesect-Shock": "Genesect",
+    "Oricorio": "Oricorio-Baile",
+    "Magearna-Original": "Magearna",
+    "Toxtricity-Low-Key": "Toxtricity",
+    "Sinistea-Antique": "Sinistea",
+    "Polteageist-Antique": "Polteageist",
+    "Zarude-Dada": "Zarude",
+    "Tatsugiri-Droopy": "Tatsugiri",
+    "Tatsugiri-Stretchy": "Tatsugiri",
+    "Poltchageist-Artisan": "Poltchageist",
+    'Sinistcha-Masterpiece': 'Sinistcha',
+    'Terapagos-Terastal': 'Terapagos',
+    'Terapagos-Stellar': 'Terapagos',
+};
 
-var calcToShowdownFormes = [
-    ["Pumpkaboo", "Pumpkaboo-Average"],
-    ["Gourgeist", "Gourgeist-Average"],
-    ["Zygarde-10", "Zygarde-10%"],
-    ["Urshifu", "Urshifu-Single Strike"],
-    ["Urshifu-Rapid-Strike", "Urshifu-Rapid Strike"],
-    ["Calyrex-Ice", "Calyrex-Ice Rider"],
-    ["Calyrex-Shadow", "Calyrex-Shadow Rider"],
-    ["Shellos-East", "Shellos"],
-    ["Gastrodon-East", "Gastrodon"],
-    ["Dudunsparce-Three-Segment", "Dudunsparce-Big"],
-    ["Indeedee", "Indeedee-M"],
-    ["Oricorio", "Oricorio-Baile"],
-];
-
-//var saveToCalcFormes = [      //SHOULD BE DEPRECATED
-//    ["Darmanitan-Zen", "Darmanitan"],
-//    ["Darmanitan-Galar-Zen", "Darmanitan-Galar"],
-//    ["Aegislash-Shield", "Aegislash"],
-//    ["Aegislash-Blade", "Aegislash"],
-//    ["Zygarde-Complete", "Zygarde"],
-//    ["Zacian-Crowned", "Zacian"],
-//    ["Zamazenta-Crowned", "Zamazenta"],
-//    ["Palafin-Hero", "Palafin"],
-//    ['Terapagos-Terastal', 'Terapagos'],
-//    ['Terapagos-Stellar', 'Terapagos'],
-//];
+var calcToShowdownFormes = {
+    //"Shellos": "Shellos-East",
+    //"Gastrodon": "Gastrodon-East",
+    "Pumpkaboo-Average": "Pumpkaboo",
+    "Gourgeist-Average": "Gourgeist",
+    "Zygarde-10%": "Zygarde-10",
+    "Oricorio-Baile": "Oricorio",
+    "Lycanroc-Midday": "Lycanroc",
+    "Urshifu-Single Strike": "Urshifu",
+    "Urshifu-Rapid Strike": "Urshifu-Rapid-Strike",
+    "Calyrex-Ice Rider": "Calyrex-Ice",
+    "Calyrex-Shadow Rider": "Calyrex-Shadow",
+    "Palafin": "Palafin-Hero",
+    "Terapagos":"Terapagos-Terastal",
+};
 
 //For importing Hidden Power sets since for some reason Showdown neither explicitly puts IVs in the import that matches their default NOR uses an algorithm for said defaults
 var defaultHiddenPowerSD = {
@@ -197,6 +181,7 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
             var IVs = [31, 31, 31, 31, 31, 31];
             var nature = "Serious";
             var moves = [];
+            var gmax_factor = false;
 
             /*	Pokemon Showdown Export Format
         0	Nickname (Species) @ Item
@@ -232,15 +217,22 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
             checkGmax = species.indexOf("-Gmax", 0);
             checkMega = species.indexOf("-Mega", 0);
             checkPrimal = species.indexOf("-Primal", 0);
-            if (checkGmax != -1)
+            if (checkGmax != -1) {
                 species = species.substring(0, checkGmax);
-            if (checkMega != -1)
-                species = species.substring(0, checkMega);
+                gmax_factor = true;
+            }
+            if (checkMega != -1) {
+                if (species == "Floette-Mega") {
+                    species = "Floette-Eternal";
+                }
+                else {
+                    species = species.substring(0, checkMega);
+                }
+            }
             if (checkPrimal != -1)
                 species = species.substring(0, checkPrimal);
-            for (var i = 0; i < showdownToCalcFormes.length; ++i) {
-                if (species == showdownToCalcFormes[i][0])
-                    species = showdownToCalcFormes[i][1]
+            if (species in showdownToCalcFormes) {
+                species = showdownToCalcFormes[species];
             }
 
             var tera_type = setGen == 9 ? POKEDEX_SV_NATDEX[species].t1 : '';
@@ -257,6 +249,9 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
                     }
                     if (lines[i].indexOf("Tera Type") != -1) {
                         tera_type = lines[i].split(' ')[2].trim(); //
+                    }
+                    if (lines[i].includes("Gigantamax: Yes")) {
+                        gmax_factor = true;
                     }
                     if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
                     {
@@ -377,6 +372,9 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
             }
             if (setGen == 9)
                 customFormat["tera_type"] = tera_type;
+            else if (setGen == 8 && GMAX_LIST.includes(species)) {
+                customFormat["gmax_factor"] = gmax_factor;
+            }
             saveSets(setGen, customFormat, species, spreadName);
             if (sidebarUsed && a < 6) {
                 if (!sidebarCleared && CURRENT_SIDEBARS[sidebarUsed - 1].length) {
@@ -415,28 +413,29 @@ function saveCustomSidebar(pnum) {
 //Saves a custom set from within the calc
 var savecalc = function (set, spreadName, p, species) {
     var moves = [];
-    //species = set.name;   //SHOULD BE DEPRECATED
+    var needsBaseAb = false;
 
-    checkGmax = species.indexOf("-Gmax", 0);
     checkMega = species.indexOf("Mega ", 0);
     checkPrimal = species.indexOf("Primal ", 0);
 
-    if (checkGmax == -1 && checkMega == -1 && checkPrimal == -1) {
-        //for (var i = 0; i < saveToCalcFormes.length; ++i) {   //SHOULD BE DEPRECATED
-        //    if (species == saveToCalcFormes[i][0])
-        //        species = saveToCalcFormes[i][1];
-        //}
+    if (checkMega != -1) {
+        if (species == "Mega Floette") {
+            species = "Floette-Eternal";
+        }
+        else {
+            species = species.substring(5);
+            let checkMegaXYZ = species.indexOf(" ");
+            if (checkMegaXYZ != -1)
+                species = species.substring(0, checkMegaXYZ);
+        }
     }
-    else if (checkGmax != -1)
-        species = species.substring(0, checkGmax);
-    else if (checkMega != -1) {
-        species = species.substring(5);
-        checkMegaXY = species.indexOf(" ");
-        if (checkMegaXY != -1)
-            species = species.substring(0, checkMegaXY);
-    }
-    else
+    else if (checkPrimal != -1) {
         species = species.substring(6);
+    }
+
+    if ($(p).find('.forme').is(':visible') && saveBaseAb[p.substring(1)] != '') {
+        needsBaseAb = true;
+    }
 
     moves.push(set.moves[0].name);
     moves.push(set.moves[1].name);
@@ -464,12 +463,15 @@ var savecalc = function (set, spreadName, p, species) {
             "sp": set.ivs[STATS[4]],
         },
         "nature": set.nature,
-        "ability": set.ability,
+        "ability": needsBaseAb ? saveBaseAb[p.substring(1)] : set.ability,
         "item": set.item,
         "moves": moves,
     };
     if (gen == 9)
         customFormat["tera_type"] = set.tera_type;
+    else if (gen == 8 && GMAX_LIST.includes(species)) {
+        customFormat["gmax_factor"] = set.gmax_factor;
+    }
 
     saveSets(gen, customFormat, species, spreadName);
     loadSetdexScript();
@@ -507,7 +509,7 @@ var exportset = function (set) {
      *Rillaboom-Gmax @ Assault Vest
      *Ability: Grassy Surge
      *Level: 50
-     *Tera Type: Grass
+     *Tera Type: Fire
      *EVs: 172 HP / 252 Atk / 4 Def / 0 SpA / 4 SpD / 76 Spe
      *Adamant Nature
      *IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -517,12 +519,13 @@ var exportset = function (set) {
      * - Knock Off
      */
 
-    exSpecies = set.name;
+    //exMoves is up here because it makes things easier when checking for Mega Rayquaza
+    exMoves = ["- " + (set.moves[0].name ? set.moves[0].name : set.moves[0]),
+    "- " + (set.moves[1].name ? set.moves[1].name : set.moves[1]),
+    "- " + (set.moves[2].name ? set.moves[2].name : set.moves[2]),
+    "- " + (set.moves[3].name ? set.moves[3].name : set.moves[3])];
 
-    for (var i = 0; i < calcToShowdownFormes.length; ++i) {
-        if (exSpecies == calcToShowdownFormes[i][1])
-            exSpecies = calcToShowdownFormes[i][0];
-    }
+    exSpecies = getExportSpecies(set, exMoves);
 
     exItem = set.item != "" ? " @ " + set.item : "";
     if (set.ability === "As One") {
@@ -638,10 +641,6 @@ var exportset = function (set) {
     if (hasIVs) {
         exIVs = "IVs: " + exIVs + "\n";
     }
-    exMoves = ["- " + (set.moves[0].name ? set.moves[0].name : set.moves[0]),
-        "- " + (set.moves[1].name ? set.moves[1].name : set.moves[1]),
-        "- " + (set.moves[2].name ? set.moves[2].name : set.moves[2]),
-        "- " + (set.moves[3].name ? set.moves[3].name : set.moves[3])];
     exMoveset = "";
     for (i = 0; i < exMoves.length; i++) {
         if (exMoves[i] !== "- (No Move)") {
@@ -656,7 +655,10 @@ var exportset = function (set) {
 }
 
 function runExportSet(pnum) {
-    var exportText = exportset(new Pokemon($('#p' + pnum)));
+    var set = new Pokemon($('#p' + pnum));
+    var tempName = $('#p' + pnum + ' input.set-selector').val();
+    set.name = tempName.substring(0, tempName.indexOf(" ("));
+    var exportText = exportset(set);
     Clipboard_CopyTo(exportText);
     //tempCSV();
 }
@@ -681,10 +683,30 @@ function runDeleteSet(pnum) {
 
 function storedSetFixes() {
     var changesMade = false;
+    var nameChange = {
+        'Indeedee-M': 'Indeedee',
+        'Dudunsparce-Big': 'Dudunsparce-Three-Segment',
+    };
+    var nameChangeItemRequired = {
+        'Zacian': {
+            'nameChange': 'Zacian-Crowned',
+            'item': 'Rusted Sword',
+        },
+        'Zamazenta': {
+            'nameChange': 'Zamazenta-Crowned',
+            'item': 'Rusted Shield',
+        },
+    };
+    var needsNameChangeItem = false;
+    var mustLoadSidebar = false;
     for (var i = 9; i >= 1; i--) {
         if (localStorage["custom_gen_" + i] != null) {
             tempCustom = JSON.parse(localStorage["custom_gen_" + i]);
             for (mon in tempCustom) {
+                needsNameChangeItem = false;
+                if (mon in nameChangeItemRequired) {
+                    needsNameChangeItem = true;
+                }
                 for (set in tempCustom[mon]) {
                     if (tempCustom[mon][set]["level"] && typeof tempCustom[mon][set]["level"] !== "number") {
                         tempCustom[mon][set]["level"] = parseInt(tempCustom[mon][set]["level"]);
@@ -694,12 +716,109 @@ function storedSetFixes() {
                         tempCustom[mon][set]["ability"] = "As One";
                         changesMade = true;
                     }
+                    if (needsNameChangeItem && nameChangeItemRequired[mon]['item'] == tempCustom[mon][set]['item']) {
+                        if (!(nameChangeItemRequired[mon]['nameChange'] in tempCustom)) {
+                            tempCustom[nameChangeItemRequired[mon]['nameChange']] = {};
+                        }
+                        tempCustom[nameChangeItemRequired[mon]['nameChange']][set] = tempCustom[mon][set];
+
+                        if (set.includes(" Sidebar Slot ")) {
+                            let sidebarSide = set.includes("Left Sidebar Slot ") ? 0 : set.includes("Right Sidebar Slot ") ? 1 : -1;
+                            let sidebarNum = parseInt(set[set.length - 1]) - 1;
+                            let tempCurrentSidebars = JSON.parse(localStorage['g' + i + '_sidebars']);
+
+                            tempCurrentSidebars[sidebarSide][sidebarNum] = nameChangeItemRequired[mon]['nameChange'];
+                            localStorage['g' + i + '_sidebars'] = JSON.stringify(tempCurrentSidebars);
+                            if (i == gen) mustLoadSidebar = true;
+                        }
+
+                        delete tempCustom[mon][set];
+
+                        changesMade = true;
+                    }
+                }
+                if ($.isEmptyObject(tempCustom[mon])) {
+                    delete tempCustom[mon];
+                }
+
+                if (mon in nameChange) {
+                    if (!(nameChange[mon] in tempCustom)) {
+                        tempCustom[nameChange[mon]] = {};
+                    }
+                    for (set in tempCustom[mon]) {
+                        tempCustom[nameChange[mon]][set] = tempCustom[mon][set];
+
+                        if (set.includes(" Sidebar Slot ")) {
+                            let sidebarSide = set.includes("Left Sidebar Slot ") ? 0 : set.includes("Right Sidebar Slot ") ? 1 : -1;
+                            let sidebarNum = parseInt(set[set.length - 1]) - 1;
+                            let tempCurrentSidebars = JSON.parse(localStorage['g' + i + '_sidebars']);
+
+                            tempCurrentSidebars[sidebarSide][sidebarNum] = nameChange[mon];
+                            localStorage['g' + i + '_sidebars'] = JSON.stringify(tempCurrentSidebars);
+                            if (i == gen) mustLoadSidebar = true;
+                        }
+                    }
+                    delete tempCustom[mon];
+
+                    changesMade = true;
                 }
             }
             if (changesMade) {
                 localStorage["custom_gen_" + i] = JSON.stringify(tempCustom);
+                ALL_SETDEX_CUSTOM[i] = tempCustom;
                 changesMade = false;
             }
         }
     }
+    if (mustLoadSidebar) {
+        loadSidebar();
+    }
+    loadSetdexScript();
+}
+
+function getExportSpecies(set, setMoves) {
+    /*
+    * if species and mega stone match, change to mega evolution corresponding to mega stone
+    * if Rayquaza and has Dragon Ascent, change to Rayquaza-Mega
+    * if Battle Bond Greninja and gen < 9, change to Greninja-Ash
+    * if gmax_factor, add -Gmax suffix
+    * if Palafin, change to Palafin-Hero
+    * if Terapagos, change to Terapagos-Terastal
+    */
+    var exportSpecies = set.name;
+
+    if (exportSpecies in calcToShowdownFormes) {
+        exportSpecies = calcToShowdownFormes[exportSpecies];
+    }
+
+    if (set.item in MEGA_STONE_USER_LOOKUP && MEGA_STONE_USER_LOOKUP[set.item].includes(set.name)) {
+        if (set.item.includes(" Orb")) {
+            exportSpecies = set.name + '-Primal';
+        }
+        else if (set.name == "Floette-Eternal") {
+            exportSpecies = "Floette-Mega";
+        }
+        else if (!(set.name.includes("Zygarde"))) {
+            exportSpecies = set.name + "-Mega";
+            let checkMegaXYZ = set.item.indexOf(" ");
+            if (checkMegaXYZ != -1) {
+                exportSpecies = exportSpecies + "-" + set.item.substring(checkMegaXYZ + 1);
+            }
+        }
+    }
+    else if (set.name == "Rayquaza" && setMoves.includes("- Dragon Ascent") && "Mega Rayquaza" in pokedex) {
+        exportSpecies = "Rayquaza-Mega";
+    }
+    else if (set.name == "Keldeo" && setMoves.includes("- Secret Sword")) {
+        exportSpecies = "Keldeo-Resolute";
+    }
+    else if (set.name == "Greninja" && set.ability == "Battle Bond" && "Ash-Greninja" in pokedex) {
+        exportSpecies = "Greninja-Ash";
+    }
+    else if (gen == 8 && GMAX_LIST.includes(set.name)) {
+        if (set.gmax_factor) {
+            exportSpecies = set.name + "-Gmax";
+        }
+    }
+    return exportSpecies;
 }

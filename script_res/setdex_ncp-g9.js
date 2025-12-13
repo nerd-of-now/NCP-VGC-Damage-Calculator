@@ -3032,7 +3032,7 @@ var SETDEX_GEN9 = {
             ]
         },
     },
-    "Dudunsparce-Big": {
+    "Dudunsparce-Three-Segment": {
         "Rattled WP Tera Psychic": {
             "level": 50,
             "evs": {
@@ -4093,7 +4093,7 @@ var SETDEX_GEN9 = {
             ]
         },
     },
-    "Indeedee-M": {
+    "Indeedee": {
         "Tera Psychic Scarf": {
             "level": 50,
             "evs": {
@@ -14981,7 +14981,7 @@ var SETDEX_GEN9 = {
             ]
         },
     },
-    "Zacian": {
+    "Zacian-Crowned": {
         "Tera Fairy Fast Offense": {
             "level": 50,
             "evs": {
@@ -15022,7 +15022,7 @@ var SETDEX_GEN9 = {
             ]
         },
     },
-    "Zamazenta": {
+    "Zamazenta-Crowned": {
         "Michael Kelsch's 24 Worlds T4 Max Speed": {
             "level": 50,
             "evs": {
