@@ -840,37 +840,28 @@ function canMega(item, species) {
 }
 
 var SIGNATURE_Z_MOVE_LOOKUP = {
-    'Raichu-Alola': { 'Aloraichium Z': { 'Thunderbolt': 'Stoked Sparksurfer' } },
-    'Decidueye': { 'Decidium Z': { 'Spirit Shackle': 'Sinister Arrow Raid' } },
-    'Eevee': { 'Eevium Z': { 'Last Resort': 'Extreme Evoboost' } },
-    'Incineroar': { 'Incinium Z': { 'Darkest Lariat': 'Malicious Moonsault' } },
-    'Marshadow': { 'Marshadium Z': { 'Spectral Thief': 'Soul-Stealing 7-Star Strike' } },
-    'Mew': { 'Mewnium Z': { 'Psychic': 'Genesis Supernova' } },
-    'Pikachu': {
-        'Pikanium Z': { 'Volt Tackle': 'Catastropika' },
-        'Pikashunium Z': { 'Thunderbolt': '10,000,000 Volt Thunderbolt' }
-    },
-    'Primarina': { 'Primarium Z': { 'Sparkling Aria': 'Oceanic Operetta' } },
-    'Snorlax': { 'Snorlium Z': { 'Giga Impact': 'Pulverizing Pancake' } },
-    'Tapu Koko': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
-    'Tapu Lele': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
-    'Tapu Bulu': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
-    'Tapu Fini': { 'Tapunium Z': { 'Nature\'s Madness': 'Guardian of Alola' } },
-    'Kommo-o': { 'Kommonium Z': { 'Clanging Scales': 'Clangorous Soulblaze' } },
-    'Lunala': { 'Lunalium Z': { 'Moongeist Beam': 'Menacing Moonraze Maelstrom' } },
-    'Necrozma-Dawn-Wings': { 'Lunalium Z': { 'Moongeist Beam': 'Menacing Moonraze Maelstrom' } },
-    'Lycanroc-Midday': { 'Lycanium Z': { 'Stone Edge': 'Splintered Stormshards' } },
-    'Lycanroc-Midnight': { 'Lycanium Z': { 'Stone Edge': 'Splintered Stormshards' } },
-    'Lycanroc-Dusk': { 'Lycanium Z': { 'Stone Edge': 'Splintered Stormshards' } },
-    'Mimikyu': { 'Mimikium Z': { 'Play Rough': 'Let\'s Snuggle Forever' } },
-    'Solgaleo': { 'Solganium Z': { 'Sunsteel Strike': 'Searing Sunraze Smash' } },
-    'Necrozma-Dusk-Mane': { 'Solganium Z': { 'Sunsteel Strike': 'Searing Sunraze Smash' } },
-    'Ultra Necrozma': { 'Ultranecrozium Z': { 'Photon Geyser': 'Light That Burns the Sky' } }
+    'Pikanium Z': { 'user': 'Pikachu', 'move': 'Volt Tackle', 'zMove': 'Catastropika' },
+    'Decidium Z': { 'user': 'Decidueye', 'move': 'Spirit Shackle', 'zMove': 'Sinister Arrow Raid' },
+    'Incinium Z': { 'user': 'Incineroar', 'move': 'Darkest Lariat', 'zMove': 'Malicious Moonsault' },
+    'Primarium Z': { 'user': 'Primarina', 'move': 'Sparkling Aria', 'zMove': 'Oceanic Operetta' },
+    'Tapunium Z': { 'user': ['Tapu Koko', 'Tapu Lele', 'Tapu Bulu', 'Tapu Fini'], 'move': "Nature's Madness", 'zMove': 'Guardian of Alola' },
+    'Marshadium Z': { 'user': 'Marshadow', 'move': 'Spectral Thief', 'zMove': 'Soul-Stealing 7-Star Strike' },
+    'Aloraichium Z': { 'user': 'Raichu-Alola', 'move': 'Thunderbolt', 'zMove': 'Stoked Sparksurfer' },
+    'Snorlium Z': { 'user': 'Snorlax', 'move': 'Giga Impact', 'zMove': 'Pulverizing Pancake' },
+    'Eevium Z': { 'user': 'Eevee', 'move': 'Last Resort', 'zMove': 'Extreme Evoboost' },
+    'Mewnium Z': { 'user': 'Mew', 'move': 'Psychic', 'zMove': 'Genesis Supernova' },
+    'Pikashunium Z': { 'user': 'Pikachu', 'move': 'Thunderbolt', 'zMove': '10,000,000 Volt Thunderbolt' },
+    'Solganium Z': { 'user': ['Solgaleo', 'Necrozma-Dusk-Mane'], 'move': 'Sunsteel Strike', 'zMove': 'Searing Sunraze Smash' },
+    'Lunalium Z': { 'user': ['Lunala', 'Necrozma-Dawn-Wings'], 'move': 'Moongeist Beam', 'zMove': 'Menacing Moonraze Maelstrom' },
+    'Ultranecrozium Z': { 'user': 'Ultra Necrozma', 'move': 'Photon Geyser', 'zMove': 'Light That Burns the Sky' },
+    'Mimikium Z': { 'user': 'Mimikyu', 'move': 'Play Rough', 'zMove': "Let's Snuggle Forever" },
+    'Lycanium Z': { 'user': ['Lycanroc-Midday', 'Lycanroc-Midnight', 'Lycanroc-Dusk'], 'move': 'Stone Edge', 'zMove': 'Splintered Stormshards' },
+    'Kommonium Z': { 'user': 'Kommo-o', 'move': 'Clanging Scales', 'zMove': 'Clangorous Soulblaze' },
 };
 
 function getSignatureZMove(item, species, move) {
-    var isSigZ = SIGNATURE_Z_MOVE_LOOKUP[species] && SIGNATURE_Z_MOVE_LOOKUP[species][item] && SIGNATURE_Z_MOVE_LOOKUP[species][item][move]
-        ? SIGNATURE_Z_MOVE_LOOKUP[species][item][move] : -1;
+    var isSigZ = item in SIGNATURE_Z_MOVE_LOOKUP && SIGNATURE_Z_MOVE_LOOKUP[item]['user'].includes(species) && move == SIGNATURE_Z_MOVE_LOOKUP[item]['move']
+        ? SIGNATURE_Z_MOVE_LOOKUP[item]['zMove'] : -1;
     return isSigZ;
 }
 
