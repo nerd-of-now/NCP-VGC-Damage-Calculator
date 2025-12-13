@@ -5594,3 +5594,14 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     //unusable SV moves
     'Blazing Torque', 'Wicked Torque', 'Noxious Torque', 'Combat Torque', 'Magical Torque', 'Power Shift',
 ].forEach(e => delete MOVES_SV[e]);
+
+//This one will just be for adding Nihil Light
+var MOVES_ZA_NATDEX = $.extend(true, {}, MOVES_SV_NATDEX, {
+    'Nihil Light': {
+        bp: 200,
+        type: 'Dragon',
+        category: 'Special',
+        ignoresDefenseBoosts: true,
+        isSpread: true, //THIS IS A PREDICTION
+    }
+});
