@@ -1441,91 +1441,124 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
     var userItem = user.item;
 
     //Move check
-    if (move.recoilHP) {
-        if (!["Rock Head", "Magic Guard"].includes(user.ability)) {
-            var recoilMod = move.recoilHP[0] / move.recoilHP[1];
-            userMinDamage = pokeRound(usedMin * recoilMod);
-            userMaxDamage = pokeRound(usedMax * recoilMod);
-        }
-    }
-    else if (move.drainHP) {
-        var drainMod = move.drainHP[0] / move.drainHP[1];
-        var liquidOoze = target.ability == "Liquid Ooze" && (gen >= 5 || move.name != "Dream Eater");
-        var doesHeal = !liquidOoze ? -1 : user.ability == "Magic Guard" ? 0 : 1;
-
-        userMinDamage = pokeRound(usedMin * drainMod);
-        userMaxDamage = pokeRound(usedMax * drainMod);
-
-        if (userItem == "Big Root") {
-            var bigRootMod = gen >= 5 ? 5324 / 4096 : 1.3;
-            userMinDamage = Math.round(userMinDamage * bigRootMod);
-            userMaxDamage = Math.round(userMaxDamage * bigRootMod);
-        }
-
-        userMinDamage = doesHeal * userMinDamage;
-        userMaxDamage = doesHeal * userMaxDamage;
-    }
-    else if (move.costHP) {
-        if (costHP[2] == "roundDown") {
-            if (move.name != "Curse" || user.t1 == 'Ghost' || user.t2 == 'Ghost') {
-                userMinDamage = Math.floor(user.maxHP * (move.costHP[0] / move.costHP[1]));
-                userMaxDamage = userMinDamage;
+    if (!user.isDynamax) {
+        if (move.recoilHP) {
+            if (!["Rock Head", "Magic Guard"].includes(user.ability)) {
+                var recoilMod = move.recoilHP[0] / move.recoilHP[1];
+                userMinDamage = Math.max(1, pokeRound(usedMin * recoilMod));
+                userMaxDamage = Math.max(1, pokeRound(usedMax * recoilMod));
             }
         }
-        else {
-            userMinDamage = Math.ceil(user.maxHP * (move.costHP[0] / move.costHP[1]));
-            userMaxDamage = userMinDamage;
-        }
-    }
-    else if (move.name == "Pain Split") {
-        userMinDamage = -1 * minDamage;
-        userMaxDamage = -1 * maxDamage;
-    }
-    else if (move.name == "Strength Sap") {
-        if (target.boosts[AT] > -6) {
-            var doesHeal = target.ability != "Liquid Ooze" ? -1 : user.ability == "Magic Guard" ? 0 : 1;
-            userMinDamage = target.stats[AT];
+        else if (move.drainHP) {
+            var drainMod = move.drainHP[0] / move.drainHP[1];
+            var liquidOoze = target.ability == "Liquid Ooze" && (gen >= 5 || move.name != "Dream Eater");
+            var doesHeal = !liquidOoze ? -1 : user.ability == "Magic Guard" ? 0 : 1;
+
+            userMinDamage = pokeRound(usedMin * drainMod);
+            userMaxDamage = pokeRound(usedMax * drainMod);
+
             if (userItem == "Big Root") {
                 var bigRootMod = gen >= 5 ? 5324 / 4096 : 1.3;
                 userMinDamage = Math.round(userMinDamage * bigRootMod);
+                userMaxDamage = Math.round(userMaxDamage * bigRootMod);
             }
 
-            userMinDamage = doesHeal * userMinDamage;
-            userMaxDamage = userMinDamage;
+            userMinDamage = doesHeal * Math.max(1, userMinDamage);
+            userMaxDamage = doesHeal * Math.max(1, userMaxDamage);
+        }
+        else if (move.costHP) {
+            if (move.costHP[2] == "roundDown") {
+                if (move.name != "Curse" || user.type1 == 'Ghost' || user.type2 == 'Ghost') {
+                    userMinDamage = Math.max(1, Math.floor(user.maxHP * (move.costHP[0] / move.costHP[1])));
+                    userMaxDamage = userMinDamage;
+                }
+            }
+            else {
+                userMinDamage = Math.ceil(user.maxHP * (move.costHP[0] / move.costHP[1]));
+                userMaxDamage = userMinDamage;
+            }
+        }
+        else if (move.name == "Pain Split") {
+            userMinDamage = -1 * minDamage;
+            userMaxDamage = -1 * maxDamage;
+        }
+        else if (move.name == "Strength Sap") {
+            if (target.boosts[AT] > -6) {
+                var doesHeal = target.ability != "Liquid Ooze" ? -1 : user.ability == "Magic Guard" ? 0 : 1;
+                userMinDamage = target.stats[AT];
+                if (userItem == "Big Root") {
+                    var bigRootMod = gen >= 5 ? 5324 / 4096 : 1.3;
+                    userMinDamage = Math.round(userMinDamage * bigRootMod);
+                }
+
+                userMinDamage = doesHeal * Math.max(1, userMinDamage);
+                userMaxDamage = userMinDamage;
+            }
         }
     }
-    else if (user.name == "Alcremie-Gmax" && user.isDynamax && move.type == "Fairy" && move.category != "Status") { //G-Max Finale
-        userMinDamage = -1 * pokeRound(user.maxHP / 6);
+    else if (user.name == "Alcremie-Gmax" && move.type == "Fairy" && move.category != "Status") { //G-Max Finale
+        userMinDamage = -1 * Math.max(1, pokeRound(user.maxHP / 6));
         userMaxDamage = userMinDamage;
     }
 
     //Opponent ability check
     if (["Rough Skin", "Iron Barbs"].includes(target.ability) && move.makesContact) {
-        userMinDamage += Math.floor(user.maxHP / 8);
-        userMaxDamage += Math.floor(user.maxHP / 8);
+        userMinDamage += Math.max(1, Math.floor(user.maxHP / 8));
+        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 8));
+    }
+    //Conditional assumes that ability toggling handles whether or not the target is a Cramorant
+    //else if (target.ability == "Gulp Missile" && target.abilityOn && move.category != "Status") {
+    //    userMinDamage += Math.max(1, Math.floor(user.maxHP / 4));
+    //    userMaxDamage += Math.max(1, Math.floor(user.maxHP / 4));
+    //}
+
+    //Opponent item check
+    if (target.item == "Rocky Helmet" && move.makesContact) {
+        userMinDamage += Math.max(1, Math.floor(user.maxHP / 6));
+        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 6));
+    }
+    else if ((target.item == "Jaboca Berry" && move.category == "Physical") || (target.item == "Rowap Berry" && move.category == "Special")) {
+        userMinDamage += Math.max(1, Math.floor(user.maxHP / 8));
+        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 8));
     }
 
     //User item check
-    if (userItem == "Shell Bell") {
-        userMinDamage -= Math.floor(usedMin / 8);
-        userMaxDamage -= Math.floor(usedMax / 8);
-    }
-    else if (userItem == "Life Orb") {
-        userMinDamage += Math.floor(user.maxHP / 10);
-        userMaxDamage += Math.floor(user.maxHP / 10);
-    }
-
-    //Opponent item check
-    if (target.item == "Rocky Helmet") {
-        userMinDamage += Math.floor(user.maxHP / 6);
-        userMaxDamage += Math.floor(user.maxHP / 6);
-    }
-    else if ((target.item == "Jaboca Berry" && move.category == "Physical") || (target.item == "Rowap Berry" && move.category == "Special")) {
-        userMinDamage += Math.floor(user.maxHP / 8);
-        userMaxDamage += Math.floor(user.maxHP / 8);
+    if (!(user.ability == "Sheer Force" && move.hasSecondaryEffect)) {
+        if (userItem == "Shell Bell") {
+            userMinDamage -= Math.max(1, Math.floor(usedMin / 8));
+            userMaxDamage -= Math.max(1, Math.floor(usedMax / 8));
+        }
+        else if (userItem == "Life Orb" && move.category != "Status") {
+            userMinDamage += Math.max(1, Math.floor(user.maxHP / 10));
+            userMaxDamage += Math.max(1, Math.floor(user.maxHP / 10));
+        }
     }
 
-    return [userMinDamage, userMaxDamage];
+    return [Math.round(userMinDamage / user.maxHP * 1000) / 10, Math.round(userMaxDamage / user.maxHP * 1000) / 10];
+}
+
+function userHPResultText(move, user, target, minDamage, maxDamage) {
+    var userHPResult = calcUserHP(move, user, target, minDamage, maxDamage);
+    var healOrRecoil;
+    if (userHPResult[0] < 0 && userHPResult[1] < 0) {
+        healOrRecoil = "healed)";
+        userHPResult[0] *= -1;
+        userHPResult[1] *= -1;
+    }
+    else {
+        healOrRecoil = "recoil)";
+    }
+    var userHPText = !userHPResult[0] && !userHPResult[1] ? '' : ' (' + userHPResult[0] + " - " + userHPResult[1] + '% ' + healOrRecoil;
+    if (!userHPResult[0] && !userHPResult[1]) {
+        userHPText = '';
+    }
+    else if (userHPResult[0] == userHPResult[1]) {
+        userHPText = ' (' + userHPResult[0] + '% ' + healOrRecoil;
+    }
+    else {
+        userHPText = ' (' + userHPResult[0] + " - " + userHPResult[1] + '% ' + healOrRecoil;
+    }
+    return userHPText;
 }
 
 var damageResults;
@@ -1557,7 +1590,7 @@ function calculate() {
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>"; //dank memes
         }
         $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power ", "HP "));
-        $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%");
+        $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%" + userHPResultText(p1.moves[i], p1, p2, minDamage, maxDamage));
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
             bestResult = $(resultLocations[0][i].move);
@@ -1577,7 +1610,7 @@ function calculate() {
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>";
         }
         $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power ", "HP "));
-        $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%");
+        $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%" + userHPResultText(p2.moves[i], p2, p1, minDamage, maxDamage));
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
             bestResult = $(resultLocations[1][i].move);
