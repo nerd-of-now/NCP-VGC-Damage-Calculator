@@ -1218,7 +1218,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     'Curse': {
         type: '???',
         category: 'Status',
-        costHP: [1, 4, 'roundDown']
+        costHP: [1, 2, 'roundDown']
     },
     'Cotton Spore': {
         type: 'Grass',

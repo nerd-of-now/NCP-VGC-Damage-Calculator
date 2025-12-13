@@ -423,8 +423,9 @@ $(".ability").bind("keyup change", function () {
     thisPoke.find(".ability-rivalry").val('');
 
     var ab = $(this).val();
-    var ABILITY_TOGGLE_OFF = gen >= 9 ? ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit', 'Electromorphosis', 'Wind Power', 'Seed Sower', 'Battle Bond'] : ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit'];
+    var ABILITY_TOGGLE_OFF = gen >= 9 ? ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit', 'Battle Bond', 'Electromorphosis', 'Wind Power', 'Seed Sower'] : ['Flash Fire', 'Plus', 'Minus', 'Trace', 'Stakeout', 'Sand Spit'];
     var ABILITY_TOGGLE_ON = gen >= 9 ? ['Intimidate', 'Slow Start', 'Protean', 'Libero', 'Intrepid Sword', 'Dauntless Shield', 'Supersweet Syrup'] : ['Intimidate', 'Slow Start'];
+    //var ABILITY_TOGGLE_OFF_SPECIES = gen >= 9 ? { 'Disguise': 'Mimikyu', 'Gulp Missile': 'Cramorant', 'Battle Bond': 'Greninja'} : { 'Disguise': 'Mimikyu', 'Gulp Missile': 'Cramorant' };
     if (ABILITY_TOGGLE_OFF.includes(ab)) {
         thisPoke.find(".abilityToggle").show();
         thisPoke.find(".abilityToggle").prop("checked", false);
@@ -433,6 +434,14 @@ $(".ability").bind("keyup change", function () {
         thisPoke.find(".abilityToggle").show();
         thisPoke.find(".abilityToggle").prop("checked", true);
     }
+    //else if (ABILITY_TOGGLE_OFF_SPECIES.includes(ab)) {
+    //    var name = thisPoke.find("input.set-selector").val();
+    //    var pokName = thisPoke.find("input.set-selector").val().substring(0, name.indexOf(" ("));
+    //    if (pokName.includes(ABILITY_TOGGLE_OFF_SPECIES[ab])) {
+    //        thisPoke.find(".abilityToggle").show();
+    //        thisPoke.find(".abilityToggle").prop("checked", false);
+    //    }
+    //}
     else {
         thisPoke.find(".abilityToggle").hide();
     }
@@ -782,7 +791,7 @@ function userMovesCheck(divValue) {    //divValue should accept any div class, i
         pInfo.find(".glaive-rush").hide();
         pInfo.find(".glaive-rush").prop("checked", false);
     }
-    if ("Hidden Power Ice" in moves && gen <= 6 && !dontCheckHiddenPower) {   //any Hidden Power type should do
+    if ("Hidden Power" in moves && gen <= 6 && !dontCheckHiddenPower) {   //any Hidden Power type should do
         var isHP = -1;
         for (var i = 0, n = pMoves.length; i < n; i++) {
             if (pMoves[i].includes("Hidden Power ")) {
@@ -1045,9 +1054,12 @@ function restrictIVs(pokeObj, pokemonName) {
     var changedIVs = [];
     switch (pokemonName) {
         case 'Koraidon':
+            //set HP/Def/SpD min to 25, step to 6; set SpA min to 20, step to 11 (thanks to the shiny Koraidon event)
+            changedIVs = [25, 31, 25, 20, 25, 31];
+            break;
         case 'Miraidon':
-            //set HP/Def/SpD min to 25, step to 6
-            changedIVs = [25, 31, 25, 31, 25, 31];
+            //set HP/Def/SpD min to 25, step to 6; set Atk min to 20, step to 11 (thanks to the shiny Miraidon event)
+            changedIVs = [25, 20, 25, 31, 25, 31];
             break;
         case 'Ogerpon':
         case 'Ogerpon-Wellspring':
