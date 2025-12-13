@@ -1,136 +1,4 @@
 var POKEDEX_RBY = {
-    "Abra": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 25,
-            "at": 20,
-            "df": 15,
-            "sa": 105,
-            "sd": 55,
-            "sp": 90,
-            "sl": 105
-        },
-        "w": 19.5,
-        "ab": "Synchronize",
-        "canEvolve": true,
-    },
-    "Aerodactyl": {
-        "t1": "Rock",
-        "t2": "Flying",
-        "bs": {
-            "hp": 80,
-            "at": 105,
-            "df": 65,
-            "sa": 60,
-            "sd": 75,
-            "sp": 130,
-            "sl": 60
-        },
-        "w": 59.0,
-        "ab": "Pressure",
-    },
-    "Alakazam": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 55,
-            "at": 50,
-            "df": 45,
-            "sa": 135,
-            "sd": 85,
-            "sp": 120,
-            "sl": 135
-        },
-        "w": 48.0,
-        "ab": "Synchronize",
-    },
-    "Arbok": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 60,
-            "at": 85,
-            "df": 69,
-            "sa": 65,
-            "sd": 79,
-            "sp": 80,
-            "sl": 65
-        },
-        "w": 65.0,
-        "ab": "Intimidate",
-    },
-    "Arcanine": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 90,
-            "at": 110,
-            "df": 80,
-            "sa": 100,
-            "sd": 80,
-            "sp": 95,
-            "sl": 80
-        },
-        "w": 155.0,
-        "ab": "Intimidate",
-    },
-    "Articuno": {
-        "t1": "Ice",
-        "t2": "Flying",
-        "bs": {
-            "hp": 90,
-            "at": 85,
-            "df": 100,
-            "sa": 95,
-            "sd": 125,
-            "sp": 85,
-            "sl": 125
-        },
-        "w": 55.4,
-        "ab": "Pressure",
-    },
-    "Beedrill": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 65,
-            "at": 80,
-            "df": 40,
-            "sa": 45,
-            "sd": 80,
-            "sp": 75,
-            "sl": 45
-        },
-        "w": 29.5,
-        "ab": "Swarm"
-    },
-    "Bellsprout": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 50,
-            "at": 75,
-            "df": 35,
-            "sa": 70,
-            "sd": 30,
-            "sp": 40,
-            "sl": 70
-        },
-        "w": 4.0,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Blastoise": {
-        "t1": "Water",
-        "bs": {
-            "hp": 79,
-            "at": 83,
-            "df": 100,
-            "sa": 85,
-            "sd": 105,
-            "sp": 78,
-            "sl": 85
-        },
-        "w": 85.5,
-        "ab": "Torrent"
-    },
     "Bulbasaur": {
         "t1": "Grass",
         "t2": "Poison",
@@ -147,65 +15,36 @@ var POKEDEX_RBY = {
         "ab": "Overgrow",
         "canEvolve": true,
     },
-    "Butterfree": {
-        "t1": "Bug",
-        "t2": "Flying",
+    "Ivysaur": {
+        "t1": "Grass",
+        "t2": "Poison",
         "bs": {
             "hp": 60,
-            "at": 45,
-            "df": 50,
+            "at": 62,
+            "df": 63,
             "sa": 80,
             "sd": 80,
-            "sp": 70,
+            "sp": 60,
             "sl": 80
         },
-        "w": 32.0,
-        "ab": "Compound Eyes"
-    },
-    "Caterpie": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 45,
-            "at": 30,
-            "df": 35,
-            "sa": 20,
-            "sd": 20,
-            "sp": 45,
-            "sl": 20
-        },
-        "w": 2.9,
-        "ab": "Shield Dust",
+        "w": 13.0,
+        "ab": "Overgrow",
         "canEvolve": true,
     },
-    "Chansey": {
-        "t1": "Normal",
+    "Venusaur": {
+        "t1": "Grass",
+        "t2": "Poison",
         "bs": {
-            "hp": 250,
-            "at": 5,
-            "df": 5,
-            "sa": 35,
-            "sd": 105,
-            "sp": 50,
-            "sl": 105
+            "hp": 80,
+            "at": 82,
+            "df": 83,
+            "sa": 100,
+            "sd": 100,
+            "sp": 80,
+            "sl": 100
         },
-        "w": 34.6,
-        "ab": "Serene Grace",
-        "canEvolve": true,
-    },
-    "Charizard": {
-        "t1": "Fire",
-        "t2": "Flying",
-        "bs": {
-            "hp": 78,
-            "at": 84,
-            "df": 78,
-            "sa": 109,
-            "sd": 85,
-            "sp": 100,
-            "sl": 85
-        },
-        "w": 90.5,
-        "ab": "Blaze"
+        "w": 100.0,
+        "ab": "Overgrow"
     },
     "Charmander": {
         "t1": "Fire",
@@ -237,19 +76,440 @@ var POKEDEX_RBY = {
         "ab": "Blaze",
         "canEvolve": true,
     },
-    "Clefable": {
-        "t1": "Normal",
+    "Charizard": {
+        "t1": "Fire",
+        "t2": "Flying",
         "bs": {
-            "hp": 95,
-            "at": 70,
-            "df": 73,
-            "sa": 85,
-            "sd": 90,
-            "sp": 60,
+            "hp": 78,
+            "at": 84,
+            "df": 78,
+            "sa": 109,
+            "sd": 85,
+            "sp": 100,
             "sl": 85
         },
-        "w": 40.0,
-        "ab": "Cute Charm",
+        "w": 90.5,
+        "ab": "Blaze"
+    },
+    "Squirtle": {
+        "t1": "Water",
+        "bs": {
+            "hp": 44,
+            "at": 48,
+            "df": 65,
+            "sa": 50,
+            "sd": 64,
+            "sp": 43,
+            "sl": 50
+        },
+        "w": 9.0,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Wartortle": {
+        "t1": "Water",
+        "bs": {
+            "hp": 59,
+            "at": 63,
+            "df": 80,
+            "sa": 65,
+            "sd": 80,
+            "sp": 58,
+            "sl": 65
+        },
+        "w": 22.5,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Blastoise": {
+        "t1": "Water",
+        "bs": {
+            "hp": 79,
+            "at": 83,
+            "df": 100,
+            "sa": 85,
+            "sd": 105,
+            "sp": 78,
+            "sl": 85
+        },
+        "w": 85.5,
+        "ab": "Torrent"
+    },
+    "Caterpie": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 45,
+            "at": 30,
+            "df": 35,
+            "sa": 20,
+            "sd": 20,
+            "sp": 45,
+            "sl": 20
+        },
+        "w": 2.9,
+        "ab": "Shield Dust",
+        "canEvolve": true,
+    },
+    "Metapod": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 50,
+            "at": 20,
+            "df": 55,
+            "sa": 25,
+            "sd": 25,
+            "sp": 30,
+            "sl": 25
+        },
+        "w": 9.9,
+        "ab": "Shed Skin",
+        "canEvolve": true,
+    },
+    "Butterfree": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 60,
+            "at": 45,
+            "df": 50,
+            "sa": 80,
+            "sd": 80,
+            "sp": 70,
+            "sl": 80
+        },
+        "w": 32.0,
+        "ab": "Compound Eyes"
+    },
+    "Weedle": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 40,
+            "at": 35,
+            "df": 30,
+            "sa": 20,
+            "sd": 20,
+            "sp": 50,
+            "sl": 20
+        },
+        "w": 3.2,
+        "ab": "Shield Dust",
+        "canEvolve": true,
+    },
+    "Kakuna": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 45,
+            "at": 25,
+            "df": 50,
+            "sa": 25,
+            "sd": 25,
+            "sp": 35,
+            "sl": 25
+        },
+        "w": 10.0,
+        "ab": "Shed Skin",
+        "canEvolve": true,
+    },
+    "Beedrill": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 65,
+            "at": 80,
+            "df": 40,
+            "sa": 45,
+            "sd": 80,
+            "sp": 75,
+            "sl": 45
+        },
+        "w": 29.5,
+        "ab": "Swarm"
+    },
+    "Pidgey": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 40,
+            "at": 45,
+            "df": 40,
+            "sa": 35,
+            "sd": 35,
+            "sp": 56,
+            "sl": 35
+        },
+        "w": 1.8,
+        "ab": "Keen Eye",
+        "canEvolve": true,
+    },
+    "Pidgeotto": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 63,
+            "at": 60,
+            "df": 55,
+            "sa": 50,
+            "sd": 50,
+            "sp": 71,
+            "sl": 50
+        },
+        "w": 30.0,
+        "ab": "Keen Eye",
+        "canEvolve": true,
+    },
+    "Pidgeot": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 83,
+            "at": 80,
+            "df": 75,
+            "sa": 70,
+            "sd": 70,
+            "sp": 91,
+            "sl": 70
+        },
+        "w": 39.5,
+        "ab": "Keen Eye",
+    },
+    "Rattata": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 30,
+            "at": 56,
+            "df": 35,
+            "sa": 25,
+            "sd": 35,
+            "sp": 72,
+            "sl": 25
+        },
+        "w": 3.5,
+        "ab": "Guts",
+        "canEvolve": true,
+    },
+    "Raticate": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 55,
+            "at": 81,
+            "df": 60,
+            "sa": 50,
+            "sd": 70,
+            "sp": 97,
+            "sl": 50
+        },
+        "w": 18.5,
+        "ab": "Guts",
+    },
+    "Spearow": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 40,
+            "at": 60,
+            "df": 30,
+            "sa": 31,
+            "sd": 31,
+            "sp": 70,
+            "sl": 31
+        },
+        "w": 2.0,
+        "ab": "Keen Eye",
+        "canEvolve": true,
+    },
+    "Fearow": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 65,
+            "at": 90,
+            "df": 65,
+            "sa": 61,
+            "sd": 61,
+            "sp": 100,
+            "sl": 61
+        },
+        "w": 38.0,
+        "ab": "Keen Eye",
+    },
+    "Ekans": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 35,
+            "at": 60,
+            "df": 44,
+            "sa": 40,
+            "sd": 54,
+            "sp": 55,
+            "sl": 40
+        },
+        "w": 6.9,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Arbok": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 60,
+            "at": 85,
+            "df": 69,
+            "sa": 65,
+            "sd": 79,
+            "sp": 80,
+            "sl": 65
+        },
+        "w": 65.0,
+        "ab": "Intimidate",
+    },
+    "Pikachu": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 30,
+            "sa": 50,
+            "sd": 40,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 6.0,
+        "ab": "Static",
+        "canEvolve": true,
+    },
+    "Raichu": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 60,
+            "at": 90,
+            "df": 55,
+            "sa": 90,
+            "sd": 80,
+            "sp": 100,
+            "sl": 90
+        },
+        "w": 30.0,
+        "ab": "Static",
+    },
+    "Sandshrew": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 50,
+            "at": 75,
+            "df": 85,
+            "sa": 20,
+            "sd": 30,
+            "sp": 40,
+            "sl": 30
+        },
+        "w": 12.0,
+        "ab": "Sand Veil",
+        "canEvolve": true,
+    },
+    "Sandslash": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 75,
+            "at": 100,
+            "df": 110,
+            "sa": 45,
+            "sd": 55,
+            "sp": 65,
+            "sl": 55
+        },
+        "w": 29.5,
+        "ab": "Sand Veil"
+    },
+    "Nidoran-F": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 55,
+            "at": 47,
+            "df": 52,
+            "sa": 40,
+            "sd": 40,
+            "sp": 41,
+            "sl": 40
+        },
+        "w": 7.0,
+        "ab": "Poison Point",
+        "canEvolve": true,
+    },
+    "Nidorina": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 70,
+            "at": 62,
+            "df": 67,
+            "sa": 55,
+            "sd": 55,
+            "sp": 56,
+            "sl": 55
+        },
+        "w": 20.0,
+        "ab": "Poison Point",
+        "canEvolve": true,
+    },
+    "Nidoqueen": {
+        "t1": "Poison",
+        "t2": "Ground",
+        "bs": {
+            "hp": 90,
+            "at": 82,
+            "df": 87,
+            "sa": 75,
+            "sd": 85,
+            "sp": 76,
+            "sl": 75
+        },
+        "w": 60.0,
+        "ab": "Poison Point",
+    },
+    "Nidoran-M": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 46,
+            "at": 57,
+            "df": 40,
+            "sa": 40,
+            "sd": 40,
+            "sp": 50,
+            "sl": 40
+        },
+        "w": 9.0,
+        "ab": "Poison Point",
+        "canEvolve": true,
+    },
+    "Nidorino": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 61,
+            "at": 72,
+            "df": 57,
+            "sa": 55,
+            "sd": 55,
+            "sp": 65,
+            "sl": 55
+        },
+        "w": 19.5,
+        "ab": "Poison Point",
+        "canEvolve": true,
+    },
+    "Nidoking": {
+        "t1": "Poison",
+        "t2": "Ground",
+        "bs": {
+            "hp": 81,
+            "at": 92,
+            "df": 77,
+            "sa": 85,
+            "sd": 75,
+            "sp": 85,
+            "sl": 75
+        },
+        "w": 62.0,
+        "ab": "Poison Point",
     },
     "Clefairy": {
         "t1": "Normal",
@@ -266,50 +526,218 @@ var POKEDEX_RBY = {
         "ab": "Cute Charm",
         "canEvolve": true,
     },
-    "Cloyster": {
-        "t1": "Water",
-        "t2": "Ice",
+    "Clefable": {
+        "t1": "Normal",
         "bs": {
-            "hp": 50,
-            "at": 95,
-            "df": 180,
+            "hp": 95,
+            "at": 70,
+            "df": 73,
             "sa": 85,
-            "sd": 45,
-            "sp": 70,
+            "sd": 90,
+            "sp": 60,
             "sl": 85
         },
-        "w": 132.5,
-        "ab": "Shell Armor"
+        "w": 40.0,
+        "ab": "Cute Charm",
     },
-    "Cubone": {
-        "t1": "Ground",
+    "Vulpix": {
+        "t1": "Fire",
         "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 95,
-            "sa": 40,
-            "sd": 50,
-            "sp": 35,
-            "sl": 40
+            "hp": 38,
+            "at": 41,
+            "df": 40,
+            "sa": 50,
+            "sd": 65,
+            "sp": 65,
+            "sl": 65
         },
-        "w": 6.5,
-        "ab": "Lightning Rod",
+        "w": 9.9,
+        "ab": "Flash Fire",
         "canEvolve": true,
     },
-    "Dewgong": {
-        "t1": "Water",
-        "t2": "Ice",
+    "Ninetales": {
+        "t1": "Fire",
         "bs": {
-            "hp": 90,
-            "at": 70,
-            "df": 80,
-            "sa": 70,
-            "sd": 95,
-            "sp": 70,
-            "sl": 95
+            "hp": 73,
+            "at": 76,
+            "df": 75,
+            "sa": 81,
+            "sd": 100,
+            "sp": 100,
+            "sl": 100
         },
-        "w": 120.0,
-        "ab": "Thick Fat"
+        "w": 19.9,
+        "ab": "Flash Fire"
+    },
+    "Jigglypuff": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 115,
+            "at": 45,
+            "df": 20,
+            "sa": 45,
+            "sd": 25,
+            "sp": 20,
+            "sl": 25
+        },
+        "w": 5.5,
+        "ab": "Cute Charm",
+        "canEvolve": true,
+    },
+    "Wigglytuff": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 140,
+            "at": 70,
+            "df": 45,
+            "sa": 75,
+            "sd": 50,
+            "sp": 45,
+            "sl": 50
+        },
+        "w": 12.0,
+        "ab": "Cute Charm",
+    },
+    "Zubat": {
+        "t1": "Poison",
+        "t2": "Flying",
+        "bs": {
+            "hp": 40,
+            "at": 45,
+            "df": 35,
+            "sa": 30,
+            "sd": 40,
+            "sp": 55,
+            "sl": 40
+        },
+        "w": 7.5,
+        "ab": "Inner Focus",
+        "canEvolve": true,
+    },
+    "Golbat": {
+        "t1": "Poison",
+        "t2": "Flying",
+        "bs": {
+            "hp": 75,
+            "at": 80,
+            "df": 70,
+            "sa": 65,
+            "sd": 75,
+            "sp": 90,
+            "sl": 75
+        },
+        "w": 55.0,
+        "ab": "Inner Focus",
+        "canEvolve": true,
+    },
+    "Oddish": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 45,
+            "at": 50,
+            "df": 55,
+            "sa": 75,
+            "sd": 65,
+            "sp": 30,
+            "sl": 75
+        },
+        "w": 5.4,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Gloom": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 60,
+            "at": 65,
+            "df": 70,
+            "sa": 85,
+            "sd": 75,
+            "sp": 40,
+            "sl": 85
+        },
+        "w": 8.6,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Vileplume": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 75,
+            "at": 80,
+            "df": 85,
+            "sa": 100,
+            "sd": 90,
+            "sp": 50,
+            "sl": 100
+        },
+        "w": 18.6,
+        "ab": "Chlorophyll"
+    },
+    "Paras": {
+        "t1": "Bug",
+        "t2": "Grass",
+        "bs": {
+            "hp": 35,
+            "at": 70,
+            "df": 55,
+            "sa": 45,
+            "sd": 55,
+            "sp": 25,
+            "sl": 55
+        },
+        "w": 5.4,
+        "ab": "Effect Spore",
+        "canEvolve": true,
+    },
+    "Parasect": {
+        "t1": "Bug",
+        "t2": "Grass",
+        "bs": {
+            "hp": 60,
+            "at": 95,
+            "df": 80,
+            "sa": 60,
+            "sd": 80,
+            "sp": 30,
+            "sl": 80
+        },
+        "w": 29.5,
+        "ab": "Effect Spore",
+    },
+    "Venonat": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 60,
+            "at": 55,
+            "df": 50,
+            "sa": 40,
+            "sd": 55,
+            "sp": 45,
+            "sl": 40
+        },
+        "w": 30.0,
+        "ab": "Shield Dust",
+        "canEvolve": true,
+    },
+    "Venomoth": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 70,
+            "at": 65,
+            "df": 60,
+            "sa": 90,
+            "sd": 75,
+            "sp": 90,
+            "sl": 90
+        },
+        "w": 12.5,
+        "ab": "Shield Dust",
     },
     "Diglett": {
         "t1": "Ground",
@@ -326,34 +754,498 @@ var POKEDEX_RBY = {
         "ab": "Arena Trap",
         "canEvolve": true,
     },
-    "Ditto": {
+    "Dugtrio": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 35,
+            "at": 80,
+            "df": 50,
+            "sa": 50,
+            "sd": 70,
+            "sp": 120,
+            "sl": 70
+        },
+        "w": 33.3,
+        "ab": "Arena Trap",
+    },
+    "Meowth": {
         "t1": "Normal",
         "bs": {
-            "hp": 48,
-            "at": 48,
-            "df": 48,
-            "sa": 48,
-            "sd": 48,
-            "sp": 48,
-            "sl": 48
+            "hp": 40,
+            "at": 45,
+            "df": 35,
+            "sa": 40,
+            "sd": 40,
+            "sp": 90,
+            "sl": 40
         },
-        "w": 4.0,
+        "w": 4.2,
+        "ab": "Pickup",
+        "canEvolve": true,
+    },
+    "Persian": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 65,
+            "at": 70,
+            "df": 60,
+            "sa": 65,
+            "sd": 65,
+            "sp": 115,
+            "sl": 65
+        },
+        "w": 32.0,
         "ab": "Limber",
     },
-    "Dodrio": {
+    "Psyduck": {
+        "t1": "Water",
+        "bs": {
+            "hp": 50,
+            "at": 52,
+            "df": 48,
+            "sa": 65,
+            "sd": 50,
+            "sp": 55,
+            "sl": 50
+        },
+        "w": 19.6,
+        "ab": "Cloud Nine",
+        "canEvolve": true,
+    },
+    "Golduck": {
+        "t1": "Water",
+        "bs": {
+            "hp": 80,
+            "at": 82,
+            "df": 78,
+            "sa": 95,
+            "sd": 80,
+            "sp": 85,
+            "sl": 80
+        },
+        "w": 76.6,
+        "ab": "Cloud Nine",
+    },
+    "Mankey": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 40,
+            "at": 80,
+            "df": 35,
+            "sa": 35,
+            "sd": 45,
+            "sp": 70,
+            "sl": 35
+        },
+        "w": 28.0,
+        "ab": "Vital Spirit",
+        "canEvolve": true,
+    },
+    "Primeape": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 65,
+            "at": 105,
+            "df": 60,
+            "sa": 60,
+            "sd": 70,
+            "sp": 95,
+            "sl": 60
+        },
+        "w": 32.0,
+        "ab": "Vital Spirit",
+    },
+    "Growlithe": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 55,
+            "at": 70,
+            "df": 45,
+            "sa": 70,
+            "sd": 50,
+            "sp": 60,
+            "sl": 50
+        },
+        "w": 19.0,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Arcanine": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 90,
+            "at": 110,
+            "df": 80,
+            "sa": 100,
+            "sd": 80,
+            "sp": 95,
+            "sl": 80
+        },
+        "w": 155.0,
+        "ab": "Intimidate",
+    },
+    "Poliwag": {
+        "t1": "Water",
+        "bs": {
+            "hp": 40,
+            "at": 50,
+            "df": 40,
+            "sa": 40,
+            "sd": 40,
+            "sp": 90,
+            "sl": 40
+        },
+        "w": 12.4,
+        "ab": "Water Absorb",
+        "canEvolve": true,
+    },
+    "Poliwhirl": {
+        "t1": "Water",
+        "bs": {
+            "hp": 65,
+            "at": 65,
+            "df": 65,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 20.0,
+        "ab": "Water Absorb",
+        "canEvolve": true,
+    },
+    "Poliwrath": {
+        "t1": "Water",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 90,
+            "at": 85,
+            "df": 95,
+            "sa": 70,
+            "sd": 90,
+            "sp": 70,
+            "sl": 70
+        },
+        "w": 54.0,
+        "ab": "Water Absorb",
+    },
+    "Abra": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 25,
+            "at": 20,
+            "df": 15,
+            "sa": 105,
+            "sd": 55,
+            "sp": 90,
+            "sl": 105
+        },
+        "w": 19.5,
+        "ab": "Synchronize",
+        "canEvolve": true,
+    },
+    "Kadabra": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 40,
+            "at": 35,
+            "df": 30,
+            "sa": 120,
+            "sd": 70,
+            "sp": 105,
+            "sl": 120
+        },
+        "w": 56.5,
+        "ab": "Synchronize",
+        "canEvolve": true,
+    },
+    "Alakazam": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 55,
+            "at": 50,
+            "df": 45,
+            "sa": 135,
+            "sd": 85,
+            "sp": 120,
+            "sl": 135
+        },
+        "w": 48.0,
+        "ab": "Synchronize",
+    },
+    "Machop": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 70,
+            "at": 80,
+            "df": 50,
+            "sa": 35,
+            "sd": 35,
+            "sp": 35,
+            "sl": 35
+        },
+        "w": 19.5,
+        "ab": "Guts",
+        "canEvolve": true,
+    },
+    "Machoke": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 80,
+            "at": 100,
+            "df": 70,
+            "sa": 50,
+            "sd": 60,
+            "sp": 45,
+            "sl": 50
+        },
+        "w": 70.5,
+        "ab": "Guts",
+        "canEvolve": true,
+    },
+    "Machamp": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 90,
+            "at": 130,
+            "df": 80,
+            "sa": 65,
+            "sd": 85,
+            "sp": 55,
+            "sl": 65
+        },
+        "w": 130.0,
+        "ab": "Guts"
+    },
+    "Bellsprout": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 50,
+            "at": 75,
+            "df": 35,
+            "sa": 70,
+            "sd": 30,
+            "sp": 40,
+            "sl": 70
+        },
+        "w": 4.0,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Weepinbell": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 65,
+            "at": 90,
+            "df": 50,
+            "sa": 85,
+            "sd": 45,
+            "sp": 55,
+            "sl": 85
+        },
+        "w": 6.4,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Victreebel": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 80,
+            "at": 105,
+            "df": 65,
+            "sa": 100,
+            "sd": 60,
+            "sp": 70,
+            "sl": 100
+        },
+        "w": 15.5,
+        "ab": "Chlorophyll"
+    },
+    "Tentacool": {
+        "t1": "Water",
+        "t2": "Poison",
+        "bs": {
+            "hp": 40,
+            "at": 40,
+            "df": 35,
+            "sa": 50,
+            "sd": 100,
+            "sp": 70,
+            "sl": 100
+        },
+        "w": 45.5,
+        "ab": "Liquid Ooze",
+        "canEvolve": true,
+    },
+    "Tentacruel": {
+        "t1": "Water",
+        "t2": "Poison",
+        "bs": {
+            "hp": 80,
+            "at": 70,
+            "df": 65,
+            "sa": 80,
+            "sd": 120,
+            "sp": 100,
+            "sl": 120
+        },
+        "w": 55.0,
+        "ab": "Liquid Ooze",
+    },
+    "Geodude": {
+        "t1": "Rock",
+        "t2": "Ground",
+        "bs": {
+            "hp": 40,
+            "at": 80,
+            "df": 100,
+            "sa": 30,
+            "sd": 30,
+            "sp": 20,
+            "sl": 30
+        },
+        "w": 20.0,
+        "ab": "Rock Head",
+        "canEvolve": true,
+    },
+    "Graveler": {
+        "t1": "Rock",
+        "t2": "Ground",
+        "bs": {
+            "hp": 55,
+            "at": 95,
+            "df": 115,
+            "sa": 45,
+            "sd": 45,
+            "sp": 35,
+            "sl": 45
+        },
+        "w": 105.0,
+        "ab": "Rock Head",
+        "canEvolve": true,
+    },
+    "Golem": {
+        "t1": "Rock",
+        "t2": "Ground",
+        "bs": {
+            "hp": 80,
+            "at": 110,
+            "df": 130,
+            "sa": 55,
+            "sd": 65,
+            "sp": 45,
+            "sl": 55
+        },
+        "w": 300.0,
+        "ab": "Rock Head",
+    },
+    "Ponyta": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 50,
+            "at": 85,
+            "df": 55,
+            "sa": 65,
+            "sd": 65,
+            "sp": 90,
+            "sl": 65
+        },
+        "w": 30.0,
+        "ab": "Flash Fire",
+        "canEvolve": true,
+    },
+    "Rapidash": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 65,
+            "at": 100,
+            "df": 70,
+            "sa": 80,
+            "sd": 80,
+            "sp": 105,
+            "sl": 80
+        },
+        "w": 95.0,
+        "ab": "Flash Fire",
+    },
+    "Slowpoke": {
+        "t1": "Water",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 90,
+            "at": 65,
+            "df": 65,
+            "sa": 40,
+            "sd": 40,
+            "sp": 15,
+            "sl": 40
+        },
+        "w": 36.0,
+        "ab": "Oblivious",
+        "canEvolve": true,
+    },
+    "Slowbro": {
+        "t1": "Water",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 95,
+            "at": 75,
+            "df": 110,
+            "sa": 100,
+            "sd": 80,
+            "sp": 30,
+            "sl": 80
+        },
+        "w": 78.5,
+        "ab": "Oblivious",
+    },
+    "Magnemite": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 25,
+            "at": 35,
+            "df": 70,
+            "sa": 95,
+            "sd": 55,
+            "sp": 45,
+            "sl": 95
+        },
+        "w": 6.0,
+        "ab": "Magnet Pull",
+        "canEvolve": true,
+    },
+    "Magneton": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 50,
+            "at": 60,
+            "df": 95,
+            "sa": 120,
+            "sd": 70,
+            "sp": 70,
+            "sl": 120
+        },
+        "w": 60.0,
+        "ab": "Magnet Pull",
+        "canEvolve": true,
+    },
+    "Farfetch'd": {
         "t1": "Normal",
         "t2": "Flying",
         "bs": {
-            "hp": 60,
-            "at": 110,
-            "df": 70,
-            "sa": 60,
-            "sd": 60,
-            "sp": 100,
-            "sl": 60
+            "hp": 52,
+            "at": 65,
+            "df": 55,
+            "sa": 58,
+            "sd": 62,
+            "sp": 60,
+            "sl": 58
         },
-        "w": 85.2,
-        "ab": "Early Bird",
+        "w": 15.0,
+        "ab": "Inner Focus",
     },
     "Doduo": {
         "t1": "Normal",
@@ -371,49 +1263,171 @@ var POKEDEX_RBY = {
         "ab": "Early Bird",
         "canEvolve": true,
     },
-    "Dragonair": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 61,
-            "at": 84,
-            "df": 65,
-            "sa": 70,
-            "sd": 70,
-            "sp": 70,
-            "sl": 70
-        },
-        "w": 16.5,
-        "ab": "Shed Skin",
-        "canEvolve": true,
-    },
-    "Dragonite": {
-        "t1": "Dragon",
+    "Dodrio": {
+        "t1": "Normal",
         "t2": "Flying",
         "bs": {
-            "hp": 91,
-            "at": 134,
-            "df": 95,
-            "sa": 100,
+            "hp": 60,
+            "at": 110,
+            "df": 70,
+            "sa": 60,
+            "sd": 60,
+            "sp": 100,
+            "sl": 60
+        },
+        "w": 85.2,
+        "ab": "Early Bird",
+    },
+    "Seel": {
+        "t1": "Water",
+        "bs": {
+            "hp": 65,
+            "at": 45,
+            "df": 55,
+            "sa": 45,
+            "sd": 70,
+            "sp": 45,
+            "sl": 70
+        },
+        "w": 90.0,
+        "ab": "Thick Fat",
+        "canEvolve": true,
+    },
+    "Dewgong": {
+        "t1": "Water",
+        "t2": "Ice",
+        "bs": {
+            "hp": 90,
+            "at": 70,
+            "df": 80,
+            "sa": 70,
+            "sd": 95,
+            "sp": 70,
+            "sl": 95
+        },
+        "w": 120.0,
+        "ab": "Thick Fat"
+    },
+    "Grimer": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 80,
+            "at": 80,
+            "df": 50,
+            "sa": 40,
+            "sd": 50,
+            "sp": 25,
+            "sl": 40
+        },
+        "w": 30.0,
+        "ab": "Sticky Hold",
+        "canEvolve": true,
+    },
+    "Muk": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 105,
+            "at": 105,
+            "df": 75,
+            "sa": 65,
             "sd": 100,
+            "sp": 50,
+            "sl": 65
+        },
+        "w": 30.0,
+        "ab": "Sticky Hold",
+    },
+    "Shellder": {
+        "t1": "Water",
+        "bs": {
+            "hp": 30,
+            "at": 65,
+            "df": 100,
+            "sa": 45,
+            "sd": 25,
+            "sp": 40,
+            "sl": 45
+        },
+        "w": 4.0,
+        "ab": "Shell Armor",
+        "canEvolve": true,
+    },
+    "Cloyster": {
+        "t1": "Water",
+        "t2": "Ice",
+        "bs": {
+            "hp": 50,
+            "at": 95,
+            "df": 180,
+            "sa": 85,
+            "sd": 45,
+            "sp": 70,
+            "sl": 85
+        },
+        "w": 132.5,
+        "ab": "Shell Armor"
+    },
+    "Gastly": {
+        "t1": "Ghost",
+        "t2": "Poison",
+        "bs": {
+            "hp": 30,
+            "at": 35,
+            "df": 30,
+            "sa": 100,
+            "sd": 35,
             "sp": 80,
             "sl": 100
         },
-        "w": 210.0,
-        "ab": "Inner Focus",
+        "w": 0.1,
+        "ab": "Levitate",
+        "canEvolve": true,
     },
-    "Dratini": {
-        "t1": "Dragon",
+    "Haunter": {
+        "t1": "Ghost",
+        "t2": "Poison",
         "bs": {
-            "hp": 41,
-            "at": 64,
+            "hp": 45,
+            "at": 50,
             "df": 45,
-            "sa": 50,
-            "sd": 50,
-            "sp": 50,
-            "sl": 50
+            "sa": 115,
+            "sd": 55,
+            "sp": 95,
+            "sl": 115
         },
-        "w": 3.3,
-        "ab": "Shed Skin",
+        "w": 0.1,
+        "ab": "Levitate",
+        "canEvolve": true,
+    },
+    "Gengar": {
+        "t1": "Ghost",
+        "t2": "Poison",
+        "bs": {
+            "hp": 60,
+            "at": 65,
+            "df": 60,
+            "sa": 130,
+            "sd": 75,
+            "sp": 110,
+            "sl": 130
+        },
+        "w": 40.5,
+        "ab": "Levitate"
+    },
+    "Onix": {
+        "t1": "Rock",
+        "t2": "Ground",
+        "bs": {
+            "hp": 35,
+            "at": 45,
+            "df": 160,
+            "sa": 30,
+            "sd": 45,
+            "sp": 70,
+            "sl": 30
+        },
+        "w": 210.0,
+        "ab": "Rock Head",
         "canEvolve": true,
     },
     "Drowzee": {
@@ -431,63 +1445,62 @@ var POKEDEX_RBY = {
         "ab": "Insomnia",
         "canEvolve": true,
     },
-    "Dugtrio": {
-        "t1": "Ground",
+    "Hypno": {
+        "t1": "Psychic",
         "bs": {
-            "hp": 35,
-            "at": 80,
-            "df": 50,
-            "sa": 50,
-            "sd": 70,
-            "sp": 120,
-            "sl": 70
+            "hp": 85,
+            "at": 73,
+            "df": 70,
+            "sa": 73,
+            "sd": 115,
+            "sp": 67,
+            "sl": 115
         },
-        "w": 33.3,
-        "ab": "Arena Trap",
+        "w": 75.6,
+        "ab": "Insomnia",
     },
-    "Eevee": {
-        "t1": "Normal",
+    "Krabby": {
+        "t1": "Water",
         "bs": {
-            "hp": 55,
-            "at": 55,
-            "df": 50,
-            "sa": 45,
-            "sd": 65,
-            "sp": 55,
-            "sl": 65
+            "hp": 30,
+            "at": 105,
+            "df": 90,
+            "sa": 25,
+            "sd": 25,
+            "sp": 50,
+            "sl": 25
         },
         "w": 6.5,
-        "ab": "Run Away",
+        "ab": "Hyper Cutter",
         "canEvolve": true,
     },
-    "Ekans": {
-        "t1": "Poison",
+    "Kingler": {
+        "t1": "Water",
         "bs": {
-            "hp": 35,
-            "at": 60,
-            "df": 44,
-            "sa": 40,
-            "sd": 54,
-            "sp": 55,
-            "sl": 40
+            "hp": 55,
+            "at": 130,
+            "df": 115,
+            "sa": 50,
+            "sd": 50,
+            "sp": 75,
+            "sl": 50
         },
-        "w": 6.9,
-        "ab": "Intimidate",
-        "canEvolve": true,
+        "w": 60.0,
+        "ab": "Hyper Cutter",
     },
-    "Electabuzz": {
+    "Voltorb": {
         "t1": "Electric",
         "bs": {
-            "hp": 65,
-            "at": 83,
-            "df": 57,
-            "sa": 95,
-            "sd": 85,
-            "sp": 105,
-            "sl": 85
+            "hp": 40,
+            "at": 30,
+            "df": 50,
+            "sa": 55,
+            "sd": 55,
+            "sp": 100,
+            "sl": 55
         },
-        "w": 30.0,
-        "ab": "Static",
+        "w": 10.4,
+        "ab": "Soundproof",
         "canEvolve": true,
     },
     "Electrode": {
@@ -535,127 +1548,211 @@ var POKEDEX_RBY = {
         "w": 120.0,
         "ab": "Chlorophyll"
     },
-    "Farfetch'd": {
-        "t1": "Normal",
-        "t2": "Flying",
+    "Cubone": {
+        "t1": "Ground",
         "bs": {
-            "hp": 52,
-            "at": 65,
-            "df": 55,
-            "sa": 58,
-            "sd": 62,
-            "sp": 60,
-            "sl": 58
+            "hp": 50,
+            "at": 50,
+            "df": 95,
+            "sa": 40,
+            "sd": 50,
+            "sp": 35,
+            "sl": 40
         },
-        "w": 15.0,
-        "ab": "Inner Focus",
+        "w": 6.5,
+        "ab": "Lightning Rod",
+        "canEvolve": true,
     },
-    "Fearow": {
-        "t1": "Normal",
-        "t2": "Flying",
+    "Marowak": {
+        "t1": "Ground",
         "bs": {
-            "hp": 65,
-            "at": 90,
-            "df": 65,
-            "sa": 61,
-            "sd": 61,
-            "sp": 100,
-            "sl": 61
+            "hp": 60,
+            "at": 80,
+            "df": 110,
+            "sa": 50,
+            "sd": 80,
+            "sp": 45,
+            "sl": 50
         },
-        "w": 38.0,
+        "w": 45.0,
+        "ab": "Lightning Rod",
+    },
+    "Hitmonlee": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 50,
+            "at": 120,
+            "df": 53,
+            "sa": 35,
+            "sd": 110,
+            "sp": 87,
+            "sl": 35
+        },
+        "w": 49.8,
+        "ab": "Limber",
+    },
+    "Hitmonchan": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 50,
+            "at": 105,
+            "df": 79,
+            "sa": 35,
+            "sd": 110,
+            "sp": 76,
+            "sl": 35
+        },
+        "w": 50.2,
         "ab": "Keen Eye",
     },
-    "Flareon": {
-        "t1": "Fire",
+    "Lickitung": {
+        "t1": "Normal",
         "bs": {
-            "hp": 65,
-            "at": 130,
-            "df": 60,
-            "sa": 95,
-            "sd": 110,
-            "sp": 65,
-            "sl": 110
+            "hp": 90,
+            "at": 55,
+            "df": 75,
+            "sa": 60,
+            "sd": 75,
+            "sp": 30,
+            "sl": 60
         },
-        "w": 25.0,
-        "ab": "Flash Fire"
+        "w": 65.5,
+        "ab": "Own Tempo",
+        "canEvolve": true,
     },
-    "Gastly": {
-        "t1": "Ghost",
-        "t2": "Poison",
+    "Koffing": {
+        "t1": "Poison",
         "bs": {
-            "hp": 30,
-            "at": 35,
-            "df": 30,
-            "sa": 100,
-            "sd": 35,
-            "sp": 80,
-            "sl": 100
+            "hp": 40,
+            "at": 65,
+            "df": 95,
+            "sa": 60,
+            "sd": 45,
+            "sp": 35,
+            "sl": 60
         },
-        "w": 0.1,
+        "w": 1.0,
         "ab": "Levitate",
         "canEvolve": true,
     },
-    "Gengar": {
-        "t1": "Ghost",
-        "t2": "Poison",
+    "Weezing": {
+        "t1": "Poison",
         "bs": {
-            "hp": 60,
-            "at": 65,
-            "df": 60,
-            "sa": 130,
-            "sd": 75,
-            "sp": 110,
-            "sl": 130
-        },
-        "w": 40.5,
-        "ab": "Levitate"
-    },
-    "Geodude": {
-        "t1": "Rock",
-        "t2": "Ground",
-        "bs": {
-            "hp": 40,
-            "at": 80,
-            "df": 100,
-            "sa": 30,
-            "sd": 30,
-            "sp": 20,
-            "sl": 30
-        },
-        "w": 20.0,
-        "ab": "Rock Head",
-        "canEvolve": true,
-    },
-    "Gloom": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 60,
-            "at": 65,
-            "df": 70,
+            "hp": 65,
+            "at": 90,
+            "df": 120,
             "sa": 85,
-            "sd": 75,
-            "sp": 40,
+            "sd": 70,
+            "sp": 60,
             "sl": 85
         },
-        "w": 8.6,
+        "w": 9.5,
+        "ab": "Levitate"
+    },
+    "Rhyhorn": {
+        "t1": "Ground",
+        "t2": "Rock",
+        "bs": {
+            "hp": 80,
+            "at": 85,
+            "df": 95,
+            "sa": 30,
+            "sd": 30,
+            "sp": 25,
+            "sl": 30
+        },
+        "w": 115.0,
+        "ab": "Lightning Rod",
+        "canEvolve": true,
+    },
+    "Rhydon": {
+        "t1": "Ground",
+        "t2": "Rock",
+        "bs": {
+            "hp": 105,
+            "at": 130,
+            "df": 120,
+            "sa": 45,
+            "sd": 45,
+            "sp": 40,
+            "sl": 45
+        },
+        "w": 120.0,
+        "ab": "Lightning Rod",
+        "canEvolve": true,
+    },
+    "Chansey": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 250,
+            "at": 5,
+            "df": 5,
+            "sa": 35,
+            "sd": 105,
+            "sp": 50,
+            "sl": 105
+        },
+        "w": 34.6,
+        "ab": "Serene Grace",
+        "canEvolve": true,
+    },
+    "Tangela": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 65,
+            "at": 55,
+            "df": 115,
+            "sa": 100,
+            "sd": 40,
+            "sp": 60,
+            "sl": 100
+        },
+        "w": 35.0,
         "ab": "Chlorophyll",
         "canEvolve": true,
     },
-    "Golbat": {
-        "t1": "Poison",
-        "t2": "Flying",
+    "Kangaskhan": {
+        "t1": "Normal",
         "bs": {
-            "hp": 75,
-            "at": 80,
-            "df": 70,
-            "sa": 65,
-            "sd": 75,
+            "hp": 105,
+            "at": 95,
+            "df": 80,
+            "sa": 40,
+            "sd": 80,
             "sp": 90,
-            "sl": 75
+            "sl": 40
         },
-        "w": 55.0,
-        "ab": "Inner Focus",
+        "w": 80.0,
+        "ab": "Early Bird",
+    },
+    "Horsea": {
+        "t1": "Water",
+        "bs": {
+            "hp": 30,
+            "at": 40,
+            "df": 70,
+            "sa": 70,
+            "sd": 25,
+            "sp": 60,
+            "sl": 70
+        },
+        "w": 8.0,
+        "ab": "Swift Swim",
+        "canEvolve": true,
+    },
+    "Seadra": {
+        "t1": "Water",
+        "bs": {
+            "hp": 55,
+            "at": 65,
+            "df": 95,
+            "sa": 95,
+            "sd": 45,
+            "sp": 85,
+            "sl": 95
+        },
+        "w": 25.0,
+        "ab": "Poison Point",
         "canEvolve": true,
     },
     "Goldeen": {
@@ -673,213 +1770,79 @@ var POKEDEX_RBY = {
         "ab": "Swift Swim",
         "canEvolve": true,
     },
-    "Golduck": {
+    "Seaking": {
         "t1": "Water",
         "bs": {
             "hp": 80,
-            "at": 82,
-            "df": 78,
-            "sa": 95,
+            "at": 92,
+            "df": 65,
+            "sa": 65,
             "sd": 80,
-            "sp": 85,
+            "sp": 68,
             "sl": 80
         },
-        "w": 76.6,
-        "ab": "Cloud Nine",
+        "w": 39.0,
+        "ab": "Swift Swim",
     },
-    "Golem": {
-        "t1": "Rock",
-        "t2": "Ground",
-        "bs": {
-            "hp": 80,
-            "at": 110,
-            "df": 130,
-            "sa": 55,
-            "sd": 65,
-            "sp": 45,
-            "sl": 55
-        },
-        "w": 300.0,
-        "ab": "Rock Head",
-    },
-    "Graveler": {
-        "t1": "Rock",
-        "t2": "Ground",
-        "bs": {
-            "hp": 55,
-            "at": 95,
-            "df": 115,
-            "sa": 45,
-            "sd": 45,
-            "sp": 35,
-            "sl": 45
-        },
-        "w": 105.0,
-        "ab": "Rock Head",
-        "canEvolve": true,
-    },
-    "Grimer": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 80,
-            "df": 50,
-            "sa": 40,
-            "sd": 50,
-            "sp": 25,
-            "sl": 40
-        },
-        "w": 30.0,
-        "ab": "Sticky Hold",
-        "canEvolve": true,
-    },
-    "Growlithe": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 55,
-            "at": 70,
-            "df": 45,
-            "sa": 70,
-            "sd": 50,
-            "sp": 60,
-            "sl": 50
-        },
-        "w": 19.0,
-        "ab": "Intimidate",
-        "canEvolve": true,
-    },
-    "Gyarados": {
-        "t1": "Water",
-        "t2": "Flying",
-        "bs": {
-            "hp": 95,
-            "at": 125,
-            "df": 79,
-            "sa": 60,
-            "sd": 100,
-            "sp": 81,
-            "sl": 100
-        },
-        "w": 235.0,
-        "ab": "Intimidate"
-    },
-    "Haunter": {
-        "t1": "Ghost",
-        "t2": "Poison",
-        "bs": {
-            "hp": 45,
-            "at": 50,
-            "df": 45,
-            "sa": 115,
-            "sd": 55,
-            "sp": 95,
-            "sl": 115
-        },
-        "w": 0.1,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Hitmonchan": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 50,
-            "at": 105,
-            "df": 79,
-            "sa": 35,
-            "sd": 110,
-            "sp": 76,
-            "sl": 35
-        },
-        "w": 50.2,
-        "ab": "Keen Eye",
-    },
-    "Hitmonlee": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 50,
-            "at": 120,
-            "df": 53,
-            "sa": 35,
-            "sd": 110,
-            "sp": 87,
-            "sl": 35
-        },
-        "w": 49.8,
-        "ab": "Limber",
-    },
-    "Horsea": {
+    "Staryu": {
         "t1": "Water",
         "bs": {
             "hp": 30,
-            "at": 40,
-            "df": 70,
+            "at": 45,
+            "df": 55,
             "sa": 70,
-            "sd": 25,
-            "sp": 60,
+            "sd": 55,
+            "sp": 85,
             "sl": 70
         },
-        "w": 8.0,
-        "ab": "Swift Swim",
+        "w": 34.5,
+        "ab": "Natural Cure",
         "canEvolve": true,
     },
-    "Hypno": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 85,
-            "at": 73,
-            "df": 70,
-            "sa": 73,
-            "sd": 115,
-            "sp": 67,
-            "sl": 115
-        },
-        "w": 75.6,
-        "ab": "Insomnia",
-    },
-    "Ivysaur": {
-        "t1": "Grass",
-        "t2": "Poison",
+    "Starmie": {
+        "t1": "Water",
+        "t2": "Psychic",
         "bs": {
             "hp": 60,
-            "at": 62,
-            "df": 63,
-            "sa": 80,
-            "sd": 80,
-            "sp": 60,
-            "sl": 80
+            "at": 75,
+            "df": 85,
+            "sa": 100,
+            "sd": 85,
+            "sp": 115,
+            "sl": 100
         },
-        "w": 13.0,
-        "ab": "Overgrow",
-        "canEvolve": true,
+        "w": 80.0,
+        "ab": "Natural Cure",
     },
-    "Jigglypuff": {
-        "t1": "Normal",
+    "Mr. Mime": {
+        "t1": "Psychic",
         "bs": {
-            "hp": 115,
+            "hp": 40,
             "at": 45,
-            "df": 20,
-            "sa": 45,
-            "sd": 25,
-            "sp": 20,
-            "sl": 25
+            "df": 65,
+            "sa": 100,
+            "sd": 120,
+            "sp": 90,
+            "sl": 100
         },
-        "w": 5.5,
-        "ab": "Cute Charm",
-        "canEvolve": true,
+        "w": 54.5,
+        "ab": "Soundproof"
     },
-    "Jolteon": {
-        "t1": "Electric",
+    "Scyther": {
+        "t1": "Bug",
+        "t2": "Flying",
         "bs": {
-            "hp": 65,
-            "at": 65,
-            "df": 60,
-            "sa": 110,
-            "sd": 95,
-            "sp": 130,
-            "sl": 110
+            "hp": 70,
+            "at": 110,
+            "df": 80,
+            "sa": 55,
+            "sd": 80,
+            "sp": 105,
+            "sl": 55
         },
-        "w": 24.5,
-        "ab": "Volt Absorb"
+        "w": 56.0,
+        "ab": "Swarm",
+        "canEvolve": true,
     },
     "Jynx": {
         "t1": "Ice",
@@ -896,213 +1859,19 @@ var POKEDEX_RBY = {
         "w": 40.6,
         "ab": "Oblivious",
     },
-    "Kabuto": {
-        "t1": "Rock",
-        "t2": "Water",
+    "Electabuzz": {
+        "t1": "Electric",
         "bs": {
-            "hp": 30,
-            "at": 80,
-            "df": 90,
-            "sa": 55,
-            "sd": 45,
-            "sp": 55,
-            "sl": 45
-        },
-        "w": 11.5,
-        "ab": "Swift Swim",
-        "canEvolve": true,
-    },
-    "Kabutops": {
-        "t1": "Rock",
-        "t2": "Water",
-        "bs": {
-            "hp": 60,
-            "at": 115,
-            "df": 105,
-            "sa": 65,
-            "sd": 70,
-            "sp": 80,
-            "sl": 70
-        },
-        "w": 40.5,
-        "ab": "Swift Swim",
-    },
-    "Kadabra": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 40,
-            "at": 35,
-            "df": 30,
-            "sa": 120,
-            "sd": 70,
-            "sp": 105,
-            "sl": 120
-        },
-        "w": 56.5,
-        "ab": "Synchronize",
-        "canEvolve": true,
-    },
-    "Kakuna": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 45,
-            "at": 25,
-            "df": 50,
-            "sa": 25,
-            "sd": 25,
-            "sp": 35,
-            "sl": 25
-        },
-        "w": 10.0,
-        "ab": "Shed Skin",
-        "canEvolve": true,
-    },
-    "Kangaskhan": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 105,
-            "at": 95,
-            "df": 80,
-            "sa": 40,
-            "sd": 80,
-            "sp": 90,
-            "sl": 40
-        },
-        "w": 80.0,
-        "ab": "Early Bird",
-    },
-    "Kingler": {
-        "t1": "Water",
-        "bs": {
-            "hp": 55,
-            "at": 130,
-            "df": 115,
-            "sa": 50,
-            "sd": 50,
-            "sp": 75,
-            "sl": 50
-        },
-        "w": 60.0,
-        "ab": "Swift Swim",
-    },
-    "Koffing": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 40,
-            "at": 65,
-            "df": 95,
-            "sa": 60,
-            "sd": 45,
-            "sp": 35,
-            "sl": 60
-        },
-        "w": 1.0,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Krabby": {
-        "t1": "Water",
-        "bs": {
-            "hp": 30,
-            "at": 105,
-            "df": 90,
-            "sa": 25,
-            "sd": 25,
-            "sp": 50,
-            "sl": 25
-        },
-        "w": 6.5,
-        "ab": "Hyper Cutter",
-        "canEvolve": true,
-    },
-    "Lapras": {
-        "t1": "Water",
-        "t2": "Ice",
-        "bs": {
-            "hp": 130,
-            "at": 85,
-            "df": 80,
-            "sa": 85,
-            "sd": 95,
-            "sp": 60,
-            "sl": 95
-        },
-        "w": 220.0,
-        "ab": "Water Absorb"
-    },
-    "Lickitung": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 90,
-            "at": 55,
-            "df": 75,
-            "sa": 60,
-            "sd": 75,
-            "sp": 30,
-            "sl": 60
-        },
-        "w": 65.5,
-        "ab": "Own Tempo",
-        "canEvolve": true,
-    },
-    "Machamp": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 90,
-            "at": 130,
-            "df": 80,
-            "sa": 65,
+            "hp": 65,
+            "at": 83,
+            "df": 57,
+            "sa": 95,
             "sd": 85,
-            "sp": 55,
-            "sl": 65
+            "sp": 105,
+            "sl": 85
         },
-        "w": 130.0,
-        "ab": "Guts"
-    },
-    "Machoke": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 80,
-            "at": 100,
-            "df": 70,
-            "sa": 50,
-            "sd": 60,
-            "sp": 45,
-            "sl": 50
-        },
-        "w": 70.5,
-        "ab": "Guts",
-        "canEvolve": true,
-    },
-    "Machop": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 70,
-            "at": 80,
-            "df": 50,
-            "sa": 35,
-            "sd": 35,
-            "sp": 35,
-            "sl": 35
-        },
-        "w": 19.5,
-        "ab": "Guts",
-        "canEvolve": true,
-    },
-    "Magikarp": {
-        "t1": "Water",
-        "bs": {
-            "hp": 20,
-            "at": 10,
-            "df": 55,
-            "sa": 15,
-            "sd": 20,
-            "sp": 80,
-            "sl": 20
-        },
-        "w": 10.0,
-        "ab": "Swift Swim",
+        "w": 30.0,
+        "ab": "Static",
         "canEvolve": true,
     },
     "Magmar": {
@@ -1120,284 +1889,163 @@ var POKEDEX_RBY = {
         "ab": "Flame Body",
         "canEvolve": true,
     },
-    "Magnemite": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 25,
-            "at": 35,
-            "df": 70,
-            "sa": 95,
-            "sd": 55,
-            "sp": 45,
-            "sl": 95
-        },
-        "w": 6.0,
-        "ab": "Magnet Pull",
-        "canEvolve": true,
-    },
-    "Magneton": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 50,
-            "at": 60,
-            "df": 95,
-            "sa": 120,
-            "sd": 70,
-            "sp": 70,
-            "sl": 120
-        },
-        "w": 60.0,
-        "ab": "Magnet Pull",
-        "canEvolve": true,
-    },
-    "Mankey": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 40,
-            "at": 80,
-            "df": 35,
-            "sa": 35,
-            "sd": 45,
-            "sp": 70,
-            "sl": 35
-        },
-        "w": 28.0,
-        "ab": "Vital Spirit",
-        "canEvolve": true,
-    },
-    "Marowak": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 60,
-            "at": 80,
-            "df": 110,
-            "sa": 50,
-            "sd": 80,
-            "sp": 45,
-            "sl": 50
-        },
-        "w": 45.0,
-        "ab": "Lightning Rod",
-    },
-    "Meowth": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 35,
-            "sa": 40,
-            "sd": 40,
-            "sp": 90,
-            "sl": 40
-        },
-        "w": 4.2,
-        "ab": "Pickup",
-        "canEvolve": true,
-    },
-    "Metapod": {
+    "Pinsir": {
         "t1": "Bug",
         "bs": {
-            "hp": 50,
-            "at": 20,
-            "df": 55,
-            "sa": 25,
-            "sd": 25,
-            "sp": 30,
-            "sl": 25
+            "hp": 65,
+            "at": 125,
+            "df": 100,
+            "sa": 55,
+            "sd": 70,
+            "sp": 85,
+            "sl": 55
         },
-        "w": 9.9,
-        "ab": "Shed Skin",
+        "w": 55.0,
+        "ab": "Hyper Cutter"
+    },
+    "Tauros": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 75,
+            "at": 100,
+            "df": 95,
+            "sa": 40,
+            "sd": 70,
+            "sp": 110,
+            "sl": 70
+        },
+        "w": 88.4,
+        "ab": "Intimidate"
+    },
+    "Magikarp": {
+        "t1": "Water",
+        "bs": {
+            "hp": 20,
+            "at": 10,
+            "df": 55,
+            "sa": 15,
+            "sd": 20,
+            "sp": 80,
+            "sl": 20
+        },
+        "w": 10.0,
+        "ab": "Swift Swim",
         "canEvolve": true,
     },
-    "Mew": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 100,
-            "sa": 100,
-            "sd": 100,
-            "sp": 100,
-            "sl": 100
-        },
-        "w": 4.0,
-        "ab": "Synchronize"
-    },
-    "Mewtwo": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 106,
-            "at": 110,
-            "df": 90,
-            "sa": 154,
-            "sd": 90,
-            "sp": 130,
-            "sl": 154
-        },
-        "w": 122.0,
-        "ab": "Pressure",
-    },
-    "Moltres": {
-        "t1": "Fire",
+    "Gyarados": {
+        "t1": "Water",
         "t2": "Flying",
         "bs": {
-            "hp": 90,
-            "at": 100,
-            "df": 90,
-            "sa": 125,
-            "sd": 85,
-            "sp": 90,
-            "sl": 125
-        },
-        "w": 60.0,
-        "ab": "Pressure",
-    },
-    "Mr. Mime": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 65,
-            "sa": 100,
-            "sd": 120,
-            "sp": 90,
+            "hp": 95,
+            "at": 125,
+            "df": 79,
+            "sa": 60,
+            "sd": 100,
+            "sp": 81,
             "sl": 100
         },
-        "w": 54.5,
-        "ab": "Soundproof"
+        "w": 235.0,
+        "ab": "Intimidate"
     },
-    "Muk": {
-        "t1": "Poison",
+    "Lapras": {
+        "t1": "Water",
+        "t2": "Ice",
         "bs": {
-            "hp": 105,
-            "at": 105,
-            "df": 75,
-            "sa": 65,
-            "sd": 100,
-            "sp": 50,
-            "sl": 65
-        },
-        "w": 30.0,
-        "ab": "Sticky Hold",
-    },
-    "Nidoking": {
-        "t1": "Poison",
-        "t2": "Ground",
-        "bs": {
-            "hp": 81,
-            "at": 92,
-            "df": 77,
+            "hp": 130,
+            "at": 85,
+            "df": 80,
             "sa": 85,
-            "sd": 75,
-            "sp": 85,
-            "sl": 75
+            "sd": 95,
+            "sp": 60,
+            "sl": 95
         },
-        "w": 62.0,
-        "ab": "Poison Point",
+        "w": 220.0,
+        "ab": "Water Absorb"
     },
-    "Nidoqueen": {
-        "t1": "Poison",
-        "t2": "Ground",
+    "Ditto": {
+        "t1": "Normal",
         "bs": {
-            "hp": 90,
-            "at": 82,
-            "df": 87,
-            "sa": 75,
-            "sd": 85,
-            "sp": 76,
-            "sl": 75
+            "hp": 48,
+            "at": 48,
+            "df": 48,
+            "sa": 48,
+            "sd": 48,
+            "sp": 48,
+            "sl": 48
         },
-        "w": 60.0,
-        "ab": "Poison Point",
+        "w": 4.0,
+        "ab": "Limber",
     },
-    "Nidoran-F": {
-        "t1": "Poison",
+    "Eevee": {
+        "t1": "Normal",
         "bs": {
             "hp": 55,
-            "at": 47,
-            "df": 52,
-            "sa": 40,
-            "sd": 40,
-            "sp": 41,
-            "sl": 40
+            "at": 55,
+            "df": 50,
+            "sa": 45,
+            "sd": 65,
+            "sp": 55,
+            "sl": 65
         },
-        "w": 7.0,
-        "ab": "Poison Point",
+        "w": 6.5,
+        "ab": "Run Away",
         "canEvolve": true,
     },
-    "Nidoran-M": {
-        "t1": "Poison",
+    "Vaporeon": {
+        "t1": "Water",
         "bs": {
-            "hp": 46,
-            "at": 57,
-            "df": 40,
-            "sa": 40,
-            "sd": 40,
-            "sp": 50,
-            "sl": 40
-        },
-        "w": 9.0,
-        "ab": "Poison Point",
-        "canEvolve": true,
-    },
-    "Nidorina": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 70,
-            "at": 62,
-            "df": 67,
-            "sa": 55,
-            "sd": 55,
-            "sp": 56,
-            "sl": 55
-        },
-        "w": 20.0,
-        "ab": "Poison Point",
-        "canEvolve": true,
-    },
-    "Nidorino": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 61,
-            "at": 72,
-            "df": 57,
-            "sa": 55,
-            "sd": 55,
+            "hp": 130,
+            "at": 65,
+            "df": 60,
+            "sa": 110,
+            "sd": 95,
             "sp": 65,
-            "sl": 55
+            "sl": 110
         },
-        "w": 19.5,
-        "ab": "Poison Point",
-        "canEvolve": true,
+        "w": 29.0,
+        "ab": "Water Absorb"
     },
-    "Ninetales": {
+    "Jolteon": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 65,
+            "at": 65,
+            "df": 60,
+            "sa": 110,
+            "sd": 95,
+            "sp": 130,
+            "sl": 110
+        },
+        "w": 24.5,
+        "ab": "Volt Absorb"
+    },
+    "Flareon": {
         "t1": "Fire",
         "bs": {
-            "hp": 73,
-            "at": 76,
-            "df": 75,
-            "sa": 81,
-            "sd": 100,
-            "sp": 100,
-            "sl": 100
+            "hp": 65,
+            "at": 130,
+            "df": 60,
+            "sa": 95,
+            "sd": 110,
+            "sp": 65,
+            "sl": 110
         },
-        "w": 19.9,
+        "w": 25.0,
         "ab": "Flash Fire"
     },
-    "Oddish": {
-        "t1": "Grass",
-        "t2": "Poison",
+    "Porygon": {
+        "t1": "Normal",
         "bs": {
-            "hp": 45,
-            "at": 50,
-            "df": 55,
-            "sa": 75,
-            "sd": 65,
-            "sp": 30,
+            "hp": 65,
+            "at": 60,
+            "df": 70,
+            "sa": 85,
+            "sd": 75,
+            "sp": 40,
             "sl": 75
         },
-        "w": 5.4,
-        "ab": "Chlorophyll",
+        "w": 36.5,
+        "ab": "Trace",
         "canEvolve": true,
     },
     "Omanyte": {
@@ -1431,470 +2079,51 @@ var POKEDEX_RBY = {
         "w": 35.0,
         "ab": "Swift Swim",
     },
-    "Onix": {
+    "Kabuto": {
         "t1": "Rock",
-        "t2": "Ground",
-        "bs": {
-            "hp": 35,
-            "at": 45,
-            "df": 160,
-            "sa": 30,
-            "sd": 45,
-            "sp": 70,
-            "sl": 30
-        },
-        "w": 210.0,
-        "ab": "Rock Head",
-        "canEvolve": true,
-    },
-    "Paras": {
-        "t1": "Bug",
-        "t2": "Grass",
-        "bs": {
-            "hp": 35,
-            "at": 70,
-            "df": 55,
-            "sa": 45,
-            "sd": 55,
-            "sp": 25,
-            "sl": 55
-        },
-        "w": 5.4,
-        "ab": "Effect Spore",
-        "canEvolve": true,
-    },
-    "Parasect": {
-        "t1": "Bug",
-        "t2": "Grass",
-        "bs": {
-            "hp": 60,
-            "at": 95,
-            "df": 80,
-            "sa": 60,
-            "sd": 80,
-            "sp": 30,
-            "sl": 80
-        },
-        "w": 29.5,
-        "ab": "Effect Spore",
-    },
-    "Persian": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 65,
-            "at": 70,
-            "df": 60,
-            "sa": 65,
-            "sd": 65,
-            "sp": 115,
-            "sl": 65
-        },
-        "w": 32.0,
-        "ab": "Limber",
-    },
-    "Pidgeot": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 83,
-            "at": 80,
-            "df": 75,
-            "sa": 70,
-            "sd": 70,
-            "sp": 91,
-            "sl": 70
-        },
-        "w": 39.5,
-        "ab": "Keen Eye",
-    },
-    "Pidgeotto": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 63,
-            "at": 60,
-            "df": 55,
-            "sa": 50,
-            "sd": 50,
-            "sp": 71,
-            "sl": 50
-        },
-        "w": 30.0,
-        "ab": "Keen Eye",
-        "canEvolve": true,
-    },
-    "Pidgey": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 40,
-            "sa": 35,
-            "sd": 35,
-            "sp": 56,
-            "sl": 35
-        },
-        "w": 1.8,
-        "ab": "Keen Eye",
-        "canEvolve": true,
-    },
-    "Pikachu": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 35,
-            "at": 55,
-            "df": 30,
-            "sa": 50,
-            "sd": 40,
-            "sp": 90,
-            "sl": 50
-        },
-        "w": 6.0,
-        "ab": "Static",
-        "canEvolve": true,
-    },
-    "Pinsir": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 65,
-            "at": 125,
-            "df": 100,
-            "sa": 55,
-            "sd": 70,
-            "sp": 85,
-            "sl": 55
-        },
-        "w": 55.0,
-        "ab": "Hyper Cutter"
-    },
-    "Poliwag": {
-        "t1": "Water",
-        "bs": {
-            "hp": 40,
-            "at": 50,
-            "df": 40,
-            "sa": 40,
-            "sd": 40,
-            "sp": 90,
-            "sl": 40
-        },
-        "w": 12.4,
-        "ab": "Water Absorb",
-        "canEvolve": true,
-    },
-    "Poliwhirl": {
-        "t1": "Water",
-        "bs": {
-            "hp": 65,
-            "at": 65,
-            "df": 65,
-            "sa": 50,
-            "sd": 50,
-            "sp": 90,
-            "sl": 50
-        },
-        "w": 20.0,
-        "ab": "Water Absorb",
-        "canEvolve": true,
-    },
-    "Poliwrath": {
-        "t1": "Water",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 90,
-            "at": 85,
-            "df": 95,
-            "sa": 70,
-            "sd": 90,
-            "sp": 70,
-            "sl": 70
-        },
-        "w": 54.0,
-        "ab": "Water Absorb",
-    },
-    "Ponyta": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 50,
-            "at": 85,
-            "df": 55,
-            "sa": 65,
-            "sd": 65,
-            "sp": 90,
-            "sl": 65
-        },
-        "w": 30.0,
-        "ab": "Flash Fire",
-        "canEvolve": true,
-    },
-    "Porygon": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 65,
-            "at": 60,
-            "df": 70,
-            "sa": 85,
-            "sd": 75,
-            "sp": 40,
-            "sl": 75
-        },
-        "w": 36.5,
-        "ab": "Trace",
-        "canEvolve": true,
-    },
-    "Primeape": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 65,
-            "at": 105,
-            "df": 60,
-            "sa": 60,
-            "sd": 70,
-            "sp": 95,
-            "sl": 60
-        },
-        "w": 32.0,
-        "ab": "Vital Spirit",
-    },
-    "Psyduck": {
-        "t1": "Water",
-        "bs": {
-            "hp": 50,
-            "at": 52,
-            "df": 48,
-            "sa": 65,
-            "sd": 50,
-            "sp": 55,
-            "sl": 50
-        },
-        "w": 19.6,
-        "ab": "Cloud Nine",
-        "canEvolve": true,
-    },
-    "Raichu": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 60,
-            "at": 90,
-            "df": 55,
-            "sa": 90,
-            "sd": 80,
-            "sp": 100,
-            "sl": 90
-        },
-        "w": 30.0,
-        "ab": "Static",
-    },
-    "Rapidash": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 65,
-            "at": 100,
-            "df": 70,
-            "sa": 80,
-            "sd": 80,
-            "sp": 105,
-            "sl": 80
-        },
-        "w": 95.0,
-        "ab": "Flash Fire",
-    },
-    "Raticate": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 55,
-            "at": 81,
-            "df": 60,
-            "sa": 50,
-            "sd": 70,
-            "sp": 97,
-            "sl": 50
-        },
-        "w": 18.5,
-        "ab": "Guts",
-    },
-    "Rattata": {
-        "t1": "Normal",
+        "t2": "Water",
         "bs": {
             "hp": 30,
-            "at": 56,
-            "df": 35,
-            "sa": 25,
-            "sd": 35,
-            "sp": 72,
-            "sl": 25
-        },
-        "w": 3.5,
-        "ab": "Guts",
-        "canEvolve": true,
-    },
-    "Rhydon": {
-        "t1": "Ground",
-        "t2": "Rock",
-        "bs": {
-            "hp": 105,
-            "at": 130,
-            "df": 120,
-            "sa": 45,
+            "at": 80,
+            "df": 90,
+            "sa": 55,
             "sd": 45,
-            "sp": 40,
+            "sp": 55,
             "sl": 45
         },
-        "w": 120.0,
-        "ab": "Lightning Rod",
+        "w": 11.5,
+        "ab": "Swift Swim",
         "canEvolve": true,
     },
-    "Rhyhorn": {
-        "t1": "Ground",
-        "t2": "Rock",
+    "Kabutops": {
+        "t1": "Rock",
+        "t2": "Water",
         "bs": {
-            "hp": 80,
-            "at": 85,
-            "df": 95,
-            "sa": 30,
-            "sd": 30,
-            "sp": 25,
-            "sl": 30
-        },
-        "w": 115.0,
-        "ab": "Lightning Rod",
-        "canEvolve": true,
-    },
-    "Sandshrew": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 50,
-            "at": 75,
-            "df": 85,
-            "sa": 20,
-            "sd": 30,
-            "sp": 40,
-            "sl": 30
-        },
-        "w": 12.0,
-        "ab": "Sand Veil",
-        "canEvolve": true,
-    },
-    "Sandslash": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 75,
-            "at": 100,
-            "df": 110,
-            "sa": 45,
-            "sd": 55,
-            "sp": 65,
-            "sl": 55
-        },
-        "w": 29.5,
-        "ab": "Sand Veil"
-    },
-    "Scyther": {
-        "t1": "Bug",
-        "t2": "Flying",
-        "bs": {
-            "hp": 70,
-            "at": 110,
-            "df": 80,
-            "sa": 55,
-            "sd": 80,
-            "sp": 105,
-            "sl": 55
-        },
-        "w": 56.0,
-        "ab": "Swarm",
-        "canEvolve": true,
-    },
-    "Seadra": {
-        "t1": "Water",
-        "bs": {
-            "hp": 55,
-            "at": 65,
-            "df": 95,
-            "sa": 95,
-            "sd": 45,
-            "sp": 85,
-            "sl": 95
-        },
-        "w": 25.0,
-        "ab": "Poison Point",
-        "canEvolve": true,
-    },
-    "Seaking": {
-        "t1": "Water",
-        "bs": {
-            "hp": 80,
-            "at": 92,
-            "df": 65,
+            "hp": 60,
+            "at": 115,
+            "df": 105,
             "sa": 65,
-            "sd": 80,
-            "sp": 68,
-            "sl": 80
+            "sd": 70,
+            "sp": 80,
+            "sl": 70
         },
-        "w": 39.0,
+        "w": 40.5,
         "ab": "Swift Swim",
     },
-    "Seel": {
-        "t1": "Water",
+    "Aerodactyl": {
+        "t1": "Rock",
+        "t2": "Flying",
         "bs": {
-            "hp": 65,
-            "at": 45,
-            "df": 55,
-            "sa": 45,
-            "sd": 70,
-            "sp": 45,
-            "sl": 70
-        },
-        "w": 90.0,
-        "ab": "Thick Fat",
-        "canEvolve": true,
-    },
-    "Shellder": {
-        "t1": "Water",
-        "bs": {
-            "hp": 30,
-            "at": 65,
-            "df": 100,
-            "sa": 45,
-            "sd": 25,
-            "sp": 40,
-            "sl": 45
-        },
-        "w": 4.0,
-        "ab": "Shell Armor",
-        "canEvolve": true,
-    },
-    "Slowbro": {
-        "t1": "Water",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 95,
-            "at": 75,
-            "df": 110,
-            "sa": 100,
-            "sd": 80,
-            "sp": 30,
-            "sl": 80
-        },
-        "w": 78.5,
-        "ab": "Oblivious",
-    },
-    "Slowpoke": {
-        "t1": "Water",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 90,
-            "at": 65,
+            "hp": 80,
+            "at": 105,
             "df": 65,
-            "sa": 40,
-            "sd": 40,
-            "sp": 15,
-            "sl": 40
+            "sa": 60,
+            "sd": 75,
+            "sp": 130,
+            "sl": 60
         },
-        "w": 36.0,
-        "ab": "Oblivious",
-        "canEvolve": true,
+        "w": 59.0,
+        "ab": "Pressure",
     },
     "Snorlax": {
         "t1": "Normal",
@@ -1910,321 +2139,20 @@ var POKEDEX_RBY = {
         "w": 460.0,
         "ab": "Thick Fat"
     },
-    "Spearow": {
-        "t1": "Normal",
+    "Articuno": {
+        "t1": "Ice",
         "t2": "Flying",
         "bs": {
-            "hp": 40,
-            "at": 60,
-            "df": 30,
-            "sa": 31,
-            "sd": 31,
-            "sp": 70,
-            "sl": 31
-        },
-        "w": 2.0,
-        "ab": "Keen Eye",
-        "canEvolve": true,
-    },
-    "Squirtle": {
-        "t1": "Water",
-        "bs": {
-            "hp": 44,
-            "at": 48,
-            "df": 65,
-            "sa": 50,
-            "sd": 64,
-            "sp": 43,
-            "sl": 50
-        },
-        "w": 9.0,
-        "ab": "Torrent",
-        "canEvolve": true,
-    },
-    "Starmie": {
-        "t1": "Water",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 60,
-            "at": 75,
-            "df": 85,
-            "sa": 100,
-            "sd": 85,
-            "sp": 115,
-            "sl": 100
-        },
-        "w": 80.0,
-        "ab": "Natural Cure",
-    },
-    "Staryu": {
-        "t1": "Water",
-        "bs": {
-            "hp": 30,
-            "at": 45,
-            "df": 55,
-            "sa": 70,
-            "sd": 55,
+            "hp": 90,
+            "at": 85,
+            "df": 100,
+            "sa": 95,
+            "sd": 125,
             "sp": 85,
-            "sl": 70
+            "sl": 125
         },
-        "w": 34.5,
-        "ab": "Natural Cure",
-        "canEvolve": true,
-    },
-    "Tangela": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 65,
-            "at": 55,
-            "df": 115,
-            "sa": 100,
-            "sd": 40,
-            "sp": 60,
-            "sl": 100
-        },
-        "w": 35.0,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Tauros": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 75,
-            "at": 100,
-            "df": 95,
-            "sa": 40,
-            "sd": 70,
-            "sp": 110,
-            "sl": 70
-        },
-        "w": 88.4,
-        "ab": "Intimidate"
-    },
-    "Tentacool": {
-        "t1": "Water",
-        "t2": "Poison",
-        "bs": {
-            "hp": 40,
-            "at": 40,
-            "df": 35,
-            "sa": 50,
-            "sd": 100,
-            "sp": 70,
-            "sl": 100
-        },
-        "w": 45.5,
-        "ab": "Liquid Ooze",
-        "canEvolve": true,
-    },
-    "Tentacruel": {
-        "t1": "Water",
-        "t2": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 70,
-            "df": 65,
-            "sa": 80,
-            "sd": 120,
-            "sp": 100,
-            "sl": 120
-        },
-        "w": 55.0,
-        "ab": "Liquid Ooze",
-    },
-    "Vaporeon": {
-        "t1": "Water",
-        "bs": {
-            "hp": 130,
-            "at": 65,
-            "df": 60,
-            "sa": 110,
-            "sd": 95,
-            "sp": 65,
-            "sl": 110
-        },
-        "w": 29.0,
-        "ab": "Water Absorb"
-    },
-    "Venomoth": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 70,
-            "at": 65,
-            "df": 60,
-            "sa": 90,
-            "sd": 75,
-            "sp": 90,
-            "sl": 90
-        },
-        "w": 12.5,
-        "ab": "Shield Dust",
-    },
-    "Venonat": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 60,
-            "at": 55,
-            "df": 50,
-            "sa": 40,
-            "sd": 55,
-            "sp": 45,
-            "sl": 40
-        },
-        "w": 30.0,
-        "ab": "Shield Dust",
-        "canEvolve": true,
-    },
-    "Venusaur": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 82,
-            "df": 83,
-            "sa": 100,
-            "sd": 100,
-            "sp": 80,
-            "sl": 100
-        },
-        "w": 100.0,
-        "ab": "Overgrow"
-    },
-    "Victreebel": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 105,
-            "df": 65,
-            "sa": 100,
-            "sd": 60,
-            "sp": 70,
-            "sl": 100
-        },
-        "w": 15.5,
-        "ab": "Chlorophyll"
-    },
-    "Vileplume": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 75,
-            "at": 80,
-            "df": 85,
-            "sa": 100,
-            "sd": 90,
-            "sp": 50,
-            "sl": 100
-        },
-        "w": 18.6,
-        "ab": "Chlorophyll"
-    },
-    "Voltorb": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 40,
-            "at": 30,
-            "df": 50,
-            "sa": 55,
-            "sd": 55,
-            "sp": 100,
-            "sl": 55
-        },
-        "w": 10.4,
-        "ab": "Soundproof",
-        "canEvolve": true,
-    },
-    "Vulpix": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 38,
-            "at": 41,
-            "df": 40,
-            "sa": 50,
-            "sd": 65,
-            "sp": 65,
-            "sl": 65
-        },
-        "w": 9.9,
-        "ab": "Flash Fire",
-        "canEvolve": true,
-    },
-    "Wartortle": {
-        "t1": "Water",
-        "bs": {
-            "hp": 59,
-            "at": 63,
-            "df": 80,
-            "sa": 65,
-            "sd": 80,
-            "sp": 58,
-            "sl": 65
-        },
-        "w": 22.5,
-        "ab": "Torrent",
-        "canEvolve": true,
-    },
-    "Weedle": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 40,
-            "at": 35,
-            "df": 30,
-            "sa": 20,
-            "sd": 20,
-            "sp": 50,
-            "sl": 20
-        },
-        "w": 3.2,
-        "ab": "Shield Dust",
-        "canEvolve": true,
-    },
-    "Weepinbell": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 65,
-            "at": 90,
-            "df": 50,
-            "sa": 85,
-            "sd": 45,
-            "sp": 55,
-            "sl": 85
-        },
-        "w": 6.4,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Weezing": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 65,
-            "at": 90,
-            "df": 120,
-            "sa": 85,
-            "sd": 70,
-            "sp": 60,
-            "sl": 85
-        },
-        "w": 9.5,
-        "ab": "Levitate"
-    },
-    "Wigglytuff": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 140,
-            "at": 70,
-            "df": 45,
-            "sa": 75,
-            "sd": 50,
-            "sp": 45,
-            "sl": 50
-        },
-        "w": 12.0,
-        "ab": "Cute Charm",
+        "w": 55.4,
+        "ab": "Pressure",
     },
     "Zapdos": {
         "t1": "Electric",
@@ -2241,22 +2169,94 @@ var POKEDEX_RBY = {
         "w": 52.6,
         "ab": "Pressure",
     },
-    "Zubat": {
-        "t1": "Poison",
+    "Moltres": {
+        "t1": "Fire",
         "t2": "Flying",
         "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 35,
-            "sa": 30,
-            "sd": 40,
-            "sp": 55,
-            "sl": 40
+            "hp": 90,
+            "at": 100,
+            "df": 90,
+            "sa": 125,
+            "sd": 85,
+            "sp": 90,
+            "sl": 125
         },
-        "w": 7.5,
-        "ab": "Inner Focus",
+        "w": 60.0,
+        "ab": "Pressure",
+    },
+    "Dratini": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 41,
+            "at": 64,
+            "df": 45,
+            "sa": 50,
+            "sd": 50,
+            "sp": 50,
+            "sl": 50
+        },
+        "w": 3.3,
+        "ab": "Shed Skin",
         "canEvolve": true,
-    }
+    },
+    "Dragonair": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 61,
+            "at": 84,
+            "df": 65,
+            "sa": 70,
+            "sd": 70,
+            "sp": 70,
+            "sl": 70
+        },
+        "w": 16.5,
+        "ab": "Shed Skin",
+        "canEvolve": true,
+    },
+    "Dragonite": {
+        "t1": "Dragon",
+        "t2": "Flying",
+        "bs": {
+            "hp": 91,
+            "at": 134,
+            "df": 95,
+            "sa": 100,
+            "sd": 100,
+            "sp": 80,
+            "sl": 100
+        },
+        "w": 210.0,
+        "ab": "Inner Focus",
+    },
+    "Mewtwo": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 106,
+            "at": 110,
+            "df": 90,
+            "sa": 154,
+            "sd": 90,
+            "sp": 130,
+            "sl": 154
+        },
+        "w": 122.0,
+        "ab": "Pressure",
+    },
+    "Mew": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100,
+            "sl": 100
+        },
+        "w": 4.0,
+        "ab": "Synchronize"
+    },
 };
 
 var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
@@ -2264,59 +2264,19 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
     "Magnemite": { "t2": "Steel" },
     "Magneton": { "t2": "Steel" },
     //GS Pokemon
-    "Aipom": {
-        "t1": "Normal",
+    "Chikorita": {
+        "t1": "Grass",
         "bs": {
-            "hp": 55,
-            "at": 70,
-            "df": 55,
-            "sa": 40,
-            "sd": 55,
-            "sp": 85,
-            "canEvolve": true,
+            "hp": 45,
+            "at": 49,
+            "df": 65,
+            "sa": 49,
+            "sd": 65,
+            "sp": 45
         },
-        "w": 11.5,
-        "ab": "Pickup",
-    },
-    "Ampharos": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 90,
-            "at": 75,
-            "df": 75,
-            "sa": 115,
-            "sd": 90,
-            "sp": 55
-        },
-        "w": 61.5,
-        "ab": "Static",
-    },
-    "Ariados": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 70,
-            "at": 90,
-            "df": 70,
-            "sa": 60,
-            "sd": 60,
-            "sp": 40
-        },
-        "w": 33.5,
-        "ab": "Swarm",
-    },
-    "Azumarill": {
-        "t1": "Water",
-        "bs": {
-            "hp": 100,
-            "at": 50,
-            "df": 80,
-            "sa": 50,
-            "sd": 80,
-            "sp": 50
-        },
-        "w": 28.5,
-        "ab": "Huge Power",
+        "w": 6.4,
+        "ab": "Overgrow",
+        "canEvolve": true,
     },
     "Bayleef": {
         "t1": "Grass",
@@ -2332,130 +2292,18 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "ab": "Overgrow",
         "canEvolve": true,
     },
-    "Bellossom": {
+    "Meganium": {
         "t1": "Grass",
         "bs": {
-            "hp": 75,
-            "at": 80,
-            "df": 85,
-            "sa": 90,
-            "sd": 100,
-            "sp": 50
-        },
-        "w": 5.8,
-        "ab": "Chlorophyll"
-    },
-    "Blissey": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 255,
-            "at": 10,
-            "df": 10,
-            "sa": 75,
-            "sd": 135,
-            "sp": 55
-        },
-        "w": 46.8,
-        "ab": "Natural Cure",
-    },
-    "Celebi": {
-        "t1": "Psychic",
-        "t2": "Grass",
-        "bs": {
-            "hp": 100,
-            "at": 100,
+            "hp": 80,
+            "at": 82,
             "df": 100,
-            "sa": 100,
+            "sa": 83,
             "sd": 100,
-            "sp": 100
+            "sp": 80
         },
-        "w": 5.0,
-        "ab": "Natural Cure"
-    },
-    "Chikorita": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 45,
-            "at": 49,
-            "df": 65,
-            "sa": 49,
-            "sd": 65,
-            "sp": 45
-        },
-        "w": 6.4,
-        "ab": "Overgrow",
-        "canEvolve": true,
-    },
-    "Chinchou": {
-        "t1": "Water",
-        "t2": "Electric",
-        "bs": {
-            "hp": 75,
-            "at": 38,
-            "df": 38,
-            "sa": 56,
-            "sd": 56,
-            "sp": 67
-        },
-        "w": 12.0,
-        "ab": "Volt Absorb",
-        "canEvolve": true,
-    },
-    "Cleffa": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 50,
-            "at": 25,
-            "df": 28,
-            "sa": 45,
-            "sd": 55,
-            "sp": 15
-        },
-        "w": 3.0,
-        "ab": "Cute Charm",
-        "canEvolve": true,
-    },
-    "Corsola": {
-        "t1": "Water",
-        "t2": "Rock",
-        "bs": {
-            "hp": 55,
-            "at": 55,
-            "df": 85,
-            "sa": 65,
-            "sd": 85,
-            "sp": 35
-        },
-        "w": 5.0,
-        "ab": "Natural Cure",
-    },
-    "Crobat": {
-        "t1": "Poison",
-        "t2": "Flying",
-        "bs": {
-            "hp": 85,
-            "at": 90,
-            "df": 80,
-            "sa": 70,
-            "sd": 80,
-            "sp": 130
-        },
-        "w": 75.0,
-        "ab": "Inner Focus",
-    },
-    "Croconaw": {
-        "t1": "Water",
-        "bs": {
-            "hp": 65,
-            "at": 80,
-            "df": 80,
-            "sa": 59,
-            "sd": 63,
-            "sp": 58
-        },
-        "w": 25.0,
-        "ab": "Torrent",
-        "canEvolve": true,
+        "w": 100.5,
+        "ab": "Overgrow"
     },
     "Cyndaquil": {
         "t1": "Fire",
@@ -2471,85 +2319,60 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "ab": "Blaze",
         "canEvolve": true,
     },
-    "Delibird": {
-        "t1": "Ice",
-        "t2": "Flying",
-        "bs": {
-            "hp": 45,
-            "at": 55,
-            "df": 45,
-            "sa": 65,
-            "sd": 45,
-            "sp": 75
-        },
-        "w": 16.0,
-        "ab": "Vital Spirit",
-    },
-    "Donphan": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 90,
-            "at": 120,
-            "df": 120,
-            "sa": 60,
-            "sd": 60,
-            "sp": 50
-        },
-        "w": 120.0,
-        "ab": "Sturdy",
-    },
-    "Dunsparce": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 100,
-            "at": 70,
-            "df": 70,
-            "sa": 65,
-            "sd": 65,
-            "sp": 45
-        },
-        "w": 14.0,
-        "ab": "Serene Grace",
-    },
-    "Elekid": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 45,
-            "at": 63,
-            "df": 37,
-            "sa": 65,
-            "sd": 55,
-            "sp": 95
-        },
-        "w": 23.5,
-        "ab": "Static",
-        "canEvolve": true,
-    },
-    "Entei": {
+    "Quilava": {
         "t1": "Fire",
         "bs": {
-            "hp": 115,
-            "at": 115,
-            "df": 85,
-            "sa": 90,
-            "sd": 75,
+            "hp": 58,
+            "at": 64,
+            "df": 58,
+            "sa": 80,
+            "sd": 65,
+            "sp": 80
+        },
+        "w": 19.0,
+        "ab": "Blaze",
+        "canEvolve": true,
+    },
+    "Typhlosion": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 78,
+            "at": 84,
+            "df": 78,
+            "sa": 109,
+            "sd": 85,
             "sp": 100
         },
-        "w": 198.0,
-        "ab": "Pressure",
+        "w": 79.5,
+        "ab": "Blaze"
     },
-    "Espeon": {
-        "t1": "Psychic",
+    "Totodile": {
+        "t1": "Water",
+        "bs": {
+            "hp": 50,
+            "at": 65,
+            "df": 64,
+            "sa": 44,
+            "sd": 48,
+            "sp": 43
+        },
+        "w": 9.5,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Croconaw": {
+        "t1": "Water",
         "bs": {
             "hp": 65,
-            "at": 65,
-            "df": 60,
-            "sa": 130,
-            "sd": 95,
-            "sp": 110
+            "at": 80,
+            "df": 80,
+            "sa": 59,
+            "sd": 63,
+            "sp": 58
         },
-        "w": 26.5,
-        "ab": "Synchronize",
+        "w": 25.0,
+        "ab": "Torrent",
+        "canEvolve": true,
     },
     "Feraligatr": {
         "t1": "Water",
@@ -2564,33 +2387,19 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "w": 88.8,
         "ab": "Torrent"
     },
-    "Flaaffy": {
-        "t1": "Electric",
+    "Sentret": {
+        "t1": "Normal",
         "bs": {
-            "hp": 70,
-            "at": 55,
-            "df": 55,
-            "sa": 80,
-            "sd": 60,
-            "sp": 45
+            "hp": 35,
+            "at": 46,
+            "df": 34,
+            "sa": 35,
+            "sd": 45,
+            "sp": 20
         },
-        "w": 13.3,
-        "ab": "Static",
+        "w": 6.0,
+        "ab": "Keen Eye",
         "canEvolve": true,
-    },
-    "Forretress": {
-        "t1": "Bug",
-        "t2": "Steel",
-        "bs": {
-            "hp": 75,
-            "at": 90,
-            "df": 140,
-            "sa": 60,
-            "sd": 60,
-            "sp": 40
-        },
-        "w": 125.8,
-        "ab": "Sturdy",
     },
     "Furret": {
         "t1": "Normal",
@@ -2604,89 +2413,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         },
         "w": 32.5,
         "ab": "Keen Eye",
-    },
-    "Girafarig": {
-        "t1": "Normal",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 70,
-            "at": 80,
-            "df": 65,
-            "sa": 90,
-            "sd": 65,
-            "sp": 85
-        },
-        "w": 41.5,
-        "ab": "Early Bird",
-    },
-    "Gligar": {
-        "t1": "Ground",
-        "t2": "Flying",
-        "bs": {
-            "hp": 65,
-            "at": 75,
-            "df": 105,
-            "sa": 35,
-            "sd": 65,
-            "sp": 85
-        },
-        "w": 64.8,
-        "ab": "Hyper Cutter",
-        "canEvolve": true,
-    },
-    "Granbull": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 90,
-            "at": 120,
-            "df": 75,
-            "sa": 60,
-            "sd": 60,
-            "sp": 45
-        },
-        "w": 48.7,
-        "ab": "Intimidate"
-    },
-    "Heracross": {
-        "t1": "Bug",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 80,
-            "at": 125,
-            "df": 75,
-            "sa": 40,
-            "sd": 95,
-            "sp": 85
-        },
-        "w": 54.0,
-        "ab": "Guts",
-    },
-    "Hitmontop": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 50,
-            "at": 95,
-            "df": 95,
-            "sa": 35,
-            "sd": 110,
-            "sp": 70
-        },
-        "w": 48.0,
-        "ab": "Intimidate"
-    },
-    "Ho-Oh": {
-        "t1": "Fire",
-        "t2": "Flying",
-        "bs": {
-            "hp": 106,
-            "at": 130,
-            "df": 90,
-            "sa": 110,
-            "sd": 154,
-            "sp": 90
-        },
-        "w": 199.0,
-        "ab": "Pressure",
     },
     "Hoothoot": {
         "t1": "Normal",
@@ -2703,134 +2429,19 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "ab": "Insomnia",
         "canEvolve": true,
     },
-    "Hoppip": {
-        "t1": "Grass",
-        "t2": "Flying",
-        "bs": {
-            "hp": 35,
-            "at": 35,
-            "df": 40,
-            "sa": 35,
-            "sd": 55,
-            "sp": 50
-        },
-        "w": 0.5,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Houndoom": {
-        "t1": "Dark",
-        "t2": "Fire",
-        "bs": {
-            "hp": 75,
-            "at": 90,
-            "df": 50,
-            "sa": 110,
-            "sd": 80,
-            "sp": 95
-        },
-        "w": 35.0,
-        "ab": "Flash Fire",
-    },
-    "Houndour": {
-        "t1": "Dark",
-        "t2": "Fire",
-        "bs": {
-            "hp": 45,
-            "at": 60,
-            "df": 30,
-            "sa": 80,
-            "sd": 50,
-            "sp": 65
-        },
-        "w": 10.8,
-        "ab": "Flash Fire",
-        "canEvolve": true,
-    },
-    "Igglybuff": {
+    "Noctowl": {
         "t1": "Normal",
-        "bs": {
-            "hp": 90,
-            "at": 30,
-            "df": 15,
-            "sa": 40,
-            "sd": 20,
-            "sp": 15
-        },
-        "w": 1.0,
-        "ab": "Cute Charm",
-        "canEvolve": true,
-    },
-    "Jumpluff": {
-        "t1": "Grass",
         "t2": "Flying",
         "bs": {
-            "hp": 75,
-            "at": 55,
-            "df": 70,
-            "sa": 55,
-            "sd": 85,
-            "sp": 110
-        },
-        "w": 3.0,
-        "ab": "Chlorophyll"
-    },
-    "Kingdra": {
-        "t1": "Water",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 75,
-            "at": 95,
-            "df": 95,
-            "sa": 95,
-            "sd": 95,
-            "sp": 85
-        },
-        "w": 152.0,
-        "ab": "Swift Swim"
-    },
-    "Lanturn": {
-        "t1": "Water",
-        "t2": "Electric",
-        "bs": {
-            "hp": 125,
-            "at": 58,
-            "df": 58,
+            "hp": 100,
+            "at": 50,
+            "df": 50,
             "sa": 76,
-            "sd": 76,
-            "sp": 67
+            "sd": 96,
+            "sp": 70
         },
-        "w": 22.5,
-        "ab": "Volt Absorb",
-    },
-    "Larvitar": {
-        "t1": "Rock",
-        "t2": "Ground",
-        "bs": {
-            "hp": 50,
-            "at": 64,
-            "df": 50,
-            "sa": 45,
-            "sd": 50,
-            "sp": 41
-        },
-        "w": 72.0,
-        "ab": "Guts",
-        "canEvolve": true,
-    },
-    "Ledian": {
-        "t1": "Bug",
-        "t2": "Flying",
-        "bs": {
-            "hp": 55,
-            "at": 35,
-            "df": 50,
-            "sa": 55,
-            "sd": 110,
-            "sp": 85
-        },
-        "w": 35.6,
-        "ab": "Early Bird",
+        "w": 40.8,
+        "ab": "Insomnia",
     },
     "Ledyba": {
         "t1": "Bug",
@@ -2847,510 +2458,19 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "ab": "Early Bird",
         "canEvolve": true,
     },
-    "Lugia": {
-        "t1": "Psychic",
-        "t2": "Flying",
-        "bs": {
-            "hp": 106,
-            "at": 90,
-            "df": 130,
-            "sa": 90,
-            "sd": 154,
-            "sp": 110
-        },
-        "w": 216.0,
-        "ab": "Pressure",
-    },
-    "Magby": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 45,
-            "at": 75,
-            "df": 37,
-            "sa": 70,
-            "sd": 55,
-            "sp": 83
-        },
-        "w": 21.4,
-        "ab": "Flame Body",
-        "canEvolve": true,
-    },
-    "Magcargo": {
-        "t1": "Fire",
-        "t2": "Rock",
-        "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 120,
-            "sa": 80,
-            "sd": 80,
-            "sp": 30
-        },
-        "w": 55.0,
-        "ab": "Flame Body",
-    },
-    "Mantine": {
-        "t1": "Water",
-        "t2": "Flying",
-        "bs": {
-            "hp": 65,
-            "at": 40,
-            "df": 70,
-            "sa": 80,
-            "sd": 140,
-            "sp": 70
-        },
-        "w": 220.0,
-        "ab": "Water Absorb",
-    },
-    "Mareep": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 55,
-            "at": 40,
-            "df": 40,
-            "sa": 65,
-            "sd": 45,
-            "sp": 35
-        },
-        "w": 7.8,
-        "ab": "Static",
-        "canEvolve": true,
-    },
-    "Marill": {
-        "t1": "Water",
-        "bs": {
-            "hp": 70,
-            "at": 20,
-            "df": 50,
-            "sa": 20,
-            "sd": 50,
-            "sp": 40
-        },
-        "w": 8.5,
-        "ab": "Huge Power",
-        "canEvolve": true,
-    },
-    "Meganium": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 80,
-            "at": 82,
-            "df": 100,
-            "sa": 83,
-            "sd": 100,
-            "sp": 80
-        },
-        "w": 100.5,
-        "ab": "Overgrow"
-    },
-    "Miltank": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 95,
-            "at": 80,
-            "df": 105,
-            "sa": 40,
-            "sd": 70,
-            "sp": 100
-        },
-        "w": 75.5,
-        "ab": "Thick Fat"
-    },
-    "Misdreavus": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 60,
-            "sa": 85,
-            "sd": 85,
-            "sp": 85
-        },
-        "w": 1.0,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Murkrow": {
-        "t1": "Dark",
-        "t2": "Flying",
-        "bs": {
-            "hp": 60,
-            "at": 85,
-            "df": 42,
-            "sa": 85,
-            "sd": 42,
-            "sp": 91
-        },
-        "w": 2.1,
-        "ab": "Insomnia",
-        "canEvolve": true,
-    },
-    "Natu": {
-        "t1": "Psychic",
-        "t2": "Flying",
-        "bs": {
-            "hp": 40,
-            "at": 50,
-            "df": 45,
-            "sa": 70,
-            "sd": 45,
-            "sp": 70
-        },
-        "w": 2.0,
-        "ab": "Synchronize",
-        "canEvolve": true,
-    },
-    "Noctowl": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 100,
-            "at": 50,
-            "df": 50,
-            "sa": 76,
-            "sd": 96,
-            "sp": 70
-        },
-        "w": 40.8,
-        "ab": "Insomnia",
-    },
-    "Octillery": {
-        "t1": "Water",
-        "bs": {
-            "hp": 75,
-            "at": 105,
-            "df": 75,
-            "sa": 105,
-            "sd": 75,
-            "sp": 45
-        },
-        "w": 28.5,
-        "ab": "Suction Cups",
-    },
-    "Phanpy": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 90,
-            "at": 60,
-            "df": 60,
-            "sa": 40,
-            "sd": 40,
-            "sp": 40
-        },
-        "w": 33.5,
-        "ab": "Pickup",
-        "canEvolve": true,
-    },
-    "Pichu": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 20,
-            "at": 40,
-            "df": 15,
-            "sa": 35,
-            "sd": 35,
-            "sp": 60
-        },
-        "w": 2.0,
-        "ab": "Static",
-        "canEvolve": true,
-    },
-    "Piloswine": {
-        "t1": "Ice",
-        "t2": "Ground",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 80,
-            "sa": 60,
-            "sd": 60,
-            "sp": 50
-        },
-        "w": 55.8,
-        "ab": "Oblivious",
-        "canEvolve": true,
-    },
-    "Pineco": {
+    "Ledian": {
         "t1": "Bug",
-        "bs": {
-            "hp": 50,
-            "at": 65,
-            "df": 90,
-            "sa": 35,
-            "sd": 35,
-            "sp": 15
-        },
-        "w": 7.2,
-        "ab": "Sturdy",
-        "canEvolve": true,
-    },
-    "Politoed": {
-        "t1": "Water",
-        "bs": {
-            "hp": 90,
-            "at": 75,
-            "df": 75,
-            "sa": 90,
-            "sd": 100,
-            "sp": 70
-        },
-        "w": 33.9,
-        "ab": "Water Absorb",
-    },
-    "Porygon2": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 85,
-            "at": 80,
-            "df": 90,
-            "sa": 105,
-            "sd": 95,
-            "sp": 60
-        },
-        "w": 32.5,
-        "ab": "Trace",
-        "canEvolve": true,
-    },
-    "Pupitar": {
-        "t1": "Rock",
-        "t2": "Ground",
-        "bs": {
-            "hp": 70,
-            "at": 84,
-            "df": 70,
-            "sa": 65,
-            "sd": 70,
-            "sp": 51
-        },
-        "w": 152.0,
-        "ab": "Shed Skin",
-        "canEvolve": true,
-    },
-    "Quagsire": {
-        "t1": "Water",
-        "t2": "Ground",
-        "bs": {
-            "hp": 95,
-            "at": 85,
-            "df": 85,
-            "sa": 65,
-            "sd": 65,
-            "sp": 35
-        },
-        "w": 75.0,
-        "ab": "Water Absorb",
-    },
-    "Quilava": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 58,
-            "at": 64,
-            "df": 58,
-            "sa": 80,
-            "sd": 65,
-            "sp": 80
-        },
-        "w": 19.0,
-        "ab": "Blaze",
-        "canEvolve": true,
-    },
-    "Qwilfish": {
-        "t1": "Water",
-        "t2": "Poison",
-        "bs": {
-            "hp": 65,
-            "at": 95,
-            "df": 75,
-            "sa": 55,
-            "sd": 55,
-            "sp": 85
-        },
-        "w": 3.9,
-        "ab": "Swift Swim",
-    },
-    "Raikou": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 90,
-            "at": 85,
-            "df": 75,
-            "sa": 115,
-            "sd": 100,
-            "sp": 115
-        },
-        "w": 178.0,
-        "ab": "Pressure",
-    },
-    "Remoraid": {
-        "t1": "Water",
-        "bs": {
-            "hp": 35,
-            "at": 65,
-            "df": 35,
-            "sa": 65,
-            "sd": 35,
-            "sp": 65
-        },
-        "w": 12.0,
-        "ab": "Hustle",
-        "canEvolve": true,
-    },
-    "Scizor": {
-        "t1": "Bug",
-        "t2": "Steel",
-        "bs": {
-            "hp": 70,
-            "at": 130,
-            "df": 100,
-            "sa": 55,
-            "sd": 80,
-            "sp": 65
-        },
-        "w": 118.0,
-        "ab": "Swarm"
-    },
-    "Sentret": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 35,
-            "at": 46,
-            "df": 34,
-            "sa": 35,
-            "sd": 45,
-            "sp": 20
-        },
-        "w": 6.0,
-        "ab": "Keen Eye",
-        "canEvolve": true,
-    },
-    "Shuckle": {
-        "t1": "Bug",
-        "t2": "Rock",
-        "bs": {
-            "hp": 20,
-            "at": 10,
-            "df": 230,
-            "sa": 10,
-            "sd": 230,
-            "sp": 5
-        },
-        "w": 20.5,
-        "ab": "Sturdy",
-    },
-    "Skarmory": {
-        "t1": "Steel",
-        "t2": "Flying",
-        "bs": {
-            "hp": 65,
-            "at": 80,
-            "df": 140,
-            "sa": 40,
-            "sd": 70,
-            "sp": 70
-        },
-        "w": 50.5,
-        "ab": "Sturdy",
-    },
-    "Skiploom": {
-        "t1": "Grass",
         "t2": "Flying",
         "bs": {
             "hp": 55,
-            "at": 45,
+            "at": 35,
             "df": 50,
-            "sa": 45,
-            "sd": 65,
-            "sp": 80
-        },
-        "w": 1.0,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Slowking": {
-        "t1": "Water",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 95,
-            "at": 75,
-            "df": 80,
-            "sa": 100,
+            "sa": 55,
             "sd": 110,
-            "sp": 30
+            "sp": 85
         },
-        "w": 79.5,
-        "ab": "Oblivious",
-    },
-    "Slugma": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 40,
-            "at": 40,
-            "df": 40,
-            "sa": 70,
-            "sd": 40,
-            "sp": 20
-        },
-        "w": 35.0,
-        "ab": "Flame Body",
-        "canEvolve": true,
-    },
-    "Smeargle": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 55,
-            "at": 20,
-            "df": 35,
-            "sa": 20,
-            "sd": 45,
-            "sp": 75
-        },
-        "w": 58.0,
-        "ab": "Own Tempo",
-    },
-    "Smoochum": {
-        "t1": "Ice",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 45,
-            "at": 30,
-            "df": 15,
-            "sa": 85,
-            "sd": 65,
-            "sp": 65
-        },
-        "w": 6.0,
-        "ab": "Oblivious",
-        "canEvolve": true,
-    },
-    "Sneasel": {
-        "t1": "Dark",
-        "t2": "Ice",
-        "bs": {
-            "hp": 55,
-            "at": 95,
-            "df": 55,
-            "sa": 35,
-            "sd": 75,
-            "sp": 115
-        },
-        "w": 28.0,
-        "ab": "Inner Focus",
-        "canEvolve": true,
-    },
-    "Snubbull": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 60,
-            "at": 80,
-            "df": 50,
-            "sa": 40,
-            "sd": 40,
-            "sp": 30
-        },
-        "w": 7.8,
-        "ab": "Intimidate",
-        "canEvolve": true,
+        "w": 35.6,
+        "ab": "Early Bird",
     },
     "Spinarak": {
         "t1": "Bug",
@@ -3367,113 +2487,103 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "ab": "Insomnia",
         "canEvolve": true,
     },
-    "Stantler": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 73,
-            "at": 95,
-            "df": 62,
-            "sa": 85,
-            "sd": 65,
-            "sp": 85
-        },
-        "w": 71.2,
-        "ab": "Intimidate"
-    },
-    "Steelix": {
-        "t1": "Steel",
-        "t2": "Ground",
-        "bs": {
-            "hp": 75,
-            "at": 85,
-            "df": 200,
-            "sa": 55,
-            "sd": 65,
-            "sp": 30
-        },
-        "w": 400.0,
-        "ab": "Sturdy",
-    },
-    "Sudowoodo": {
-        "t1": "Rock",
+    "Ariados": {
+        "t1": "Bug",
+        "t2": "Poison",
         "bs": {
             "hp": 70,
-            "at": 100,
-            "df": 115,
-            "sa": 30,
-            "sd": 65,
-            "sp": 30
-        },
-        "w": 38.0,
-        "ab": "Sturdy",
-    },
-    "Suicune": {
-        "t1": "Water",
-        "bs": {
-            "hp": 100,
-            "at": 75,
-            "df": 115,
-            "sa": 90,
-            "sd": 115,
-            "sp": 85
-        },
-        "w": 187.0,
-        "ab": "Pressure",
-    },
-    "Sunflora": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 75,
-            "at": 75,
-            "df": 55,
-            "sa": 105,
-            "sd": 85,
-            "sp": 30
-        },
-        "w": 8.5,
-        "ab": "Chlorophyll"
-    },
-    "Sunkern": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 30,
-            "at": 30,
-            "df": 30,
-            "sa": 30,
-            "sd": 30,
-            "sp": 30
-        },
-        "w": 1.8,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Swinub": {
-        "t1": "Ice",
-        "t2": "Ground",
-        "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 40,
-            "sa": 30,
-            "sd": 30,
-            "sp": 50
-        },
-        "w": 6.5,
-        "ab": "Oblivious",
-        "canEvolve": true,
-    },
-    "Teddiursa": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 60,
-            "at": 80,
-            "df": 50,
-            "sa": 50,
-            "sd": 50,
+            "at": 90,
+            "df": 70,
+            "sa": 60,
+            "sd": 60,
             "sp": 40
         },
-        "w": 8.8,
-        "ab": "Pickup",
+        "w": 33.5,
+        "ab": "Swarm",
+    },
+    "Crobat": {
+        "t1": "Poison",
+        "t2": "Flying",
+        "bs": {
+            "hp": 85,
+            "at": 90,
+            "df": 80,
+            "sa": 70,
+            "sd": 80,
+            "sp": 130
+        },
+        "w": 75.0,
+        "ab": "Inner Focus",
+    },
+    "Chinchou": {
+        "t1": "Water",
+        "t2": "Electric",
+        "bs": {
+            "hp": 75,
+            "at": 38,
+            "df": 38,
+            "sa": 56,
+            "sd": 56,
+            "sp": 67
+        },
+        "w": 12.0,
+        "ab": "Volt Absorb",
+        "canEvolve": true,
+    },
+    "Lanturn": {
+        "t1": "Water",
+        "t2": "Electric",
+        "bs": {
+            "hp": 125,
+            "at": 58,
+            "df": 58,
+            "sa": 76,
+            "sd": 76,
+            "sp": 67
+        },
+        "w": 22.5,
+        "ab": "Volt Absorb",
+    },
+    "Pichu": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 20,
+            "at": 40,
+            "df": 15,
+            "sa": 35,
+            "sd": 35,
+            "sp": 60
+        },
+        "w": 2.0,
+        "ab": "Static",
+        "canEvolve": true,
+    },
+    "Cleffa": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 50,
+            "at": 25,
+            "df": 28,
+            "sa": 45,
+            "sd": 55,
+            "sp": 15
+        },
+        "w": 3.0,
+        "ab": "Cute Charm",
+        "canEvolve": true,
+    },
+    "Igglybuff": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 90,
+            "at": 30,
+            "df": 15,
+            "sa": 40,
+            "sd": 20,
+            "sp": 15
+        },
+        "w": 1.0,
+        "ab": "Cute Charm",
         "canEvolve": true,
     },
     "Togepi": {
@@ -3505,126 +2615,19 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "ab": "Serene Grace",
         "canEvolve": true,
     },
-    "Totodile": {
-        "t1": "Water",
-        "bs": {
-            "hp": 50,
-            "at": 65,
-            "df": 64,
-            "sa": 44,
-            "sd": 48,
-            "sp": 43
-        },
-        "w": 9.5,
-        "ab": "Torrent",
-        "canEvolve": true,
-    },
-    "Typhlosion": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 78,
-            "at": 84,
-            "df": 78,
-            "sa": 109,
-            "sd": 85,
-            "sp": 100
-        },
-        "w": 79.5,
-        "ab": "Blaze"
-    },
-    "Tyranitar": {
-        "t1": "Rock",
-        "t2": "Dark",
-        "bs": {
-            "hp": 100,
-            "at": 134,
-            "df": 110,
-            "sa": 95,
-            "sd": 100,
-            "sp": 61
-        },
-        "w": 202.0,
-        "ab": "Sand Stream"
-    },
-    "Tyrogue": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 35,
-            "at": 35,
-            "df": 35,
-            "sa": 35,
-            "sd": 35,
-            "sp": 35
-        },
-        "w": 21.0,
-        "ab": "Guts",
-        "canEvolve": true,
-    },
-    "Umbreon": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 95,
-            "at": 65,
-            "df": 110,
-            "sa": 60,
-            "sd": 130,
-            "sp": 65
-        },
-        "w": 27.0,
-        "ab": "Synchronize",
-    },
-    "Unown": {
+    "Natu": {
         "t1": "Psychic",
+        "t2": "Flying",
         "bs": {
-            "hp": 48,
-            "at": 72,
-            "df": 48,
-            "sa": 72,
-            "sd": 48,
-            "sp": 48
-        },
-        "w": 5.0,
-        "ab": "Levitate"
-    },
-    "Ursaring": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 90,
-            "at": 130,
-            "df": 75,
-            "sa": 75,
-            "sd": 75,
-            "sp": 55
-        },
-        "w": 125.8,
-        "ab": "Guts"
-    },
-    "Wobbuffet": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 190,
-            "at": 33,
-            "df": 58,
-            "sa": 33,
-            "sd": 58,
-            "sp": 33
-        },
-        "w": 28.5,
-        "ab": "Shadow Tag",
-    },
-    "Wooper": {
-        "t1": "Water",
-        "t2": "Ground",
-        "bs": {
-            "hp": 55,
-            "at": 45,
+            "hp": 40,
+            "at": 50,
             "df": 45,
-            "sa": 25,
-            "sd": 25,
-            "sp": 15
+            "sa": 70,
+            "sd": 45,
+            "sp": 70
         },
-        "w": 8.5,
-        "ab": "Water Absorb",
+        "w": 2.0,
+        "ab": "Synchronize",
         "canEvolve": true,
     },
     "Xatu": {
@@ -3641,6 +2644,198 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "w": 15.0,
         "ab": "Synchronize",
     },
+    "Mareep": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 55,
+            "at": 40,
+            "df": 40,
+            "sa": 65,
+            "sd": 45,
+            "sp": 35
+        },
+        "w": 7.8,
+        "ab": "Static",
+        "canEvolve": true,
+    },
+    "Flaaffy": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 70,
+            "at": 55,
+            "df": 55,
+            "sa": 80,
+            "sd": 60,
+            "sp": 45
+        },
+        "w": 13.3,
+        "ab": "Static",
+        "canEvolve": true,
+    },
+    "Ampharos": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 90,
+            "at": 75,
+            "df": 75,
+            "sa": 115,
+            "sd": 90,
+            "sp": 55
+        },
+        "w": 61.5,
+        "ab": "Static",
+    },
+    "Bellossom": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 75,
+            "at": 80,
+            "df": 85,
+            "sa": 90,
+            "sd": 100,
+            "sp": 50
+        },
+        "w": 5.8,
+        "ab": "Chlorophyll"
+    },
+    "Marill": {
+        "t1": "Water",
+        "bs": {
+            "hp": 70,
+            "at": 20,
+            "df": 50,
+            "sa": 20,
+            "sd": 50,
+            "sp": 40
+        },
+        "w": 8.5,
+        "ab": "Huge Power",
+        "canEvolve": true,
+    },
+    "Azumarill": {
+        "t1": "Water",
+        "bs": {
+            "hp": 100,
+            "at": 50,
+            "df": 80,
+            "sa": 50,
+            "sd": 80,
+            "sp": 50
+        },
+        "w": 28.5,
+        "ab": "Huge Power",
+    },
+    "Sudowoodo": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 70,
+            "at": 100,
+            "df": 115,
+            "sa": 30,
+            "sd": 65,
+            "sp": 30
+        },
+        "w": 38.0,
+        "ab": "Sturdy",
+    },
+    "Politoed": {
+        "t1": "Water",
+        "bs": {
+            "hp": 90,
+            "at": 75,
+            "df": 75,
+            "sa": 90,
+            "sd": 100,
+            "sp": 70
+        },
+        "w": 33.9,
+        "ab": "Water Absorb",
+    },
+    "Hoppip": {
+        "t1": "Grass",
+        "t2": "Flying",
+        "bs": {
+            "hp": 35,
+            "at": 35,
+            "df": 40,
+            "sa": 35,
+            "sd": 55,
+            "sp": 50
+        },
+        "w": 0.5,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Skiploom": {
+        "t1": "Grass",
+        "t2": "Flying",
+        "bs": {
+            "hp": 55,
+            "at": 45,
+            "df": 50,
+            "sa": 45,
+            "sd": 65,
+            "sp": 80
+        },
+        "w": 1.0,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Jumpluff": {
+        "t1": "Grass",
+        "t2": "Flying",
+        "bs": {
+            "hp": 75,
+            "at": 55,
+            "df": 70,
+            "sa": 55,
+            "sd": 85,
+            "sp": 110
+        },
+        "w": 3.0,
+        "ab": "Chlorophyll"
+    },
+    "Aipom": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 55,
+            "at": 70,
+            "df": 55,
+            "sa": 40,
+            "sd": 55,
+            "sp": 85,
+            "canEvolve": true,
+        },
+        "w": 11.5,
+        "ab": "Pickup",
+    },
+    "Sunkern": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 30,
+            "at": 30,
+            "df": 30,
+            "sa": 30,
+            "sd": 30,
+            "sp": 30
+        },
+        "w": 1.8,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Sunflora": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 75,
+            "at": 75,
+            "df": 55,
+            "sa": 105,
+            "sd": 85,
+            "sp": 30
+        },
+        "w": 8.5,
+        "ab": "Chlorophyll"
+    },
     "Yanma": {
         "t1": "Bug",
         "t2": "Flying",
@@ -3655,348 +2850,870 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
         "w": 38.0,
         "ab": "Speed Boost",
         "canEvolve": true,
-    }
-});
-
-var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
-    //RS Pokemon
-    "Absol": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 65,
-            "at": 130,
-            "df": 60,
-            "sa": 75,
-            "sd": 60,
-            "sp": 75
-        },
-        "w": 47.0,
-        "ab": "Pressure",
     },
-    "Aggron": {
-        "t1": "Steel",
-        "t2": "Rock",
-        "bs": {
-            "hp": 70,
-            "at": 110,
-            "df": 180,
-            "sa": 60,
-            "sd": 60,
-            "sp": 50
-        },
-        "w": 360.0,
-        "ab": "Sturdy",
-    },
-    "Altaria": {
-        "t1": "Dragon",
-        "t2": "Flying",
-        "bs": {
-            "hp": 75,
-            "at": 70,
-            "df": 90,
-            "sa": 70,
-            "sd": 105,
-            "sp": 80
-        },
-        "w": 20.6,
-        "ab": "Natural Cure",
-    },
-    "Anorith": {
-        "t1": "Rock",
-        "t2": "Bug",
-        "bs": {
-            "hp": 45,
-            "at": 95,
-            "df": 50,
-            "sa": 40,
-            "sd": 50,
-            "sp": 75
-        },
-        "w": 12.5,
-        "ab": "Battle Armor",
-        "canEvolve": true,
-    },
-    "Armaldo": {
-        "t1": "Rock",
-        "t2": "Bug",
-        "bs": {
-            "hp": 75,
-            "at": 125,
-            "df": 100,
-            "sa": 70,
-            "sd": 80,
-            "sp": 45
-        },
-        "w": 68.2,
-        "ab": "Battle Armor"
-    },
-    "Aron": {
-        "t1": "Steel",
-        "t2": "Rock",
-        "bs": {
-            "hp": 50,
-            "at": 70,
-            "df": 100,
-            "sa": 40,
-            "sd": 40,
-            "sp": 30
-        },
-        "w": 60.0,
-        "ab": "Sturdy",
-        "canEvolve": true,
-    },
-    "Azurill": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 50,
-            "at": 20,
-            "df": 40,
-            "sa": 20,
-            "sd": 40,
-            "sp": 20
-        },
-        "w": 2.0,
-        "ab": "Huge Power",
-        "canEvolve": true,
-    },
-    "Bagon": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 45,
-            "at": 75,
-            "df": 60,
-            "sa": 40,
-            "sd": 30,
-            "sp": 50
-        },
-        "w": 42.1,
-        "ab": "Rock Head",
-        "canEvolve": true,
-    },
-    "Baltoy": {
-        "t1": "Ground",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 40,
-            "at": 40,
-            "df": 55,
-            "sa": 40,
-            "sd": 70,
-            "sp": 55
-        },
-        "w": 21.5,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Banette": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 64,
-            "at": 115,
-            "df": 65,
-            "sa": 83,
-            "sd": 63,
-            "sp": 65
-        },
-        "w": 12.5,
-        "ab": "Insomnia",
-    },
-    "Barboach": {
+    "Wooper": {
         "t1": "Water",
         "t2": "Ground",
         "bs": {
-            "hp": 50,
-            "at": 48,
-            "df": 43,
-            "sa": 46,
-            "sd": 41,
-            "sp": 60
-        },
-        "w": 1.9,
-        "ab": "Oblivious",
-        "canEvolve": true,
-    },
-    "Beautifly": {
-        "t1": "Bug",
-        "t2": "Flying",
-        "bs": {
-            "hp": 60,
-            "at": 70,
-            "df": 50,
-            "sa": 90,
-            "sd": 50,
-            "sp": 65
-        },
-        "w": 28.4,
-        "ab": "Swarm"
-    },
-    "Beldum": {
-        "t1": "Steel",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 40,
-            "at": 55,
-            "df": 80,
-            "sa": 35,
-            "sd": 60,
-            "sp": 30
-        },
-        "w": 95.2,
-        "ab": "Clear Body",
-        "canEvolve": true,
-    },
-    "Blaziken": {
-        "t1": "Fire",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 80,
-            "at": 120,
-            "df": 70,
-            "sa": 110,
-            "sd": 70,
-            "sp": 80
-        },
-        "w": 52.0,
-        "ab": "Blaze"
-    },
-    "Breloom": {
-        "t1": "Grass",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 60,
-            "at": 130,
-            "df": 80,
-            "sa": 60,
-            "sd": 60,
-            "sp": 70
-        },
-        "w": 39.2,
-        "ab": "Effect Spore",
-    },
-    "Cacnea": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 50,
-            "at": 85,
-            "df": 40,
-            "sa": 85,
-            "sd": 40,
-            "sp": 35
-        },
-        "w": 51.3,
-        "ab": "Sand Veil",
-        "canEvolve": true,
-    },
-    "Cacturne": {
-        "t1": "Grass",
-        "t2": "Dark",
-        "bs": {
-            "hp": 70,
-            "at": 115,
-            "df": 60,
-            "sa": 115,
-            "sd": 60,
-            "sp": 55
-        },
-        "w": 77.4,
-        "ab": "Sand Veil"
-    },
-    "Camerupt": {
-        "t1": "Fire",
-        "t2": "Ground",
-        "bs": {
-            "hp": 70,
-            "at": 100,
-            "df": 70,
-            "sa": 105,
-            "sd": 75,
-            "sp": 40
-        },
-        "w": 220.0,
-        "ab": "Magma Armor",
-    },
-    "Carvanha": {
-        "t1": "Water",
-        "t2": "Dark",
-        "bs": {
-            "hp": 45,
-            "at": 90,
-            "df": 20,
-            "sa": 65,
-            "sd": 20,
-            "sp": 65
-        },
-        "w": 20.8,
-        "ab": "Rough Skin",
-        "canEvolve": true,
-    },
-    "Cascoon": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 50,
-            "at": 35,
-            "df": 55,
+            "hp": 55,
+            "at": 45,
+            "df": 45,
             "sa": 25,
             "sd": 25,
             "sp": 15
         },
-        "w": 11.5,
-        "ab": "Shed Skin",
+        "w": 8.5,
+        "ab": "Water Absorb",
         "canEvolve": true,
     },
-    "Castform": {
-        "t1": "Normal",
+    "Quagsire": {
+        "t1": "Water",
+        "t2": "Ground",
         "bs": {
-            "hp": 70,
-            "at": 70,
-            "df": 70,
-            "sa": 70,
-            "sd": 70,
-            "sp": 70
+            "hp": 95,
+            "at": 85,
+            "df": 85,
+            "sa": 65,
+            "sd": 65,
+            "sp": 35
         },
-        "w": 0.8,
-        "ab": "Forecast"
+        "w": 75.0,
+        "ab": "Water Absorb",
     },
-    "Chimecho": {
+    "Espeon": {
         "t1": "Psychic",
         "bs": {
             "hp": 65,
-            "at": 50,
+            "at": 65,
+            "df": 60,
+            "sa": 130,
+            "sd": 95,
+            "sp": 110
+        },
+        "w": 26.5,
+        "ab": "Synchronize",
+    },
+    "Umbreon": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 95,
+            "at": 65,
+            "df": 110,
+            "sa": 60,
+            "sd": 130,
+            "sp": 65
+        },
+        "w": 27.0,
+        "ab": "Synchronize",
+    },
+    "Murkrow": {
+        "t1": "Dark",
+        "t2": "Flying",
+        "bs": {
+            "hp": 60,
+            "at": 85,
+            "df": 42,
+            "sa": 85,
+            "sd": 42,
+            "sp": 91
+        },
+        "w": 2.1,
+        "ab": "Insomnia",
+        "canEvolve": true,
+    },
+    "Slowking": {
+        "t1": "Water",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 95,
+            "at": 75,
+            "df": 80,
+            "sa": 100,
+            "sd": 110,
+            "sp": 30
+        },
+        "w": 79.5,
+        "ab": "Oblivious",
+    },
+    "Misdreavus": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 60,
+            "at": 60,
+            "df": 60,
+            "sa": 85,
+            "sd": 85,
+            "sp": 85
+        },
+        "w": 1.0,
+        "ab": "Levitate",
+        "canEvolve": true,
+    },
+    "Unown": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 48,
+            "at": 72,
+            "df": 48,
+            "sa": 72,
+            "sd": 48,
+            "sp": 48
+        },
+        "w": 5.0,
+        "ab": "Levitate"
+    },
+    "Wobbuffet": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 190,
+            "at": 33,
+            "df": 58,
+            "sa": 33,
+            "sd": 58,
+            "sp": 33
+        },
+        "w": 28.5,
+        "ab": "Shadow Tag",
+    },
+    "Girafarig": {
+        "t1": "Normal",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 70,
+            "at": 80,
+            "df": 65,
+            "sa": 90,
+            "sd": 65,
+            "sp": 85
+        },
+        "w": 41.5,
+        "ab": "Early Bird",
+    },
+    "Pineco": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 50,
+            "at": 65,
+            "df": 90,
+            "sa": 35,
+            "sd": 35,
+            "sp": 15
+        },
+        "w": 7.2,
+        "ab": "Sturdy",
+        "canEvolve": true,
+    },
+    "Forretress": {
+        "t1": "Bug",
+        "t2": "Steel",
+        "bs": {
+            "hp": 75,
+            "at": 90,
+            "df": 140,
+            "sa": 60,
+            "sd": 60,
+            "sp": 40
+        },
+        "w": 125.8,
+        "ab": "Sturdy",
+    },
+    "Dunsparce": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 100,
+            "at": 70,
             "df": 70,
-            "sa": 95,
+            "sa": 65,
+            "sd": 65,
+            "sp": 45
+        },
+        "w": 14.0,
+        "ab": "Serene Grace",
+    },
+    "Gligar": {
+        "t1": "Ground",
+        "t2": "Flying",
+        "bs": {
+            "hp": 65,
+            "at": 75,
+            "df": 105,
+            "sa": 35,
+            "sd": 65,
+            "sp": 85
+        },
+        "w": 64.8,
+        "ab": "Hyper Cutter",
+        "canEvolve": true,
+    },
+    "Steelix": {
+        "t1": "Steel",
+        "t2": "Ground",
+        "bs": {
+            "hp": 75,
+            "at": 85,
+            "df": 200,
+            "sa": 55,
+            "sd": 65,
+            "sp": 30
+        },
+        "w": 400.0,
+        "ab": "Sturdy",
+    },
+    "Snubbull": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 60,
+            "at": 80,
+            "df": 50,
+            "sa": 40,
+            "sd": 40,
+            "sp": 30
+        },
+        "w": 7.8,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Granbull": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 90,
+            "at": 120,
+            "df": 75,
+            "sa": 60,
+            "sd": 60,
+            "sp": 45
+        },
+        "w": 48.7,
+        "ab": "Intimidate"
+    },
+    "Qwilfish": {
+        "t1": "Water",
+        "t2": "Poison",
+        "bs": {
+            "hp": 65,
+            "at": 95,
+            "df": 75,
+            "sa": 55,
+            "sd": 55,
+            "sp": 85
+        },
+        "w": 3.9,
+        "ab": "Swift Swim",
+    },
+    "Scizor": {
+        "t1": "Bug",
+        "t2": "Steel",
+        "bs": {
+            "hp": 70,
+            "at": 130,
+            "df": 100,
+            "sa": 55,
             "sd": 80,
             "sp": 65
         },
-        "w": 1.0,
-        "ab": "Levitate"
+        "w": 118.0,
+        "ab": "Swarm"
     },
-    "Clamperl": {
+    "Shuckle": {
+        "t1": "Bug",
+        "t2": "Rock",
+        "bs": {
+            "hp": 20,
+            "at": 10,
+            "df": 230,
+            "sa": 10,
+            "sd": 230,
+            "sp": 5
+        },
+        "w": 20.5,
+        "ab": "Sturdy",
+    },
+    "Heracross": {
+        "t1": "Bug",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 80,
+            "at": 125,
+            "df": 75,
+            "sa": 40,
+            "sd": 95,
+            "sp": 85
+        },
+        "w": 54.0,
+        "ab": "Guts",
+    },
+    "Sneasel": {
+        "t1": "Dark",
+        "t2": "Ice",
+        "bs": {
+            "hp": 55,
+            "at": 95,
+            "df": 55,
+            "sa": 35,
+            "sd": 75,
+            "sp": 115
+        },
+        "w": 28.0,
+        "ab": "Inner Focus",
+        "canEvolve": true,
+    },
+    "Teddiursa": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 60,
+            "at": 80,
+            "df": 50,
+            "sa": 50,
+            "sd": 50,
+            "sp": 40
+        },
+        "w": 8.8,
+        "ab": "Pickup",
+        "canEvolve": true,
+    },
+    "Ursaring": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 90,
+            "at": 130,
+            "df": 75,
+            "sa": 75,
+            "sd": 75,
+            "sp": 55
+        },
+        "w": 125.8,
+        "ab": "Guts"
+    },
+    "Slugma": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 40,
+            "at": 40,
+            "df": 40,
+            "sa": 70,
+            "sd": 40,
+            "sp": 20
+        },
+        "w": 35.0,
+        "ab": "Flame Body",
+        "canEvolve": true,
+    },
+    "Magcargo": {
+        "t1": "Fire",
+        "t2": "Rock",
+        "bs": {
+            "hp": 50,
+            "at": 50,
+            "df": 120,
+            "sa": 80,
+            "sd": 80,
+            "sp": 30
+        },
+        "w": 55.0,
+        "ab": "Flame Body",
+    },
+    "Swinub": {
+        "t1": "Ice",
+        "t2": "Ground",
+        "bs": {
+            "hp": 50,
+            "at": 50,
+            "df": 40,
+            "sa": 30,
+            "sd": 30,
+            "sp": 50
+        },
+        "w": 6.5,
+        "ab": "Oblivious",
+        "canEvolve": true,
+    },
+    "Piloswine": {
+        "t1": "Ice",
+        "t2": "Ground",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 80,
+            "sa": 60,
+            "sd": 60,
+            "sp": 50
+        },
+        "w": 55.8,
+        "ab": "Oblivious",
+        "canEvolve": true,
+    },
+    "Corsola": {
+        "t1": "Water",
+        "t2": "Rock",
+        "bs": {
+            "hp": 55,
+            "at": 55,
+            "df": 85,
+            "sa": 65,
+            "sd": 85,
+            "sp": 35
+        },
+        "w": 5.0,
+        "ab": "Natural Cure",
+    },
+    "Remoraid": {
         "t1": "Water",
         "bs": {
             "hp": 35,
-            "at": 64,
-            "df": 85,
-            "sa": 74,
-            "sd": 55,
-            "sp": 32
+            "at": 65,
+            "df": 35,
+            "sa": 65,
+            "sd": 35,
+            "sp": 65
         },
-        "w": 52.5,
-        "ab": "Shell Armor",
+        "w": 12.0,
+        "ab": "Hustle",
         "canEvolve": true,
     },
-    "Claydol": {
-        "t1": "Ground",
-        "t2": "Psychic",
+    "Octillery": {
+        "t1": "Water",
         "bs": {
-            "hp": 60,
-            "at": 70,
-            "df": 105,
-            "sa": 70,
-            "sd": 120,
+            "hp": 75,
+            "at": 105,
+            "df": 75,
+            "sa": 105,
+            "sd": 75,
+            "sp": 45
+        },
+        "w": 28.5,
+        "ab": "Suction Cups",
+    },
+    "Delibird": {
+        "t1": "Ice",
+        "t2": "Flying",
+        "bs": {
+            "hp": 45,
+            "at": 55,
+            "df": 45,
+            "sa": 65,
+            "sd": 45,
             "sp": 75
         },
-        "w": 108.0,
-        "ab": "Levitate"
+        "w": 16.0,
+        "ab": "Vital Spirit",
+    },
+    "Mantine": {
+        "t1": "Water",
+        "t2": "Flying",
+        "bs": {
+            "hp": 65,
+            "at": 40,
+            "df": 70,
+            "sa": 80,
+            "sd": 140,
+            "sp": 70
+        },
+        "w": 220.0,
+        "ab": "Water Absorb",
+    },
+    "Skarmory": {
+        "t1": "Steel",
+        "t2": "Flying",
+        "bs": {
+            "hp": 65,
+            "at": 80,
+            "df": 140,
+            "sa": 40,
+            "sd": 70,
+            "sp": 70
+        },
+        "w": 50.5,
+        "ab": "Sturdy",
+    },
+    "Houndour": {
+        "t1": "Dark",
+        "t2": "Fire",
+        "bs": {
+            "hp": 45,
+            "at": 60,
+            "df": 30,
+            "sa": 80,
+            "sd": 50,
+            "sp": 65
+        },
+        "w": 10.8,
+        "ab": "Flash Fire",
+        "canEvolve": true,
+    },
+    "Houndoom": {
+        "t1": "Dark",
+        "t2": "Fire",
+        "bs": {
+            "hp": 75,
+            "at": 90,
+            "df": 50,
+            "sa": 110,
+            "sd": 80,
+            "sp": 95
+        },
+        "w": 35.0,
+        "ab": "Flash Fire",
+    },
+    "Kingdra": {
+        "t1": "Water",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 75,
+            "at": 95,
+            "df": 95,
+            "sa": 95,
+            "sd": 95,
+            "sp": 85
+        },
+        "w": 152.0,
+        "ab": "Swift Swim"
+    },
+    "Phanpy": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 90,
+            "at": 60,
+            "df": 60,
+            "sa": 40,
+            "sd": 40,
+            "sp": 40
+        },
+        "w": 33.5,
+        "ab": "Pickup",
+        "canEvolve": true,
+    },
+    "Donphan": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 90,
+            "at": 120,
+            "df": 120,
+            "sa": 60,
+            "sd": 60,
+            "sp": 50
+        },
+        "w": 120.0,
+        "ab": "Sturdy",
+    },
+    "Porygon2": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 85,
+            "at": 80,
+            "df": 90,
+            "sa": 105,
+            "sd": 95,
+            "sp": 60
+        },
+        "w": 32.5,
+        "ab": "Trace",
+        "canEvolve": true,
+    },
+    "Stantler": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 73,
+            "at": 95,
+            "df": 62,
+            "sa": 85,
+            "sd": 65,
+            "sp": 85
+        },
+        "w": 71.2,
+        "ab": "Intimidate"
+    },
+    "Smeargle": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 55,
+            "at": 20,
+            "df": 35,
+            "sa": 20,
+            "sd": 45,
+            "sp": 75
+        },
+        "w": 58.0,
+        "ab": "Own Tempo",
+    },
+    "Tyrogue": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 35,
+            "at": 35,
+            "df": 35,
+            "sa": 35,
+            "sd": 35,
+            "sp": 35
+        },
+        "w": 21.0,
+        "ab": "Guts",
+        "canEvolve": true,
+    },
+    "Hitmontop": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 50,
+            "at": 95,
+            "df": 95,
+            "sa": 35,
+            "sd": 110,
+            "sp": 70
+        },
+        "w": 48.0,
+        "ab": "Intimidate"
+    },
+    "Smoochum": {
+        "t1": "Ice",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 45,
+            "at": 30,
+            "df": 15,
+            "sa": 85,
+            "sd": 65,
+            "sp": 65
+        },
+        "w": 6.0,
+        "ab": "Oblivious",
+        "canEvolve": true,
+    },
+    "Elekid": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 45,
+            "at": 63,
+            "df": 37,
+            "sa": 65,
+            "sd": 55,
+            "sp": 95
+        },
+        "w": 23.5,
+        "ab": "Static",
+        "canEvolve": true,
+    },
+    "Magby": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 45,
+            "at": 75,
+            "df": 37,
+            "sa": 70,
+            "sd": 55,
+            "sp": 83
+        },
+        "w": 21.4,
+        "ab": "Flame Body",
+        "canEvolve": true,
+    },
+    "Miltank": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 95,
+            "at": 80,
+            "df": 105,
+            "sa": 40,
+            "sd": 70,
+            "sp": 100
+        },
+        "w": 75.5,
+        "ab": "Thick Fat"
+    },
+    "Blissey": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 255,
+            "at": 10,
+            "df": 10,
+            "sa": 75,
+            "sd": 135,
+            "sp": 55
+        },
+        "w": 46.8,
+        "ab": "Natural Cure",
+    },
+    "Raikou": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 90,
+            "at": 85,
+            "df": 75,
+            "sa": 115,
+            "sd": 100,
+            "sp": 115
+        },
+        "w": 178.0,
+        "ab": "Pressure",
+    },
+    "Entei": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 115,
+            "at": 115,
+            "df": 85,
+            "sa": 90,
+            "sd": 75,
+            "sp": 100
+        },
+        "w": 198.0,
+        "ab": "Pressure",
+    },
+    "Suicune": {
+        "t1": "Water",
+        "bs": {
+            "hp": 100,
+            "at": 75,
+            "df": 115,
+            "sa": 90,
+            "sd": 115,
+            "sp": 85
+        },
+        "w": 187.0,
+        "ab": "Pressure",
+    },
+    "Larvitar": {
+        "t1": "Rock",
+        "t2": "Ground",
+        "bs": {
+            "hp": 50,
+            "at": 64,
+            "df": 50,
+            "sa": 45,
+            "sd": 50,
+            "sp": 41
+        },
+        "w": 72.0,
+        "ab": "Guts",
+        "canEvolve": true,
+    },
+    "Pupitar": {
+        "t1": "Rock",
+        "t2": "Ground",
+        "bs": {
+            "hp": 70,
+            "at": 84,
+            "df": 70,
+            "sa": 65,
+            "sd": 70,
+            "sp": 51
+        },
+        "w": 152.0,
+        "ab": "Shed Skin",
+        "canEvolve": true,
+    },
+    "Tyranitar": {
+        "t1": "Rock",
+        "t2": "Dark",
+        "bs": {
+            "hp": 100,
+            "at": 134,
+            "df": 110,
+            "sa": 95,
+            "sd": 100,
+            "sp": 61
+        },
+        "w": 202.0,
+        "ab": "Sand Stream"
+    },
+    "Lugia": {
+        "t1": "Psychic",
+        "t2": "Flying",
+        "bs": {
+            "hp": 106,
+            "at": 90,
+            "df": 130,
+            "sa": 90,
+            "sd": 154,
+            "sp": 110
+        },
+        "w": 216.0,
+        "ab": "Pressure",
+    },
+    "Ho-Oh": {
+        "t1": "Fire",
+        "t2": "Flying",
+        "bs": {
+            "hp": 106,
+            "at": 130,
+            "df": 90,
+            "sa": 110,
+            "sd": 154,
+            "sp": 90
+        },
+        "w": 199.0,
+        "ab": "Pressure",
+    },
+    "Celebi": {
+        "t1": "Psychic",
+        "t2": "Grass",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "w": 5.0,
+        "ab": "Natural Cure"
+    },
+});
+
+var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
+    //RS Pokemon
+    "Treecko": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 40,
+            "at": 45,
+            "df": 35,
+            "sa": 65,
+            "sd": 55,
+            "sp": 70
+        },
+        "w": 5.0,
+        "ab": "Overgrow",
+        "canEvolve": true,
+    },
+    "Grovyle": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 50,
+            "at": 65,
+            "df": 45,
+            "sa": 85,
+            "sd": 65,
+            "sp": 95
+        },
+        "w": 21.6,
+        "ab": "Overgrow",
+        "canEvolve": true,
+    },
+    "Sceptile": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 70,
+            "at": 85,
+            "df": 65,
+            "sa": 105,
+            "sd": 85,
+            "sp": 120
+        },
+        "w": 52.2,
+        "ab": "Overgrow"
+    },
+    "Torchic": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 45,
+            "at": 60,
+            "df": 40,
+            "sa": 70,
+            "sd": 50,
+            "sp": 45
+        },
+        "w": 2.5,
+        "ab": "Blaze",
+        "canEvolve": true,
     },
     "Combusken": {
         "t1": "Fire",
@@ -4013,539 +3730,33 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "ab": "Blaze",
         "canEvolve": true,
     },
-    "Corphish": {
-        "t1": "Water",
+    "Blaziken": {
+        "t1": "Fire",
+        "t2": "Fighting",
         "bs": {
-            "hp": 43,
-            "at": 80,
-            "df": 65,
-            "sa": 50,
-            "sd": 35,
-            "sp": 35
-        },
-        "w": 11.5,
-        "ab": "Hyper Cutter",
-        "canEvolve": true,
-    },
-    "Cradily": {
-        "t1": "Rock",
-        "t2": "Grass",
-        "bs": {
-            "hp": 86,
-            "at": 81,
-            "df": 97,
-            "sa": 81,
-            "sd": 107,
-            "sp": 43
-        },
-        "w": 60.4,
-        "ab": "Suction Cups",
-    },
-    "Crawdaunt": {
-        "t1": "Water",
-        "t2": "Dark",
-        "bs": {
-            "hp": 63,
+            "hp": 80,
             "at": 120,
-            "df": 85,
-            "sa": 90,
-            "sd": 55,
-            "sp": 55
-        },
-        "w": 32.8,
-        "ab": "Hyper Cutter",
-    },
-    "Delcatty": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 70,
-            "at": 65,
-            "df": 65,
-            "sa": 55,
-            "sd": 55,
-            "sp": 70
-        },
-        "w": 32.6,
-        "ab": "Cute Charm",
-    },
-    "Deoxys": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 50,
-            "at": 150,
-            "df": 50,
-            "sa": 150,
-            "sd": 50,
-            "sp": 150
-        },
-        "w": 60.8,
-        "ab": "Pressure"
-    },
-    "Dusclops": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 40,
-            "at": 70,
-            "df": 130,
-            "sa": 60,
-            "sd": 130,
-            "sp": 25
-        },
-        "w": 30.6,
-        "ab": "Pressure",
-        "canEvolve": true,
-    },
-    "Duskull": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 20,
-            "at": 40,
-            "df": 90,
-            "sa": 30,
-            "sd": 90,
-            "sp": 25
-        },
-        "w": 15.0,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Dustox": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 60,
-            "at": 50,
             "df": 70,
-            "sa": 50,
-            "sd": 90,
-            "sp": 65
-        },
-        "w": 31.6,
-        "ab": "Shield Dust",
-    },
-    "Electrike": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 40,
-            "sa": 65,
-            "sd": 40,
-            "sp": 65
-        },
-        "w": 15.2,
-        "ab": "Static",
-        "canEvolve": true,
-    },
-    "Exploud": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 104,
-            "at": 91,
-            "df": 63,
-            "sa": 91,
-            "sd": 63,
-            "sp": 68
-        },
-        "w": 84.0,
-        "ab": "Soundproof"
-    },
-    "Feebas": {
-        "t1": "Water",
-        "bs": {
-            "hp": 20,
-            "at": 15,
-            "df": 20,
-            "sa": 10,
-            "sd": 55,
-            "sp": 80
-        },
-        "w": 7.4,
-        "ab": "Swift Swim",
-        "canEvolve": true,
-    },
-    "Flygon": {
-        "t1": "Ground",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 80,
-            "at": 100,
-            "df": 80,
-            "sa": 80,
-            "sd": 80,
-            "sp": 100
-        },
-        "w": 82.0,
-        "ab": "Levitate"
-    },
-    "Gardevoir": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 68,
-            "at": 65,
-            "df": 65,
-            "sa": 125,
-            "sd": 115,
-            "sp": 80
-        },
-        "w": 48.4,
-        "ab": "Trace",
-    },
-    "Glalie": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 80,
-            "at": 80,
-            "df": 80,
-            "sa": 80,
-            "sd": 80,
-            "sp": 80
-        },
-        "w": 256.5,
-        "ab": "Inner Focus",
-    },
-    "Gorebyss": {
-        "t1": "Water",
-        "bs": {
-            "hp": 55,
-            "at": 84,
-            "df": 105,
-            "sa": 114,
-            "sd": 75,
-            "sp": 52
-        },
-        "w": 22.6,
-        "ab": "Swift Swim"
-    },
-    "Groudon": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 100,
-            "at": 150,
-            "df": 140,
-            "sa": 100,
-            "sd": 90,
-            "sp": 90
-        },
-        "w": 950.0,
-        "ab": "Drought"
-    },
-    "Grovyle": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 50,
-            "at": 65,
-            "df": 45,
-            "sa": 85,
-            "sd": 65,
-            "sp": 95
-        },
-        "w": 21.6,
-        "ab": "Overgrow",
-        "canEvolve": true,
-    },
-    "Grumpig": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 45,
-            "df": 65,
-            "sa": 90,
-            "sd": 110,
-            "sp": 80
-        },
-        "w": 71.5,
-        "ab": "Tick Fat",
-    },
-    "Gulpin": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 70,
-            "at": 43,
-            "df": 53,
-            "sa": 43,
-            "sd": 53,
-            "sp": 40
-        },
-        "w": 10.3,
-        "ab": "Liquid Ooze",
-        "canEvolve": true,
-    },
-    "Hariyama": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 144,
-            "at": 120,
-            "df": 60,
-            "sa": 40,
-            "sd": 60,
-            "sp": 50
-        },
-        "w": 253.8,
-        "ab": "Guts",
-    },
-    "Huntail": {
-        "t1": "Water",
-        "bs": {
-            "hp": 55,
-            "at": 104,
-            "df": 105,
-            "sa": 94,
-            "sd": 75,
-            "sp": 52
-        },
-        "w": 27.0,
-        "ab": "Swift Swim"
-    },
-    "Illumise": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 65,
-            "at": 47,
-            "df": 55,
-            "sa": 73,
-            "sd": 75,
-            "sp": 85
-        },
-        "w": 17.7,
-        "ab": "Oblivious",
-    },
-    "Jirachi": {
-        "t1": "Steel",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 100,
-            "sa": 100,
-            "sd": 100,
-            "sp": 100
-        },
-        "w": 1.1,
-        "ab": "Serene Grace"
-    },
-    "Kecleon": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 60,
-            "at": 90,
-            "df": 70,
-            "sa": 60,
-            "sd": 120,
-            "sp": 40
-        },
-        "w": 22.0,
-        "ab": "Color Change",
-    },
-    "Kirlia": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 38,
-            "at": 35,
-            "df": 35,
-            "sa": 65,
-            "sd": 55,
-            "sp": 50
-        },
-        "w": 20.2,
-        "ab": "Synchronize",
-        "canEvolve": true,
-    },
-    "Kyogre": {
-        "t1": "Water",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 90,
-            "sa": 150,
-            "sd": 140,
-            "sp": 90
-        },
-        "w": 352.0,
-        "ab": "Drizzle"
-    },
-    "Lairon": {
-        "t1": "Steel",
-        "t2": "Rock",
-        "bs": {
-            "hp": 60,
-            "at": 90,
-            "df": 140,
-            "sa": 50,
-            "sd": 50,
-            "sp": 40
-        },
-        "w": 120.0,
-        "ab": "Rock Head",
-        "canEvolve": true,
-    },
-    "Latias": {
-        "t1": "Dragon",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 80,
-            "df": 90,
             "sa": 110,
-            "sd": 130,
-            "sp": 110
-        },
-        "w": 40.0,
-        "ab": "Levitate"
-    },
-    "Latios": {
-        "t1": "Dragon",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 90,
-            "df": 80,
-            "sa": 130,
-            "sd": 110,
-            "sp": 110
-        },
-        "w": 60.0,
-        "ab": "Levitate"
-    },
-    "Lileep": {
-        "t1": "Rock",
-        "t2": "Grass",
-        "bs": {
-            "hp": 66,
-            "at": 41,
-            "df": 77,
-            "sa": 61,
-            "sd": 87,
-            "sp": 23
-        },
-        "w": 23.8,
-        "ab": "Suction Cups",
-        "canEvolve": true,
-    },
-    "Linoone": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 78,
-            "at": 70,
-            "df": 61,
-            "sa": 50,
-            "sd": 61,
-            "sp": 100
-        },
-        "w": 32.5,
-        "ab": "Pickup",
-    },
-    "Lombre": {
-        "t1": "Water",
-        "t2": "Grass",
-        "bs": {
-            "hp": 60,
-            "at": 50,
-            "df": 50,
-            "sa": 60,
             "sd": 70,
-            "sp": 50
+            "sp": 80
         },
-        "w": 32.5,
-        "ab": "Rain Dish",
-        "canEvolve": true,
+        "w": 52.0,
+        "ab": "Blaze"
     },
-    "Lotad": {
+    "Mudkip": {
         "t1": "Water",
-        "t2": "Grass",
         "bs": {
-            "hp": 40,
-            "at": 30,
-            "df": 30,
-            "sa": 40,
-            "sd": 50,
-            "sp": 30
-        },
-        "w": 2.6,
-        "ab": "Rain Dish",
-        "canEvolve": true,
-    },
-    "Loudred": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 84,
-            "at": 71,
-            "df": 43,
-            "sa": 71,
-            "sd": 43,
-            "sp": 48
-        },
-        "w": 40.5,
-        "ab": "Soundproof",
-        "canEvolve": true,
-    },
-    "Ludicolo": {
-        "t1": "Water",
-        "t2": "Grass",
-        "bs": {
-            "hp": 80,
+            "hp": 50,
             "at": 70,
-            "df": 70,
-            "sa": 90,
-            "sd": 100,
-            "sp": 70
+            "df": 50,
+            "sa": 50,
+            "sd": 50,
+            "sp": 40
         },
-        "w": 55.0,
-        "ab": "Swift Swim",
-    },
-    "Lunatone": {
-        "t1": "Rock",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 70,
-            "at": 55,
-            "df": 65,
-            "sa": 95,
-            "sd": 85,
-            "sp": 70
-        },
-        "w": 168.0,
-        "ab": "Levitate"
-    },
-    "Luvdisc": {
-        "t1": "Water",
-        "bs": {
-            "hp": 43,
-            "at": 30,
-            "df": 55,
-            "sa": 40,
-            "sd": 65,
-            "sp": 97
-        },
-        "w": 8.7,
-        "ab": "Swift Swim"
-    },
-    "Makuhita": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 72,
-            "at": 60,
-            "df": 30,
-            "sa": 20,
-            "sd": 30,
-            "sp": 25
-        },
-        "w": 86.4,
-        "ab": "Guts",
+        "w": 7.6,
+        "ab": "Torrent",
         "canEvolve": true,
-    },
-    "Manectric": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 70,
-            "at": 75,
-            "df": 60,
-            "sa": 105,
-            "sd": 60,
-            "sp": 105
-        },
-        "w": 40.2,
-        "ab": "Lightning Rod",
     },
     "Marshtomp": {
         "t1": "Water",
@@ -4562,89 +3773,32 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "ab": "Torrent",
         "canEvolve": true,
     },
-    "Masquerain": {
-        "t1": "Bug",
-        "t2": "Flying",
+    "Swampert": {
+        "t1": "Water",
+        "t2": "Ground",
         "bs": {
-            "hp": 70,
-            "at": 60,
-            "df": 62,
-            "sa": 80,
-            "sd": 82,
-            "sp": 60
-        },
-        "w": 3.6,
-        "ab": "Intimidate"
-    },
-    "Mawile": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 50,
-            "at": 85,
-            "df": 85,
-            "sa": 55,
-            "sd": 55,
-            "sp": 50
-        },
-        "w": 11.5,
-        "ab": "Intimidate",
-    },
-    "Medicham": {
-        "t1": "Fighting",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 75,
-            "sa": 60,
-            "sd": 75,
-            "sp": 80
-        },
-        "w": 31.5,
-        "ab": "Pure Power"
-    },
-    "Meditite": {
-        "t1": "Fighting",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 30,
-            "at": 40,
-            "df": 55,
-            "sa": 40,
-            "sd": 55,
-            "sp": 60
-        },
-        "w": 11.2,
-        "ab": "Pure Power",
-        "canEvolve": true,
-    },
-    "Metagross": {
-        "t1": "Steel",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 135,
-            "df": 130,
-            "sa": 95,
+            "hp": 100,
+            "at": 110,
+            "df": 90,
+            "sa": 85,
             "sd": 90,
-            "sp": 70
+            "sp": 60
         },
-        "w": 550.0,
-        "ab": "Clear Body"
+        "w": 81.9,
+        "ab": "Torrent"
     },
-    "Metang": {
-        "t1": "Steel",
-        "t2": "Psychic",
+    "Poochyena": {
+        "t1": "Dark",
         "bs": {
-            "hp": 60,
-            "at": 75,
-            "df": 100,
-            "sa": 55,
-            "sd": 80,
-            "sp": 50
+            "hp": 35,
+            "at": 55,
+            "df": 35,
+            "sa": 30,
+            "sd": 30,
+            "sp": 35
         },
-        "w": 202.5,
-        "ab": "Clear Body",
+        "w": 13.6,
+        "ab": "Run Away",
         "canEvolve": true,
     },
     "Mightyena": {
@@ -4660,45 +3814,386 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "w": 37.0,
         "ab": "Intimidate"
     },
-    "Milotic": {
-        "t1": "Water",
+    "Zigzagoon": {
+        "t1": "Normal",
         "bs": {
-            "hp": 95,
-            "at": 60,
-            "df": 79,
-            "sa": 100,
-            "sd": 125,
-            "sp": 81
+            "hp": 38,
+            "at": 30,
+            "df": 41,
+            "sa": 30,
+            "sd": 41,
+            "sp": 60
         },
-        "w": 162.0,
-        "ab": "Marvel Scale",
+        "w": 17.5,
+        "ab": "Pickup",
+        "canEvolve": true,
     },
-    "Minun": {
-        "t1": "Electric",
+    "Linoone": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 78,
+            "at": 70,
+            "df": 61,
+            "sa": 50,
+            "sd": 61,
+            "sp": 100
+        },
+        "w": 32.5,
+        "ab": "Pickup",
+    },
+    "Wurmple": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 45,
+            "at": 45,
+            "df": 35,
+            "sa": 20,
+            "sd": 30,
+            "sp": 20
+        },
+        "w": 3.6,
+        "ab": "Shield Dust",
+        "canEvolve": true,
+    },
+    "Silcoon": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 50,
+            "at": 35,
+            "df": 55,
+            "sa": 25,
+            "sd": 25,
+            "sp": 15
+        },
+        "w": 10.0,
+        "ab": "Shed Skin",
+        "canEvolve": true,
+    },
+    "Beautifly": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 60,
+            "at": 70,
+            "df": 50,
+            "sa": 90,
+            "sd": 50,
+            "sp": 65
+        },
+        "w": 28.4,
+        "ab": "Swarm"
+    },
+    "Cascoon": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 50,
+            "at": 35,
+            "df": 55,
+            "sa": 25,
+            "sd": 25,
+            "sp": 15
+        },
+        "w": 11.5,
+        "ab": "Shed Skin",
+        "canEvolve": true,
+    },
+    "Dustox": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 60,
+            "at": 50,
+            "df": 70,
+            "sa": 50,
+            "sd": 90,
+            "sp": 65
+        },
+        "w": 31.6,
+        "ab": "Shield Dust",
+    },
+    "Lotad": {
+        "t1": "Water",
+        "t2": "Grass",
+        "bs": {
+            "hp": 40,
+            "at": 30,
+            "df": 30,
+            "sa": 40,
+            "sd": 50,
+            "sp": 30
+        },
+        "w": 2.6,
+        "ab": "Rain Dish",
+        "canEvolve": true,
+    },
+    "Lombre": {
+        "t1": "Water",
+        "t2": "Grass",
+        "bs": {
+            "hp": 60,
+            "at": 50,
+            "df": 50,
+            "sa": 60,
+            "sd": 70,
+            "sp": 50
+        },
+        "w": 32.5,
+        "ab": "Rain Dish",
+        "canEvolve": true,
+    },
+    "Ludicolo": {
+        "t1": "Water",
+        "t2": "Grass",
+        "bs": {
+            "hp": 80,
+            "at": 70,
+            "df": 70,
+            "sa": 90,
+            "sd": 100,
+            "sp": 70
+        },
+        "w": 55.0,
+        "ab": "Swift Swim",
+    },
+    "Seedot": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 40,
+            "at": 40,
+            "df": 50,
+            "sa": 30,
+            "sd": 30,
+            "sp": 30
+        },
+        "w": 4.0,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Nuzleaf": {
+        "t1": "Grass",
+        "t2": "Dark",
+        "bs": {
+            "hp": 70,
+            "at": 70,
+            "df": 40,
+            "sa": 60,
+            "sd": 40,
+            "sp": 60
+        },
+        "w": 28.0,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Shiftry": {
+        "t1": "Grass",
+        "t2": "Dark",
+        "bs": {
+            "hp": 90,
+            "at": 100,
+            "df": 60,
+            "sa": 90,
+            "sd": 60,
+            "sp": 80
+        },
+        "w": 59.6,
+        "ab": "Chlorophyll",
+    },
+    "Taillow": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 40,
+            "at": 55,
+            "df": 30,
+            "sa": 30,
+            "sd": 30,
+            "sp": 85
+        },
+        "w": 2.3,
+        "ab": "Guts",
+        "canEvolve": true,
+    },
+    "Swellow": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 60,
+            "at": 85,
+            "df": 60,
+            "sa": 50,
+            "sd": 50,
+            "sp": 125
+        },
+        "w": 19.8,
+        "ab": "Guts"
+    },
+    "Wingull": {
+        "t1": "Water",
+        "t2": "Flying",
+        "bs": {
+            "hp": 40,
+            "at": 30,
+            "df": 30,
+            "sa": 55,
+            "sd": 30,
+            "sp": 85
+        },
+        "w": 9.5,
+        "ab": "Keen Eye",
+        "canEvolve": true,
+    },
+    "Pelipper": {
+        "t1": "Water",
+        "t2": "Flying",
+        "bs": {
+            "hp": 60,
+            "at": 50,
+            "df": 100,
+            "sa": 85,
+            "sd": 70,
+            "sp": 65
+        },
+        "w": 28.0,
+        "ab": "Keen Eye",
+    },
+    "Ralts": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 28,
+            "at": 25,
+            "df": 25,
+            "sa": 45,
+            "sd": 35,
+            "sp": 40
+        },
+        "w": 6.6,
+        "ab": "Synchronize",
+        "canEvolve": true,
+    },
+    "Kirlia": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 38,
+            "at": 35,
+            "df": 35,
+            "sa": 65,
+            "sd": 55,
+            "sp": 50
+        },
+        "w": 20.2,
+        "ab": "Synchronize",
+        "canEvolve": true,
+    },
+    "Gardevoir": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 68,
+            "at": 65,
+            "df": 65,
+            "sa": 125,
+            "sd": 115,
+            "sp": 80
+        },
+        "w": 48.4,
+        "ab": "Trace",
+    },
+    "Surskit": {
+        "t1": "Bug",
+        "t2": "Water",
+        "bs": {
+            "hp": 40,
+            "at": 30,
+            "df": 32,
+            "sa": 50,
+            "sd": 52,
+            "sp": 65
+        },
+        "w": 1.7,
+        "ab": "Swift Swim",
+        "canEvolve": true,
+    },
+    "Masquerain": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 70,
+            "at": 60,
+            "df": 62,
+            "sa": 80,
+            "sd": 82,
+            "sp": 60
+        },
+        "w": 3.6,
+        "ab": "Intimidate"
+    },
+    "Shroomish": {
+        "t1": "Grass",
         "bs": {
             "hp": 60,
             "at": 40,
-            "df": 50,
-            "sa": 75,
-            "sd": 85,
-            "sp": 95
+            "df": 60,
+            "sa": 40,
+            "sd": 60,
+            "sp": 35
         },
-        "w": 4.2,
-        "ab": "Minus",
-    },
-    "Mudkip": {
-        "t1": "Water",
-        "bs": {
-            "hp": 50,
-            "at": 70,
-            "df": 50,
-            "sa": 50,
-            "sd": 50,
-            "sp": 40
-        },
-        "w": 7.6,
-        "ab": "Torrent",
+        "w": 4.5,
+        "ab": "Effect Spore",
         "canEvolve": true,
+    },
+    "Breloom": {
+        "t1": "Grass",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 60,
+            "at": 130,
+            "df": 80,
+            "sa": 60,
+            "sd": 60,
+            "sp": 70
+        },
+        "w": 39.2,
+        "ab": "Effect Spore",
+    },
+    "Slakoth": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 60,
+            "at": 60,
+            "df": 60,
+            "sa": 35,
+            "sd": 35,
+            "sp": 30
+        },
+        "w": 24.0,
+        "ab": "Truant",
+        "canEvolve": true,
+    },
+    "Vigoroth": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 80,
+            "at": 80,
+            "df": 80,
+            "sa": 55,
+            "sd": 55,
+            "sp": 90
+        },
+        "w": 46.5,
+        "ab": "Vital Spirit",
+        "canEvolve": true,
+    },
+    "Slaking": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 150,
+            "at": 160,
+            "df": 100,
+            "sa": 95,
+            "sd": 65,
+            "sp": 100
+        },
+        "w": 130.5,
+        "ab": "Truant"
     },
     "Nincada": {
         "t1": "Bug",
@@ -4729,284 +4224,6 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "w": 12.0,
         "ab": "Speed Boost",
     },
-    "Nosepass": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 30,
-            "at": 45,
-            "df": 135,
-            "sa": 45,
-            "sd": 90,
-            "sp": 30
-        },
-        "w": 97.0,
-        "ab": "Magnet Pull",
-        "canEvolve": true,
-    },
-    "Numel": {
-        "t1": "Fire",
-        "t2": "Ground",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 40,
-            "sa": 65,
-            "sd": 45,
-            "sp": 35
-        },
-        "w": 24.0,
-        "ab": "Oblivious",
-        "canEvolve": true,
-    },
-    "Nuzleaf": {
-        "t1": "Grass",
-        "t2": "Dark",
-        "bs": {
-            "hp": 70,
-            "at": 70,
-            "df": 40,
-            "sa": 60,
-            "sd": 40,
-            "sp": 60
-        },
-        "w": 28.0,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Pelipper": {
-        "t1": "Water",
-        "t2": "Flying",
-        "bs": {
-            "hp": 60,
-            "at": 50,
-            "df": 100,
-            "sa": 85,
-            "sd": 70,
-            "sp": 65
-        },
-        "w": 28.0,
-        "ab": "Keen Eye",
-    },
-    "Plusle": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 60,
-            "at": 50,
-            "df": 40,
-            "sa": 85,
-            "sd": 75,
-            "sp": 95
-        },
-        "w": 4.2,
-        "ab": "Plus",
-    },
-    "Poochyena": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 35,
-            "at": 55,
-            "df": 35,
-            "sa": 30,
-            "sd": 30,
-            "sp": 35
-        },
-        "w": 13.6,
-        "ab": "Run Away",
-        "canEvolve": true,
-    },
-    "Ralts": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 28,
-            "at": 25,
-            "df": 25,
-            "sa": 45,
-            "sd": 35,
-            "sp": 40
-        },
-        "w": 6.6,
-        "ab": "Synchronize",
-        "canEvolve": true,
-    },
-    "Rayquaza": {
-        "t1": "Dragon",
-        "t2": "Flying",
-        "bs": {
-            "hp": 105,
-            "at": 150,
-            "df": 90,
-            "sa": 150,
-            "sd": 90,
-            "sp": 95
-        },
-        "w": 206.5,
-        "ab": "Air Lock"
-    },
-    "Regice": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 80,
-            "at": 50,
-            "df": 100,
-            "sa": 100,
-            "sd": 200,
-            "sp": 50
-        },
-        "w": 175.0,
-        "ab": "Clear Body"
-    },
-    "Regirock": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 80,
-            "at": 100,
-            "df": 200,
-            "sa": 50,
-            "sd": 100,
-            "sp": 50
-        },
-        "w": 230.0,
-        "ab": "Clear Body"
-    },
-    "Registeel": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 80,
-            "at": 75,
-            "df": 150,
-            "sa": 75,
-            "sd": 150,
-            "sp": 50
-        },
-        "w": 205.0,
-        "ab": "Clear Body"
-    },
-    "Relicanth": {
-        "t1": "Water",
-        "t2": "Rock",
-        "bs": {
-            "hp": 100,
-            "at": 90,
-            "df": 130,
-            "sa": 45,
-            "sd": 65,
-            "sp": 55
-        },
-        "w": 23.4,
-        "ab": "Swift Swim",
-    },
-    "Roselia": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 50,
-            "at": 60,
-            "df": 45,
-            "sa": 100,
-            "sd": 80,
-            "sp": 65
-        },
-        "w": 2.0,
-        "ab": "Natural Cure",
-        "canEvolve": true,
-    },
-    "Sableye": {
-        "t1": "Dark",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 50,
-            "at": 75,
-            "df": 75,
-            "sa": 65,
-            "sd": 65,
-            "sp": 50
-        },
-        "w": 11.0,
-        "ab": "Keen Eye",
-    },
-    "Salamence": {
-        "t1": "Dragon",
-        "t2": "Flying",
-        "bs": {
-            "hp": 95,
-            "at": 135,
-            "df": 80,
-            "sa": 110,
-            "sd": 80,
-            "sp": 100
-        },
-        "w": 102.6,
-        "ab": "Intimidate"
-    },
-    "Sceptile": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 70,
-            "at": 85,
-            "df": 65,
-            "sa": 105,
-            "sd": 85,
-            "sp": 120
-        },
-        "w": 52.2,
-        "ab": "Overgrow"
-    },
-    "Sealeo": {
-        "t1": "Ice",
-        "t2": "Water",
-        "bs": {
-            "hp": 90,
-            "at": 60,
-            "df": 70,
-            "sa": 75,
-            "sd": 70,
-            "sp": 45
-        },
-        "w": 87.6,
-        "ab": "Thick Fat",
-        "canEvolve": true,
-    },
-    "Seedot": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 40,
-            "at": 40,
-            "df": 50,
-            "sa": 30,
-            "sd": 30,
-            "sp": 30
-        },
-        "w": 4.0,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Seviper": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 73,
-            "at": 100,
-            "df": 60,
-            "sa": 100,
-            "sd": 60,
-            "sp": 65
-        },
-        "w": 52.5,
-        "ab": "Shed Skin",
-    },
-    "Sharpedo": {
-        "t1": "Water",
-        "t2": "Dark",
-        "bs": {
-            "hp": 70,
-            "at": 120,
-            "df": 40,
-            "sa": 95,
-            "sd": 40,
-            "sp": 95
-        },
-        "w": 88.8,
-        "ab": "Rough Skin",
-    },
     "Shedinja": {
         "t1": "Bug",
         "t2": "Ghost",
@@ -5021,74 +4238,100 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "w": 1.2,
         "ab": "Wonder Guard"
     },
-    "Shelgon": {
-        "t1": "Dragon",
+    "Whismur": {
+        "t1": "Normal",
         "bs": {
-            "hp": 65,
-            "at": 95,
-            "df": 100,
-            "sa": 60,
-            "sd": 50,
-            "sp": 50
+            "hp": 64,
+            "at": 51,
+            "df": 23,
+            "sa": 51,
+            "sd": 23,
+            "sp": 28
         },
-        "w": 110.5,
-        "ab": "Rock Head",
+        "w": 16.3,
+        "ab": "Soundproof",
         "canEvolve": true,
     },
-    "Shiftry": {
-        "t1": "Grass",
-        "t2": "Dark",
+    "Loudred": {
+        "t1": "Normal",
         "bs": {
-            "hp": 90,
-            "at": 100,
-            "df": 60,
-            "sa": 90,
-            "sd": 60,
-            "sp": 80
+            "hp": 84,
+            "at": 71,
+            "df": 43,
+            "sa": 71,
+            "sd": 43,
+            "sp": 48
         },
-        "w": 59.6,
-        "ab": "Chlorophyll",
+        "w": 40.5,
+        "ab": "Soundproof",
+        "canEvolve": true,
     },
-    "Shroomish": {
-        "t1": "Grass",
+    "Exploud": {
+        "t1": "Normal",
         "bs": {
-            "hp": 60,
-            "at": 40,
+            "hp": 104,
+            "at": 91,
+            "df": 63,
+            "sa": 91,
+            "sd": 63,
+            "sp": 68
+        },
+        "w": 84.0,
+        "ab": "Soundproof"
+    },
+    "Makuhita": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 72,
+            "at": 60,
+            "df": 30,
+            "sa": 20,
+            "sd": 30,
+            "sp": 25
+        },
+        "w": 86.4,
+        "ab": "Guts",
+        "canEvolve": true,
+    },
+    "Hariyama": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 144,
+            "at": 120,
             "df": 60,
             "sa": 40,
             "sd": 60,
-            "sp": 35
+            "sp": 50
         },
-        "w": 4.5,
-        "ab": "Effect Spore",
-        "canEvolve": true,
+        "w": 253.8,
+        "ab": "Guts",
     },
-    "Shuppet": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 44,
-            "at": 75,
-            "df": 35,
-            "sa": 63,
-            "sd": 33,
-            "sp": 45
-        },
-        "w": 2.3,
-        "ab": "Insomnia",
-        "canEvolve": true,
-    },
-    "Silcoon": {
-        "t1": "Bug",
+    "Azurill": {
+        "t1": "Normal",
         "bs": {
             "hp": 50,
-            "at": 35,
-            "df": 55,
-            "sa": 25,
-            "sd": 25,
-            "sp": 15
+            "at": 20,
+            "df": 40,
+            "sa": 20,
+            "sd": 40,
+            "sp": 20
         },
-        "w": 10.0,
-        "ab": "Shed Skin",
+        "w": 2.0,
+        "ab": "Huge Power",
+        "canEvolve": true,
+    },
+    "Nosepass": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 30,
+            "at": 45,
+            "df": 135,
+            "sa": 45,
+            "sd": 90,
+            "sp": 30
+        },
+        "w": 97.0,
+        "ab": "Magnet Pull",
         "canEvolve": true,
     },
     "Skitty": {
@@ -5105,131 +4348,225 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "ab": "Cute Charm",
         "canEvolve": true,
     },
-    "Slaking": {
+    "Delcatty": {
         "t1": "Normal",
-        "bs": {
-            "hp": 150,
-            "at": 160,
-            "df": 100,
-            "sa": 95,
-            "sd": 65,
-            "sp": 100
-        },
-        "w": 130.5,
-        "ab": "Truant"
-    },
-    "Slakoth": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 60,
-            "sa": 35,
-            "sd": 35,
-            "sp": 30
-        },
-        "w": 24.0,
-        "ab": "Truant",
-        "canEvolve": true,
-    },
-    "Snorunt": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 50,
-            "sa": 50,
-            "sd": 50,
-            "sp": 50
-        },
-        "w": 16.8,
-        "ab": "Inner Focus",
-        "canEvolve": true,
-    },
-    "Solrock": {
-        "t1": "Rock",
-        "t2": "Psychic",
         "bs": {
             "hp": 70,
-            "at": 95,
-            "df": 85,
+            "at": 65,
+            "df": 65,
             "sa": 55,
-            "sd": 65,
+            "sd": 55,
             "sp": 70
         },
-        "w": 154.0,
-        "ab": "Levitate"
+        "w": 32.6,
+        "ab": "Cute Charm",
     },
-    "Spheal": {
-        "t1": "Ice",
-        "t2": "Water",
+    "Sableye": {
+        "t1": "Dark",
+        "t2": "Ghost",
         "bs": {
-            "hp": 70,
-            "at": 40,
-            "df": 50,
-            "sa": 55,
-            "sd": 50,
-            "sp": 25
+            "hp": 50,
+            "at": 75,
+            "df": 75,
+            "sa": 65,
+            "sd": 65,
+            "sp": 50
         },
-        "w": 39.5,
-        "ab": "Thick Fat",
+        "w": 11.0,
+        "ab": "Keen Eye",
+    },
+    "Mawile": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 50,
+            "at": 85,
+            "df": 85,
+            "sa": 55,
+            "sd": 55,
+            "sp": 50
+        },
+        "w": 11.5,
+        "ab": "Intimidate",
+    },
+    "Aron": {
+        "t1": "Steel",
+        "t2": "Rock",
+        "bs": {
+            "hp": 50,
+            "at": 70,
+            "df": 100,
+            "sa": 40,
+            "sd": 40,
+            "sp": 30
+        },
+        "w": 60.0,
+        "ab": "Sturdy",
         "canEvolve": true,
     },
-    "Spinda": {
-        "t1": "Normal",
+    "Lairon": {
+        "t1": "Steel",
+        "t2": "Rock",
+        "bs": {
+            "hp": 60,
+            "at": 90,
+            "df": 140,
+            "sa": 50,
+            "sd": 50,
+            "sp": 40
+        },
+        "w": 120.0,
+        "ab": "Rock Head",
+        "canEvolve": true,
+    },
+    "Aggron": {
+        "t1": "Steel",
+        "t2": "Rock",
+        "bs": {
+            "hp": 70,
+            "at": 110,
+            "df": 180,
+            "sa": 60,
+            "sd": 60,
+            "sp": 50
+        },
+        "w": 360.0,
+        "ab": "Sturdy",
+    },
+    "Meditite": {
+        "t1": "Fighting",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 30,
+            "at": 40,
+            "df": 55,
+            "sa": 40,
+            "sd": 55,
+            "sp": 60
+        },
+        "w": 11.2,
+        "ab": "Pure Power",
+        "canEvolve": true,
+    },
+    "Medicham": {
+        "t1": "Fighting",
+        "t2": "Psychic",
         "bs": {
             "hp": 60,
             "at": 60,
-            "df": 60,
+            "df": 75,
             "sa": 60,
-            "sd": 60,
-            "sp": 60
+            "sd": 75,
+            "sp": 80
         },
-        "w": 5.0,
-        "ab": "Own Tempo",
+        "w": 31.5,
+        "ab": "Pure Power"
     },
-    "Spoink": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 60,
-            "at": 25,
-            "df": 35,
-            "sa": 70,
-            "sd": 80,
-            "sp": 60
-        },
-        "w": 30.6,
-        "ab": "Thick Fat",
-        "canEvolve": true,
-    },
-    "Surskit": {
-        "t1": "Bug",
-        "t2": "Water",
+    "Electrike": {
+        "t1": "Electric",
         "bs": {
             "hp": 40,
-            "at": 30,
-            "df": 32,
-            "sa": 50,
-            "sd": 52,
+            "at": 45,
+            "df": 40,
+            "sa": 65,
+            "sd": 40,
             "sp": 65
         },
-        "w": 1.7,
-        "ab": "Swift Swim",
+        "w": 15.2,
+        "ab": "Static",
         "canEvolve": true,
     },
-    "Swablu": {
-        "t1": "Normal",
-        "t2": "Flying",
+    "Manectric": {
+        "t1": "Electric",
         "bs": {
-            "hp": 45,
-            "at": 40,
+            "hp": 70,
+            "at": 75,
             "df": 60,
-            "sa": 40,
-            "sd": 75,
-            "sp": 50
+            "sa": 105,
+            "sd": 60,
+            "sp": 105
         },
-        "w": 1.2,
+        "w": 40.2,
+        "ab": "Lightning Rod",
+    },
+    "Plusle": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 60,
+            "at": 50,
+            "df": 40,
+            "sa": 85,
+            "sd": 75,
+            "sp": 95
+        },
+        "w": 4.2,
+        "ab": "Plus",
+    },
+    "Minun": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 60,
+            "at": 40,
+            "df": 50,
+            "sa": 75,
+            "sd": 85,
+            "sp": 95
+        },
+        "w": 4.2,
+        "ab": "Minus",
+    },
+    "Volbeat": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 65,
+            "at": 73,
+            "df": 55,
+            "sa": 47,
+            "sd": 75,
+            "sp": 85
+        },
+        "w": 17.7,
+        "ab": "Swarm",
+    },
+    "Illumise": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 65,
+            "at": 47,
+            "df": 55,
+            "sa": 73,
+            "sd": 75,
+            "sp": 85
+        },
+        "w": 17.7,
+        "ab": "Oblivious",
+    },
+    "Roselia": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 50,
+            "at": 60,
+            "df": 45,
+            "sa": 100,
+            "sd": 80,
+            "sp": 65
+        },
+        "w": 2.0,
         "ab": "Natural Cure",
+        "canEvolve": true,
+    },
+    "Gulpin": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 70,
+            "at": 43,
+            "df": 53,
+            "sa": 43,
+            "sd": 53,
+            "sp": 40
+        },
+        "w": 10.3,
+        "ab": "Liquid Ooze",
         "canEvolve": true,
     },
     "Swalot": {
@@ -5245,159 +4582,34 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "w": 80.0,
         "ab": "Sticky Hold",
     },
-    "Swampert": {
+    "Carvanha": {
         "t1": "Water",
-        "t2": "Ground",
-        "bs": {
-            "hp": 100,
-            "at": 110,
-            "df": 90,
-            "sa": 85,
-            "sd": 90,
-            "sp": 60
-        },
-        "w": 81.9,
-        "ab": "Torrent"
-    },
-    "Swellow": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 60,
-            "at": 85,
-            "df": 60,
-            "sa": 50,
-            "sd": 50,
-            "sp": 125
-        },
-        "w": 19.8,
-        "ab": "Guts"
-    },
-    "Taillow": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 40,
-            "at": 55,
-            "df": 30,
-            "sa": 30,
-            "sd": 30,
-            "sp": 85
-        },
-        "w": 2.3,
-        "ab": "Guts",
-        "canEvolve": true,
-    },
-    "Torchic": {
-        "t1": "Fire",
+        "t2": "Dark",
         "bs": {
             "hp": 45,
-            "at": 60,
-            "df": 40,
-            "sa": 70,
-            "sd": 50,
-            "sp": 45
+            "at": 90,
+            "df": 20,
+            "sa": 65,
+            "sd": 20,
+            "sp": 65
         },
-        "w": 2.5,
-        "ab": "Blaze",
+        "w": 20.8,
+        "ab": "Rough Skin",
         "canEvolve": true,
     },
-    "Torkoal": {
-        "t1": "Fire",
+    "Sharpedo": {
+        "t1": "Water",
+        "t2": "Dark",
         "bs": {
             "hp": 70,
-            "at": 85,
-            "df": 140,
-            "sa": 85,
-            "sd": 70,
-            "sp": 20
+            "at": 120,
+            "df": 40,
+            "sa": 95,
+            "sd": 40,
+            "sp": 95
         },
-        "w": 80.4,
-        "ab": "White Smoke"
-    },
-    "Trapinch": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 45,
-            "at": 100,
-            "df": 45,
-            "sa": 45,
-            "sd": 45,
-            "sp": 10
-        },
-        "w": 15.0,
-        "ab": "Arena Trap",
-        "canEvolve": true,
-    },
-    "Treecko": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 35,
-            "sa": 65,
-            "sd": 55,
-            "sp": 70
-        },
-        "w": 5.0,
-        "ab": "Overgrow",
-        "canEvolve": true,
-    },
-    "Tropius": {
-        "t1": "Grass",
-        "t2": "Flying",
-        "bs": {
-            "hp": 99,
-            "at": 68,
-            "df": 83,
-            "sa": 72,
-            "sd": 87,
-            "sp": 51
-        },
-        "w": 100.0,
-        "ab": "Chlorophyll"
-    },
-    "Vibrava": {
-        "t1": "Ground",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 50,
-            "at": 70,
-            "df": 50,
-            "sa": 50,
-            "sd": 50,
-            "sp": 70
-        },
-        "w": 15.3,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Vigoroth": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 80,
-            "at": 80,
-            "df": 80,
-            "sa": 55,
-            "sd": 55,
-            "sp": 90
-        },
-        "w": 46.5,
-        "ab": "Vital Spirit",
-        "canEvolve": true,
-    },
-    "Volbeat": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 65,
-            "at": 73,
-            "df": 55,
-            "sa": 47,
-            "sd": 75,
-            "sp": 85
-        },
-        "w": 17.7,
-        "ab": "Swarm",
+        "w": 88.8,
+        "ab": "Rough Skin",
     },
     "Wailmer": {
         "t1": "Water",
@@ -5426,19 +4638,256 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "w": 398.0,
         "ab": "Water Veil",
     },
-    "Walrein": {
-        "t1": "Ice",
-        "t2": "Water",
+    "Numel": {
+        "t1": "Fire",
+        "t2": "Ground",
         "bs": {
-            "hp": 110,
-            "at": 80,
+            "hp": 60,
+            "at": 60,
+            "df": 40,
+            "sa": 65,
+            "sd": 45,
+            "sp": 35
+        },
+        "w": 24.0,
+        "ab": "Oblivious",
+        "canEvolve": true,
+    },
+    "Camerupt": {
+        "t1": "Fire",
+        "t2": "Ground",
+        "bs": {
+            "hp": 70,
+            "at": 100,
+            "df": 70,
+            "sa": 105,
+            "sd": 75,
+            "sp": 40
+        },
+        "w": 220.0,
+        "ab": "Magma Armor",
+    },
+    "Torkoal": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 70,
+            "at": 85,
+            "df": 140,
+            "sa": 85,
+            "sd": 70,
+            "sp": 20
+        },
+        "w": 80.4,
+        "ab": "White Smoke"
+    },
+    "Spoink": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 60,
+            "at": 25,
+            "df": 35,
+            "sa": 70,
+            "sd": 80,
+            "sp": 60
+        },
+        "w": 30.6,
+        "ab": "Thick Fat",
+        "canEvolve": true,
+    },
+    "Grumpig": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 45,
+            "df": 65,
+            "sa": 90,
+            "sd": 110,
+            "sp": 80
+        },
+        "w": 71.5,
+        "ab": "Tick Fat",
+    },
+    "Spinda": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 60,
+            "at": 60,
+            "df": 60,
+            "sa": 60,
+            "sd": 60,
+            "sp": 60
+        },
+        "w": 5.0,
+        "ab": "Own Tempo",
+    },
+    "Trapinch": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 45,
+            "at": 100,
+            "df": 45,
+            "sa": 45,
+            "sd": 45,
+            "sp": 10
+        },
+        "w": 15.0,
+        "ab": "Arena Trap",
+        "canEvolve": true,
+    },
+    "Vibrava": {
+        "t1": "Ground",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 50,
+            "at": 70,
+            "df": 50,
+            "sa": 50,
+            "sd": 50,
+            "sp": 70
+        },
+        "w": 15.3,
+        "ab": "Levitate",
+        "canEvolve": true,
+    },
+    "Flygon": {
+        "t1": "Ground",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 80,
+            "at": 100,
+            "df": 80,
+            "sa": 80,
+            "sd": 80,
+            "sp": 100
+        },
+        "w": 82.0,
+        "ab": "Levitate"
+    },
+    "Cacnea": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 50,
+            "at": 85,
+            "df": 40,
+            "sa": 85,
+            "sd": 40,
+            "sp": 35
+        },
+        "w": 51.3,
+        "ab": "Sand Veil",
+        "canEvolve": true,
+    },
+    "Cacturne": {
+        "t1": "Grass",
+        "t2": "Dark",
+        "bs": {
+            "hp": 70,
+            "at": 115,
+            "df": 60,
+            "sa": 115,
+            "sd": 60,
+            "sp": 55
+        },
+        "w": 77.4,
+        "ab": "Sand Veil"
+    },
+    "Swablu": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 45,
+            "at": 40,
+            "df": 60,
+            "sa": 40,
+            "sd": 75,
+            "sp": 50
+        },
+        "w": 1.2,
+        "ab": "Natural Cure",
+        "canEvolve": true,
+    },
+    "Altaria": {
+        "t1": "Dragon",
+        "t2": "Flying",
+        "bs": {
+            "hp": 75,
+            "at": 70,
             "df": 90,
-            "sa": 95,
-            "sd": 90,
+            "sa": 70,
+            "sd": 105,
+            "sp": 80
+        },
+        "w": 20.6,
+        "ab": "Natural Cure",
+    },
+    "Zangoose": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 73,
+            "at": 115,
+            "df": 60,
+            "sa": 60,
+            "sd": 60,
+            "sp": 90
+        },
+        "w": 40.3,
+        "ab": "Immunity",
+    },
+    "Seviper": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 73,
+            "at": 100,
+            "df": 60,
+            "sa": 100,
+            "sd": 60,
             "sp": 65
         },
-        "w": 150.6,
-        "ab": "Thick Fat"
+        "w": 52.5,
+        "ab": "Shed Skin",
+    },
+    "Lunatone": {
+        "t1": "Rock",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 70,
+            "at": 55,
+            "df": 65,
+            "sa": 95,
+            "sd": 85,
+            "sp": 70
+        },
+        "w": 168.0,
+        "ab": "Levitate"
+    },
+    "Solrock": {
+        "t1": "Rock",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 70,
+            "at": 95,
+            "df": 85,
+            "sa": 55,
+            "sd": 65,
+            "sp": 70
+        },
+        "w": 154.0,
+        "ab": "Levitate"
+    },
+    "Barboach": {
+        "t1": "Water",
+        "t2": "Ground",
+        "bs": {
+            "hp": 50,
+            "at": 48,
+            "df": 43,
+            "sa": 46,
+            "sd": 41,
+            "sp": 60
+        },
+        "w": 1.9,
+        "ab": "Oblivious",
+        "canEvolve": true,
     },
     "Whiscash": {
         "t1": "Water",
@@ -5454,48 +4903,268 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "w": 23.6,
         "ab": "Oblivious",
     },
-    "Whismur": {
-        "t1": "Normal",
+    "Corphish": {
+        "t1": "Water",
         "bs": {
-            "hp": 64,
-            "at": 51,
-            "df": 23,
-            "sa": 51,
-            "sd": 23,
-            "sp": 28
+            "hp": 43,
+            "at": 80,
+            "df": 65,
+            "sa": 50,
+            "sd": 35,
+            "sp": 35
         },
-        "w": 16.3,
-        "ab": "Soundproof",
+        "w": 11.5,
+        "ab": "Hyper Cutter",
         "canEvolve": true,
     },
-    "Wingull": {
+    "Crawdaunt": {
         "t1": "Water",
-        "t2": "Flying",
+        "t2": "Dark",
+        "bs": {
+            "hp": 63,
+            "at": 120,
+            "df": 85,
+            "sa": 90,
+            "sd": 55,
+            "sp": 55
+        },
+        "w": 32.8,
+        "ab": "Hyper Cutter",
+    },
+    "Baltoy": {
+        "t1": "Ground",
+        "t2": "Psychic",
         "bs": {
             "hp": 40,
-            "at": 30,
-            "df": 30,
-            "sa": 55,
-            "sd": 30,
-            "sp": 85
+            "at": 40,
+            "df": 55,
+            "sa": 40,
+            "sd": 70,
+            "sp": 55
         },
-        "w": 9.5,
-        "ab": "Keen Eye",
+        "w": 21.5,
+        "ab": "Levitate",
         "canEvolve": true,
     },
-    "Wurmple": {
-        "t1": "Bug",
+    "Claydol": {
+        "t1": "Ground",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 60,
+            "at": 70,
+            "df": 105,
+            "sa": 70,
+            "sd": 120,
+            "sp": 75
+        },
+        "w": 108.0,
+        "ab": "Levitate"
+    },
+    "Lileep": {
+        "t1": "Rock",
+        "t2": "Grass",
+        "bs": {
+            "hp": 66,
+            "at": 41,
+            "df": 77,
+            "sa": 61,
+            "sd": 87,
+            "sp": 23
+        },
+        "w": 23.8,
+        "ab": "Suction Cups",
+        "canEvolve": true,
+    },
+    "Cradily": {
+        "t1": "Rock",
+        "t2": "Grass",
+        "bs": {
+            "hp": 86,
+            "at": 81,
+            "df": 97,
+            "sa": 81,
+            "sd": 107,
+            "sp": 43
+        },
+        "w": 60.4,
+        "ab": "Suction Cups",
+    },
+    "Anorith": {
+        "t1": "Rock",
+        "t2": "Bug",
         "bs": {
             "hp": 45,
-            "at": 45,
-            "df": 35,
-            "sa": 20,
-            "sd": 30,
-            "sp": 20
+            "at": 95,
+            "df": 50,
+            "sa": 40,
+            "sd": 50,
+            "sp": 75
         },
-        "w": 3.6,
-        "ab": "Shield Dust",
+        "w": 12.5,
+        "ab": "Battle Armor",
         "canEvolve": true,
+    },
+    "Armaldo": {
+        "t1": "Rock",
+        "t2": "Bug",
+        "bs": {
+            "hp": 75,
+            "at": 125,
+            "df": 100,
+            "sa": 70,
+            "sd": 80,
+            "sp": 45
+        },
+        "w": 68.2,
+        "ab": "Battle Armor"
+    },
+    "Feebas": {
+        "t1": "Water",
+        "bs": {
+            "hp": 20,
+            "at": 15,
+            "df": 20,
+            "sa": 10,
+            "sd": 55,
+            "sp": 80
+        },
+        "w": 7.4,
+        "ab": "Swift Swim",
+        "canEvolve": true,
+    },
+    "Milotic": {
+        "t1": "Water",
+        "bs": {
+            "hp": 95,
+            "at": 60,
+            "df": 79,
+            "sa": 100,
+            "sd": 125,
+            "sp": 81
+        },
+        "w": 162.0,
+        "ab": "Marvel Scale",
+    },
+    "Castform": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 70,
+            "at": 70,
+            "df": 70,
+            "sa": 70,
+            "sd": 70,
+            "sp": 70
+        },
+        "w": 0.8,
+        "ab": "Forecast"
+    },
+    "Kecleon": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 60,
+            "at": 90,
+            "df": 70,
+            "sa": 60,
+            "sd": 120,
+            "sp": 40
+        },
+        "w": 22.0,
+        "ab": "Color Change",
+    },
+    "Shuppet": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 44,
+            "at": 75,
+            "df": 35,
+            "sa": 63,
+            "sd": 33,
+            "sp": 45
+        },
+        "w": 2.3,
+        "ab": "Insomnia",
+        "canEvolve": true,
+    },
+    "Banette": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 64,
+            "at": 115,
+            "df": 65,
+            "sa": 83,
+            "sd": 63,
+            "sp": 65
+        },
+        "w": 12.5,
+        "ab": "Insomnia",
+    },
+    "Duskull": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 20,
+            "at": 40,
+            "df": 90,
+            "sa": 30,
+            "sd": 90,
+            "sp": 25
+        },
+        "w": 15.0,
+        "ab": "Levitate",
+        "canEvolve": true,
+    },
+    "Dusclops": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 40,
+            "at": 70,
+            "df": 130,
+            "sa": 60,
+            "sd": 130,
+            "sp": 25
+        },
+        "w": 30.6,
+        "ab": "Pressure",
+        "canEvolve": true,
+    },
+    "Tropius": {
+        "t1": "Grass",
+        "t2": "Flying",
+        "bs": {
+            "hp": 99,
+            "at": 68,
+            "df": 83,
+            "sa": 72,
+            "sd": 87,
+            "sp": 51
+        },
+        "w": 100.0,
+        "ab": "Chlorophyll"
+    },
+    "Chimecho": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 65,
+            "at": 50,
+            "df": 70,
+            "sa": 95,
+            "sd": 80,
+            "sp": 65
+        },
+        "w": 1.0,
+        "ab": "Levitate"
+    },
+    "Absol": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 65,
+            "at": 130,
+            "df": 60,
+            "sa": 75,
+            "sd": 60,
+            "sp": 75
+        },
+        "w": 47.0,
+        "ab": "Pressure",
     },
     "Wynaut": {
         "t1": "Psychic",
@@ -5511,32 +5180,363 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
         "ab": "Shadow Tag",
         "canEvolve": true,
     },
-    "Zangoose": {
-        "t1": "Normal",
+    "Snorunt": {
+        "t1": "Ice",
         "bs": {
-            "hp": 73,
-            "at": 115,
+            "hp": 50,
+            "at": 50,
+            "df": 50,
+            "sa": 50,
+            "sd": 50,
+            "sp": 50
+        },
+        "w": 16.8,
+        "ab": "Inner Focus",
+        "canEvolve": true,
+    },
+    "Glalie": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 80,
+            "at": 80,
+            "df": 80,
+            "sa": 80,
+            "sd": 80,
+            "sp": 80
+        },
+        "w": 256.5,
+        "ab": "Inner Focus",
+    },
+    "Spheal": {
+        "t1": "Ice",
+        "t2": "Water",
+        "bs": {
+            "hp": 70,
+            "at": 40,
+            "df": 50,
+            "sa": 55,
+            "sd": 50,
+            "sp": 25
+        },
+        "w": 39.5,
+        "ab": "Thick Fat",
+        "canEvolve": true,
+    },
+    "Sealeo": {
+        "t1": "Ice",
+        "t2": "Water",
+        "bs": {
+            "hp": 90,
+            "at": 60,
+            "df": 70,
+            "sa": 75,
+            "sd": 70,
+            "sp": 45
+        },
+        "w": 87.6,
+        "ab": "Thick Fat",
+        "canEvolve": true,
+    },
+    "Walrein": {
+        "t1": "Ice",
+        "t2": "Water",
+        "bs": {
+            "hp": 110,
+            "at": 80,
+            "df": 90,
+            "sa": 95,
+            "sd": 90,
+            "sp": 65
+        },
+        "w": 150.6,
+        "ab": "Thick Fat"
+    },
+    "Clamperl": {
+        "t1": "Water",
+        "bs": {
+            "hp": 35,
+            "at": 64,
+            "df": 85,
+            "sa": 74,
+            "sd": 55,
+            "sp": 32
+        },
+        "w": 52.5,
+        "ab": "Shell Armor",
+        "canEvolve": true,
+    },
+    "Huntail": {
+        "t1": "Water",
+        "bs": {
+            "hp": 55,
+            "at": 104,
+            "df": 105,
+            "sa": 94,
+            "sd": 75,
+            "sp": 52
+        },
+        "w": 27.0,
+        "ab": "Swift Swim"
+    },
+    "Gorebyss": {
+        "t1": "Water",
+        "bs": {
+            "hp": 55,
+            "at": 84,
+            "df": 105,
+            "sa": 114,
+            "sd": 75,
+            "sp": 52
+        },
+        "w": 22.6,
+        "ab": "Swift Swim"
+    },
+    "Relicanth": {
+        "t1": "Water",
+        "t2": "Rock",
+        "bs": {
+            "hp": 100,
+            "at": 90,
+            "df": 130,
+            "sa": 45,
+            "sd": 65,
+            "sp": 55
+        },
+        "w": 23.4,
+        "ab": "Swift Swim",
+    },
+    "Luvdisc": {
+        "t1": "Water",
+        "bs": {
+            "hp": 43,
+            "at": 30,
+            "df": 55,
+            "sa": 40,
+            "sd": 65,
+            "sp": 97
+        },
+        "w": 8.7,
+        "ab": "Swift Swim"
+    },
+    "Bagon": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 45,
+            "at": 75,
             "df": 60,
+            "sa": 40,
+            "sd": 30,
+            "sp": 50
+        },
+        "w": 42.1,
+        "ab": "Rock Head",
+        "canEvolve": true,
+    },
+    "Shelgon": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 65,
+            "at": 95,
+            "df": 100,
             "sa": 60,
+            "sd": 50,
+            "sp": 50
+        },
+        "w": 110.5,
+        "ab": "Rock Head",
+        "canEvolve": true,
+    },
+    "Salamence": {
+        "t1": "Dragon",
+        "t2": "Flying",
+        "bs": {
+            "hp": 95,
+            "at": 135,
+            "df": 80,
+            "sa": 110,
+            "sd": 80,
+            "sp": 100
+        },
+        "w": 102.6,
+        "ab": "Intimidate"
+    },
+    "Beldum": {
+        "t1": "Steel",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 40,
+            "at": 55,
+            "df": 80,
+            "sa": 35,
             "sd": 60,
+            "sp": 30
+        },
+        "w": 95.2,
+        "ab": "Clear Body",
+        "canEvolve": true,
+    },
+    "Metang": {
+        "t1": "Steel",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 60,
+            "at": 75,
+            "df": 100,
+            "sa": 55,
+            "sd": 80,
+            "sp": 50
+        },
+        "w": 202.5,
+        "ab": "Clear Body",
+        "canEvolve": true,
+    },
+    "Metagross": {
+        "t1": "Steel",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 135,
+            "df": 130,
+            "sa": 95,
+            "sd": 90,
+            "sp": 70
+        },
+        "w": 550.0,
+        "ab": "Clear Body"
+    },
+    "Regirock": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 80,
+            "at": 100,
+            "df": 200,
+            "sa": 50,
+            "sd": 100,
+            "sp": 50
+        },
+        "w": 230.0,
+        "ab": "Clear Body"
+    },
+    "Regice": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 80,
+            "at": 50,
+            "df": 100,
+            "sa": 100,
+            "sd": 200,
+            "sp": 50
+        },
+        "w": 175.0,
+        "ab": "Clear Body"
+    },
+    "Registeel": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 80,
+            "at": 75,
+            "df": 150,
+            "sa": 75,
+            "sd": 150,
+            "sp": 50
+        },
+        "w": 205.0,
+        "ab": "Clear Body"
+    },
+    "Latias": {
+        "t1": "Dragon",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 80,
+            "df": 90,
+            "sa": 110,
+            "sd": 130,
+            "sp": 110
+        },
+        "w": 40.0,
+        "ab": "Levitate"
+    },
+    "Latios": {
+        "t1": "Dragon",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 90,
+            "df": 80,
+            "sa": 130,
+            "sd": 110,
+            "sp": 110
+        },
+        "w": 60.0,
+        "ab": "Levitate"
+    },
+    "Kyogre": {
+        "t1": "Water",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 90,
+            "sa": 150,
+            "sd": 140,
             "sp": 90
         },
-        "w": 40.3,
-        "ab": "Immunity",
+        "w": 352.0,
+        "ab": "Drizzle"
     },
-    "Zigzagoon": {
-        "t1": "Normal",
+    "Groudon": {
+        "t1": "Ground",
         "bs": {
-            "hp": 38,
-            "at": 30,
-            "df": 41,
-            "sa": 30,
-            "sd": 41,
-            "sp": 60
+            "hp": 100,
+            "at": 150,
+            "df": 140,
+            "sa": 100,
+            "sd": 90,
+            "sp": 90
         },
-        "w": 17.5,
-        "ab": "Pickup",
-        "canEvolve": true,
+        "w": 950.0,
+        "ab": "Drought"
+    },
+    "Rayquaza": {
+        "t1": "Dragon",
+        "t2": "Flying",
+        "bs": {
+            "hp": 105,
+            "at": 150,
+            "df": 90,
+            "sa": 150,
+            "sd": 90,
+            "sp": 95
+        },
+        "w": 206.5,
+        "ab": "Air Lock"
+    },
+    "Jirachi": {
+        "t1": "Steel",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "w": 1.1,
+        "ab": "Serene Grace"
+    },
+    "Deoxys": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 50,
+            "at": 150,
+            "df": 50,
+            "sa": 150,
+            "sd": 50,
+            "sp": 150
+        },
+        "w": 60.8,
+        "ab": "Pressure"
     },
     //FRLG Pokemon
     "Deoxys-Attack": {
@@ -5602,617 +5602,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "Camerupt": { "ab": "Solid Rock" },
 
     //DP Pokemon
-    "Abomasnow": {
+    "Turtwig": {
         "t1": "Grass",
-        "t2": "Ice",
         "bs": {
-            "hp": 90,
-            "at": 92,
-            "df": 75,
-            "sa": 92,
-            "sd": 85,
-            "sp": 60
-        },
-        "w": 135.5,
-        "ab": "Snow Warning"
-    },
-    "Ambipom": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 75,
-            "at": 100,
-            "df": 66,
-            "sa": 60,
-            "sd": 66,
-            "sp": 115
-        },
-        "w": 20.3,
-        "ab": "Technician",
-    },
-    "Arceus": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 120,
-            "at": 120,
-            "df": 120,
-            "sa": 120,
-            "sd": 120,
-            "sp": 120
-        },
-        "w": 320.0,
-        "ab": "Multitype"
-    },
-    "Azelf": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 75,
-            "at": 125,
-            "df": 70,
-            "sa": 125,
-            "sd": 70,
-            "sp": 115
-        },
-        "w": 0.3,
-        "ab": "Levitate"
-    },
-    "Bastiodon": {
-        "t1": "Rock",
-        "t2": "Steel",
-        "bs": {
-            "hp": 60,
-            "at": 52,
-            "df": 168,
-            "sa": 47,
-            "sd": 138,
-            "sp": 30
-        },
-        "w": 149.5,
-        "ab": "Sturdy",
-    },
-    "Bibarel": {
-        "t1": "Normal",
-        "t2": "Water",
-        "bs": {
-            "hp": 79,
-            "at": 85,
-            "df": 60,
-            "sa": 55,
-            "sd": 60,
-            "sp": 71
-        },
-        "w": 31.5,
-        "ab": "Unaware",
-    },
-    "Bidoof": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 59,
-            "at": 45,
-            "df": 40,
-            "sa": 35,
-            "sd": 40,
+            "hp": 55,
+            "at": 68,
+            "df": 64,
+            "sa": 45,
+            "sd": 55,
             "sp": 31
         },
-        "w": 20.0,
-        "ab": "Unaware",
+        "w": 10.2,
+        "ab": "Overgrow",
         "canEvolve": true,
-    },
-    "Bonsly": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 50,
-            "at": 80,
-            "df": 95,
-            "sa": 10,
-            "sd": 45,
-            "sp": 10
-        },
-        "w": 15.0,
-        "ab": "Rock Head",
-        "canEvolve": true,
-    },
-    "Bronzong": {
-        "t1": "Steel",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 67,
-            "at": 89,
-            "df": 116,
-            "sa": 79,
-            "sd": 116,
-            "sp": 33
-        },
-        "w": 187.0,
-        "ab": "Levitate",
-    },
-    "Bronzor": {
-        "t1": "Steel",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 57,
-            "at": 24,
-            "df": 86,
-            "sa": 24,
-            "sd": 86,
-            "sp": 23
-        },
-        "w": 60.5,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Budew": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 40,
-            "at": 30,
-            "df": 35,
-            "sa": 50,
-            "sd": 70,
-            "sp": 55
-        },
-        "w": 1.2,
-        "ab": "Natural Cure",
-        "canEvolve": true,
-    },
-    "Buizel": {
-        "t1": "Water",
-        "bs": {
-            "hp": 55,
-            "at": 65,
-            "df": 35,
-            "sa": 60,
-            "sd": 30,
-            "sp": 85
-        },
-        "w": 29.5,
-        "ab": "Swift Swim",
-        "canEvolve": true,
-    },
-    "Buneary": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 55,
-            "at": 66,
-            "df": 44,
-            "sa": 44,
-            "sd": 56,
-            "sp": 85
-        },
-        "w": 5.5,
-        "ab": "Klutz",
-        "canEvolve": true,
-    },
-    "Burmy": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 40,
-            "at": 29,
-            "df": 45,
-            "sa": 29,
-            "sd": 45,
-            "sp": 36
-        },
-        "w": 3.4,
-        "ab": "Shed Skin",
-        "canEvolve": true,
-    },
-    "Carnivine": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 74,
-            "at": 100,
-            "df": 72,
-            "sa": 90,
-            "sd": 72,
-            "sp": 46
-        },
-        "w": 27.0,
-        "ab": "Levitate"
-    },
-    "Chatot": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 76,
-            "at": 65,
-            "df": 45,
-            "sa": 92,
-            "sd": 42,
-            "sp": 91
-        },
-        "w": 1.9,
-        "ab": "Tangled Feet",
-    },
-    "Cherrim": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 70,
-            "at": 60,
-            "df": 70,
-            "sa": 87,
-            "sd": 78,
-            "sp": 85
-        },
-        "w": 9.3,
-        "ab": "Flower Gift"
-    },
-    "Cherubi": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 45,
-            "at": 35,
-            "df": 45,
-            "sa": 62,
-            "sd": 53,
-            "sp": 35
-        },
-        "w": 3.3,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Chimchar": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 44,
-            "at": 58,
-            "df": 44,
-            "sa": 58,
-            "sd": 44,
-            "sp": 61
-        },
-        "w": 6.2,
-        "ab": "Blaze",
-        "canEvolve": true,
-    },
-    "Chingling": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 45,
-            "at": 30,
-            "df": 50,
-            "sa": 65,
-            "sd": 50,
-            "sp": 45
-        },
-        "w": 0.6,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Combee": {
-        "t1": "Bug",
-        "t2": "Flying",
-        "bs": {
-            "hp": 30,
-            "at": 30,
-            "df": 42,
-            "sa": 30,
-            "sd": 42,
-            "sp": 70
-        },
-        "w": 5.5,
-        "ab": "Honey Gather",
-        "canEvolve": true,
-    },
-    "Cranidos": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 67,
-            "at": 125,
-            "df": 40,
-            "sa": 30,
-            "sd": 30,
-            "sp": 58
-        },
-        "w": 31.5,
-        "ab": "Mold Breaker",
-        "canEvolve": true,
-    },
-    "Cresselia": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 120,
-            "at": 70,
-            "df": 120,
-            "sa": 75,
-            "sd": 130,
-            "sp": 85
-        },
-        "w": 85.6,
-        "ab": "Levitate"
-    },
-    "Croagunk": {
-        "t1": "Poison",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 48,
-            "at": 61,
-            "df": 40,
-            "sa": 61,
-            "sd": 40,
-            "sp": 50
-        },
-        "w": 23.0,
-        "ab": "Dry Skin",
-        "canEvolve": true,
-    },
-    "Darkrai": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 70,
-            "at": 90,
-            "df": 90,
-            "sa": 135,
-            "sd": 90,
-            "sp": 125
-        },
-        "w": 50.5,
-        "ab": "Bad Dreams"
-    },
-    "Dialga": {
-        "t1": "Steel",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 100,
-            "at": 120,
-            "df": 120,
-            "sa": 150,
-            "sd": 100,
-            "sp": 90
-        },
-        "w": 683.0,
-        "ab": "Pressure",
-    },
-    "Drapion": {
-        "t1": "Poison",
-        "t2": "Dark",
-        "bs": {
-            "hp": 70,
-            "at": 90,
-            "df": 110,
-            "sa": 60,
-            "sd": 75,
-            "sp": 95
-        },
-        "w": 61.5,
-        "ab": "Sniper",
-    },
-    "Drifblim": {
-        "t1": "Ghost",
-        "t2": "Flying",
-        "bs": {
-            "hp": 150,
-            "at": 80,
-            "df": 44,
-            "sa": 90,
-            "sd": 54,
-            "sp": 80
-        },
-        "w": 15.0,
-        "ab": "Unburden",
-    },
-    "Drifloon": {
-        "t1": "Ghost",
-        "t2": "Flying",
-        "bs": {
-            "hp": 90,
-            "at": 50,
-            "df": 34,
-            "sa": 60,
-            "sd": 44,
-            "sp": 70
-        },
-        "w": 1.2,
-        "ab": "Unburden",
-        "canEvolve": true,
-    },
-    "Dusknoir": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 45,
-            "at": 100,
-            "df": 135,
-            "sa": 65,
-            "sd": 135,
-            "sp": 45
-        },
-        "w": 106.6,
-        "ab": "Pressure",
-    },
-    "Electivire": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 75,
-            "at": 123,
-            "df": 67,
-            "sa": 95,
-            "sd": 85,
-            "sp": 95
-        },
-        "w": 138.6,
-        "ab": "Motor Drive"
-    },
-    "Empoleon": {
-        "t1": "Water",
-        "t2": "Steel",
-        "bs": {
-            "hp": 84,
-            "at": 86,
-            "df": 88,
-            "sa": 111,
-            "sd": 101,
-            "sp": 60
-        },
-        "w": 84.5,
-        "ab": "Torrent"
-    },
-    "Finneon": {
-        "t1": "Water",
-        "bs": {
-            "hp": 49,
-            "at": 49,
-            "df": 56,
-            "sa": 49,
-            "sd": 61,
-            "sp": 66
-        },
-        "w": 7.0,
-        "ab": "Swift Swim",
-        "canEvolve": true,
-    },
-    "Floatzel": {
-        "t1": "Water",
-        "bs": {
-            "hp": 85,
-            "at": 105,
-            "df": 55,
-            "sa": 85,
-            "sd": 50,
-            "sp": 115
-        },
-        "w": 33.5,
-        "ab": "Swift Swim"
-    },
-    "Froslass": {
-        "t1": "Ice",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 70,
-            "at": 80,
-            "df": 70,
-            "sa": 80,
-            "sd": 70,
-            "sp": 110
-        },
-        "w": 26.6,
-        "ab": "Snow Cloak"
-    },
-    "Gabite": {
-        "t1": "Dragon",
-        "t2": "Ground",
-        "bs": {
-            "hp": 68,
-            "at": 90,
-            "df": 65,
-            "sa": 50,
-            "sd": 55,
-            "sp": 82
-        },
-        "w": 56.0,
-        "ab": "Sand Veil",
-        "canEvolve": true,
-    },
-    "Gallade": {
-        "t1": "Psychic",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 68,
-            "at": 125,
-            "df": 65,
-            "sa": 65,
-            "sd": 115,
-            "sp": 80
-        },
-        "w": 52.0,
-        "ab": "Steadfast",
-    },
-    "Garchomp": {
-        "t1": "Dragon",
-        "t2": "Ground",
-        "bs": {
-            "hp": 108,
-            "at": 130,
-            "df": 95,
-            "sa": 80,
-            "sd": 85,
-            "sp": 102
-        },
-        "w": 95.0,
-        "ab": "Sand Veil"
-    },
-    "Gastrodon": {
-        "t1": "Water",
-        "t2": "Ground",
-        "bs": {
-            "hp": 111,
-            "at": 83,
-            "df": 68,
-            "sa": 92,
-            "sd": 82,
-            "sp": 39
-        },
-        "w": 29.9,
-        "ab": "Storm Drain",
-    },
-    "Gible": {
-        "t1": "Dragon",
-        "t2": "Ground",
-        "bs": {
-            "hp": 58,
-            "at": 70,
-            "df": 45,
-            "sa": 40,
-            "sd": 45,
-            "sp": 42
-        },
-        "w": 20.5,
-        "ab": "Sand Veil",
-        "canEvolve": true,
-    },
-    "Giratina": {
-        "t1": "Ghost",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 150,
-            "at": 100,
-            "df": 120,
-            "sa": 100,
-            "sd": 120,
-            "sp": 90
-        },
-        "w": 750.0,
-        "ab": "Pressure",
-    },
-    "Glaceon": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 65,
-            "at": 60,
-            "df": 110,
-            "sa": 130,
-            "sd": 95,
-            "sp": 65
-        },
-        "w": 25.9,
-        "ab": "Snow Cloak"
-    },
-    "Glameow": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 49,
-            "at": 55,
-            "df": 42,
-            "sa": 42,
-            "sd": 37,
-            "sp": 85
-        },
-        "w": 3.9,
-        "ab": "Own Tempo",
-        "canEvolve": true,
-    },
-    "Gliscor": {
-        "t1": "Ground",
-        "t2": "Flying",
-        "bs": {
-            "hp": 75,
-            "at": 95,
-            "df": 125,
-            "sa": 45,
-            "sd": 75,
-            "sp": 95
-        },
-        "w": 42.5,
-        "ab": "Hyper Cutter",
     },
     "Grotle": {
         "t1": "Grass",
@@ -6228,74 +5630,48 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "ab": "Overgrow",
         "canEvolve": true,
     },
-    "Happiny": {
-        "t1": "Normal",
+    "Torterra": {
+        "t1": "Grass",
+        "t2": "Ground",
         "bs": {
-            "hp": 100,
-            "at": 5,
-            "df": 5,
-            "sa": 15,
-            "sd": 65,
-            "sp": 30
+            "hp": 95,
+            "at": 109,
+            "df": 105,
+            "sa": 75,
+            "sd": 85,
+            "sp": 56
         },
-        "w": 24.4,
-        "ab": "Natural Cure",
-        "canEvolve": true,
+        "w": 310.0,
+        "ab": "Overgrow"
     },
-    "Heatran": {
+    "Chimchar": {
         "t1": "Fire",
-        "t2": "Steel",
         "bs": {
-            "hp": 91,
-            "at": 90,
-            "df": 106,
-            "sa": 130,
-            "sd": 106,
-            "sp": 77
+            "hp": 44,
+            "at": 58,
+            "df": 44,
+            "sa": 58,
+            "sd": 44,
+            "sp": 61
         },
-        "w": 430.0,
-        "ab": "Flash Fire"
-    },
-    "Hippopotas": {
-        "t1": "Ground",
-        "bs": {
-            "hp": 68,
-            "at": 72,
-            "df": 78,
-            "sa": 38,
-            "sd": 42,
-            "sp": 32
-        },
-        "w": 49.5,
-        "ab": "Sand Stream",
+        "w": 6.2,
+        "ab": "Blaze",
         "canEvolve": true,
     },
-    "Hippowdon": {
-        "t1": "Ground",
+    "Monferno": {
+        "t1": "Fire",
+        "t2": "Fighting",
         "bs": {
-            "hp": 108,
-            "at": 112,
-            "df": 118,
-            "sa": 68,
-            "sd": 72,
-            "sp": 47
-        },
-        "w": 300.0,
-        "ab": "Sand Stream"
-    },
-    "Honchkrow": {
-        "t1": "Dark",
-        "t2": "Flying",
-        "bs": {
-            "hp": 100,
-            "at": 125,
+            "hp": 64,
+            "at": 78,
             "df": 52,
-            "sa": 105,
+            "sa": 78,
             "sd": 52,
-            "sp": 71
+            "sp": 81
         },
-        "w": 27.3,
-        "ab": "Super Luck",
+        "w": 22.0,
+        "ab": "Blaze",
+        "canEvolve": true,
     },
     "Infernape": {
         "t1": "Fire",
@@ -6310,6 +5686,120 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         },
         "w": 55.0,
         "ab": "Blaze"
+    },
+    "Piplup": {
+        "t1": "Water",
+        "bs": {
+            "hp": 53,
+            "at": 51,
+            "df": 53,
+            "sa": 61,
+            "sd": 56,
+            "sp": 40
+        },
+        "w": 5.2,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Prinplup": {
+        "t1": "Water",
+        "bs": {
+            "hp": 64,
+            "at": 66,
+            "df": 68,
+            "sa": 81,
+            "sd": 76,
+            "sp": 50
+        },
+        "w": 23.0,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Empoleon": {
+        "t1": "Water",
+        "t2": "Steel",
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 111,
+            "sd": 101,
+            "sp": 60
+        },
+        "w": 84.5,
+        "ab": "Torrent"
+    },
+    "Starly": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 40,
+            "at": 55,
+            "df": 30,
+            "sa": 30,
+            "sd": 30,
+            "sp": 60
+        },
+        "w": 2.0,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Staravia": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 55,
+            "at": 75,
+            "df": 50,
+            "sa": 40,
+            "sd": 40,
+            "sp": 80
+        },
+        "w": 15.5,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Staraptor": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 85,
+            "at": 120,
+            "df": 70,
+            "sa": 50,
+            "sd": 50,
+            "sp": 100
+        },
+        "w": 24.9,
+        "ab": "Intimidate"
+    },
+    "Bidoof": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 59,
+            "at": 45,
+            "df": 40,
+            "sa": 35,
+            "sd": 40,
+            "sp": 31
+        },
+        "w": 20.0,
+        "ab": "Unaware",
+        "canEvolve": true,
+    },
+    "Bibarel": {
+        "t1": "Normal",
+        "t2": "Water",
+        "bs": {
+            "hp": 79,
+            "at": 85,
+            "df": 60,
+            "sa": 55,
+            "sd": 60,
+            "sp": 71
+        },
+        "w": 31.5,
+        "ab": "Unaware",
     },
     "Kricketot": {
         "t1": "Bug",
@@ -6338,71 +5828,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "w": 25.5,
         "ab": "Swarm"
     },
-    "Leafeon": {
-        "t1": "Grass",
+    "Shinx": {
+        "t1": "Electric",
         "bs": {
-            "hp": 65,
-            "at": 110,
-            "df": 130,
-            "sa": 60,
-            "sd": 65,
-            "sp": 95
+            "hp": 45,
+            "at": 65,
+            "df": 34,
+            "sa": 40,
+            "sd": 34,
+            "sp": 45
         },
-        "w": 25.5,
-        "ab": "Leaf Guard",
-    },
-    "Lickilicky": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 110,
-            "at": 85,
-            "df": 95,
-            "sa": 80,
-            "sd": 95,
-            "sp": 50
-        },
-        "w": 140.0,
-        "ab": "Own Tempo",
-    },
-    "Lopunny": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 65,
-            "at": 76,
-            "df": 84,
-            "sa": 54,
-            "sd": 96,
-            "sp": 105
-        },
-        "w": 33.3,
-        "ab": "Klutz",
-    },
-    "Lucario": {
-        "t1": "Fighting",
-        "t2": "Steel",
-        "bs": {
-            "hp": 70,
-            "at": 110,
-            "df": 70,
-            "sa": 115,
-            "sd": 70,
-            "sp": 90
-        },
-        "w": 54.0,
-        "ab": "Inner Focus",
-    },
-    "Lumineon": {
-        "t1": "Water",
-        "bs": {
-            "hp": 69,
-            "at": 69,
-            "df": 76,
-            "sa": 69,
-            "sd": 86,
-            "sp": 91
-        },
-        "w": 24.0,
-        "ab": "Swift Swim",
+        "w": 9.5,
+        "ab": "Intimidate",
+        "canEvolve": true,
     },
     "Luxio": {
         "t1": "Electric",
@@ -6431,318 +5869,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "w": 42.0,
         "ab": "Intimidate",
     },
-    "Magmortar": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 75,
-            "at": 95,
-            "df": 67,
-            "sa": 125,
-            "sd": 95,
-            "sp": 83
-        },
-        "w": 68.0,
-        "ab": "Flame Body",
-    },
-    "Magnezone": {
-        "t1": "Electric",
-        "t2": "Steel",
-        "bs": {
-            "hp": 70,
-            "at": 70,
-            "df": 115,
-            "sa": 130,
-            "sd": 90,
-            "sp": 60
-        },
-        "w": 180.0,
-        "ab": "Magnet Pull",
-    },
-    "Mamoswine": {
-        "t1": "Ice",
-        "t2": "Ground",
-        "bs": {
-            "hp": 110,
-            "at": 130,
-            "df": 80,
-            "sa": 70,
-            "sd": 60,
-            "sp": 80
-        },
-        "w": 291.0,
-        "ab": "Oblivious",
-    },
-    "Manaphy": {
-        "t1": "Water",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 100,
-            "sa": 100,
-            "sd": 100,
-            "sp": 100
-        },
-        "w": 1.4,
-        "ab": "Hydration"
-    },
-    "Mantyke": {
-        "t1": "Water",
-        "t2": "Flying",
-        "bs": {
-            "hp": 45,
-            "at": 20,
-            "df": 50,
-            "sa": 60,
-            "sd": 120,
-            "sp": 50
-        },
-        "w": 65.0,
-        "ab": "Water Absorb",
-        "canEvolve": true,
-    },
-    "Mesprit": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 105,
-            "df": 105,
-            "sa": 105,
-            "sd": 105,
-            "sp": 80
-        },
-        "w": 0.3,
-        "ab": "Levitate"
-    },
-    "Mime Jr.": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 20,
-            "at": 25,
-            "df": 45,
-            "sa": 70,
-            "sd": 90,
-            "sp": 60
-        },
-        "w": 13.0,
-        "ab": "Filter",
-        "canEvolve": true,
-    },
-    "Mismagius": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 60,
-            "sa": 105,
-            "sd": 105,
-            "sp": 105
-        },
-        "w": 4.4,
-        "ab": "Levitate"
-    },
-    "Monferno": {
-        "t1": "Fire",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 64,
-            "at": 78,
-            "df": 52,
-            "sa": 78,
-            "sd": 52,
-            "sp": 81
-        },
-        "w": 22.0,
-        "ab": "Blaze",
-        "canEvolve": true,
-    },
-    "Mothim": {
-        "t1": "Bug",
-        "t2": "Flying",
-        "bs": {
-            "hp": 70,
-            "at": 94,
-            "df": 50,
-            "sa": 94,
-            "sd": 50,
-            "sp": 66
-        },
-        "w": 23.3,
-        "ab": "Swarm"
-    },
-    "Munchlax": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 135,
-            "at": 85,
-            "df": 40,
-            "sa": 40,
-            "sd": 85,
-            "sp": 5
-        },
-        "w": 105.0,
-        "ab": "Thick Fat",
-        "canEvolve": true,
-    },
-    "Pachirisu": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 60,
-            "at": 45,
-            "df": 70,
-            "sa": 45,
-            "sd": 90,
-            "sp": 95
-        },
-        "w": 3.9,
-        "ab": "Volt Absorb",
-    },
-    "Palkia": {
-        "t1": "Water",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 90,
-            "at": 120,
-            "df": 100,
-            "sa": 150,
-            "sd": 120,
-            "sp": 100
-        },
-        "w": 336.0,
-        "ab": "Pressure",
-    },
-    "Phione": {
-        "t1": "Water",
-        "bs": {
-            "hp": 80,
-            "at": 80,
-            "df": 80,
-            "sa": 80,
-            "sd": 80,
-            "sp": 80
-        },
-        "w": 3.1,
-        "ab": "Hydration"
-    },
-    "Piplup": {
-        "t1": "Water",
-        "bs": {
-            "hp": 53,
-            "at": 51,
-            "df": 53,
-            "sa": 61,
-            "sd": 56,
-            "sp": 40
-        },
-        "w": 5.2,
-        "ab": "Torrent",
-        "canEvolve": true,
-    },
-    "Porygon-Z": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 85,
-            "at": 80,
-            "df": 70,
-            "sa": 135,
-            "sd": 75,
-            "sp": 90
-        },
-        "w": 34.0,
-        "ab": "Adaptability",
-    },
-    "Prinplup": {
-        "t1": "Water",
-        "bs": {
-            "hp": 64,
-            "at": 66,
-            "df": 68,
-            "sa": 81,
-            "sd": 76,
-            "sp": 50
-        },
-        "w": 23.0,
-        "ab": "Torrent",
-        "canEvolve": true,
-    },
-    "Probopass": {
-        "t1": "Rock",
-        "t2": "Steel",
-        "bs": {
-            "hp": 60,
-            "at": 55,
-            "df": 145,
-            "sa": 75,
-            "sd": 150,
-            "sp": 40
-        },
-        "w": 340.0,
-        "ab": "Magnet Pull",
-    },
-    "Purugly": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 71,
-            "at": 82,
-            "df": 64,
-            "sa": 64,
-            "sd": 59,
-            "sp": 112
-        },
-        "w": 43.8,
-        "ab": "Thick Fat",
-    },
-    "Rampardos": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 97,
-            "at": 165,
-            "df": 60,
-            "sa": 65,
-            "sd": 50,
-            "sp": 58
-        },
-        "w": 102.5,
-        "ab": "Mold Breaker",
-    },
-    "Regigigas": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 110,
-            "at": 160,
-            "df": 110,
-            "sa": 80,
-            "sd": 110,
-            "sp": 100
-        },
-        "w": 420.0,
-        "ab": "Slow Start"
-    },
-    "Rhyperior": {
-        "t1": "Ground",
-        "t2": "Rock",
-        "bs": {
-            "hp": 115,
-            "at": 140,
-            "df": 130,
-            "sa": 55,
-            "sd": 55,
-            "sp": 40
-        },
-        "w": 282.8,
-        "ab": "Solid Rock",
-    },
-    "Riolu": {
-        "t1": "Fighting",
+    "Budew": {
+        "t1": "Grass",
+        "t2": "Poison",
         "bs": {
             "hp": 40,
-            "at": 70,
-            "df": 40,
-            "sa": 35,
-            "sd": 40,
-            "sp": 60
+            "at": 30,
+            "df": 35,
+            "sa": 50,
+            "sd": 70,
+            "sp": 55
         },
-        "w": 20.2,
-        "ab": "Steadfast",
+        "w": 1.2,
+        "ab": "Natural Cure",
         "canEvolve": true,
     },
     "Roserade": {
@@ -6759,46 +5898,32 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "w": 14.5,
         "ab": "Natural Cure",
     },
-    "Rotom": {
-        "t1": "Electric",
-        "t2": "Ghost",
+    "Cranidos": {
+        "t1": "Rock",
         "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 77,
-            "sa": 95,
-            "sd": 77,
-            "sp": 91
+            "hp": 67,
+            "at": 125,
+            "df": 40,
+            "sa": 30,
+            "sd": 30,
+            "sp": 58
         },
-        "w": 0.3,
-        "ab": "Levitate"
-    },
-    "Shaymin": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 100,
-            "sa": 100,
-            "sd": 100,
-            "sp": 100
-        },
-        "w": 2.1,
-        "ab": "Natural Cure"
-    },
-    "Shellos": {
-        "t1": "Water",
-        "bs": {
-            "hp": 76,
-            "at": 48,
-            "df": 48,
-            "sa": 57,
-            "sd": 62,
-            "sp": 34
-        },
-        "w": 6.3,
-        "ab": "Storm Drain",
+        "w": 31.5,
+        "ab": "Mold Breaker",
         "canEvolve": true,
+    },
+    "Rampardos": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 97,
+            "at": 165,
+            "df": 60,
+            "sa": 65,
+            "sd": 50,
+            "sp": 58
+        },
+        "w": 102.5,
+        "ab": "Mold Breaker",
     },
     "Shieldon": {
         "t1": "Rock",
@@ -6815,246 +5940,33 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "ab": "Sturdy",
         "canEvolve": true,
     },
-    "Shinx": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 45,
-            "at": 65,
-            "df": 34,
-            "sa": 40,
-            "sd": 34,
-            "sp": 45
-        },
-        "w": 9.5,
-        "ab": "Intimidate",
-        "canEvolve": true,
-    },
-    "Skorupi": {
-        "t1": "Poison",
-        "t2": "Bug",
-        "bs": {
-            "hp": 40,
-            "at": 50,
-            "df": 90,
-            "sa": 30,
-            "sd": 55,
-            "sp": 65
-        },
-        "w": 12.0,
-        "ab": "Sniper",
-        "canEvolve": true,
-    },
-    "Skuntank": {
-        "t1": "Poison",
-        "t2": "Dark",
-        "bs": {
-            "hp": 103,
-            "at": 93,
-            "df": 67,
-            "sa": 71,
-            "sd": 61,
-            "sp": 84
-        },
-        "w": 38.0,
-        "ab": "Aftermath",
-    },
-    "Snover": {
-        "t1": "Grass",
-        "t2": "Ice",
+    "Bastiodon": {
+        "t1": "Rock",
+        "t2": "Steel",
         "bs": {
             "hp": 60,
-            "at": 62,
-            "df": 50,
-            "sa": 62,
-            "sd": 60,
-            "sp": 40
+            "at": 52,
+            "df": 168,
+            "sa": 47,
+            "sd": 138,
+            "sp": 30
         },
-        "w": 50.5,
-        "ab": "Snow Warning",
-        "canEvolve": true,
+        "w": 149.5,
+        "ab": "Sturdy",
     },
-    "Spiritomb": {
-        "t1": "Ghost",
-        "t2": "Dark",
-        "bs": {
-            "hp": 50,
-            "at": 92,
-            "df": 108,
-            "sa": 92,
-            "sd": 108,
-            "sp": 35
-        },
-        "w": 108.0,
-        "ab": "Pressure",
-    },
-    "Staraptor": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 85,
-            "at": 120,
-            "df": 70,
-            "sa": 50,
-            "sd": 50,
-            "sp": 100
-        },
-        "w": 24.9,
-        "ab": "Intimidate"
-    },
-    "Staravia": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 55,
-            "at": 75,
-            "df": 50,
-            "sa": 40,
-            "sd": 40,
-            "sp": 80
-        },
-        "w": 15.5,
-        "ab": "Intimidate",
-        "canEvolve": true,
-    },
-    "Starly": {
-        "t1": "Normal",
-        "t2": "Flying",
+    "Burmy": {
+        "t1": "Bug",
         "bs": {
             "hp": 40,
-            "at": 55,
-            "df": 30,
-            "sa": 30,
-            "sd": 30,
-            "sp": 60
+            "at": 29,
+            "df": 45,
+            "sa": 29,
+            "sd": 45,
+            "sp": 36
         },
-        "w": 2.0,
-        "ab": "Intimidate",
+        "w": 3.4,
+        "ab": "Shed Skin",
         "canEvolve": true,
-    },
-    "Stunky": {
-        "t1": "Poison",
-        "t2": "Dark",
-        "bs": {
-            "hp": 63,
-            "at": 63,
-            "df": 47,
-            "sa": 41,
-            "sd": 41,
-            "sp": 74
-        },
-        "w": 19.2,
-        "ab": "Aftermath",
-        "canEvolve": true,
-    },
-    "Tangrowth": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 125,
-            "sa": 110,
-            "sd": 50,
-            "sp": 50
-        },
-        "w": 128.6,
-        "ab": "Chlorophyll",
-    },
-    "Togekiss": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 85,
-            "at": 50,
-            "df": 95,
-            "sa": 120,
-            "sd": 115,
-            "sp": 80
-        },
-        "w": 38.0,
-        "ab": "Serene Grace",
-    },
-    "Torterra": {
-        "t1": "Grass",
-        "t2": "Ground",
-        "bs": {
-            "hp": 95,
-            "at": 109,
-            "df": 105,
-            "sa": 75,
-            "sd": 85,
-            "sp": 56
-        },
-        "w": 310.0,
-        "ab": "Overgrow"
-    },
-    "Toxicroak": {
-        "t1": "Poison",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 83,
-            "at": 106,
-            "df": 65,
-            "sa": 86,
-            "sd": 65,
-            "sp": 85
-        },
-        "w": 44.4,
-        "ab": "Dry Skin",
-    },
-    "Turtwig": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 55,
-            "at": 68,
-            "df": 64,
-            "sa": 45,
-            "sd": 55,
-            "sp": 31
-        },
-        "w": 10.2,
-        "ab": "Overgrow",
-        "canEvolve": true,
-    },
-    "Uxie": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 75,
-            "at": 75,
-            "df": 130,
-            "sa": 75,
-            "sd": 130,
-            "sp": 95
-        },
-        "w": 0.3,
-        "ab": "Levitate"
-    },
-    "Vespiquen": {
-        "t1": "Bug",
-        "t2": "Flying",
-        "bs": {
-            "hp": 70,
-            "at": 80,
-            "df": 102,
-            "sa": 80,
-            "sd": 102,
-            "sp": 40
-        },
-        "w": 38.5,
-        "ab": "Pressure",
-    },
-    "Weavile": {
-        "t1": "Dark",
-        "t2": "Ice",
-        "bs": {
-            "hp": 70,
-            "at": 120,
-            "df": 65,
-            "sa": 45,
-            "sd": 85,
-            "sp": 125
-        },
-        "w": 34.0,
-        "ab": "Pressure",
     },
     "Wormadam": {
         "t1": "Bug",
@@ -7098,6 +6010,772 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "w": 6.5,
         "ab": "Anticipation",
     },
+    "Mothim": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 70,
+            "at": 94,
+            "df": 50,
+            "sa": 94,
+            "sd": 50,
+            "sp": 66
+        },
+        "w": 23.3,
+        "ab": "Swarm"
+    },
+    "Combee": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 30,
+            "at": 30,
+            "df": 42,
+            "sa": 30,
+            "sd": 42,
+            "sp": 70
+        },
+        "w": 5.5,
+        "ab": "Honey Gather",
+        "canEvolve": true,
+    },
+    "Vespiquen": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 70,
+            "at": 80,
+            "df": 102,
+            "sa": 80,
+            "sd": 102,
+            "sp": 40
+        },
+        "w": 38.5,
+        "ab": "Pressure",
+    },
+    "Pachirisu": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 60,
+            "at": 45,
+            "df": 70,
+            "sa": 45,
+            "sd": 90,
+            "sp": 95
+        },
+        "w": 3.9,
+        "ab": "Volt Absorb",
+    },
+    "Buizel": {
+        "t1": "Water",
+        "bs": {
+            "hp": 55,
+            "at": 65,
+            "df": 35,
+            "sa": 60,
+            "sd": 30,
+            "sp": 85
+        },
+        "w": 29.5,
+        "ab": "Swift Swim",
+        "canEvolve": true,
+    },
+    "Floatzel": {
+        "t1": "Water",
+        "bs": {
+            "hp": 85,
+            "at": 105,
+            "df": 55,
+            "sa": 85,
+            "sd": 50,
+            "sp": 115
+        },
+        "w": 33.5,
+        "ab": "Swift Swim"
+    },
+    "Cherubi": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 45,
+            "at": 35,
+            "df": 45,
+            "sa": 62,
+            "sd": 53,
+            "sp": 35
+        },
+        "w": 3.3,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Cherrim": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 70,
+            "at": 60,
+            "df": 70,
+            "sa": 87,
+            "sd": 78,
+            "sp": 85
+        },
+        "w": 9.3,
+        "ab": "Flower Gift"
+    },
+    "Shellos": {
+        "t1": "Water",
+        "bs": {
+            "hp": 76,
+            "at": 48,
+            "df": 48,
+            "sa": 57,
+            "sd": 62,
+            "sp": 34
+        },
+        "w": 6.3,
+        "ab": "Storm Drain",
+        "canEvolve": true,
+    },
+    "Gastrodon": {
+        "t1": "Water",
+        "t2": "Ground",
+        "bs": {
+            "hp": 111,
+            "at": 83,
+            "df": 68,
+            "sa": 92,
+            "sd": 82,
+            "sp": 39
+        },
+        "w": 29.9,
+        "ab": "Storm Drain",
+    },
+    "Ambipom": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 75,
+            "at": 100,
+            "df": 66,
+            "sa": 60,
+            "sd": 66,
+            "sp": 115
+        },
+        "w": 20.3,
+        "ab": "Technician",
+    },
+    "Drifloon": {
+        "t1": "Ghost",
+        "t2": "Flying",
+        "bs": {
+            "hp": 90,
+            "at": 50,
+            "df": 34,
+            "sa": 60,
+            "sd": 44,
+            "sp": 70
+        },
+        "w": 1.2,
+        "ab": "Unburden",
+        "canEvolve": true,
+    },
+    "Drifblim": {
+        "t1": "Ghost",
+        "t2": "Flying",
+        "bs": {
+            "hp": 150,
+            "at": 80,
+            "df": 44,
+            "sa": 90,
+            "sd": 54,
+            "sp": 80
+        },
+        "w": 15.0,
+        "ab": "Unburden",
+    },
+    "Buneary": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 55,
+            "at": 66,
+            "df": 44,
+            "sa": 44,
+            "sd": 56,
+            "sp": 85
+        },
+        "w": 5.5,
+        "ab": "Klutz",
+        "canEvolve": true,
+    },
+    "Lopunny": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 65,
+            "at": 76,
+            "df": 84,
+            "sa": 54,
+            "sd": 96,
+            "sp": 105
+        },
+        "w": 33.3,
+        "ab": "Klutz",
+    },
+    "Mismagius": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 60,
+            "at": 60,
+            "df": 60,
+            "sa": 105,
+            "sd": 105,
+            "sp": 105
+        },
+        "w": 4.4,
+        "ab": "Levitate"
+    },
+    "Honchkrow": {
+        "t1": "Dark",
+        "t2": "Flying",
+        "bs": {
+            "hp": 100,
+            "at": 125,
+            "df": 52,
+            "sa": 105,
+            "sd": 52,
+            "sp": 71
+        },
+        "w": 27.3,
+        "ab": "Super Luck",
+    },
+    "Glameow": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 49,
+            "at": 55,
+            "df": 42,
+            "sa": 42,
+            "sd": 37,
+            "sp": 85
+        },
+        "w": 3.9,
+        "ab": "Own Tempo",
+        "canEvolve": true,
+    },
+    "Purugly": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 71,
+            "at": 82,
+            "df": 64,
+            "sa": 64,
+            "sd": 59,
+            "sp": 112
+        },
+        "w": 43.8,
+        "ab": "Thick Fat",
+    },
+    "Chingling": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 45,
+            "at": 30,
+            "df": 50,
+            "sa": 65,
+            "sd": 50,
+            "sp": 45
+        },
+        "w": 0.6,
+        "ab": "Levitate",
+        "canEvolve": true,
+    },
+    "Stunky": {
+        "t1": "Poison",
+        "t2": "Dark",
+        "bs": {
+            "hp": 63,
+            "at": 63,
+            "df": 47,
+            "sa": 41,
+            "sd": 41,
+            "sp": 74
+        },
+        "w": 19.2,
+        "ab": "Aftermath",
+        "canEvolve": true,
+    },
+    "Skuntank": {
+        "t1": "Poison",
+        "t2": "Dark",
+        "bs": {
+            "hp": 103,
+            "at": 93,
+            "df": 67,
+            "sa": 71,
+            "sd": 61,
+            "sp": 84
+        },
+        "w": 38.0,
+        "ab": "Aftermath",
+    },
+    "Bronzor": {
+        "t1": "Steel",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 57,
+            "at": 24,
+            "df": 86,
+            "sa": 24,
+            "sd": 86,
+            "sp": 23
+        },
+        "w": 60.5,
+        "ab": "Levitate",
+        "canEvolve": true,
+    },
+    "Bronzong": {
+        "t1": "Steel",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 67,
+            "at": 89,
+            "df": 116,
+            "sa": 79,
+            "sd": 116,
+            "sp": 33
+        },
+        "w": 187.0,
+        "ab": "Levitate",
+    },
+    "Bonsly": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 50,
+            "at": 80,
+            "df": 95,
+            "sa": 10,
+            "sd": 45,
+            "sp": 10
+        },
+        "w": 15.0,
+        "ab": "Rock Head",
+        "canEvolve": true,
+    },
+    "Mime Jr.": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 20,
+            "at": 25,
+            "df": 45,
+            "sa": 70,
+            "sd": 90,
+            "sp": 60
+        },
+        "w": 13.0,
+        "ab": "Filter",
+        "canEvolve": true,
+    },
+    "Happiny": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 100,
+            "at": 5,
+            "df": 5,
+            "sa": 15,
+            "sd": 65,
+            "sp": 30
+        },
+        "w": 24.4,
+        "ab": "Natural Cure",
+        "canEvolve": true,
+    },
+    "Chatot": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 76,
+            "at": 65,
+            "df": 45,
+            "sa": 92,
+            "sd": 42,
+            "sp": 91
+        },
+        "w": 1.9,
+        "ab": "Tangled Feet",
+    },
+    "Spiritomb": {
+        "t1": "Ghost",
+        "t2": "Dark",
+        "bs": {
+            "hp": 50,
+            "at": 92,
+            "df": 108,
+            "sa": 92,
+            "sd": 108,
+            "sp": 35
+        },
+        "w": 108.0,
+        "ab": "Pressure",
+    },
+    "Gible": {
+        "t1": "Dragon",
+        "t2": "Ground",
+        "bs": {
+            "hp": 58,
+            "at": 70,
+            "df": 45,
+            "sa": 40,
+            "sd": 45,
+            "sp": 42
+        },
+        "w": 20.5,
+        "ab": "Sand Veil",
+        "canEvolve": true,
+    },
+    "Gabite": {
+        "t1": "Dragon",
+        "t2": "Ground",
+        "bs": {
+            "hp": 68,
+            "at": 90,
+            "df": 65,
+            "sa": 50,
+            "sd": 55,
+            "sp": 82
+        },
+        "w": 56.0,
+        "ab": "Sand Veil",
+        "canEvolve": true,
+    },
+    "Garchomp": {
+        "t1": "Dragon",
+        "t2": "Ground",
+        "bs": {
+            "hp": 108,
+            "at": 130,
+            "df": 95,
+            "sa": 80,
+            "sd": 85,
+            "sp": 102
+        },
+        "w": 95.0,
+        "ab": "Sand Veil"
+    },
+    "Munchlax": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 135,
+            "at": 85,
+            "df": 40,
+            "sa": 40,
+            "sd": 85,
+            "sp": 5
+        },
+        "w": 105.0,
+        "ab": "Thick Fat",
+        "canEvolve": true,
+    },
+    "Riolu": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 40,
+            "at": 70,
+            "df": 40,
+            "sa": 35,
+            "sd": 40,
+            "sp": 60
+        },
+        "w": 20.2,
+        "ab": "Steadfast",
+        "canEvolve": true,
+    },
+    "Lucario": {
+        "t1": "Fighting",
+        "t2": "Steel",
+        "bs": {
+            "hp": 70,
+            "at": 110,
+            "df": 70,
+            "sa": 115,
+            "sd": 70,
+            "sp": 90
+        },
+        "w": 54.0,
+        "ab": "Inner Focus",
+    },
+    "Hippopotas": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 68,
+            "at": 72,
+            "df": 78,
+            "sa": 38,
+            "sd": 42,
+            "sp": 32
+        },
+        "w": 49.5,
+        "ab": "Sand Stream",
+        "canEvolve": true,
+    },
+    "Hippowdon": {
+        "t1": "Ground",
+        "bs": {
+            "hp": 108,
+            "at": 112,
+            "df": 118,
+            "sa": 68,
+            "sd": 72,
+            "sp": 47
+        },
+        "w": 300.0,
+        "ab": "Sand Stream"
+    },
+    "Skorupi": {
+        "t1": "Poison",
+        "t2": "Bug",
+        "bs": {
+            "hp": 40,
+            "at": 50,
+            "df": 90,
+            "sa": 30,
+            "sd": 55,
+            "sp": 65
+        },
+        "w": 12.0,
+        "ab": "Sniper",
+        "canEvolve": true,
+    },
+    "Drapion": {
+        "t1": "Poison",
+        "t2": "Dark",
+        "bs": {
+            "hp": 70,
+            "at": 90,
+            "df": 110,
+            "sa": 60,
+            "sd": 75,
+            "sp": 95
+        },
+        "w": 61.5,
+        "ab": "Sniper",
+    },
+    "Croagunk": {
+        "t1": "Poison",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 48,
+            "at": 61,
+            "df": 40,
+            "sa": 61,
+            "sd": 40,
+            "sp": 50
+        },
+        "w": 23.0,
+        "ab": "Dry Skin",
+        "canEvolve": true,
+    },
+    "Toxicroak": {
+        "t1": "Poison",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 83,
+            "at": 106,
+            "df": 65,
+            "sa": 86,
+            "sd": 65,
+            "sp": 85
+        },
+        "w": 44.4,
+        "ab": "Dry Skin",
+    },
+    "Carnivine": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 74,
+            "at": 100,
+            "df": 72,
+            "sa": 90,
+            "sd": 72,
+            "sp": 46
+        },
+        "w": 27.0,
+        "ab": "Levitate"
+    },
+    "Finneon": {
+        "t1": "Water",
+        "bs": {
+            "hp": 49,
+            "at": 49,
+            "df": 56,
+            "sa": 49,
+            "sd": 61,
+            "sp": 66
+        },
+        "w": 7.0,
+        "ab": "Swift Swim",
+        "canEvolve": true,
+    },
+    "Lumineon": {
+        "t1": "Water",
+        "bs": {
+            "hp": 69,
+            "at": 69,
+            "df": 76,
+            "sa": 69,
+            "sd": 86,
+            "sp": 91
+        },
+        "w": 24.0,
+        "ab": "Swift Swim",
+    },
+    "Mantyke": {
+        "t1": "Water",
+        "t2": "Flying",
+        "bs": {
+            "hp": 45,
+            "at": 20,
+            "df": 50,
+            "sa": 60,
+            "sd": 120,
+            "sp": 50
+        },
+        "w": 65.0,
+        "ab": "Water Absorb",
+        "canEvolve": true,
+    },
+    "Snover": {
+        "t1": "Grass",
+        "t2": "Ice",
+        "bs": {
+            "hp": 60,
+            "at": 62,
+            "df": 50,
+            "sa": 62,
+            "sd": 60,
+            "sp": 40
+        },
+        "w": 50.5,
+        "ab": "Snow Warning",
+        "canEvolve": true,
+    },
+    "Abomasnow": {
+        "t1": "Grass",
+        "t2": "Ice",
+        "bs": {
+            "hp": 90,
+            "at": 92,
+            "df": 75,
+            "sa": 92,
+            "sd": 85,
+            "sp": 60
+        },
+        "w": 135.5,
+        "ab": "Snow Warning"
+    },
+    "Weavile": {
+        "t1": "Dark",
+        "t2": "Ice",
+        "bs": {
+            "hp": 70,
+            "at": 120,
+            "df": 65,
+            "sa": 45,
+            "sd": 85,
+            "sp": 125
+        },
+        "w": 34.0,
+        "ab": "Pressure",
+    },
+    "Magnezone": {
+        "t1": "Electric",
+        "t2": "Steel",
+        "bs": {
+            "hp": 70,
+            "at": 70,
+            "df": 115,
+            "sa": 130,
+            "sd": 90,
+            "sp": 60
+        },
+        "w": 180.0,
+        "ab": "Magnet Pull",
+    },
+    "Lickilicky": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 110,
+            "at": 85,
+            "df": 95,
+            "sa": 80,
+            "sd": 95,
+            "sp": 50
+        },
+        "w": 140.0,
+        "ab": "Own Tempo",
+    },
+    "Rhyperior": {
+        "t1": "Ground",
+        "t2": "Rock",
+        "bs": {
+            "hp": 115,
+            "at": 140,
+            "df": 130,
+            "sa": 55,
+            "sd": 55,
+            "sp": 40
+        },
+        "w": 282.8,
+        "ab": "Solid Rock",
+    },
+    "Tangrowth": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 125,
+            "sa": 110,
+            "sd": 50,
+            "sp": 50
+        },
+        "w": 128.6,
+        "ab": "Chlorophyll",
+    },
+    "Electivire": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 75,
+            "at": 123,
+            "df": 67,
+            "sa": 95,
+            "sd": 85,
+            "sp": 95
+        },
+        "w": 138.6,
+        "ab": "Motor Drive"
+    },
+    "Magmortar": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 75,
+            "at": 95,
+            "df": 67,
+            "sa": 125,
+            "sd": 95,
+            "sp": 83
+        },
+        "w": 68.0,
+        "ab": "Flame Body",
+    },
+    "Togekiss": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 85,
+            "at": 50,
+            "df": 95,
+            "sa": 120,
+            "sd": 115,
+            "sp": 80
+        },
+        "w": 38.0,
+        "ab": "Serene Grace",
+    },
     "Yanmega": {
         "t1": "Bug",
         "t2": "Flying",
@@ -7112,8 +6790,344 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "w": 51.5,
         "ab": "Speed Boost",
     },
+    "Leafeon": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 65,
+            "at": 110,
+            "df": 130,
+            "sa": 60,
+            "sd": 65,
+            "sp": 95
+        },
+        "w": 25.5,
+        "ab": "Leaf Guard",
+    },
+    "Glaceon": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 65,
+            "at": 60,
+            "df": 110,
+            "sa": 130,
+            "sd": 95,
+            "sp": 65
+        },
+        "w": 25.9,
+        "ab": "Snow Cloak"
+    },
+    "Gliscor": {
+        "t1": "Ground",
+        "t2": "Flying",
+        "bs": {
+            "hp": 75,
+            "at": 95,
+            "df": 125,
+            "sa": 45,
+            "sd": 75,
+            "sp": 95
+        },
+        "w": 42.5,
+        "ab": "Hyper Cutter",
+    },
+    "Mamoswine": {
+        "t1": "Ice",
+        "t2": "Ground",
+        "bs": {
+            "hp": 110,
+            "at": 130,
+            "df": 80,
+            "sa": 70,
+            "sd": 60,
+            "sp": 80
+        },
+        "w": 291.0,
+        "ab": "Oblivious",
+    },
+    "Porygon-Z": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 85,
+            "at": 80,
+            "df": 70,
+            "sa": 135,
+            "sd": 75,
+            "sp": 90
+        },
+        "w": 34.0,
+        "ab": "Adaptability",
+    },
+    "Gallade": {
+        "t1": "Psychic",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 68,
+            "at": 125,
+            "df": 65,
+            "sa": 65,
+            "sd": 115,
+            "sp": 80
+        },
+        "w": 52.0,
+        "ab": "Steadfast",
+    },
+    "Probopass": {
+        "t1": "Rock",
+        "t2": "Steel",
+        "bs": {
+            "hp": 60,
+            "at": 55,
+            "df": 145,
+            "sa": 75,
+            "sd": 150,
+            "sp": 40
+        },
+        "w": 340.0,
+        "ab": "Magnet Pull",
+    },
+    "Dusknoir": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 45,
+            "at": 100,
+            "df": 135,
+            "sa": 65,
+            "sd": 135,
+            "sp": 45
+        },
+        "w": 106.6,
+        "ab": "Pressure",
+    },
+    "Froslass": {
+        "t1": "Ice",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 70,
+            "at": 80,
+            "df": 70,
+            "sa": 80,
+            "sd": 70,
+            "sp": 110
+        },
+        "w": 26.6,
+        "ab": "Snow Cloak"
+    },
+    "Rotom": {
+        "t1": "Electric",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 50,
+            "at": 50,
+            "df": 77,
+            "sa": 95,
+            "sd": 77,
+            "sp": 91
+        },
+        "w": 0.3,
+        "ab": "Levitate"
+    },
+    "Uxie": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 75,
+            "at": 75,
+            "df": 130,
+            "sa": 75,
+            "sd": 130,
+            "sp": 95
+        },
+        "w": 0.3,
+        "ab": "Levitate"
+    },
+    "Mesprit": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 105,
+            "df": 105,
+            "sa": 105,
+            "sd": 105,
+            "sp": 80
+        },
+        "w": 0.3,
+        "ab": "Levitate"
+    },
+    "Azelf": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 75,
+            "at": 125,
+            "df": 70,
+            "sa": 125,
+            "sd": 70,
+            "sp": 115
+        },
+        "w": 0.3,
+        "ab": "Levitate"
+    },
+    "Dialga": {
+        "t1": "Steel",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 100,
+            "at": 120,
+            "df": 120,
+            "sa": 150,
+            "sd": 100,
+            "sp": 90
+        },
+        "w": 683.0,
+        "ab": "Pressure",
+    },
+    "Palkia": {
+        "t1": "Water",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 90,
+            "at": 120,
+            "df": 100,
+            "sa": 150,
+            "sd": 120,
+            "sp": 100
+        },
+        "w": 336.0,
+        "ab": "Pressure",
+    },
+    "Heatran": {
+        "t1": "Fire",
+        "t2": "Steel",
+        "bs": {
+            "hp": 91,
+            "at": 90,
+            "df": 106,
+            "sa": 130,
+            "sd": 106,
+            "sp": 77
+        },
+        "w": 430.0,
+        "ab": "Flash Fire"
+    },
+    "Regigigas": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 110,
+            "at": 160,
+            "df": 110,
+            "sa": 80,
+            "sd": 110,
+            "sp": 100
+        },
+        "w": 420.0,
+        "ab": "Slow Start"
+    },
+    "Giratina": {
+        "t1": "Ghost",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 150,
+            "at": 100,
+            "df": 120,
+            "sa": 100,
+            "sd": 120,
+            "sp": 90
+        },
+        "w": 750.0,
+        "ab": "Pressure",
+    },
+    "Cresselia": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 120,
+            "at": 70,
+            "df": 120,
+            "sa": 75,
+            "sd": 130,
+            "sp": 85
+        },
+        "w": 85.6,
+        "ab": "Levitate"
+    },
+    "Phione": {
+        "t1": "Water",
+        "bs": {
+            "hp": 80,
+            "at": 80,
+            "df": 80,
+            "sa": 80,
+            "sd": 80,
+            "sp": 80
+        },
+        "w": 3.1,
+        "ab": "Hydration"
+    },
+    "Manaphy": {
+        "t1": "Water",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "w": 1.4,
+        "ab": "Hydration"
+    },
+    "Darkrai": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 70,
+            "at": 90,
+            "df": 90,
+            "sa": 135,
+            "sd": 90,
+            "sp": 125
+        },
+        "w": 50.5,
+        "ab": "Bad Dreams"
+    },
+    "Shaymin": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "w": 2.1,
+        "ab": "Natural Cure"
+    },
+    "Arceus": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 120,
+            "at": 120,
+            "df": 120,
+            "sa": 120,
+            "sd": 120,
+            "sp": 120
+        },
+        "w": 320.0,
+        "ab": "Multitype"
+    },
     //PtHGSS Pokemon
-    "Rotom-Mow": {
+    "Rotom-Heat": {
+        "t1": "Electric",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 50,
+            "at": 65,
+            "df": 107,
+            "sa": 105,
+            "sd": 107,
+            "sp": 86
+        },
+        "w": 0.3,
+        "ab": "Levitate"
+    },
+    "Rotom-Wash": {
         "t1": "Electric",
         "t2": "Ghost",
         "bs": {
@@ -7141,20 +7155,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "w": 0.3,
         "ab": "Levitate"
     },
-    "Rotom-Heat": {
-        "t1": "Electric",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 50,
-            "at": 65,
-            "df": 107,
-            "sa": 105,
-            "sd": 107,
-            "sp": 86
-        },
-        "w": 0.3,
-        "ab": "Levitate"
-    },
     "Rotom-Fan": {
         "t1": "Electric",
         "t2": "Ghost",
@@ -7169,7 +7169,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
         "w": 0.3,
         "ab": "Levitate"
     },
-    "Rotom-Wash": {
+    "Rotom-Mow": {
         "t1": "Electric",
         "t2": "Ghost",
         "bs": {
@@ -7215,11 +7215,11 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 
 var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     //Type Changes
-    "Rotom-Mow": { "t2": "Grass" },
-    "Rotom-Frost": { "t2": "Ice" },
     "Rotom-Heat": { "t2": "Fire" },
-    "Rotom-Fan": { "t2": "Flying" },
     "Rotom-Wash": { "t2": "Water" },
+    "Rotom-Frost": { "t2": "Ice" },
+    "Rotom-Fan": { "t2": "Flying" },
+    "Rotom-Mow": { "t2": "Grass" },
     //ABILITY ADJUSTMENTS
     "Venusaur": { "ab": "Chlorophyll" },
     "Charizard": { "ab": "Solar Power" },
@@ -7288,154 +7288,391 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     "Riolu": { "ab": "Prankster", },
 
     //BW Pokemon
-    "Accelgor": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 80,
-            "at": 70,
-            "df": 40,
-            "sa": 100,
-            "sd": 60,
-            "sp": 145
-        },
-        "w": 25.3,
-        "ab": "Unburden",
-    },
-    "Alomomola": {
-        "t1": "Water",
-        "bs": {
-            "hp": 165,
-            "at": 75,
-            "df": 80,
-            "sa": 40,
-            "sd": 45,
-            "sp": 65
-        },
-        "w": 31.6,
-        "ab": "Regenerator",
-    },
-    "Amoonguss": {
-        "t1": "Grass",
-        "t2": "Poison",
-        "bs": {
-            "hp": 114,
-            "at": 85,
-            "df": 70,
-            "sa": 85,
-            "sd": 80,
-            "sp": 30
-        },
-        "w": 10.5,
-        "ab": "Regenerator",
-    },
-    "Archen": {
-        "t1": "Rock",
-        "t2": "Flying",
-        "bs": {
-            "hp": 55,
-            "at": 112,
-            "df": 45,
-            "sa": 74,
-            "sd": 45,
-            "sp": 70
-        },
-        "w": 9.5,
-        "ab": "Defeatist",
-        "canEvolve": true,
-    },
-    "Archeops": {
-        "t1": "Rock",
-        "t2": "Flying",
-        "bs": {
-            "hp": 75,
-            "at": 140,
-            "df": 65,
-            "sa": 112,
-            "sd": 65,
-            "sp": 110
-        },
-        "w": 32.0,
-        "ab": "Defeatist"
-    },
-    "Audino": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 103,
-            "at": 60,
-            "df": 86,
-            "sa": 60,
-            "sd": 86,
-            "sp": 50
-        },
-        "w": 31.0,
-        "ab": "Regenerator",
-    },
-    "Axew": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 46,
-            "at": 87,
-            "df": 60,
-            "sa": 30,
-            "sd": 40,
-            "sp": 57
-        },
-        "w": 18.0,
-        "ab": "Mold Breaker",
-        "canEvolve": true,
-    },
-    "Basculin": {
-        "t1": "Water",
-        "bs": {
-            "hp": 70,
-            "at": 92,
-            "df": 65,
-            "sa": 80,
-            "sd": 55,
-            "sp": 98
-        },
-        "w": 18.0,
-        "ab": "Adaptability",
-    },
-    "Beartic": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 95,
-            "at": 110,
-            "df": 80,
-            "sa": 70,
-            "sd": 80,
-            "sp": 50
-        },
-        "w": 260.0,
-        "ab": "Swift Swim",
-    },
-    "Beheeyem": {
+    "Victini": {
         "t1": "Psychic",
+        "t2": "Fire",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "w": 4.0,
+        "ab": "Victory Star"
+    },
+    "Snivy": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 45,
+            "at": 45,
+            "df": 55,
+            "sa": 45,
+            "sd": 55,
+            "sp": 63
+        },
+        "w": 8.1,
+        "ab": "Overgrow",
+        "canEvolve": true,
+    },
+    "Servine": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 60,
+            "at": 60,
+            "df": 75,
+            "sa": 60,
+            "sd": 75,
+            "sp": 83
+        },
+        "w": 16.0,
+        "ab": "Overgrow",
+        "canEvolve": true,
+    },
+    "Serperior": {
+        "t1": "Grass",
         "bs": {
             "hp": 75,
             "at": 75,
-            "df": 75,
-            "sa": 125,
+            "df": 95,
+            "sa": 75,
             "sd": 95,
-            "sp": 40
+            "sp": 113
         },
-        "w": 34.5,
-        "ab": "Analytic",
+        "w": 63.0,
+        "ab": "Overgrow"
     },
-    "Bisharp": {
-        "t1": "Dark",
-        "t2": "Steel",
+    "Tepig": {
+        "t1": "Fire",
         "bs": {
             "hp": 65,
-            "at": 125,
-            "df": 100,
-            "sa": 60,
+            "at": 63,
+            "df": 45,
+            "sa": 45,
+            "sd": 45,
+            "sp": 45
+        },
+        "w": 9.9,
+        "ab": "Blaze",
+        "canEvolve": true,
+    },
+    "Pignite": {
+        "t1": "Fire",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 90,
+            "at": 93,
+            "df": 55,
+            "sa": 70,
+            "sd": 55,
+            "sp": 55
+        },
+        "w": 55.5,
+        "ab": "Blaze",
+        "canEvolve": true,
+    },
+    "Emboar": {
+        "t1": "Fire",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 110,
+            "at": 123,
+            "df": 65,
+            "sa": 100,
+            "sd": 65,
+            "sp": 65
+        },
+        "w": 150.0,
+        "ab": "Blaze"
+    },
+    "Oshawott": {
+        "t1": "Water",
+        "bs": {
+            "hp": 55,
+            "at": 55,
+            "df": 45,
+            "sa": 63,
+            "sd": 45,
+            "sp": 45
+        },
+        "w": 5.9,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Dewott": {
+        "t1": "Water",
+        "bs": {
+            "hp": 75,
+            "at": 75,
+            "df": 60,
+            "sa": 83,
+            "sd": 60,
+            "sp": 60
+        },
+        "w": 24.5,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Samurott": {
+        "t1": "Water",
+        "bs": {
+            "hp": 95,
+            "at": 100,
+            "df": 85,
+            "sa": 108,
             "sd": 70,
             "sp": 70
         },
-        "w": 70.0,
-        "ab": "Defiant",
+        "w": 94.6,
+        "ab": "Torrent"
+    },
+    "Patrat": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 45,
+            "at": 55,
+            "df": 39,
+            "sa": 35,
+            "sd": 39,
+            "sp": 42
+        },
+        "w": 11.6,
+        "ab": "Analytic",
+        "canEvolve": true,
+    },
+    "Watchog": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 60,
+            "at": 85,
+            "df": 69,
+            "sa": 60,
+            "sd": 69,
+            "sp": 77
+        },
+        "w": 27.0,
+        "ab": "Analytic",
+    },
+    "Lillipup": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 45,
+            "at": 60,
+            "df": 45,
+            "sa": 25,
+            "sd": 45,
+            "sp": 55
+        },
+        "w": 4.1,
+        "ab": "Vital Spirit",
+        "canEvolve": true,
+    },
+    "Herdier": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 65,
+            "at": 80,
+            "df": 65,
+            "sa": 35,
+            "sd": 65,
+            "sp": 60
+        },
+        "w": 14.7,
+        "ab": "Sand Rush",
+        "canEvolve": true,
+    },
+    "Stoutland": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 85,
+            "at": 100,
+            "df": 90,
+            "sa": 45,
+            "sd": 90,
+            "sp": 80
+        },
+        "w": 61.0,
+        "ab": "Intimidate",
+    },
+    "Purrloin": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 41,
+            "at": 50,
+            "df": 37,
+            "sa": 50,
+            "sd": 37,
+            "sp": 66
+        },
+        "w": 10.1,
+        "ab": "Prankster",
+        "canEvolve": true,
+    },
+    "Liepard": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 64,
+            "at": 88,
+            "df": 50,
+            "sa": 88,
+            "sd": 50,
+            "sp": 106
+        },
+        "w": 37.5,
+        "ab": "Prankster",
+    },
+    "Pansage": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 50,
+            "at": 53,
+            "df": 48,
+            "sa": 53,
+            "sd": 48,
+            "sp": 64
+        },
+        "w": 10.5,
+        "ab": "Overgrow",
+        "canEvolve": true,
+    },
+    "Simisage": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 75,
+            "at": 98,
+            "df": 63,
+            "sa": 98,
+            "sd": 63,
+            "sp": 101
+        },
+        "w": 30.5,
+        "ab": "Overgrow",
+    },
+    "Pansear": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 50,
+            "at": 53,
+            "df": 48,
+            "sa": 53,
+            "sd": 48,
+            "sp": 64
+        },
+        "w": 11.0,
+        "ab": "Blaze",
+        "canEvolve": true,
+    },
+    "Simisear": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 75,
+            "at": 98,
+            "df": 63,
+            "sa": 98,
+            "sd": 63,
+            "sp": 101
+        },
+        "w": 28.0,
+        "ab": "Blaze",
+    },
+    "Panpour": {
+        "t1": "Water",
+        "bs": {
+            "hp": 50,
+            "at": 53,
+            "df": 48,
+            "sa": 53,
+            "sd": 48,
+            "sp": 64
+        },
+        "w": 13.5,
+        "ab": "Torrent",
+        "canEvolve": true,
+    },
+    "Simipour": {
+        "t1": "Water",
+        "bs": {
+            "hp": 75,
+            "at": 98,
+            "df": 63,
+            "sa": 98,
+            "sd": 63,
+            "sp": 101
+        },
+        "w": 29.0,
+        "ab": "Torrent",
+    },
+    "Munna": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 76,
+            "at": 25,
+            "df": 45,
+            "sa": 67,
+            "sd": 55,
+            "sp": 24
+        },
+        "w": 23.3,
+        "ab": "Telepathy",
+        "canEvolve": true,
+    },
+    "Musharna": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 116,
+            "at": 55,
+            "df": 85,
+            "sa": 107,
+            "sd": 95,
+            "sp": 29
+        },
+        "w": 60.5,
+        "ab": "Telepathy",
+    },
+    "Pidove": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 50,
+            "at": 55,
+            "df": 50,
+            "sa": 36,
+            "sd": 30,
+            "sp": 43
+        },
+        "w": 2.1,
+        "ab": "Super Luck",
+        "canEvolve": true,
+    },
+    "Tranquill": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 62,
+            "at": 77,
+            "df": 62,
+            "sa": 50,
+            "sd": 42,
+            "sp": 65
+        },
+        "w": 15.0,
+        "ab": "Super Luck",
+        "canEvolve": true,
+    },
+    "Unfezant": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 80,
+            "at": 105,
+            "df": 80,
+            "sa": 65,
+            "sd": 55,
+            "sp": 93
+        },
+        "w": 29.0,
+        "ab": "Super Luck",
     },
     "Blitzle": {
         "t1": "Electric",
@@ -7449,6 +7686,33 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         },
         "w": 29.8,
         "ab": "Lightning Rod",
+        "canEvolve": true,
+    },
+    "Zebstrika": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 75,
+            "at": 100,
+            "df": 63,
+            "sa": 80,
+            "sd": 63,
+            "sp": 116
+        },
+        "w": 79.5,
+        "ab": "Lightning Rod",
+    },
+    "Roggenrola": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 55,
+            "at": 75,
+            "df": 85,
+            "sa": 25,
+            "sd": 25,
+            "sp": 15
+        },
+        "w": 18.0,
+        "ab": "Sturdy",
         "canEvolve": true,
     },
     "Boldore": {
@@ -7465,100 +7729,116 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "ab": "Sturdy",
         "canEvolve": true,
     },
-    "Bouffalant": {
-        "t1": "Normal",
+    "Gigalith": {
+        "t1": "Rock",
         "bs": {
-            "hp": 95,
-            "at": 110,
-            "df": 95,
-            "sa": 40,
-            "sd": 95,
-            "sp": 55
+            "hp": 85,
+            "at": 135,
+            "df": 130,
+            "sa": 60,
+            "sd": 70,
+            "sp": 25
         },
-        "w": 94.6,
-        "ab": "Reckless",
+        "w": 260.0,
+        "ab": "Sturdy",
     },
-    "Braviary": {
-        "t1": "Normal",
+    "Woobat": {
+        "t1": "Psychic",
         "t2": "Flying",
         "bs": {
-            "hp": 100,
-            "at": 123,
-            "df": 75,
-            "sa": 57,
-            "sd": 75,
-            "sp": 80
+            "hp": 55,
+            "at": 45,
+            "df": 43,
+            "sa": 55,
+            "sd": 43,
+            "sp": 72
         },
-        "w": 41.0,
-        "ab": "Defiant",
+        "w": 2.1,
+        "ab": "Unaware",
+        "canEvolve": true,
     },
-    "Carracosta": {
-        "t1": "Water",
-        "t2": "Rock",
+    "Swoobat": {
+        "t1": "Psychic",
+        "t2": "Flying",
         "bs": {
-            "hp": 74,
-            "at": 108,
-            "df": 133,
-            "sa": 83,
-            "sd": 65,
-            "sp": 32
+            "hp": 67,
+            "at": 57,
+            "df": 55,
+            "sa": 77,
+            "sd": 55,
+            "sp": 114
         },
-        "w": 81.0,
-        "ab": "Solid Rock",
+        "w": 10.5,
+        "ab": "Simple",
     },
-    "Chandelure": {
-        "t1": "Ghost",
-        "t2": "Fire",
+    "Drilbur": {
+        "t1": "Ground",
         "bs": {
             "hp": 60,
-            "at": 55,
-            "df": 90,
-            "sa": 145,
-            "sd": 90,
-            "sp": 80
+            "at": 85,
+            "df": 40,
+            "sa": 30,
+            "sd": 45,
+            "sp": 68
         },
-        "w": 34.3,
-        "ab": "Flash Fire",
+        "w": 8.5,
+        "ab": "Sand Rush",
+        "canEvolve": true,
     },
-    "Cinccino": {
+    "Excadrill": {
+        "t1": "Ground",
+        "t2": "Steel",
+        "bs": {
+            "hp": 110,
+            "at": 135,
+            "df": 60,
+            "sa": 50,
+            "sd": 65,
+            "sp": 88
+        },
+        "w": 40.4,
+        "ab": "Sand Rush",
+    },
+    "Audino": {
         "t1": "Normal",
         "bs": {
+            "hp": 103,
+            "at": 60,
+            "df": 86,
+            "sa": 60,
+            "sd": 86,
+            "sp": 50
+        },
+        "w": 31.0,
+        "ab": "Regenerator",
+    },
+    "Timburr": {
+        "t1": "Fighting",
+        "bs": {
             "hp": 75,
-            "at": 95,
-            "df": 60,
-            "sa": 65,
-            "sd": 60,
-            "sp": 115
+            "at": 80,
+            "df": 55,
+            "sa": 25,
+            "sd": 35,
+            "sp": 35
         },
-        "w": 7.5,
-        "ab": "Skill Link",
+        "w": 12.5,
+        "ab": "Iron Fist",
+        "canEvolve": true,
     },
-    "Cobalion": {
-        "t1": "Steel",
-        "t2": "Fighting",
+    "Gurdurr": {
+        "t1": "Fighting",
         "bs": {
-            "hp": 91,
-            "at": 90,
-            "df": 129,
-            "sa": 90,
-            "sd": 72,
-            "sp": 108
+            "hp": 85,
+            "at": 105,
+            "df": 85,
+            "sa": 40,
+            "sd": 50,
+            "sp": 40
         },
-        "w": 250.0,
-        "ab": "Justified"
-    },
-    "Cofagrigus": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 58,
-            "at": 50,
-            "df": 145,
-            "sa": 95,
-            "sd": 105,
-            "sp": 30
-        },
-        "w": 76.5,
-        "ab": "Mummy"
+        "w": 40.0,
+        "ab": "Iron Fist",
+        "canEvolve": true,
     },
     "Conkeldurr": {
         "t1": "Fighting",
@@ -7572,6 +7852,163 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         },
         "w": 87.0,
         "ab": "Iron Fist"
+    },
+    "Tympole": {
+        "t1": "Water",
+        "bs": {
+            "hp": 50,
+            "at": 50,
+            "df": 40,
+            "sa": 50,
+            "sd": 40,
+            "sp": 64
+        },
+        "w": 4.5,
+        "ab": "Swift Swim",
+        "canEvolve": true,
+    },
+    "Palpitoad": {
+        "t1": "Water",
+        "t2": "Ground",
+        "bs": {
+            "hp": 75,
+            "at": 65,
+            "df": 55,
+            "sa": 65,
+            "sd": 55,
+            "sp": 69
+        },
+        "w": 17.0,
+        "ab": "Swift Swim",
+        "canEvolve": true,
+    },
+    "Seismitoad": {
+        "t1": "Water",
+        "t2": "Ground",
+        "bs": {
+            "hp": 105,
+            "at": 85,
+            "df": 75,
+            "sa": 85,
+            "sd": 75,
+            "sp": 74
+        },
+        "w": 62.0,
+        "ab": "Water Absorb",
+    },
+    "Throh": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 120,
+            "at": 100,
+            "df": 85,
+            "sa": 30,
+            "sd": 85,
+            "sp": 45
+        },
+        "w": 55.5,
+        "ab": "Inner Focus",
+    },
+    "Sawk": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 75,
+            "at": 125,
+            "df": 75,
+            "sa": 30,
+            "sd": 75,
+            "sp": 85
+        },
+        "w": 51.0,
+        "ab": "Sturdy",
+    },
+    "Sewaddle": {
+        "t1": "Bug",
+        "t2": "Grass",
+        "bs": {
+            "hp": 45,
+            "at": 53,
+            "df": 70,
+            "sa": 40,
+            "sd": 60,
+            "sp": 42
+        },
+        "w": 2.5,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Swadloon": {
+        "t1": "Bug",
+        "t2": "Grass",
+        "bs": {
+            "hp": 55,
+            "at": 63,
+            "df": 90,
+            "sa": 50,
+            "sd": 80,
+            "sp": 42
+        },
+        "w": 7.3,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Leavanny": {
+        "t1": "Bug",
+        "t2": "Grass",
+        "bs": {
+            "hp": 75,
+            "at": 103,
+            "df": 80,
+            "sa": 70,
+            "sd": 70,
+            "sp": 92
+        },
+        "w": 20.5,
+        "ab": "Overcoat",
+    },
+    "Venipede": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 30,
+            "at": 45,
+            "df": 59,
+            "sa": 30,
+            "sd": 39,
+            "sp": 57
+        },
+        "w": 5.3,
+        "ab": "Swarm",
+        "canEvolve": true,
+    },
+    "Whirlipede": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 40,
+            "at": 55,
+            "df": 99,
+            "sa": 40,
+            "sd": 79,
+            "sp": 47
+        },
+        "w": 58.5,
+        "ab": "Swarm",
+        "canEvolve": true,
+    },
+    "Scolipede": {
+        "t1": "Bug",
+        "t2": "Poison",
+        "bs": {
+            "hp": 60,
+            "at": 90,
+            "df": 89,
+            "sa": 55,
+            "sd": 69,
+            "sp": 112
+        },
+        "w": 200.5,
+        "ab": "Swarm",
     },
     "Cottonee": {
         "t1": "Grass",
@@ -7587,45 +8024,115 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "ab": "Prankster",
         "canEvolve": true,
     },
-    "Crustle": {
-        "t1": "Bug",
-        "t2": "Rock",
+    "Whimsicott": {
+        "t1": "Grass",
         "bs": {
-            "hp": 70,
-            "at": 95,
-            "df": 125,
-            "sa": 65,
+            "hp": 60,
+            "at": 67,
+            "df": 85,
+            "sa": 77,
             "sd": 75,
-            "sp": 45
+            "sp": 116
         },
-        "w": 200.0,
-        "ab": "Sturdy",
+        "w": 6.6,
+        "ab": "Prankster",
     },
-    "Cryogonal": {
-        "t1": "Ice",
+    "Petilil": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 45,
+            "at": 35,
+            "df": 50,
+            "sa": 70,
+            "sd": 50,
+            "sp": 30
+        },
+        "w": 6.6,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Lilligant": {
+        "t1": "Grass",
         "bs": {
             "hp": 70,
-            "at": 50,
-            "df": 30,
-            "sa": 95,
-            "sd": 135,
-            "sp": 105
+            "at": 60,
+            "df": 75,
+            "sa": 110,
+            "sd": 75,
+            "sp": 90
         },
-        "w": 148.0,
-        "ab": "Levitate"
+        "w": 16.3,
+        "ab": "Chlorophyll",
     },
-    "Cubchoo": {
-        "t1": "Ice",
+    "Basculin": {
+        "t1": "Water",
         "bs": {
-            "hp": 55,
-            "at": 70,
-            "df": 40,
-            "sa": 60,
-            "sd": 40,
-            "sp": 40
+            "hp": 70,
+            "at": 92,
+            "df": 65,
+            "sa": 80,
+            "sd": 55,
+            "sp": 98
         },
-        "w": 8.5,
-        "ab": "Rattled",
+        "w": 18.0,
+        "ab": "Adaptability",
+    },
+    "Sandile": {
+        "t1": "Ground",
+        "t2": "Dark",
+        "bs": {
+            "hp": 50,
+            "at": 72,
+            "df": 35,
+            "sa": 35,
+            "sd": 35,
+            "sp": 65
+        },
+        "w": 15.2,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Krokorok": {
+        "t1": "Ground",
+        "t2": "Dark",
+        "bs": {
+            "hp": 60,
+            "at": 82,
+            "df": 45,
+            "sa": 45,
+            "sd": 45,
+            "sp": 74
+        },
+        "w": 33.4,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Krookodile": {
+        "t1": "Ground",
+        "t2": "Dark",
+        "bs": {
+            "hp": 95,
+            "at": 117,
+            "df": 70,
+            "sa": 65,
+            "sd": 70,
+            "sp": 92
+        },
+        "w": 96.3,
+        "ab": "Intimidate",
+    },
+    "Darumaka": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 70,
+            "at": 90,
+            "df": 45,
+            "sa": 15,
+            "sd": 45,
+            "sp": 50
+        },
+        "w": 37.5,
+        "ab": "Hustle",
         "canEvolve": true,
     },
     "Darmanitan": {
@@ -7660,104 +8167,310 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "ab": "Zen Mode",
         "isAlternateForme": true
     },
-    "Darumaka": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 70,
-            "at": 90,
-            "df": 45,
-            "sa": 15,
-            "sd": 45,
-            "sp": 50
-        },
-        "w": 37.5,
-        "ab": "Hustle",
-        "canEvolve": true,
-    },
-    "Deerling": {
-        "t1": "Normal",
-        "t2": "Grass",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 50,
-            "sa": 40,
-            "sd": 50,
-            "sp": 75
-        },
-        "w": 19.5,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Deino": {
-        "t1": "Dark",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 52,
-            "at": 65,
-            "df": 50,
-            "sa": 45,
-            "sd": 50,
-            "sp": 38
-        },
-        "w": 17.3,
-        "ab": "Hustle",
-        "canEvolve": true,
-    },
-    "Dewott": {
-        "t1": "Water",
+    "Maractus": {
+        "t1": "Grass",
         "bs": {
             "hp": 75,
-            "at": 75,
-            "df": 60,
-            "sa": 83,
-            "sd": 60,
+            "at": 86,
+            "df": 67,
+            "sa": 106,
+            "sd": 67,
             "sp": 60
         },
-        "w": 24.5,
-        "ab": "Torrent",
-        "canEvolve": true,
+        "w": 28.0,
+        "ab": "Chlorophyll",
     },
-    "Drilbur": {
-        "t1": "Ground",
+    "Dwebble": {
+        "t1": "Bug",
+        "t2": "Rock",
         "bs": {
-            "hp": 60,
-            "at": 85,
-            "df": 40,
-            "sa": 30,
-            "sd": 45,
-            "sp": 68
-        },
-        "w": 8.5,
-        "ab": "Sand Rush",
-        "canEvolve": true,
-    },
-    "Druddigon": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 77,
-            "at": 120,
-            "df": 90,
-            "sa": 60,
-            "sd": 90,
-            "sp": 48
-        },
-        "w": 139.0,
-        "ab": "Mold Breaker",
-    },
-    "Ducklett": {
-        "t1": "Water",
-        "t2": "Flying",
-        "bs": {
-            "hp": 62,
-            "at": 44,
-            "df": 50,
-            "sa": 44,
-            "sd": 50,
+            "hp": 50,
+            "at": 65,
+            "df": 85,
+            "sa": 35,
+            "sd": 35,
             "sp": 55
         },
-        "w": 5.5,
-        "ab": "Big Pecks",
+        "w": 14.5,
+        "ab": "Sturdy",
+        "canEvolve": true,
+    },
+    "Crustle": {
+        "t1": "Bug",
+        "t2": "Rock",
+        "bs": {
+            "hp": 70,
+            "at": 95,
+            "df": 125,
+            "sa": 65,
+            "sd": 75,
+            "sp": 45
+        },
+        "w": 200.0,
+        "ab": "Sturdy",
+    },
+    "Scraggy": {
+        "t1": "Dark",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 50,
+            "at": 75,
+            "df": 70,
+            "sa": 35,
+            "sd": 70,
+            "sp": 48
+        },
+        "w": 11.8,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Scrafty": {
+        "t1": "Dark",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 65,
+            "at": 90,
+            "df": 115,
+            "sa": 45,
+            "sd": 115,
+            "sp": 58
+        },
+        "w": 30.0,
+        "ab": "Intimidate",
+    },
+    "Sigilyph": {
+        "t1": "Psychic",
+        "t2": "Flying",
+        "bs": {
+            "hp": 72,
+            "at": 58,
+            "df": 80,
+            "sa": 103,
+            "sd": 80,
+            "sp": 97
+        },
+        "w": 14.0,
+        "ab": "Wonder Skin",
+    },
+    "Yamask": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 38,
+            "at": 30,
+            "df": 85,
+            "sa": 55,
+            "sd": 65,
+            "sp": 30
+        },
+        "w": 1.5,
+        "ab": "Mummy",
+        "canEvolve": true,
+    },
+    "Cofagrigus": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 58,
+            "at": 50,
+            "df": 145,
+            "sa": 95,
+            "sd": 105,
+            "sp": 30
+        },
+        "w": 76.5,
+        "ab": "Mummy"
+    },
+    "Tirtouga": {
+        "t1": "Water",
+        "t2": "Rock",
+        "bs": {
+            "hp": 54,
+            "at": 78,
+            "df": 103,
+            "sa": 53,
+            "sd": 45,
+            "sp": 22
+        },
+        "w": 16.5,
+        "ab": "Solid Rock",
+        "canEvolve": true,
+    },
+    "Carracosta": {
+        "t1": "Water",
+        "t2": "Rock",
+        "bs": {
+            "hp": 74,
+            "at": 108,
+            "df": 133,
+            "sa": 83,
+            "sd": 65,
+            "sp": 32
+        },
+        "w": 81.0,
+        "ab": "Solid Rock",
+    },
+    "Archen": {
+        "t1": "Rock",
+        "t2": "Flying",
+        "bs": {
+            "hp": 55,
+            "at": 112,
+            "df": 45,
+            "sa": 74,
+            "sd": 45,
+            "sp": 70
+        },
+        "w": 9.5,
+        "ab": "Defeatist",
+        "canEvolve": true,
+    },
+    "Archeops": {
+        "t1": "Rock",
+        "t2": "Flying",
+        "bs": {
+            "hp": 75,
+            "at": 140,
+            "df": 65,
+            "sa": 112,
+            "sd": 65,
+            "sp": 110
+        },
+        "w": 32.0,
+        "ab": "Defeatist"
+    },
+    "Trubbish": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 50,
+            "at": 50,
+            "df": 62,
+            "sa": 40,
+            "sd": 62,
+            "sp": 65
+        },
+        "w": 31.0,
+        "ab": "Aftermath",
+        "canEvolve": true,
+    },
+    "Garbodor": {
+        "t1": "Poison",
+        "bs": {
+            "hp": 80,
+            "at": 95,
+            "df": 82,
+            "sa": 60,
+            "sd": 82,
+            "sp": 75
+        },
+        "w": 107.3,
+        "ab": "Aftermath"
+    },
+    "Zorua": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 40,
+            "at": 65,
+            "df": 40,
+            "sa": 80,
+            "sd": 40,
+            "sp": 65
+        },
+        "w": 12.5,
+        "ab": "Illusion",
+        "canEvolve": true,
+    },
+    "Zoroark": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 60,
+            "at": 105,
+            "df": 60,
+            "sa": 120,
+            "sd": 60,
+            "sp": 105
+        },
+        "w": 81.1,
+        "ab": "Illusion"
+    },
+    "Minccino": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 55,
+            "at": 50,
+            "df": 40,
+            "sa": 40,
+            "sd": 40,
+            "sp": 75
+        },
+        "w": 5.8,
+        "ab": "Skill Link",
+        "canEvolve": true,
+    },
+    "Cinccino": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 75,
+            "at": 95,
+            "df": 60,
+            "sa": 65,
+            "sd": 60,
+            "sp": 115
+        },
+        "w": 7.5,
+        "ab": "Skill Link",
+    },
+    "Gothita": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 45,
+            "at": 30,
+            "df": 50,
+            "sa": 55,
+            "sd": 65,
+            "sp": 45
+        },
+        "w": 5.8,
+        "ab": "Shadow Tag",
+        "canEvolve": true,
+    },
+    "Gothorita": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 60,
+            "at": 45,
+            "df": 70,
+            "sa": 75,
+            "sd": 85,
+            "sp": 55
+        },
+        "w": 18.0,
+        "ab": "Shadow Tag",
+        "canEvolve": true,
+    },
+    "Gothitelle": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 70,
+            "at": 55,
+            "df": 95,
+            "sa": 95,
+            "sd": 110,
+            "sp": 65
+        },
+        "w": 44.0,
+        "ab": "Shadow Tag",
+    },
+    "Solosis": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 45,
+            "at": 30,
+            "df": 40,
+            "sa": 105,
+            "sd": 50,
+            "sp": 20
+        },
+        "w": 1.0,
+        "ab": "Magic Guard",
         "canEvolve": true,
     },
     "Duosion": {
@@ -7774,33 +8487,342 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "ab": "Magic Guard",
         "canEvolve": true,
     },
-    "Durant": {
+    "Reuniclus": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 110,
+            "at": 65,
+            "df": 75,
+            "sa": 125,
+            "sd": 85,
+            "sp": 30
+        },
+        "w": 20.1,
+        "ab": "Magic Guard",
+    },
+    "Ducklett": {
+        "t1": "Water",
+        "t2": "Flying",
+        "bs": {
+            "hp": 62,
+            "at": 44,
+            "df": 50,
+            "sa": 44,
+            "sd": 50,
+            "sp": 55
+        },
+        "w": 5.5,
+        "ab": "Big Pecks",
+        "canEvolve": true,
+    },
+    "Swanna": {
+        "t1": "Water",
+        "t2": "Flying",
+        "bs": {
+            "hp": 75,
+            "at": 87,
+            "df": 63,
+            "sa": 87,
+            "sd": 63,
+            "sp": 98
+        },
+        "w": 24.2,
+        "ab": "Big Pecks",
+    },
+    "Vanillite": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 36,
+            "at": 50,
+            "df": 50,
+            "sa": 65,
+            "sd": 60,
+            "sp": 44
+        },
+        "w": 5.7,
+        "ab": "Ice Body",
+        "canEvolve": true,
+    },
+    "Vanillish": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 51,
+            "at": 65,
+            "df": 65,
+            "sa": 80,
+            "sd": 75,
+            "sp": 59
+        },
+        "w": 41.0,
+        "ab": "Ice Body",
+        "canEvolve": true,
+    },
+    "Vanilluxe": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 71,
+            "at": 95,
+            "df": 85,
+            "sa": 110,
+            "sd": 95,
+            "sp": 79
+        },
+        "w": 57.5,
+        "ab": "Ice Body",
+    },
+    "Deerling": {
+        "t1": "Normal",
+        "t2": "Grass",
+        "bs": {
+            "hp": 60,
+            "at": 60,
+            "df": 50,
+            "sa": 40,
+            "sd": 50,
+            "sp": 75
+        },
+        "w": 19.5,
+        "ab": "Chlorophyll",
+        "canEvolve": true,
+    },
+    "Sawsbuck": {
+        "t1": "Normal",
+        "t2": "Grass",
+        "bs": {
+            "hp": 80,
+            "at": 100,
+            "df": 70,
+            "sa": 60,
+            "sd": 70,
+            "sp": 95
+        },
+        "w": 92.5,
+        "ab": "Sap Sipper",
+    },
+    "Emolga": {
+        "t1": "Electric",
+        "t2": "Flying",
+        "bs": {
+            "hp": 55,
+            "at": 75,
+            "df": 60,
+            "sa": 75,
+            "sd": 60,
+            "sp": 103
+        },
+        "w": 5.0,
+        "ab": "Motor Drive",
+    },
+    "Karrablast": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 50,
+            "at": 75,
+            "df": 45,
+            "sa": 40,
+            "sd": 45,
+            "sp": 60
+        },
+        "w": 5.9,
+        "ab": "No Guard",
+        "canEvolve": true,
+    },
+    "Escavalier": {
         "t1": "Bug",
         "t2": "Steel",
         "bs": {
-            "hp": 58,
-            "at": 109,
-            "df": 112,
-            "sa": 48,
-            "sd": 48,
-            "sp": 109
+            "hp": 70,
+            "at": 135,
+            "df": 105,
+            "sa": 60,
+            "sd": 105,
+            "sp": 20
         },
         "w": 33.0,
-        "ab": "Hustle",
+        "ab": "Swarm",
     },
-    "Dwebble": {
+    "Foongus": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 69,
+            "at": 55,
+            "df": 45,
+            "sa": 55,
+            "sd": 55,
+            "sp": 15
+        },
+        "w": 1.0,
+        "ab": "Regenerator",
+        "canEvolve": true,
+    },
+    "Amoonguss": {
+        "t1": "Grass",
+        "t2": "Poison",
+        "bs": {
+            "hp": 114,
+            "at": 85,
+            "df": 70,
+            "sa": 85,
+            "sd": 80,
+            "sp": 30
+        },
+        "w": 10.5,
+        "ab": "Regenerator",
+    },
+    "Frillish": {
+        "t1": "Water",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 55,
+            "at": 40,
+            "df": 50,
+            "sa": 65,
+            "sd": 85,
+            "sp": 40
+        },
+        "w": 33.0,
+        "ab": "Water Absorb",
+        "canEvolve": true,
+    },
+    "Jellicent": {
+        "t1": "Water",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 100,
+            "at": 60,
+            "df": 70,
+            "sa": 85,
+            "sd": 105,
+            "sp": 60
+        },
+        "w": 135.0,
+        "ab": "Water Absorb",
+    },
+    "Alomomola": {
+        "t1": "Water",
+        "bs": {
+            "hp": 165,
+            "at": 75,
+            "df": 80,
+            "sa": 40,
+            "sd": 45,
+            "sp": 65
+        },
+        "w": 31.6,
+        "ab": "Regenerator",
+    },
+    "Joltik": {
         "t1": "Bug",
-        "t2": "Rock",
+        "t2": "Electric",
         "bs": {
             "hp": 50,
-            "at": 65,
-            "df": 85,
-            "sa": 35,
-            "sd": 35,
-            "sp": 55
+            "at": 47,
+            "df": 50,
+            "sa": 57,
+            "sd": 50,
+            "sp": 65
         },
-        "w": 14.5,
-        "ab": "Sturdy",
+        "w": 0.6,
+        "ab": "Compound Eyes",
+        "canEvolve": true,
+    },
+    "Galvantula": {
+        "t1": "Bug",
+        "t2": "Electric",
+        "bs": {
+            "hp": 70,
+            "at": 77,
+            "df": 60,
+            "sa": 97,
+            "sd": 60,
+            "sp": 108
+        },
+        "w": 14.3,
+        "ab": "Compound Eyes",
+    },
+    "Ferroseed": {
+        "t1": "Grass",
+        "t2": "Steel",
+        "bs": {
+            "hp": 44,
+            "at": 50,
+            "df": 91,
+            "sa": 24,
+            "sd": 86,
+            "sp": 10
+        },
+        "w": 18.8,
+        "ab": "Iron Barbs",
+        "canEvolve": true,
+    },
+    "Ferrothorn": {
+        "t1": "Grass",
+        "t2": "Steel",
+        "bs": {
+            "hp": 74,
+            "at": 94,
+            "df": 131,
+            "sa": 54,
+            "sd": 116,
+            "sp": 20
+        },
+        "w": 110.0,
+        "ab": "Iron Barbs",
+    },
+    "Klink": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 40,
+            "at": 55,
+            "df": 70,
+            "sa": 45,
+            "sd": 60,
+            "sp": 30
+        },
+        "w": 21.0,
+        "ab": "Clear Body",
+        "canEvolve": true,
+    },
+    "Klang": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 60,
+            "at": 80,
+            "df": 95,
+            "sa": 70,
+            "sd": 85,
+            "sp": 50
+        },
+        "w": 51.0,
+        "ab": "Clear Body",
+        "canEvolve": true,
+    },
+    "Klinklang": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 60,
+            "at": 100,
+            "df": 115,
+            "sa": 70,
+            "sd": 85,
+            "sp": 90
+        },
+        "w": 81.0,
+        "ab": "Clear Body",
+    },
+    "Tynamo": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 45,
+            "sd": 40,
+            "sp": 60
+        },
+        "w": 0.3,
+        "ab": "Levitate",
         "canEvolve": true,
     },
     "Eelektrik": {
@@ -7844,104 +8866,75 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "ab": "Analytic",
         "canEvolve": true,
     },
-    "Emboar": {
-        "t1": "Fire",
-        "t2": "Fighting",
+    "Beheeyem": {
+        "t1": "Psychic",
         "bs": {
-            "hp": 110,
-            "at": 123,
-            "df": 65,
-            "sa": 100,
-            "sd": 65,
-            "sp": 65
-        },
-        "w": 150.0,
-        "ab": "Blaze"
-    },
-    "Emolga": {
-        "t1": "Electric",
-        "t2": "Flying",
-        "bs": {
-            "hp": 55,
+            "hp": 75,
             "at": 75,
-            "df": 60,
-            "sa": 75,
-            "sd": 60,
-            "sp": 103
+            "df": 75,
+            "sa": 125,
+            "sd": 95,
+            "sp": 40
         },
-        "w": 5.0,
-        "ab": "Motor Drive",
+        "w": 34.5,
+        "ab": "Analytic",
     },
-    "Escavalier": {
-        "t1": "Bug",
-        "t2": "Steel",
+    "Litwick": {
+        "t1": "Ghost",
+        "t2": "Fire",
         "bs": {
-            "hp": 70,
-            "at": 135,
-            "df": 105,
-            "sa": 60,
-            "sd": 105,
+            "hp": 50,
+            "at": 30,
+            "df": 55,
+            "sa": 65,
+            "sd": 55,
             "sp": 20
         },
-        "w": 33.0,
-        "ab": "Swarm",
-    },
-    "Excadrill": {
-        "t1": "Ground",
-        "t2": "Steel",
-        "bs": {
-            "hp": 110,
-            "at": 135,
-            "df": 60,
-            "sa": 50,
-            "sd": 65,
-            "sp": 88
-        },
-        "w": 40.4,
-        "ab": "Sand Rush",
-    },
-    "Ferroseed": {
-        "t1": "Grass",
-        "t2": "Steel",
-        "bs": {
-            "hp": 44,
-            "at": 50,
-            "df": 91,
-            "sa": 24,
-            "sd": 86,
-            "sp": 10
-        },
-        "w": 18.8,
-        "ab": "Iron Barbs",
+        "w": 3.1,
+        "ab": "Flash Fire",
         "canEvolve": true,
     },
-    "Ferrothorn": {
-        "t1": "Grass",
-        "t2": "Steel",
+    "Lampent": {
+        "t1": "Ghost",
+        "t2": "Fire",
         "bs": {
-            "hp": 74,
-            "at": 94,
-            "df": 131,
-            "sa": 54,
-            "sd": 116,
-            "sp": 20
+            "hp": 60,
+            "at": 40,
+            "df": 60,
+            "sa": 95,
+            "sd": 60,
+            "sp": 55
         },
-        "w": 110.0,
-        "ab": "Iron Barbs",
+        "w": 13.0,
+        "ab": "Flash Fire",
+        "canEvolve": true,
     },
-    "Foongus": {
-        "t1": "Grass",
-        "t2": "Poison",
+    "Chandelure": {
+        "t1": "Ghost",
+        "t2": "Fire",
         "bs": {
-            "hp": 69,
+            "hp": 60,
             "at": 55,
-            "df": 45,
-            "sa": 55,
-            "sd": 55,
-            "sp": 15
+            "df": 90,
+            "sa": 145,
+            "sd": 90,
+            "sp": 80
         },
-        "w": 1.0,
-        "ab": "Regenerator",
+        "w": 34.3,
+        "ab": "Flash Fire",
+    },
+    "Axew": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 46,
+            "at": 87,
+            "df": 60,
+            "sa": 30,
+            "sd": 40,
+            "sp": 57
+        },
+        "w": 18.0,
+        "ab": "Mold Breaker",
         "canEvolve": true,
     },
     "Fraxure": {
@@ -7958,74 +8951,139 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "ab": "Mold Breaker",
         "canEvolve": true,
     },
-    "Frillish": {
-        "t1": "Water",
-        "t2": "Ghost",
+    "Haxorus": {
+        "t1": "Dragon",
         "bs": {
-            "hp": 55,
-            "at": 40,
-            "df": 50,
-            "sa": 65,
-            "sd": 85,
-            "sp": 40
-        },
-        "w": 33.0,
-        "ab": "Water Absorb",
-        "canEvolve": true,
-    },
-    "Galvantula": {
-        "t1": "Bug",
-        "t2": "Electric",
-        "bs": {
-            "hp": 70,
-            "at": 77,
-            "df": 60,
-            "sa": 97,
-            "sd": 60,
-            "sp": 108
-        },
-        "w": 14.3,
-        "ab": "Compound Eyes",
-    },
-    "Garbodor": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 95,
-            "df": 82,
-            "sa": 60,
-            "sd": 82,
-            "sp": 75
-        },
-        "w": 107.3,
-        "ab": "Aftermath"
-    },
-    "Genesect": {
-        "t1": "Bug",
-        "t2": "Steel",
-        "bs": {
-            "hp": 71,
-            "at": 120,
-            "df": 95,
-            "sa": 120,
-            "sd": 95,
-            "sp": 99
-        },
-        "w": 82.5,
-        "ab": "Download"
-    },
-    "Gigalith": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 85,
-            "at": 135,
-            "df": 130,
+            "hp": 76,
+            "at": 147,
+            "df": 90,
             "sa": 60,
             "sd": 70,
-            "sp": 25
+            "sp": 97
+        },
+        "w": 105.5,
+        "ab": "Mold Breaker",
+    },
+    "Cubchoo": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 55,
+            "at": 70,
+            "df": 40,
+            "sa": 60,
+            "sd": 40,
+            "sp": 40
+        },
+        "w": 8.5,
+        "ab": "Rattled",
+        "canEvolve": true,
+    },
+    "Beartic": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 95,
+            "at": 110,
+            "df": 80,
+            "sa": 70,
+            "sd": 80,
+            "sp": 50
         },
         "w": 260.0,
-        "ab": "Sturdy",
+        "ab": "Swift Swim",
+    },
+    "Cryogonal": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 70,
+            "at": 50,
+            "df": 30,
+            "sa": 95,
+            "sd": 135,
+            "sp": 105
+        },
+        "w": 148.0,
+        "ab": "Levitate"
+    },
+    "Shelmet": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 50,
+            "at": 40,
+            "df": 85,
+            "sa": 40,
+            "sd": 65,
+            "sp": 25
+        },
+        "w": 7.7,
+        "ab": "Shell Armor",
+        "canEvolve": true,
+    },
+    "Accelgor": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 80,
+            "at": 70,
+            "df": 40,
+            "sa": 100,
+            "sd": 60,
+            "sp": 145
+        },
+        "w": 25.3,
+        "ab": "Unburden",
+    },
+    "Stunfisk": {
+        "t1": "Ground",
+        "t2": "Electric",
+        "bs": {
+            "hp": 109,
+            "at": 66,
+            "df": 84,
+            "sa": 81,
+            "sd": 99,
+            "sp": 32
+        },
+        "w": 11.0,
+        "ab": "Static",
+    },
+    "Mienfoo": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 45,
+            "at": 85,
+            "df": 50,
+            "sa": 55,
+            "sd": 50,
+            "sp": 65
+        },
+        "w": 20.0,
+        "ab": "Inner Focus",
+        "canEvolve": true,
+    },
+    "Mienshao": {
+        "t1": "Fighting",
+        "bs": {
+            "hp": 65,
+            "at": 125,
+            "df": 60,
+            "sa": 95,
+            "sd": 60,
+            "sp": 105
+        },
+        "w": 35.5,
+        "ab": "Inner Focus",
+    },
+    "Druddigon": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 77,
+            "at": 120,
+            "df": 90,
+            "sa": 60,
+            "sd": 90,
+            "sp": 48
+        },
+        "w": 139.0,
+        "ab": "Mold Breaker",
     },
     "Golett": {
         "t1": "Ground",
@@ -8056,367 +9114,90 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "w": 330.0,
         "ab": "Iron Fist",
     },
-    "Gothita": {
-        "t1": "Psychic",
+    "Pawniard": {
+        "t1": "Dark",
+        "t2": "Steel",
         "bs": {
             "hp": 45,
-            "at": 30,
-            "df": 50,
-            "sa": 55,
-            "sd": 65,
-            "sp": 45
-        },
-        "w": 5.8,
-        "ab": "Shadow Tag",
-        "canEvolve": true,
-    },
-    "Gothitelle": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 70,
-            "at": 55,
-            "df": 95,
-            "sa": 95,
-            "sd": 110,
-            "sp": 65
-        },
-        "w": 44.0,
-        "ab": "Shadow Tag",
-    },
-    "Gothorita": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 60,
-            "at": 45,
+            "at": 85,
             "df": 70,
-            "sa": 75,
-            "sd": 85,
-            "sp": 55
-        },
-        "w": 18.0,
-        "ab": "Shadow Tag",
-        "canEvolve": true,
-    },
-    "Gurdurr": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 85,
-            "at": 105,
-            "df": 85,
             "sa": 40,
-            "sd": 50,
-            "sp": 40
+            "sd": 40,
+            "sp": 60
         },
-        "w": 40.0,
-        "ab": "Iron Fist",
+        "w": 10.2,
+        "ab": "Defiant",
         "canEvolve": true,
     },
-    "Haxorus": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 76,
-            "at": 147,
-            "df": 90,
-            "sa": 60,
-            "sd": 70,
-            "sp": 97
-        },
-        "w": 105.5,
-        "ab": "Mold Breaker",
-    },
-    "Heatmor": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 85,
-            "at": 97,
-            "df": 66,
-            "sa": 105,
-            "sd": 66,
-            "sp": 65
-        },
-        "w": 58.0,
-        "ab": "White Smoke",
-    },
-    "Herdier": {
-        "t1": "Normal",
+    "Bisharp": {
+        "t1": "Dark",
+        "t2": "Steel",
         "bs": {
             "hp": 65,
-            "at": 80,
-            "df": 65,
-            "sa": 35,
+            "at": 125,
+            "df": 100,
+            "sa": 60,
+            "sd": 70,
+            "sp": 70
+        },
+        "w": 70.0,
+        "ab": "Defiant",
+    },
+    "Bouffalant": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 95,
+            "at": 110,
+            "df": 95,
+            "sa": 40,
+            "sd": 95,
+            "sp": 55
+        },
+        "w": 94.6,
+        "ab": "Reckless",
+    },
+    "Rufflet": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 70,
+            "at": 83,
+            "df": 50,
+            "sa": 37,
+            "sd": 50,
+            "sp": 60
+        },
+        "w": 10.5,
+        "ab": "Hustle",
+        "canEvolve": true,
+    },
+    "Braviary": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 100,
+            "at": 123,
+            "df": 75,
+            "sa": 57,
+            "sd": 75,
+            "sp": 80
+        },
+        "w": 41.0,
+        "ab": "Defiant",
+    },
+    "Vullaby": {
+        "t1": "Dark",
+        "t2": "Flying",
+        "bs": {
+            "hp": 70,
+            "at": 55,
+            "df": 75,
+            "sa": 45,
             "sd": 65,
             "sp": 60
         },
-        "w": 14.7,
-        "ab": "Sand Rush",
-        "canEvolve": true,
-    },
-    "Hydreigon": {
-        "t1": "Dark",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 92,
-            "at": 105,
-            "df": 90,
-            "sa": 125,
-            "sd": 90,
-            "sp": 98
-        },
-        "w": 160.0,
-        "ab": "Levitate"
-    },
-    "Jellicent": {
-        "t1": "Water",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 100,
-            "at": 60,
-            "df": 70,
-            "sa": 85,
-            "sd": 105,
-            "sp": 60
-        },
-        "w": 135.0,
-        "ab": "Water Absorb",
-    },
-    "Joltik": {
-        "t1": "Bug",
-        "t2": "Electric",
-        "bs": {
-            "hp": 50,
-            "at": 47,
-            "df": 50,
-            "sa": 57,
-            "sd": 50,
-            "sp": 65
-        },
-        "w": 0.6,
-        "ab": "Compound Eyes",
-        "canEvolve": true,
-    },
-    "Karrablast": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 50,
-            "at": 75,
-            "df": 45,
-            "sa": 40,
-            "sd": 45,
-            "sp": 60
-        },
-        "w": 5.9,
-        "ab": "No Guard",
-        "canEvolve": true,
-    },
-    "Keldeo": {
-        "t1": "Water",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 91,
-            "at": 72,
-            "df": 90,
-            "sa": 129,
-            "sd": 90,
-            "sp": 108
-        },
-        "w": 48.5,
-        "ab": "Justified"
-    },
-    "Klang": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 60,
-            "at": 80,
-            "df": 95,
-            "sa": 70,
-            "sd": 85,
-            "sp": 50
-        },
-        "w": 51.0,
-        "ab": "Clear Body",
-        "canEvolve": true,
-    },
-    "Klink": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 40,
-            "at": 55,
-            "df": 70,
-            "sa": 45,
-            "sd": 60,
-            "sp": 30
-        },
-        "w": 21.0,
-        "ab": "Clear Body",
-        "canEvolve": true,
-    },
-    "Klinklang": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 60,
-            "at": 100,
-            "df": 115,
-            "sa": 70,
-            "sd": 85,
-            "sp": 90
-        },
-        "w": 81.0,
-        "ab": "Clear Body",
-    },
-    "Krokorok": {
-        "t1": "Ground",
-        "t2": "Dark",
-        "bs": {
-            "hp": 60,
-            "at": 82,
-            "df": 45,
-            "sa": 45,
-            "sd": 45,
-            "sp": 74
-        },
-        "w": 33.4,
-        "ab": "Intimidate",
-        "canEvolve": true,
-    },
-    "Krookodile": {
-        "t1": "Ground",
-        "t2": "Dark",
-        "bs": {
-            "hp": 95,
-            "at": 117,
-            "df": 70,
-            "sa": 65,
-            "sd": 70,
-            "sp": 92
-        },
-        "w": 96.3,
-        "ab": "Intimidate",
-    },
-    "Kyurem": {
-        "t1": "Dragon",
-        "t2": "Ice",
-        "bs": {
-            "hp": 125,
-            "at": 130,
-            "df": 90,
-            "sa": 130,
-            "sd": 90,
-            "sp": 95
-        },
-        "w": 325.0,
-        "ab": "Pressure"
-    },
-    "Lampent": {
-        "t1": "Ghost",
-        "t2": "Fire",
-        "bs": {
-            "hp": 60,
-            "at": 40,
-            "df": 60,
-            "sa": 95,
-            "sd": 60,
-            "sp": 55
-        },
-        "w": 13.0,
-        "ab": "Flash Fire",
-        "canEvolve": true,
-    },
-    "Landorus": {
-        "t1": "Ground",
-        "t2": "Flying",
-        "bs": {
-            "hp": 89,
-            "at": 125,
-            "df": 90,
-            "sa": 115,
-            "sd": 80,
-            "sp": 101
-        },
-        "w": 68.0,
-        "ab": "Sheer Force",
-    },
-    "Larvesta": {
-        "t1": "Bug",
-        "t2": "Fire",
-        "bs": {
-            "hp": 55,
-            "at": 85,
-            "df": 55,
-            "sa": 50,
-            "sd": 55,
-            "sp": 60
-        },
-        "w": 28.8,
-        "ab": "Flame Body",
-        "canEvolve": true,
-    },
-    "Leavanny": {
-        "t1": "Bug",
-        "t2": "Grass",
-        "bs": {
-            "hp": 75,
-            "at": 103,
-            "df": 80,
-            "sa": 70,
-            "sd": 70,
-            "sp": 92
-        },
-        "w": 20.5,
+        "w": 9.0,
         "ab": "Overcoat",
-    },
-    "Liepard": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 64,
-            "at": 88,
-            "df": 50,
-            "sa": 88,
-            "sd": 50,
-            "sp": 106
-        },
-        "w": 37.5,
-        "ab": "Prankster",
-    },
-    "Lilligant": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 70,
-            "at": 60,
-            "df": 75,
-            "sa": 110,
-            "sd": 75,
-            "sp": 90
-        },
-        "w": 16.3,
-        "ab": "Chlorophyll",
-    },
-    "Lillipup": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 45,
-            "at": 60,
-            "df": 45,
-            "sa": 25,
-            "sd": 45,
-            "sp": 55
-        },
-        "w": 4.1,
-        "ab": "Vital Spirit",
-        "canEvolve": true,
-    },
-    "Litwick": {
-        "t1": "Ghost",
-        "t2": "Fire",
-        "bs": {
-            "hp": 50,
-            "at": 30,
-            "df": 55,
-            "sa": 65,
-            "sd": 55,
-            "sp": 20
-        },
-        "w": 3.1,
-        "ab": "Flash Fire",
         "canEvolve": true,
     },
     "Mandibuzz": {
@@ -8433,18 +9214,244 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "w": 39.5,
         "ab": "Overcoat",
     },
-    "Maractus": {
-        "t1": "Grass",
+    "Heatmor": {
+        "t1": "Fire",
         "bs": {
-            "hp": 75,
-            "at": 86,
-            "df": 67,
-            "sa": 106,
-            "sd": 67,
+            "hp": 85,
+            "at": 97,
+            "df": 66,
+            "sa": 105,
+            "sd": 66,
+            "sp": 65
+        },
+        "w": 58.0,
+        "ab": "White Smoke",
+    },
+    "Durant": {
+        "t1": "Bug",
+        "t2": "Steel",
+        "bs": {
+            "hp": 58,
+            "at": 109,
+            "df": 112,
+            "sa": 48,
+            "sd": 48,
+            "sp": 109
+        },
+        "w": 33.0,
+        "ab": "Hustle",
+    },
+    "Deino": {
+        "t1": "Dark",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 52,
+            "at": 65,
+            "df": 50,
+            "sa": 45,
+            "sd": 50,
+            "sp": 38
+        },
+        "w": 17.3,
+        "ab": "Hustle",
+        "canEvolve": true,
+    },
+    "Zweilous": {
+        "t1": "Dark",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 72,
+            "at": 85,
+            "df": 70,
+            "sa": 65,
+            "sd": 70,
+            "sp": 58
+        },
+        "w": 50.0,
+        "ab": "Hustle",
+        "canEvolve": true,
+    },
+    "Hydreigon": {
+        "t1": "Dark",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 92,
+            "at": 105,
+            "df": 90,
+            "sa": 125,
+            "sd": 90,
+            "sp": 98
+        },
+        "w": 160.0,
+        "ab": "Levitate"
+    },
+    "Larvesta": {
+        "t1": "Bug",
+        "t2": "Fire",
+        "bs": {
+            "hp": 55,
+            "at": 85,
+            "df": 55,
+            "sa": 50,
+            "sd": 55,
             "sp": 60
         },
-        "w": 28.0,
-        "ab": "Chlorophyll",
+        "w": 28.8,
+        "ab": "Flame Body",
+        "canEvolve": true,
+    },
+    "Volcarona": {
+        "t1": "Bug",
+        "t2": "Fire",
+        "bs": {
+            "hp": 85,
+            "at": 60,
+            "df": 65,
+            "sa": 135,
+            "sd": 105,
+            "sp": 100
+        },
+        "w": 46.0,
+        "ab": "Flame Body",
+    },
+    "Cobalion": {
+        "t1": "Steel",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 91,
+            "at": 90,
+            "df": 129,
+            "sa": 90,
+            "sd": 72,
+            "sp": 108
+        },
+        "w": 250.0,
+        "ab": "Justified"
+    },
+    "Terrakion": {
+        "t1": "Rock",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 91,
+            "at": 129,
+            "df": 90,
+            "sa": 72,
+            "sd": 90,
+            "sp": 108
+        },
+        "w": 260.0,
+        "ab": "Justified"
+    },
+    "Virizion": {
+        "t1": "Grass",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 91,
+            "at": 90,
+            "df": 72,
+            "sa": 90,
+            "sd": 129,
+            "sp": 108
+        },
+        "w": 200.0,
+        "ab": "Justified"
+    },
+    "Tornadus": {
+        "t1": "Flying",
+        "bs": {
+            "hp": 79,
+            "at": 115,
+            "df": 70,
+            "sa": 125,
+            "sd": 80,
+            "sp": 111
+        },
+        "w": 63.0,
+        "ab": "Defiant",
+    },
+    "Thundurus": {
+        "t1": "Electric",
+        "t2": "Flying",
+        "bs": {
+            "hp": 79,
+            "at": 115,
+            "df": 70,
+            "sa": 125,
+            "sd": 80,
+            "sp": 111
+        },
+        "w": 61.0,
+        "ab": "Prankster",
+    },
+    "Reshiram": {
+        "t1": "Dragon",
+        "t2": "Fire",
+        "bs": {
+            "hp": 100,
+            "at": 120,
+            "df": 100,
+            "sa": 150,
+            "sd": 120,
+            "sp": 90
+        },
+        "w": 330.0,
+        "ab": "Turboblaze"
+    },
+    "Zekrom": {
+        "t1": "Dragon",
+        "t2": "Electric",
+        "bs": {
+            "hp": 100,
+            "at": 150,
+            "df": 120,
+            "sa": 120,
+            "sd": 100,
+            "sp": 90
+        },
+        "w": 345.0,
+        "ab": "Teravolt"
+    },
+    "Landorus": {
+        "t1": "Ground",
+        "t2": "Flying",
+        "bs": {
+            "hp": 89,
+            "at": 125,
+            "df": 90,
+            "sa": 115,
+            "sd": 80,
+            "sp": 101
+        },
+        "w": 68.0,
+        "ab": "Sheer Force",
+    },
+    "Kyurem": {
+        "t1": "Dragon",
+        "t2": "Ice",
+        "bs": {
+            "hp": 125,
+            "at": 130,
+            "df": 90,
+            "sa": 130,
+            "sd": 90,
+            "sp": 95
+        },
+        "w": 325.0,
+        "ab": "Pressure"
+    },
+    "Keldeo": {
+        "t1": "Water",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 91,
+            "at": 72,
+            "df": 90,
+            "sa": 129,
+            "sd": 90,
+            "sp": 108
+        },
+        "w": 48.5,
+        "ab": "Justified"
     },
     "Meloetta": {
         "t1": "Normal",
@@ -8479,1026 +9486,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "ab": "Serene Grace",
         "isAlternateForme": true
     },
-    "Mienfoo": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 45,
-            "at": 85,
-            "df": 50,
-            "sa": 55,
-            "sd": 50,
-            "sp": 65
-        },
-        "w": 20.0,
-        "ab": "Inner Focus",
-        "canEvolve": true,
-    },
-    "Mienshao": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 65,
-            "at": 125,
-            "df": 60,
-            "sa": 95,
-            "sd": 60,
-            "sp": 105
-        },
-        "w": 35.5,
-        "ab": "Inner Focus",
-    },
-    "Minccino": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 55,
-            "at": 50,
-            "df": 40,
-            "sa": 40,
-            "sd": 40,
-            "sp": 75
-        },
-        "w": 5.8,
-        "ab": "Skill Link",
-        "canEvolve": true,
-    },
-    "Munna": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 76,
-            "at": 25,
-            "df": 45,
-            "sa": 67,
-            "sd": 55,
-            "sp": 24
-        },
-        "w": 23.3,
-        "ab": "Telepathy",
-        "canEvolve": true,
-    },
-    "Musharna": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 116,
-            "at": 55,
-            "df": 85,
-            "sa": 107,
-            "sd": 95,
-            "sp": 29
-        },
-        "w": 60.5,
-        "ab": "Telepathy",
-    },
-    "Oshawott": {
-        "t1": "Water",
-        "bs": {
-            "hp": 55,
-            "at": 55,
-            "df": 45,
-            "sa": 63,
-            "sd": 45,
-            "sp": 45
-        },
-        "w": 5.9,
-        "ab": "Torrent",
-        "canEvolve": true,
-    },
-    "Palpitoad": {
-        "t1": "Water",
-        "t2": "Ground",
-        "bs": {
-            "hp": 75,
-            "at": 65,
-            "df": 55,
-            "sa": 65,
-            "sd": 55,
-            "sp": 69
-        },
-        "w": 17.0,
-        "ab": "Swift Swim",
-        "canEvolve": true,
-    },
-    "Panpour": {
-        "t1": "Water",
-        "bs": {
-            "hp": 50,
-            "at": 53,
-            "df": 48,
-            "sa": 53,
-            "sd": 48,
-            "sp": 64
-        },
-        "w": 13.5,
-        "ab": "Torrent",
-        "canEvolve": true,
-    },
-    "Pansage": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 50,
-            "at": 53,
-            "df": 48,
-            "sa": 53,
-            "sd": 48,
-            "sp": 64
-        },
-        "w": 10.5,
-        "ab": "Overgrow",
-        "canEvolve": true,
-    },
-    "Pansear": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 50,
-            "at": 53,
-            "df": 48,
-            "sa": 53,
-            "sd": 48,
-            "sp": 64
-        },
-        "w": 11.0,
-        "ab": "Blaze",
-        "canEvolve": true,
-    },
-    "Patrat": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 45,
-            "at": 55,
-            "df": 39,
-            "sa": 35,
-            "sd": 39,
-            "sp": 42
-        },
-        "w": 11.6,
-        "ab": "Analytic",
-        "canEvolve": true,
-    },
-    "Pawniard": {
-        "t1": "Dark",
+    "Genesect": {
+        "t1": "Bug",
         "t2": "Steel",
         "bs": {
-            "hp": 45,
-            "at": 85,
-            "df": 70,
-            "sa": 40,
-            "sd": 40,
-            "sp": 60
-        },
-        "w": 10.2,
-        "ab": "Defiant",
-        "canEvolve": true,
-    },
-    "Petilil": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 45,
-            "at": 35,
-            "df": 50,
-            "sa": 70,
-            "sd": 50,
-            "sp": 30
-        },
-        "w": 6.6,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Pidove": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 50,
-            "at": 55,
-            "df": 50,
-            "sa": 36,
-            "sd": 30,
-            "sp": 43
-        },
-        "w": 2.1,
-        "ab": "Super Luck",
-        "canEvolve": true,
-    },
-    "Pignite": {
-        "t1": "Fire",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 90,
-            "at": 93,
-            "df": 55,
-            "sa": 70,
-            "sd": 55,
-            "sp": 55
-        },
-        "w": 55.5,
-        "ab": "Blaze",
-        "canEvolve": true,
-    },
-    "Purrloin": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 41,
-            "at": 50,
-            "df": 37,
-            "sa": 50,
-            "sd": 37,
-            "sp": 66
-        },
-        "w": 10.1,
-        "ab": "Prankster",
-        "canEvolve": true,
-    },
-    "Reshiram": {
-        "t1": "Dragon",
-        "t2": "Fire",
-        "bs": {
-            "hp": 100,
-            "at": 120,
-            "df": 100,
-            "sa": 150,
-            "sd": 120,
-            "sp": 90
-        },
-        "w": 330.0,
-        "ab": "Turboblaze"
-    },
-    "Reuniclus": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 110,
-            "at": 65,
-            "df": 75,
-            "sa": 125,
-            "sd": 85,
-            "sp": 30
-        },
-        "w": 20.1,
-        "ab": "Magic Guard",
-    },
-    "Roggenrola": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 55,
-            "at": 75,
-            "df": 85,
-            "sa": 25,
-            "sd": 25,
-            "sp": 15
-        },
-        "w": 18.0,
-        "ab": "Sturdy",
-        "canEvolve": true,
-    },
-    "Rufflet": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 70,
-            "at": 83,
-            "df": 50,
-            "sa": 37,
-            "sd": 50,
-            "sp": 60
-        },
-        "w": 10.5,
-        "ab": "Hustle",
-        "canEvolve": true,
-    },
-    "Samurott": {
-        "t1": "Water",
-        "bs": {
-            "hp": 95,
-            "at": 100,
-            "df": 85,
-            "sa": 108,
-            "sd": 70,
-            "sp": 70
-        },
-        "w": 94.6,
-        "ab": "Torrent"
-    },
-    "Sandile": {
-        "t1": "Ground",
-        "t2": "Dark",
-        "bs": {
-            "hp": 50,
-            "at": 72,
-            "df": 35,
-            "sa": 35,
-            "sd": 35,
-            "sp": 65
-        },
-        "w": 15.2,
-        "ab": "Intimidate",
-        "canEvolve": true,
-    },
-    "Sawk": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 75,
-            "at": 125,
-            "df": 75,
-            "sa": 30,
-            "sd": 75,
-            "sp": 85
-        },
-        "w": 51.0,
-        "ab": "Sturdy",
-    },
-    "Sawsbuck": {
-        "t1": "Normal",
-        "t2": "Grass",
-        "bs": {
-            "hp": 80,
-            "at": 100,
-            "df": 70,
-            "sa": 60,
-            "sd": 70,
-            "sp": 95
-        },
-        "w": 92.5,
-        "ab": "Sap Sipper",
-    },
-    "Scolipede": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 60,
-            "at": 90,
-            "df": 89,
-            "sa": 55,
-            "sd": 69,
-            "sp": 112
-        },
-        "w": 200.5,
-        "ab": "Swarm",
-    },
-    "Scrafty": {
-        "t1": "Dark",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 65,
-            "at": 90,
-            "df": 115,
-            "sa": 45,
-            "sd": 115,
-            "sp": 58
-        },
-        "w": 30.0,
-        "ab": "Intimidate",
-    },
-    "Scraggy": {
-        "t1": "Dark",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 50,
-            "at": 75,
-            "df": 70,
-            "sa": 35,
-            "sd": 70,
-            "sp": 48
-        },
-        "w": 11.8,
-        "ab": "Intimidate",
-        "canEvolve": true,
-    },
-    "Seismitoad": {
-        "t1": "Water",
-        "t2": "Ground",
-        "bs": {
-            "hp": 105,
-            "at": 85,
-            "df": 75,
-            "sa": 85,
-            "sd": 75,
-            "sp": 74
-        },
-        "w": 62.0,
-        "ab": "Water Absorb",
-    },
-    "Serperior": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 75,
-            "at": 75,
-            "df": 95,
-            "sa": 75,
-            "sd": 95,
-            "sp": 113
-        },
-        "w": 63.0,
-        "ab": "Overgrow"
-    },
-    "Servine": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 75,
-            "sa": 60,
-            "sd": 75,
-            "sp": 83
-        },
-        "w": 16.0,
-        "ab": "Overgrow",
-        "canEvolve": true,
-    },
-    "Sewaddle": {
-        "t1": "Bug",
-        "t2": "Grass",
-        "bs": {
-            "hp": 45,
-            "at": 53,
-            "df": 70,
-            "sa": 40,
-            "sd": 60,
-            "sp": 42
-        },
-        "w": 2.5,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Shelmet": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 50,
-            "at": 40,
-            "df": 85,
-            "sa": 40,
-            "sd": 65,
-            "sp": 25
-        },
-        "w": 7.7,
-        "ab": "Shell Armor",
-        "canEvolve": true,
-    },
-    "Sigilyph": {
-        "t1": "Psychic",
-        "t2": "Flying",
-        "bs": {
-            "hp": 72,
-            "at": 58,
-            "df": 80,
-            "sa": 103,
-            "sd": 80,
-            "sp": 97
-        },
-        "w": 14.0,
-        "ab": "Wonder Skin",
-    },
-    "Simipour": {
-        "t1": "Water",
-        "bs": {
-            "hp": 75,
-            "at": 98,
-            "df": 63,
-            "sa": 98,
-            "sd": 63,
-            "sp": 101
-        },
-        "w": 29.0,
-        "ab": "Torrent",
-    },
-    "Simisage": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 75,
-            "at": 98,
-            "df": 63,
-            "sa": 98,
-            "sd": 63,
-            "sp": 101
-        },
-        "w": 30.5,
-        "ab": "Overgrow",
-    },
-    "Simisear": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 75,
-            "at": 98,
-            "df": 63,
-            "sa": 98,
-            "sd": 63,
-            "sp": 101
-        },
-        "w": 28.0,
-        "ab": "Blaze",
-    },
-    "Snivy": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 45,
-            "at": 45,
-            "df": 55,
-            "sa": 45,
-            "sd": 55,
-            "sp": 63
-        },
-        "w": 8.1,
-        "ab": "Overgrow",
-        "canEvolve": true,
-    },
-    "Solosis": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 45,
-            "at": 30,
-            "df": 40,
-            "sa": 105,
-            "sd": 50,
-            "sp": 20
-        },
-        "w": 1.0,
-        "ab": "Magic Guard",
-        "canEvolve": true,
-    },
-    "Stoutland": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 85,
-            "at": 100,
-            "df": 90,
-            "sa": 45,
-            "sd": 90,
-            "sp": 80
-        },
-        "w": 61.0,
-        "ab": "Intimidate",
-    },
-    "Stunfisk": {
-        "t1": "Ground",
-        "t2": "Electric",
-        "bs": {
-            "hp": 109,
-            "at": 66,
-            "df": 84,
-            "sa": 81,
-            "sd": 99,
-            "sp": 32
-        },
-        "w": 11.0,
-        "ab": "Static",
-    },
-    "Swadloon": {
-        "t1": "Bug",
-        "t2": "Grass",
-        "bs": {
-            "hp": 55,
-            "at": 63,
-            "df": 90,
-            "sa": 50,
-            "sd": 80,
-            "sp": 42
-        },
-        "w": 7.3,
-        "ab": "Chlorophyll",
-        "canEvolve": true,
-    },
-    "Swanna": {
-        "t1": "Water",
-        "t2": "Flying",
-        "bs": {
-            "hp": 75,
-            "at": 87,
-            "df": 63,
-            "sa": 87,
-            "sd": 63,
-            "sp": 98
-        },
-        "w": 24.2,
-        "ab": "Big Pecks",
-    },
-    "Swoobat": {
-        "t1": "Psychic",
-        "t2": "Flying",
-        "bs": {
-            "hp": 67,
-            "at": 57,
-            "df": 55,
-            "sa": 77,
-            "sd": 55,
-            "sp": 114
-        },
-        "w": 10.5,
-        "ab": "Simple",
-    },
-    "Tepig": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 65,
-            "at": 63,
-            "df": 45,
-            "sa": 45,
-            "sd": 45,
-            "sp": 45
-        },
-        "w": 9.9,
-        "ab": "Blaze",
-        "canEvolve": true,
-    },
-    "Terrakion": {
-        "t1": "Rock",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 91,
-            "at": 129,
-            "df": 90,
-            "sa": 72,
-            "sd": 90,
-            "sp": 108
-        },
-        "w": 260.0,
-        "ab": "Justified"
-    },
-    "Throh": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 120,
-            "at": 100,
-            "df": 85,
-            "sa": 30,
-            "sd": 85,
-            "sp": 45
-        },
-        "w": 55.5,
-        "ab": "Inner Focus",
-    },
-    "Thundurus": {
-        "t1": "Electric",
-        "t2": "Flying",
-        "bs": {
-            "hp": 79,
-            "at": 115,
-            "df": 70,
-            "sa": 125,
-            "sd": 80,
-            "sp": 111
-        },
-        "w": 61.0,
-        "ab": "Prankster",
-    },
-    "Timburr": {
-        "t1": "Fighting",
-        "bs": {
-            "hp": 75,
-            "at": 80,
-            "df": 55,
-            "sa": 25,
-            "sd": 35,
-            "sp": 35
-        },
-        "w": 12.5,
-        "ab": "Iron Fist",
-        "canEvolve": true,
-    },
-    "Tirtouga": {
-        "t1": "Water",
-        "t2": "Rock",
-        "bs": {
-            "hp": 54,
-            "at": 78,
-            "df": 103,
-            "sa": 53,
-            "sd": 45,
-            "sp": 22
-        },
-        "w": 16.5,
-        "ab": "Solid Rock",
-        "canEvolve": true,
-    },
-    "Tornadus": {
-        "t1": "Flying",
-        "bs": {
-            "hp": 79,
-            "at": 115,
-            "df": 70,
-            "sa": 125,
-            "sd": 80,
-            "sp": 111
-        },
-        "w": 63.0,
-        "ab": "Defiant",
-    },
-    "Tranquill": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 62,
-            "at": 77,
-            "df": 62,
-            "sa": 50,
-            "sd": 42,
-            "sp": 65
-        },
-        "w": 15.0,
-        "ab": "Super Luck",
-        "canEvolve": true,
-    },
-    "Trubbish": {
-        "t1": "Poison",
-        "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 62,
-            "sa": 40,
-            "sd": 62,
-            "sp": 65
-        },
-        "w": 31.0,
-        "ab": "Aftermath",
-        "canEvolve": true,
-    },
-    "Tympole": {
-        "t1": "Water",
-        "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 40,
-            "sa": 50,
-            "sd": 40,
-            "sp": 64
-        },
-        "w": 4.5,
-        "ab": "Swift Swim",
-        "canEvolve": true,
-    },
-    "Tynamo": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 35,
-            "at": 55,
-            "df": 40,
-            "sa": 45,
-            "sd": 40,
-            "sp": 60
-        },
-        "w": 0.3,
-        "ab": "Levitate",
-        "canEvolve": true,
-    },
-    "Unfezant": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 80,
-            "at": 105,
-            "df": 80,
-            "sa": 65,
-            "sd": 55,
-            "sp": 93
-        },
-        "w": 29.0,
-        "ab": "Super Luck",
-    },
-    "Vanillish": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 51,
-            "at": 65,
-            "df": 65,
-            "sa": 80,
-            "sd": 75,
-            "sp": 59
-        },
-        "w": 41.0,
-        "ab": "Ice Body",
-        "canEvolve": true,
-    },
-    "Vanillite": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 36,
-            "at": 50,
-            "df": 50,
-            "sa": 65,
-            "sd": 60,
-            "sp": 44
-        },
-        "w": 5.7,
-        "ab": "Ice Body",
-        "canEvolve": true,
-    },
-    "Vanilluxe": {
-        "t1": "Ice",
-        "bs": {
             "hp": 71,
-            "at": 95,
-            "df": 85,
-            "sa": 110,
+            "at": 120,
+            "df": 95,
+            "sa": 120,
             "sd": 95,
-            "sp": 79
+            "sp": 99
         },
-        "w": 57.5,
-        "ab": "Ice Body",
-    },
-    "Venipede": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 30,
-            "at": 45,
-            "df": 59,
-            "sa": 30,
-            "sd": 39,
-            "sp": 57
-        },
-        "w": 5.3,
-        "ab": "Swarm",
-        "canEvolve": true,
-    },
-    "Victini": {
-        "t1": "Psychic",
-        "t2": "Fire",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 100,
-            "sa": 100,
-            "sd": 100,
-            "sp": 100
-        },
-        "w": 4.0,
-        "ab": "Victory Star"
-    },
-    "Virizion": {
-        "t1": "Grass",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 91,
-            "at": 90,
-            "df": 72,
-            "sa": 90,
-            "sd": 129,
-            "sp": 108
-        },
-        "w": 200.0,
-        "ab": "Justified"
-    },
-    "Volcarona": {
-        "t1": "Bug",
-        "t2": "Fire",
-        "bs": {
-            "hp": 85,
-            "at": 60,
-            "df": 65,
-            "sa": 135,
-            "sd": 105,
-            "sp": 100
-        },
-        "w": 46.0,
-        "ab": "Flame Body",
-    },
-    "Vullaby": {
-        "t1": "Dark",
-        "t2": "Flying",
-        "bs": {
-            "hp": 70,
-            "at": 55,
-            "df": 75,
-            "sa": 45,
-            "sd": 65,
-            "sp": 60
-        },
-        "w": 9.0,
-        "ab": "Overcoat",
-        "canEvolve": true,
-    },
-    "Watchog": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 60,
-            "at": 85,
-            "df": 69,
-            "sa": 60,
-            "sd": 69,
-            "sp": 77
-        },
-        "w": 27.0,
-        "ab": "Analytic",
-    },
-    "Whimsicott": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 60,
-            "at": 67,
-            "df": 85,
-            "sa": 77,
-            "sd": 75,
-            "sp": 116
-        },
-        "w": 6.6,
-        "ab": "Prankster",
-    },
-    "Whirlipede": {
-        "t1": "Bug",
-        "t2": "Poison",
-        "bs": {
-            "hp": 40,
-            "at": 55,
-            "df": 99,
-            "sa": 40,
-            "sd": 79,
-            "sp": 47
-        },
-        "w": 58.5,
-        "ab": "Swarm",
-        "canEvolve": true,
-    },
-    "Woobat": {
-        "t1": "Psychic",
-        "t2": "Flying",
-        "bs": {
-            "hp": 55,
-            "at": 45,
-            "df": 43,
-            "sa": 55,
-            "sd": 43,
-            "sp": 72
-        },
-        "w": 2.1,
-        "ab": "Unaware",
-        "canEvolve": true,
-    },
-    "Yamask": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 38,
-            "at": 30,
-            "df": 85,
-            "sa": 55,
-            "sd": 65,
-            "sp": 30
-        },
-        "w": 1.5,
-        "ab": "Mummy",
-        "canEvolve": true,
-    },
-    "Zebstrika": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 75,
-            "at": 100,
-            "df": 63,
-            "sa": 80,
-            "sd": 63,
-            "sp": 116
-        },
-        "w": 79.5,
-        "ab": "Lightning Rod",
-    },
-    "Zekrom": {
-        "t1": "Dragon",
-        "t2": "Electric",
-        "bs": {
-            "hp": 100,
-            "at": 150,
-            "df": 120,
-            "sa": 120,
-            "sd": 100,
-            "sp": 90
-        },
-        "w": 345.0,
-        "ab": "Teravolt"
-    },
-    "Zoroark": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 60,
-            "at": 105,
-            "df": 60,
-            "sa": 120,
-            "sd": 60,
-            "sp": 105
-        },
-        "w": 81.1,
-        "ab": "Illusion"
-    },
-    "Zorua": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 40,
-            "at": 65,
-            "df": 40,
-            "sa": 80,
-            "sd": 40,
-            "sp": 65
-        },
-        "w": 12.5,
-        "ab": "Illusion",
-        "canEvolve": true,
-    },
-    "Zweilous": {
-        "t1": "Dark",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 72,
-            "at": 85,
-            "df": 70,
-            "sa": 65,
-            "sd": 70,
-            "sp": 58
-        },
-        "w": 50.0,
-        "ab": "Hustle",
-        "canEvolve": true,
+        "w": 82.5,
+        "ab": "Download"
     },
     //B2W2 Pokemon
     "Tornadus-Therian": {
@@ -9681,855 +9681,19 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "Krookodile": { "bs": { "df": 80 } },
 
     //XY Pokemon
-    "Aegislash": {
-        "t1": "Steel",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 60,
-            "at": 50,
-            "df": 150,
-            "sa": 50,
-            "sd": 150,
-            "sp": 60
-        },
-        "w": 53.0,
-        "ab": "Stance Change",
-        "formes": ["Aegislash-Shield", "Aegislash-Blade"]
-    },
-    "Aegislash-Blade": {
-        "t1": "Steel",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 60,
-            "at": 150,
-            "df": 50,
-            "sa": 150,
-            "sd": 50,
-            "sp": 60
-        },
-        "w": 53.0,
-        "ab": "Stance Change",
-        "isAlternateForme": true
-    },
-    "Aegislash-Shield": {
-        "t1": "Steel",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 60,
-            "at": 50,
-            "df": 150,
-            "sa": 50,
-            "sd": 150,
-            "sp": 60
-        },
-        "w": 53.0,
-        "ab": "Stance Change",
-        "isAlternateForme": true
-    },
-    "Amaura": {
-        "t1": "Rock",
-        "t2": "Ice",
-        "bs": {
-            "hp": 77,
-            "at": 59,
-            "df": 50,
-            "sa": 67,
-            "sd": 63,
-            "sp": 46
-        },
-        "w": 25.2,
-        "ab": "Refrigerate",
-        "canEvolve": true,
-    },
-    "Aromatisse": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 101,
-            "at": 72,
-            "df": 72,
-            "sa": 99,
-            "sd": 89,
-            "sp": 29
-        },
-        "w": 15.5,
-        "ab": "Healer",
-    },
-    "Aurorus": {
-        "t1": "Rock",
-        "t2": "Ice",
-        "bs": {
-            "hp": 123,
-            "at": 77,
-            "df": 72,
-            "sa": 99,
-            "sd": 92,
-            "sp": 58
-        },
-        "w": 225.0,
-        "ab": "Refrigerate"
-    },
-    "Avalugg": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 95,
-            "at": 117,
-            "df": 184,
-            "sa": 44,
-            "sd": 46,
-            "sp": 28
-        },
-        "w": 505.0,
-        "ab": "Own Tempo",
-    },
-    "Barbaracle": {
-        "t1": "Rock",
-        "t2": "Water",
-        "bs": {
-            "hp": 72,
-            "at": 105,
-            "df": 115,
-            "sa": 54,
-            "sd": 86,
-            "sp": 68
-        },
-        "w": 96.0,
-        "ab": "Tough Claws",
-    },
-    "Bergmite": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 55,
-            "at": 69,
-            "df": 85,
-            "sa": 32,
-            "sd": 35,
-            "sp": 28
-        },
-        "w": 99.5,
-        "ab": "Sturdy",
-        "canEvolve": true,
-    },
-    "Binacle": {
-        "t1": "Rock",
-        "t2": "Water",
-        "bs": {
-            "hp": 42,
-            "at": 52,
-            "df": 67,
-            "sa": 39,
-            "sd": 56,
-            "sp": 50
-        },
-        "w": 31.0,
-        "ab": "Tough Claws",
-        "canEvolve": true,
-    },
-    "Braixen": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 59,
-            "at": 59,
-            "df": 58,
-            "sa": 90,
-            "sd": 70,
-            "sp": 73
-        },
-        "w": 14.5,
-        "ab": "Magician",
-        "canEvolve": true,
-    },
-    "Bunnelby": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 38,
-            "at": 36,
-            "df": 38,
-            "sa": 32,
-            "sd": 36,
-            "sp": 57
-        },
-        "w": 5.0,
-        "ab": "Huge Power",
-        "canEvolve": true,
-    },
-    "Carbink": {
-        "t1": "Rock",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 150,
-            "sa": 50,
-            "sd": 150,
-            "sp": 50
-        },
-        "w": 5.7,
-        "ab": "Sturdy",
-    },
-    "Chesnaught": {
+    "Mega Venusaur": {
         "t1": "Grass",
-        "t2": "Fighting",
+        "t2": "Poison",
         "bs": {
-            "hp": 88,
-            "at": 107,
-            "df": 122,
-            "sa": 74,
-            "sd": 75,
-            "sp": 64
-        },
-        "w": 90.0,
-        "ab": "Bulletproof",
-    },
-    "Chespin": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 56,
-            "at": 61,
-            "df": 65,
-            "sa": 48,
-            "sd": 45,
-            "sp": 38
-        },
-        "w": 9.0,
-        "ab": "Bulletproof",
-        "canEvolve": true,
-    },
-    "Clauncher": {
-        "t1": "Water",
-        "bs": {
-            "hp": 50,
-            "at": 53,
-            "df": 62,
-            "sa": 58,
-            "sd": 63,
-            "sp": 44
-        },
-        "w": 8.3,
-        "ab": "Mega Launcher",
-        "canEvolve": true,
-    },
-    "Clawitzer": {
-        "t1": "Water",
-        "bs": {
-            "hp": 71,
-            "at": 73,
-            "df": 88,
-            "sa": 120,
-            "sd": 89,
-            "sp": 59
-        },
-        "w": 35.3,
-        "ab": "Mega Launcher"
-    },
-    "Diancie": {
-        "t1": "Rock",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 50,
+            "hp": 80,
             "at": 100,
-            "df": 150,
-            "sa": 100,
-            "sd": 150,
-            "sp": 50
-        },
-        "w": 8.8,
-        "ab": "Clear Body",
-        "formes": [
-            "Diancie",
-            "Mega Diancie"
-        ]
-    },
-    "Dedenne": {
-        "t1": "Electric",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 67,
-            "at": 58,
-            "df": 57,
-            "sa": 81,
-            "sd": 67,
-            "sp": 101
-        },
-        "w": 2.2,
-        "ab": "Cheek Pouch",
-    },
-    "Delphox": {
-        "t1": "Fire",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 75,
-            "at": 69,
-            "df": 72,
-            "sa": 114,
-            "sd": 100,
-            "sp": 104
-        },
-        "w": 39.0,
-        "ab": "Magician",
-    },
-    "Diggersby": {
-        "t1": "Normal",
-        "t2": "Ground",
-        "bs": {
-            "hp": 85,
-            "at": 56,
-            "df": 77,
-            "sa": 50,
-            "sd": 77,
-            "sp": 78
-        },
-        "w": 42.4,
-        "ab": "Huge Power",
-    },
-    "Doublade": {
-        "t1": "Steel",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 59,
-            "at": 110,
-            "df": 150,
-            "sa": 45,
-            "sd": 49,
-            "sp": 35
-        },
-        "w": 4.5,
-        "ab": "No Guard"
-    },
-    "Dragalge": {
-        "t1": "Poison",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 65,
-            "at": 75,
-            "df": 90,
-            "sa": 97,
-            "sd": 123,
-            "sp": 44
-        },
-        "w": 81.5,
-        "ab": "Adaptability",
-    },
-    "Espurr": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 62,
-            "at": 48,
-            "df": 54,
-            "sa": 63,
-            "sd": 60,
-            "sp": 68
-        },
-        "w": 3.5,
-        "ab": "Infiltrator",
-        "canEvolve": true,
-    },
-    "Fennekin": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 40,
-            "at": 45,
-            "df": 40,
-            "sa": 62,
-            "sd": 60,
-            "sp": 60
-        },
-        "w": 9.4,
-        "ab": "Magician",
-        "canEvolve": true,
-    },
-    "Flabebe": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 44,
-            "at": 38,
-            "df": 39,
-            "sa": 61,
-            "sd": 79,
-            "sp": 42
-        },
-        "w": 0.1,
-        "ab": "Symbiosis",
-        "canEvolve": true,
-    },
-    "Fletchinder": {
-        "t1": "Fire",
-        "t2": "Flying",
-        "bs": {
-            "hp": 62,
-            "at": 73,
-            "df": 55,
-            "sa": 56,
-            "sd": 52,
-            "sp": 84
-        },
-        "w": 16.0,
-        "ab": "Gale Wings",
-        "canEvolve": true,
-    },
-    "Fletchling": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 45,
-            "at": 50,
-            "df": 43,
-            "sa": 40,
-            "sd": 38,
-            "sp": 62
-        },
-        "w": 1.7,
-        "ab": "Gale Wings",
-        "canEvolve": true,
-    },
-    "Floette": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 54,
-            "at": 45,
-            "df": 47,
-            "sa": 75,
-            "sd": 98,
-            "sp": 52
-        },
-        "w": 0.9,
-        "ab": "Symbiosis",
-        "canEvolve": true,
-    },
-    "Floette-Eternal": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 74,
-            "at": 65,
-            "df": 67,
-            "sa": 125,
-            "sd": 128,
-            "sp": 92
-        },
-        "w": 0.9,
-        "ab": "Flower Veil"
-    },
-    "Florges": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 78,
-            "at": 65,
-            "df": 68,
-            "sa": 112,
-            "sd": 154,
-            "sp": 75
-        },
-        "w": 10.0,
-        "ab": "Symbiosis",
-    },
-    "Froakie": {
-        "t1": "Water",
-        "bs": {
-            "hp": 41,
-            "at": 56,
-            "df": 40,
-            "sa": 62,
-            "sd": 44,
-            "sp": 71
-        },
-        "w": 7.0,
-        "ab": "Protean",
-        "canEvolve": true,
-    },
-    "Frogadier": {
-        "t1": "Water",
-        "bs": {
-            "hp": 54,
-            "at": 63,
-            "df": 52,
-            "sa": 83,
-            "sd": 56,
-            "sp": 97
-        },
-        "w": 10.9,
-        "ab": "Protean",
-        "canEvolve": true,
-    },
-    "Furfrou": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 75,
-            "at": 80,
-            "df": 60,
-            "sa": 65,
-            "sd": 90,
-            "sp": 102
-        },
-        "w": 28.0,
-        "ab": "Fur Coat"
-    },
-    "Gogoat": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 123,
-            "at": 100,
-            "df": 62,
-            "sa": 97,
-            "sd": 81,
-            "sp": 68
-        },
-        "w": 91.0,
-        "ab": "Sap Sipper",
-    },
-    "Goodra": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 90,
-            "at": 100,
-            "df": 70,
-            "sa": 110,
-            "sd": 150,
+            "df": 123,
+            "sa": 122,
+            "sd": 120,
             "sp": 80
         },
-        "w": 150.5,
-        "ab": "Sap Sipper",
-    },
-    "Goomy": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 45,
-            "at": 50,
-            "df": 35,
-            "sa": 55,
-            "sd": 75,
-            "sp": 40
-        },
-        "w": 2.8,
-        "ab": "Gooey",
-        "canEvolve": true,
-    },
-    "Gourgeist-Average": {
-        "t1": "Ghost",
-        "t2": "Grass",
-        "bs": {
-            "hp": 65,
-            "at": 90,
-            "df": 122,
-            "sa": 58,
-            "sd": 75,
-            "sp": 84
-        },
-        "w": 12.5,
-        "ab": "Frisk",
-    },
-    "Gourgeist-Large": {
-        "t1": "Ghost",
-        "t2": "Grass",
-        "bs": {
-            "hp": 75,
-            "at": 95,
-            "df": 122,
-            "sa": 58,
-            "sd": 75,
-            "sp": 69
-        },
-        "w": 14.0,
-        "ab": "Frisk",
-    },
-    "Gourgeist-Small": {
-        "t1": "Ghost",
-        "t2": "Grass",
-        "bs": {
-            "hp": 55,
-            "at": 85,
-            "df": 122,
-            "sa": 58,
-            "sd": 75,
-            "sp": 99
-        },
-        "w": 9.5,
-        "ab": "Frisk",
-    },
-    "Gourgeist-Super": {
-        "t1": "Ghost",
-        "t2": "Grass",
-        "bs": {
-            "hp": 85,
-            "at": 100,
-            "df": 122,
-            "sa": 58,
-            "sd": 75,
-            "sp": 54
-        },
-        "w": 39.0,
-        "ab": "Insomnia",
-    },
-    "Greninja": {
-        "t1": "Water",
-        "t2": "Dark",
-        "bs": {
-            "hp": 72,
-            "at": 95,
-            "df": 67,
-            "sa": 103,
-            "sd": 71,
-            "sp": 122
-        },
-        "ab": "Protean",
-        "w": 40.0
-    },
-    "Hawlucha": {
-        "t1": "Fighting",
-        "t2": "Flying",
-        "bs": {
-            "hp": 78,
-            "at": 92,
-            "df": 75,
-            "sa": 74,
-            "sd": 63,
-            "sp": 118
-        },
-        "w": 21.5,
-        "ab": "Unburden",
-    },
-    "Heliolisk": {
-        "t1": "Electric",
-        "t2": "Normal",
-        "bs": {
-            "hp": 62,
-            "at": 55,
-            "df": 52,
-            "sa": 109,
-            "sd": 94,
-            "sp": 109
-        },
-        "w": 21.0,
-        "ab": "Dry Skin",
-    },
-    "Helioptile": {
-        "t1": "Electric",
-        "t2": "Normal",
-        "bs": {
-            "hp": 44,
-            "at": 38,
-            "df": 33,
-            "sa": 61,
-            "sd": 43,
-            "sp": 70
-        },
-        "w": 6.0,
-        "ab": "Dry Skin",
-        "canEvolve": true,
-    },
-    "Honedge": {
-        "t1": "Steel",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 45,
-            "at": 80,
-            "df": 100,
-            "sa": 35,
-            "sd": 37,
-            "sp": 28
-        },
-        "w": 2.0,
-        "ab": "No Guard",
-        "canEvolve": true,
-    },
-    "Hoopa": {
-        "t1": "Psychic",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 80,
-            "at": 110,
-            "df": 60,
-            "sa": 150,
-            "sd": 130,
-            "sp": 70
-        },
-        "w": 9.0,
-        "ab": "Magician"
-    },
-    "Inkay": {
-        "t1": "Dark",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 53,
-            "at": 54,
-            "df": 53,
-            "sa": 37,
-            "sd": 46,
-            "sp": 45
-        },
-        "w": 3.5,
-        "ab": "Contrary",
-        "canEvolve": true,
-    },
-    "Klefki": {
-        "t1": "Steel",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 57,
-            "at": 80,
-            "df": 91,
-            "sa": 80,
-            "sd": 87,
-            "sp": 75
-        },
-        "w": 3.0,
-        "ab": "Prankster",
-    },
-    "Litleo": {
-        "t1": "Fire",
-        "t2": "Normal",
-        "bs": {
-            "hp": 62,
-            "at": 50,
-            "df": 58,
-            "sa": 73,
-            "sd": 54,
-            "sp": 72
-        },
-        "w": 13.5,
-        "ab": "Unnerve",
-        "canEvolve": true,
-    },
-    "Malamar": {
-        "t1": "Dark",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 86,
-            "at": 92,
-            "df": 88,
-            "sa": 68,
-            "sd": 75,
-            "sp": 73
-        },
-        "w": 47.0,
-        "ab": "Contrary",
-    },
-    "Mega Abomasnow": {
-        "t1": "Grass",
-        "t2": "Ice",
-        "bs": {
-            "hp": 90,
-            "at": 132,
-            "df": 105,
-            "sa": 132,
-            "sd": 105,
-            "sp": 30
-        },
-        "w": 185.0,
-        "ab": "Snow Warning",
-        "isAlternateForme": true
-    },
-    "Mega Absol": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 65,
-            "at": 150,
-            "df": 60,
-            "sa": 115,
-            "sd": 60,
-            "sp": 115
-        },
-        "w": 49.0,
-        "ab": "Magic Bounce",
-        "isAlternateForme": true
-    },
-    "Mega Aerodactyl": {
-        "t1": "Rock",
-        "t2": "Flying",
-        "bs": {
-            "hp": 80,
-            "at": 135,
-            "df": 85,
-            "sa": 70,
-            "sd": 95,
-            "sp": 150
-        },
-        "w": 79.0,
-        "ab": "Tough Claws",
-        "isAlternateForme": true
-    },
-    "Mega Aggron": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 70,
-            "at": 140,
-            "df": 230,
-            "sa": 60,
-            "sd": 80,
-            "sp": 50
-        },
-        "w": 395.0,
-        "ab": "Filter",
-        "isAlternateForme": true
-    },
-    "Mega Alakazam": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 55,
-            "at": 50,
-            "df": 65,
-            "sa": 175,
-            "sd": 95,
-            "sp": 150
-        },
-        "w": 48.0,
-        "ab": "Trace",
-        "isAlternateForme": true
-    },
-    "Mega Ampharos": {
-        "t1": "Electric",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 90,
-            "at": 95,
-            "df": 105,
-            "sa": 165,
-            "sd": 110,
-            "sp": 45
-        },
-        "w": 61.5,
-        "ab": "Mold Breaker",
-        "isAlternateForme": true
-    },
-    "Mega Banette": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 64,
-            "at": 165,
-            "df": 75,
-            "sa": 93,
-            "sd": 83,
-            "sp": 75
-        },
-        "w": 13.0,
-        "ab": "Prankster",
-        "isAlternateForme": true
-    },
-    "Mega Blastoise": {
-        "t1": "Water",
-        "bs": {
-            "hp": 79,
-            "at": 103,
-            "df": 120,
-            "sa": 135,
-            "sd": 115,
-            "sp": 78
-        },
-        "w": 101.1,
-        "ab": "Mega Launcher",
-        "isAlternateForme": true
-    },
-    "Mega Blaziken": {
-        "t1": "Fire",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 80,
-            "at": 160,
-            "df": 80,
-            "sa": 130,
-            "sd": 80,
-            "sp": 100
-        },
-        "w": 52.0,
-        "ab": "Speed Boost",
+        "w": 155.5,
+        "ab": "Thick Fat",
         "isAlternateForme": true
     },
     "Mega Charizard X": {
@@ -10562,34 +9726,32 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Drought",
         "isAlternateForme": true
     },
-    "Mega Garchomp": {
-        "t1": "Dragon",
-        "t2": "Ground",
+    "Mega Blastoise": {
+        "t1": "Water",
         "bs": {
-            "hp": 108,
-            "at": 170,
-            "df": 115,
-            "sa": 120,
-            "sd": 95,
-            "sp": 92
+            "hp": 79,
+            "at": 103,
+            "df": 120,
+            "sa": 135,
+            "sd": 115,
+            "sp": 78
         },
-        "w": 95.0,
-        "ab": "Sand Force",
+        "w": 101.1,
+        "ab": "Mega Launcher",
         "isAlternateForme": true
     },
-    "Mega Gardevoir": {
+    "Mega Alakazam": {
         "t1": "Psychic",
-        "t2": "Fairy",
         "bs": {
-            "hp": 68,
-            "at": 85,
+            "hp": 55,
+            "at": 50,
             "df": 65,
-            "sa": 165,
-            "sd": 135,
-            "sp": 100
+            "sa": 175,
+            "sd": 95,
+            "sp": 150
         },
-        "w": 48.4,
-        "ab": "Pixilate",
+        "w": 48.0,
+        "ab": "Trace",
         "isAlternateForme": true
     },
     "Mega Gengar": {
@@ -10607,6 +9769,35 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Shadow Tag",
         "isAlternateForme": true
     },
+    "Mega Kangaskhan": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 105,
+            "at": 125,
+            "df": 100,
+            "sa": 60,
+            "sd": 100,
+            "sp": 100
+        },
+        "w": 100.0,
+        "ab": "Parental Bond",
+        "isAlternateForme": true
+    },
+    "Mega Pinsir": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 65,
+            "at": 155,
+            "df": 120,
+            "sa": 65,
+            "sd": 90,
+            "sp": 105
+        },
+        "w": 59.0,
+        "ab": "Aerilate",
+        "isAlternateForme": true
+    },
     "Mega Gyarados": {
         "t1": "Water",
         "t2": "Dark",
@@ -10620,6 +9811,80 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         },
         "w": 305.0,
         "ab": "Mold Breaker",
+        "isAlternateForme": true
+    },
+    "Mega Aerodactyl": {
+        "t1": "Rock",
+        "t2": "Flying",
+        "bs": {
+            "hp": 80,
+            "at": 135,
+            "df": 85,
+            "sa": 70,
+            "sd": 95,
+            "sp": 150
+        },
+        "w": 79.0,
+        "ab": "Tough Claws",
+        "isAlternateForme": true
+    },
+    "Mega Mewtwo X": {
+        "t1": "Psychic",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 106,
+            "at": 190,
+            "df": 100,
+            "sa": 154,
+            "sd": 100,
+            "sp": 130
+        },
+        "w": 127.0,
+        "ab": "Steadfast",
+        "isAlternateForme": true
+    },
+    "Mega Mewtwo Y": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 106,
+            "at": 150,
+            "df": 70,
+            "sa": 194,
+            "sd": 120,
+            "sp": 140
+        },
+        "w": 33.0,
+        "ab": "Insomnia",
+        "isAlternateForme": true
+    },
+    "Mega Ampharos": {
+        "t1": "Electric",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 90,
+            "at": 95,
+            "df": 105,
+            "sa": 165,
+            "sd": 110,
+            "sp": 45
+        },
+        "w": 61.5,
+        "ab": "Mold Breaker",
+        "isAlternateForme": true
+    },
+    "Mega Scizor": {
+        "t1": "Bug",
+        "t2": "Steel",
+        "bs": {
+            "hp": 70,
+            "at": 150,
+            "df": 140,
+            "sa": 65,
+            "sd": 100,
+            "sp": 75
+        },
+        "w": 125.0,
+        "ab": "Technician",
         "isAlternateForme": true
     },
     "Mega Heracross": {
@@ -10652,47 +9917,49 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Solar Power",
         "isAlternateForme": true
     },
-    "Mega Kangaskhan": {
-        "t1": "Normal",
+    "Mega Tyranitar": {
+        "t1": "Rock",
+        "t2": "Dark",
         "bs": {
-            "hp": 105,
-            "at": 125,
-            "df": 100,
-            "sa": 60,
-            "sd": 100,
+            "hp": 100,
+            "at": 164,
+            "df": 150,
+            "sa": 95,
+            "sd": 120,
+            "sp": 71
+        },
+        "w": 255.0,
+        "ab": "Sand Stream",
+        "isAlternateForme": true
+    },
+    "Mega Blaziken": {
+        "t1": "Fire",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 80,
+            "at": 160,
+            "df": 80,
+            "sa": 130,
+            "sd": 80,
             "sp": 100
         },
-        "w": 100.0,
-        "ab": "Parental Bond",
+        "w": 52.0,
+        "ab": "Speed Boost",
         "isAlternateForme": true
     },
-    "Mega Lucario": {
-        "t1": "Fighting",
-        "t2": "Steel",
+    "Mega Gardevoir": {
+        "t1": "Psychic",
+        "t2": "Fairy",
         "bs": {
-            "hp": 70,
-            "at": 145,
-            "df": 88,
-            "sa": 140,
-            "sd": 70,
-            "sp": 112
+            "hp": 68,
+            "at": 85,
+            "df": 65,
+            "sa": 165,
+            "sd": 135,
+            "sp": 100
         },
-        "w": 57.5,
-        "ab": "Adaptability",
-        "isAlternateForme": true
-    },
-    "Mega Manectric": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 70,
-            "at": 75,
-            "df": 80,
-            "sa": 135,
-            "sd": 80,
-            "sp": 135
-        },
-        "w": 44.0,
-        "ab": "Intimidate",
+        "w": 48.4,
+        "ab": "Pixilate",
         "isAlternateForme": true
     },
     "Mega Mawile": {
@@ -10710,6 +9977,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Huge Power",
         "isAlternateForme": true
     },
+    "Mega Aggron": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 70,
+            "at": 140,
+            "df": 230,
+            "sa": 60,
+            "sd": 80,
+            "sp": 50
+        },
+        "w": 395.0,
+        "ab": "Filter",
+        "isAlternateForme": true
+    },
     "Mega Medicham": {
         "t1": "Fighting",
         "t2": "Psychic",
@@ -10725,149 +10006,429 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Pure Power",
         "isAlternateForme": true
     },
-    "Mega Mewtwo X": {
-        "t1": "Psychic",
-        "t2": "Fighting",
+    "Mega Manectric": {
+        "t1": "Electric",
         "bs": {
-            "hp": 106,
-            "at": 190,
-            "df": 100,
-            "sa": 154,
-            "sd": 100,
-            "sp": 130
+            "hp": 70,
+            "at": 75,
+            "df": 80,
+            "sa": 135,
+            "sd": 80,
+            "sp": 135
         },
-        "w": 127.0,
-        "ab": "Steadfast",
+        "w": 44.0,
+        "ab": "Intimidate",
         "isAlternateForme": true
     },
-    "Mega Mewtwo Y": {
-        "t1": "Psychic",
+    "Mega Banette": {
+        "t1": "Ghost",
         "bs": {
-            "hp": 106,
-            "at": 150,
-            "df": 70,
-            "sa": 194,
-            "sd": 120,
-            "sp": 140
+            "hp": 64,
+            "at": 165,
+            "df": 75,
+            "sa": 93,
+            "sd": 83,
+            "sp": 75
         },
-        "w": 33.0,
-        "ab": "Insomnia",
+        "w": 13.0,
+        "ab": "Prankster",
         "isAlternateForme": true
     },
-    "Mega Pinsir": {
-        "t1": "Bug",
-        "t2": "Flying",
+    "Mega Absol": {
+        "t1": "Dark",
         "bs": {
             "hp": 65,
-            "at": 155,
-            "df": 120,
-            "sa": 65,
-            "sd": 90,
-            "sp": 105
+            "at": 150,
+            "df": 60,
+            "sa": 115,
+            "sd": 60,
+            "sp": 115
         },
-        "w": 59.0,
-        "ab": "Aerilate",
+        "w": 49.0,
+        "ab": "Magic Bounce",
         "isAlternateForme": true
     },
-    "Mega Scizor": {
-        "t1": "Bug",
+    "Mega Garchomp": {
+        "t1": "Dragon",
+        "t2": "Ground",
+        "bs": {
+            "hp": 108,
+            "at": 170,
+            "df": 115,
+            "sa": 120,
+            "sd": 95,
+            "sp": 92
+        },
+        "w": 95.0,
+        "ab": "Sand Force",
+        "isAlternateForme": true
+    },
+    "Mega Lucario": {
+        "t1": "Fighting",
         "t2": "Steel",
         "bs": {
             "hp": 70,
-            "at": 150,
-            "df": 140,
-            "sa": 65,
-            "sd": 100,
-            "sp": 75
+            "at": 145,
+            "df": 88,
+            "sa": 140,
+            "sd": 70,
+            "sp": 112
         },
-        "w": 125.0,
-        "ab": "Technician",
+        "w": 57.5,
+        "ab": "Adaptability",
         "isAlternateForme": true
     },
-    "Mega Tyranitar": {
-        "t1": "Rock",
-        "t2": "Dark",
-        "bs": {
-            "hp": 100,
-            "at": 164,
-            "df": 150,
-            "sa": 95,
-            "sd": 120,
-            "sp": 71
-        },
-        "w": 255.0,
-        "ab": "Sand Stream",
-        "isAlternateForme": true
-    },
-    "Mega Venusaur": {
+    "Mega Abomasnow": {
         "t1": "Grass",
-        "t2": "Poison",
+        "t2": "Ice",
         "bs": {
-            "hp": 80,
-            "at": 100,
-            "df": 123,
-            "sa": 122,
-            "sd": 120,
-            "sp": 80
+            "hp": 90,
+            "at": 132,
+            "df": 105,
+            "sa": 132,
+            "sd": 105,
+            "sp": 30
         },
-        "w": 155.5,
-        "ab": "Thick Fat",
+        "w": 185.0,
+        "ab": "Snow Warning",
         "isAlternateForme": true
     },
-    "Meowstic": {
-        "t1": "Psychic",
+    "Chespin": {
+        "t1": "Grass",
         "bs": {
-            "hp": 74,
-            "at": 48,
-            "df": 76,
-            "sa": 83,
-            "sd": 81,
-            "sp": 104
+            "hp": 56,
+            "at": 61,
+            "df": 65,
+            "sa": 48,
+            "sd": 45,
+            "sp": 38
         },
-        "w": 8.5,
-        "ab": "Prankster",
-    },
-    "Meowstic-F": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 74,
-            "at": 48,
-            "df": 76,
-            "sa": 83,
-            "sd": 81,
-            "sp": 104
-        },
-        "w": 8.5,
-        "ab": "Competitive",
-    },
-    "Noibat": {
-        "t1": "Flying",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 40,
-            "at": 30,
-            "df": 35,
-            "sa": 45,
-            "sd": 40,
-            "sp": 55
-        },
-        "w": 8.0,
-        "ab": "Infiltrator",
+        "w": 9.0,
+        "ab": "Bulletproof",
         "canEvolve": true,
     },
-    "Noivern": {
-        "t1": "Flying",
-        "t2": "Dragon",
+    "Quilladin": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 61,
+            "at": 78,
+            "df": 95,
+            "sa": 56,
+            "sd": 58,
+            "sp": 57
+        },
+        "w": 29.0,
+        "ab": "Bulletproof",
+        "canEvolve": true,
+    },
+    "Chesnaught": {
+        "t1": "Grass",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 88,
+            "at": 107,
+            "df": 122,
+            "sa": 74,
+            "sd": 75,
+            "sp": 64
+        },
+        "w": 90.0,
+        "ab": "Bulletproof",
+    },
+    "Fennekin": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 40,
+            "at": 45,
+            "df": 40,
+            "sa": 62,
+            "sd": 60,
+            "sp": 60
+        },
+        "w": 9.4,
+        "ab": "Magician",
+        "canEvolve": true,
+    },
+    "Braixen": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 59,
+            "at": 59,
+            "df": 58,
+            "sa": 90,
+            "sd": 70,
+            "sp": 73
+        },
+        "w": 14.5,
+        "ab": "Magician",
+        "canEvolve": true,
+    },
+    "Delphox": {
+        "t1": "Fire",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 75,
+            "at": 69,
+            "df": 72,
+            "sa": 114,
+            "sd": 100,
+            "sp": 104
+        },
+        "w": 39.0,
+        "ab": "Magician",
+    },
+    "Froakie": {
+        "t1": "Water",
+        "bs": {
+            "hp": 41,
+            "at": 56,
+            "df": 40,
+            "sa": 62,
+            "sd": 44,
+            "sp": 71
+        },
+        "w": 7.0,
+        "ab": "Protean",
+        "canEvolve": true,
+    },
+    "Frogadier": {
+        "t1": "Water",
+        "bs": {
+            "hp": 54,
+            "at": 63,
+            "df": 52,
+            "sa": 83,
+            "sd": 56,
+            "sp": 97
+        },
+        "w": 10.9,
+        "ab": "Protean",
+        "canEvolve": true,
+    },
+    "Greninja": {
+        "t1": "Water",
+        "t2": "Dark",
+        "bs": {
+            "hp": 72,
+            "at": 95,
+            "df": 67,
+            "sa": 103,
+            "sd": 71,
+            "sp": 122
+        },
+        "ab": "Protean",
+        "w": 40.0
+    },
+    "Bunnelby": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 38,
+            "at": 36,
+            "df": 38,
+            "sa": 32,
+            "sd": 36,
+            "sp": 57
+        },
+        "w": 5.0,
+        "ab": "Huge Power",
+        "canEvolve": true,
+    },
+    "Diggersby": {
+        "t1": "Normal",
+        "t2": "Ground",
         "bs": {
             "hp": 85,
-            "at": 70,
-            "df": 80,
-            "sa": 97,
-            "sd": 80,
-            "sp": 123
+            "at": 56,
+            "df": 77,
+            "sa": 50,
+            "sd": 77,
+            "sp": 78
         },
-        "w": 85.0,
-        "ab": "Infiltrator",
+        "w": 42.4,
+        "ab": "Huge Power",
+    },
+    "Fletchling": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 45,
+            "at": 50,
+            "df": 43,
+            "sa": 40,
+            "sd": 38,
+            "sp": 62
+        },
+        "w": 1.7,
+        "ab": "Gale Wings",
+        "canEvolve": true,
+    },
+    "Fletchinder": {
+        "t1": "Fire",
+        "t2": "Flying",
+        "bs": {
+            "hp": 62,
+            "at": 73,
+            "df": 55,
+            "sa": 56,
+            "sd": 52,
+            "sp": 84
+        },
+        "w": 16.0,
+        "ab": "Gale Wings",
+        "canEvolve": true,
+    },
+    "Talonflame": {
+        "t1": "Fire",
+        "t2": "Flying",
+        "bs": {
+            "hp": 78,
+            "at": 81,
+            "df": 71,
+            "sa": 74,
+            "sd": 69,
+            "sp": 126
+        },
+        "w": 24.5,
+        "ab": "Gale Wings",
+    },
+    "Scatterbug": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 38,
+            "at": 35,
+            "df": 40,
+            "sa": 27,
+            "sd": 25,
+            "sp": 35
+        },
+        "w": 2.5,
+        "ab": "Friend Guard",
+        "canEvolve": true,
+    },
+    "Spewpa": {
+        "t1": "Bug",
+        "bs": {
+            "hp": 45,
+            "at": 22,
+            "df": 60,
+            "sa": 27,
+            "sd": 30,
+            "sp": 29
+        },
+        "w": 8.4,
+        "ab": "Friend Guard",
+        "canEvolve": true,
+    },
+    "Vivillon": {
+        "t1": "Bug",
+        "t2": "Flying",
+        "bs": {
+            "hp": 80,
+            "at": 52,
+            "df": 50,
+            "sa": 90,
+            "sd": 50,
+            "sp": 89
+        },
+        "w": 17.0,
+        "ab": "Friend Guard",
+    },
+    "Litleo": {
+        "t1": "Fire",
+        "t2": "Normal",
+        "bs": {
+            "hp": 62,
+            "at": 50,
+            "df": 58,
+            "sa": 73,
+            "sd": 54,
+            "sp": 72
+        },
+        "w": 13.5,
+        "ab": "Unnerve",
+        "canEvolve": true,
+    },
+    "Pyroar": {
+        "t1": "Fire",
+        "t2": "Normal",
+        "bs": {
+            "hp": 86,
+            "at": 68,
+            "df": 72,
+            "sa": 109,
+            "sd": 66,
+            "sp": 106
+        },
+        "w": 81.5,
+        "ab": "Unnerve",
+    },
+    "Flabebe": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 44,
+            "at": 38,
+            "df": 39,
+            "sa": 61,
+            "sd": 79,
+            "sp": 42
+        },
+        "w": 0.1,
+        "ab": "Symbiosis",
+        "canEvolve": true,
+    },
+    "Floette": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 54,
+            "at": 45,
+            "df": 47,
+            "sa": 75,
+            "sd": 98,
+            "sp": 52
+        },
+        "w": 0.9,
+        "ab": "Symbiosis",
+        "canEvolve": true,
+    },
+    "Florges": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 78,
+            "at": 65,
+            "df": 68,
+            "sa": 112,
+            "sd": 154,
+            "sp": 75
+        },
+        "w": 10.0,
+        "ab": "Symbiosis",
+    },
+    "Skiddo": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 66,
+            "at": 65,
+            "df": 48,
+            "sa": 62,
+            "sd": 57,
+            "sp": 52
+        },
+        "w": 31.0,
+        "ab": "Sap Sipper",
+        "canEvolve": true,
+    },
+    "Gogoat": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 123,
+            "at": 100,
+            "df": 62,
+            "sa": 97,
+            "sd": 81,
+            "sp": 68
+        },
+        "w": 91.0,
+        "ab": "Sap Sipper",
     },
     "Pancham": {
         "t1": "Fighting",
@@ -10897,6 +10458,498 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "w": 136.0,
         "ab": "Scrappy",
     },
+    "Furfrou": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 75,
+            "at": 80,
+            "df": 60,
+            "sa": 65,
+            "sd": 90,
+            "sp": 102
+        },
+        "w": 28.0,
+        "ab": "Fur Coat"
+    },
+    "Espurr": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 62,
+            "at": 48,
+            "df": 54,
+            "sa": 63,
+            "sd": 60,
+            "sp": 68
+        },
+        "w": 3.5,
+        "ab": "Infiltrator",
+        "canEvolve": true,
+    },
+    "Meowstic": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 74,
+            "at": 48,
+            "df": 76,
+            "sa": 83,
+            "sd": 81,
+            "sp": 104
+        },
+        "w": 8.5,
+        "ab": "Prankster",
+    },
+    "Meowstic-F": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 74,
+            "at": 48,
+            "df": 76,
+            "sa": 83,
+            "sd": 81,
+            "sp": 104
+        },
+        "w": 8.5,
+        "ab": "Competitive",
+    },
+    "Honedge": {
+        "t1": "Steel",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 45,
+            "at": 80,
+            "df": 100,
+            "sa": 35,
+            "sd": 37,
+            "sp": 28
+        },
+        "w": 2.0,
+        "ab": "No Guard",
+        "canEvolve": true,
+    },
+    "Doublade": {
+        "t1": "Steel",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 59,
+            "at": 110,
+            "df": 150,
+            "sa": 45,
+            "sd": 49,
+            "sp": 35
+        },
+        "w": 4.5,
+        "ab": "No Guard"
+    },
+    "Aegislash": {
+        "t1": "Steel",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 60,
+            "at": 50,
+            "df": 150,
+            "sa": 50,
+            "sd": 150,
+            "sp": 60
+        },
+        "w": 53.0,
+        "ab": "Stance Change",
+        "formes": ["Aegislash-Shield", "Aegislash-Blade"]
+    },
+    "Aegislash-Shield": {
+        "t1": "Steel",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 60,
+            "at": 50,
+            "df": 150,
+            "sa": 50,
+            "sd": 150,
+            "sp": 60
+        },
+        "w": 53.0,
+        "ab": "Stance Change",
+        "isAlternateForme": true
+    },
+    "Aegislash-Blade": {
+        "t1": "Steel",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 60,
+            "at": 150,
+            "df": 50,
+            "sa": 150,
+            "sd": 50,
+            "sp": 60
+        },
+        "w": 53.0,
+        "ab": "Stance Change",
+        "isAlternateForme": true
+    },
+    "Spritzee": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 78,
+            "at": 52,
+            "df": 60,
+            "sa": 63,
+            "sd": 65,
+            "sp": 23
+        },
+        "w": 0.5,
+        "ab": "Healer",
+        "canEvolve": true,
+    },
+    "Aromatisse": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 101,
+            "at": 72,
+            "df": 72,
+            "sa": 99,
+            "sd": 89,
+            "sp": 29
+        },
+        "w": 15.5,
+        "ab": "Healer",
+    },
+    "Swirlix": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 62,
+            "at": 48,
+            "df": 66,
+            "sa": 59,
+            "sd": 57,
+            "sp": 49
+        },
+        "w": 3.5,
+        "ab": "Unburden",
+        "canEvolve": true,
+    },
+    "Slurpuff": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 82,
+            "at": 80,
+            "df": 86,
+            "sa": 85,
+            "sd": 75,
+            "sp": 72
+        },
+        "w": 5.0,
+        "ab": "Unburden",
+    },
+    "Inkay": {
+        "t1": "Dark",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 53,
+            "at": 54,
+            "df": 53,
+            "sa": 37,
+            "sd": 46,
+            "sp": 45
+        },
+        "w": 3.5,
+        "ab": "Contrary",
+        "canEvolve": true,
+    },
+    "Malamar": {
+        "t1": "Dark",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 86,
+            "at": 92,
+            "df": 88,
+            "sa": 68,
+            "sd": 75,
+            "sp": 73
+        },
+        "w": 47.0,
+        "ab": "Contrary",
+    },
+    "Binacle": {
+        "t1": "Rock",
+        "t2": "Water",
+        "bs": {
+            "hp": 42,
+            "at": 52,
+            "df": 67,
+            "sa": 39,
+            "sd": 56,
+            "sp": 50
+        },
+        "w": 31.0,
+        "ab": "Tough Claws",
+        "canEvolve": true,
+    },
+    "Barbaracle": {
+        "t1": "Rock",
+        "t2": "Water",
+        "bs": {
+            "hp": 72,
+            "at": 105,
+            "df": 115,
+            "sa": 54,
+            "sd": 86,
+            "sp": 68
+        },
+        "w": 96.0,
+        "ab": "Tough Claws",
+    },
+    "Skrelp": {
+        "t1": "Poison",
+        "t2": "Water",
+        "bs": {
+            "hp": 50,
+            "at": 60,
+            "df": 60,
+            "sa": 60,
+            "sd": 60,
+            "sp": 30
+        },
+        "w": 7.3,
+        "ab": "Adaptability",
+        "canEvolve": true,
+    },
+    "Dragalge": {
+        "t1": "Poison",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 65,
+            "at": 75,
+            "df": 90,
+            "sa": 97,
+            "sd": 123,
+            "sp": 44
+        },
+        "w": 81.5,
+        "ab": "Adaptability",
+    },
+    "Clauncher": {
+        "t1": "Water",
+        "bs": {
+            "hp": 50,
+            "at": 53,
+            "df": 62,
+            "sa": 58,
+            "sd": 63,
+            "sp": 44
+        },
+        "w": 8.3,
+        "ab": "Mega Launcher",
+        "canEvolve": true,
+    },
+    "Clawitzer": {
+        "t1": "Water",
+        "bs": {
+            "hp": 71,
+            "at": 73,
+            "df": 88,
+            "sa": 120,
+            "sd": 89,
+            "sp": 59
+        },
+        "w": 35.3,
+        "ab": "Mega Launcher"
+    },
+    "Helioptile": {
+        "t1": "Electric",
+        "t2": "Normal",
+        "bs": {
+            "hp": 44,
+            "at": 38,
+            "df": 33,
+            "sa": 61,
+            "sd": 43,
+            "sp": 70
+        },
+        "w": 6.0,
+        "ab": "Dry Skin",
+        "canEvolve": true,
+    },
+    "Heliolisk": {
+        "t1": "Electric",
+        "t2": "Normal",
+        "bs": {
+            "hp": 62,
+            "at": 55,
+            "df": 52,
+            "sa": 109,
+            "sd": 94,
+            "sp": 109
+        },
+        "w": 21.0,
+        "ab": "Dry Skin",
+    },
+    "Tyrunt": {
+        "t1": "Rock",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 58,
+            "at": 89,
+            "df": 77,
+            "sa": 45,
+            "sd": 45,
+            "sp": 48
+        },
+        "w": 26.0,
+        "ab": "Strong Jaw",
+        "canEvolve": true,
+    },
+    "Tyrantrum": {
+        "t1": "Rock",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 82,
+            "at": 121,
+            "df": 119,
+            "sa": 69,
+            "sd": 59,
+            "sp": 71
+        },
+        "w": 270.0,
+        "ab": "Strong Jaw"
+    },
+    "Amaura": {
+        "t1": "Rock",
+        "t2": "Ice",
+        "bs": {
+            "hp": 77,
+            "at": 59,
+            "df": 50,
+            "sa": 67,
+            "sd": 63,
+            "sp": 46
+        },
+        "w": 25.2,
+        "ab": "Refrigerate",
+        "canEvolve": true,
+    },
+    "Aurorus": {
+        "t1": "Rock",
+        "t2": "Ice",
+        "bs": {
+            "hp": 123,
+            "at": 77,
+            "df": 72,
+            "sa": 99,
+            "sd": 92,
+            "sp": 58
+        },
+        "w": 225.0,
+        "ab": "Refrigerate"
+    },
+    "Sylveon": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 95,
+            "at": 65,
+            "df": 65,
+            "sa": 110,
+            "sd": 130,
+            "sp": 60
+        },
+        "w": 23.5,
+        "ab": "Pixilate",
+    },
+    "Hawlucha": {
+        "t1": "Fighting",
+        "t2": "Flying",
+        "bs": {
+            "hp": 78,
+            "at": 92,
+            "df": 75,
+            "sa": 74,
+            "sd": 63,
+            "sp": 118
+        },
+        "w": 21.5,
+        "ab": "Unburden",
+    },
+    "Dedenne": {
+        "t1": "Electric",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 67,
+            "at": 58,
+            "df": 57,
+            "sa": 81,
+            "sd": 67,
+            "sp": 101
+        },
+        "w": 2.2,
+        "ab": "Cheek Pouch",
+    },
+    "Carbink": {
+        "t1": "Rock",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 50,
+            "at": 50,
+            "df": 150,
+            "sa": 50,
+            "sd": 150,
+            "sp": 50
+        },
+        "w": 5.7,
+        "ab": "Sturdy",
+    },
+    "Goomy": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 45,
+            "at": 50,
+            "df": 35,
+            "sa": 55,
+            "sd": 75,
+            "sp": 40
+        },
+        "w": 2.8,
+        "ab": "Gooey",
+        "canEvolve": true,
+    },
+    "Sliggoo": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 68,
+            "at": 75,
+            "df": 53,
+            "sa": 83,
+            "sd": 113,
+            "sp": 60
+        },
+        "w": 17.5,
+        "ab": "Gooey",
+        "canEvolve": true,
+    },
+    "Goodra": {
+        "t1": "Dragon",
+        "bs": {
+            "hp": 90,
+            "at": 100,
+            "df": 70,
+            "sa": 110,
+            "sd": 150,
+            "sp": 80
+        },
+        "w": 150.5,
+        "ab": "Sap Sipper",
+    },
+    "Klefki": {
+        "t1": "Steel",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 57,
+            "at": 80,
+            "df": 91,
+            "sa": 80,
+            "sd": 87,
+            "sp": 75
+        },
+        "w": 3.0,
+        "ab": "Prankster",
+    },
     "Phantump": {
         "t1": "Ghost",
         "t2": "Grass",
@@ -10910,6 +10963,35 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         },
         "w": 7.0,
         "ab": "Harvest",
+        "canEvolve": true,
+    },
+    "Trevenant": {
+        "t1": "Ghost",
+        "t2": "Grass",
+        "bs": {
+            "hp": 85,
+            "at": 110,
+            "df": 76,
+            "sa": 65,
+            "sd": 82,
+            "sp": 56
+        },
+        "w": 71.0,
+        "ab": "Harvest",
+    },
+    "Pumpkaboo-Small": {
+        "t1": "Ghost",
+        "t2": "Grass",
+        "bs": {
+            "hp": 44,
+            "at": 66,
+            "df": 70,
+            "sa": 44,
+            "sd": 55,
+            "sp": 56
+        },
+        "w": 3.5,
+        "ab": "Frisk",
         "canEvolve": true,
     },
     "Pumpkaboo-Average": {
@@ -10942,21 +11024,6 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Frisk",
         "canEvolve": true,
     },
-    "Pumpkaboo-Small": {
-        "t1": "Ghost",
-        "t2": "Grass",
-        "bs": {
-            "hp": 44,
-            "at": 66,
-            "df": 70,
-            "sa": 44,
-            "sd": 55,
-            "sp": 56
-        },
-        "w": 3.5,
-        "ab": "Frisk",
-        "canEvolve": true,
-    },
     "Pumpkaboo-Super": {
         "t1": "Ghost",
         "t2": "Grass",
@@ -10972,243 +11039,117 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Insomnia",
         "canEvolve": true,
     },
-    "Pyroar": {
-        "t1": "Fire",
-        "t2": "Normal",
+    "Gourgeist-Small": {
+        "t1": "Ghost",
+        "t2": "Grass",
         "bs": {
-            "hp": 86,
-            "at": 68,
-            "df": 72,
-            "sa": 109,
-            "sd": 66,
-            "sp": 106
-        },
-        "w": 81.5,
-        "ab": "Unnerve",
-    },
-    "Quilladin": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 61,
-            "at": 78,
-            "df": 95,
-            "sa": 56,
-            "sd": 58,
-            "sp": 57
-        },
-        "w": 29.0,
-        "ab": "Bulletproof",
-        "canEvolve": true,
-    },
-    "Scatterbug": {
-        "t1": "Bug",
-        "bs": {
-            "hp": 38,
-            "at": 35,
-            "df": 40,
-            "sa": 27,
-            "sd": 25,
-            "sp": 35
-        },
-        "w": 2.5,
-        "ab": "Friend Guard",
-        "canEvolve": true,
-    },
-    "Skiddo": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 66,
-            "at": 65,
-            "df": 48,
-            "sa": 62,
-            "sd": 57,
-            "sp": 52
-        },
-        "w": 31.0,
-        "ab": "Sap Sipper",
-        "canEvolve": true,
-    },
-    "Skrelp": {
-        "t1": "Poison",
-        "t2": "Water",
-        "bs": {
-            "hp": 50,
-            "at": 60,
-            "df": 60,
-            "sa": 60,
-            "sd": 60,
-            "sp": 30
-        },
-        "w": 7.3,
-        "ab": "Adaptability",
-        "canEvolve": true,
-    },
-    "Sliggoo": {
-        "t1": "Dragon",
-        "bs": {
-            "hp": 68,
-            "at": 75,
-            "df": 53,
-            "sa": 83,
-            "sd": 113,
-            "sp": 60
-        },
-        "w": 17.5,
-        "ab": "Gooey",
-        "canEvolve": true,
-    },
-    "Slurpuff": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 82,
-            "at": 80,
-            "df": 86,
-            "sa": 85,
+            "hp": 55,
+            "at": 85,
+            "df": 122,
+            "sa": 58,
             "sd": 75,
-            "sp": 72
+            "sp": 99
         },
-        "w": 5.0,
-        "ab": "Unburden",
+        "w": 9.5,
+        "ab": "Frisk",
     },
-    "Spewpa": {
-        "t1": "Bug",
+    "Gourgeist-Average": {
+        "t1": "Ghost",
+        "t2": "Grass",
         "bs": {
-            "hp": 45,
-            "at": 22,
-            "df": 60,
-            "sa": 27,
-            "sd": 30,
-            "sp": 29
+            "hp": 65,
+            "at": 90,
+            "df": 122,
+            "sa": 58,
+            "sd": 75,
+            "sp": 84
         },
-        "w": 8.4,
-        "ab": "Friend Guard",
-        "canEvolve": true,
+        "w": 12.5,
+        "ab": "Frisk",
     },
-    "Spritzee": {
-        "t1": "Fairy",
+    "Gourgeist-Large": {
+        "t1": "Ghost",
+        "t2": "Grass",
         "bs": {
-            "hp": 78,
-            "at": 52,
-            "df": 60,
-            "sa": 63,
-            "sd": 65,
-            "sp": 23
+            "hp": 75,
+            "at": 95,
+            "df": 122,
+            "sa": 58,
+            "sd": 75,
+            "sp": 69
         },
-        "w": 0.5,
-        "ab": "Healer",
-        "canEvolve": true,
+        "w": 14.0,
+        "ab": "Frisk",
     },
-    "Swirlix": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 62,
-            "at": 48,
-            "df": 66,
-            "sa": 59,
-            "sd": 57,
-            "sp": 49
-        },
-        "w": 3.5,
-        "ab": "Unburden",
-        "canEvolve": true,
-    },
-    "Sylveon": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 95,
-            "at": 65,
-            "df": 65,
-            "sa": 110,
-            "sd": 130,
-            "sp": 60
-        },
-        "w": 23.5,
-        "ab": "Pixilate",
-    },
-    "Talonflame": {
-        "t1": "Fire",
-        "t2": "Flying",
-        "bs": {
-            "hp": 78,
-            "at": 81,
-            "df": 71,
-            "sa": 74,
-            "sd": 69,
-            "sp": 126
-        },
-        "w": 24.5,
-        "ab": "Gale Wings",
-    },
-    "Trevenant": {
+    "Gourgeist-Super": {
         "t1": "Ghost",
         "t2": "Grass",
         "bs": {
             "hp": 85,
-            "at": 110,
-            "df": 76,
-            "sa": 65,
-            "sd": 82,
-            "sp": 56
+            "at": 100,
+            "df": 122,
+            "sa": 58,
+            "sd": 75,
+            "sp": 54
         },
-        "w": 71.0,
-        "ab": "Harvest",
+        "w": 39.0,
+        "ab": "Insomnia",
     },
-    "Tyrantrum": {
-        "t1": "Rock",
-        "t2": "Dragon",
+    "Bergmite": {
+        "t1": "Ice",
         "bs": {
-            "hp": 82,
-            "at": 121,
-            "df": 119,
-            "sa": 69,
-            "sd": 59,
-            "sp": 71
+            "hp": 55,
+            "at": 69,
+            "df": 85,
+            "sa": 32,
+            "sd": 35,
+            "sp": 28
         },
-        "w": 270.0,
-        "ab": "Strong Jaw"
-    },
-    "Tyrunt": {
-        "t1": "Rock",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 58,
-            "at": 89,
-            "df": 77,
-            "sa": 45,
-            "sd": 45,
-            "sp": 48
-        },
-        "w": 26.0,
-        "ab": "Strong Jaw",
+        "w": 99.5,
+        "ab": "Sturdy",
         "canEvolve": true,
     },
-    "Vivillon": {
-        "t1": "Bug",
-        "t2": "Flying",
+    "Avalugg": {
+        "t1": "Ice",
         "bs": {
-            "hp": 80,
-            "at": 52,
-            "df": 50,
-            "sa": 90,
-            "sd": 50,
-            "sp": 89
+            "hp": 95,
+            "at": 117,
+            "df": 184,
+            "sa": 44,
+            "sd": 46,
+            "sp": 28
         },
-        "w": 17.0,
-        "ab": "Friend Guard",
+        "w": 505.0,
+        "ab": "Own Tempo",
     },
-    "Volcanion": {
-        "t1": "Fire",
-        "t2": "Water",
+    "Noibat": {
+        "t1": "Flying",
+        "t2": "Dragon",
         "bs": {
-            "hp": 80,
-            "at": 110,
-            "df": 120,
-            "sa": 130,
-            "sd": 90,
-            "sp": 70
+            "hp": 40,
+            "at": 30,
+            "df": 35,
+            "sa": 45,
+            "sd": 40,
+            "sp": 55
         },
-        "w": 195.0,
-        "ab": "Water Absorb"
+        "w": 8.0,
+        "ab": "Infiltrator",
+        "canEvolve": true,
+    },
+    "Noivern": {
+        "t1": "Flying",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 85,
+            "at": 70,
+            "df": 80,
+            "sa": 97,
+            "sd": 80,
+            "sp": 123
+        },
+        "w": 85.0,
+        "ab": "Infiltrator",
     },
     "Xerneas": {
         "t1": "Fairy",
@@ -11251,37 +11192,53 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "w": 305.0,
         "ab": "Aura Break",
     },
-    //ORAS Pokemon
-    "Mega Altaria": {
-        "t1": "Dragon",
+    "Diancie": {
+        "t1": "Rock",
         "t2": "Fairy",
         "bs": {
-            "hp": 75,
-            "at": 110,
-            "df": 110,
-            "sa": 110,
-            "sd": 105,
-            "sp": 80
-        },
-        "w": 20.6,
-        "ab": "Pixilate",
-        "isAlternateForme": true
-    },
-    "Mega Audino": {
-        "t1": "Normal",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 103,
-            "at": 60,
-            "df": 126,
-            "sa": 80,
-            "sd": 126,
+            "hp": 50,
+            "at": 100,
+            "df": 150,
+            "sa": 100,
+            "sd": 150,
             "sp": 50
         },
-        "w": 32.0,
-        "ab": "Healer",
-        "isAlternateForme": true
+        "w": 8.8,
+        "ab": "Clear Body",
+        "formes": [
+            "Diancie",
+            "Mega Diancie"
+        ]
     },
+    "Hoopa": {
+        "t1": "Psychic",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 80,
+            "at": 110,
+            "df": 60,
+            "sa": 150,
+            "sd": 130,
+            "sp": 70
+        },
+        "w": 9.0,
+        "ab": "Magician"
+    },
+    "Volcanion": {
+        "t1": "Fire",
+        "t2": "Water",
+        "bs": {
+            "hp": 80,
+            "at": 110,
+            "df": 120,
+            "sa": 130,
+            "sd": 90,
+            "sp": 70
+        },
+        "w": 195.0,
+        "ab": "Water Absorb"
+    },
+    //ORAS Pokemon
     "Mega Beedrill": {
         "t1": "Bug",
         "t2": "Poison",
@@ -11297,125 +11254,6 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Adaptability",
         "isAlternateForme": true
     },
-    "Mega Camerupt": {
-        "t1": "Fire",
-        "t2": "Ground",
-        "bs": {
-            "hp": 70,
-            "at": 120,
-            "df": 100,
-            "sa": 145,
-            "sd": 105,
-            "sp": 20
-        },
-        "w": 320.5,
-        "ab": "Sheer Force",
-        "isAlternateForme": true
-    },
-    "Mega Diancie": {
-        "t1": "Rock",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 50,
-            "at": 160,
-            "df": 110,
-            "sa": 160,
-            "sd": 110,
-            "sp": 110
-        },
-        "w": 27.8,
-        "ab": "Magic Bounce",
-        "isAlternateForme": true
-    },
-    "Mega Gallade": {
-        "t1": "Psychic",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 68,
-            "at": 165,
-            "df": 95,
-            "sa": 65,
-            "sd": 115,
-            "sp": 110
-        },
-        "w": 56.4,
-        "ab": "Inner Focus",
-        "isAlternateForme": true
-    },
-    "Mega Glalie": {
-        "t1": "Ice",
-        "bs": {
-            "hp": 80,
-            "at": 120,
-            "df": 80,
-            "sa": 120,
-            "sd": 80,
-            "sp": 100
-        },
-        "w": 350.2,
-        "ab": "Refrigerate",
-        "isAlternateForme": true
-    },
-    "Mega Latias": {
-        "t1": "Dragon",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 100,
-            "df": 120,
-            "sa": 140,
-            "sd": 150,
-            "sp": 110
-        },
-        "w": 52.0,
-        "ab": "Levitate",
-        "isAlternateForme": true
-    },
-    "Mega Latios": {
-        "t1": "Dragon",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 130,
-            "df": 100,
-            "sa": 160,
-            "sd": 120,
-            "sp": 110
-        },
-        "w": 70.0,
-        "ab": "Levitate",
-        "isAlternateForme": true
-    },
-    "Mega Lopunny": {
-        "t1": "Normal",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 65,
-            "at": 136,
-            "df": 94,
-            "sa": 54,
-            "sd": 96,
-            "sp": 135
-        },
-        "w": 28.3,
-        "ab": "Scrappy",
-        "isAlternateForme": true
-    },
-    "Mega Metagross": {
-        "t1": "Steel",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 80,
-            "at": 145,
-            "df": 150,
-            "sa": 105,
-            "sd": 110,
-            "sp": 110
-        },
-        "w": 942.9,
-        "ab": "Tough Claws",
-        "isAlternateForme": true
-    },
     "Mega Pidgeot": {
         "t1": "Normal",
         "t2": "Flying",
@@ -11429,81 +11267,6 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         },
         "w": 50.5,
         "ab": "No Guard",
-        "isAlternateForme": true
-    },
-    "Mega Rayquaza": {
-        "t1": "Dragon",
-        "t2": "Flying",
-        "bs": {
-            "hp": 105,
-            "at": 180,
-            "df": 100,
-            "sa": 180,
-            "sd": 100,
-            "sp": 115
-        },
-        "w": 392.0,
-        "ab": "Delta Stream",
-        "isAlternateForme": true
-    },
-    "Mega Sableye": {
-        "t1": "Dark",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 50,
-            "at": 85,
-            "df": 125,
-            "sa": 85,
-            "sd": 115,
-            "sp": 20
-        },
-        "w": 161.0,
-        "ab": "Magic Bounce",
-        "isAlternateForme": true
-    },
-    "Mega Salamence": {
-        "t1": "Dragon",
-        "t2": "Flying",
-        "bs": {
-            "hp": 95,
-            "at": 145,
-            "df": 130,
-            "sa": 120,
-            "sd": 90,
-            "sp": 120
-        },
-        "w": 112.6,
-        "ab": "Aerilate",
-        "isAlternateForme": true
-    },
-    "Mega Sceptile": {
-        "t1": "Grass",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 70,
-            "at": 110,
-            "df": 75,
-            "sa": 145,
-            "sd": 85,
-            "sp": 145
-        },
-        "w": 55.2,
-        "ab": "Lightning Rod",
-        "isAlternateForme": true
-    },
-    "Mega Sharpedo": {
-        "t1": "Water",
-        "t2": "Dark",
-        "bs": {
-            "hp": 70,
-            "at": 140,
-            "df": 70,
-            "sa": 110,
-            "sd": 65,
-            "sp": 105
-        },
-        "w": 130.3,
-        "ab": "Strong Jaw",
         "isAlternateForme": true
     },
     "Mega Slowbro": {
@@ -11536,6 +11299,21 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Sand Force",
         "isAlternateForme": true
     },
+    "Mega Sceptile": {
+        "t1": "Grass",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 70,
+            "at": 110,
+            "df": 75,
+            "sa": 145,
+            "sd": 85,
+            "sp": 145
+        },
+        "w": 55.2,
+        "ab": "Lightning Rod",
+        "isAlternateForme": true
+    },
     "Mega Swampert": {
         "t1": "Water",
         "t2": "Ground",
@@ -11551,6 +11329,153 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "Swift Swim",
         "isAlternateForme": true
     },
+    "Mega Sableye": {
+        "t1": "Dark",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 50,
+            "at": 85,
+            "df": 125,
+            "sa": 85,
+            "sd": 115,
+            "sp": 20
+        },
+        "w": 161.0,
+        "ab": "Magic Bounce",
+        "isAlternateForme": true
+    },
+    "Mega Sharpedo": {
+        "t1": "Water",
+        "t2": "Dark",
+        "bs": {
+            "hp": 70,
+            "at": 140,
+            "df": 70,
+            "sa": 110,
+            "sd": 65,
+            "sp": 105
+        },
+        "w": 130.3,
+        "ab": "Strong Jaw",
+        "isAlternateForme": true
+    },
+    "Mega Camerupt": {
+        "t1": "Fire",
+        "t2": "Ground",
+        "bs": {
+            "hp": 70,
+            "at": 120,
+            "df": 100,
+            "sa": 145,
+            "sd": 105,
+            "sp": 20
+        },
+        "w": 320.5,
+        "ab": "Sheer Force",
+        "isAlternateForme": true
+    },
+    "Mega Altaria": {
+        "t1": "Dragon",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 75,
+            "at": 110,
+            "df": 110,
+            "sa": 110,
+            "sd": 105,
+            "sp": 80
+        },
+        "w": 20.6,
+        "ab": "Pixilate",
+        "isAlternateForme": true
+    },
+    "Mega Glalie": {
+        "t1": "Ice",
+        "bs": {
+            "hp": 80,
+            "at": 120,
+            "df": 80,
+            "sa": 120,
+            "sd": 80,
+            "sp": 100
+        },
+        "w": 350.2,
+        "ab": "Refrigerate",
+        "isAlternateForme": true
+    },
+    "Mega Salamence": {
+        "t1": "Dragon",
+        "t2": "Flying",
+        "bs": {
+            "hp": 95,
+            "at": 145,
+            "df": 130,
+            "sa": 120,
+            "sd": 90,
+            "sp": 120
+        },
+        "w": 112.6,
+        "ab": "Aerilate",
+        "isAlternateForme": true
+    },
+    "Mega Metagross": {
+        "t1": "Steel",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 145,
+            "df": 150,
+            "sa": 105,
+            "sd": 110,
+            "sp": 110
+        },
+        "w": 942.9,
+        "ab": "Tough Claws",
+        "isAlternateForme": true
+    },
+    "Mega Latias": {
+        "t1": "Dragon",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 100,
+            "df": 120,
+            "sa": 140,
+            "sd": 150,
+            "sp": 110
+        },
+        "w": 52.0,
+        "ab": "Levitate",
+        "isAlternateForme": true
+    },
+    "Mega Latios": {
+        "t1": "Dragon",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 80,
+            "at": 130,
+            "df": 100,
+            "sa": 160,
+            "sd": 120,
+            "sp": 110
+        },
+        "w": 70.0,
+        "ab": "Levitate",
+        "isAlternateForme": true
+    },
+    "Primal Kyogre": {
+        "t1": "Water",
+        "bs": {
+            "hp": 100,
+            "at": 150,
+            "df": 90,
+            "sa": 180,
+            "sd": 160,
+            "sp": 90
+        },
+        "w": 430.0,
+        "ab": "Primordial Sea"
+    },
     "Primal Groudon": {
         "t1": "Ground",
         "t2": "Fire",
@@ -11565,18 +11490,80 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "w": 999.7,
         "ab": "Desolate Land"
     },
-    "Primal Kyogre": {
-        "t1": "Water",
+    "Mega Rayquaza": {
+        "t1": "Dragon",
+        "t2": "Flying",
         "bs": {
-            "hp": 100,
-            "at": 150,
-            "df": 90,
+            "hp": 105,
+            "at": 180,
+            "df": 100,
             "sa": 180,
-            "sd": 160,
-            "sp": 90
+            "sd": 100,
+            "sp": 115
         },
-        "w": 430.0,
-        "ab": "Primordial Sea"
+        "w": 392.0,
+        "ab": "Delta Stream",
+        "isAlternateForme": true
+    },
+    "Mega Lopunny": {
+        "t1": "Normal",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 65,
+            "at": 136,
+            "df": 94,
+            "sa": 54,
+            "sd": 96,
+            "sp": 135
+        },
+        "w": 28.3,
+        "ab": "Scrappy",
+        "isAlternateForme": true
+    },
+    "Mega Gallade": {
+        "t1": "Psychic",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 68,
+            "at": 165,
+            "df": 95,
+            "sa": 65,
+            "sd": 115,
+            "sp": 110
+        },
+        "w": 56.4,
+        "ab": "Inner Focus",
+        "isAlternateForme": true
+    },
+    "Mega Audino": {
+        "t1": "Normal",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 103,
+            "at": 60,
+            "df": 126,
+            "sa": 80,
+            "sd": 126,
+            "sp": 50
+        },
+        "w": 32.0,
+        "ab": "Healer",
+        "isAlternateForme": true
+    },
+    "Mega Diancie": {
+        "t1": "Rock",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 50,
+            "at": 160,
+            "df": 110,
+            "sa": 160,
+            "sd": 110,
+            "sp": 110
+        },
+        "w": 27.8,
+        "ab": "Magic Bounce",
+        "isAlternateForme": true
     },
     "Hoopa-Unbound": {
         "t1": "Psychic",
@@ -13202,6 +13189,64 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
         "ab": "Technician",
     },
     //USUM Pokemon
+    "Lycanroc-Dusk": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 75,
+            "at": 117,
+            "df": 65,
+            "sa": 55,
+            "sd": 65,
+            "sp": 110
+        },
+        "w": 25.0,
+        "ab": "Tough Claws",
+    },
+    "Necrozma-Dusk-Mane": {
+        "t1": "Psychic",
+        "t2": "Steel",
+        "bs": {
+            "hp": 97,
+            "at": 157,
+            "df": 127,
+            "sa": 113,
+            "sd": 109,
+            "sp": 77
+        },
+        "w": 460.0,
+        "ab": "Prism Armor",
+        "formes": ["Necrozma-Dusk-Mane", "Ultra Necrozma"]
+    },
+    "Necrozma-Dawn-Wings": {
+        "t1": "Psychic",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 97,
+            "at": 113,
+            "df": 109,
+            "sa": 157,
+            "sd": 127,
+            "sp": 77
+        },
+        "w": 350.0,
+        "ab": "Prism Armor",
+        "formes": ["Necrozma-Dawn-Wings", "Ultra Necrozma"]
+    },
+    "Ultra Necrozma": {
+        "t1": "Psychic",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 97,
+            "at": 167,
+            "df": 97,
+            "sa": 167,
+            "sd": 97,
+            "sp": 129
+        },
+        "w": 230.0,
+        "ab": "Neuroforce",
+        "isAlternateForme": true
+    },
     "Poipole": {
         "t1": "Poison",
         "bs": {
@@ -13258,64 +13303,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
         "w": 820.0,
         "ab": "Beast Boost",
     },
-    "Lycanroc-Dusk": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 75,
-            "at": 117,
-            "df": 65,
-            "sa": 55,
-            "sd": 65,
-            "sp": 110
-        },
-        "w": 25.0,
-        "ab": "Tough Claws",
-    },
-    "Necrozma-Dawn-Wings": {
-        "t1": "Psychic",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 97,
-            "at": 113,
-            "df": 109,
-            "sa": 157,
-            "sd": 127,
-            "sp": 77
-        },
-        "w": 350.0,
-        "ab": "Prism Armor",
-        "formes": ["Necrozma-Dawn-Wings", "Ultra Necrozma"]
-    },
-    "Necrozma-Dusk-Mane": {
-        "t1": "Psychic",
-        "t2": "Steel",
-        "bs": {
-            "hp": 97,
-            "at": 157,
-            "df": 127,
-            "sa": 113,
-            "sd": 109,
-            "sp": 77
-        },
-        "w": 460.0,
-        "ab": "Prism Armor",
-        "formes": ["Necrozma-Dusk-Mane", "Ultra Necrozma"]
-    },
-    "Ultra Necrozma": {
-        "t1": "Psychic",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 97,
-            "at": 167,
-            "df": 97,
-            "sa": 167,
-            "sd": 97,
-            "sp": 129
-        },
-        "w": 230.0,
-        "ab": "Neuroforce",
-        "isAlternateForme": true
-    },
     "Zeraora": {
         "t1": "Electric",
         "bs": {
@@ -13334,50 +13321,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 
 var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     //SWSH Pokemon
-    "Meltan": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 46,
-            "at": 65,
-            "df": 65,
-            "sa": 55,
-            "sd": 35,
-            "sp": 34
-        },
-        "w": 8,
-        "ab": "Magnet Pull",
-    },
-    "Melmetal": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 135,
-            "at": 143,
-            "df": 143,
-            "sa": 80,
-            "sd": 65,
-            "sp": 34
-        },
-        "w": 800,
-        "ab": "Iron Fist",
-        "formes": [
-            "Melmetal",
-            "Melmetal-Gmax",
-        ]
-    },
-    "Melmetal-Gmax": {
-        "t1": "Steel",
-        "bs": {
-            "hp": 135,
-            "at": 143,
-            "df": 143,
-            "sa": 80,
-            "sd": 65,
-            "sp": 34
-        },
-        "w": 800,
-        "ab": "Iron Fist",
-        "isAlternateForme": true,
-    },
     "Meowth-Galar": {
         "t1": "Steel",
         "bs": {
@@ -13581,6 +13524,50 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         },
         "w": 20.5,
         "ab": "Mimicry",
+    },
+    "Meltan": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 46,
+            "at": 65,
+            "df": 65,
+            "sa": 55,
+            "sd": 35,
+            "sp": 34
+        },
+        "w": 8,
+        "ab": "Magnet Pull",
+    },
+    "Melmetal": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 135,
+            "at": 143,
+            "df": 143,
+            "sa": 80,
+            "sd": 65,
+            "sp": 34
+        },
+        "w": 800,
+        "ab": "Iron Fist",
+        "formes": [
+            "Melmetal",
+            "Melmetal-Gmax",
+        ]
+    },
+    "Melmetal-Gmax": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 135,
+            "at": 143,
+            "df": 143,
+            "sa": 80,
+            "sd": 65,
+            "sp": 34
+        },
+        "w": 800,
+        "ab": "Iron Fist",
+        "isAlternateForme": true,
     },
     "Grookey": {
         "t1": "Grass",
@@ -13819,26 +13806,26 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
             "sp": 67
         },
         "w": 75,
-        "ab": "Mirror Armor",
-        "formes": [
-            "Corviknight",
-            "Corviknight-Gmax"
-        ],
-    },
-    "Corviknight-Gmax": {
-        "t1": "Flying",
-        "t2": "Steel",
-        "bs": {
-            "hp": 98,
-            "at": 87,
-            "df": 105,
-            "sa": 53,
-            "sd": 85,
-            "sp": 67
+            "ab": "Mirror Armor",
+            "formes": [
+                "Corviknight",
+                "Corviknight-Gmax"
+            ],
         },
-        "w": 75,
-        "ab": "Mirror Armor",
-        "isAlternateForme": true,
+    "Corviknight-Gmax": {
+            "t1": "Flying",
+            "t2": "Steel",
+            "bs": {
+                "hp": 98,
+                "at": 87,
+                "df": 105,
+                "sa": 53,
+                "sd": 85,
+                "sp": 67
+            },
+            "w": 75,
+            "ab": "Mirror Armor",
+            "isAlternateForme": true,
     },
     "Skwovet": {
         "t1": "Normal",
@@ -15062,6 +15049,34 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         "ab": "Pressure",
     },
     //Isle of Armor DLC additions
+    "Slowpoke-Galar": {
+        "t1": "Psychic",
+        "bs": {
+            "hp": 90,
+            "at": 65,
+            "df": 65,
+            "sa": 40,
+            "sd": 40,
+            "sp": 15
+        },
+        "w": 36.0,
+        "ab": "Regenerator",
+        "canEvolve": true,
+    },
+    "Slowbro-Galar": {
+        "t1": "Poison",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 95,
+            "at": 100,
+            "df": 95,
+            "sa": 100,
+            "sd": 70,
+            "sp": 30
+        },
+        "w": 70.5,
+        "ab": "Quick Draw",
+    },
     "Kubfu": {
         "t1": "Fighting",
         "bs": {
@@ -15197,34 +15212,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         "w": 45.2,
         "ab": "Sniper",
         "isAlternateForme": true
-    },
-    "Slowpoke-Galar": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 90,
-            "at": 65,
-            "df": 65,
-            "sa": 40,
-            "sd": 40,
-            "sp": 15
-        },
-        "w": 36.0,
-        "ab": "Regenerator",
-        "canEvolve": true,
-    },
-    "Slowbro-Galar": {
-        "t1": "Poison",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 95,
-            "at": 100,
-            "df": 95,
-            "sa": 100,
-            "sd": 70,
-            "sp": 30
-        },
-        "w": 70.5,
-        "ab": "Quick Draw",
     },
     //Crown Tundra DLC additions
     "Slowking-Galar": {
@@ -15377,7 +15364,6 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         "w": 53.6,
         "ab": "As One"
     },
-
     //GMAX FORMS (save for Galar Pokemon)
     "Venusaur": { "formes": ["Venusaur", "Mega Venusaur", "Venusaur-Gmax"] },
     "Charizard": { "ab": "Solar Power", "formes": ["Charizard", "Mega Charizard X", "Mega Charizard Y", "Charizard-Gmax"] },
@@ -15564,6 +15550,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         "ab": "Aftermath",
         "isAlternateForme": true,
     },
+
     //BASE STAT CHANGES
     "Aegislash": { "bs": { "df": 140, "sd": 140 } },
     "Aegislash-Blade": { "bs": { "at": 140, "sa": 140 } },
@@ -15654,6 +15641,11 @@ POKEDEX_SS["Gengar"].formes = ['Gengar', 'Gengar-Gmax'];
 
 
 var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
+    //EVIOLITE ELIGIBILITY CHANGES
+    "Stantler": { "canEvolve": true, },
+    "Ursaring": { "canEvolve": true, },
+
+    //LA Pokemon
     "Growlithe-Hisui": {
         "t1": "Fire",
         "t2": "Rock",
@@ -15755,6 +15747,34 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "w": 27.0,
         "ab": "Inner Focus",
         "canEvolve": true,
+    },
+    "Dialga-Origin": {
+        "t1": "Steel",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 120,
+            "sa": 150,
+            "sd": 120,
+            "sp": 90,
+        },
+        "w": 850.0,
+        "ab": "Pressure",
+    },
+    "Palkia-Origin": {
+        "t1": "Water",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 90,
+            "at": 100,
+            "df": 100,
+            "sa": 150,
+            "sd": 120,
+            "sp": 120,
+        },
+        "w": 660.0,
+        "ab": "Pressure",
     },
     "Samurott-Hisui": {
         "t1": "Water",
@@ -16024,38 +16044,6 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "w": 48.0,
         "ab": "Overcoat",
     },
-    "Dialga-Origin": {
-        "t1": "Steel",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 120,
-            "sa": 150,
-            "sd": 120,
-            "sp": 90,
-        },
-        "w": 850.0,
-        "ab": "Pressure",
-    },
-    "Palkia-Origin": {
-        "t1": "Water",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 90,
-            "at": 100,
-            "df": 100,
-            "sa": 150,
-            "sd": 120,
-            "sp": 120,
-        },
-        "w": 660.0,
-        "ab": "Pressure",
-    },
-
-    //EVIOLITE ELIGIBILITY CHANGES
-    "Stantler": { "canEvolve": true, },
-    "Ursaring": { "canEvolve": true, },
 });
 
 var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
@@ -16071,37 +16059,13 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
     "Girafarig": { "canEvolve": true, },
     "Bisharp": { "canEvolve": true, },
 
-    "Gallade": {
-        "ab": "Sharpness",
-    },
-    "Cresselia": {
-        "bs": {
-            "df": 110,
-            "sd": 120,
-        },
-    },
-    "Zacian": {
-        "bs": {
-            "at": 120,
-        },
-    },
-    "Zacian-Crowned": {
-        "bs": {
-            "at": 150,
-        },
-    },
-    "Zamazenta": {
-        "bs": {
-            "at": 120,
-        },
-    },
-    "Zamazenta-Crowned": {
-        "bs": {
-            "at": 120,
-            "df": 140,
-            "sd": 140,
-        },
-    },
+    "Gallade": { "ab": "Sharpness", },
+
+    "Cresselia": { "bs": { "df": 110, "sd": 120, }, },
+    "Zacian": { "bs": { "at": 120, }, },
+    "Zacian-Crowned": { "bs": { "at": 150, }, },
+    "Zamazenta": { "bs": { "at": 120, }, },
+    "Zamazenta-Crowned": { "bs": { "at": 120, "df": 140, "sd": 140, }, },
 
     //SV Paldean Forms
     "Tauros-Paldea-Combat": {
@@ -16328,32 +16292,6 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 120.0,
         "ab": "Aroma Veil",
     },
-    "Dudunsparce": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 125,
-            "at": 100,
-            "df": 80,
-            "sa": 85,
-            "sd": 75,
-            "sp": 55,
-        },
-        "w": 39.2,
-        "ab": "Serene Grace",
-    },
-    "Dudunsparce-Big": {
-        "t1": "Normal",
-        "bs": {
-            "hp": 125,
-            "at": 100,
-            "df": 80,
-            "sa": 85,
-            "sd": 75,
-            "sp": 55,
-        },
-        "w": 47.4,
-        "ab": "Serene Grace",
-    },
     "Tarountula": {
         "t1": "Bug",
         "bs": {
@@ -16409,6 +16347,468 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 17.5,
         "ab": "Tinted Lens",
     },
+    "Pawmi": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 45,
+            "at": 50,
+            "df": 20,
+            "sa": 40,
+            "sd": 25,
+            "sp": 60,
+        },
+        "w": 2.5,
+        "ab": "Iron Fist",
+        "canEvolve": true,
+    },
+    "Pawmo": {
+        "t1": "Electric",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 60,
+            "at": 75,
+            "df": 40,
+            "sa": 50,
+            "sd": 40,
+            "sp": 85,
+        },
+        "w": 6.5,
+        "ab": "Iron Fist",
+        "canEvolve": true,
+    },
+    "Pawmot": {
+        "t1": "Electric",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 70,
+            "at": 115,
+            "df": 70,
+            "sa": 70,
+            "sd": 60,
+            "sp": 105,
+        },
+        "w": 41.0,
+        "ab": "Iron Fist",
+    },
+    "Tandemaus": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 50,
+            "at": 50,
+            "df": 45,
+            "sa": 40,
+            "sd": 45,
+            "sp": 75,
+        },
+        "w": 1.8,
+        "ab": "Own Tempo",
+        "canEvolve": true,
+    },
+    "Maushold": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 74,
+            "at": 75,
+            "df": 70,
+            "sa": 65,
+            "sd": 75,
+            "sp": 111,
+        },
+        "w": 2.3,
+        "ab": "Technician",
+    },
+    "Maushold-Four": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 74,
+            "at": 75,
+            "df": 70,
+            "sa": 65,
+            "sd": 75,
+            "sp": 111,
+        },
+        "w": 2.8,
+        "ab": "Technician",
+    },
+    "Fidough": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 37,
+            "at": 55,
+            "df": 70,
+            "sa": 30,
+            "sd": 55,
+            "sp": 65,
+        },
+        "w": 10.9,
+        "ab": "Own Tempo",
+        "canEvolve": true,
+    },
+    "Dachsbun": {
+        "t1": "Fairy",
+        "bs": {
+            "hp": 57,
+            "at": 80,
+            "df": 115,
+            "sa": 50,
+            "sd": 80,
+            "sp": 95,
+        },
+        "w": 14.9,
+        "ab": "Well-Baked Body",
+    },
+    "Smoliv": {
+        "t1": "Grass",
+        "t2": "Normal",
+        "bs": {
+            "hp": 41,
+            "at": 35,
+            "df": 45,
+            "sa": 58,
+            "sd": 51,
+            "sp": 30,
+        },
+        "w": 6.5,
+        "ab": "Harvest",
+        "canEvolve": true,
+    },
+    "Dolliv": {
+        "t1": "Grass",
+        "t2": "Normal",
+        "bs": {
+            "hp": 52,
+            "at": 53,
+            "df": 60,
+            "sa": 78,
+            "sd": 78,
+            "sp": 33,
+        },
+        "w": 11.9,
+        "ab": "Harvest",
+        "canEvolve": true,
+    },
+    "Arboliva": {
+        "t1": "Grass",
+        "t2": "Normal",
+        "bs": {
+            "hp": 78,
+            "at": 69,
+            "df": 90,
+            "sa": 125,
+            "sd": 109,
+            "sp": 39,
+        },
+        "w": 48.2,
+        "ab": "Seed Sower",
+    },
+    "Squawkabilly": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 82,
+            "at": 96,
+            "df": 51,
+            "sa": 45,
+            "sd": 51,
+            "sp": 92,
+        },
+        "w": 2.4,
+        "ab": "Intimidate",
+    },
+    "Nacli": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 55,
+            "at": 55,
+            "df": 75,
+            "sa": 35,
+            "sd": 35,
+            "sp": 25,
+        },
+        "w": 16.0,
+        "ab": "Purifying Salt",
+        "canEvolve": true,
+    },
+    "Naclstack": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 60,
+            "at": 60,
+            "df": 100,
+            "sa": 35,
+            "sd": 65,
+            "sp": 35,
+        },
+        "w": 105.0,
+        "ab": "Purifying Salt",
+        "canEvolve": true,
+    },
+    "Garganacl": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 130,
+            "sa": 45,
+            "sd": 90,
+            "sp": 35,
+        },
+        "w": 240.0,
+        "ab": "Purifying Salt",
+    },
+    "Charcadet": {
+        "t1": "Fire",
+        "bs": {
+            "hp": 40,
+            "at": 50,
+            "df": 40,
+            "sa": 50,
+            "sd": 40,
+            "sp": 35,
+        },
+        "w": 10.5,
+        "ab": "Flash Fire",
+        "canEvolve": true,
+    },
+    "Armarouge": {
+        "t1": "Fire",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 85,
+            "at": 60,
+            "df": 100,
+            "sa": 125,
+            "sd": 80,
+            "sp": 75,
+        },
+        "w": 85.0,
+        "ab": "Flash Fire",
+    },
+    "Ceruledge": {
+        "t1": "Fire",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 75,
+            "at": 125,
+            "df": 80,
+            "sa": 60,
+            "sd": 100,
+            "sp": 85,
+        },
+        "w": 62.0,
+        "ab": "Flash Fire",
+    },
+    "Tadbulb": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 61,
+            "at": 31,
+            "df": 41,
+            "sa": 59,
+            "sd": 35,
+            "sp": 45,
+        },
+        "w": 0.4,
+        "ab": "Static",
+        "canEvolve": true,
+    },
+    "Bellibolt": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 109,
+            "at": 64,
+            "df": 91,
+            "sa": 103,
+            "sd": 83,
+            "sp": 45,
+        },
+        "w": 113.0,
+        "ab": "Electromorphosis",
+    },
+    "Wattrel": {
+        "t1": "Electric",
+        "t2": "Flying",
+        "bs": {
+            "hp": 40,
+            "at": 40,
+            "df": 35,
+            "sa": 55,
+            "sd": 40,
+            "sp": 70,
+        },
+        "w": 3.6,
+        "ab": "Competitive",
+        "canEvolve": true,
+    },
+    "Kilowattrel": {
+        "t1": "Electric",
+        "t2": "Flying",
+        "bs": {
+            "hp": 70,
+            "at": 70,
+            "df": 60,
+            "sa": 105,
+            "sd": 60,
+            "sp": 125,
+        },
+        "w": 38.6,
+        "ab": "Competitive",
+    },
+    "Maschiff": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 60,
+            "at": 78,
+            "df": 60,
+            "sa": 40,
+            "sd": 51,
+            "sp": 51,
+        },
+        "w": 16.0,
+        "ab": "Intimidate",
+        "canEvolve": true,
+    },
+    "Mabosstiff": {
+        "t1": "Dark",
+        "bs": {
+            "hp": 80,
+            "at": 120,
+            "df": 90,
+            "sa": 60,
+            "sd": 70,
+            "sp": 85,
+        },
+        "w": 61.0,
+        "ab": "Intimidate",
+    },
+    "Shroodle": {
+        "t1": "Poison",
+        "t2": "Normal",
+        "bs": {
+            "hp": 40,
+            "at": 65,
+            "df": 35,
+            "sa": 40,
+            "sd": 35,
+            "sp": 75,
+        },
+        "w": 0.7,
+        "ab": "Prankster",
+        "canEvolve": true,
+    },
+    "Grafaiai": {
+        "t1": "Poison",
+        "t2": "Normal",
+        "bs": {
+            "hp": 63,
+            "at": 95,
+            "df": 65,
+            "sa": 80,
+            "sd": 72,
+            "sp": 110,
+        },
+        "w": 27.2,
+        "ab": "Prankster",
+    },
+    "Bramblin": {
+        "t1": "Grass",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 40,
+            "at": 65,
+            "df": 30,
+            "sa": 45,
+            "sd": 35,
+            "sp": 60,
+        },
+        "w": 0.6,
+        "ab": "Wind Rider",
+        "canEvolve": true,
+    },
+    "Brambleghast": {
+        "t1": "Grass",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 55,
+            "at": 115,
+            "df": 70,
+            "sa": 80,
+            "sd": 70,
+            "sp": 90,
+        },
+        "w": 6.0,
+        "ab": "Wind Rider",
+    },
+    "Toedscool": {
+        "t1": "Ground",
+        "t2": "Grass",
+        "bs": {
+            "hp": 40,
+            "at": 40,
+            "df": 35,
+            "sa": 50,
+            "sd": 100,
+            "sp": 70,
+        },
+        "w": 33.0,
+        "ab": "Mycelium Might",
+        "canEvolve": true,
+    },
+    "Toedscruel": {
+        "t1": "Ground",
+        "t2": "Grass",
+        "bs": {
+            "hp": 80,
+            "at": 70,
+            "df": 65,
+            "sa": 80,
+            "sd": 120,
+            "sp": 100,
+        },
+        "w": 58.0,
+        "ab": "Mycelium Might",
+    },
+    "Klawf": {
+        "t1": "Rock",
+        "bs": {
+            "hp": 70,
+            "at": 100,
+            "df": 115,
+            "sa": 35,
+            "sd": 55,
+            "sp": 75,
+        },
+        "w": 79.0,
+        "ab": "Anger Shell",
+    },
+    "Capsakid": {
+        "t1": "Grass",
+        "bs": {
+            "hp": 50,
+            "at": 62,
+            "df": 40,
+            "sa": 62,
+            "sd": 40,
+            "sp": 50,
+        },
+        "w": 3.0,
+        "ab": "Insomnia",
+        "canEvolve": true,
+    },
+    "Scovillain": {
+        "t1": "Grass",
+        "t2": "Fire",
+        "bs": {
+            "hp": 65,
+            "at": 108,
+            "df": 65,
+            "sa": 108,
+            "sd": 65,
+            "sp": 75,
+        },
+        "w": 15.0,
+        "ab": "Chlorophyll",
+    },
     "Rellor": {
         "t1": "Bug",
         "bs": {
@@ -16437,33 +16837,6 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 3.5,
         "ab": "Telepathy",
     },
-    "Greavard": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 50,
-            "at": 61,
-            "df": 60,
-            "sa": 30,
-            "sd": 55,
-            "sp": 34,
-        },
-        "w": 35.0,
-        "ab": "Fluffy",
-        "canEvolve": true,
-    },
-    "Houndstone": {
-        "t1": "Ghost",
-        "bs": {
-            "hp": 72,
-            "at": 101,
-            "df": 100,
-            "sa": 50,
-            "sd": 97,
-            "sp": 68,
-        },
-        "w": 15.0,
-        "ab": "Sand Rush",
-    },
     "Flittle": {
         "t1": "Psychic",
         "bs": {
@@ -16491,19 +16864,49 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 90.0,
         "ab": "Speed Boost",
     },
-    "Farigiraf": {
-        "t1": "Normal",
-        "t2": "Psychic",
+    "Tinkatink": {
+        "t1": "Fairy",
+        "t2": "Steel",
         "bs": {
-            "hp": 120,
-            "at": 90,
-            "df": 70,
-            "sa": 110,
-            "sd": 70,
-            "sp": 60,
+            "hp": 50,
+            "at": 45,
+            "df": 45,
+            "sa": 35,
+            "sd": 64,
+            "sp": 58,
         },
-        "w": 160.0,
-        "ab": "Cud Chew",
+        "w": 8.9,
+        "ab": "Own Tempo",
+        "canEvolve": true,
+    },
+    "Tinkatuff": {
+        "t1": "Fairy",
+        "t2": "Steel",
+        "bs": {
+            "hp": 65,
+            "at": 55,
+            "df": 55,
+            "sa": 45,
+            "sd": 82,
+            "sp": 78,
+        },
+        "w": 59.1,
+        "ab": "Own Tempo",
+        "canEvolve": true,
+    },
+    "Tinkaton": {
+        "t1": "Fairy",
+        "t2": "Steel",
+        "bs": {
+            "hp": 85,
+            "at": 75,
+            "df": 77,
+            "sa": 70,
+            "sd": 105,
+            "sp": 94,
+        },
+        "w": 112.8,
+        "ab": "Own Tempo",
     },
     "Wiglett": {
         "t1": "Water",
@@ -16532,32 +16935,19 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 5.4,
         "ab": "Gooey",
     },
-    "Dondozo": {
-        "t1": "Water",
+    "Bombirdier": {
+        "t1": "Flying",
+        "t2": "Dark",
         "bs": {
-            "hp": 150,
-            "at": 100,
-            "df": 115,
-            "sa": 65,
-            "sd": 65,
-            "sp": 35,
+            "hp": 70,
+            "at": 103,
+            "df": 85,
+            "sa": 60,
+            "sd": 85,
+            "sp": 82,
         },
-        "w": 220.0,
-        "ab": "Unaware",
-    },
-    "Veluza": {
-        "t1": "Water",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 90,
-            "at": 102,
-            "df": 73,
-            "sa": 78,
-            "sd": 65,
-            "sp": 70,
-        },
-        "w": 90.0,
-        "ab": "Sharpness",
+        "w": 42.9,
+        "ab": "Rocky Payload",
     },
     "Finizen": {
         "t1": "Water",
@@ -16605,105 +16995,6 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "ab": "Zero to Hero",
         "isAlternateForme": true,
     },
-    "Smoliv": {
-        "t1": "Grass",
-        "t2": "Normal",
-        "bs": {
-            "hp": 41,
-            "at": 35,
-            "df": 45,
-            "sa": 58,
-            "sd": 51,
-            "sp": 30,
-        },
-        "w": 6.5,
-        "ab": "Harvest",
-        "canEvolve": true,
-    },
-    "Dolliv": {
-        "t1": "Grass",
-        "t2": "Normal",
-        "bs": {
-            "hp": 52,
-            "at": 53,
-            "df": 60,
-            "sa": 78,
-            "sd": 78,
-            "sp": 33,
-        },
-        "w": 11.9,
-        "ab": "Harvest",
-        "canEvolve": true,
-    },
-    "Arboliva": {
-        "t1": "Grass",
-        "t2": "Normal",
-        "bs": {
-            "hp": 78,
-            "at": 69,
-            "df": 90,
-            "sa": 125,
-            "sd": 109,
-            "sp": 39,
-        },
-        "w": 48.2,
-        "ab": "Seed Sower",
-    },
-    "Capsakid": {
-        "t1": "Grass",
-        "bs": {
-            "hp": 50,
-            "at": 62,
-            "df": 40,
-            "sa": 62,
-            "sd": 40,
-            "sp": 50,
-        },
-        "w": 3.0,
-        "ab": "Insomnia",
-        "canEvolve": true,
-    },
-    "Scovillain": {
-        "t1": "Grass",
-        "t2": "Fire",
-        "bs": {
-            "hp": 65,
-            "at": 108,
-            "df": 65,
-            "sa": 108,
-            "sd": 65,
-            "sp": 75,
-        },
-        "w": 15.0,
-        "ab": "Chlorophyll",
-    },
-    "Tadbulb": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 61,
-            "at": 31,
-            "df": 41,
-            "sa": 59,
-            "sd": 35,
-            "sp": 45,
-        },
-        "w": 0.4,
-        "ab": "Static",
-        "canEvolve": true,
-    },
-    "Bellibolt": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 109,
-            "at": 64,
-            "df": 91,
-            "sa": 103,
-            "sd": 83,
-            "sp": 45,
-        },
-        "w": 113.0,
-        "ab": "Electromorphosis",
-    },
     "Varoom": {
         "t1": "Steel",
         "t2": "Poison",
@@ -16733,6 +17024,20 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 120.0,
         "ab": "Filter",
     },
+    "Cyclizar": {
+        "t1": "Dragon",
+        "t2": "Normal",
+        "bs": {
+            "hp": 70,
+            "at": 95,
+            "df": 65,
+            "sa": 85,
+            "sd": 65,
+            "sp": 121,
+        },
+        "w": 63.0,
+        "ab": "Regenerator",
+    },
     "Orthworm": {
         "t1": "Steel",
         "bs": {
@@ -16746,45 +17051,75 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 310.0,
         "ab": "Earth Eater",
     },
-    "Tandemaus": {
-        "t1": "Normal",
+    "Glimmet": {
+        "t1": "Rock",
+        "t2": "Poison",
         "bs": {
-            "hp": 50,
-            "at": 50,
-            "df": 45,
-            "sa": 40,
-            "sd": 45,
-            "sp": 75,
+            "hp": 48,
+            "at": 35,
+            "df": 42,
+            "sa": 105,
+            "sd": 60,
+            "sp": 60,
         },
-        "w": 1.8,
-        "ab": "Own Tempo",
+        "w": 8.0,
+        "ab": "Toxic Debris",
         "canEvolve": true,
     },
-    "Maushold": {
-        "t1": "Normal",
+    "Glimmora": {
+        "t1": "Rock",
+        "t2": "Poison",
         "bs": {
-            "hp": 74,
-            "at": 75,
-            "df": 70,
-            "sa": 65,
-            "sd": 75,
-            "sp": 111,
+            "hp": 83,
+            "at": 55,
+            "df": 90,
+            "sa": 130,
+            "sd": 81,
+            "sp": 86,
         },
-        "w": 2.3,
-        "ab": "Technician",
+        "w": 45.0,
+        "ab": "Toxic Debris",
     },
-    "Maushold-Four": {
-        "t1": "Normal",
+    "Greavard": {
+        "t1": "Ghost",
         "bs": {
-            "hp": 74,
-            "at": 75,
-            "df": 70,
-            "sa": 65,
-            "sd": 75,
-            "sp": 111,
+            "hp": 50,
+            "at": 61,
+            "df": 60,
+            "sa": 30,
+            "sd": 55,
+            "sp": 34,
         },
-        "w": 2.8,
-        "ab": "Technician",
+        "w": 35.0,
+        "ab": "Fluffy",
+        "canEvolve": true,
+    },
+    "Houndstone": {
+        "t1": "Ghost",
+        "bs": {
+            "hp": 72,
+            "at": 101,
+            "df": 100,
+            "sa": 50,
+            "sd": 97,
+            "sp": 68,
+        },
+        "w": 15.0,
+        "ab": "Sand Rush",
+    },
+    "Flamigo": {
+        "t1": "Flying",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 82,
+            "at": 115,
+            "df": 74,
+            "sa": 75,
+            "sd": 64,
+            "sp": 90,
+        },
+        "w": 37.0,
+        "ab": "Scrappy",
     },
     "Cetoddle": {
         "t1": "Ice",
@@ -16812,6 +17147,297 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         },
         "w": 700.0,
         "ab": "Slush Rush",
+    },
+    "Veluza": {
+        "t1": "Water",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 90,
+            "at": 102,
+            "df": 73,
+            "sa": 78,
+            "sd": 65,
+            "sp": 70,
+        },
+        "w": 90.0,
+        "ab": "Sharpness",
+    },
+    "Dondozo": {
+        "t1": "Water",
+        "bs": {
+            "hp": 150,
+            "at": 100,
+            "df": 115,
+            "sa": 65,
+            "sd": 65,
+            "sp": 35,
+        },
+        "w": 220.0,
+        "ab": "Unaware",
+    },
+    "Tatsugiri": {
+        "t1": "Dragon",
+        "t2": "Water",
+        "bs": {
+            "hp": 68,
+            "at": 50,
+            "df": 60,
+            "sa": 120,
+            "sd": 95,
+            "sp": 82,
+        },
+        "w": 8.0,
+        "ab": "Commander",
+    },
+    "Annihilape": {
+        "t1": "Fighting",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 110,
+            "at": 115,
+            "df": 80,
+            "sa": 50,
+            "sd": 90,
+            "sp": 90,
+        },
+        "w": 56.0,
+        "ab": "Defiant",
+    },
+    "Clodsire": {
+        "t1": "Poison",
+        "t2": "Ground",
+        "bs": {
+            "hp": 130,
+            "at": 75,
+            "df": 60,
+            "sa": 45,
+            "sd": 100,
+            "sp": 20,
+        },
+        "w": 223.0,
+        "ab": "Water Absorb",
+    },
+    "Farigiraf": {
+        "t1": "Normal",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 120,
+            "at": 90,
+            "df": 70,
+            "sa": 110,
+            "sd": 70,
+            "sp": 60,
+        },
+        "w": 160.0,
+        "ab": "Cud Chew",
+    },
+    "Dudunsparce": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 125,
+            "at": 100,
+            "df": 80,
+            "sa": 85,
+            "sd": 75,
+            "sp": 55,
+        },
+        "w": 39.2,
+        "ab": "Serene Grace",
+    },
+    "Dudunsparce-Big": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 125,
+            "at": 100,
+            "df": 80,
+            "sa": 85,
+            "sd": 75,
+            "sp": 55,
+        },
+        "w": 47.4,
+        "ab": "Serene Grace",
+    },
+    "Kingambit": {
+        "t1": "Dark",
+        "t2": "Steel",
+        "bs": {
+            "hp": 100,
+            "at": 135,
+            "df": 120,
+            "sa": 60,
+            "sd": 85,
+            "sp": 50,
+        },
+        "w": 120.0,
+        "ab": "Defiant",
+    },
+    "Great Tusk": {
+        "t1": "Ground",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 115,
+            "at": 131,
+            "df": 131,
+            "sa": 53,
+            "sd": 53,
+            "sp": 87,
+        },
+        "w": 320.0,
+        "ab": "Protosynthesis",
+    },
+    "Scream Tail": {
+        "t1": "Fairy",
+        "t2": "Psychic",
+        "bs": {
+            "hp": 115,
+            "at": 65,
+            "df": 99,
+            "sa": 65,
+            "sd": 115,
+            "sp": 111,
+        },
+        "w": 8.0,
+        "ab": "Protosynthesis",
+    },
+    "Brute Bonnet": {
+        "t1": "Grass",
+        "t2": "Dark",
+        "bs": {
+            "hp": 111,
+            "at": 127,
+            "df": 99,
+            "sa": 79,
+            "sd": 99,
+            "sp": 55,
+        },
+        "w": 21.0,
+        "ab": "Protosynthesis",
+    },
+    "Flutter Mane": {
+        "t1": "Ghost",
+        "t2": "Fairy",
+        "bs": {
+            "hp": 55,
+            "at": 55,
+            "df": 55,
+            "sa": 135,
+            "sd": 135,
+            "sp": 135,
+        },
+        "w": 4.0,
+        "ab": "Protosynthesis",
+    },
+    "Slither Wing": {
+        "t1": "Bug",
+        "t2": "Fighting",
+        "bs": {
+            "hp": 85,
+            "at": 135,
+            "df": 79,
+            "sa": 85,
+            "sd": 105,
+            "sp": 81,
+        },
+        "w": 92.0,
+        "ab": "Protosynthesis",
+    },
+    "Sandy Shocks": {
+        "t1": "Electric",
+        "t2": "Ground",
+        "bs": {
+            "hp": 85,
+            "at": 81,
+            "df": 97,
+            "sa": 121,
+            "sd": 85,
+            "sp": 101,
+        },
+        "w": 60.0,
+        "ab": "Protosynthesis",
+    },
+    "Iron Treads": {
+        "t1": "Ground",
+        "t2": "Steel",
+        "bs": {
+            "hp": 90,
+            "at": 112,
+            "df": 120,
+            "sa": 72,
+            "sd": 70,
+            "sp": 106,
+        },
+        "w": 240.0,
+        "ab": "Quark Drive",
+    },
+    "Iron Bundle": {
+        "t1": "Ice",
+        "t2": "Water",
+        "bs": {
+            "hp": 56,
+            "at": 80,
+            "df": 114,
+            "sa": 124,
+            "sd": 60,
+            "sp": 136,
+        },
+        "w": 11.0,
+        "ab": "Quark Drive",
+    },
+    "Iron Hands": {
+        "t1": "Fighting",
+        "t2": "Electric",
+        "bs": {
+            "hp": 154,
+            "at": 140,
+            "df": 108,
+            "sa": 50,
+            "sd": 68,
+            "sp": 50,
+        },
+        "w": 380.7,
+        "ab": "Quark Drive",
+    },
+    "Iron Jugulis": {
+        "t1": "Dark",
+        "t2": "Flying",
+        "bs": {
+            "hp": 94,
+            "at": 80,
+            "df": 86,
+            "sa": 122,
+            "sd": 80,
+            "sp": 108,
+        },
+        "w": 111.0,
+        "ab": "Quark Drive",
+    },
+    "Iron Moth": {
+        "t1": "Fire",
+        "t2": "Poison",
+        "bs": {
+            "hp": 80,
+            "at": 70,
+            "df": 60,
+            "sa": 140,
+            "sd": 110,
+            "sp": 110,
+        },
+        "w": 36.0,
+        "ab": "Quark Drive",
+    },
+    "Iron Thorns": {
+        "t1": "Rock",
+        "t2": "Electric",
+        "bs": {
+            "hp": 100,
+            "at": 134,
+            "df": 110,
+            "sa": 70,
+            "sd": 84,
+            "sp": 72,
+        },
+        "w": 303.0,
+        "ab": "Quark Drive",
     },
     "Frigibax": {
         "t1": "Dragon",
@@ -16857,343 +17483,6 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 210.0,
         "ab": "Thermal Exchange",
     },
-    "Tatsugiri": {
-        "t1": "Dragon",
-        "t2": "Water",
-        "bs": {
-            "hp": 68,
-            "at": 50,
-            "df": 60,
-            "sa": 120,
-            "sd": 95,
-            "sp": 82,
-        },
-        "w": 8.0,
-        "ab": "Commander",
-    },
-    "Cyclizar": {
-        "t1": "Dragon",
-        "t2": "Normal",
-        "bs": {
-            "hp": 70,
-            "at": 95,
-            "df": 65,
-            "sa": 85,
-            "sd": 65,
-            "sp": 121,
-        },
-        "w": 63.0,
-        "ab": "Regenerator",
-    },
-    "Pawmi": {
-        "t1": "Electric",
-        "bs": {
-            "hp": 45,
-            "at": 50,
-            "df": 20,
-            "sa": 40,
-            "sd": 25,
-            "sp": 60,
-        },
-        "w": 2.5,
-        "ab": "Iron Fist",
-        "canEvolve": true,
-    },
-    "Pawmo": {
-        "t1": "Electric",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 60,
-            "at": 75,
-            "df": 40,
-            "sa": 50,
-            "sd": 40,
-            "sp": 85,
-        },
-        "w": 6.5,
-        "ab": "Iron Fist",
-        "canEvolve": true,
-    },
-    "Pawmot": {
-        "t1": "Electric",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 70,
-            "at": 115,
-            "df": 70,
-            "sa": 70,
-            "sd": 60,
-            "sp": 105,
-        },
-        "w": 41.0,
-        "ab": "Iron Fist",
-    },
-    "Wattrel": {
-        "t1": "Electric",
-        "t2": "Flying",
-        "bs": {
-            "hp": 40,
-            "at": 40,
-            "df": 35,
-            "sa": 55,
-            "sd": 40,
-            "sp": 70,
-        },
-        "w": 3.6,
-        "ab": "Competitive",
-        "canEvolve": true,
-    },
-    "Kilowattrel": {
-        "t1": "Electric",
-        "t2": "Flying",
-        "bs": {
-            "hp": 70,
-            "at": 70,
-            "df": 60,
-            "sa": 105,
-            "sd": 60,
-            "sp": 125,
-        },
-        "w": 38.6,
-        "ab": "Competitive",
-    },
-    "Bombirdier": {
-        "t1": "Flying",
-        "t2": "Dark",
-        "bs": {
-            "hp": 70,
-            "at": 103,
-            "df": 85,
-            "sa": 60,
-            "sd": 85,
-            "sp": 82,
-        },
-        "w": 42.9,
-        "ab": "Rocky Payload",
-    },
-    "Squawkabilly": {
-        "t1": "Normal",
-        "t2": "Flying",
-        "bs": {
-            "hp": 82,
-            "at": 96,
-            "df": 51,
-            "sa": 45,
-            "sd": 51,
-            "sp": 92,
-        },
-        "w": 2.4,
-        "ab": "Intimidate",
-    },
-    "Flamigo": {
-        "t1": "Flying",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 82,
-            "at": 115,
-            "df": 74,
-            "sa": 75,
-            "sd": 64,
-            "sp": 90,
-        },
-        "w": 37.0,
-        "ab": "Scrappy",
-    },
-    "Klawf": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 70,
-            "at": 100,
-            "df": 115,
-            "sa": 35,
-            "sd": 55,
-            "sp": 75,
-        },
-        "w": 79.0,
-        "ab": "Anger Shell",
-    },
-    "Nacli": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 55,
-            "at": 55,
-            "df": 75,
-            "sa": 35,
-            "sd": 35,
-            "sp": 25,
-        },
-        "w": 16.0,
-        "ab": "Purifying Salt",
-        "canEvolve": true,
-    },
-    "Naclstack": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 60,
-            "at": 60,
-            "df": 100,
-            "sa": 35,
-            "sd": 65,
-            "sp": 35,
-        },
-        "w": 105.0,
-        "ab": "Purifying Salt",
-        "canEvolve": true,
-    },
-    "Garganacl": {
-        "t1": "Rock",
-        "bs": {
-            "hp": 100,
-            "at": 100,
-            "df": 130,
-            "sa": 45,
-            "sd": 90,
-            "sp": 35,
-        },
-        "w": 240.0,
-        "ab": "Purifying Salt",
-    },
-    "Glimmet": {
-        "t1": "Rock",
-        "t2": "Poison",
-        "bs": {
-            "hp": 48,
-            "at": 35,
-            "df": 42,
-            "sa": 105,
-            "sd": 60,
-            "sp": 60,
-        },
-        "w": 8.0,
-        "ab": "Toxic Debris",
-        "canEvolve": true,
-    },
-    "Glimmora": {
-        "t1": "Rock",
-        "t2": "Poison",
-        "bs": {
-            "hp": 83,
-            "at": 55,
-            "df": 90,
-            "sa": 130,
-            "sd": 81,
-            "sp": 86,
-        },
-        "w": 45.0,
-        "ab": "Toxic Debris",
-    },
-    "Shroodle": {
-        "t1": "Poison",
-        "t2": "Normal",
-        "bs": {
-            "hp": 40,
-            "at": 65,
-            "df": 35,
-            "sa": 40,
-            "sd": 35,
-            "sp": 75,
-        },
-        "w": 0.7,
-        "ab": "Prankster",
-        "canEvolve": true,
-    },
-    "Grafaiai": {
-        "t1": "Poison",
-        "t2": "Normal",
-        "bs": {
-            "hp": 63,
-            "at": 95,
-            "df": 65,
-            "sa": 80,
-            "sd": 72,
-            "sp": 110,
-        },
-        "w": 27.2,
-        "ab": "Prankster",
-    },
-    "Fidough": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 37,
-            "at": 55,
-            "df": 70,
-            "sa": 30,
-            "sd": 55,
-            "sp": 65,
-        },
-        "w": 10.9,
-        "ab": "Own Tempo",
-        "canEvolve": true,
-    },
-    "Dachsbun": {
-        "t1": "Fairy",
-        "bs": {
-            "hp": 57,
-            "at": 80,
-            "df": 115,
-            "sa": 50,
-            "sd": 80,
-            "sp": 95,
-        },
-        "w": 14.9,
-        "ab": "Well-Baked Body",
-    },
-    "Maschiff": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 60,
-            "at": 78,
-            "df": 60,
-            "sa": 40,
-            "sd": 51,
-            "sp": 51,
-        },
-        "w": 16.0,
-        "ab": "Intimidate",
-        "canEvolve": true,
-    },
-    "Mabosstiff": {
-        "t1": "Dark",
-        "bs": {
-            "hp": 80,
-            "at": 120,
-            "df": 90,
-            "sa": 60,
-            "sd": 70,
-            "sp": 85,
-        },
-        "w": 61.0,
-        "ab": "Intimidate",
-    },
-    "Bramblin": {
-        "t1": "Grass",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 40,
-            "at": 65,
-            "df": 30,
-            "sa": 45,
-            "sd": 35,
-            "sp": 60,
-        },
-        "w": 0.6,
-        "ab": "Wind Rider",
-        "canEvolve": true,
-    },
-    "Brambleghast": {
-        "t1": "Grass",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 55,
-            "at": 115,
-            "df": 70,
-            "sa": 80,
-            "sd": 70,
-            "sp": 90,
-        },
-        "w": 6.0,
-        "ab": "Wind Rider",
-    },
     "Gimmighoul": {
         "t1": "Ghost",
         "bs": {
@@ -17236,344 +17525,19 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 30.0,
         "ab": "Good as Gold",
     },
-    "Tinkatink": {
-        "t1": "Fairy",
-        "t2": "Steel",
-        "bs": {
-            "hp": 50,
-            "at": 45,
-            "df": 45,
-            "sa": 35,
-            "sd": 64,
-            "sp": 58,
-        },
-        "w": 8.9,
-        "ab": "Own Tempo",
-        "canEvolve": true,
-    },
-    "Tinkatuff": {
-        "t1": "Fairy",
-        "t2": "Steel",
-        "bs": {
-            "hp": 65,
-            "at": 55,
-            "df": 55,
-            "sa": 45,
-            "sd": 82,
-            "sp": 78,
-        },
-        "w": 59.1,
-        "ab": "Own Tempo",
-        "canEvolve": true,
-    },
-    "Tinkaton": {
-        "t1": "Fairy",
-        "t2": "Steel",
-        "bs": {
-            "hp": 85,
-            "at": 75,
-            "df": 77,
-            "sa": 70,
-            "sd": 105,
-            "sp": 94,
-        },
-        "w": 112.8,
-        "ab": "Own Tempo",
-    },
-    "Charcadet": {
-        "t1": "Fire",
-        "bs": {
-            "hp": 40,
-            "at": 50,
-            "df": 40,
-            "sa": 50,
-            "sd": 40,
-            "sp": 35,
-        },
-        "w": 10.5,
-        "ab": "Flash Fire",
-        "canEvolve": true,
-    },
-    "Armarouge": {
-        "t1": "Fire",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 85,
-            "at": 60,
-            "df": 100,
-            "sa": 125,
-            "sd": 80,
-            "sp": 75,
-        },
-        "w": 85.0,
-        "ab": "Flash Fire",
-    },
-    "Ceruledge": {
-        "t1": "Fire",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 75,
-            "at": 125,
-            "df": 80,
-            "sa": 60,
-            "sd": 100,
-            "sp": 85,
-        },
-        "w": 62.0,
-        "ab": "Flash Fire",
-    },
-    "Toedscool": {
-        "t1": "Ground",
+    "Wo-Chien": {
+        "t1": "Dark",
         "t2": "Grass",
         "bs": {
-            "hp": 40,
-            "at": 40,
-            "df": 35,
-            "sa": 50,
-            "sd": 100,
+            "hp": 85,
+            "at": 85,
+            "df": 100,
+            "sa": 95,
+            "sd": 135,
             "sp": 70,
         },
-        "w": 33.0,
-        "ab": "Mycelium Might",
-        "canEvolve": true,
-    },
-    "Toedscruel": {
-        "t1": "Ground",
-        "t2": "Grass",
-        "bs": {
-            "hp": 80,
-            "at": 70,
-            "df": 65,
-            "sa": 80,
-            "sd": 120,
-            "sp": 100,
-        },
-        "w": 58.0,
-        "ab": "Mycelium Might",
-    },
-    "Kingambit": {
-        "t1": "Dark",
-        "t2": "Steel",
-        "bs": {
-            "hp": 100,
-            "at": 135,
-            "df": 120,
-            "sa": 60,
-            "sd": 85,
-            "sp": 50,
-        },
-        "w": 120.0,
-        "ab": "Defiant",
-    },
-    "Clodsire": {
-        "t1": "Poison",
-        "t2": "Ground",
-        "bs": {
-            "hp": 130,
-            "at": 75,
-            "df": 60,
-            "sa": 45,
-            "sd": 100,
-            "sp": 20,
-        },
-        "w": 223.0,
-        "ab": "Water Absorb",
-    },
-    "Annihilape": {
-        "t1": "Fighting",
-        "t2": "Ghost",
-        "bs": {
-            "hp": 110,
-            "at": 115,
-            "df": 80,
-            "sa": 50,
-            "sd": 90,
-            "sp": 90,
-        },
-        "w": 56.0,
-        "ab": "Defiant",
-    },
-    "Great Tusk": {
-        "t1": "Ground",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 115,
-            "at": 131,
-            "df": 131,
-            "sa": 53,
-            "sd": 53,
-            "sp": 87,
-        },
-        "w": 320.0,
-        "ab": "Protosynthesis",
-    },
-    "Brute Bonnet": {
-        "t1": "Grass",
-        "t2": "Dark",
-        "bs": {
-            "hp": 111,
-            "at": 127,
-            "df": 99,
-            "sa": 79,
-            "sd": 99,
-            "sp": 55,
-        },
-        "w": 21.0,
-        "ab": "Protosynthesis",
-    },
-    "Sandy Shocks": {
-        "t1": "Electric",
-        "t2": "Ground",
-        "bs": {
-            "hp": 85,
-            "at": 81,
-            "df": 97,
-            "sa": 121,
-            "sd": 85,
-            "sp": 101,
-        },
-        "w": 60.0,
-        "ab": "Protosynthesis",
-    },
-    "Scream Tail": {
-        "t1": "Fairy",
-        "t2": "Psychic",
-        "bs": {
-            "hp": 115,
-            "at": 65,
-            "df": 99,
-            "sa": 65,
-            "sd": 115,
-            "sp": 111,
-        },
-        "w": 8.0,
-        "ab": "Protosynthesis",
-    },
-    "Flutter Mane": {
-        "t1": "Ghost",
-        "t2": "Fairy",
-        "bs": {
-            "hp": 55,
-            "at": 55,
-            "df": 55,
-            "sa": 135,
-            "sd": 135,
-            "sp": 135,
-        },
-        "w": 4.0,
-        "ab": "Protosynthesis",
-    },
-    "Slither Wing": {
-        "t1": "Bug",
-        "t2": "Fighting",
-        "bs": {
-            "hp": 85,
-            "at": 135,
-            "df": 79,
-            "sa": 85,
-            "sd": 105,
-            "sp": 81,
-        },
-        "w": 92.0,
-        "ab": "Protosynthesis",
-    },
-    "Iron Treads": {
-        "t1": "Ground",
-        "t2": "Steel",
-        "bs": {
-            "hp": 90,
-            "at": 112,
-            "df": 120,
-            "sa": 72,
-            "sd": 70,
-            "sp": 106,
-        },
-        "w": 240.0,
-        "ab": "Quark Drive",
-    },
-    "Iron Moth": {
-        "t1": "Fire",
-        "t2": "Poison",
-        "bs": {
-            "hp": 80,
-            "at": 70,
-            "df": 60,
-            "sa": 140,
-            "sd": 110,
-            "sp": 110,
-        },
-        "w": 36.0,
-        "ab": "Quark Drive",
-    },
-    "Iron Hands": {
-        "t1": "Fighting",
-        "t2": "Electric",
-        "bs": {
-            "hp": 154,
-            "at": 140,
-            "df": 108,
-            "sa": 50,
-            "sd": 68,
-            "sp": 50,
-        },
-        "w": 380.7,
-        "ab": "Quark Drive",
-    },
-    "Iron Jugulis": {
-        "t1": "Dark",
-        "t2": "Flying",
-        "bs": {
-            "hp": 94,
-            "at": 80,
-            "df": 86,
-            "sa": 122,
-            "sd": 80,
-            "sp": 108,
-        },
-        "w": 111.0,
-        "ab": "Quark Drive",
-    },
-    "Iron Thorns": {
-        "t1": "Rock",
-        "t2": "Electric",
-        "bs": {
-            "hp": 100,
-            "at": 134,
-            "df": 110,
-            "sa": 70,
-            "sd": 84,
-            "sp": 72,
-        },
-        "w": 303.0,
-        "ab": "Quark Drive",
-    },
-    "Iron Bundle": {
-        "t1": "Ice",
-        "t2": "Water",
-        "bs": {
-            "hp": 56,
-            "at": 80,
-            "df": 114,
-            "sa": 124,
-            "sd": 60,
-            "sp": 136,
-        },
-        "w": 11.0,
-        "ab": "Quark Drive",
-    },
-    "Ting-Lu": {
-        "t1": "Dark",
-        "t2": "Ground",
-        "bs": {
-            "hp": 155,
-            "at": 110,
-            "df": 125,
-            "sa": 55,
-            "sd": 80,
-            "sp": 45,
-        },
-        "w": 699.7,
-        "ab": "Vessel of Ruin",
+        "w": 74.2,
+        "ab": "Tablets of Ruin",
     },
     "Chien-Pao": {
         "t1": "Dark",
@@ -17589,19 +17553,19 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "w": 152.2,
         "ab": "Sword of Ruin",
     },
-    "Wo-Chien": {
+    "Ting-Lu": {
         "t1": "Dark",
-        "t2": "Grass",
+        "t2": "Ground",
         "bs": {
-            "hp": 85,
-            "at": 85,
-            "df": 100,
-            "sa": 95,
-            "sd": 135,
-            "sp": 70,
+            "hp": 155,
+            "at": 110,
+            "df": 125,
+            "sa": 55,
+            "sd": 80,
+            "sp": 45,
         },
-        "w": 74.2,
-        "ab": "Tablets of Ruin",
+        "w": 699.7,
+        "ab": "Vessel of Ruin",
     },
     "Chi-Yu": {
         "t1": "Dark",
@@ -17863,20 +17827,6 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
     },
     //Indigo Disk DLC new additions
     "Duraludon": { "canEvolve": true, },
-    "Hydrapple": {
-        "t1": "Grass",
-        "t2": "Dragon",
-        "bs": {
-            "hp": 106,
-            "at": 80,
-            "df": 110,
-            "sa": 120,
-            "sd": 80,
-            "sp": 44,
-        },
-        "w": 93.0,
-        "ab": "Regenerator",
-    },
     "Archaludon": {
         "t1": "Steel",
         "t2": "Dragon",
@@ -17890,6 +17840,20 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         },
         "w": 60.0,
         "ab": "Stamina",
+    },
+    "Hydrapple": {
+        "t1": "Grass",
+        "t2": "Dragon",
+        "bs": {
+            "hp": 106,
+            "at": 80,
+            "df": 110,
+            "sa": 120,
+            "sd": 80,
+            "sp": 44,
+        },
+        "w": 93.0,
+        "ab": "Regenerator",
     },
     "Gouging Fire": {
         "t1": "Fire",
