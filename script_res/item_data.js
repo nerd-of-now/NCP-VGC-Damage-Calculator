@@ -836,7 +836,7 @@ var MEGA_STONE_USER_LOOKUP = {
 };
 
 function canMega(item, species) {
-    return MEGA_STONE_USER_LOOKUP[item].includes(species);
+    return item in MEGA_STONE_USER_LOOKUP && MEGA_STONE_USER_LOOKUP[item].includes(species);
 }
 
 var SIGNATURE_Z_MOVE_LOOKUP = {
