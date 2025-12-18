@@ -1513,6 +1513,7 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
         userMaxDamage = userMinDamage;
     }
 
+    var dynamaxHP = user.isDynamax ? 2 : 1;
     //Opponent ability check
     if (["Rough Skin", "Iron Barbs"].includes(target.ability) && move.makesContact) {
         userMinDamage += Math.max(1, Math.floor(user.maxHP / 8));
@@ -1520,8 +1521,8 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
     }
     //Conditional assumes that ability toggling handles whether or not the target is a Cramorant
     //else if (target.ability == "Gulp Missile" && target.abilityOn && move.category != "Status") {
-    //    userMinDamage += Math.max(1, Math.floor(user.maxHP / 4));
-    //    userMaxDamage += Math.max(1, Math.floor(user.maxHP / 4));
+    //    userMinDamage += Math.max(1, Math.floor(user.maxHP / (4 * dynamaxHP)));
+    //    userMaxDamage += Math.max(1, Math.floor(user.maxHP / (4 * dynamaxHP)));
     //}
 
     //Opponent item check
@@ -1530,19 +1531,19 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
         userMaxDamage += Math.max(1, Math.floor(user.maxHP / 6));
     }
     else if ((target.item == "Jaboca Berry" && move.category == "Physical") || (target.item == "Rowap Berry" && move.category == "Special")) {
-        userMinDamage += Math.max(1, Math.floor(user.maxHP / 8));
-        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 8));
+        userMinDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP)));
+        userMaxDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP)));
     }
 
     //User item check
     if (!(user.ability == "Sheer Force" && move.hasSecondaryEffect)) {
         if (userItem == "Shell Bell") {
-            userMinDamage -= Math.max(1, Math.floor(usedMin / 8));
-            userMaxDamage -= Math.max(1, Math.floor(usedMax / 8));
+            userMinDamage -= Math.max(1, Math.floor(usedMin / (8 * dynamaxHP)));
+            userMaxDamage -= Math.max(1, Math.floor(usedMax / (8 * dynamaxHP)));
         }
         else if (userItem == "Life Orb" && move.category != "Status") {
-            userMinDamage += Math.max(1, Math.floor(user.maxHP / 10));
-            userMaxDamage += Math.max(1, Math.floor(user.maxHP / 10));
+            userMinDamage += Math.max(1, Math.floor(user.maxHP / (10 * dynamaxHP)));
+            userMaxDamage += Math.max(1, Math.floor(user.maxHP / (10 * dynamaxHP)));
         }
     }
 
