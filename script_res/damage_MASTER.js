@@ -901,12 +901,13 @@ function NaturePower(move, field, moveDescName) {         //Rename Nature Power 
 function checkMeFirst(move, moveDescName, defender, isDynamax) {
     var moveName = defender.moves[move.usedOppMoveIndex].name;
     var cannotCall = ['Beak Blast', 'Belch', 'Chatter', 'Counter', 'Covet', 'Focus Punch', 'Metal Burst', 'Mirror Coat', 'Shell Trap', 'Struggle', 'Thief'].includes(moveName);
-    var meFirstZ = move.isZ, isMeFirst = false;
+    var meFirstZ = move.isZ, isMeFirst = false, tempCrit = move.isCrit;
     if (!cannotCall && moves[moveName].category !== 'Status' && !isDynamax) {
         move = moves[moveName];
         move.name = moveName;
         isMeFirst = true;
         move.isZ = meFirstZ;
+        move.isCrit = tempCrit;
         moveDescName = moveName;
     }
     return [move, moveDescName, isMeFirst];

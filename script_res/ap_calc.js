@@ -1036,10 +1036,10 @@ function getOppMoves(pokID, moveGroupObj) {
     }
     else {
         var tempID = pokID == 'p1' ? 'p2' : pokID == 'p2' ? 'p1' : 'unexpected value';
-        var oppMoves = [$("#" + tempID + " .move1 select.move-selector").val(),
-            $("#" + tempID + " .move2 select.move-selector").val(),
-            $("#" + tempID + " .move3 select.move-selector").val(),
-            $("#" + tempID + " .move4 select.move-selector").val(),];
+        var oppMoves = [$("#" + pokID + " .move1 select.move-selector").val(),
+            $("#" + pokID + " .move2 select.move-selector").val(),
+            $("#" + pokID + " .move3 select.move-selector").val(),
+            $("#" + pokID + " .move4 select.move-selector").val(),];
         oppMoveOptions = getSelectOptions(oppMoves);
         for (i = 1; i <= 4; i++) {
             if ($("#" + tempID + " .move" + i + " .move-opponent").is(":visible")) {
