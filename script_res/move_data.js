@@ -4258,6 +4258,120 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
 });
 
+var MOVES_LGPE = {}; 
+
+['(No Move)',
+    'Pound', 'Karate Chop', 'Double Slap', 'Comet Punch', 'Mega Punch', 'Pay Day', 'Fire Punch', 'Ice Punch', 'Thunder Punch', 'Scratch', 'Vise Grip', 'Guillotine',
+    'Razor Wind', 'Swords Dance', 'Cut', 'Gust', 'Wing Attack', 'Whirlwind', 'Fly', 'Bind', 'Slam', 'Vine Whip', 'Stomp', 'Double Kick', 'Mega Kick', 'Jump Kick',
+    'Rolling Kick', 'Sand Attack', 'Headbutt', 'Horn Attack', 'Fury Attack', 'Horn Drill', 'Tackle', 'Body Slam', 'Wrap', 'Take Down', 'Thrash', 'Double-Edge',
+    'Tail Whip', 'Poison Sting', 'Twineedle', 'Pin Missile', 'Leer', 'Bite', 'Growl', 'Roar', 'Sing', 'Supersonic', 'Sonic Boom', 'Disable', 'Acid', 'Ember',
+    'Flamethrower', 'Mist', 'Water Gun', 'Hydro Pump', 'Surf', 'Ice Beam', 'Blizzard', 'Psybeam', 'Bubble Beam', 'Aurora Beam', 'Hyper Beam', 'Peck', 'Drill Peck',
+    'Submission', 'Low Kick', 'Counter', 'Seismic Toss', 'Strength', 'Absorb', 'Mega Drain', 'Leech Seed', 'Growth', 'Razor Leaf', 'Solar Beam', 'Poison Powder',
+    'Stun Spore', 'Sleep Powder', 'Petal Dance', 'String Shot', 'Dragon Rage', 'Fire Spin', 'Thunder Shock', 'Thunderbolt', 'Thunder Wave', 'Thunder', 'Rock Throw',
+    'Earthquake', 'Fissure', 'Dig', 'Toxic', 'Confusion', 'Psychic', 'Hypnosis', 'Meditate', 'Agility', 'Quick Attack', 'Rage', 'Teleport', 'Night Shade', 'Mimic',
+    'Screech', 'Double Team', 'Recover', 'Harden', 'Minimize', 'Smokescreen', 'Confuse Ray', 'Withdraw', 'Defense Curl', 'Barrier', 'Light Screen', 'Haze', 'Reflect',
+    'Focus Energy', 'Bide', 'Metronome', 'Mirror Move', 'Self-Destruct', 'Egg Bomb', 'Lick', 'Smog', 'Sludge', 'Bone Club', 'Fire Blast', 'Waterfall', 'Clamp',
+    'Swift', 'Skull Bash', 'Spike Cannon', 'Constrict', 'Amnesia', 'Kinesis', 'Soft-Boiled', 'High Jump Kick', 'Glare', 'Dream Eater', 'Poison Gas', 'Barrage',
+    'Leech Life', 'Lovely Kiss', 'Sky Attack', 'Transform', 'Bubble', 'Dizzy Punch', 'Spore', 'Flash', 'Psywave', 'Splash', 'Acid Armor', 'Crabhammer', 'Explosion',
+    'Fury Swipes', 'Bonemerang', 'Rest', 'Rock Slide', 'Hyper Fang', 'Sharpen', 'Conversion', 'Tri Attack', 'Super Fang', 'Slash', 'Substitute', 'Struggle', 'Protect',
+    'Sludge Bomb', 'Outrage', 'Megahorn', 'Encore', 'Iron Tail', 'Crunch', 'Mirror Coat', 'Shadow Ball', 'Fake Out', 'Heat Wave', 'Will-O-Wisp', 'Facade', 'Taunt',
+    'Helping Hand', 'Superpower', 'Brick Break', 'Yawn', 'Bulk Up', 'Calm Mind', 'Roost', 'Feint', 'U-turn', 'Sucker Punch', 'Flare Blitz', 'Poison Jab', 'Dark Pulse',
+    'Air Slash', 'X-Scissor', 'Bug Buzz', 'Dragon Pulse', 'Nasty Plot', 'Ice Shard', 'Flash Cannon', 'Power Whip', 'Stealth Rock', 'Aqua Jet', 'Quiver Dance', 'Foul Play',
+    'Clear Smog', 'Scald', 'Shell Smash', 'Dragon Tail', 'Drill Run', 'Play Rough', 'Moonblast', 'Dazzling Gleam', 'Celebrate',
+].forEach(e => MOVES_LGPE[e] = MOVES_SM[e]);
+
+MOVES_LGPE = $.extend(true, {}, MOVES_LGPE, {
+    'Absorb': { bp: 40 },
+    'Mega Drain': { bp: 75 },
+    'Solar Beam': { bp: 200 },
+    'Sky Attack': { bp: 200 },
+
+    'Zippy Zap': {
+        bp: 80,
+        type: 'Electric',
+        category: 'Physical',
+        makesContact: true,
+        alwaysCrit: true,
+        isPriority: true,
+    },
+    'Splishy Splash': {
+        bp: 90,
+        type: 'Water',
+        category: 'Special',
+        hasSecondaryEffect: true,
+        isSpread: true,
+    },
+    'Floaty Fall': {
+        bp: 90,
+        type: 'Flying',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+    },
+    'Pika Papow': {
+        bp: 102,
+        type: 'Electric',
+        category: 'Special',
+    },
+    'Bouncy Bubble': {
+        bp: 90,
+        type: 'Water',
+        category: 'Special',
+        drainHP: [1, 2],
+    },
+    'Buzzy Buzz': {
+        bp: 90,
+        type: 'Electric',
+        category: 'Special',
+        hasSecondaryEffect: true,
+    },
+    'Sizzly Slide': {
+        bp: 90,
+        type: 'Fire',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Glitzy Glow': {
+        bp: 90,
+        type: 'Psychic',
+        category: 'Special',
+    },
+    'Baddy Bad': {
+        bp: 90,
+        type: 'Dark',
+        category: 'Special',
+    },
+    'Sappy Seed': {
+        bp: 90,
+        type: 'Grass',
+        category: 'Physical',
+    },
+    'Freezy Frost': {
+        bp: 90,
+        type: 'Ice',
+        category: 'Special',
+    },
+    'Sparkly Swirl': {
+        bp: 90,
+        type: 'Fairy',
+        category: 'Special',
+    },
+    'Veevee Volley': {
+        bp: 102,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+    },
+    'Double Iron Bash': {
+        bp: 60,
+        type: 'Steel',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+        isPunch: true,
+    },
+});
+
 var MOVES_SS = $.extend(true, {}, MOVES_SM, {
     //Past move changes
     'Multi-Attack': { bp: 120 },
@@ -5590,7 +5704,7 @@ var MOVES_SV = $.extend(true, {}, MOVES_SV_NATDEX, {});
     'Kinesis', 'Electrify', 'Light of Ruin', 'Anchor Shot', 'Bolt Beak', 'Chatter', 'Core Enforcer', 'Double Iron Bash',
     'Fishious Rend', 'Geomancy', 'Hold Hands', "Land's Wrath", 'Meteor Assault', 'Mind Blown', 'Multi-Attack',
     "Nature's Madness", 'Oblivion Wing', 'Octolock', 'Plasma Fists', 'Purify', 'Shadow Bone', 'Shell Trap',
-    'Snap Trap', 'Spectral Thief', 'Storm Throw', 'Techno Blast', 'Thousand Arrows', 'Thousand Waves',
+    'Snap Trap', 'Spectral Thief', 'Storm Throw', 'Techno Blast', 'Thousand Arrows', 'Thousand Waves', 'Searing Shot',
     //unusable SV moves
     'Blazing Torque', 'Wicked Torque', 'Noxious Torque', 'Combat Torque', 'Magical Torque', 'Power Shift',
 ].forEach(e => delete MOVES_SV[e]);
@@ -5604,4 +5718,103 @@ var MOVES_ZA_NATDEX = $.extend(true, {}, MOVES_SV_NATDEX, {
         ignoresDefenseBoosts: true,
         isSpread: true, //THIS IS A PREDICTION
     }
+});
+
+//This one will contain all of the changes just for Z-A; looking at adding things like cooldown and charge times later
+var MOVES_ZA = {};
+[ '(No Move)',
+    'Fire Punch', 'Ice Punch', 'Thunder Punch', 'Swords Dance', 'Gust', 'Wing Attack', 'Whirlwind', 'Fly', 'Vine Whip', 'Headbutt', 'Tackle', 'Body Slam',
+    'Take Down', 'Double-Edge', 'Tail Whip', 'Poison Sting', 'Pin Missile', 'Leer', 'Bite', 'Growl', 'Roar', 'Supersonic', 'Ember', 'Flamethrower', 'Mist',
+    'Water Gun', 'Hydro Pump', 'Surf', 'Ice Beam', 'Blizzard', 'Psybeam', 'Bubble Beam', 'Hyper Beam', 'Peck', 'Absorb', 'Leech Seed', 'Growth', 'Razor Leaf',
+    'Solar Beam', 'Poison Powder', 'Stun Spore', 'Sleep Powder', 'String Shot', 'Fire Spin', 'Thunder Shock', 'Thunderbolt', 'Thunder Wave', 'Thunder',
+    'Rock Throw', 'Earthquake', 'Dig', 'Toxic', 'Confusion', 'Psychic', 'Hypnosis', 'Agility', 'Quick Attack', 'Teleport', 'Screech', 'Double Team', 'Recover',
+    'Harden', 'Smokescreen', 'Confuse Ray', 'Light Screen', 'Haze', 'Reflect', 'Focus Energy', 'Metronome', 'Self-Destruct', 'Lick', 'Fire Blast', 'Waterfall',
+    'Swift', 'Amnesia', 'Glare', 'Leech Life', 'Splash', 'Acid Armor', 'Explosion', 'Rock Slide', 'Super Fang', 'Slash', 'Substitute', 'Flame Wheel', 'Curse',
+    'Protect', 'Mach Punch', 'Sludge Bomb', 'Spikes', 'Zap Cannon', 'Perish Song', 'Icy Wind', 'Detect', 'Outrage', 'Giga Drain', 'Endure', 'Charm', 'Rollout',
+    'Spark', 'Steel Wing', 'Safeguard', 'Dynamic Punch', 'Megahorn', 'Dragon Breath', 'Iron Tail', 'Metal Claw', 'Morning Sun', 'Synthesis', 'Moonlight',
+    'Twister', 'Crunch', 'Extreme Speed', 'Shadow Ball', 'Future Sight', 'Rock Smash', 'Whirlpool', 'Heat Wave', 'Will-O-Wisp', 'Charge', 'Taunt', 'Wish',
+    'Brick Break', 'Knock Off', 'Feather Dance', 'Hyper Voice', 'Fake Tears', 'Overheat', 'Rock Tomb', 'Metal Sound', 'Sand Tomb', 'Bullet Seed', 'Aerial Ace',
+    'Iron Defense', 'Dragon Claw', 'Bulk Up', 'Bounce', 'Mud Shot', 'Volt Tackle', 'Magical Leaf', 'Calm Mind', 'Leaf Blade', 'Rock Blast', 'Water Pulse',
+    'U-turn', 'Close Combat', 'Heal Block', 'Toxic Spikes', 'Aqua Ring', 'Flare Blitz', 'Aura Sphere', 'Poison Jab', 'Dark Pulse', 'Night Slash', 'Air Slash',
+    'X-Scissor', 'Bug Buzz', 'Dragon Pulse', 'Dragon Rush', 'Power Gem', 'Focus Blast', 'Energy Ball', 'Brave Bird', 'Earth Power', 'Giga Impact', 'Nasty Plot',
+    'Bullet Punch', 'Ice Shard', 'Shadow Claw', 'Thunder Fang', 'Ice Fang', 'Fire Fang', 'Shadow Sneak', 'Psycho Cut', 'Zen Headbutt', 'Flash Cannon', 'Draco Meteor',
+    'Discharge', 'Lava Plume', 'Leaf Storm', 'Power Whip', 'Gunk Shot', 'Iron Head', 'Stone Edge', 'Stealth Rock', 'Wood Hammer', 'Aqua Jet', 'Head Smash',
+    'Psyshock', 'Sludge Wave', 'Heavy Slam', 'Volt Switch', 'Bulldoze', 'Work Up', 'Electroweb', 'Wild Charge', 'Drill Run', 'Horn Leech', 'Heat Crash', 'Cotton Guard',
+    'Psystrike', 'Hurricane', 'Snarl', 'Icicle Crash', 'Flying Press', 'Sticky Web', 'Phantom Force', 'Trick-Or-Treat', 'Parabolic Charge', "Forest's Curse", 'Freeze-Dry',
+    'Disarming Voice', 'Parting Shot', 'Topsy-Turvy', 'Draining Kiss', 'Play Rough', 'Fairy Wind', 'Moonblast', 'Boomburst', "King's Shield", 'Diamond Storm',
+    'Steam Eruption', 'Hyperspace Hole', 'Water Shuriken', 'Mystical Fire', 'Spiky Shield', 'Eerie Impulse', 'Geomancy', 'Dazzling Gleam', 'Nuzzle', 'Infestation',
+    'Power-Up Punch', 'Oblivion Wing', 'Thousand Arrows', 'Thousand Waves', "Land's Wrath", 'Light of Ruin', 'Hyperspace Fury', 'Leafage', 'Lunge', 'Core Enforcer',
+    'Brutal Swing', 'Liquidation', 'No Retreat', 'Breaking Swipe', 'Flip Turn', 'Nihil Light',
+
+    'Comet Punch', 'Pay Day', 'Razor Wind', 'Sing', 'Petal Dance', 'Fissure', 'Mimic', 'Skull Bash', 'Dream Eater', 'Sky Attack', 'Spore', 'Bonemerang', 'Conversion',
+    'Tri Attack', 'Conversion 2', 'False Swipe', 'Swagger', 'Ancient Power', 'Fake Out', 'Torment', 'Facade', 'Luster Purge', 'Mist Ball', 'Blaze Kick', 'Poison Fang',
+    'Blast Burn', 'Hydro Cannon', 'Silver Wind', 'Shadow Punch', 'Sheer Cold', 'Muddy Water', 'Icicle Spear', 'Frenzy Plant', 'Seed Bomb', 'Drain Punch', 'Vacuum Wave',
+    'Magnet Bomb', 'Charge Beam', 'Double Hit', 'Magma Storm', 'Dark Void', 'Ominous Wind', 'Storm Throw', 'Flame Charge', 'Low Sweep', 'Acid Spray', 'Scald',
+    'Circle Throw', 'Frost Breath', 'Dual Chop', 'Sacred Sword', 'Techno Blast', 'Relic Song', 'Secret Sword', 'Origin Pulse', 'Precipice Blades', 'Dragon Ascent',
+    'Shore Up', 'First Impression', 'Ice Hammer', 'Solar Blade', 'Fleur Cannon', 'Psychic Fangs', 'Shadow Bone', 'Spectral Thief', 'Plasma Fists', 'Double Iron Bash',
+    'Octolock', 'Aura Wheel', 'Overdrive', 'Meteor Assault', 'Steel Beam', 'Scale Shot', 'Meteor Beam', 'Triple Axel', 'Dual Wingbeat', 'Scorching Sands', 'Stone Axe',
+    'Barb Barrage', 'Last Respects', 'Order Up', 'Spicy Extract', 'Glaive Rush', 'Salt Cure', 'Mortal Spin', 'Make It Rain', 'Shed Tail', 'Trailblaze', 'Chilling Water',
+    'Rage Fist', 'Armor Cannon', 'Bitter Blade', 'Gigaton Hammer'
+].forEach(e => MOVES_ZA[e] = MOVES_ZA_NATDEX[e]);
+
+MOVES_ZA = $.extend(true, {}, MOVES_ZA, {
+    'Poison Sting': { bp: 30 },
+    'Pin Missile': {
+        bp: 15, hitRange: [1, 5], plusEffects: { hitRange: [1, 6] },
+    },
+    'Fire Spin': { bp: 20 },
+    'Quick Attack': { bp: 30 },
+    //Recover HAS CHANGES TOO
+    //Super Fang HAS CHANGES TOO
+    //Substitute maybe has changes
+    'Mach Punch': { bp: 30 },
+    //Spikes changed but idk how i wanna categorize it
+    'Rollout': { bp: 60 },
+    //Morning Sun, Synthesis, Moonlight HAVE CHANGES TOO
+    'Extreme Speed': { bp: 65 },
+    'Whirlpool': { bp: 20 },
+    'Sand Tomb': { bp: 20 },
+    'Bullet Seed': {
+        bp: 15, hitRange: [1, 5], plusEffects: { hitRange: [1, 6] },
+    },
+    'Rock Blast': {
+        bp: 15, hitRange: [1, 5], plusEffects: { hitRange: [1, 6] },
+    },
+    'Bullet Punch': { bp: 30 },
+    //Stealth Rock changed but idk how i wanna categorize it
+    'Aqua Jet': { bp: 30 },
+    'Water Shuriken': {
+        hitRange: [1, 5], plusEffects: { hitRange: 1, bp: 75 },
+    },
+
+    'Comet Punch': { bp: 30, hitRange: [1, 5] },
+    'Razor Wind': { bp: 40, hitRange: [1, 5] },
+    'Petal Dance': { bp: 40, hitRange: 3 },
+    'Fissure': { isOHKO: false, bp: 250 },
+    'Skull Bash': { bp: 150 },
+    'Dream Eater': {
+        plusEffects: { drainHP: [13, 20], }
+    },
+    'Bonemerang': { bp: 55 },
+    'Tri Attack': { bp: 40, hitRange: 3 },
+    'Fake Out': {
+        plusEffects: { alwaysCrit: true },
+    },
+    'Sheer Cold': { isOHKO: false, bp: 150 },
+    'Seed Bomb': { bp: 35, hitRange: [1, 4] },   //NEEDS CHECKING
+    'Magnet Bomb': { bp: 95 },
+    'Double Hit': { bp: 50 },
+    'Dark Void': { category: 'Special', bp: 60 },   //ALSO HEALS HP AND DEALS MORE TO DROWSY TARGETS
+    'Storm Throw': { bp: 65 },
+    'Frost Breath': { bp: 65 },
+    'Dual Chop': { bp: 45 },
+    'First Impression': {
+        plusEffects: { alwaysCrit: true },
+    },
+    'Scale Shot': {
+        bp: 15, hitRange: [1, 5], plusEffects: { hitRange: [1, 6] },
+    },
+    'Triple Axel': { bp: 40, hitRange: 3, isTripleHit: false },
+    'Dual Wingbeat': { bp: 45 },
+    'Trailblaze': { bp: 40 },
 });

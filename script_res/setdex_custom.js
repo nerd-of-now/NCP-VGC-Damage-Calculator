@@ -92,7 +92,16 @@ function calcHiddenPower(ivs) {
     return { type: typeOrder[typeIndex], bp: basePower};
 }
 
+//For games that standard competitive is played on
 for (var i = 1; i <= 9; i++) {
+    if (localStorage["custom_gen_" + i] != null)
+        ALL_SETDEX_CUSTOM[i] = JSON.parse(localStorage["custom_gen_" + i]);
+    else
+        ALL_SETDEX_CUSTOM[i] = {};
+}
+
+//For Legends Z-A, Let's Go Pikachu/Eevee (and potenitally other games)
+for (var i = 7.5; i <= 9.5; i += 2) {
     if (localStorage["custom_gen_" + i] != null)
         ALL_SETDEX_CUSTOM[i] = JSON.parse(localStorage["custom_gen_" + i]);
     else
@@ -471,6 +480,20 @@ var savecalc = function (set, spreadName, p, species) {
         customFormat["tera_type"] = set.tera_type;
     else if (gen == 8 && GMAX_LIST.includes(species)) {
         customFormat["gmax_factor"] = set.gmax_factor;
+    }
+    else if (gen == 7.5) {
+        if (set.friendship != 70)
+            customFormat["friendship"] = set.friendship;
+        if (set.avs) {
+            customFormat["avs"] = {
+                "hp": set.HPAVs,
+                "at": set.avs[STATS[0]],
+                "df": set.avs[STATS[1]],
+                "sa": set.avs[STATS[2]],
+                "sd": set.avs[STATS[3]],
+                "sp": set.avs[STATS[4]],
+            };
+        }
     }
 
     saveSets(gen, customFormat, species, spreadName);

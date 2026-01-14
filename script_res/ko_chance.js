@@ -41,13 +41,13 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     var hazardText = [];
     if (field.isSR && defender.ability !== 'Magic Guard' && defender.item !== "Heavy-Duty Boots") {
         var effectiveness = typeChart['Rock'][defender.type1] * (defender.type2 ? typeChart['Rock'][defender.type2] : 1);
-        hazards += Math.floor(effectiveness * defender.maxHP / 8);
+        hazards += Math.max(1, Math.floor(effectiveness * defender.maxHP / 8));
         hazardText.push('Stealth Rock');
     }
     if (pIsGrounded(defender, field) && defender.ability !== 'Magic Guard' && defender.item !== "Heavy-Duty Boots") {
         if (field.spikes === 1) {
-            hazards += Math.floor(defender.maxHP / 8);
-            if (gen === 2) {
+            hazards += Math.max(1, Math.floor(defender.maxHP / 8));
+            if (gen === 2 || gen == 9.5) {
                 hazardText.push('Spikes');
             } else {
                 hazardText.push('1 layer of Spikes');
@@ -172,14 +172,6 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
             eotText.push('extra Salt Cure damage');
         }
     }
-
-    //// multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
-    //// ...is what would be the case if not for using dictionaries to simulate probability combinations
-    //var qualifier = '';
-    //if (move.hits > 1 && !move.isTripleHit) {
-    //    qualifier = 'approx. ';
-    //    damage = squashMultihit(damage, move.hits);
-    //}
 
     var c = getKOChance(damage, multihit, defender.curHP - hazards, 0, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
     var afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
@@ -432,123 +424,4 @@ function serializeText(arr) {
     }
 }
 
-
-
-//squashMultihit should be obsolete, but the code will stay in case something goes wrong with the new implementation and it needs to have something to fall back on
-function squashMultihit(d, hits) {
-    if (d.length === 1) {
-        return [d[0] * hits];
-    } else if (gen === 1) {
-        var r = [];
-        for (var i = 0; i < d.length; i++) {
-            r[i] = d[i] * hits;
-        }
-        return r;
-    } else if (d.length === 16) {
-        switch (hits) {
-            case 2:
-                return [
-                    2*d[0], d[2]+d[3], d[4]+d[4], d[4]+d[5],
-                    d[5]+d[6], d[6]+d[6], d[6]+d[7], d[7]+d[7],
-                    d[8]+d[8], d[8]+d[9], d[9]+d[9], d[9]+d[10],
-                    d[10]+d[11], d[11]+d[11], d[12]+d[13], 2*d[15]
-                ];
-            case 3:
-                return [
-                    3*d[0], d[3]+d[3]+d[4], d[4]+d[4]+d[5], d[5]+d[5]+d[6],
-                    d[5]+d[6]+d[6], d[6]+d[6]+d[7], d[6]+d[7]+d[7], d[7]+d[7]+d[8],
-                    d[7]+d[8]+d[8], d[8]+d[8]+d[9], d[8]+d[9]+d[9], d[9]+d[9]+d[10],
-                    d[9]+d[10]+d[10], d[10]+d[11]+d[11], d[11]+d[12]+d[12], 3*d[15]
-                ];
-            case 4:
-                return [
-                    4*d[0], 4*d[4], d[4]+d[5]+d[5]+d[5], d[5]+d[5]+d[6]+d[6],
-                    4*d[6], d[6]+d[6]+d[7]+d[7], 4*d[7], d[7]+d[7]+d[7]+d[8],
-                    d[7]+d[8]+d[8]+d[8], 4*d[8], d[8]+d[8]+d[9]+d[9], 4*d[9],
-                    d[9]+d[9]+d[10]+d[10], d[10]+d[10]+d[10]+d[11], 4*d[11], 4*d[15]
-                ];
-            case 5:
-                return [
-                    5*d[0], d[4]+d[4]+d[4]+d[5]+d[5], d[5]+d[5]+d[5]+d[5]+d[6], d[5]+d[6]+d[6]+d[6]+d[6],
-                    d[6]+d[6]+d[6]+d[6]+d[7], d[6]+d[6]+d[7]+d[7]+d[7], 5*d[7], d[7]+d[7]+d[7]+d[8]+d[8],
-                    d[7]+d[7]+d[8]+d[8]+d[8], 5*d[8], d[8]+d[8]+d[8]+d[9]+d[9], d[8]+d[9]+d[9]+d[9]+d[9],
-                    d[9]+d[9]+d[9]+d[9]+d[10], d[9]+d[10]+d[10]+d[10]+d[10], d[10]+d[10]+d[11]+d[11]+d[11], 5*d[15]
-                ];
-            case 6:       //PAY ATTENTION TO WHAT SMOGON DOES, THEY MIGHT HANDLE THIS DIFFERENTLY
-                return [
-                    6*d[0], 2*d[4]+4*d[5], 3*d[5]+3*d[6], 6*d[6],
-                    3*d[6]+3*d[7], 6*d[7], 5*d[7]+d[8], 4*d[7]+2*d[8], 
-                    2*d[7]+4*d[8], d[7]+5*d[8], 6*d[8], 3*d[8]+3*d[9],
-                    6*d[9],3*d[9]+3*d[10], 4*d[10]+2*d[11], 6*d[15]
-                ];
-            case 7:
-                return [
-                    7*d[0], 5*d[5]+2*d[6], 2*d[5]+5*d[6], 5*d[6]+2*d[7],
-                    3*d[6]+4*d[7], 7*d[7], 5*d[7]+2*d[8], 4*d[7]+3*d[8],
-                    3*d[7]+4*d[8], 2*d[7]+5*d[8], 7*d[8], 4*d[8]+3*d[9],
-                    5*d[9]+2*d[10], 5*d[10]+2*d[11], 2*d[10]+5*d[11], 7*d[15]
-                ];
-            case 8:
-                return [
-                    8*d[0], 4*d[5]+4*d[6], 8*d[6], 4*d[6]+4*d[7], 
-                    8*d[7], 7*d[7]+d[8], 6*d[7]+2*d[8], 5*d[7]+3*d[8],
-                    3*d[7]+5*d[8], 2*d[7]+6*d[8], d[7]+7*d[8], 8*d[8], 
-                    4*d[8]+4*d[9], 8*d[9], 4*d[9]+4*d[10], 8*d[15]
-                ];
-            case 9:
-                return [
-                    9*d[0], 2*d[5]+7*d[6], 7*d[6]+2*d[7], 4*d[6]+5*d[7], 
-                    9*d[7], 7*d[7]+2*d[8], 6*d[7]+3*d[8], 5*d[7]+4*d[8],
-                    4*d[7]+5*d[8], 3*d[7]+6*d[8], 2*d[7]+7*d[8], 9*d[8], 
-                    5*d[8]+4*d[9], 7*d[9]+2*d[10], 7*d[10]+2*d[11], 9*d[15]
-                ];
-            case 10:
-                return [
-                    10*d[0], 10*d[6], 5*d[6]+5*d[7], 10*d[7], 
-                    9*d[7]+d[8], 8*d[7]+2*d[8], 7*d[7]+3*d[8], 6*d[7]+4*d[8],
-                    4*d[7]+6*d[8], 3*d[7]+7*d[8], 2*d[7]+8*d[8], d[7]+9*d[8], 
-                    10*d[8],  5*d[8]+5*d[9], 10*d[9], 10*d[15]
-                ];
-            default:
-                console.log("Unexpected # of hits: " + hits);
-                return d;
-        }
-    } else if (d.length === 39) {
-        switch (hits) {
-            case 2:
-                return [
-                    2*d[0], 2*d[7], 2*d[10], 2*d[12],
-                    2*d[14], d[15]+d[16], 2*d[17], d[18]+d[19],
-                    d[19]+d[20], 2*d[21], d[22]+d[23], 2*d[24],
-                    2*d[26], 2*d[28], 2*d[31], 2*d[38]
-                ];
-            case 3:
-                return [
-                    3*d[0], 3*d[9], 3*d[12], 3*d[13],
-                    3*d[15], 3*d[16], 3*d[17], 3*d[18],
-                    3*d[20], 3*d[21], 3*d[22], 3*d[23],
-                    3*d[25], 3*d[26], 3*d[29], 3*d[38]
-                ];
-            case 4:
-                return [
-                    4*d[0], 2*d[10]+2*d[11], 4*d[13], 4*d[14],
-                    2*d[15]+2*d[16], 2*d[16]+2*d[17], 2*d[17]+2*d[18], 2*d[18]+2*d[19],
-                    2*d[19]+2*d[20], 2*d[20]+2*d[21], 2*d[21]+2*d[22], 2*d[22]+2*d[23],
-                    4*d[24], 4*d[25], 2*d[27]+2*d[28], 4*d[38]
-                ];
-            case 5:
-                return [
-                    5*d[0], 5*d[11], 5*d[13], 5*d[15],
-                    5*d[16], 5*d[17], 5*d[18], 5*d[19],
-                    5*d[19], 5*d[20], 5*d[21], 5*d[22],
-                    5*d[23], 5*d[25], 5*d[27], 5*d[38]
-                ];
-            default:
-                console.log("Unexpected # of hits: " + hits);
-                return d;
-        }
-    } else {
-        console.log("Unexpected # of possible damage values: " + d.length);
-        return d;
-    }
 }

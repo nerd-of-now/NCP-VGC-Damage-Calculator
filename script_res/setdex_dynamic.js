@@ -8,6 +8,7 @@ var COMPONENTS = {
     6: [SETDEX_SHOWDOWN,
         SETDEX_NUGGETBRIDGE],
     7: [SETDEX_GEN7],
+    7.5: [],
     //Gen 8 onwards doesn't need to be updated
     8: [SETDEX_VGC2022_S13,
         SETDEX_VGC2022,
@@ -15,6 +16,7 @@ var COMPONENTS = {
         SETDEX_VGC2021_S10,
         SETDEX_VGC_BFD],
     9: [SETDEX_GEN9],
+    9.5: [],
 };
 
 var ALL_SETDEX_CUSTOM = {};

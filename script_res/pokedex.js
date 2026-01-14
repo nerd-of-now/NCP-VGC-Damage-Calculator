@@ -13321,6 +13321,78 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 
 });
 
+var POKEDEX_LGPE = {
+    "Pikachu-Starter": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 45,
+            "at": 80,
+            "df": 50,
+            "sa": 75,
+            "sd": 60,
+            "sp": 120
+        },
+        "w": 6,
+    },
+    "Eevee-Starter": {
+        "t1": "Normal",
+        "bs": {
+            "hp": 65,
+            "at": 75,
+            "df": 70,
+            "sa": 65,
+            "sd": 85,
+            "sp": 75
+        },
+        "w": 6.5,
+    },
+    "Meltan": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 46,
+            "at": 65,
+            "df": 65,
+            "sa": 55,
+            "sd": 35,
+            "sp": 34
+        },
+        "w": 8,
+    },
+    "Melmetal": {
+        "t1": "Steel",
+        "bs": {
+            "hp": 135,
+            "at": 143,
+            "df": 143,
+            "sa": 80,
+            "sd": 65,
+            "sp": 34
+        },
+        "w": 800,
+    },
+};
+[
+    //LGPE mons
+    'Bulbasaur', 'Ivysaur', 'Venusaur', 'Charmander', 'Charmeleon', 'Charizard', 'Squirtle', 'Wartortle', 'Blastoise', 'Caterpie', 'Metapod', 'Butterfree',
+    'Weedle', 'Kakuna', 'Beedrill', 'Pidgey', 'Pidgeotto', 'Pidgeot', 'Rattata', 'Raticate', 'Spearow', 'Fearow', 'Ekans', 'Arbok',
+    'Pikachu', 'Raichu', 'Sandshrew', 'Sandslash', 'Nidoran-F', 'Nidorina', 'Nidoqueen', 'Nidoran-M', 'Nidorino', 'Nidoking', 'Clefairy', 'Clefable',
+    'Vulpix', 'Ninetales', 'Jigglypuff', 'Wigglytuff', 'Zubat', 'Golbat', 'Oddish', 'Gloom', 'Vileplume', 'Paras', 'Parasect', 'Venonat',
+    'Venomoth', 'Diglett', 'Dugtrio', 'Meowth', 'Persian', 'Psyduck', 'Golduck', 'Mankey', 'Primeape', 'Growlithe', 'Arcanine', 'Poliwag',
+    'Poliwhirl', 'Poliwrath', 'Abra', 'Kadabra', 'Alakazam', 'Bellsprout', 'Weepinbell', 'Victreebel', 'Tentacool', 'Tentacruel', 'Geodude', 'Graveler',
+    'Golem', 'Ponyta', 'Rapidash', 'Slowpoke', 'Slowbro', 'Magnemite', 'Magneton', "Farfetch'd", 'Doduo', 'Dodrio', 'Seel', 'Dewgong',
+    'Grimer', 'Muk', 'Shellder', 'Cloyster', 'Gastly', 'Haunter', 'Gengar', 'Onix', 'Drowzee', 'Hypno', 'Krabby', 'Kingler',
+    'Voltorb', 'Electrode', 'Exeggcute', 'Exeggutor', 'Cubone', 'Marowak', 'Hitmonlee', 'Hitmonchan', 'Lickitung', 'Koffing', 'Weezing', 'Rhyhorn',
+    'Rhydon', 'Chansey', 'Tangela', 'Kangaskhan', 'Horsea', 'Seadra', 'Goldeen', 'Seaking', 'Staryu', 'Starmie', 'Mr. Mime', 'Scyther',
+    'Jynx', 'Electabuzz', 'Magmar', 'Pinsir', 'Tauros', 'Magikarp', 'Gyarados', 'Lapras', 'Ditto', 'Eevee', 'Vaporeon', 'Jolteon',
+    'Flareon', 'Porygon', 'Omanyte', 'Omastar', 'Kabuto', 'Kabutops', 'Aerodactyl', 'Snorlax', 'Articuno', 'Zapdos', 'Moltres', 'Dratini',
+    'Dragonair', 'Dragonite', 'Mewtwo', 'Mew',
+    //Forms of LGPE mons
+    'Mega Venusaur', 'Mega Charizard X', 'Mega Charizard Y', 'Mega Blastoise', 'Mega Beedrill', 'Mega Pidgeot', 'Rattata-Alola', 'Raticate-Alola',
+    'Raichu-Alola', 'Sandshrew-Alola', 'Sandslash-Alola', 'Vulpix-Alola', 'Ninetales-Alola', 'Diglett-Alola', 'Dugtrio-Alola', 'Meowth-Alola',
+    'Persian-Alola', 'Mega Alakazam', 'Geodude-Alola', 'Graveler-Alola', 'Golem-Alola', 'Mega Slowbro', 'Grimer-Alola', 'Muk-Alola',
+    'Mega Gengar', 'Exeggutor-Alola', 'Marowak-Alola', 'Mega Kangaskhan', 'Mega Gyarados', 'Mega Aerodactyl', 'Mega Mewtwo X', 'Mega Mewtwo Y',
+].forEach(e => POKEDEX_LGPE[e] = POKEDEX_SM[e]);
+
 var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
     //SWSH Pokemon
     "Meowth-Galar": {
@@ -18255,7 +18327,7 @@ var POKEDEX_ZA = {};
     'Snorunt', 'Glalie', 'Froslass', 'Snover', 'Abomasnow', 'Bergmite', 'Avalugg', 'Scyther', 'Scizor', 'Pinsir', 'Heracross', 'Emolga',
     'Hawlucha', 'Phantump', 'Trevenant', 'Scraggy', 'Scrafty', 'Noibat', 'Noivern', 'Litwick', 'Lampent', 'Chandelure', 'Aerodactyl',
     'Tyrunt', 'Tyrantrum', 'Amaura', 'Aurorus', 'Onix', 'Steelix', 'Aron', 'Lairon', 'Aggron', 'Helioptile', 'Heliolisk', 'Pumpkaboo-Average', 'Gourgeist-Average',
-    'Larvitar', 'Pupitar', 'Tyranitar', 'Froakie', 'Frogadeir', 'Greninja', 'Falinks', 'Chespin', 'Quilladin', 'Chesnaught', 'Skarmory',
+    'Larvitar', 'Pupitar', 'Tyranitar', 'Froakie', 'Frogadier', 'Greninja', 'Falinks', 'Chespin', 'Quilladin', 'Chesnaught', 'Skarmory',
     'Fennekin', 'Braixen', 'Delphox', 'Bagon', 'Shelgon', 'Salamence', 'Kangaskhan', 'Drampa', 'Beldum', 'Metang', 'Metagross',
     'Xerneas', 'Yveltal', 'Zygarde', 'Mewtwo', 'Diancie', 'Hoopa', 'Volcanion',
     //Forms for initial Pokemon
@@ -18285,6 +18357,6 @@ var POKEDEX_ZA = {};
     'Mega Raichu X', 'Mega Raichu Y', 'Mega Absol Z', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Meowstic', 'Mega Meowstic-F', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', "Farfetch'd-Galar",
     'Marowak-Alola', 'Mega Scovillain', 'Mega Glimmora', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Mega Tatsugiri', 'Mega Baxcalibur',
     'Qwilfish-Hisui', 'Mega Sceptile', 'Mega Blaziken', 'Mega Swampert', 'Mega Chimecho', 'Indeedee-F', 'Yamask-Galar', 'Mega Golisopod', 'Morpeko-Hangry', 'Mega Golurk',
-    'Mega Staraptor', 'Mega Crabrominable', 'Mr. Mime-Galar', 'Mega Heatran', 'Meloetta-Pirouette', 'Hoopa-Unbound', 'Mega Darkrai', 'Mega Latias', 'Mega Latios',
+    'Mega Staraptor', 'Mega Crabominable', 'Mr. Mime-Galar', 'Mega Heatran', 'Meloetta-Pirouette', 'Hoopa-Unbound', 'Mega Darkrai', 'Mega Latias', 'Mega Latios',
     'Primal Kyogre', 'Primal Groudon', 'Mega Rayquaza', 'Mega Magearna', 'Mega Zeraora',
 ].forEach(e => POKEDEX_ZA[e] = POKEDEX_ZA_NATDEX[e]);

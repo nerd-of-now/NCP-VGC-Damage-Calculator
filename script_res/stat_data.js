@@ -55,3 +55,35 @@ function CALC_STAT_ADV(poke, statName) {
     var total = Math.floor((Math.floor((base * 2 + ivs + Math.floor(evs / 4)) * level / 100) + 5) * nature);
     stat.find(".total").text(total);
 }
+
+function CALC_HP_LGPE(poke) {
+    var hp = poke.find(".hp");
+    var total;
+    var base = ~~hp.find(".base").val();
+    if (base === 1) {
+        total = 1;
+    } else {
+        var level = ~~poke.find(".level").val();
+        var avs = ~~hp.find(".avs").val();
+        var ivs = ~~hp.find(".ivs").val();
+        total = Math.floor((base * 2 + ivs) * level / 100) + level + 10 + avs;
+    }
+    hp.find(".total").text(total);
+    poke.find(".max-hp").text(total);
+    calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+    updateHPBar(poke, ~~poke.find(".current-hp").val());
+}
+
+function CALC_STAT_LGPE(poke, statName) {
+    var stat = poke.find("." + statName);
+    var level = ~~poke.find(".level").val();
+    var base = ~~stat.find(".base").val();
+    var avs = ~~stat.find(".avs").val();
+    var ivs = ~~stat.find(".ivs").val();
+    var natureMods = NATURES[poke.find(".nature").val()];
+    var nature = natureMods[0] === statName ? 1.1 : natureMods[1] === statName ? 0.9 : 1;
+    var friendshipMod = ~~poke.find(".friendship").val();
+    var friendship = 1 + (Math.floor(10 * friendshipMod / 255) / 100);
+    var total = Math.floor((Math.floor((base * 2 + ivs) * level / 100) + 5) * nature * friendship) + avs;
+    stat.find(".total").text(total);
+}

@@ -35,6 +35,9 @@ function buildDescription(description) {
         }
         output += description.attackBoost + " ";
     }
+    if (description.redItem) {
+        output += "Red Item-boosted ";
+    }
     if (description.attackerLevel) {
         output = output + 'Lv. ' + description.attackerLevel + ' ';
     }
@@ -101,6 +104,9 @@ function buildDescription(description) {
         }
         output += description.defenseBoost + " ";
     }
+    if (description.blueItem) {
+        output += "Blue Item-boosted ";
+    }
     if (description.defenderLevel) {
         output = output + 'Lv. ' + description.defenderLevel + ' ';
     }
@@ -127,7 +133,10 @@ function buildDescription(description) {
         output += "Tera-" + description.defenderTera + " ";
     }
     output += description.defenderName;
-    if (description.weather) {
+    if (description.weather && description.terrain) {
+        output += " in " + description.weather + " and " + description.terrain + " Terrain";
+    }
+    else if (description.weather) {
         output += " in " + description.weather;
     } else if (description.terrain) {
         output += " in " + description.terrain + " Terrain";
@@ -219,12 +228,32 @@ function getMoveEffectiveness(move, type, otherType, description, isForesight, i
         return typeChart["Fighting"][type] * typeChart["Flying"][type];
     } else if (isStrongWinds && type == "Flying" && typeChart[move.type][type] > 1) {
         return 1;
+    }
+    else if (move.name === "Nihil Light" && type === "Fairy") {
+        return 1;
     } else if (defItem == "Ring Target" && typeChart[move.type][type] == 0) {
         description.defenderItem = "Ring Target";
         return 1;
-    } else {
+    }
+    else {
         return typeChart[move.type][type];
     }
+}
+
+function additionalTypeEffectModsLegendsZA(move, typeEffectiveness, description) {
+    if (typeEffectiveness < 0) {
+        typeEffectiveness = typeEffectiveness * 1.2;
+    }
+    if (move.isPlusMove) {
+        if (typeEffectiveness <= 1) {
+            typeEffectiveness = typeEffectiveness * 1.2;
+        }
+        else {
+            typeEffectiveness = typeEffectiveness * 1.3;
+        }
+        description.moveName += '+';
+    }
+    return typeEffectiveness;
 }
 
 function getModifiedStat(stat, mod) {
@@ -536,20 +565,21 @@ function checkWindRider(pokemon, tailwind) {
         pokemon.boosts[AT] = Math.min(6, pokemon.boosts[AT] + 1);
 }
 
-function checkEvo(p1, p2){
+function checkEvo(p1, p2) {
+    var maxBoosts = gen == 9.5 ? 1 : 6;
     if ($('#evoL').prop("checked") || $('#tatsuL').prop("checked")){
-        p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 2);
-        p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 2);
-        p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 2);
-        p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 2);
-        p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 2);
+        p1.boosts[AT] = Math.min(maxBoosts, p1.boosts[AT] + 2);
+        p1.boosts[DF] = Math.min(maxBoosts, p1.boosts[DF] + 2);
+        p1.boosts[SA] = Math.min(maxBoosts, p1.boosts[SA] + 2);
+        p1.boosts[SD] = Math.min(maxBoosts, p1.boosts[SD] + 2);
+        p1.boosts[SP] = Math.min(maxBoosts, p1.boosts[SP] + 2);
     }
     if ($('#evoR').prop("checked") || $('#tatsuR').prop("checked")){
-        p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 2);
-        p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 2);
-        p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
-        p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 2);
-        p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 2);
+        p2.boosts[AT] = Math.min(maxBoosts, p2.boosts[AT] + 2);
+        p2.boosts[DF] = Math.min(maxBoosts, p2.boosts[DF] + 2);
+        p2.boosts[SA] = Math.min(maxBoosts, p2.boosts[SA] + 2);
+        p2.boosts[SD] = Math.min(maxBoosts, p2.boosts[SD] + 2);
+        p2.boosts[SP] = Math.min(maxBoosts, p2.boosts[SP] + 2);
     }
 
     if($('#clangL').prop("checked")){
@@ -1151,6 +1181,9 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
         if (defender.isDynamax) {
             def_curHP = Math.floor(def_curHP / 2);
         }
+        if (gen == 9.5) {
+            def_curHP = Math.floor(def_curHP * 0.75);
+        }
         return { "damage": [def_curHP], "description": buildDescription(description) };
     }
     else if (move.name === "Guardian of Alola") {
@@ -1342,7 +1375,7 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             break;
         //g.vi. Water Shuriken
         case "Water Shuriken":
-            basePower = (attacker.name === "Ash-Greninja" && attacker.ability === "Battle Bond") ? 20 : 15;
+            basePower = (attacker.name === "Ash-Greninja" && attacker.ability === "Battle Bond") ? 20 : move.bp;
             if (basePower !== move.bp) description.moveBP = basePower;
             break;
         //g.vii. Terrain Pulse
@@ -1746,16 +1779,17 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     var attackStat = usesDefenseStat ? DF : move.category === "Physical" ? AT : SA;
     var isMidMoveAtkBoost = false;
     var isContrary = attacker.ability === 'Contrary' ? -1 : 1;
+    var maxBoost = gen == 9.5 ? 1 : 6;
     description.attackEVs = attackSource.evs[attackStat] +
         (NATURES[attackSource.nature][0] === attackStat ? "+" : NATURES[attackSource.nature][1] === attackStat ? "-" : "") + " " +
         toSmogonStat(attackStat) + (attackSource.ivs[attackStat] < 31 ? " " + attackSource.ivs[attackStat] + " IV" : "");
     description.usesOppAtkStat = move.name === "Foul Play";
     //Spectral Thief and Meteor Beam aren't part of the calculations but are instead here to properly account for the boosts they give
     if (move.name === "Spectral Thief" && defender.boosts[attackStat] > 0) {
-        attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + defender.boosts[attackStat]);
+        attacker.boosts[attackStat] = Math.min(maxBoost, attacker.boosts[attackStat] + defender.boosts[attackStat]);
         isMidMoveAtkBoost = true;
     }
-    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1 && ((isContrary === -1 && attacker.boosts[attackStat] > -6) || attacker.boosts[attackStat] < 6)) {
+    else if (["Meteor Beam", "Electro Shot"].indexOf(move.name) !== -1 && ((isContrary === -1 && attacker.boosts[attackStat] > -1 * maxBoost) || attacker.boosts[attackStat] < maxBoost)) {
         attacker.boosts[attackStat] += (1 * isContrary);
         isMidMoveAtkBoost = true;
     }
@@ -1894,6 +1928,11 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         atMods.push(0x1800);
         description.attackerItem = attacker.item;
     }
+    //k. Link Battle Red Item (LEGENDS Z-A ONLY)
+    if (field.isRedItem) {
+        atMods.push(0x2000);
+        description.redItem = true;
+    }
 
     //MECHANICS TESTING
     if (attacker.hasCustomModifiers && attacker.customModifiers['atMods']) {
@@ -2012,6 +2051,11 @@ function calcDefMods(move, defender, field, description, hitsPhysical, defAbilit
         (defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical)) {
         dfMods.push(0x2000);
         description.defenderItem = defender.item;
+    }
+    //h. Link Battle Blue Item (LEGENDS Z-A ONLY)
+    if (field.isBlueItem) {
+        dfMods.push(0x2000);
+        description.blueItem = true;
     }
 
     //MECHANICS TESTING
@@ -2137,9 +2181,13 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             damage[i] = pokeRound(damage[i] * 0x400 / 0x1000);
             description.isQuarteredByProtect = true;
         }
-        //k. Min Damage Check
+        //k. Damage Reduction (LEGENDS Z-A ONLY)
+        if (gen == 9.5) {
+            damage[i] = Math.floor(Math.floor(damage[i] * 70) / 100);
+        }
+        //l. Min Damage Check
         damage[i] = Math.max(1, damage[i]);
-        //l. Max Damage Check
+        //m. Max Damage Check
         if (damage[i] > 65535) {
             damage[i] %= 65536;
             reSortDamage = true;

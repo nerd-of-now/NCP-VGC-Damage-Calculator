@@ -454,6 +454,25 @@ var ITEMS_MEGA_STONES_ZA = [
     'Glimmoranite',
 ];
 
+var ITEMS_ZA_NATDEX = ITEMS_SV_NATDEX.concat(ITEMS_MEGA_STONES_ZA);
+var ITEMS_ZA = [
+    'Douse Drive', 'Shock Drive', 'Burn Drive', 'Chill Drive', 'Cheri Berry', 'Chesto Berry', 'Pecha Berry', 'Rawst Berry', 'Aspear Berry', 'Oran Berry', 'Persim Berry',
+    'Lum Berry', 'Sitrus Berry', 'Occa Berry', 'Passho Berry', 'Wacan Berry', 'Rindo Berry', 'Yache Berry', 'Chople Berry', 'Kebia Berry', 'Shuca Berry', 'Coba Berry',
+    'Payapa Berry', 'Tanga Berry', 'Charti Berry', 'Kasib Berry', 'Haban Berry', 'Colbur Berry', 'Babiri Berry', 'Chilan Berry', 'White Herb', 'Quick Claw', "King's Rock",
+    'Silver Powder', 'Focus Band', 'Scope Lens', 'Metal Coat', 'Leftovers', 'Light Ball', 'Soft Sand', 'Hard Stone', 'Miracle Seed', 'Black Glasses', 'Black Belt', 'Magnet',
+    'Mystic Water', 'Sharp Beak', 'Poison Barb', 'Never-Melt Ice', 'Spell Tag', 'Twisted Spoon', 'Charcoal', 'Dragon Fang', 'Silk Scarf', 'Shell Bell', 'Thick Club', 'Leek',
+    'Muscle Band', 'Wise Glasses', 'Expert Belt', 'Life Orb', 'Focus Sash', 'Power Bracer', 'Power Belt', 'Power Lens', 'Power Band', 'Power Anklet', 'Power Weight', 'Big Root',
+    'Red Orb', 'Blue Orb', 'Eviolite', 'Rocky Helmet', 'Normal Gem', 'Weakness Policy', 'Assault Vest', 'Gengarite', 'Gardevoirite', 'Ampharosite', 'Venusaurite', 'Charizardite X',
+    'Blastoisinite', 'Mewtwonite X', 'Mewtwonite Y', 'Blazikenite', 'Medichamite', 'Houndoominite', 'Aggronite', 'Banettite', 'Tyranitarite', 'Scizorite', 'Pinsirite',
+    'Aerodactylite', 'Lucarionite', 'Abomasite', 'Kangaskhanite', 'Gyaradosite', 'Absolite', 'Charizardite Y', 'Alakazite', 'Heracronite', 'Mawilite', 'Manectite', 'Garchompite',
+    'Latiasite', 'Latiosite', 'Roseli Berry', 'Swampertite', 'Sceptilite', 'Sablenite', 'Altarianite', 'Galladite', 'Audinite', 'Metagrossite', 'Sharpedonite', 'Slowbronite',
+    'Steelixite', 'Pidgeotite', 'Glalitite', 'Diancite', 'Cameruptite', 'Lopunnite', 'Salamencite', 'Beedrillite', 'Fairy Feather', 'Clefablite', 'Victreebelite', 'Starminite',
+    'Dragoninite', 'Meganiumite', 'Feraligite', 'Skarmorite', 'Froslassite', 'Heatranite', 'Darkranite', 'Emboarite', 'Excadrite', 'Scolipite', 'Scraftinite', 'Eelektrossite',
+    'Chandelurite', 'Chesnaughtite', 'Delphoxite', 'Greninjite', 'Pyroarite', 'Floettite', 'Malamarite', 'Barbarcite', 'Dragalgite', 'Hawluchanite', 'Zygardite', 'Drampanite',
+    'Zeraorite', 'Falinksite', 'Raichunite X', 'Raichunite Y', 'Chimechite', 'Absolite Z', 'Staraptite', 'Garchompite Z', 'Lucarionite Z', 'Golurkite', 'Meowsticite',
+    'Crabominite', 'Golisopite', 'Magearnite', 'Scovillainite', 'Baxcalibrite', 'Tatsugirinite', 'Glimmoranite'
+];
+
 function getItemBoostType(item) {
     switch (item) {
         case 'Draco Plate':
@@ -811,7 +830,7 @@ var MEGA_STONE_USER_LOOKUP = {
     'Barbaracite': 'Barbaracle',
     'Dragalgite': 'Dragalge',
     'Hawluchanite': 'Hawlucha',
-    'Zygardite': 'Zygarde-Complete',
+    'Zygardite': ['Zygarde', 'Zygarde-10%', 'Zygarde-Complete'],
     'Drampanite': 'Drampa',
     'Falinksite': 'Falinks',
     'Heatranite': 'Heatran',

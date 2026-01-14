@@ -251,7 +251,7 @@ function loadDex(dexMode) {
 
 function loadSets(p) {
 	setStartup(p);
-	$(p + " .set-selector").val(getSetOptions(p)[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
+	$(p + " .set-selector").val(initPoke(p).id);
 	$(p + " .set-selector").change();
 }
 

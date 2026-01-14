@@ -132,13 +132,14 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
     typeEffectiveness = checkTeraShell(defAbility === 'Tera Shell' && defender.curHP === defender.maxHP, description, typeEffectiveness);
+    if (gen == 9.5) typeEffectiveness = additionalTypeEffectModsLegendsZA(move, typeEffectiveness, description);
 
     getHPInfo(description, defender);
 
     setDamageBuildDesc = setDamage(move, attacker, defender, description, isQuarteredByProtect, field);
     if (setDamageBuildDesc !== -1) return setDamageBuildDesc;
 
-    if (move.hitRange) {
+    if (move.hitRange && !(move.isPlusMove && move.plusEffects && move.plusEffects.hitRange == 1)) {
         description.hits = move.hits;
     }
     var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";
