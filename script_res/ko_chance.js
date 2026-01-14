@@ -424,4 +424,3 @@ function serializeText(arr) {
     }
 }
 
-}
