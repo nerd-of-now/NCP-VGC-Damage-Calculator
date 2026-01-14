@@ -130,6 +130,8 @@ function toggleCustomModifiers(custModsOn) {
 function loadTheme(color){
 	$('body').removeClass();
 	$('body').addClass(color);
+	$('html').removeClass();
+	$('html').addClass(color);
 }
 
 function loadSVColors(theme) {																    //
