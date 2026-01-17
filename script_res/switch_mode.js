@@ -80,14 +80,26 @@ $(function(){
 	});
 
 	//GEN 7 SET TEMP
-	$("#gen7sets").on("click", function () {
+	$("#WIPsets").on("click", function () {
 		if ($(this).is(":checked")) {
 			COMPONENTS[7][0] = SETDEX_TT2019;
-			tempSetName = "Abomasnow (Default Set)";
+			COMPONENTS[6][0] = SETDEX_SHOWDOWN;
+			if (gen == 7) {
+				tempSetName = "Abomasnow (Default Set)";
+			}
+			else if (gen == 6) {
+				tempSetName = "Abomasnow (Common Showdown)";
+			}
 		}
 		else {
 			COMPONENTS[7][0] = SETDEX_GEN7;
-			tempSetName = "Abomasnow (Mega Hard TR)";		//Yes tempSetName is lazy but it's only temporary so it's fine
+			COMPONENTS[6][0] = SETDEX_GEN6;
+			if (gen == 7) {
+				tempSetName = "Abomasnow (Mega Hard TR)";		//Yes tempSetName is lazy but it's only temporary so it's fine
+			}
+			else if (gen == 6) {
+				tempSetName = "Abomasnow (Mixed Slow Mega)";
+			}
 		}
 		loadSetdexScript();
 		if (!$("#p1" + " .set-toggle").prop("checked"))

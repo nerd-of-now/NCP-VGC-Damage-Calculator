@@ -5,8 +5,7 @@ var COMPONENTS = {
     3: [],
     4: [],
     5: [SETDEX_GEN5],
-    6: [SETDEX_SHOWDOWN,
-        SETDEX_NUGGETBRIDGE],
+    6: [SETDEX_GEN6, SETDEX_NUGGETBRIDGE],
     7: [SETDEX_GEN7],
     7.5: [],
     //Gen 8 onwards doesn't need to be updated

@@ -36,23 +36,23 @@ var SETDEX_NUGGETBRIDGE={
         "Rock Slide"
       ]
     },
-    "conan's Winter 2015 Salamence": {
-      "level": 50,
-      "evs": {
-        "hp": "76",
-        "at": "244",
-        "sp": "188"
-      },
-      "nature": "Jolly",
-      "ability": "Intimidate",
-      "item": "Salamencite",
-      "moves": [
-        "Double-Edge",
-        "",
-        "",
-        ""
-      ]
-    },
+    //"conan's Winter 2015 Salamence": {
+    //  "level": 50,
+    //  "evs": {
+    //    "hp": "76",
+    //    "at": "244",
+    //    "sp": "188"
+    //  },
+    //  "nature": "Jolly",
+    //  "ability": "Intimidate",
+    //  "item": "Salamencite",
+    //  "moves": [
+    //    "Double-Edge",
+    //    "",
+    //    "",
+    //    ""
+    //  ]
+    //},
     "Fatum's Winter 2015 Aschenputtel": {
       "level": 50,
       "evs": {
@@ -277,7 +277,7 @@ var SETDEX_NUGGETBRIDGE={
         ""
       ]
     },
-    "Life Orb's Winter 2015 Heatran": {
+    "Zee's Winter 2015 Heatran": {
       "level": 50,
       "evs": {
         "hp": "252",
@@ -522,23 +522,23 @@ var SETDEX_NUGGETBRIDGE={
         ""
       ]
     },
-    "conan's Winter 2015 Terrakion": {
-      "level": 50,
-      "evs": {
-        "hp": "4",
-        "at": "252",
-        "sp": "252"
-      },
-      "nature": "Jolly",
-      "ability": "",
-      "item": "Lum Berry",
-      "moves": [
-        "Close Combat",
-        "Rock Slide",
-        "",
-        "Earthquake"
-      ]
-    },
+    //"conan's Winter 2015 Terrakion": {
+    //  "level": 50,
+    //  "evs": {
+    //    "hp": "4",
+    //    "at": "252",
+    //    "sp": "252"
+    //  },
+    //  "nature": "Jolly",
+    //  "ability": "",
+    //  "item": "Lum Berry",
+    //  "moves": [
+    //    "Close Combat",
+    //    "Rock Slide",
+    //    "",
+    //    "Earthquake"
+    //  ]
+    //},
     "rapha's Winter 2015 Terrakion": {
       "level": 50,
       "evs": {
@@ -742,7 +742,7 @@ var SETDEX_NUGGETBRIDGE={
         "Rock Slide"
       ]
     },
-    "Life Orb's Winter 2015 Landorus-Therian": {
+    "Zee's Winter 2015 Landorus-Therian": {
       "level": 50,
       "evs": {
         "hp": "4",
@@ -841,25 +841,25 @@ var SETDEX_NUGGETBRIDGE={
         ""
       ]
     },
-    "conan's Winter 2015 Thundurus": {
-      "level": 50,
-      "evs": {
-        "hp": "252",
-        "df": "76",
-        "sa": "4",
-        "sd": "132",
-        "sp": "44"
-      },
-      "nature": "Calm",
-      "ability": "",
-      "item": "Sitrus Berry",
-      "moves": [
-        "Thunderbolt",
-        "",
-        "",
-        ""
-      ]
-    },
+    //"conan's Winter 2015 Thundurus": {
+    //  "level": 50,
+    //  "evs": {
+    //    "hp": "252",
+    //    "df": "76",
+    //    "sa": "4",
+    //    "sd": "132",
+    //    "sp": "44"
+    //  },
+    //  "nature": "Calm",
+    //  "ability": "",
+    //  "item": "Sitrus Berry",
+    //  "moves": [
+    //    "Thunderbolt",
+    //    "",
+    //    "",
+    //    ""
+    //  ]
+    //},
     "KellsterCartier's Winter 2015 Thundurus": {
       "level": 50,
       "evs": {
@@ -1054,26 +1054,26 @@ var SETDEX_NUGGETBRIDGE={
         ""
       ]
     },
-    "conan's Winter 2015 Cresselia": {
-      "level": 50,
-      "evs": {
-        "hp": "220",
-        "df": "172",
-        "sa": "4",
-        "sd": "92",
-        "sp": "20"
-      },
-      "nature": "Calm",
-      "ability": "Levitate",
-      "item": "",
-      "moves": [
-        "Psychic",
-        "",
-        "Icy Wind",
-        ""
-      ]
-    },
-    "Life Orb's Winter 2015 Cresselia": {
+    //"conan's Winter 2015 Cresselia": {
+    //  "level": 50,
+    //  "evs": {
+    //    "hp": "220",
+    //    "df": "172",
+    //    "sa": "4",
+    //    "sd": "92",
+    //    "sp": "20"
+    //  },
+    //  "nature": "Calm",
+    //  "ability": "Levitate",
+    //  "item": "",
+    //  "moves": [
+    //    "Psychic",
+    //    "",
+    //    "Icy Wind",
+    //    ""
+    //  ]
+    //},
+    "Zee's Winter 2015 Cresselia": {
       "level": 50,
       "evs": {
         "hp": "220",
@@ -1338,7 +1338,7 @@ var SETDEX_NUGGETBRIDGE={
         "Facade"
       ]
     },
-    "Life Orb's Winter 2015 Kangaskhan": {
+    "Zee's Winter 2015 Kangaskhan": {
       "level": 50,
       "evs": {
         "hp": "4",
@@ -1453,42 +1453,42 @@ var SETDEX_NUGGETBRIDGE={
     }
   },
   "Weavile": {
-    "conan's Winter 2015 Weavile": {
-      "level": 50,
-      "evs": {
-        "hp": "4",
-        "at": "252",
-        "sp": "252"
-      },
-      "nature": "Jolly",
-      "ability": "",
-      "item": "",
-      "moves": [
-        "Icicle Crash",
-        "",
-        "Low Kick",
-        "Fake Out"
-      ]
-    }
+    //"conan's Winter 2015 Weavile": {
+    //  "level": 50,
+    //  "evs": {
+    //    "hp": "4",
+    //    "at": "252",
+    //    "sp": "252"
+    //  },
+    //  "nature": "Jolly",
+    //  "ability": "",
+    //  "item": "",
+    //  "moves": [
+    //    "Icicle Crash",
+    //    "",
+    //    "Low Kick",
+    //    "Fake Out"
+    //  ]
+    //}
   },
   "Aegislash": {
-    "conan's Winter 2015 Aegislash": {
-      "level": 50,
-      "evs": {
-        "hp": "252",
-        "sa": "252",
-        "sp": "4"
-      },
-      "nature": "Modest",
-      "ability": "",
-      "item": "",
-      "moves": [
-        "Shadow Ball",
-        "",
-        "Flash Cannon",
-        ""
-      ]
-    },
+    //"conan's Winter 2015 Aegislash": {
+    //  "level": 50,
+    //  "evs": {
+    //    "hp": "252",
+    //    "sa": "252",
+    //    "sp": "4"
+    //  },
+    //  "nature": "Modest",
+    //  "ability": "",
+    //  "item": "",
+    //  "moves": [
+    //    "Shadow Ball",
+    //    "",
+    //    "Flash Cannon",
+    //    ""
+    //  ]
+    //},
     "Metatyph6's Winter 2015 Blade Works": {
       "level": 50,
       "evs": {
@@ -1511,7 +1511,7 @@ var SETDEX_NUGGETBRIDGE={
     }
   },
   "Sylveon": {
-    "Life Orb's Winter 2015 Sylveon": {
+    "Zee's Winter 2015 Sylveon": {
       "level": 50,
       "evs": {
         "hp": "92",

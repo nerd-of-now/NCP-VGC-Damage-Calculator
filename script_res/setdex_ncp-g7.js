@@ -1740,25 +1740,6 @@ var SETDEX_GEN7 = {
                 "Protect"
             ]
         },
-        "Carson Confer's Worlds T16 Fast Mega": {
-            "level": 50,
-            "evs": {
-                "hp": 12,
-                "at": 244,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 252
-            },
-            "nature": "Adamant",
-            "item": "Scizorite",
-            "moves": [
-                "Bug Bite",
-                "Bullet Punch",
-                "Swords Dance",
-                "Protect"
-            ]
-        },
     },
     "Shuckle": {
         //2017, 2018
