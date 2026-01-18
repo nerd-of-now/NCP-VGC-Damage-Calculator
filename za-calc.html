@@ -90,6 +90,8 @@
                 <div class="big-text"><span id="mainResult" onclick="Clipboard_CopyTo(this.textContent)" title="Click to copy the result.">Loading...</span></div>
                 <div class="small-text">
                     <span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console [Ctrl+Shift+I on Google Chrome].)</span>
+                    <!--<br />
+                <span id="cooldownText"></span>-->
                     <br />
                     <span id="customModValues" style="display: none;">(If this is seen then I think I did something wrong)</span>
                 </div>
@@ -110,9 +112,9 @@
                     </div>
                     <div class="info-group">
                         <!--<div class="sidebarTeam" id="tL" style="float:right;">
-                            <input class="namet" value="Untitled" style="width:100px;"/>
-                            <button class="renamet" id="renameL" type="button" title="Rename the current team.">Rename</button>
-                        </div>-->
+                        <input class="namet" value="Untitled" style="width:100px;"/>
+                        <button class="renamet" id="renameL" type="button" title="Rename the current team.">Rename</button>
+                    </div>-->
                         <div>
                             <label>Type</label>
                             <select class="type1 terrain-trigger calc-trigger"></select>
@@ -679,12 +681,12 @@
         <div style="display:inline-block;width:728px;height:30px" />
         <!-- Damage Calc Ad (PROBABLY WILL REMAIN UNUSED) -->
         <!--<ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-7571541875475494"
-             data-ad-slot="3642617298"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>-->
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-7571541875475494"
+         data-ad-slot="3642617298"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>-->
 
         <script src="jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="script_res/switch_mode.js"></script>
@@ -698,6 +700,7 @@
         <script type="text/javascript" src="script_res/setdex_tt2019.js" id="TTScript"></script>
         <script type="text/javascript" src="script_res/setdex_tt2020.js" id="TTScript"></script>
         <script type="text/javascript" src="script_res/setdex_ncp-g5.js" id="NCPScript"></script>
+        <script type="text/javascript" src="script_res/setdex_ncp-g6.js" id="NCPScript"></script>
         <script type="text/javascript" src="script_res/setdex_ncp-g7.js" id="NCPScript"></script>
         <script type="text/javascript" src="script_res/setdex_ncp-g8.js" id="NCPScript"></script>
         <script type="text/javascript" src="script_res/setdex_ncp-g9.js" id="NCPScript"></script>
@@ -725,5 +728,6 @@
         <script type="text/javascript" src="afd_res/pokedex_afd24.js"></script>
         <script type="text/javascript" src="afd_res/setdex_afd24.js"></script>
         <script type="text/javascript" src="script_res/sidebars.js"></script>
+        <!--<script type="text/javascript" src="script_res/cooldown_za.js"></script>-->
     </body>
 </html>

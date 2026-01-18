@@ -238,7 +238,7 @@ var SETDEX_GEN6 = {
                 "df": 188,
                 "sa": 236,
                 "sd": 12,
-                "sp": 08
+                "sp": 68
             },
             "ivs": {
                 "at": 0,
@@ -1936,7 +1936,7 @@ var SETDEX_GEN6 = {
                 "at": 244,
                 "df": 0,
                 "sa": 0,
-                "sd": 188,
+                "sd": 196,
                 "sp": 0
             },
             "ivs": {
@@ -2696,7 +2696,7 @@ var SETDEX_GEN6 = {
                 "hp": 252,
                 "at": 0,
                 "df": 20,
-                "sa": 230,
+                "sa": 228,
                 "sd": 4,
                 "sp": 4,
             },
@@ -2716,7 +2716,7 @@ var SETDEX_GEN6 = {
     "Trevenant": {
         //2014
     },
-    "Gourgeist": {
+    "Gourgeist-Super": {
         //2014
     },
     "Avalugg": {
