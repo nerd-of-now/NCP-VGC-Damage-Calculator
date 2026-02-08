@@ -1600,8 +1600,8 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
     var dynamaxHP = user.isDynamax ? 2 : 1;
     //Opponent ability check
     if (["Rough Skin", "Iron Barbs"].includes(target.ability) && move.makesContact) {
-        userMinDamage += Math.max(1, Math.floor(user.maxHP / 8));
-        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 8));
+        userMinDamage += Math.max(1, Math.floor(user.maxHP / 8)) * move.hits;
+        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 8)) * move.hits;
     }
     //Conditional assumes that ability toggling handles whether or not the target is a Cramorant
     //else if (target.ability == "Gulp Missile" && target.abilityOn && move.category != "Status") {
@@ -1611,12 +1611,13 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
 
     //Opponent item check
     if (target.item == "Rocky Helmet" && move.makesContact) {
-        userMinDamage += Math.max(1, Math.floor(user.maxHP / 6));
-        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 6));
+        userMinDamage += Math.max(1, Math.floor(user.maxHP / 6)) * move.hits;
+        userMaxDamage += Math.max(1, Math.floor(user.maxHP / 6)) * move.hits;
     }
     else if ((target.item == "Jaboca Berry" && move.category == "Physical") || (target.item == "Rowap Berry" && move.category == "Special")) {
-        userMinDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP)));
-        userMaxDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP)));
+        let ripenMod = target.ability == "Ripen" ? 2 : 1;
+        userMinDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP))) * ripenMod;
+        userMaxDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP))) * ripenMod;
     }
 
     //User item check
@@ -2018,14 +2019,15 @@ function Field() {
     var isPowerSpot = (!isNeutralizingGas) ? [$("#powerSpotR").prop("checked"), $("#powerSpotL").prop("checked")] : false; // affects attacks against opposite side
     var isSteelySpirit = (!isNeutralizingGas) ? [$("#steelySpiritR").prop("checked"), $("#steelySpiritL").prop("checked")] : false; // affects attacks against opposite side
     var isFlowerGiftSpD = (!isNeutralizingGas) ? [$("#flowerGiftL").prop("checked"), $("#flowerGiftR").prop("checked")] : false;
-    var isFlowerGiftAtk = (!isNeutralizingGas) ? [$("#flowerGiftR").prop("checked"), $("#flowerGiftL").prop("checked")] : false;
+    var isFlowerGiftAtk = (!isNeutralizingGas) ? [$("#flowerGiftR").prop("checked"), $("#flowerGiftL").prop("checked")] : false; // affects attacks against opposite side
     var isTailwind = [$("#tailwindL").prop("checked"), $("#tailwindR").prop("checked")];
     var isSaltCure = [$("#saltCureL").prop("checked"), $("#saltCureR").prop("checked")];
     var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
     var isSwamp = [$("#swampL").prop("checked"), $("#swampR").prop("checked")];
     var isSeaFire = [$("#seaFireL").prop("checked"), $("#seaFireR").prop("checked")];
-    var isRedItem = [$("#redItemR").prop("checked"), $("#redItemL").prop("checked")];
+    var isRedItem = [$("#redItemR").prop("checked"), $("#redItemL").prop("checked")]; // affects attacks against opposite side
     var isBlueItem = [$("#blueItemL").prop("checked"), $("#blueItemR").prop("checked")];
+    var isCharge = [$("#chargeR").prop("checked"), $("#chargeL").prop("checked")]; // affects attacks against opposite side
 
     this.getNeutralGas = function () {
         return isNeutralizingGas;
@@ -2049,11 +2051,11 @@ function Field() {
         terrain = "";
     };
     this.getSide = function (i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i], isSwamp[i], isSeaFire[i], isRedItem[i], isBlueItem[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i], isSwamp[i], isSeaFire[i], isRedItem[i], isBlueItem[i], isCharge[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure, isAuroraVeil, isSwamp, isSeaFire, isRedItem, isBlueItem) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure, isAuroraVeil, isSwamp, isSeaFire, isRedItem, isBlueItem, isCharge) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -2080,19 +2082,17 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isSeaFire = isSeaFire;
     this.isRedItem = isRedItem;
     this.isBlueItem = isBlueItem;
+    this.isCharge = isCharge;
 }
 
 var gen, pokedex, setdex, setdexCustom, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
 
 $(".gen").change(function () {
     var genStr = $(this).val();
+    gen = +genStr;
 
     if (!(genStr.includes('.'))) {
-        gen = ~~genStr;
         localStorage.setItem("gen", gen);
-    }
-    else {
-        gen = parseFloat(genStr);
     }
 
     loadSVColors(document.getElementById('switchTheme').value);     //
@@ -2361,9 +2361,10 @@ function INIT_POKEMON_NAME() {
         case 1:
         case 2:
         case 7.5:
-            return 'Aerodactyl';
         case 3:
-            return 'Absol';
+            return 'Aerodactyl';
+        //case 3:
+        //    return 'Absol';
         default:
             return 'Abomasnow';
     }

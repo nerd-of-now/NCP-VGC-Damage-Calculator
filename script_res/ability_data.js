@@ -336,12 +336,3 @@ var ABILITIES_SV = ABILITIES_SS.concat([
     'Teraform Zero',    //Removes weather and terrain
     'Poison Puppeteer', //Poisoning also confuses, no calc funcitonality
 ]);
-
-//ABILITIES_XY.splice(ABILITIES_XY.indexOf('Lightning Rod'), 1, 'Lightning Rod');
-var ATE_IZE_ABILITIES = [
-    'Normalize',
-    'Aerilate',
-    'Pixilate',
-    'Refrigerate',
-    'Galvanize',
-];

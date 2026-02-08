@@ -74,6 +74,9 @@ function buildDescription(description) {
     if (description.meFirst) {
         output += "Me First ";
     }
+    if (description.charged) {
+        output += "Charged ";
+    }
     output += description.moveName + " ";
     if (description.moveBP && description.moveType) {
         output += "(" + description.moveBP + " BP " + description.moveType + ") ";
@@ -1007,7 +1010,14 @@ function NaturalGift(move, attacker, description) {
     return [move, description];
 }
 
-function ateIzeTypeChange(move, attacker, description) {
+const TYPE_CHANGE_BOOST_ABILITIES = [
+    'Normalize',
+    'Aerilate',
+    'Pixilate',
+    'Refrigerate',
+    'Galvanize',
+];
+function checkAbilityTypeChange(move, attacker, description) {
     var isBoosted = false;
     if (attacker.ability === "Liquid Voice") {
         if (move.isSound) {
@@ -1034,7 +1044,7 @@ function ateIzeTypeChange(move, attacker, description) {
                 description.moveName = MAXMOVES_LOOKUP[move.type] + " (" + move.bp + " BP)";
             isBoosted = true;     //indicates whether the move gets the boost or not
         }
-        else if(attacker.ability === "Normalize") {
+        else if (attacker.ability === "Normalize") {
             move.type = "Normal";
             if (attacker.isDynamax)
                 description.moveName = "Max Strike (" + move.bp + " BP)";
@@ -1057,7 +1067,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
     if (typeEffectiveness === 0 || (gen === 3 && move.type === '???')) {
         return { "damage": [0], "description": buildDescription(description) };
     }
-    if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.name !== 'Struggle' && (gen !== 4 || move.name !== 'Fire Fang')) ||
+    if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1 && move.type !== 'Typeless' && (gen !== 4 || move.name !== 'Fire Fang')) ||
         (move.type === "Grass" && defAbility === "Sap Sipper") ||
         (move.type === "Fire" && ["Flash Fire", "Well-Baked Body"].indexOf(defAbility) !== -1) ||
         (move.type === "Water" && (["Dry Skin", "Water Absorb"].indexOf(defAbility) !== -1 || (defAbility === 'Storm Drain' && gen !== 4))) ||
@@ -1523,7 +1533,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
 
     //c. 1.2x Abilities
     //c.i. Galvanize, Aerilate, Pixilate, Refrigerate, Normalize        (Technically Normalize is separate but it doesn't hurt to handle it where it is now)
-    if (!move.isZ && !attacker.isDynamax && ateIzeBoosted) {     //function ateIzeTypeChange sets this value
+    if (!move.isZ && !attacker.isDynamax && ateIzeBoosted) {     //function checkAbilityTypeChange sets this value
         var ateIzeMultiplier = gen > 6 ? 0x1333 : 0x14CD;
         bpMods.push(ateIzeMultiplier);
         description.attackerAbility = attacker.ability;
@@ -1689,9 +1699,9 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //t. Charge, Electromorphosis, Wind Power
-    if ((attacker.ability === "Electromorphosis" || attacker.ability === "Wind Power") && attacker.abilityOn && move.type === "Electric") {
+    if ((((attacker.ability === "Electromorphosis" || attacker.ability === "Wind Power") && attacker.abilityOn) || field.isCharge) && move.type === "Electric") {
         bpMods.push(0x2000);
-        description.attackerAbility = attacker.ability;
+        description.charged = true;
     }
 
     //u. Double power (Facade, Brine, Venoshock, Retaliate, Fusion Bolt, Fusion Flare, Lash Out)

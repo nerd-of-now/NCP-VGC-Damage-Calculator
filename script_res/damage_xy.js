@@ -73,10 +73,9 @@ function GET_DAMAGE_XY(attacker, defender, move, field) {
 
     var isCritical = critMove(move, defAbility);
 
-    var ateIzeAbility = ATE_IZE_ABILITIES.indexOf(attacker.ability);    //Confirms abilities like Normalize and Pixilate
     var ateIzeBoosted;
-    if (ateIzeAbility !== -1 && ['Hidden Power', 'Weather Ball', 'Natural Gift', 'Judgement', 'Techno Blast'].indexOf(move.name) === -1) {
-        [move, description, ateIzeBoosted] = ateIzeTypeChange(move, attacker, description);
+    if (TYPE_CHANGE_BOOST_ABILITIES.includes(attacker.ability) && !(['Hidden Power', 'Weather Ball', 'Natural Gift', 'Judgement', 'Techno Blast'].includes(move.name))) {
+        [move, description, ateIzeBoosted] = checkAbilityTypeChange(move, attacker, description);
     }
 
     var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds");

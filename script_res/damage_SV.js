@@ -119,11 +119,10 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
 
     var isCritical = critMove(move, defAbility);
 
-    var ateIzeAbility = ATE_IZE_ABILITIES.indexOf(attacker.ability);    //Confirms abilities like Normalize and Pixilate but not Liquid Voice
     var ateIzeBoosted;
-    if (!move.isZ && (ateIzeAbility !== -1 || attacker.ability == "Liquid Voice")
-        && ['Hidden Power', 'Weather Ball', 'Natural Gift', 'Judgement', 'Techno Blast', 'Revelation Dance', 'Multi-Attack', 'Terrain Pulse'].indexOf(move.name) === -1) {
-        [move, description, ateIzeBoosted] = ateIzeTypeChange(move, attacker, description);
+    if (!move.isZ && (TYPE_CHANGE_BOOST_ABILITIES.includes(attacker.ability) || attacker.ability == "Liquid Voice")
+        && !(['Hidden Power', 'Weather Ball', 'Natural Gift', 'Judgement', 'Techno Blast', 'Revelation Dance', 'Multi-Attack', 'Terrain Pulse'].includes(move.name))) {
+        [move, description, ateIzeBoosted] = checkAbilityTypeChange(move, attacker, description);
     }
 
     var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, ["Scrappy", "Mind's Eye"].indexOf(attacker.ability) != -1 ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds", defender.isTerastalize);
