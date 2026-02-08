@@ -12,6 +12,7 @@ function CALC_HP_RBY(poke) {
     hp.find(".total").text(total);
     poke.find(".max-hp").text(total);
     calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+    updateHPBar(poke, ~~poke.find(".current-hp").val());
 }
 
 function CALC_STAT_RBY(poke, statName) {

@@ -21,10 +21,20 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     var gluttony = defender.ability === "Gluttony";
     var ripen = (defender.ability === "Ripen") ? 2 : 1;
     var figyDiv = gen <= 6 ? 8 : gen == 7 ? 2 : 3;
+    let tempHits = 0;   //exists specifically for the damage results text in gen 1
+
+    if (gen == 1 && move.hits > 1) {
+        damageIn = handleMultiHitGen1(damageIn, move.hits);
+        tempHits = move.hits;
+        move.hits = 1;
+    }
     var multihit = move.hits > 1 || (damageIn.length > 1 && Array.isArray(damageIn[0]));
 
     //convert each array to a dictionary here
     var damage = damageArrToDict(damageIn, move.hits), damageNums = [];
+    if (tempHits) {
+        move.hits = tempHits;
+    }
     for (eachVal in damage) {
         damageNums.push(parseInt(eachVal));
     }
@@ -244,7 +254,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
 function damageArrToDict(damageArr, hits) {
     var pivotSpread = {}, addedSpread = {}, tempSpread = {}, totalSpread = {};
     var tempKey = 0, is2dArr = Array.isArray(damageArr[0]), damageArrL = damageArr.length;
-    var divisor = Math.pow(16, hits);
+    var divisor = Math.pow(gen >= 3 ? 16 : 39, hits);
     if (!is2dArr) {
         pivotSpread = arrayToInstanceDict(damageArr);
         addedSpread = pivotSpread;
@@ -424,3 +434,19 @@ function serializeText(arr) {
     }
 }
 
+/**
+ * Converts multihit moves into one Array (In Gen 1, each hit uses the same damage roll, and only the first hit can crit)
+ * @param {var} damage Array containing either each damage roll or multiple Arrays that contain each damage roll
+ * @param {var} hits Number of times a move hits
+ * @returns the sum of all hits with each damage roll
+ */
+function handleMultiHitGen1(damage, hits) {
+    let is2dArr = Array.isArray(damage[0]);
+    var firstHit = is2dArr ? damage[0] : damage;
+    var laterHits = is2dArr ? damage[1] : damage;
+    var allHitsDamage = [];
+    for (randIndex in firstHit) {
+        allHitsDamage.push(firstHit[randIndex] + laterHits[randIndex] * (hits - 1));
+    }
+    return allHitsDamage;
+}

@@ -2,9 +2,13 @@ function CALCULATE_ALL_MOVES_RBY(p1, p2, field) {
     p1.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[AT], p1.boosts[AT])));
     p1.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[DF], p1.boosts[DF])));
     p1.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[SL], p1.boosts[SL])));
+    p1.stats[SP] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[SP], p1.boosts[SP])));
+    $(".p1-speed-mods").text(p1.stats[SP]);
     p2.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[AT], p2.boosts[AT])));
     p2.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[DF], p2.boosts[DF])));
     p2.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SL], p2.boosts[SL])));
+    p2.stats[SP] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SP], p2.boosts[SP])));
+    $(".p2-speed-mods").text(p2.stats[SP]);
     var side1 = field.getSide(1);
     var side2 = field.getSide(0);
     var results = [[],[]];
@@ -21,8 +25,8 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
         "moveName": move.name,
         "defenderName": defender.name
     };
-    
-    if (move.bp === 0) {
+
+    if (move.bp === 0 || move.category === "Status") {
         return {"damage":[0], "description":buildDescription(description)};
     }
     
@@ -37,6 +41,10 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
     
     if (typeEffectiveness === 0) {
         return {"damage":[0], "description":buildDescription(description)};
+    }
+    //OHKO moves are still bound by type effectiveness
+    if (move.isOHKO) {
+        return { "damage": [defender.curHP], "description": buildDescription(description) };
     }
     
     if (move.hits > 1) {
@@ -54,7 +62,8 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
         at = attacker.rawStats[attackStat];
         df = defender.rawStats[defenseStat];
         description.isCritical = true;
-    } else {
+    }
+    else {
         if (attacker.boosts[attackStat] !== 0) {
             description.attackBoost = attacker.boosts[attackStat];
         }
@@ -66,8 +75,8 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
             description.isBurned = true;
         }
     }
-    
-    if (move.name === "Explosion" || move.name === "Selfdestruct") {
+
+    if (move.name === "Explosion" || move.name === "Self-Destruct") {
         df = Math.floor(df / 2);
     }
     
@@ -75,7 +84,8 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
         if (isPhysical && field.isReflect) {
             df *= 2;
             description.isReflect = true;
-        } else if (!isPhysical && field.isLightScreen) {
+        }
+        else if (!isPhysical && field.isLightScreen) {
             df *= 2;
             description.isLightScreen = true;
         }
@@ -88,7 +98,7 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
 
     var baseDamage = Math.min(997, Math.floor(Math.floor(Math.floor(2 * lv / 5 + 2) * Math.max(1, at) * move.bp / Math.max(1, df)) / 50)) + 2;
     if (move.type === attacker.type1 || move.type === attacker.type2) {
-        baseDamage = Math.floor(baseDamage * 1.5);
+        baseDamage += Math.floor(baseDamage / 2);
     }
     baseDamage = Math.floor(baseDamage * typeEffectiveness);
     // If baseDamage >= 768, don't apply random factor? upokecenter says this, but nobody else does
@@ -96,5 +106,15 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
     for (var i = 217; i <= 255; i++) {
         damage[i-217] = Math.floor(baseDamage * i / 255);
     }
-    return {"damage":damage, "description":buildDescription(description)};
+    //check for multi-hit move critting because in this gen it'll always crit only the first hit and never the others
+    var allDamage;
+    if (move.hits > 1 && move.isCrit) {
+        let nextMove = move;
+        nextMove.isCrit = false;
+        allDamage = [damage, CALCULATE_DAMAGE_RBY(attacker, defender, nextMove, field).damage];
+    }
+    else {
+        allDamage = damage;
+    }
+    return { "damage": allDamage, "description": buildDescription(description) };
 }
