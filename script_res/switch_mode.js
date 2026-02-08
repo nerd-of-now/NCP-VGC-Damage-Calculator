@@ -21,7 +21,7 @@ if (localStorage.getItem("dex") == "natdex") {
 
 //LEVEL TOGGLING
 //Load the leveling system according to localStorage
-if (localStorage.getItem("level") == true) {
+if (localStorage.getItem("level") == "true") {
 	$("#douswitch").prop("checked", false);
 }
 

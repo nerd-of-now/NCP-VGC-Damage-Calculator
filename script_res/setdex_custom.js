@@ -673,7 +673,7 @@ var exportset = function (set) {
 
     exSpeciesAndItem = exSpecies + exItem + "\n";
 
-    exportText = exSpeciesAndItem + exAbility + exLevel + exTera + exEVs + exNature + exIVs + exMoveset;
+    exportText = exSpeciesAndItem + exAbility + exLevel + exTera + exEVs + exNature + exIVs + exMoveset + "\n";
     return exportText;
 }
 
