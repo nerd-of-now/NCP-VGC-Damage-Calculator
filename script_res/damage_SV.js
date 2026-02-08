@@ -60,6 +60,10 @@ function CALCULATE_ALL_MOVES_SV(p1, p2, field) {
     for (var i = 0; i < 4; i++) {
         results[0][i] = GET_DAMAGE_SV(p1, p2, p1.moves[i], side1);
         results[1][i] = GET_DAMAGE_SV(p2, p1, p2.moves[i], side2);
+        if (gen == 9.5) {
+            results[0][i].cooldown = getMoveCooldown(p1, p1.moves[i]);
+            results[1][i].cooldown = getMoveCooldown(p2, p2.moves[i]);
+        }
     }
     return results;
 }

@@ -1484,6 +1484,16 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             if (move.timesAffected)
                 description.moveBP = basePower;
             break;
+        //i.ix. Dark Void (Legends Z-A)         NEEDS TO BE VERIFIED
+        case "Dark Void":
+            if (gen == 9.5 && defender.status == "Drowsy") {
+                basePower = 2 * move.bp;
+                description.moveBP = basePower;
+            }
+            else {
+                basePower = move.bp;
+            }
+            break;
         default:
             if (move.isDouble && ['Retaliate', 'Fusion Bolt', 'Fusion Flare', 'Lash Out'].indexOf(move.name) === -1) {
                 basePower = 2 * move.bp;

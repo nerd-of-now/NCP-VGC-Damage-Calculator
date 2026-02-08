@@ -17627,7 +17627,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
     "Zygarde": { "formes": ["Zygarde", 'Zygarde-Complete', "Mega Zygarde"] },
     "Zygarde-10%": { "formes": ["Zygarde-10%", 'Zygarde-Complete', "Mega Zygarde"] },
     "Drampa": { "formes": ["Drampa", "Mega Drampa"] },
-    "Falinks": { "formes": ["Falnks", "Mega Falinks"] },
+    "Falinks": { "formes": ["Falinks", "Mega Falinks"] },
     //stat changes
     "Meditite": { "at": 56 },
     "Medicham": { "at": 84 },

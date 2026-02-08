@@ -1445,6 +1445,9 @@ $(".move-plus").change(function () {
                     moveGroupObj.children(".move-bp").val(moves[moveName].bp);
                 }
             }
+            else if (moveProp == "cooldown") {
+                //skip, this is handled in the cooldown calculations
+            }
             else {
                 console.log("Unexpected plus move property: " + moveProp);
             }
@@ -1777,6 +1780,9 @@ $(".result-move").change(function() {
                 }
                 //console.log(custModText);
                 $("#customModValues").text(custModText);
+            }
+            if (result.cooldown) {
+                $("#cooldownText").text(result.cooldown);
             }
 
             //checkCrit(result.crit)
