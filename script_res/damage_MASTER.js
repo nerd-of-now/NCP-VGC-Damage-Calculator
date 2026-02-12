@@ -1113,6 +1113,10 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         description.attackerItem = attacker.item;
         return { "damage": [0], "description": buildDescription(description) };
     }
+    if (move.name === "Poltergeist" && defender.item === "") {
+        description.defenderItem = defender.item;
+        return { "damage": [0], "description": buildDescription(description) };
+    }
     if (move.name === "Natural Gift" && attacker.item.indexOf(" Berry") === -1) {
         return { "damage": [0], "description": buildDescription(description) };
     }
