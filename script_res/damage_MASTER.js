@@ -695,7 +695,7 @@ function checkMoveTypeChange(move, field, attacker) {
                     : ["Hail", "Snow"].indexOf(field.weather) > -1 ? "Ice"
                         : "Normal";
     }
-    else if (move.name == "Terrain Pulse" || move.name == "Nature Power") {
+    else if (move.name == "Terrain Pulse") {
         move.type = field.terrain === "Electric" ? "Electric"
             : field.terrain === "Grassy" ? "Grass"
                 : field.terrain === "Misty" ? "Fairy"
@@ -708,6 +708,9 @@ function checkMoveTypeChange(move, field, attacker) {
                 : attacker.item === "Douse Drive" ? "Water"
                     : attacker.item === "Shock Drive" ? "Electric"
                         : "Normal";
+    }
+    else if (move.name == "Natural Gift" && attacker.item.includes(" Berry")) {
+        move.type = getNaturalGift(attacker.item).t;
     }
     else if (move.name === "Multi-Attack" && attacker.item.indexOf("Memory") !== -1) {
         move.type = getMemoryType(attacker.item);
@@ -923,8 +926,8 @@ function NaturePower(move, field, moveDescName) {         //Rename Nature Power 
                 : (field.terrain == "Psychic") ? "Psychic"
                     : (field.terrain == "Misty") ? "Moonblast"
                         : "Tri Attack";
-    move.name = npMove;
     move = moves[npMove];
+    move.name = npMove;
     move.isZ = natureZ;
     move.hits = 1;
     moveDescName = npMove;
@@ -1451,8 +1454,10 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             break;
         //h.ii. Natural Gift
         case "Natural Gift":
-            if (attacker.item.indexOf(" Berry") !== -1)
+            if (attacker.item.indexOf(" Berry") !== -1) {
                 [move, description] = NaturalGift(move, attacker, description);
+                basePower = move.bp;
+            }
             break;
 
         //i. Other
