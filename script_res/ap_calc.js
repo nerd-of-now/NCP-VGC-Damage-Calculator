@@ -1270,7 +1270,6 @@ $(".set-selector").change(function () {
         } else {
             formeObj.hide();
         }
-        testMax = pokeObj.find(".max");
         if (pokeObj.find(".max").next().is(":visible")) {
             if (GMAX_LIST.includes(pokemonName)) {
                 pokeObj.find(".gmax-icon").show();
@@ -1541,14 +1540,14 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
 
     //Move check
     if (!user.isDynamax) {
-        if (move.recoilHP) {
+        if (move.recoilHP && usedMax > 0) {
             if (!["Rock Head", "Magic Guard"].includes(user.ability)) {
                 var recoilMod = move.recoilHP[0] / move.recoilHP[1];
                 userMinDamage = Math.max(1, pokeRound(usedMin * recoilMod));
                 userMaxDamage = Math.max(1, pokeRound(usedMax * recoilMod));
             }
         }
-        else if (move.drainHP) {
+        else if (move.drainHP && usedMax > 0) {
             var drainMod = move.drainHP[0] / move.drainHP[1];
             var liquidOoze = target.ability == "Liquid Ooze" && (gen >= 5 || move.name != "Dream Eater");
             var doesHeal = !liquidOoze ? -1 : user.ability == "Magic Guard" ? 0 : 1;
@@ -1602,7 +1601,7 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
 
     var dynamaxHP = user.isDynamax ? 2 : 1;
     //Opponent ability check
-    if (["Rough Skin", "Iron Barbs"].includes(target.ability) && move.makesContact) {
+    if (["Rough Skin", "Iron Barbs"].includes(target.ability) && move.makesContact && usedMax > 0) {
         userMinDamage += Math.max(1, Math.floor(user.maxHP / 8)) * move.hits;
         userMaxDamage += Math.max(1, Math.floor(user.maxHP / 8)) * move.hits;
     }
@@ -1613,21 +1612,27 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
     //}
 
     //Opponent item check
-    if (target.item == "Rocky Helmet" && move.makesContact) {
+    if (target.item == "Rocky Helmet" && move.makesContact && usedMax > 0) {
         userMinDamage += Math.max(1, Math.floor(user.maxHP / 6)) * move.hits;
         userMaxDamage += Math.max(1, Math.floor(user.maxHP / 6)) * move.hits;
     }
-    else if ((target.item == "Jaboca Berry" && move.category == "Physical") || (target.item == "Rowap Berry" && move.category == "Special")) {
+    else if (((target.item == "Jaboca Berry" && move.category == "Physical") || (target.item == "Rowap Berry" && move.category == "Special")) && usedMax > 0) {
         let ripenMod = target.ability == "Ripen" ? 2 : 1;
         userMinDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP))) * ripenMod;
         userMaxDamage += Math.max(1, Math.floor(user.maxHP / (8 * dynamaxHP))) * ripenMod;
     }
 
     //User item check
-    if (!(user.ability == "Sheer Force" && move.hasSecondaryEffect)) {
+    if (!(user.ability == "Sheer Force" && move.hasSecondaryEffect) && usedMax > 0) {
         if (userItem == "Shell Bell") {
-            userMinDamage -= Math.max(1, Math.floor(usedMin / (8 * dynamaxHP)));
-            userMaxDamage -= Math.max(1, Math.floor(usedMax / (8 * dynamaxHP)));
+            if (gen == 3) {
+                userMinDamage -= Math.max(1, Math.floor(((usedMin / move.hits) / 8))) * move.hits;
+                userMaxDamage -= Math.max(1, Math.floor(((usedMax / move.hits) / 8))) * move.hits;
+            }
+            else {
+                userMinDamage -= Math.max(1, Math.floor(usedMin / (8 * dynamaxHP)));
+                userMaxDamage -= Math.max(1, Math.floor(usedMax / (8 * dynamaxHP)));
+            }
         }
         else if (userItem == "Life Orb" && move.category != "Status") {
             userMinDamage += Math.max(1, Math.floor(user.maxHP / (10 * dynamaxHP)));
