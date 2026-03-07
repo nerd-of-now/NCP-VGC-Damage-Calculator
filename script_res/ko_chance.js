@@ -1,6 +1,6 @@
 function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     if (isNaN(damageIn[0]) && !Array.isArray(damageIn[0])) {
-       return 'something broke; please tell nerd of now';
+        return 'something broke; please tell nerd of now';
     }
     if (move.name == "Pain Split" && !move.painMax) {
         return 'The battlers shared their pain!';
@@ -8,7 +8,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     if (move.category == "Status" && ['Me First', '(No Move)'].indexOf(move.name) == -1) {
         return "It's a status move, it won't deal damage.";
     }
-    if (damageIn[damageIn.length-1] === 0) {
+    if (damageIn[damageIn.length - 1] === 0) {
         if (field.weather === "Harsh Sun" && move.type === "Water") {
             return 'the Water-Type attack evaporated in the harsh sunlight';
         } else if (field.weather === "Heavy Rain" && move.type === "Fire") {
@@ -16,11 +16,16 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         }
         return 'No damage for you';
     }
-    var hasSitrus = defender.item === 'Sitrus Berry';
-    var hasFigy = defender.item === 'Figy Berry' || defender.item === 'Aguav Berry' || defender.item === 'Iapapa Berry' || defender.item === 'Mago Berry' || defender.item === 'Wiki Berry';
-    var gluttony = defender.ability === "Gluttony";
-    var ripen = (defender.ability === "Ripen") ? 2 : 1;
-    var figyDiv = gen <= 6 ? 8 : gen == 7 ? 2 : 3;
+    var restoreHP = getRestoreHP(defender.item, defender.maxHP);
+    var isRipen = applyRipen(defender.ability == "Ripen", defender.item, restoreHP);
+    if (isRipen) {
+        restoreHP *= 2;
+    }
+    var isGluttony, restoreThreshold;
+    [restoreThreshold, isGluttony] = getRestoreThreshold(defender.item, restoreHP, defender.maxHP, defender.ability == "Gluttony");
+    if (defender.isDynamax) {
+        restoreThreshold *= 0.5;
+    }
     let tempHits = 0;   //exists specifically for the damage results text in gen 1
 
     if (gen == 1 && move.hits > 1) {
@@ -39,11 +44,10 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         damageNums.push(parseInt(eachVal));
     }
 
-    if ((!multihit || (!hasSitrus && !hasFigy)) && damage[damageNums[0]] >= defender.curHP) {
+    if ((!multihit || !restoreHP) && damage[damageNums[0]] >= defender.curHP) {
         return 'guaranteed OHKO';
-    } else if (multihit && hasSitrus && damage[damageNums[0]] >= defender.curHP + Math.floor(ripen * defender.maxHP / 4)) {
-        return 'guaranteed OHKO';
-    } else if (multihit && hasFigy && damage[damageNums[0]] >= defender.curHP + Math.floor(ripen * defender.maxHP / figyDiv)) {
+    }
+    else if (multihit && restoreHP && damage[damageNums[0]] >= defender.curHP + restoreHP) {
         return 'guaranteed OHKO';
     }
 
@@ -183,7 +187,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         }
     }
 
-    var c = getKOChance(damage, multihit, defender.curHP - hazards, 0, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
+    var c = getKOChance(damage, multihit, defender.curHP - hazards, 0, 1, defender.maxHP, toxicCounter, restoreHP, restoreThreshold);
     var afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
     var percNumText = '';
     if (c === 1) {
@@ -199,18 +203,15 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         return percNumText + '% chance to OHKO' + afterText;
     }
 
-    if (hasSitrus && move.name !== 'Knock Off') {
-        if (ripen == 2) eotText.push('Ripen Sitrus Berry recovery');
-        else eotText.push('Sitrus Berry recovery');
+    if (restoreHP && move.name !== 'Knock Off' && !(defender.item.includes(' Berry') && ['Bug Bite', 'Pluck', 'Incinerate'].includes(move.name))) {
+        let eotTemp = '';
+        if (isRipen) eotTemp += 'Ripen ';
+        else if (isGluttony) eotTemp += 'Gluttony ';
+        eotTemp += defender.item + ' recovery';
+        eotText.push(eotTemp);
     }
 
-    if (hasFigy && move.name !== 'Knock Off') {
-        if (gluttony) eotText.push('Gluttony pinch berry recovery');
-        else if (ripen == 2) eotText.push('Ripen pinch berry recovery');
-        else eotText.push('pinch berry recovery');
-    }
-
-    c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, 1, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
+    c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, 1, defender.maxHP, toxicCounter, restoreHP, restoreThreshold);
     afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
     if (c === 1) {
         return 'guaranteed OHKO' + afterText;
@@ -226,7 +227,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
 
     var i;
     for (i = 2; i <= 4; i++) {
-        c = getKOChance(damage, multihit, defender.curHP - hazards, eot, i, defender.maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
+        c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, i, defender.maxHP, toxicCounter, restoreHP, restoreThreshold);
         if (c === 1) {
             return 'guaranteed ' + i + 'HKO' + afterText;
         } else if (c > 0) {
@@ -241,9 +242,9 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     }
 
     for (i = 5; i <= 9; i++) {
-        if (predictTotal(damageNums[0], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, hasSitrus, hasFigy, figyDiv, gluttony, ripen) >= defender.curHP - hazards) {
+        if (predictTotal(damageNums[0], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, restoreHP, restoreThreshold) >= defender.curHP - hazards) {
             return 'guaranteed ' + i + 'HKO' + afterText;
-        } else if (predictTotal(damageNums[damageNums.length-1], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, hasSitrus, hasFigy, figyDiv, gluttony, ripen) >= defender.curHP - hazards) {
+        } else if (predictTotal(damageNums[damageNums.length - 1], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, restoreHP, restoreThreshold) >= defender.curHP - hazards) {
             return 'possible ' + i + 'HKO' + afterText;
         }
     }
@@ -313,44 +314,41 @@ function sortByKeys(dict) {
     return tempDict;
 }
 
-//Note: hits !== move.hits, hits refers to the number of times an attack is used in a row
-function getKOChance(damage, multihit, hp, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen) {
+function getKOChance(damage, multihit, hp, eot, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold) {
     var damageKeys = Object.keys(damage);
     var minDamage = parseInt(damageKeys[0]);
     var maxDamage = parseInt(damageKeys[damageKeys.length - 1]);
-    if (hits === 1) {
-        if ((!multihit || !hasSitrus) && maxDamage < hp) {
+    if (timesUsed === 1) {
+        if ((!multihit || !restoreHP) && maxDamage < hp) {
             return 0;
-        } else if (multihit && hasSitrus && maxDamage < hp + Math.floor(ripen * maxHP / 4)) {
-            return 0;
-        } else if (multihit && hasFigy && maxDamage < hp + Math.floor(ripen * maxHP / figyDiv)) {
+        }
+        else if (multihit && restoreHP && maxDamage < hp + restoreHP) {
             return 0;
         }
 
         var returnChance = 1;
         for (damageNum in damage) {
             damageNum = parseInt(damageNum);
-            if ((!multihit || (!hasSitrus && !hasFigy)) && damageNum >= hp) {
+            if ((!multihit || !restoreHP) && damageNum >= hp) {
                 return returnChance;
-            } else if (multihit && hasSitrus && damageNum >= hp + Math.floor(ripen * maxHP / 4)) {
-                return returnChance;
-            } else if (multihit && hasFigy && damageNum >= hp + Math.floor(ripen * maxHP / figyDiv)) {
+            }
+            else if (multihit && restoreHP && damageNum >= hp + restoreHP) {
                 return returnChance;
             }
             returnChance -= damage[damageNum];
         }
     }
-    var sum = verifyKOChance(damage, hp, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen);
+    var sum = verifyKOChance(damage, hp, eot, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold);
     return sum;
 }
 
-function verifyKOChance(damage, targetHP, eot, hits, maxHP, toxicCounter, hasSitrus, hasFigy, figyDiv, gluttony, ripen) {
+function verifyKOChance(damage, targetHP, eot, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold) {
     var pivotSpread = {}, addedSpread = {}, tempSpread = {}, totalSpread = {};
     var tempKey = 0, finalNum = 0;
     pivotSpread = damage;
     addedSpread = pivotSpread;
     toxicCounter++;
-    for (var i = 0; i < hits - 1; i++) {
+    for (var i = 0; i < timesUsed - 1; i++) {
         for (pivotNum in pivotSpread) {
             for (addedNum in addedSpread) {
                 tempKey = parseInt(pivotNum) + parseInt(addedNum) - eot;
@@ -372,12 +370,9 @@ function verifyKOChance(damage, targetHP, eot, hits, maxHP, toxicCounter, hasSit
     }
     for (spreadNum in addedSpread) {
         finalNum = parseInt(spreadNum);
-        if (hits > 1) {
-            if (hasSitrus && (finalNum >= maxHP / 2)) {
-                finalNum -= Math.floor(ripen * maxHP / 4);
-            }
-            else if (hasFigy && (finalNum >= maxHP / (gen >= 7 && !gluttony ? 4 : 2))) {
-                finalNum -= Math.floor(ripen * maxHP / figyDiv);
+        if (timesUsed > 1) {
+            if (restoreHP && (finalNum >= restoreThreshold)) {
+                finalNum = Math.min(maxHP, finalNum - restoreHP);
             }
         }
         totalSpread[finalNum] = addedSpread[spreadNum];
@@ -393,19 +388,15 @@ function verifyKOChance(damage, targetHP, eot, hits, maxHP, toxicCounter, hasSit
     return returnSum;
 }
 
-function predictTotal(damage, eot, hits, toxicCounter, hp, maxHP, hasSitrus, hasFigy, figyDiv, gluttony, ripen) {
+function predictTotal(damage, eot, timesUsed, toxicCounter, hp, maxHP, restoreHP, restoreThreshold) {
     var total = 0;
-    for (var i = 0; i < hits; i++) {
+    for (var i = 0; i < timesUsed; i++) {
         total += damage;
-        if ((hp - total <= maxHP / 2) && hasSitrus) {
-            total -= Math.floor(ripen * maxHP / 4);
-            hasSitrus = false;
+        if ((hp - total <= restoreThreshold) && restoreHP) {
+            total = Math.min(maxHP, total - restoreHP);
+            restoreHP = 0;
         }
-        else if ((hp - total <= maxHP / (gen >= 7 && !gluttony ? 4 : 2)) && hasFigy) {
-            hp += Math.floor(ripen * maxHP / figyDiv);
-            hasFigy = false;
-        }
-        if (i < hits - 1) {
+        if (i < timesUsed - 1) {
             total -= eot;
             if (toxicCounter > 0) {
                 total += Math.floor((toxicCounter + i) * maxHP / 16);
@@ -432,6 +423,36 @@ function serializeText(arr) {
         }
         return text + 'and ' + arr[arr.length - 1];
     }
+}
+
+function getRestoreHP(item, maxHP) {
+    return ["Berry", "Oran Berry"].includes(item) ? 10 :
+        item == "Berry Juice" ? 20 :
+            ["Gold Berry", "Sitrus Berry"].includes(item) && gen <= 3 ? 30 :
+                item == "Sitrus Berry" ? Math.floor(maxHP / 4) :    //Enigma Berry can also apply if the attack is super effective
+                    ["Figy Berry", "Iapapa Berry", "Wiki Berry", "Aguav Berry", "Mago Berry"].includes(item) ? Math.floor(maxHP / (gen <= 6 ? 8 : gen == 7 ? 2 : 3)) :
+                        0;
+}
+
+function applyRipen(isRipen, item, restoreHP) {
+    return isRipen && item.includes(" Berry") && restoreHP;
+}
+
+function getRestoreThreshold(item, restoreHP, maxHP, isGluttony) {
+    if (restoreHP) {
+        if (gen <= 6 || ["Berry", "Oran Berry", "Berry Juice", "Gold Berry", "Sitrus Berry"].includes(item)) {
+            return [maxHP / 2, false];
+        }
+        else if (["Figy Berry", "Iapapa Berry", "Wiki Berry", "Aguav Berry", "Mago Berry"].includes(item)) {
+            if (isGluttony) {
+                return [maxHP / 2, true];
+            }
+            else {
+                return [maxHP / 4, false];
+            }
+        }
+    }
+    return [0, false];
 }
 
 /**
