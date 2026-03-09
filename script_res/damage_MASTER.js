@@ -207,39 +207,72 @@ function addLevelDesc(attacker, defender, description) {
         description.defenderLevel = defender.level;
 }
 
-function getMoveEffectiveness(move, type, otherType, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds, defIsTera) {
-    if (move.type == "Stellar" && defIsTera) {
-        return 2;
+function getMoveEffectiveness(move, type1, type2, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds, defIsTera, isTeraShell) {
+    var type1Effect = getSingleTypeEffectiveness(move, type1, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds);
+    var type2Effect = type2 && type2 != type1 ? getSingleTypeEffectiveness(move, type2, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds) : 1;
+    var typeEffectiveness = type1Effect * type2Effect;
+    var usesTeraShell = isTeraShell && typeEffectiveness > 0.5;
+    var effectiveOverride = overrideTypeEffectiveness(move, [type1, type2].includes("Flying"), defItem, isGravity, defIsTera, usesTeraShell);
+    if (effectiveOverride != -1) {
+        typeEffectiveness = effectiveOverride;
+        if (usesTeraShell) {
+            description.attackerAbility = "Tera Shell";
+        }
     }
-    else if ((isForesight || isScrappy) && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
+    if (gen == 9.5) {
+        typeEffectiveness = additionalTypeEffectModsLegendsZA(move, typeEffectiveness, description);
+    }
+    return typeEffectiveness;
+}
+
+function getSingleTypeEffectiveness(move, type, description, isForesight, isScrappy, isGravity, defItem, isStrongWinds) {
+    if ((isForesight || isScrappy) && type === "Ghost" && (["Normal", "Fighting"].includes(move.type))) {
         if (isScrappy)
             description.attackerAbility = isScrappy;
         else
             description.isForesight = true;
         return 1;
-    } else if ((isGravity || defItem == "Iron Ball" || move.name == "Thousand Arrows") && type === "Flying" && move.type === "Ground") {
+    }
+    else if ((isGravity || defItem == "Iron Ball") && type === "Flying" && move.type === "Ground") {
         if (isGravity)
             description.isGravity = true;
         else if (defItem == "Iron Ball")
             description.defenderItem = "Iron Ball";
         return 1;
-    } else if (otherType == "Flying" && move.type === "Ground" && (move.name == "Thousand Arrows" || defItem == "Iron Ball") && !isGravity && gen >= 5) {
-        return 1;
-    } else if (move.name === "Freeze-Dry" && type === "Water") {
+    }
+    else if (move.name === "Freeze-Dry" && type === "Water") {
         return 2;
-    } else if (move.name === "Flying Press") {
-        return typeChart["Fighting"][type] * typeChart["Flying"][type];
-    } else if (isStrongWinds && type == "Flying" && typeChart[move.type][type] > 1) {
-        return 1;
     }
     else if (move.name === "Nihil Light" && type === "Fairy") {
         return 1;
-    } else if (defItem == "Ring Target" && typeChart[move.type][type] == 0) {
-        description.defenderItem = "Ring Target";
+    }
+    else {
+        var effectiveness = typeChart[move.type][type];
+        if (isStrongWinds && type == "Flying" && effectiveness > 1) {
+            effectiveness = 1;
+        }
+        else if (defItem == "Ring Target" && effectiveness == 0) {
+            description.defenderItem = "Ring Target";
+            effectiveness = 1;
+        }
+        if (move.name === "Flying Press") {
+            effectiveness *= typeChart["Flying"][type];
+        }
+        return effectiveness;
+    }
+}
+function overrideTypeEffectiveness(move, defIsFlyingType, defItem, isGravity, defIsTera, usesTeraShell) {
+    if (usesTeraShell) {
+        return 0.5;
+    }
+    else if (move.type == "Stellar" && defIsTera) {
+        return 2;
+    }
+    else if (defIsFlyingType && move.type === "Ground" && (move.name == "Thousand Arrows" || defItem == "Iron Ball") && !isGravity && gen >= 5) {
         return 1;
     }
     else {
-        return typeChart[move.type][type];
+        return -1;
     }
 }
 
@@ -1058,13 +1091,6 @@ function checkAbilityTypeChange(move, attacker, description) {
     return [move, description, isBoosted];
 }
 
-function checkTeraShell(isTeraShell, description, typeEffectiveness) {
-    if (isTeraShell && typeEffectiveness > 0.5) {
-        description.defenderAbility = 'Tera Shell';
-        typeEffectiveness = 0.5;
-    }
-    return typeEffectiveness;
-}
 
 function immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness) {
     if (typeEffectiveness === 0 || (gen === 3 && move.type === '???')) {
@@ -1090,12 +1116,12 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         return { "damage": [0], "description": buildDescription(description) };
     }
     if (move.name === "Sky Drop" &&
-        ([defender.type1, defender.type2].indexOf("Flying") !== -1 ||
+        (defender.hasType("Flying") ||
             (gen >= 6 && defender.weight >= 200.0) || field.isGravity)) {
         return { "damage": [0], "description": buildDescription(description) };
     }
     if (move.name === "Synchronoise" &&
-        [defender.type1, defender.type2].indexOf(attacker.type1) === -1 && [defender.type1, defender.type2].indexOf(attacker.type2) === -1) {
+        !(defender.hasType(attacker.type1)) && !(defender.hasType(attacker.type2))) {
         return { "damage": [0], "description": buildDescription(description) };
     }
     if (defender.isDynamax && ["Grass Knot", "Low Kick", "Heat Crash", "Heavy Slam"].indexOf(move.name) !== -1) {
@@ -1243,7 +1269,7 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
 
     //f. OHKO moves
     if (move.isOHKO) {
-        if (move.name == 'Sheer Cold' && [defender.type1, defender.type2].indexOf('Ice') !== -1)
+        if (move.name == 'Sheer Cold' && defender.hasType("Ice"))
             return { "damage": [0], "description": buildDescription(description) };
         else
             return { "damage": [defender.curHP], "description": buildDescription(description) };
@@ -1253,9 +1279,17 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
     return -1;
 }
 
+/**
+ * Returns true if the Pokemon is grounded, and false if it is airborne. Cases not covered:
+ * - Klutz + Iron Ball/Air Balloon (handled in function checkKlutz)
+ * - Levitate + ignoring/negating abilities (handled before; ability should be blank by the time this function is called)
+ * - Flying type + Ring Target (handled in function getMoveEffectiveness)
+ * - Thousand Arrows (handled in function getMoveEffectiveness)
+ * - Ingrain (not implemented currently)
+ * - Flying type + Roost (not implemented, not planning on implementing, wouldn't be handled here anyway)
+ */
 function pIsGrounded(mon, field) {
-    return (mon.item == "Iron Ball" || field.isGravity || (mon.type1 !== "Flying" && mon.type2 !== "Flying" &&
-        mon.item !== "Air Balloon" && mon.ability !== "Levitate"));
+    return field.isGravity || mon.item == "Iron Ball" || (mon.item != "Air Balloon" && mon.ability != "Levitate" && !(mon.hasType("Flying")));
 }
 
 //1. Custom BP
@@ -2012,8 +2046,8 @@ function calcDefense(move, attacker, defender, description, hitsPhysical, isCrit
 
     //g. Sandstorm Rock types, Snowstorm Ice Types
     // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
-    if ((field.weather === "Sand" && (defender.type1 === "Rock" || defender.type2 === "Rock") && !hitsPhysical)
-        || (field.weather === "Snow" && (defender.type1 === "Ice" || defender.type2 === "Ice") && hitsPhysical)) {
+    if ((field.weather === "Sand" && defender.hasType("Rock") && !hitsPhysical)
+        || (field.weather === "Snow" && defender.hasType("Ice") && hitsPhysical)) {
         defense = pokeRound(defense * 3 / 2);
         description.weather = field.weather;
     }
@@ -2119,7 +2153,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     }
-    else if ((field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") &&
+    else if ((field.weather === "Strong Winds" && defender.hasType("Flying") &&
         typeChart[move.type]["Flying"] > 1)) {
         description.weather = field.weather;        //not actually a mod, just adding the description here
     }
@@ -2157,7 +2191,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             }
         }
         else if (attacker.isTerastalize && (move.getsStellarBoost || attacker.name === 'Terapagos-Stellar')) { //Tera Type being Stellar is implicit
-            if ([attacker.type1, attacker.type2].indexOf(move.type) !== -1 || (move.combinePledge && move.combinePledge !== move.name)) {
+            if (attacker.hasType(move.type) || (move.combinePledge && move.combinePledge !== move.name)) {
                 stabMod = 0x2000;
             }
             else {
@@ -2166,7 +2200,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             if (attacker.name !== 'Terapagos-Stellar') description.stellarBoost = true;
         }
         else { //Covers for non-terastalized and Stellar being used up
-            if ([attacker.type1, attacker.type2].indexOf(move.type) !== -1 || (move.combinePledge && move.combinePledge !== move.name)) {
+            if (attacker.hasType(move.type) || (move.combinePledge && move.combinePledge !== move.name)) {
                 if (attacker.ability === "Adaptability") {
                     stabMod = 0x2000;
                     description.attackerAbility = attacker.ability;

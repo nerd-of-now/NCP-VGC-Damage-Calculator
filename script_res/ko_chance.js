@@ -95,8 +95,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
             eotText.push('Rain Dish recovery');
         }
     } else if (field.weather === 'Sand') {
-        if (['Rock', 'Ground', 'Steel'].indexOf(defender.type1) === -1 &&
-            ['Rock', 'Ground', 'Steel'].indexOf(defender.type2) === -1 &&
+        if (!(defender.hasType(["Rock", "Ground", "Steel"])) &&
             ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].indexOf(defender.ability) === -1 &&
             defender.item !== 'Safety Goggles') {
             eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
@@ -106,7 +105,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         if (defender.ability === 'Ice Body') {
             eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Ice Body recovery');
-        } else if (defender.type1 !== 'Ice' && defender.type2 !== 'Ice' &&
+        } else if (!(defender.hasType('Ice')) &&
             ['Magic Guard', 'Overcoat', 'Snow Cloak'].indexOf(defender.ability) === -1 &&
             defender.item !== 'Safety Goggles') {
             eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
@@ -121,7 +120,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
         eotText.push('Leftovers recovery');
     } else if (defender.item === 'Black Sludge') {
-        if (defender.type1 === 'Poison' || defender.type2 === 'Poison') {
+        if (defender.hasType('Poison')) {
             eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
             eotText.push('Black Sludge recovery');
         } else if (defender.ability !== 'Magic Guard' && defender.ability !== 'Klutz') {
@@ -166,7 +165,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         eotText.push('Bad Dreams');
     }
 
-    if (field.isSeaFire && defender.ability !== 'Magic Guard' && [defender.type1, defender.type2].indexOf('Fire') === -1) {
+    if (field.isSeaFire && defender.ability !== 'Magic Guard' && !(defender.hasType("Fire"))) {
         eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
         eotText.push('Sea of Fire damage');
     }
@@ -177,7 +176,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     }
 
     if (field.isSaltCure && defender.ability !== 'Magic Guard') {
-        if (["Water", "Steel"].indexOf(defender.type1) === -1 && ["Water", "Steel"].indexOf(defender.type2) === -1) {
+        if (!(defender.hasType(["Water", "Steel"]))) {
             eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push('Salt Cure damage');
         }

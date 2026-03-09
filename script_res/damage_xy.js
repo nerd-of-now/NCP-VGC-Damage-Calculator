@@ -78,9 +78,7 @@ function GET_DAMAGE_XY(attacker, defender, move, field) {
         [move, description, ateIzeBoosted] = checkAbilityTypeChange(move, attacker, description);
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds");
-    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds") : 1;
-    var typeEffectiveness = typeEffect1 * typeEffect2;
+    var typeEffectiveness = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item, field.weather === "Strong Winds");
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
 

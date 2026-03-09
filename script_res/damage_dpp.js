@@ -60,11 +60,10 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     if (attacker.ability == 'Normalize') {
         [move, description, unused] = ateIzeTypeChange(move, attacker, description);
     }
-    
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item);
-    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight, attacker.ability == "Scrappy" ? attacker.ability : false, field.isGravity, defender.item) : 1;
-    var typeEffectiveness = typeEffect1 * typeEffect2;
-    immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffectiveness);
+
+    var typeEffect1 = getSingleTypeEffectiveness(move, defender.type1, description, field.isForesight, attacker.ability == "Scrappy", field.isGravity, defender.item);
+    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getSingleTypeEffectiveness(move, defender.type2, description, field.isForesight, attacker.ability == "Scrappy", field.isGravity, defender.item) : 1;
+    immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defAbility, typeEffect1 * typeEffect2);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
 
     getHPInfo(description, defender);
@@ -109,7 +108,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     ////////////////////////////////
     var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / 50) / defense);
     
-    return calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, field, description, typeEffectiveness, typeEffect1, typeEffect2, isPhysical, isCritical);
+    return calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, field, description, typeEffect1, typeEffect2, isPhysical, isCritical);
 }
 
 //Gen 4 only functions below
@@ -243,7 +242,7 @@ function calcAttackAtModsGen4(isPhysical, attacker, description, isCritical, def
     }
     else if ((attacker.item === "Light Ball" && attacker.name === "Pikachu") ||
         (attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak") && isPhysical) ||
-        (attacker.item === "DeepSeaTooth" && attacker.name === "Clamperl" && !isPhysical)) {
+        (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && !isPhysical)) {
         attack *= 2;
         description.attackerItem = attacker.item;
     }
@@ -296,7 +295,7 @@ function calcDefenseDfModsGen4(isPhysical, defender, description, isCritical, de
         defense = Math.floor(defense * 1.5);
         description.defenderItem = defender.item;
     }
-    else if (defender.item === "DeepSeaScale" && defender.name === "Clamperl" && !isPhysical) {
+    else if (defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !isPhysical) {
         defense *= 2;
         description.defenderItem = defender.item;
     }
@@ -318,7 +317,7 @@ function calcDefenseDfModsGen4(isPhysical, defender, description, isCritical, de
 }
 
 //8.1/9.1 Final Mods (Gen 4)
-function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, field, description, typeEffectiveness, typeEffect1, typeEffect2, isPhysical, isCritical) {
+function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, field, description, typeEffect1, typeEffect2, isPhysical, isCritical) {
     //a. Mod1
     //i. Burn
     if (attacker.status === "Burned" && isPhysical && attacker.ability !== "Guts") {
@@ -403,6 +402,7 @@ function calcOtherModsGen4(baseDamage, attacker, defender, defAbility, move, fie
 
     //e. Mod3
     //i. Solid Rock/Filter
+    var typeEffectiveness = typeEffect1 * typeEffect2;
     var filterMod = 1;
     if ((defAbility === "Filter" || defAbility === "Solid Rock") && typeEffectiveness > 1) {
         filterMod = 0.75;

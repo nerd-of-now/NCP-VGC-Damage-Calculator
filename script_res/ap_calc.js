@@ -1566,7 +1566,7 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
         }
         else if (move.costHP) {
             if (move.costHP[2] == "roundDown") {
-                if (move.name != "Curse" || user.type1 == 'Ghost' || user.type2 == 'Ghost') {
+                if (move.name != "Curse" || user.hasType("Ghost")) {
                     userMinDamage = Math.max(1, Math.floor(user.maxHP * (move.costHP[0] / move.costHP[1])));
                     userMaxDamage = userMinDamage;
                 }
@@ -1975,6 +1975,19 @@ function Pokemon(pokeInfo) {
     }
     if (gen == 7.5) {
         this.friendship = ~~pokeInfo.find(".friendship").val();
+    }
+    this.hasType = function (type) {
+        if (Array.isArray(type)) {
+            for (typeI of type) {
+                if ([this.type1, this.type2].includes(typeI)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        else {
+            return [this.type1, this.type2].includes(type);
+        }
     }
 }
 

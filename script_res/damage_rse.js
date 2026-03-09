@@ -41,8 +41,8 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         return statusMoves(move, attacker, defender, description);
     }
 
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, defender.type2, description, field.isForesight);
-    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getMoveEffectiveness(move, defender.type2, defender.type1, description, field.isForesight) : 1;
+    var typeEffect1 = getSingleTypeEffectiveness(move, defender.type1, description, field.isForesight);
+    var typeEffect2 = defender.type2 && defender.type2 !== defender.type1 ? getSingleTypeEffectiveness(move, defender.type2, description, field.isForesight) : 1;
     immuneBuildDesc = immunityChecks(move, attacker, defender, field, description, defender.ability, typeEffect1 * typeEffect2);
     if (immuneBuildDesc !== -1) return immuneBuildDesc;
 
@@ -88,7 +88,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
             (!isPhysical && attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias"))) {
             at = Math.floor(at * 1.5);
             description.attackerItem = attacker.item;
-        } else if ((!isPhysical && attacker.item === "DeepSeaTooth" && attacker.name === "Clamperl") ||
+        } else if ((!isPhysical && attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl") ||
             (!isPhysical && attacker.item === "Light Ball" && attacker.name === "Pikachu") ||
             (isPhysical && attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak"))) {
             at *= 2;
@@ -99,7 +99,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
             (isPhysical && defender.item === "Metal Powder" && defender.name === "Ditto")) {
             df = Math.floor(df * 1.5);
             description.defenderItem = defender.item;
-        } else if (!isPhysical && defender.item === "DeepSeaScale" && defender.name === "Clamperl") {
+        } else if (!isPhysical && defender.item === "Deep Sea Scale" && defender.name === "Clamperl") {
             df *= 2;
             description.defenderItem = defender.item;
         }
