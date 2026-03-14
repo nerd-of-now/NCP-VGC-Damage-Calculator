@@ -371,7 +371,8 @@ function verifyKOChance(damage, targetHP, eot, timesUsed, maxHP, toxicCounter, r
         finalNum = parseInt(spreadNum);
         if (timesUsed > 1) {
             if (restoreHP && (finalNum >= restoreThreshold)) {
-                finalNum = Math.min(maxHP, finalNum - restoreHP);
+                //finalNum = Math.min(maxHP, finalNum - restoreHP);     //unsure why Math.min was used
+                finalNum -= restoreHP;
             }
         }
         totalSpread[finalNum] = addedSpread[spreadNum];
@@ -392,7 +393,8 @@ function predictTotal(damage, eot, timesUsed, toxicCounter, hp, maxHP, restoreHP
     for (var i = 0; i < timesUsed; i++) {
         total += damage;
         if ((hp - total <= restoreThreshold) && restoreHP) {
-            total = Math.min(maxHP, total - restoreHP);
+            //total = Math.min(maxHP, total - restoreHP);       //unsure why Math.min was used
+            total -= restoreHP;
             restoreHP = 0;
         }
         if (i < timesUsed - 1) {
