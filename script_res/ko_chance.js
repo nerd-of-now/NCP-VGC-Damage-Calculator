@@ -95,7 +95,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
             eotText.push('Rain Dish recovery');
         }
     } else if (field.weather === 'Sand') {
-        if (!(defender.hasType(["Rock", "Ground", "Steel"])) &&
+        if (!(defender.hasType("Rock", "Ground", "Steel")) &&
             ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].indexOf(defender.ability) === -1 &&
             defender.item !== 'Safety Goggles') {
             eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
@@ -176,7 +176,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     }
 
     if (field.isSaltCure && defender.ability !== 'Magic Guard') {
-        if (!(defender.hasType(["Water", "Steel"]))) {
+        if (!(defender.hasType("Water", "Steel"))) {
             eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
             eotText.push('Salt Cure damage');
         }

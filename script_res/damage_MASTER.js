@@ -1120,8 +1120,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
             (gen >= 6 && defender.weight >= 200.0) || field.isGravity)) {
         return { "damage": [0], "description": buildDescription(description) };
     }
-    if (move.name === "Synchronoise" &&
-        !(defender.hasType(attacker.type1)) && !(defender.hasType(attacker.type2))) {
+    if (move.name === "Synchronoise" && !(defender.hasType(attacker.type1, attacker.type2))) {
         return { "damage": [0], "description": buildDescription(description) };
     }
     if (defender.isDynamax && ["Grass Knot", "Low Kick", "Heat Crash", "Heavy Slam"].indexOf(move.name) !== -1) {
@@ -2454,6 +2453,9 @@ function checkAddCalcQualifications(attacker, defender, move, field, hitsPhysica
 //Inefficient for what it does now but should be a good setup for when more conditions are added
 function additionalDamageCalcs(attacker, defender, move, field, description, addQualList) {
     var nextAttacker = JSON.parse(JSON.stringify(attacker)), nextDefender = JSON.parse(JSON.stringify(defender)), nextMove = JSON.parse(JSON.stringify(move));
+    //Adding hasType function back in since the deep copy loses it
+    nextAttacker.hasType = setHasTypeFunc;
+    nextDefender.hasType = setHasTypeFunc;
     var allAdditionalDamages = [];
     var uniqueHits = 1;     //Keeps track of the number of unique hits that need to be calculated, done to minimize redundant function calls
     if (addQualList['parentalBond']) {

@@ -1840,6 +1840,15 @@ function findDamageResult(resultMoveObj) {
     }
 }
 
+var setHasTypeFunc = function (...types) {
+    for (type of types) {
+        if ([this.type1, this.type2].includes(type)) {
+            return true;
+        }
+    }
+    return false;
+};
+
 function Pokemon(pokeInfo) {
     var setName = pokeInfo.find("input.set-selector").val();
 
@@ -1976,19 +1985,7 @@ function Pokemon(pokeInfo) {
     if (gen == 7.5) {
         this.friendship = ~~pokeInfo.find(".friendship").val();
     }
-    this.hasType = function (type) {
-        if (Array.isArray(type)) {
-            for (typeI of type) {
-                if ([this.type1, this.type2].includes(typeI)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        else {
-            return [this.type1, this.type2].includes(type);
-        }
-    }
+    this.hasType = setHasTypeFunc;
 }
 
 function getMoveDetails(moveInfo, maxMon) {
