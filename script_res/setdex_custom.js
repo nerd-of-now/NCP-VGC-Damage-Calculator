@@ -709,6 +709,7 @@ function storedSetFixes() {
     var nameChange = {
         'Indeedee-M': 'Indeedee',
         'Dudunsparce-Big': 'Dudunsparce-Three-Segment',
+        'Gimmighoul-Roam': 'Gimmighoul-Roaming',
     };
     var nameChangeItemRequired = {
         'Zacian': {

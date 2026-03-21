@@ -15154,9 +15154,8 @@ var POKEDEX_SS = $.extend(true, {}, POKEDEX_SS_NATDEX, {
     "Mega Audio", "Mega Diancie", "Ultra Necrozma"
 ].forEach(e => delete POKEDEX_SS[e]);
 
-
-var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
-    //EVIOLITE ELIGIBILITY CHANGES
+var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_SS_NATDEX, {
+    //LA Eviolite Eligibility Changes
     "Stantler": { "canEvolve": true, },
     "Ursaring": { "canEvolve": true, },
 
@@ -15559,10 +15558,8 @@ var POKEDEX_LA = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "w": 48.0,
         "ab": "Overcoat",
     },
-});
 
-var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
-    //Past Pokemon Changes
+    //SV Past Pokemon Changes
     "Primeape": { "canEvolve": true, },
     "Dunsparce": { "canEvolve": true, },
     "Girafarig": { "canEvolve": true, },
@@ -17006,7 +17003,7 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_LA, {
         "ab": "Rattled",
         "canEvolve": true,
     },
-    "Gimmighoul-Roam": {
+    "Gimmighoul-Roaming": {
         "t1": "Ghost",
         "bs": {
             "hp": 45,
@@ -17540,7 +17537,7 @@ var POKEDEX_SV = {};
     'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Basculin-White-Striped', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
     'Meloetta-Pirouette', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Oricorio-Pom-Pom', "Oricorio-Pa'u", 'Oricorio-Sensu', 'Lycanroc-Midnight', 'Lycanroc-Dusk',
     'Eiscue-Noice', 'Indeedee-F', 'Zacian-Crowned', 'Zamazenta-Crowned', 'Urshifu-Rapid Strike', 'Calyrex-Ice Rider', 'Calyrex-Shadow Rider', 'Basculegion-F', 'Enamorus-Therian', 'Oinkologne-F',
-    'Dudunsparce-Three-Segment', 'Palafin-Hero', 'Maushold-Four', 'Gimmighoul-Roam', 'Hoopa-Unbound', 'Wooper-Paldea',
+    'Dudunsparce-Three-Segment', 'Palafin-Hero', 'Maushold-Four', 'Gimmighoul-Roaming', 'Hoopa-Unbound', 'Wooper-Paldea',
     //Teal Mask DLC Pokemon
     'Ekans', 'Arbok', 'Sandshrew', 'Sandslash', 'Clefairy', 'Clefable', 'Vulpix', 'Ninetales', 'Poliwag', 'Poliwhirl', 'Poliwrath', 'Bellsprout', 'Weepinbell', 'Victreebel',
     'Geodude', 'Graveler', 'Golem', 'Koffing', 'Weezing', 'Snorlax', 'Sentret', 'Furret', 'Hoothoot', 'Noctowl', 'Spinarak', 'Ariados', 'Cleffa', 'Politoed', 'Aipom',
@@ -18355,7 +18352,7 @@ var POKEDEX_ZA = {};
     'Hoopa', 'Marshadow', 'Meltan', 'Melmetal', 'Darkrai', 'Latias', 'Latios', 'Kyogre', 'Groudon', 'Rayquaza', 'Magearna', 'Zeraora',
     //Forms for Mega Dimension Pokemon
     'Mega Raichu X', 'Mega Raichu Y', 'Mega Absol Z', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Meowstic', 'Mega Meowstic-F', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', "Farfetch'd-Galar",
-    'Marowak-Alola', 'Mega Scovillain', 'Mega Glimmora', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Mega Tatsugiri', 'Mega Baxcalibur',
+    'Marowak-Alola', 'Mega Scovillain', 'Mega Glimmora', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Mega Tatsugiri', 'Mega Baxcalibur', 'Gimmighoul-Roaming', 
     'Qwilfish-Hisui', 'Mega Sceptile', 'Mega Blaziken', 'Mega Swampert', 'Mega Chimecho', 'Indeedee-F', 'Yamask-Galar', 'Mega Golisopod', 'Morpeko-Hangry', 'Mega Golurk',
     'Mega Staraptor', 'Mega Crabominable', 'Mr. Mime-Galar', 'Mega Heatran', 'Meloetta-Pirouette', 'Hoopa-Unbound', 'Mega Darkrai', 'Mega Latias', 'Mega Latios',
     'Primal Kyogre', 'Primal Groudon', 'Mega Rayquaza', 'Mega Magearna', 'Mega Zeraora',

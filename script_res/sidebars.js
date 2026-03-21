@@ -132,10 +132,10 @@ function getSidebarImg(teamslotI, displayName) {
     }
 
     if (!(['Urshifu', 'Urshifu-Rapid-Strike'].includes(displayName))) {
-        displayName = displayName.replace(' ', '-').toLowerCase();
+        displayName = displayName.replace(' ', '-').replace(/\.|'/g, '').toLowerCase();
         $(teamslotI).prop('src', 'https://www.smogon.com/forums/media/minisprites/' + displayName + '.png')
             .on('error', function () {
-                fallbackName = fallbackName.replace(' ', '-').toLowerCase();
+                fallbackName = fallbackName.replace(' ', '-').replace(/\.|'/g, '').toLowerCase();
                 $(teamslotI).prop('src', 'https://www.smogon.com/forums/media/minisprites/' + fallbackName + '.png')
                     .on('error', function () {
                         $(teamslotI).prop('src', 'image_res/empty-slot.png');
