@@ -200,8 +200,12 @@ function loadDex(dexMode) {
 	}
 
 	clearField();
+	$(".gen-specific").hide();
 	$(".gen-specific.g" + gen).show();
-	$(".gen-specific").not(".g" + gen).hide();
+	if (gen === 10) {
+		$(".gen-specific.g9").show();
+		$("label[for='maxL'], label[for='maxR'], input#maxL, input#maxR, img.gmax-icon, input#gmaxL, input#gmaxR, .move-z, .move-tera, .tera-type, .tera-label, .stellar-btn, div.ruin-group, #teraL, #teraR, label[for='teraL'], label[for='teraR'], #weakness-policy, #tatsuL, #tatsuR, label[for='tatsuL'], label[for='tatsuR']").hide();
+	}
 	loadSetdexScript();
 	if (gen >= 5) {
 		if (isCustomMods) {

@@ -2240,14 +2240,31 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
+        case 10: //Pokemon Champions
+            pokedex = POKEDEX_CHAMPS;
+            typeChart = TYPE_CHART_SV;
+            moves = MOVES_SV;
+            items = ITEMS_CHAMPS;
+            abilities = ABILITIES_SV;
+            STATS = STATS_GSC;
+            calculateAllMoves = CALCULATE_ALL_MOVES_SV;
+            calcHP = CALC_HP_ADV;
+            calcStat = CALC_STAT_ADV;
+            break;
     }
     if (gen in ALL_SETDEX_CUSTOM)
         setdexCustom = ALL_SETDEX_CUSTOM[gen];
     else
         setdexCustom = [];
     clearField();
+    $(".gen-specific").hide();
     $(".gen-specific.g" + gen).show();
-    $(".gen-specific").not(".g" + gen).hide();
+    if (gen === 7.5) $(".gen-specific.g7").show();
+    if (gen === 9.5) $(".gen-specific.g9").show();
+    if (gen === 10) {
+        $(".gen-specific.g9").show();
+        $("label[for='maxL'], label[for='maxR'], input#maxL, input#maxR, img.gmax-icon, input#gmaxL, input#gmaxR, .move-z, .move-tera, .tera-type, .tera-label, .stellar-btn, div.ruin-group, #teraL, #teraR, label[for='teraL'], label[for='teraR'], #weakness-policy, #tatsuL, #tatsuR, label[for='tatsuL'], label[for='tatsuR']").hide();
+    }
     loadSetdexScript();
     if (gen >= 5) {
         if (isCustomMods) {
@@ -2273,7 +2290,7 @@ $(".gen").change(function () {
             $('div #primal-weather').hide();
         }
     }
-    if (gen >= 9) {
+    if (gen === 9) {
         if (localStorage.getItem("dex") == "natdex") {
             $('div #auras').show();
             $('div #protect-field').show();
@@ -2285,6 +2302,9 @@ $(".gen").change(function () {
             $('div #flower-gift').hide();
         }
     }
+    if (gen === 10) {
+        $('div #protect-field').show();
+    }
     var types = Object.keys(typeChart);
     if (types.includes('Typeless'))
         types.splice(types.indexOf('Typeless'), 1);
@@ -2293,10 +2313,12 @@ $(".gen").change(function () {
     if (types.includes('Stellar'))
         types.splice(types.indexOf('Stellar'), 1);
     var typeOptions = getSelectOptions(types);
-    var teraTypeOptions = getSelectOptions(teraTypes);
     $("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
     $("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
-    $("select.tera-type").find("option").remove().end().append(teraTypeOptions);
+    if (gen === 9) {
+        var teraTypeOptions = getSelectOptions(teraTypes);
+        $("select.tera-type").find("option").remove().end().append(teraTypeOptions);
+    }
     var moveOptions = getSelectOptions(Object.keys(moves), true);
     $("select.move-selector").find("option").remove().end().append(moveOptions);
     var abilityOptions = getSelectOptions(abilities, true);
@@ -2414,6 +2436,14 @@ function getSetOptions(p) {
         }
         catch {
             console.log(pokeNames[index]);
+        }
+    }
+    if (gen === 10) {
+        index = pokeNames.length;
+        while (index--) {
+            if (!(pokeNames[index] in setdex)) {
+                pokeNames.splice(index, 1);
+            }
         }
     }
     pokeNames.sort();

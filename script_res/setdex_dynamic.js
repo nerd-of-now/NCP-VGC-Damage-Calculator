@@ -4,9 +4,10 @@ var ALL_SETDEX_CUSTOM = {};
 
 function loadSetdexScript() {
     console.log(ALL_SETDEX_CUSTOM[gen]);
-    CURRENT_COMPONENTS = COMPONENTS[gen].concat(ALL_SETDEX_CUSTOM[gen]);
+    var customSets = ALL_SETDEX_CUSTOM[gen] || {};
+    CURRENT_COMPONENTS = (COMPONENTS[gen] || []).concat(customSets);
 
-    if (Object.keys(ALL_SETDEX_CUSTOM[gen]).length)
+    if (Object.keys(customSets).length)
         $(".set-checkbox").show();
     else
         $(".set-checkbox").hide();

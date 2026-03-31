@@ -14,4 +14,5 @@ var COMPONENTS = {
         SETDEX_VGC2021_S10,
         SETDEX_VGC_BFD],
     9: [SETDEX_GEN9],
+    10: [SETDEX_CHAMPS],
 };
