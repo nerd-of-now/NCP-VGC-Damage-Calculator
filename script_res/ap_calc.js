@@ -1910,7 +1910,7 @@ function Pokemon(pokeInfo) {
         lockItemCheck = "Griseous Core";
         //lockItemCheck = LOCK_ITEM_LOOKUP[''];               
     if (lockItemCheck !== undefined) {
-        var NAME_NON_MATCH_CHECK = ['Ultra Necrozma', 'Mega Floette', 'Mega Zygarde', /*'Mega Meowstic', 'Mega Tatsugiri', 'Mega Magearna'*/]; //Last 3 are for future proofing just in case
+        var NAME_NON_MATCH_CHECK = ['Ultra Necrozma', 'Mega Floette', 'Mega Zygarde', 'Mega Meowstic'/*, 'Mega Tatsugiri', 'Mega Magearna'*/]; //Last 3 are for future proofing just in case
         if (this.name && pokemonName && (this.name.includes(pokemonName) || NAME_NON_MATCH_CHECK.includes(this.name))) {    //if this if statement isn't here then sets won't change items from locked items properly
             pokeInfo.find(".item").val(lockItemCheck);
             pokeInfo.find(".item").trigger('change.select2');
@@ -2292,7 +2292,7 @@ $(".gen").change(function () {
         case 10: //Champions
             pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_ZA_NATDEX : POKEDEX_CHAMPIONS;
             typeChart = TYPE_CHART_SV;
-            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_ZA_NATDEX : MOVES_ZA_NATDEX;
+            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_ZA_NATDEX : MOVES_CHAMPIONS;
             items = (localStorage.getItem("dex") == "natdex") ? ITEMS_ZA_NATDEX : ITEMS_CHAMPIONS;
             abilities = ABILITIES_CHAMPIONS;
             STATS = STATS_GSC;

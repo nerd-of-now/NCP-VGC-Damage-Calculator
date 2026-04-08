@@ -18031,7 +18031,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
     "Darkrai": { "formes": ["Darkrai", "Mega Darkrai"] },
     "Golurk": { "formes": ["Golurk", "Mega Golurk"] },
     "Meowstic": { "formes": ["Meowstic", "Mega Meowstic"] },
-    "Meowstic-F": { "formes": ["Meowstic-F", "Mega Meowstic-F"] },
+    "Meowstic-F": { "formes": ["Meowstic-F", "Mega Meowstic"] },
     "Crabominable": { "formes": ["Crabominable", "Mega Crabominable"] },
     "Golisopod": { "formes": ["Golisopod", "Mega Golisopod"] },
     "Magearna": { "formes": ["Magearna", "Mega Magearna"] },
@@ -18190,19 +18190,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 124,
         },
         "w": 10.1,
-        "isAlternateForme": true,
-    },
-    "Mega Meowstic-F": {
-        "t1": "Psychic",
-        "bs": {
-            "hp": 74,
-            "at": 48,
-            "df": 76,
-            "sa": 143,
-            "sd": 101,
-            "sp": 124,
-        },
-        "w": 10.1,
+        "ab": "Trace",
         "isAlternateForme": true,
     },
     "Mega Crabominable": {
@@ -18368,7 +18356,7 @@ var POKEDEX_ZA = {};
     'Mr. Mime', 'Mr. Rime', 'Foongus', 'Amoonguss', 'Heatran', 'Volcanion', 'Cobalion', 'Terrakion', 'Virizion', 'Keldeo', 'Meloetta', 'Genesect',
     'Hoopa', 'Marshadow', 'Meltan', 'Melmetal', 'Darkrai', 'Latias', 'Latios', 'Kyogre', 'Groudon', 'Rayquaza', 'Magearna', 'Zeraora',
     //Forms for Mega Dimension Pokemon
-    'Mega Raichu X', 'Mega Raichu Y', 'Mega Absol Z', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Meowstic', 'Mega Meowstic-F', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', "Farfetch'd-Galar",
+    'Mega Raichu X', 'Mega Raichu Y', 'Mega Absol Z', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Meowstic', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', "Farfetch'd-Galar",
     'Marowak-Alola', 'Mega Scovillain', 'Mega Glimmora', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Mega Tatsugiri', 'Mega Baxcalibur', 'Gimmighoul-Roaming', 
     'Qwilfish-Hisui', 'Mega Sceptile', 'Mega Blaziken', 'Mega Swampert', 'Mega Chimecho', 'Indeedee-F', 'Yamask-Galar', 'Mega Golisopod', 'Morpeko-Hangry', 'Mega Golurk',
     'Mega Staraptor', 'Mega Crabominable', 'Mr. Mime-Galar', 'Mega Heatran', 'Meloetta-Pirouette', 'Hoopa-Unbound', 'Mega Darkrai', 'Mega Latias', 'Mega Latios',
@@ -18412,7 +18400,7 @@ var POKEDEX_CHAMPIONS = {};
     'Mega Lopunny', 'Mega Garchomp', 'Mega Lucario', 'Mega Abomasnow', 'Mega Gallade',
     'Mega Froslass', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Mega Emboar', 'Samurott-Hisui',
     'Mega Excadrill', 'Mega Audino', 'Zoroark-Hisui', 'Mega Chandelure', 'Stunfisk-Galar', 'Mega Golurk', 'Mega Chesnaught', 'Mega Delphox',
-    'Mega Greninja', 'Mega Floette', 'Meowstic-F', 'Mega Meowstic', 'Mega Meowstic-F', 'Aegislash-Shield', 'Aegislash-Blade',
+    'Mega Greninja', 'Mega Floette', 'Meowstic-F', 'Mega Meowstic', 'Aegislash-Shield', 'Aegislash-Blade',
     'Mega Hawlucha', 'Goodra-Hisui', 'Gourgeist-Small', 'Gourgeist-Large', 'Gourgeist-Super', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Mega Crabominable', 'Lycanroc-Midnight',
     'Lycanroc-Dusk', 'Mega Drampa', 'Morpeko-Hangry', 'Basculegion-F', 'Maushold-Three', 'Mega Scovillain', 'Palafin-Hero', 'Mega Glimmora'
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);

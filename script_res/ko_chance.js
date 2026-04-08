@@ -177,11 +177,13 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
 
     if (field.isSaltCure && defender.ability !== 'Magic Guard') {
         if (!(defender.hasType("Water", "Steel"))) {
-            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
+            let saltMult = gen == 10 ? 16 : 8;
+            eot -= Math.floor(Math.floor(defender.maxHP / saltMult) * maxChip);
             eotText.push('Salt Cure damage');
         }
         else {
-            eot -= Math.floor(Math.floor(defender.maxHP / 4) * maxChip);
+            let saltMult = gen == 10 ? 8 : 4;
+            eot -= Math.floor(Math.floor(defender.maxHP / saltMult) * maxChip);
             eotText.push('extra Salt Cure damage');
         }
     }
