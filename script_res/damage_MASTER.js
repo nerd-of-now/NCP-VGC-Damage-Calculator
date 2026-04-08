@@ -2062,8 +2062,8 @@ function calcDefense(move, attacker, defender, description, hitsPhysical, isCrit
 
     //g. Sandstorm Rock types, Snowstorm Ice Types
     // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
-    if ((field.weather === "Sand" && defender.hasType("Rock") && !hitsPhysical)
-        || (field.weather === "Snow" && defender.hasType("Ice") && hitsPhysical)) {
+    if (((field.weather === "Sand" && defender.hasType("Rock") && !hitsPhysical) || (field.weather === "Snow" && defender.hasType("Ice") && hitsPhysical))
+        && attacker.ability !== 'Mega Sol') {
         defense = pokeRound(defense * 3 / 2);
         description.weather = field.weather;
     }

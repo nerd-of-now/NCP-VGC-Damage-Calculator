@@ -2292,7 +2292,7 @@ $(".gen").change(function () {
         case 10: //Champions
             pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_ZA_NATDEX : POKEDEX_CHAMPIONS;
             typeChart = TYPE_CHART_SV;
-            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_ZA_NATDEX : MOVES_CHAMPIONS;
+            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_CHAMPIONS_NATDEX : MOVES_CHAMPIONS;
             items = (localStorage.getItem("dex") == "natdex") ? ITEMS_ZA_NATDEX : ITEMS_CHAMPIONS;
             abilities = ABILITIES_CHAMPIONS;
             STATS = STATS_GSC;
