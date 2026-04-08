@@ -279,3 +279,17 @@ function toggleAFD() {
 		alert("April Fools' Day mode deactivated. Refresh to see the change.");
     }
 }
+
+var resultDisplayMode = 'SPs';
+function toggleResultDisplay(displayChoice) {
+	localStorage.setItem('toggleResultDisplay', displayChoice);
+	resultDisplayMode = displayChoice;
+}
+
+function setResultDisplay() {
+	let storedResultDisplay = localStorage.getItem('toggleResultDisplay');
+	if (storedResultDisplay) {
+		$("#toggleResult").val(storedResultDisplay);
+		resultDisplayMode = storedResultDisplay;
+	}
+}

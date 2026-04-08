@@ -8,6 +8,7 @@ var bounds = {
     "move-bp": [0, 999],
     "avs": [0, 200],
     "friendship": [0, 255],
+    "sps": [0, 32],
 };
 
 //increments and decrements at specific places to prevent calculate() from running more than once from a single user input
@@ -108,7 +109,10 @@ $(".transform").bind("keyup change", function () {
         pokeInfo.find(".type2").val(otherPokeInfo.find(".type2").val());
         for (var i = 0, n = STATS.length; i < n; i++) {
             preTransformVars[pokeID]["." + STATS[i] + " .base"] = pokeInfo.find("." + STATS[i] + " .base").val();
-            if (gen >= 3) {
+            if (gen == 10) {
+                preTransformVars[pokeID]["." + STATS[i] + " .sps"] = pokeInfo.find("." + STATS[i] + " .sps").val();
+            }
+            else if (gen >= 3) {
                 preTransformVars[pokeID]["." + STATS[i] + " .ivs"] = pokeInfo.find("." + STATS[i] + " .ivs").val();
                 preTransformVars[pokeID]["." + STATS[i] + " .evs"] = pokeInfo.find("." + STATS[i] + " .evs").val();
                 if (gen == 7.5) {
@@ -119,7 +123,10 @@ $(".transform").bind("keyup change", function () {
                 preTransformVars[pokeID]["." + STATS[i] + " .dvs"] = pokeInfo.find("." + STATS[i] + " .dvs").val();
             preTransformVars[pokeID]["." + STATS[i] + " .boost"] = pokeInfo.find("." + STATS[i] + " .boost").val();
             pokeInfo.find("." + STATS[i] + " .base").val(otherPokeInfo.find("." + STATS[i] + " .base").val());
-            if (gen >= 3) {
+            if (gen == 10) {
+                pokeInfo.find("." + STATS[i] + " .sps").val(otherPokeInfo.find("." + STATS[i] + " .sps").val());
+            }
+            else if (gen >= 3) {
                 pokeInfo.find("." + STATS[i] + " .ivs").val(otherPokeInfo.find("." + STATS[i] + " .ivs").val());
                 pokeInfo.find("." + STATS[i] + " .evs").val(otherPokeInfo.find("." + STATS[i] + " .evs").val());
                 if (gen == 7.5) {
@@ -218,22 +225,22 @@ $(".tera").bind("keyup change", function () {
 $(".nature").bind("keyup change", function() {
     calcStats($(this).closest(".poke-info"));
 });
-$(".hp .base, .hp .evs, .hp .ivs, .hp .avs").bind("keyup change", function() {
+$(".hp .base, .hp .evs, .hp .ivs, .hp .avs, .hp .sps").bind("keyup change", function() {
     calcHP($(this).closest(".poke-info"));
 });
-$(".at .base, .at .evs, .at .ivs, .at .avs").bind("keyup change", function() {
+$(".at .base, .at .evs, .at .ivs, .at .avs, .at .sps").bind("keyup change", function() {
     calcStat($(this).closest(".poke-info"), 'at');
 });
-$(".df .base, .df .evs, .df .ivs, .df .avs").bind("keyup change", function() {
+$(".df .base, .df .evs, .df .ivs, .df .avs, .df .sps").bind("keyup change", function() {
     calcStat($(this).closest(".poke-info"), 'df');
 });
-$(".sa .base, .sa .evs, .sa .ivs, .sa .avs").bind("keyup change", function() {
+$(".sa .base, .sa .evs, .sa .ivs, .sa .avs, .sa .sps").bind("keyup change", function() {
     calcStat($(this).closest(".poke-info"), 'sa');
 });
-$(".sd .base, .sd .evs, .sd .ivs, .sd .avs").bind("keyup change", function() {
+$(".sd .base, .sd .evs, .sd .ivs, .sd .avs, .sd .sps").bind("keyup change", function() {
     calcStat($(this).closest(".poke-info"), 'sd');
 });
-$(".sp .base, .sp .evs, .sp .ivs, .sp .avs").bind("keyup change", function() {
+$(".sp .base, .sp .evs, .sp .ivs, .sp .avs, .sp .sps").bind("keyup change", function() {
     calcStat($(this).closest(".poke-info"), 'sp');
 });
 $(".evs").bind("keyup change", function() {
@@ -244,6 +251,9 @@ $(".ivs").bind("keyup change", function () {
 });
 $(".friendship").bind("keyup change", function () {
     ['at', 'df', 'sa', 'sd', 'sp'].forEach(e => calcStat($(this).closest(".poke-info"), e));
+});
+$(".sps").bind("keyup change", function () {
+    calcStatPointTotal($(this).closest(".poke-info"));
 });
 $(".sl .base").keyup(function() {
     calcStat($(this).closest(".poke-info"), 'sl');
@@ -312,6 +322,32 @@ function calcEvTotal(poke) {
 
     var newClassLeft = left < 0 ? 'overLimit' : 'underLimit';
 
+    var evTotal = poke.find('.ev-total');
+    evTotal.removeClass('underLimit overLimit').text(total).addClass(newClass);
+
+    var evLeft = poke.find('.ev-left');
+    evLeft.removeClass('underLimit overLimit').text(left).addClass(newClassLeft);
+}
+
+function calcStatPointTotal(poke) {
+    var total = 0;
+    if (!poke.find('.transform').prop('checked'))
+        poke.find('.sps').each(function (idx, elt) { total += 1 * $(elt).val(); });
+    else {
+        var pID = poke.closest('.poke-info').attr('id');
+        total += 1 * poke.find('.hp .sps').val();
+        for (var i = 0, n = STATS.length; i < n; i++) {
+            total += 1 * preTransformVars[pID]['.' + STATS[i] + ' .sps'];
+        }
+    }
+
+    var newClass = total > 66 ? 'overLimit' : 'underLimit';
+
+    var left = 66 - total;
+
+    var newClassLeft = left < 0 ? 'overLimit' : 'underLimit';
+
+    //using ev-total class because why not
     var evTotal = poke.find('.ev-total');
     evTotal.removeClass('underLimit overLimit').text(total).addClass(newClass);
 
@@ -1184,11 +1220,13 @@ $(".set-selector").change(function () {
                 else
                     pokeObj.find(".level").val(50);
             }
+            pokeObj.find(".hp .sps").val((set.sps && typeof set.sps.hp !== "undefined") ? set.sps.hp : 0);
             pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);
             pokeObj.find(".hp .avs").val((set.avs && typeof set.avs.hp !== "undefined") ? set.avs.hp : 0);
             pokeObj.find(".hp .ivs").val((set.ivs && typeof set.ivs.hp !== "undefined") ? set.ivs.hp : 31);
             pokeObj.find(".hp .dvs").val((set.dvs && typeof set.dvs.hp !== "undefined") ? set.dvs.hp : 15);
             for (i = 0, n = STATS.length; i < n; i++) {
+                pokeObj.find("." + STATS[i] + " .sps").val((set.sps && typeof set.sps[STATS[i]] !== "undefined") ? set.sps[STATS[i]] : 0);
                 pokeObj.find("." + STATS[i] + " .evs").val((set.evs && typeof set.evs[STATS[i]] !== "undefined") ? set.evs[STATS[i]] : 0);
                 pokeObj.find("." + STATS[i] + " .avs").val((set.avs && typeof set.avs[STATS[i]] !== "undefined") ? set.avs[STATS[i]] : 0);
                 pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && typeof set.ivs[STATS[i]] !== "undefined") ? set.ivs[STATS[i]] : 31);
@@ -1228,11 +1266,13 @@ $(".set-selector").change(function () {
         } else {
             if(DOU) pokeObj.find(".level").val(100);
             else pokeObj.find(".level").val(50);
+            pokeObj.find(".hp .sps").val(0);
             pokeObj.find(".hp .evs").val(0);
             pokeObj.find(".hp .avs").val(0);
             pokeObj.find(".hp .ivs").val(31);
             pokeObj.find(".hp .dvs").val(15);
             for (i = 0, n = STATS.length; i < n; i++) {
+                pokeObj.find("." + STATS[i] + " .sps").val(0);
                 pokeObj.find("." + STATS[i] + " .evs").val(0);
                 pokeObj.find("." + STATS[i] + " .avs").val(0);
                 pokeObj.find("." + STATS[i] + " .ivs").val(31);
@@ -1285,7 +1325,12 @@ $(".set-selector").change(function () {
         pokeObj.find(".tera").change();
         calcHP(pokeObj);
         calcStats(pokeObj);
-        calcEvTotal(pokeObj);
+        if (gen < 10) {
+            calcEvTotal(pokeObj);
+        }
+        else {
+            calcStatPointTotal(pokeObj);
+        }
         itemObj.change();
         transformCheck(otherObj);
         pokeObj.find(".editsc").prop("disabled", false);
@@ -1924,17 +1969,20 @@ function Pokemon(pokeInfo) {
     this.type1 = pokeInfo.find(".type1").val();
     this.type2 = pokeInfo.find(".type2").val();
     this.tera_type = pokeInfo.find(".tera-type").val();
-    this.level = ~~pokeInfo.find(".level").val();
+    this.level = gen < 10 ? ~~pokeInfo.find(".level").val() : 50;
     this.maxHP = ~~pokeInfo.find(".hp .total").text();
     this.curHP = ~~pokeInfo.find(".current-hp").val();
+    this.HPSPs = ~~pokeInfo.find(".hp .sps").val();
     this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
     this.HPIVs = ~~pokeInfo.find(".hp .ivs").val();
+    this.HPraw = ~~pokeInfo.find(".hp .total").text();
     this.isDynamax = pokeInfo.find(".max").prop("checked");
     this.gmax_factor = pokeInfo.find(".gmax").prop("checked");
     this.isTerastalize = pokeInfo.find(".tera").prop("checked");
     this.rawStats = {};
     this.boosts = {};
     this.stats = {};
+    this.sps = {};
     this.evs = {};
     if (gen >= 3) {
         this.ivs = {};
@@ -1946,6 +1994,7 @@ function Pokemon(pokeInfo) {
     for (var i = 0, n = STATS.length; i < n; i++) {
         this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
         this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
+        this.sps[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .sps").val();
         this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
         if (gen >= 3) {
             this.ivs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .ivs").val();
@@ -2240,6 +2289,16 @@ $(".gen").change(function () {
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
+        case 10: //Champions
+            pokedex = (localStorage.getItem("dex") == "natdex") ? POKEDEX_ZA_NATDEX : POKEDEX_CHAMPIONS;
+            typeChart = TYPE_CHART_SV;
+            moves = (localStorage.getItem("dex") == "natdex") ? MOVES_ZA_NATDEX : MOVES_ZA_NATDEX;
+            items = (localStorage.getItem("dex") == "natdex") ? ITEMS_ZA_NATDEX : ITEMS_CHAMPIONS;
+            abilities = ABILITIES_CHAMPIONS;
+            STATS = STATS_GSC;
+            calculateAllMoves = CALCULATE_ALL_MOVES_SV;
+            calcHP = CALC_HP_CHAMP;
+            calcStat = CALC_STAT_CHAMP;
     }
     if (gen in ALL_SETDEX_CUSTOM)
         setdexCustom = ALL_SETDEX_CUSTOM[gen];
@@ -2273,7 +2332,7 @@ $(".gen").change(function () {
             $('div #primal-weather').hide();
         }
     }
-    if (gen >= 9) {
+    if (gen == 9) {
         if (localStorage.getItem("dex") == "natdex") {
             $('div #auras').show();
             $('div #protect-field').show();
@@ -2498,8 +2557,8 @@ function getGen() {
         $("#gen" + genLocalStor).change();
     }
     else {
-        $("#gen9").prop("checked", true);
-        $("#gen9").change();
+        $("#gen10").prop("checked", true);
+        $("#gen10").change();
     }
 }
 

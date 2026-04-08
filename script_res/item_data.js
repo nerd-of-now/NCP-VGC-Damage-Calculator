@@ -473,6 +473,21 @@ var ITEMS_ZA = [
     'Crabominite', 'Golisopite', 'Magearnite', 'Scovillainite', 'Baxcalibrite', 'Tatsugirinite', 'Glimmoranite'
 ];
 
+var ITEMS_CHAMPIONS = [
+    'Cheri Berry', 'Chesto Berry', 'Pecha Berry', 'Rawst Berry', 'Aspear Berry', 'Oran Berry', 'Persim Berry',
+    'Lum Berry', 'Sitrus Berry', 'Occa Berry', 'Passho Berry', 'Wacan Berry', 'Rindo Berry', 'Yache Berry', 'Chople Berry', 'Kebia Berry', 'Shuca Berry', 'Coba Berry',
+    'Payapa Berry', 'Tanga Berry', 'Charti Berry', 'Kasib Berry', 'Haban Berry', 'Colbur Berry', 'Babiri Berry', 'Chilan Berry', 'White Herb', 'Quick Claw', "King's Rock",
+    'Silver Powder', 'Focus Band', 'Scope Lens', 'Metal Coat', 'Leftovers', 'Light Ball', 'Soft Sand', 'Hard Stone', 'Miracle Seed', 'Black Glasses', 'Black Belt', 'Magnet',
+    'Mystic Water', 'Sharp Beak', 'Poison Barb', 'Never-Melt Ice', 'Spell Tag', 'Twisted Spoon', 'Charcoal', 'Dragon Fang', 'Silk Scarf', 'Shell Bell', 'Focus Sash', 'Bright Powder', 'Mental Herb',
+    'Gengarite', 'Gardevoirite', 'Ampharosite', 'Venusaurite', 'Charizardite X',
+    'Blastoisinite', 'Medichamite', 'Houndoominite', 'Aggronite', 'Banettite', 'Tyranitarite', 'Scizorite', 'Pinsirite',
+    'Aerodactylite', 'Lucarionite', 'Abomasite', 'Kangaskhanite', 'Gyaradosite', 'Absolite', 'Charizardite Y', 'Alakazite', 'Heracronite', 'Manectite', 'Garchompite',
+    'Steelixite', 'Pidgeotite', 'Glalitite',
+    'Sablenite', 'Altarianite', 'Galladite', 'Audinite', 'Sharpedonite', 'Slowbronite', 'Cameruptite', 'Lopunnite', 'Beedrillite', 'Fairy Feather', 'Clefablite', 'Victreebelite', 'Starminite',
+    'Dragoninite', 'Meganiumite', 'Feraligite', 'Skarmorite', 'Froslassite', 'Emboarite', 'Excadrite', 'Chandelurite', 'Chesnaughtite', 'Delphoxite', 'Greninjite', 'Floettite', 'Hawluchanite',
+    'Drampanite', 'Chimechite', 'Golurkite', 'Meowsticite', 'Crabominite', 'Scovillainite', 'Glimmoranite'
+];
+
 function getItemBoostType(item) {
     switch (item) {
         case 'Draco Plate':

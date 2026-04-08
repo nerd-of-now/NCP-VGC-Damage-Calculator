@@ -88,7 +88,7 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
         [move, moveDescName] = NaturePower(move, field, moveDescName);
 
     if (move.isZ || move.isSignatureZ)
-        [move, isQuarteredByProtect, moveDescName] = ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName);
+        [move, moveDescName] = ZMoves(move, field, attacker, moveDescName);
 
     //Needs to be after the Z-move check since Light That Burns The Sky can change category
     if (usesPhysicalAttack(attacker, defender, move)) {
@@ -108,6 +108,8 @@ function GET_DAMAGE_SV(attacker, defender, move, field) {
         "moveName": moveDescName,
         "defenderName": defender_name
     };
+
+    isQuarteredByProtect = setIsQuarteredByProtect(attacker, defender, field, move, description);
 
     addLevelDesc(attacker, defender, description);
 

@@ -88,3 +88,32 @@ function CALC_STAT_LGPE(poke, statName) {
     var total = Math.floor((Math.floor((base * 2 + ivs) * level / 100) + 5) * nature * friendship) + avs;
     stat.find(".total").text(total);
 }
+
+function CALC_HP_CHAMP(poke) {
+    var hp = poke.find(".hp");
+    var total;
+    var base = ~~hp.find(".base").val();
+    if (base === 1) {
+        total = 1;
+    } else {
+        var statPoints = ~~hp.find(".sps").val();
+        total = Math.floor((base * 2 + 31) * 50 / 100) + 50 + 10 + statPoints;
+    }
+    if (poke.find(".max").prop("checked")) {
+        total *= 2;
+    }
+    hp.find(".total").text(total);
+    poke.find(".max-hp").text(total);
+    calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+    updateHPBar(poke, ~~poke.find(".current-hp").val());
+}
+
+function CALC_STAT_CHAMP(poke, statName) {
+    var stat = poke.find("." + statName);
+    var base = ~~stat.find(".base").val();
+    var statPoints = ~~stat.find(".sps").val();
+    var natureMods = NATURES[poke.find(".nature").val()];
+    var nature = natureMods[0] === statName ? 1.1 : natureMods[1] === statName ? 0.9 : 1;
+    var total = Math.floor(((Math.floor((base * 2 + 31) * 50 / 100) + 5) + statPoints) * nature);
+    stat.find(".total").text(total);
+}

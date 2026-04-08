@@ -336,3 +336,10 @@ var ABILITIES_SV = ABILITIES_SS.concat([
     'Teraform Zero',    //Removes weather and terrain
     'Poison Puppeteer', //Poisoning also confuses, no calc funcitonality
 ]);
+
+var ABILITIES_CHAMPIONS = ABILITIES_SV.concat([
+    'Piercing Drill',   //Moves hit through protecting targets with 1/4 damage
+    'Dragonize',    //Dragon type Pixilate
+    'Mega Sol',     //The user's attacks act like Sun is always up regardless of the actual weather
+    'Spicy Spray',  //Burns attacker (assuming it's guaranteed and any attacker)
+]);

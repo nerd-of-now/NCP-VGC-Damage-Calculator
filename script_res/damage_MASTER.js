@@ -17,6 +17,7 @@ function GET_DAMAGE_HANDLER(attacker, defender, move, field) {
         case 7:
         case 8:
         case 9:
+        case 10:
             return GET_DAMAGE_SV(attacker, defender, move, field);
         default:
             return -1;
@@ -299,7 +300,7 @@ function getModifiedStat(stat, mod) {
 }
 
 function getHPInfo(description, defender) {
-    description.HPEVs = defender.HPEVs + " HP " + (defender.HPIVs < 31 ? defender.HPIVs + " IVs" : "");
+    description.HPEVs = gen < 10 ? defender.HPEVs + " HP " + (defender.HPIVs < 31 ? defender.HPIVs + " IVs" : "") : resultDisplayMode == "SPs" ? defender.HPSPs + " HP " : resultDisplayMode == "EVs" ? (Math.max(0, defender.HPSPs * 8 - 4)) + " HP " : defender.HPraw + " HP ";
 }
 
 //Speed Mods
@@ -497,10 +498,13 @@ function checkParadoxAbilities(pokemon, terrain, weather) {
     }
 }
 
-//UNUSED CURRENTLY
-//interactionArray: list of all mons involved. If its length is only 1, then it's a self-targetting boost.
-//stat: the stat affected. Only supports a single stat as is implemented currently, may change in the future.
-//numStages: number of intended stages to boost/drop the stat. The function will adjust actual number of stages.
+/**
+ * Handles all stat boost changes (Unused currently)
+ * @param {any} interactionArray list of all mons involved. If its length is only 1, then it's a self-targetting boost.
+ * @param {any} stat the stat affected. Only supports a single stat as is implemented currently, may change in the future.
+ * @param {any} numStages number of intended stages to boost/drop the stat. The function will adjust actual number of stages.
+ * @returns
+ */
 function changeStatBoosts(interactionArray, stat, numStages) {
     var isNotSelf = interactionArray.length == 2;
     var source = interactionArray[0], target = isNotSelf ? interactionArray[1] : interactionArray[0];
@@ -722,7 +726,7 @@ function getWeightMods(p1, p2) {
 
 function checkMoveTypeChange(move, field, attacker) {
     if (move.name == "Weather Ball") {
-        move.type = field.weather.indexOf("Sun") > -1 && attacker.item !== 'Utility Umbrella' ? "Fire"
+        move.type = (field.weather.indexOf("Sun") > -1 && attacker.item !== 'Utility Umbrella') || attacker.ability == 'Mega Sol' ? "Fire"
             : field.weather.indexOf("Rain") > -1 && attacker.item !== 'Utility Umbrella' ? "Water"
                 : field.weather === "Sand" ? "Rock"
                     : ["Hail", "Snow"].indexOf(field.weather) > -1 ? "Ice"
@@ -825,12 +829,15 @@ function checkContactOverride(move, attacker) {
         move.makesContact = true;
 }
 
-function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
+function setIsQuarteredByProtect(attacker, defender, field, move, description) {
+    let qualifiedQuartered = field.isProtect && (move.isZ || move.isSignatureZ || attacker.isDynamax || attacker.ability === 'Piercing Drill' || (attacker.ability === 'Unseen Fist' && gen >= 10));
+    if (qualifiedQuartered && attacker.ability === 'Piercing Drill') description.attackerAbility = attacker.ability;
+    return qualifiedQuartered;
+}
+
+function ZMoves(move, field, attacker, moveDescName) {
     if (move.isSignatureZ) {
         move.isZ = true;
-        if (field.isProtect) {
-            isQuarteredByProtect = true;
-        }
         if (attacker.ability == 'Parental Bond') attacker.ability = '';
     }
     else if (move.isZ) {
@@ -875,12 +882,9 @@ function ZMoves(move, field, attacker, isQuarteredByProtect, moveDescName) {
             moveDescName = ZName;
         move.isCrit = tempMove.isCrit;
         move.hits = 1;
-        if (field.isProtect) {
-            isQuarteredByProtect = true;
-        }
         if (attacker.ability == 'Parental Bond') attacker.ability = '';
     }
-    return [move, isQuarteredByProtect, moveDescName];
+    return [move, moveDescName];
 }
 
 function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
@@ -944,7 +948,7 @@ function MaxMoves(move, attacker, isQuarteredByProtect, moveDescName, field) {
     else move.isCrit = tempMove.isCrit;
     move.category = tempMove.category;
     move.hits = 1;
-    if (field.isProtect && ["G-Max One Blow", "G-Max Rapid Flow"].indexOf(maxName) == -1) isQuarteredByProtect = true;
+    if (isQuarteredByProtect && ["G-Max One Blow", "G-Max Rapid Flow"].includes(maxName)) isQuarteredByProtect = false;
     if (attacker.ability == 'Parental Bond') attacker.ability = '';
 
     return [move, isQuarteredByProtect, moveDescName];
@@ -1052,6 +1056,7 @@ const TYPE_CHANGE_BOOST_ABILITIES = [
     'Pixilate',
     'Refrigerate',
     'Galvanize',
+    'Dragonize'
 ];
 function checkAbilityTypeChange(move, attacker, description) {
     var isBoosted = false;
@@ -1075,6 +1080,9 @@ function checkAbilityTypeChange(move, attacker, description) {
                     break;
                 case "Galvanize":
                     move.type = "Electric";
+                    break;
+                case "Dragonize":
+                    move.type = "Dragon";
             }
             if (attacker.isDynamax)
                 description.moveName = MAXMOVES_LOOKUP[move.type] + " (" + move.bp + " BP)";
@@ -1412,10 +1420,17 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
             break;
         //g.v. Weather Ball
         case "Weather Ball":
-            basePower = move.bp * (["", "Strong Winds"].indexOf(field.weather) === -1 ? 2 : 1);
+            let isWeatherBoost = !(['', 'Strong Winds'].includes(field.weather));
+            let isMegaSol = attacker.ability === 'Mega Sol';
+            basePower = move.bp * (isWeatherBoost || isMegaSol ? 2 : 1);
             if (basePower !== move.bp) {
                 description.moveBP = basePower;
-                description.weather = field.weather;
+                if (isWeatherBoost) {
+                    description.weather = field.weather;
+                }
+                else if (isMegaSol) {
+                    description.attackerAbility = attacker.ability;
+                }
                 description.moveType = move.type;
             }
             break;
@@ -1580,7 +1595,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //c. 1.2x Abilities
-    //c.i. Galvanize, Aerilate, Pixilate, Refrigerate, Normalize        (Technically Normalize is separate but it doesn't hurt to handle it where it is now)
+    //c.i. Galvanize, Aerilate, Pixilate, Refrigerate, Dragonize, Normalize        (Technically Normalize is separate but it doesn't hurt to handle it where it is now)
     if (!move.isZ && !attacker.isDynamax && ateIzeBoosted) {     //function checkAbilityTypeChange sets this value
         var ateIzeMultiplier = gen > 6 ? 0x1333 : 0x14CD;
         bpMods.push(ateIzeMultiplier);
@@ -1705,7 +1720,7 @@ function calcBPMods(attacker, defender, field, move, description, ateIzeBoosted,
     }
 
     //m. Solar Beam, Solar Blade
-    if ((move.name === "Solar Beam" || move.name === "Solar Blade") && ["None", "Sun", "Harsh Sun", "Strong Winds", ""].indexOf(field.weather) === -1 && attacker.item !== 'Utility Umbrella') {
+    if ((move.name === "Solar Beam" || move.name === "Solar Blade") && !(["None", "Sun", "Harsh Sun", "Strong Winds", ""].includes(field.weather)) && attacker.item !== 'Utility Umbrella' && attacker.ability !== 'Mega Sol') {
         bpMods.push(0x800);
         description.moveBP = move.bp / 2;
         description.weather = field.weather;
@@ -1838,8 +1853,9 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     var isMidMoveAtkBoost = false;
     var isContrary = attacker.ability === 'Contrary' ? -1 : 1;
     var maxBoost = gen == 9.5 ? 1 : 6;
-    description.attackEVs = attackSource.evs[attackStat] +
-        (NATURES[attackSource.nature][0] === attackStat ? "+" : NATURES[attackSource.nature][1] === attackStat ? "-" : "") + " " +
+    var attackInvest = gen < 10 ? attackSource.evs[attackStat] : resultDisplayMode == "SPs" ? attackSource.sps[attackStat] : resultDisplayMode == "EVs" ? Math.max(0, attackSource.sps[attackStat] * 8 - 4) : attackSource.rawStats[attackStat];
+    description.attackEVs = attackInvest +
+        ((gen < 10 || resultDisplayMode !='raw') && NATURES[attackSource.nature][0] === attackStat ? "+" : (gen < 10 || resultDisplayMode !='raw') && NATURES[attackSource.nature][1] === attackStat ? "-" : "") + " " +
         toSmogonStat(attackStat) + (attackSource.ivs[attackStat] < 31 ? " " + attackSource.ivs[attackStat] + " IV" : "");
     description.usesOppAtkStat = move.name === "Foul Play";
     //Spectral Thief and Meteor Beam aren't part of the calculations but are instead here to properly account for the boosts they give
@@ -2008,8 +2024,9 @@ function calcAtMods(move, attacker, defAbility, description, field) {
 function calcDefense(move, attacker, defender, description, hitsPhysical, isCritical, field) {
     //a. Psyshock, Psystrike, Secret Sword (handled in hitsPhysical declaration)
     var defenseStat = hitsPhysical ? DF : SD;
-    description.defenseEVs = defender.evs[defenseStat] +
-        (NATURES[defender.nature][0] === defenseStat ? "+" : NATURES[defender.nature][1] === defenseStat ? "-" : "") + " " +
+    var defenseInvest = gen < 10 ? defender.evs[defenseStat] : resultDisplayMode == "SPs" ? defender.sps[defenseStat] : resultDisplayMode == "EVs" ? Math.max(0, defender.sps[defenseStat] * 8 - 4) : defender.rawStats[defenseStat];
+    description.defenseEVs = defenseInvest +
+        ((gen < 10 || resultDisplayMode !='raw') && NATURES[defender.nature][0] === defenseStat ? "+" : (gen < 10 || resultDisplayMode !='raw') && NATURES[defender.nature][1] === defenseStat ? "-" : "") + " " +
         toSmogonStat(defenseStat) + (defender.ivs[defenseStat] < 31 ? " " + defender.ivs[defenseStat] + " IV" : "");
 
     //b. Wonder Room
@@ -2143,12 +2160,17 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     var childMod = gen >= 7 ? 0x0400 : 0x0800;
     baseDamage = attacker.isChild ? pokeRound(baseDamage * childMod / 0x1000) : baseDamage;    //should be accurate based on implementation
     //c. Weather mod, Hydro Steam
-    if ((((field.weather.indexOf("Sun") > -1 && move.type === "Fire") || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) && defender.item !== 'Utility Umbrella')
-        || (field.weather.indexOf("Sun") > -1 && move.name === "Hydro Steam" && attacker.item !== 'Utility Umbrella')) {
+    if (((((field.weather.indexOf("Sun") > -1 || attacker.ability === 'Mega Sol') && move.type === "Fire") || (field.weather.indexOf("Rain") > -1 && move.type === "Water")) && defender.item !== 'Utility Umbrella')
+        || ((field.weather.indexOf("Sun") > -1 || attacker.ability === 'Mega Sol') && move.name === "Hydro Steam" && attacker.item !== 'Utility Umbrella')) {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
-        description.weather = field.weather;
+        if (attacker.ability === 'Mega Sol') {
+            description.attackerAbility = attacker.ability;
+        }
+        else {
+            description.weather = field.weather;
+        }
     }
-    else if (((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire")) && defender.item !== 'Utility Umbrella') {
+    else if (((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire" && attacker.ability !== 'Mega Sol')) && defender.item !== 'Utility Umbrella') {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     }
@@ -2206,7 +2228,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
                 } else {
                     stabMod = 0x1800;
                 }
-            } else if (["Protean", "Libero"].indexOf(attacker.ability) !== -1 && (gen !== 9 || attacker.abilityOn)) {
+            } else if (["Protean", "Libero"].indexOf(attacker.ability) !== -1 && (gen < 9 || attacker.abilityOn)) {
                 stabMod = 0x1800;
                 description.attackerAbility = attacker.ability;
             }
@@ -2418,6 +2440,7 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
 //-Weak Armor (each physical hit decreases Defense until it reaches -6)
 //-Gooey/Tangling Hair (contact moves decreases attacker's Speed, only relevant for Defiant)
 //-Cotton Down (any move decreases attacker's Speed, only relevant for Defiant)
+//-Spicy Spray (any move burns the target, matters for physical moves and Flare Boost)
 //Current implementation has all of the above use cases
 //Not implemented (and no plans to do so in the near future):
 //-Sand Spit/Seed Sower
@@ -2435,6 +2458,7 @@ function checkAddCalcQualifications(attacker, defender, move, field, hitsPhysica
         maranga: false,
         moss: false,
         stamina: false,
+        spicySpray: false,
     };
     if (move.hits > 1 || addQualList['parentalBond']) {
         addQualList['triple'] = move.isTripleHit && !addQualList['parentalBond'];
@@ -2446,8 +2470,15 @@ function checkAddCalcQualifications(attacker, defender, move, field, hitsPhysica
         addQualList['maranga'] = defender.item === 'Maranga Berry' && !hitsPhysical && defender.boosts[SD] < 6;
         addQualList['moss'] = defender.item === 'Luminous Moss' && move.type == 'Water' && !hitsPhysical && defender.boosts[SD] < 6;
         addQualList['stamina'] = defender.ability === 'Stamina' && hitsPhysical && defender.boosts[DF] < 6;
+        addQualList['spicySpray'] = defender.ability === 'Spicy Spray' && (attacker.ability === 'Flare Boost' || move.category === 'Physical') && canBeBurned(attacker, move, field);
     }
     return addQualList;
+}
+
+function canBeBurned(attacker, move, field) {
+    return attacker.status != 'Burned' && !(attacker.hasType('Fire')) && !(['Protean', 'Libero'].includes(attacker.ability) && attacker.abilityOn && move.type == 'Fire')
+        && !(attacker.ability == 'Leaf Guard' && field.weather.includes('Sun')) && !(['Water Veil', 'Water Bubble', 'Comatose', 'Thermal Exchange', 'Purifying Salt'].includes(attacker.ability))
+        && (field.terrain != 'Misty' || !pIsGrounded(attacker, field));
 }
 
 //Inefficient for what it does now but should be a good setup for when more conditions are added
@@ -2521,6 +2552,11 @@ function additionalDamageCalcs(attacker, defender, move, field, description, add
     }
     else if (addQualList['stamina']) {
         uniqueHits = Math.max(uniqueHits, Math.min(6 - defender.boosts[DF] + 1, move.hits));
+        description.defenderAbility = defender.ability;
+    }
+    else if (addQualList['spicySpray']) {
+        nextAttacker.status = 'Burned';
+        uniqueHits = 2;
         description.defenderAbility = defender.ability;
     }
     if (addQualList['kee']) {
