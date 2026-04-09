@@ -18362,6 +18362,10 @@ var POKEDEX_ZA = {};
     'Mega Staraptor', 'Mega Crabominable', 'Mr. Mime-Galar', 'Mega Heatran', 'Meloetta-Pirouette', 'Hoopa-Unbound', 'Mega Darkrai', 'Mega Latias', 'Mega Latios',
     'Primal Kyogre', 'Primal Groudon', 'Mega Rayquaza', 'Mega Magearna', 'Mega Zeraora',
 ].forEach(e => POKEDEX_ZA[e] = POKEDEX_ZA_NATDEX[e]);
+
+//performs deep copy; necessary to preserve stat data for nat dex
+POKEDEX_ZA = $.extend(true, {}, POKEDEX_ZA);
+
 POKEDEX_ZA['Meditite'].bs.at = 56;
 POKEDEX_ZA['Medicham'].bs.at = 84;
 POKEDEX_ZA['Mega Mawile'].bs.at = 147;
