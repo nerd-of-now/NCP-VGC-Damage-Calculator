@@ -337,9 +337,56 @@ var ABILITIES_SV = ABILITIES_SS.concat([
     'Poison Puppeteer', //Poisoning also confuses, no calc funcitonality
 ]);
 
-var ABILITIES_CHAMPIONS = ABILITIES_SV.concat([
+var ABILITIES_CHAMPIONS_NATDEX = ABILITIES_SV.concat([
     'Piercing Drill',   //Moves hit through protecting targets with 1/4 damage
     'Dragonize',    //Dragon type Pixilate
     'Mega Sol',     //The user's attacks act like Sun is always up regardless of the actual weather
     'Spicy Spray',  //Burns attacker (assuming it's guaranteed and any attacker)
 ]);
+
+var ABILITIES_CHAMPIONS = ['Adaptability', 'Aerilate',
+    'Aftermath', 'Analytic', 'Anger Point', 'Anticipation',
+    'Armor Tail', 'Aroma Veil', 'Battle Armor', 'Berserk',
+    'Big Pecks', 'Blaze', 'Bulletproof', 'Cheek Pouch',
+    'Chlorophyll', 'Clear Body', 'Cloud Nine', 'Competitive',
+    'Compound Eyes', 'Contrary', 'Corrosion', 'Cud Chew',
+    'Curious Medicine', 'Cursed Body', 'Cute Charm', 'Damp',
+    'Defiant', 'Disguise', 'Dragonize', 'Drizzle', 'Drought',
+    'Dry Skin', 'Early Bird', 'Earth Eater', 'Electromorphosis',
+    'Fairy Aura', 'Filter', 'Flame Body', 'Flash Fire',
+    'Flower Veil', 'Forecast', 'Friend Guard', 'Frisk',
+    'Fur Coat', 'Gale Wings', 'Gluttony', 'Gooey', 'Guts',
+    'Harvest', 'Healer', 'Heatproof', 'Heavy Metal',
+    'Hospitality', 'Huge Power', 'Hunger Switch', 'Hustle',
+    'Hydration', 'Hyper Cutter', 'Ice Body', 'Illuminate',
+    'Illusion', 'Immunity', 'Imposter', 'Infiltrator',
+    'Innards Out', 'Inner Focus', 'Insomnia', 'Intimidate',
+    'Iron Fist', 'Justified', 'Keen Eye', 'Klutz', 'Leaf Guard',
+    'Levitate', 'Light Metal', 'Lightning Rod', 'Limber', 'Liquid Voice',
+    'Long Reach', 'Magic Bounce', 'Magic Guard', 'Magician',
+    'Magma Armor', 'Marvel Scale', 'Mega Launcher', 'Mega Sol',
+    'Merciless', 'Mimicry', 'Minus', 'Mirror Armor',
+    'Mold Breaker', 'Moody', 'Motor Drive', 'Moxie', 'Multiscale',
+    'Mummy', 'Natural Cure', 'No Guard', 'Oblivious',
+    'Opportunist', 'Overcoat', 'Overgrow', 'Own Tempo',
+    'Parental Bond', 'Pickpocket', 'Pickup', 'Piercing Drill',
+    'Pixilate', 'Plus', 'Poison Heal', 'Poison Point',
+    'Poison Touch', 'Prankster', 'Pressure', 'Protean',
+    'Pure Power', 'Purifying Salt', 'Queenly Majesty',
+    'Quick Draw', 'Quick Feet', 'Rain Dish', 'Receiver',
+    'Reckless', 'Refrigerate', 'Regenerator', 'Ripen', 'Rivalry',
+    'Rock Head', 'Rough Skin', 'Sand Force', 'Sand Rush', 'Sand Spit',
+    'Sand Stream', 'Sand Veil', 'Sap Sipper', 'Scrappy', 'Screen Cleaner',
+    'Shadow Tag', 'Sharpness', 'Shed Skin', 'Sheer Force', 'Shell Armor',
+    'Shield Dust', 'Simple', 'Skill Link', 'Slush Rush', 'Sniper',
+    'Snow Cloak', 'Snow Warning', 'Solar Power', 'Solid Rock',
+    'Soundproof', 'Speed Boost', 'Spicy Spray', 'Stall', 'Stalwart',
+    'Stamina', 'Stance Change', 'Static', 'Steadfast', 'Stench',
+    'Sticky Hold', 'Strong Jaw', 'Sturdy', 'Suction Cups',
+    'Super Luck', 'Supersweet Syrup', 'Supreme Overlord',
+    'Surge Surfer', 'Swarm', 'Sweet Veil', 'Swift Swim', 'Symbiosis',
+    'Synchronize', 'Tangled Feet', 'Technician', 'Telepathy',
+    'Thick Fat', 'Torrent', 'Tough Claws', 'Toxic Debris', 'Trace',
+    'Unaware', 'Unburden', 'Unseen Fist', 'Vital Spirit',
+    'Volt Absorb', 'Wandering Spirit', 'Water Absorb',
+    'Water Bubble', 'Weak Armor', 'White Smoke', 'Zero to Hero',];

@@ -201,7 +201,7 @@ function chainMods(mods) {
 }
 
 function addLevelDesc(attacker, defender, description) {
-    autoLevel = $('#douswitch').is(':checked') ? 50 : 100;
+    autoLevel = $('#douswitch').is(':checked') || gen == 10 ? 50 : 100;
     if (attacker.level !== autoLevel)
         description.attackerLevel = attacker.level;
     if (defender.level !== autoLevel)

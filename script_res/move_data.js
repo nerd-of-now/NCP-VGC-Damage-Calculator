@@ -5735,6 +5735,25 @@ var MOVES_CHAMPIONS_NATDEX = $.extend(true, {}, MOVES_ZA_NATDEX, {
     'Psyshield Bash': { bp: 90 },
     'Mountain Gale': { bp: 120 },
     'Infernal Parade': { bp: 65 },
+    'Dragon Claw': { isSlice: true },
+    'Shadow Claw': { isSlice: true },
+    'Dire Claw': { isSlice: true },
+    'Crush Claw': { isSlice: true },
+    'Dragon Cheer': { isSound: true },
+
+    //THE FOLLOWING IS SUBJECT TO CHANGE SINCE THEY ARE CHANGED IN THE CODE BUT NOT IN THE GAME
+    'Gear Grind': { bp: 60 },
+    'Anchor Shot': { bp: 90 },
+    'Revelation Dance': { bp: 100 },
+    'Dragon Hammer': { bp: 100 },
+    'Snipe Shot': { bp: 85 },
+    'Bolt Beak': { bp: 80 },
+    'Fisheous Rend': { bp: 80 },
+    'Astral Barrage': { bp: 110 },
+    'Triple Dive': { bp: 35 },
+    'Hyper Drill': { bp: 120 },
+    'Blood Moon': { bp: 130 },
+    'Metal Claw': { isSlice: true },
 });
 
 var MOVES_CHAMPIONS = {};
@@ -5750,7 +5769,7 @@ var MOVES_CHAMPIONS = {};
     'Clangorous Soul', 'Clear Smog', 'Close Combat', 'Coaching', 'Coil', 'Comeuppance', 'Confuse Ray', 'Copycat',
     'Corrosive Gas', 'Cosmic Power', 'Cotton Guard', 'Cotton Spore', 'Counter', 'Covet', 'Crabhammer', 'Cross Chop',
     'Cross Poison', 'Crunch', 'Crush Claw', 'Curse', 'Dark Pulse', 'Darkest Lariat', 'Dazzling Gleam', 'Decorate', 'Defog', 'Destiny Bond',
-    'Detect', 'Dig', 'Dire Claw', 'Disable', 'Discharge', 'Dive', 'Double Hit', /*'Double Shock',*/
+    'Detect', 'Dig', 'Dire Claw', 'Disable', 'Discharge', 'Dive', 'Double Hit', 
     'Double Team', 'Double-Edge', 'Draco Meteor', 'Dragon Cheer', 'Dragon Claw', 'Dragon Dance', 'Dragon Darts', 'Dragon Pulse', 'Dragon Rush', 'Dragon Tail',
     'Drain Punch', 'Draining Kiss', 'Drill Peck', 'Drill Run', 'Dual Wingbeat', 'Dynamic Punch', 'Earth Power', 'Earthquake', 'Eerie Impulse',
     'Eerie Spell', 'Electric Terrain', 'Electrify', 'Electro Ball', 'Electro Shot', 'Electroweb', 'Encore', 'Endeavor',
@@ -5770,15 +5789,15 @@ var MOVES_CHAMPIONS = {};
     'Last Respects', 'Lava Plume', 'Leaf Blade', 'Leaf Storm', 'Leech Life', 'Leech Seed', 'Life Dew', 'Light Screen',
     'Light of Ruin', 'Liquidation', 'Lock-On', 'Low Kick', 'Low Sweep', 'Lumina Crash', 'Lunge', 'Mach Punch', 'Magic Powder',
     'Magic Room', 'Magnet Rise', 'Magnetic Flux', 'Matcha Gotcha', 'Mean Look', 'Mega Kick', 'Megahorn', 'Memento', 'Metal Burst', 'Metal Sound',
-    'Meteor Beam', 'Meteor Mash', /*'Milk Drink',*/ 'Minimize', 'Mirror Coat', 'Misty Explosion', 'Misty Terrain', 'Moonblast',
+    'Meteor Beam', 'Meteor Mash', 'Minimize', 'Mirror Coat', 'Misty Explosion', 'Misty Terrain', 'Moonblast',
     'Moonlight', 'Morning Sun', 'Mortal Spin', 'Mountain Gale', 'Mud Shot', 'Mud-Slap', 'Muddy Water', 'Mystical Fire',
     'Nasty Plot', 'Night Daze', 'Night Shade', 'Night Slash', 'Noble Roar', 'Nuzzle', 'Outrage', 'Overheat',
     'Pain Split', 'Parabolic Charge', 'Parting Shot', 'Payback', 'Perish Song', 'Petal Blizzard', 'Petal Dance', 'Phantom Force', 'Pin Missile',
     'Play Rough', 'Pluck', 'Poison Fang', 'Poison Jab', 'Poison Powder', 'Pollen Puff', 'Poltergeist', 'Population Bomb',
-    'Pounce', 'Power Gem', /*'Power Shift',*/ 'Power Split', 'Power Swap', 'Power Trick', 'Power Trip', 'Power Whip', 'Protect', 'Psych Up',
+    'Pounce', 'Power Gem', 'Power Split', 'Power Swap', 'Power Trick', 'Power Trip', 'Power Whip', 'Protect', 'Psych Up',
     'Psychic', 'Psychic Fangs', 'Psychic Noise', 'Psychic Terrain', 'Psycho Cut', 'Psyshield Bash', 'Psyshock', 'Quash', 'Quick Attack',
     'Quick Guard', 'Quiver Dance', 'Rage Powder', 'Raging Bull', 'Raging Fury', 'Rain Dance', 'Rapid Spin', 'Razor Shell',
-    'Recover', 'Recycle', 'Reflect', 'Reflect Type', 'Rest', 'Reversal', /*'Revival Blessing',*/ 'Rising Voltage',
+    'Recover', 'Recycle', 'Reflect', 'Reflect Type', 'Rest', 'Reversal', 'Rising Voltage',
     'Roar', 'Rock Blast', 'Rock Polish', 'Rock Slide', 'Rock Tomb', 'Rock Wrecker', 'Role Play', 'Roost',
     'Round', 'Sacred Sword', 'Safeguard', 'Salt Cure', 'Sand Tomb', 'Sandstorm', 'Scald', 'Scale Shot',
     'Scary Face', 'Scorching Sands', 'Screech', 'Seed Bomb', 'Seismic Toss', 'Self-Destruct', 'Shadow Ball', 'Shadow Claw', 'Shadow Punch', 'Shadow Sneak',
@@ -5786,7 +5805,7 @@ var MOVES_CHAMPIONS = {};
     'Skitter Smack', 'Sky Attack', 'Slack Off', 'Sleep Powder', 'Sleep Talk', 'Sludge Bomb', 'Sludge Wave', 'Smack Down',
     'Smart Strike', 'Snap Trap', 'Snarl', 'Snore', 'Snowscape', 'Soak', 'Soft-Boiled', 'Solar Beam',
     'Solar Blade', 'Sparkling Aria', 'Speed Swap', 'Spicy Extract', 'Spikes', 'Spiky Shield', 'Spirit Shackle', /*'Spit Up',*/
-    'Spite', /*'Spore',*/ 'Stealth Rock', 'Steel Beam', 'Steel Roller', 'Steel Wing', 'Sticky Web', 'Stockpile',
+    'Spite', 'Stealth Rock', 'Steel Beam', 'Steel Roller', 'Steel Wing', 'Sticky Web', 'Stockpile',
     'Stomping Tantrum', 'Stone Axe', 'Stone Edge', 'Stored Power', 'Storm Throw', 'Strength Sap', 'String Shot', 'Struggle', 'Struggle Bug',
     'Stuff Cheeks', 'Stun Spore', 'Substitute', 'Sucker Punch', 'Sunny Day', 'Super Fang', 'Supercell Slam', 'Superpower',
     'Surf', 'Swagger', 'Swallow', 'Sweet Kiss', 'Sweet Scent', 'Switcheroo', 'Swords Dance', 'Synthesis',
@@ -5798,6 +5817,4 @@ var MOVES_CHAMPIONS = {};
     'Water Pulse', 'Water Shuriken', 'Water Spout', 'Waterfall', 'Wave Crash', 'Weather Ball', 'Whirlpool', 'Whirlwind',
     'Wide Guard', 'Wild Charge', 'Will-O-Wisp', 'Wish', 'Wonder Room', 'Wood Hammer', 'Worry Seed', 'Wrap', 'X-Scissor', 'Yawn', 'Zap Cannon', 'Zen Headbutt',
 ].forEach(e => MOVES_CHAMPIONS[e] = MOVES_CHAMPIONS_NATDEX[e]);
-//Double Shock, Milk Drink, Power Shift, Revival Blessing, Spore, Trop Kick are all listed on Serebii but have no mons that can use those moves currently
-//they will be commented out for now
 //Spit Up is commented out because it hasn't been implemented

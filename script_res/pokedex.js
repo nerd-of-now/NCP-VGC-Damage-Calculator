@@ -18406,7 +18406,7 @@ var POKEDEX_CHAMPIONS = {};
     'Mega Excadrill', 'Mega Audino', 'Zoroark-Hisui', 'Mega Chandelure', 'Stunfisk-Galar', 'Mega Golurk', 'Mega Chesnaught', 'Mega Delphox',
     'Mega Greninja', 'Mega Floette', 'Meowstic-F', 'Mega Meowstic', 'Aegislash-Shield', 'Aegislash-Blade',
     'Mega Hawlucha', 'Goodra-Hisui', 'Gourgeist-Small', 'Gourgeist-Large', 'Gourgeist-Super', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Mega Crabominable', 'Lycanroc-Midnight',
-    'Lycanroc-Dusk', 'Mega Drampa', 'Morpeko-Hangry', 'Basculegion-F', 'Maushold-Three', 'Mega Scovillain', 'Palafin-Hero', 'Mega Glimmora'
+    'Lycanroc-Dusk', 'Mega Drampa', 'Morpeko-Hangry', 'Basculegion-F', 'Maushold-Four', 'Mega Scovillain', 'Palafin-Hero', 'Mega Glimmora',
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex

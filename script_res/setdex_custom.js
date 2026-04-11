@@ -188,7 +188,7 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
             var level = 50;
             var EVs = [0, 0, 0, 0, 0, 0];
             var IVs = [31, 31, 31, 31, 31, 31];
-            var SPs = [0, 0, 0, 0, 0, 0];
+            //var SPs = [0, 0, 0, 0, 0, 0];     //Showdown is using EVs for Stat Points right now. I'll keep this code commented out in case this changes.
             var nature = "Serious";
             var moves = [];
             var gmax_factor = false;
@@ -263,27 +263,28 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
                     if (lines[i].includes("Gigantamax: Yes")) {
                         gmax_factor = true;
                     }
-                    if (lines[i].indexOf("SPs") != -1) //if Stat Points are in this line
-                    {
-                        statPointList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
-                        for (var j = 0; j < statPointList.length; ++j) {
-                            statPointList[j] = statPointList[j].trim();
-                            statPointListElements = statPointList[j].split(' ');
-                            if (statPointListElements[1] == "HP")
-                                SPs[0] = parseInt(statPointListElements[0])
-                            else if (statPointListElements[1] == "Atk")
-                                SPs[1] = parseInt(statPointListElements[0])
-                            else if (statPointListElements[1] == "Def")
-                                SPs[2] = parseInt(statPointListElements[0])
-                            else if (statPointListElements[1] == "SpA")
-                                SPs[3] = parseInt(statPointListElements[0])
-                            else if (statPointListElements[1] == "SpD")
-                                SPs[4] = parseInt(statPointListElements[0])
-                            else if (statPointListElements[1] == "Spe")
-                                SPs[5] = parseInt(statPointListElements[0])
-                        }
+                    //Showdown is using EVs for Stat Points right now. I'll keep this code commented out in case this changes.
+                    //if (lines[i].indexOf("SPs") != -1) //if Stat Points are in this line
+                    //{
+                    //    statPointList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
+                    //    for (var j = 0; j < statPointList.length; ++j) {
+                    //        statPointList[j] = statPointList[j].trim();
+                    //        statPointListElements = statPointList[j].split(' ');
+                    //        if (statPointListElements[1] == "HP")
+                    //            SPs[0] = parseInt(statPointListElements[0])
+                    //        else if (statPointListElements[1] == "Atk")
+                    //            SPs[1] = parseInt(statPointListElements[0])
+                    //        else if (statPointListElements[1] == "Def")
+                    //            SPs[2] = parseInt(statPointListElements[0])
+                    //        else if (statPointListElements[1] == "SpA")
+                    //            SPs[3] = parseInt(statPointListElements[0])
+                    //        else if (statPointListElements[1] == "SpD")
+                    //            SPs[4] = parseInt(statPointListElements[0])
+                    //        else if (statPointListElements[1] == "Spe")
+                    //            SPs[5] = parseInt(statPointListElements[0])
+                    //    }
 
-                    }
+                    //}
                     if (lines[i].indexOf("EVs") != -1) //if EVs are in this line
                     {
                         evList = lines[i].split(':')[1].split('/'); //splitting it into a list of " # Stat "
@@ -381,12 +382,12 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
                 customFormat = {
                     "level": level,
                     "sps": {
-                        "hp": SPs[0],
-                        "at": SPs[1],
-                        "df": SPs[2],
-                        "sa": SPs[3],
-                        "sd": SPs[4],
-                        "sp": SPs[5],
+                        "hp": EVs[0],
+                        "at": EVs[1],
+                        "df": EVs[2],
+                        "sa": EVs[3],
+                        "sd": EVs[4],
+                        "sp": EVs[5],
                     },
                     "nature": nature,
                     "ability": ability,
@@ -641,7 +642,7 @@ var exportset = function (set) {
             }
         }
         if (hasSPs) {
-            exSPs = "SPs: " + exSPs + "\n";
+            exSPs = "EVs: " + exSPs + "\n";
         }
     }
     //MORE OPTIMAL VERSION OF EV EXPORT IF READABILITY ISN'T A CONCERN
