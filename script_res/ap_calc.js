@@ -1785,12 +1785,22 @@ $(".result-move").change(function() {
         if (result) {
             $("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
             var resultLen = result.damage.length;
-            if (resultLen > 1 && Array.isArray(result.damage[0])) {
+            let is2dA = Array.isArray(result.damage[0]);
+            //special case for multi hit results with the same calculated 1st and 2nd hits (currently only used for Spicy Spray + Rawst/Lum Berry)
+            let firstSecondRollsMatch = is2dA && (!result.damage[1] || JSON.stringify(result.damage[0]) == JSON.stringify(result.damage[1]));
+            if (firstSecondRollsMatch && resultLen == 2) {
+                resultLen -= 1;
+            }
+
+            if (resultLen > 1 && is2dA) {
                 var damageValText = '(', placeText = '';
                 for (var i = 0; i < resultLen; i++) {
                     switch (i) {
                         case 0:
                             placeText = 'st';
+                            if (firstSecondRollsMatch) {
+                                placeText += ', 2nd';
+                            }
                             break;
                         case 1:
                             placeText = 'nd';
@@ -1803,8 +1813,15 @@ $(".result-move").change(function() {
                     }
                     isLastDmg = i == resultLen - 1;
                     damageValText += (i + 1) + placeText + ' hit' + (isLastDmg && resultLen < result.hits ? ' onwards' : '') + ': ' + result.damage[i].join(', ') + (isLastDmg ? ')' : '; ');
+                    if (firstSecondRollsMatch) {
+                        i++;
+                        firstSecondRollsMatch = false;
+                    }
                 }
                 $("#damageValues").text(damageValText);
+            }
+            else if (firstSecondRollsMatch) {
+                $("#damageValues").text("(" + result.damage[0].join(", ") + ")");
             }
             else {
                 $("#damageValues").text("(" + result.damage.join(", ") + ")");
@@ -2294,7 +2311,7 @@ $(".gen").change(function () {
             typeChart = TYPE_CHART_SV;
             moves = (localStorage.getItem("dex") == "natdex") ? MOVES_CHAMPIONS_NATDEX : MOVES_CHAMPIONS;
             items = (localStorage.getItem("dex") == "natdex") ? ITEMS_ZA_NATDEX : ITEMS_CHAMPIONS;
-            abilities = ABILITIES_CHAMPIONS;
+            abilities = (localStorage.getItem("dex") == "natdex") ? ABILITIES_CHAMPIONS_NATDEX : ABILITIES_CHAMPIONS;
             STATS = STATS_GSC;
             calculateAllMoves = CALCULATE_ALL_MOVES_SV;
             calcHP = CALC_HP_CHAMP;

@@ -1,4 +1,5 @@
-/* Damage calculation for the Generation IX games: Scarlet and Violet;
+/* Damage calculation for the side game: Champions;
+ * for the Generation IX games: Scarlet, Violet, and Legends: Z-A;
  * for the Generation VIII games: Sword, Shield, Brilliant Diamond, and Shining Pearl;
  * and for the Generation VII games: Sun, Moon, Ultra Sun, and Ultra Moon */
 

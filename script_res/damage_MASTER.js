@@ -2555,8 +2555,20 @@ function additionalDamageCalcs(attacker, defender, move, field, description, add
         description.defenderAbility = defender.ability;
     }
     else if (addQualList['spicySpray']) {
-        nextAttacker.status = 'Burned';
-        uniqueHits = 2;
+        var burnHealConsumed = false;
+        if (['Rawst Berry', 'Lum Berry'].includes(attacker.item)) {
+            burnHealConsumed = true;
+            description.attackerItem = attacker.item;
+            if (move.hits >= 3) {
+                uniqueHits = 3;
+            }
+        }
+        else {
+            nextAttacker.status = 'Burned';
+            if (uniqueHits == 1) {
+                uniqueHits = 2;
+            }
+        }
         description.defenderAbility = defender.ability;
     }
     if (addQualList['kee']) {
@@ -2607,6 +2619,11 @@ function additionalDamageCalcs(attacker, defender, move, field, description, add
             nextMove.currTripleHit = i + 2;
         }
         allAdditionalDamages[i] = GET_DAMAGE_HANDLER(nextAttacker, nextDefender, nextMove, field).damage;
+        if (burnHealConsumed && addQualList['spicySpray']) {
+            burnHealConsumed = false;
+            nextAttacker.item = '';
+            nextAttacker.status = 'Burned';
+        }
     }
     return allAdditionalDamages;
 }
