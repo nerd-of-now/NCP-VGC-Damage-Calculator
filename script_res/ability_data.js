@@ -387,6 +387,6 @@ var ABILITIES_CHAMPIONS = ['Adaptability', 'Aerilate',
     'Surge Surfer', 'Swarm', 'Sweet Veil', 'Swift Swim', 'Symbiosis',
     'Synchronize', 'Tangled Feet', 'Technician', 'Telepathy',
     'Thick Fat', 'Torrent', 'Tough Claws', 'Toxic Debris', 'Trace',
-    'Unaware', 'Unburden', 'Unseen Fist', 'Vital Spirit',
+    'Unaware', 'Unburden', 'Unnerve', 'Unseen Fist', 'Vital Spirit',
     'Volt Absorb', 'Wandering Spirit', 'Water Absorb',
     'Water Bubble', 'Weak Armor', 'White Smoke', 'Zero to Hero',];
