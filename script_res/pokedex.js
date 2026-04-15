@@ -18389,7 +18389,7 @@ var POKEDEX_CHAMPIONS = {};
     'Talonflame', 'Vivillon', 'Floette-Eternal', 'Florges', 'Pangoro', 'Furfrou', 'Meowstic', 'Aegislash', 'Aromatisse', 'Slurpuff', 'Clawitzer', 'Heliolisk', 'Tyrantrum',
     'Aurorus', 'Sylveon', 'Hawlucha', 'Dedenne', 'Goodra', 'Klefki', 'Trevenant', 'Gourgeist-Average', 'Avalugg', 'Noivern',
     'Decidueye', 'Incineroar', 'Primarina', 'Toucannon', 'Crabominable', 'Lycanroc-Midday', 'Toxapex', 'Mudsdale',
-    'Araquanid', 'Tsareena', 'Oranguru', 'Passimian', 'Mimikyu', 'Drampa', 'Kommo-o', 'Corviknight', 'Flapple', 'Appletun',
+    'Araquanid', 'Salazzle', 'Tsareena', 'Oranguru', 'Passimian', 'Mimikyu', 'Drampa', 'Kommo-o', 'Corviknight', 'Flapple', 'Appletun',
     'Sandaconda', 'Polteageist', 'Hatterene', 'Mr. Rime', 'Runerigus', 'Alcremie', 'Morpeko',
     'Dragapult', 'Wyrdeer', 'Kleavor', 'Basculegion', 'Sneasler', 'Meowscarada', 'Skeledirge', 'Quaquaval',
     'Maushold', 'Garganacl', 'Armarouge', 'Ceruledge', 'Bellibolt', 'Scovillain', 'Espathra', 'Tinkaton', 'Palafin', 'Orthworm',
