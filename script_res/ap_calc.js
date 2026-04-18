@@ -2571,7 +2571,10 @@ function getSelectOptions(arr, sort, defaultIdx) {
 
 function getGen() {
     var genLocalStor = localStorage.getItem("gen");
-    if (genLocalStor && !($(".gen").val().includes('.'))) {
+    if ($(".gen").val().includes('.')) {
+        $(".gen").change();
+    }
+    else if (genLocalStor) {
         $("#gen" + genLocalStor).prop("checked", true);
         $("#gen" + genLocalStor).change();
     }
