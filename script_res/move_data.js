@@ -5757,7 +5757,8 @@ var MOVES_CHAMPIONS_NATDEX = $.extend(true, {}, MOVES_ZA_NATDEX, {
 });
 
 var MOVES_CHAMPIONS = {};
-['(No Move)', 'Accelerock',
+[   //Moves available at launch
+    '(No Move)', 'Accelerock',
     'Acid Armor', 'Acid Spray', 'Acrobatics', 'Acupressure', 'Aerial Ace', 'After You', 'Agility', 'Air Cutter',
     'Air Slash', 'Alluring Voice', 'Ally Switch', 'Amnesia', 'Ancient Power', 'Apple Acid', 'Aqua Cutter', 'Aqua Jet', 'Aqua Ring',
     'Aqua Step', 'Aqua Tail', 'Armor Cannon', 'Aromatic Mist', 'Assurance', 'Attract', 'Aura Sphere', 'Aura Wheel', 'Aurora Veil',
@@ -5803,7 +5804,7 @@ var MOVES_CHAMPIONS = {};
     'Scary Face', 'Scorching Sands', 'Screech', 'Seed Bomb', 'Seismic Toss', 'Self-Destruct', 'Shadow Ball', 'Shadow Claw', 'Shadow Punch', 'Shadow Sneak',
     'Shed Tail', 'Sheer Cold', 'Shell Side Arm', 'Shell Smash', 'Shelter', 'Simple Beam', 'Sing', 'Skill Swap',
     'Skitter Smack', 'Sky Attack', 'Slack Off', 'Sleep Powder', 'Sleep Talk', 'Sludge Bomb', 'Sludge Wave', 'Smack Down',
-    'Smart Strike', 'Snap Trap', 'Snarl', 'Snore', 'Snowscape', 'Soak', 'Soft-Boiled', 'Solar Beam',
+    'Smart Strike', 'Snap Trap', 'Snarl', 'Snore', 'Snowscape', 'Soak', 'Solar Beam',
     'Solar Blade', 'Sparkling Aria', 'Speed Swap', 'Spicy Extract', 'Spikes', 'Spiky Shield', 'Spirit Shackle', /*'Spit Up',*/
     'Spite', 'Stealth Rock', 'Steel Beam', 'Steel Roller', 'Steel Wing', 'Sticky Web', 'Stockpile',
     'Stomping Tantrum', 'Stone Axe', 'Stone Edge', 'Stored Power', 'Storm Throw', 'Strength Sap', 'String Shot', 'Struggle', 'Struggle Bug',
@@ -5816,5 +5817,7 @@ var MOVES_CHAMPIONS = {};
     'Trop Kick', 'Twin Beam', 'U-turn', 'Upper Hand', 'Uproar', 'Vacuum Wave', 'Venoshock', 'Volt Switch', 'Volt Tackle',
     'Water Pulse', 'Water Shuriken', 'Water Spout', 'Waterfall', 'Wave Crash', 'Weather Ball', 'Whirlpool', 'Whirlwind',
     'Wide Guard', 'Wild Charge', 'Will-O-Wisp', 'Wish', 'Wonder Room', 'Wood Hammer', 'Worry Seed', 'Wrap', 'X-Scissor', 'Yawn', 'Zap Cannon', 'Zen Headbutt',
+    //Has move descriptions but isn't learned by any Pokemon at launch
+    //'Double Shock', 'Milk Drink', 'Power Shift', 'Revival Blessing', 'Soft-Boiled', 'Spore',
 ].forEach(e => MOVES_CHAMPIONS[e] = MOVES_CHAMPIONS_NATDEX[e]);
 //Spit Up is commented out because it hasn't been implemented

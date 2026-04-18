@@ -2462,6 +2462,8 @@ function INIT_POKEMON_NAME() {
             return 'Aerodactyl';
         //case 3:
         //    return 'Absol';
+        case 10:
+            return 'Aegislash';
         default:
             return 'Abomasnow';
     }

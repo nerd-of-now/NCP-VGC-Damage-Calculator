@@ -18394,7 +18394,7 @@ var POKEDEX_CHAMPIONS = {};
     'Dragapult', 'Wyrdeer', 'Kleavor', 'Basculegion', 'Sneasler', 'Meowscarada', 'Skeledirge', 'Quaquaval',
     'Maushold', 'Garganacl', 'Armarouge', 'Ceruledge', 'Bellibolt', 'Scovillain', 'Espathra', 'Tinkaton', 'Palafin', 'Orthworm',
     'Glimmora', 'Farigiraf', 'Kingambit', 'Sinistcha', 'Archaludon', 'Hydrapple',
-    //Alt forms of initial Pokemon
+    //Forms of initial Pokemon
     'Mega Venusaur', 'Mega Charizard X', 'Mega Charizard Y', 'Mega Blastoise', 'Mega Beedrill', 'Mega Pidgeot', 'Raichu-Alola',
     'Mega Clefable', 'Ninetales-Alola', 'Arcanine-Hisui', 'Mega Alakazam', 'Mega Victreebel', 'Mega Slowbro', 'Slowbro-Galar', 'Mega Gengar',
     'Mega Kangaskhan', 'Mega Starmie', 'Mega Pinsir', 'Tauros-Paldea-Combat', 'Tauros-Paldea-Aqua', 'Tauros-Paldea-Blaze', 'Mega Gyarados', 'Mega Aerodactyl',
