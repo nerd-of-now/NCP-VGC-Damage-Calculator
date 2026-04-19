@@ -2242,10 +2242,11 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     var reSortDamage = false;
 
     var damage = [], additionalDamage = [], allDamage = [];
+    var minDamageValue = gen < 10 ? 85 : 86;
 
     //GENERAL MODS CONTINUED
-    for (var i = 0; i < 16; i++) { //e. Rand mod
-        damage[i] = Math.floor(baseDamage * (85 + i) / 100);
+    for (var i = 0; i + minDamageValue <= 100; i++) { //e. Rand mod
+        damage[i] = Math.floor(baseDamage * (minDamageValue + i) / 100);
         //f. STAB mod (with Terastal changes)
         damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
         //g. Type Effect mod
