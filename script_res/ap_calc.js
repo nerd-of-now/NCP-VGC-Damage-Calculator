@@ -2361,6 +2361,22 @@ $(".gen").change(function () {
             $('div #flower-gift').hide();
         }
     }
+    if (gen == 10) {
+        if (localStorage.getItem("dex") == "natdex") {
+            $('div #temp-fairyaura').hide();
+            $('label[for="aura-break"]').show();
+            $('label[for="dark-aura"]').show();
+            $('label[for="fairy-aura"]').addClass('btn-mid');
+            $('div #flower-gift').show();
+        }
+        else {
+            $('div #temp-fairyaura').show();
+            $('label[for="aura-break"]').hide();
+            $('label[for="dark-aura"]').hide();
+            $('label[for="fairy-aura"]').removeClass('btn-mid');
+            $('div #flower-gift').hide();
+        }
+    }
     var types = Object.keys(typeChart);
     if (types.includes('Typeless'))
         types.splice(types.indexOf('Typeless'), 1);
