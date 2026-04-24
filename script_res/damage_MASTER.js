@@ -2242,7 +2242,7 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
     var reSortDamage = false;
 
     var damage = [], additionalDamage = [], allDamage = [];
-    var minDamageValue = gen < 10 ? 85 : 86;
+    var minDamageValue = 85;    //this has been made into a value in case of any more damage roll alterations
 
     //GENERAL MODS CONTINUED
     for (var i = 0; i + minDamageValue <= 100; i++) { //e. Rand mod

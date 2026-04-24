@@ -256,7 +256,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
 function damageArrToDict(damageArr, hits) {
     var pivotSpread = {}, addedSpread = {}, tempSpread = {}, totalSpread = {};
     var tempKey = 0, is2dArr = Array.isArray(damageArr[0]), damageArrL = damageArr.length;
-    var divisor = Math.pow(gen == 10 ? 15 : gen >= 3 ? 16 : 39, hits);
+    var divisor = Math.pow(gen >= 3 ? 16 : 39, hits);
     if (!(is2dArr && damageArrL > 1)) {
         pivotSpread = arrayToInstanceDict(damageArr);
         addedSpread = pivotSpread;
