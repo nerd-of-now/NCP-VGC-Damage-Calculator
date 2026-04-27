@@ -152,7 +152,10 @@ var savecustom = function (sidebarUsed = 0) {
                 if (data['title'].length && spreadName == 'My Custom Set')
                     spreadName = data['title'];
                 if (data['notes'].length && data['notes'].indexOf("Format: gen") == 0 && !isNaN(1 * data['notes'][11])) {
-                    if (isNaN(1 * data['notes'][12]))   //check for double digits
+                    if (data['notes'].includes("gen9champions")) {
+                        setGen = 10;
+                    }
+                    else if (isNaN(1 * data['notes'][12]))   //check for double digits
                         setGen = 1 * data['notes'][11];
                     else    //if this code is somehow still used when we reach gen 100 then y'all in the future can code it yourselves lol
                         setGen = 1 * (data['notes'][11] + data['notes'][12]);
