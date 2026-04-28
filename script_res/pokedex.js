@@ -10553,7 +10553,22 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         },
         "w": 53.0,
         "ab": "Stance Change",
-        "formes": ["Aegislash-Shield", "Aegislash-Blade"]
+        "formes": ["Aegislash-Both", "Aegislash-Shield", "Aegislash-Blade"]
+    },
+	"Aegislash-Both": {
+        "t1": "Steel",
+        "t2": "Ghost",
+        "bs": {
+            "hp": 60,
+            "at": 150,
+            "df": 150,
+            "sa": 150,
+            "sd": 150,
+            "sp": 60
+        },
+        "w": 53.0,
+        "ab": "Stance Change",
+        "isAlternateForme": true
     },
     "Aegislash-Shield": {
         "t1": "Steel",
@@ -15064,6 +15079,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
 
     //BASE STAT CHANGES
     "Aegislash": { "bs": { "df": 140, "sd": 140 } },
+	"Aegislash-Both": { "bs": { "at": 140, "df": 140, "sa": 140, "sd": 140 } },
     "Aegislash-Blade": { "bs": { "at": 140, "sa": 140 } },
     "Aegislash-Shield": { "bs": { "df": 140, "sd": 140 } },
     //DEFAULT ABILITY CHANGES
@@ -18334,7 +18350,7 @@ var POKEDEX_ZA = {};
     'Xerneas', 'Yveltal', 'Zygarde', 'Mewtwo', 'Diancie', 'Hoopa', 'Volcanion',
     //Forms for initial Pokemon
     'Mega Meganium', 'Mega Emboar', 'Mega Feraligatr', 'Mega Beedrill', 'Mega Pidgeot', 'Mega Ampharos', 'Mega Gyarados', 'Mega Barbaracle', 'Mega Starmie',
-    'Floette-Eternal', 'Mega Floette', 'Meowstic-F', 'Mega Pyroar', 'Raichu-Alola', 'Mega Clefable', 'Mega Alakazam', 'Mega Gengar', 'Mega Scolipede',
+    'Floette-Eternal', 'Mega Floette', 'Meowstic-F', 'Mega Pyroar', 'Raichu-Alola', 'Mega Clefable', 'Mega Alakazam', 'Mega Gengar', 'Mega Scolipede', 'Aegislash-Both', 
     'Aegislash-Shield', 'Aegislash-Blade', 'Mega Victreebel', 'Mega Medicham', 'Mega Manectric', 'Mega Gardevoir', 'Mega Gallade', 'Mega Houndoom', 'Mega Altaria',
     'Mega Audino', 'Mega Lopunny', 'Mega Banette', 'Mega Camerupt', 'Mega Excadrill', 'Mega Garchomp', 'Mega Sableye', 'Mega Mawile', 'Mega Absol', 'Mega Lucario',
     'Mega Slowbro', 'Slowbro-Galar', 'Slowking-Galar', 'Mega Sharpedo', 'Mega Eelektross', 'Mega Dragonite', 'Mega Venusaur', 'Mega Charizard X', 'Mega Charizard Y', 'Mega Blastoise',
@@ -18404,7 +18420,7 @@ var POKEDEX_CHAMPIONS = {};
     'Mega Lopunny', 'Mega Garchomp', 'Mega Lucario', 'Mega Abomasnow', 'Mega Gallade',
     'Mega Froslass', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Mega Emboar', 'Samurott-Hisui',
     'Mega Excadrill', 'Mega Audino', 'Zoroark-Hisui', 'Mega Chandelure', 'Stunfisk-Galar', 'Mega Golurk', 'Mega Chesnaught', 'Mega Delphox',
-    'Mega Greninja', 'Mega Floette', 'Meowstic-F', 'Mega Meowstic', 'Aegislash-Shield', 'Aegislash-Blade',
+    'Mega Greninja', 'Mega Floette', 'Meowstic-F', 'Mega Meowstic', 'Aegislash-Both', 'Aegislash-Shield', 'Aegislash-Blade',
     'Mega Hawlucha', 'Goodra-Hisui', 'Gourgeist-Small', 'Gourgeist-Large', 'Gourgeist-Super', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Mega Crabominable', 'Lycanroc-Midnight',
     'Lycanroc-Dusk', 'Mega Drampa', 'Morpeko-Hangry', 'Basculegion-F', 'Maushold-Four', 'Mega Scovillain', 'Palafin-Hero', 'Mega Glimmora',
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);
