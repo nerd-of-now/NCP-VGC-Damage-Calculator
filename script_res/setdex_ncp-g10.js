@@ -1,24 +1,5 @@
 var SETDEX_GEN10 = {
     "Venusaur": {
-        "Sun Sleep Offense": {
-            "sps": {
-                "hp": 2,
-                "at": 0,
-                "df": 0,
-                "sa": 32,
-                "sd": 0,
-                "sp": 32
-            },
-            "nature": "Modest",
-            "ability": "Chlorophyll",
-            "item": "Focus Sash",
-            "moves": [
-                "Leaf Storm",
-                "Sludge Bomb",
-                "Earth Power",
-                "Sleep Powder"
-            ]
-        },
         "Bulky Mega Offense": {
             "sps": {
                 "hp": 32,
@@ -32,8 +13,8 @@ var SETDEX_GEN10 = {
             "ability": "Chlorophyll",
             "item": "Venusaurite",
             "moves": [
-                "Energy Ball",
-                "Sludge Bomb",
+                "Giga Drain",
+                "Sludge Wave",
                 "Earth Power",
                 "Leaf Storm"
             ]
@@ -53,13 +34,13 @@ var SETDEX_GEN10 = {
             "ability": "Solar Power",
             "item": "Charizardite Y",
             "moves": [
-                "Heat Wave",
+                "Overheat",
                 "Weather Ball",
                 "Solar Beam",
                 "Air Slash"
             ]
         },
-        "DD Mega X": {
+        "Mega X": {
             "sps": {
                 "hp": 2,
                 "at": 32,
@@ -75,12 +56,12 @@ var SETDEX_GEN10 = {
                 "Flare Blitz",
                 "Dragon Claw",
                 "Thunder Punch",
-                "Dragon Dance"
+                "Flame Charge"
             ]
         },
     },
     "Blastoise": {
-        "Mega Attacker under Tailwind": {
+        "Mega Shell Smash": {
             "sps": {
                 "hp": 2,
                 "at": 0,
@@ -93,7 +74,7 @@ var SETDEX_GEN10 = {
             "ability": "Rain Dish",
             "item": "Blastoisinite",
             "moves": [
-                "Water Spout",
+                "Water Pulse",
                 "Aura Sphere",
                 "Dark Pulse",
                 "Ice Beam"
@@ -135,7 +116,7 @@ var SETDEX_GEN10 = {
             "item": "Gengarite",
             "moves": [
                 "Shadow Ball",
-                "Sludge Bomb",
+                "Sludge Wave",
                 "Icy Wind",
                 "Protect"
             ]
@@ -171,7 +152,7 @@ var SETDEX_GEN10 = {
             "item": "Focus Sash",
             "moves": [
                 "Shadow Ball",
-                "Sludge Bomb",
+                "Sludge Wave",
                 "Icy Wind",
                 "Protect"
             ]
@@ -208,10 +189,10 @@ var SETDEX_GEN10 = {
             "nature": "Adamant",
             "item": "Kangaskhanite",
             "moves": [
-                "Fake Out",
                 "Double-Edge",
-                "Sucker Punch",
-                "Drain Punch"
+                "Earthquake",
+                "Ice Punch",
+                "Fire Punch"
             ]
         },
     },
@@ -252,47 +233,11 @@ var SETDEX_GEN10 = {
                 "Waterfall",
                 "Crunch",
                 "Earthquake",
-                "Dragon Dance"
-            ]
-        },
-        "Sitrus Disruption": {
-            "sps": {
-                "hp": 32,
-                "at": 32,
-                "df": 2,
-                "sa": 0,
-                "sd": 0,
-                "sp": 0
-            },
-            "nature": "Adamant",
-            "item": "Sitrus Berry",
-            "moves": [
-                "Waterfall",
-                "Ice Fang",
-                "Taunt",
-                "Thunder Wave"
+                "Ice Fang"
             ]
         },
     },
     "Aerodactyl": {
-        "Sash Tailwind Support": {
-            "sps": {
-                "hp": 2,
-                "at": 32,
-                "df": 0,
-                "sa": 0,
-                "sd": 0,
-                "sp": 32
-            },
-            "nature": "Jolly",
-            "item": "Focus Sash",
-            "moves": [
-                "Rock Slide",
-                "Dual Wingbeat",
-                "Tailwind",
-                "Taunt"
-            ]
-        },
         "Offensive Mega": {
             "sps": {
                 "hp": 2,
@@ -391,7 +336,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Scizor": {
-        "Offense Mega on Rain": {
+        "Offense Mega": {
             "sps": {
                 "hp": 32,
                 "at": 32,
@@ -406,7 +351,7 @@ var SETDEX_GEN10 = {
                 "Bullet Punch",
                 "Bug Bite",
                 "Close Combat",
-                "Swords Dance"
+                "Knock Off"
             ]
         },
     },
@@ -441,9 +386,9 @@ var SETDEX_GEN10 = {
             "nature": "Adamant",
             "item": "Tyranitarite",
             "moves": [
-                "Rock Slide",
+                "Stone Edge",
                 "Knock Off",
-                "High Horsepower",
+                "Earthquake",
                 "Low Kick"
             ]
         },
@@ -613,16 +558,16 @@ var SETDEX_GEN10 = {
                 "sd": 0,
                 "sp": 32,
             },
-            "nature": "Adamant",
+            "nature": "Jolly",
             "item": "Choice Scarf",
             "moves": [
                 "Earthquake",
                 "Dragon Claw",
-                "Rock Slide",
-                "Stomping Tantrum",
+                "Stone Edge",
+                "Outrage",
             ],
         },
-        "Max Speed Lum": {
+        "Sash": {
             "sps": {
                 "hp": 2,
                 "at": 32,
@@ -632,12 +577,30 @@ var SETDEX_GEN10 = {
                 "sp": 32,
             },
             "nature": "Jolly",
-            "item": "Lum Berry",
+            "item": "Focus Sash",
             "moves": [
                 "Earthquake",
-                "Dragon Claw",
-                "Rock Slide",
-                "Stomping Tantrum",
+                "Scale Shot",
+                "Rock Tomb",
+                "Outrage",
+            ],
+        },
+		"Phazer": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 0,
+                "sd": 0,
+                "sp": 2,
+            },
+            "nature": "Impish",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Earthquake",
+                "Dragon Tail",
+                "Rock Tomb",
+                "Stealth Rock",
             ],
         },
     },
@@ -1232,7 +1195,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Glimmora": {
-        "Fast Offense Mega": {
+        "Sash": {
             "sps": {
                 "hp": 1,
                 "at": 0,
@@ -1242,12 +1205,12 @@ var SETDEX_GEN10 = {
                 "sp": 32,
             },
             "nature": "Timid",
-            "item": "Glimmoranite",
+            "item": "Focus Sash",
             "moves": [
                 "Power Gem",
-                "Sludge Bomb",
                 "Sludge Wave",
-                "Earth Power",
+                "Mud Shot",
+                "Energy Ball",
             ],
         },
     },
