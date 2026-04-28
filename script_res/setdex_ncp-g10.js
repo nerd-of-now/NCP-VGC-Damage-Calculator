@@ -1083,7 +1083,7 @@ var SETDEX_GEN10 = {
                 "sd": 0,
                 "sp": 32,
             },
-            "nature": "Adamant",
+            "nature": "Jolly",
             "ability": "Adaptability",
             "item": "Choice Scarf",
             "moves": [

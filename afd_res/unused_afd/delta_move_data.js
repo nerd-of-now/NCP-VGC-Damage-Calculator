@@ -1,1 +1,0 @@
-var MOVES_DELTA = {};
