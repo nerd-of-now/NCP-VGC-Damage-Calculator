@@ -21,7 +21,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Charizard": {
-        "Fast Offense Mega Y": {
+        "Mega Y": {
             "sps": {
                 "hp": 2,
                 "at": 0,
@@ -82,7 +82,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Clefable": {
-        "Physically Defensive Sitrus": {
+        "Physically Defensive": {
             "sps": {
                 "hp": 32,
                 "at": 0,
@@ -93,12 +93,12 @@ var SETDEX_GEN10 = {
             },
             "nature": "Bold",
             "ability": "Unaware",
-            "item": "Sitrus Berry",
+            "item": "Clefablite",
             "moves": [
                 "Moonblast",
-                "Icy Wind",
-                "Follow Me",
-                "Helping Hand"
+                "Mystical Fire",
+                "Flamethrower",
+                "Air Slash"
             ]
         },
     },
@@ -118,23 +118,23 @@ var SETDEX_GEN10 = {
                 "Shadow Ball",
                 "Sludge Wave",
                 "Icy Wind",
-                "Protect"
+                "Focus Blast"
             ]
         },
-        "Bulkier Perish Mega": {
+        "Bulkier Mega": {
             "sps": {
                 "hp": 32,
                 "at": 0,
-                "df": 9,
-                "sa": 1,
-                "sd": 1,
+                "df": 11,
+                "sa": 0,
+                "sd": 0,
                 "sp": 23
             },
             "nature": "Timid",
             "item": "Gengarite",
             "moves": [
                 "Shadow Ball",
-                "Sludge Bomb",
+                "Sludge Wave",
                 "Perish Song",
                 "Disable"
             ]
@@ -154,7 +154,7 @@ var SETDEX_GEN10 = {
                 "Shadow Ball",
                 "Sludge Wave",
                 "Icy Wind",
-                "Protect"
+                "Focus Blast"
             ]
         },
     },
@@ -258,7 +258,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Dragonite": {
-        "Special Rain Mega": {
+        "Special Mega": {
             "sps": {
                 "hp": 2,
                 "at": 0,
@@ -271,9 +271,27 @@ var SETDEX_GEN10 = {
             "item": "Dragoninite",
             "moves": [
                 "Draco Meteor",
-                "Hurricane",
-                "Extreme Speed",
-                "Thunder"
+                "Air Slash",
+                "Thunderbolt",
+                "Extremespeed"
+            ]
+        },
+		"Lum DD": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32
+            },
+            "nature": "Adamant",
+            "item": "Lum Berry",
+            "moves": [
+                "Outrage",
+                "Earthquake",
+                "Extremespeed",
+                "Fire Punch"
             ]
         },
     },
@@ -335,21 +353,59 @@ var SETDEX_GEN10 = {
             ]
         },
     },
+    "Umbreon": {
+        "Physically Defensive": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 0,
+                "sd": 2,
+                "sp": 0
+            },
+            "nature": "Bold",
+            "item": "Leftovers",
+            "moves": [
+                "Foul Play",
+                "Wish",
+                "Yawn",
+                "Protect"
+            ]
+        },
+        "Specially Defensive": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 2,
+                "sa": 0,
+                "sd": 32,
+                "sp": 0
+            },
+            "nature": "Calm",
+            "item": "Leftovers",
+            "moves": [
+                "Foul Play",
+                "Wish",
+                "Yawn",
+                "Protect"
+            ]
+        },
+    },
     "Scizor": {
         "Offense Mega": {
             "sps": {
                 "hp": 32,
                 "at": 32,
-                "df": 0,
+                "df": 2,
                 "sa": 0,
-                "sd": 2,
+                "sd": 0,
                 "sp": 0
             },
             "nature": "Adamant",
             "item": "Scizorite",
             "moves": [
                 "Bullet Punch",
-                "Bug Bite",
+                "U-turn",
                 "Close Combat",
                 "Knock Off"
             ]
@@ -406,8 +462,8 @@ var SETDEX_GEN10 = {
             "moves": [
                 "Rock Slide",
                 "Knock Off",
-                "Dragon Dance",
-                "Protect"
+                "Earthquake",
+                "Fire Punch"
             ]
         },
     },
@@ -544,12 +600,32 @@ var SETDEX_GEN10 = {
                 "Scald",
                 "Icy Wind",
                 "Ice Beam",
-                "Recover",
+                "Flip Turn",
+            ],
+        },
+    },
+    "Lopunny": {
+        "Mega": {
+            "sps": {
+                "hp": 1,
+                "at": 32,
+                "df": 1,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "item": "Lopunnite",
+            "moves": [
+                "Close Combat",
+                "Triple Axel",
+                "U-turn",
+                "Fake Out",
             ],
         },
     },
     "Garchomp": {
-        "Scarf Offense": {
+        "Scarf": {
             "sps": {
                 "hp": 2,
                 "at": 32,
@@ -562,9 +638,9 @@ var SETDEX_GEN10 = {
             "item": "Choice Scarf",
             "moves": [
                 "Earthquake",
-                "Dragon Claw",
-                "Stone Edge",
                 "Outrage",
+                "Stone Edge",
+                "Poison Jab",
             ],
         },
         "Sash": {
@@ -585,7 +661,7 @@ var SETDEX_GEN10 = {
                 "Outrage",
             ],
         },
-		"Phazer": {
+		"Phazer PhysDef": {
             "sps": {
                 "hp": 32,
                 "at": 0,
@@ -600,6 +676,104 @@ var SETDEX_GEN10 = {
                 "Earthquake",
                 "Dragon Tail",
                 "Rock Tomb",
+                "Stealth Rock",
+            ],
+        },
+		"Phazer SpDef": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 8,
+                "sa": 0,
+                "sd": 25,
+                "sp": 1,
+            },
+            "nature": "Careful",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Earthquake",
+                "Dragon Tail",
+                "Rock Tomb",
+                "Stealth Rock",
+            ],
+        },
+    },
+    "Lucario": {
+        "Physical Mega": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "ability": "Inner Focus",
+            "item": "Lucarionite",
+            "moves": [
+                "Close Combat",
+                "Meteor Mash",
+                "Bullet Punch",
+                "Earthquake",
+            ],
+        },
+		"Special Mega": {
+            "sps": {
+                "hp": 2,
+                "at": 0,
+                "df": 0,
+                "sa": 32,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Timid",
+            "ability": "Inner Focus",
+            "item": "Lucarionite",
+            "moves": [
+                "Aura Sphere",
+                "Flash Cannon",
+                "Vacuum Wave",
+                "Dark Pulse",
+            ],
+        },
+    },
+    "Hippowdon": {
+        "PhysDef": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 0,
+                "sd": 2,
+                "sp": 0,
+            },
+            "nature": "Impish",
+            "ability": "Sand Stream",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Earthquake",
+                "Rock Tomb",
+                "Ice Fang",
+                "Stealth Rock",
+            ],
+        },
+		"SpDef": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 2,
+                "sa": 0,
+                "sd": 32,
+                "sp": 0,
+            },
+            "nature": "Careful",
+            "ability": "Sand Stream",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Earthquake",
+                "Rock Tomb",
+                "Ice Fang",
                 "Stealth Rock",
             ],
         },
@@ -781,7 +955,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Hydreigon": {
-        "Scarf Coverage Offense": {
+        "Scarf": {
             "sps": {
                 "hp": 2,
                 "at": 0,
@@ -795,8 +969,8 @@ var SETDEX_GEN10 = {
             "moves": [
                 "Dark Pulse",
                 "Draco Meteor",
-                "Earth Power",
                 "Flamethrower",
+                "Flash Cannon",
             ],
         },
     },
@@ -814,7 +988,7 @@ var SETDEX_GEN10 = {
             "ability": "Blaze",
             "item": "Delphoxite",
             "moves": [
-                "Heat Wave",
+                "Flamethrower",
                 "Psychic",
                 "Psyshock",
                 "Dazzling Gleam",
@@ -889,7 +1063,7 @@ var SETDEX_GEN10 = {
                 "sd": 2,
                 "sp": 0,
             },
-            "nature": "Brave",
+            "nature": "Adamant",
             "item": "Spell Tag",
             "moves": [
                 "Poltergeist",
@@ -898,13 +1072,13 @@ var SETDEX_GEN10 = {
                 "Sacred Sword",
             ],
         },
-        "Lefties Wide Guard Special": {
+        "Special/Mixed": {
             "sps": {
                 "hp": 32,
-                "at": 0,
+                "at": 2,
                 "df": 0,
                 "sa": 32,
-                "sd": 2,
+                "sd": 0,
                 "sp": 0,
             },
             "nature": "Quiet",
@@ -912,12 +1086,30 @@ var SETDEX_GEN10 = {
             "moves": [
                 "Shadow Ball",
                 "Flash Cannon",
-                "Wide Guard",
-                "King's Shield",
+                "Sacred Sword",
+                "Shadow Sneak",
             ],
         },
     },
     "Sylveon": {
+		"PhysDef Yawn": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 0,
+                "sd": 0,
+                "sp": 2,
+            },
+            "nature": "Bold",
+            "item": "Leftovers",
+            "moves": [
+                "Hyper Voice",
+                "Mystical Fire",
+                "Quick Attack",
+                "Shadow Ball",
+            ],
+        },
         "Fairy Feather Offense": {
             "sps": {
                 "hp": 32,
@@ -931,9 +1123,9 @@ var SETDEX_GEN10 = {
             "item": "Fairy Feather",
             "moves": [
                 "Hyper Voice",
-                "Hyper Beam",
-                "Quick Attack",
                 "Mystical Fire",
+                "Quick Attack",
+                "Shadow Ball",
             ],
         },
     },
@@ -958,7 +1150,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Primarina": {
-        "Mystic Water Offense": {
+        "Mystic Water": {
             "sps": {
                 "hp": 32,
                 "at": 0,
@@ -968,15 +1160,74 @@ var SETDEX_GEN10 = {
                 "sp": 2,
             },
             "nature": "Modest",
+			"ability": "Torrent",
             "item": "Mystic Water",
             "moves": [
-                "Hyper Voice",
+                "Sparkling Aria",
                 "Moonblast",
-                "Dazzling Gleam",
-                "Ice Beam",
+                "Aqua Jet",
+                "Flip Turn",
+            ],
+        },
+		"PhysDef": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 2,
+                "sd": 0,
+                "sp": 0,
+            },
+            "nature": "Bold",
+			"ability": "Torrent",
+            "item": "Leftovers",
+            "moves": [
+                "Sparkling Aria",
+                "Moonblast",
+                "Aqua Jet",
+                "Flip Turn",
+            ],
+        },
+		"Sash": {
+            "sps": {
+                "hp": 2,
+                "at": 0,
+                "df": 0,
+                "sa": 32,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Modest",
+			"ability": "Torrent",
+            "item": "Focus Sash",
+            "moves": [
+                "Sparkling Aria",
+                "Moonblast",
+                "Aqua Jet",
+                "Flip Turn",
             ],
         },
     },
+	"Mimikyu": {
+		"Swords Dance": {
+			"sps": {
+                "hp": 1,
+                "at": 32,
+                "df": 1,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+			"nature": "Adamant",
+			"item": "Spell Tag",
+			"moves": [
+				"Shadow Claw",
+				"Play Rough",
+				"Shadow Sneak",
+				"Drain Punch",
+			],
+		},
+	},
     "Kommo-o": {
         "Omni Boost Lefties Sweeper": {
             "sps": {
@@ -1016,7 +1267,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Corviknight": {
-        "Full Bulk TW Support": {
+        "PhysDef": {
             "sps": {
                 "hp": 32,
                 "at": 0,
@@ -1028,28 +1279,28 @@ var SETDEX_GEN10 = {
             "nature": "Impish",
             "item": "Leftovers",
             "moves": [
-                "Brave Bird",
-                "Body Press",
-                "Roost",
-                "Tailwind",
-            ],
-        },
-        "Bulk Up Sitrus": {
-            "sps": {
-                "hp": 20,
-                "at": 24,
-                "df": 3,
-                "sa": 0,
-                "sd": 1,
-                "sp": 18,
-            },
-            "nature": "Adamant",
-            "item": "Sitrus Berry",
-            "moves": [
-                "Brave Bird",
                 "Body Press",
                 "Iron Head",
-                "Bulk Up",
+                "Brave Bird",
+                "U-turn",
+            ],
+        },
+        "SpDef": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 2,
+                "sa": 0,
+                "sd": 32,
+                "sp": 0,
+            },
+            "nature": "Careful",
+            "item": "Leftovers",
+            "moves": [
+                "Body Press",
+                "Iron Head",
+                "Brave Bird",
+                "U-turn",
             ],
         },
     },
@@ -1093,7 +1344,7 @@ var SETDEX_GEN10 = {
                 "Aqua Jet",
             ],
         },
-        "Mystic Water Swift Swim": {
+        "Sash": {
             "sps": {
                 "hp": 2,
                 "at": 32,
@@ -1103,7 +1354,7 @@ var SETDEX_GEN10 = {
                 "sp": 32,
             },
             "nature": "Adamant",
-            "item": "Mystic Water",
+            "item": "Focus Sash",
             "moves": [
                 "Last Respects",
                 "Wave Crash",
@@ -1132,6 +1383,46 @@ var SETDEX_GEN10 = {
             ],
         },
     },
+	"Meowscarada": {
+		"Scarf": {
+			"sps": {
+				"hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Adamant",
+            "ability": "Protean",
+            "item": "Choice Scarf",
+            "moves": [
+                "Flower Trick",
+                "Knock Off",
+                "Triple Axel",
+                "U-turn",
+            ],
+		},
+		"Sash": {
+			"sps": {
+				"hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "ability": "Protean",
+            "item": "Focus Sash",
+            "moves": [
+                "Flower Trick",
+                "Knock Off",
+                "Triple Axel",
+                "U-turn",
+            ],
+		},
+	},
     "Maushold": {
         "Chople Support": {
             "sps": {
@@ -1199,9 +1490,9 @@ var SETDEX_GEN10 = {
             "sps": {
                 "hp": 1,
                 "at": 0,
-                "df": 0,
+                "df": 1,
                 "sa": 32,
-                "sd": 1,
+                "sd": 0,
                 "sp": 32,
             },
             "nature": "Timid",
@@ -1246,6 +1537,7 @@ var SETDEX_GEN10 = {
                 "sp": 0,
             },
             "nature": "Adamant",
+			"ability": "Supreme Overlord",
             "item": "Black Glasses",
             "moves": [
                 "Kowtow Cleave",
