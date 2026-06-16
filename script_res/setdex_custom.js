@@ -144,7 +144,7 @@ var savecustom = function (sidebarUsed = 0) {
         alert("Did you just try to stickbug the Damage Calc? lol");
         document.getElementById("customMon").value = "";
     }
-    else if (string.trim().indexOf('https://pokepast.es/') === 0) {
+    else if (string.trim().includes('pokepast.es/') && string.trim().indexOf('pokepast.es/') <= 8) {
         handleAjax(string.trim() + '/json')
             .done(function (data) {
                 var setGen = gen;
@@ -767,6 +767,9 @@ function runExportSet(pnum) {
     var set = new Pokemon($('#p' + pnum));
     var tempName = $('#p' + pnum + ' input.set-selector').val();
     set.name = tempName.substring(0, tempName.indexOf(" ("));
+    if($('#p' + pnum).find('.forme').is(':visible') && saveBaseAb['p' + pnum] != ''){
+        set.ability = saveBaseAb['p' + pnum];
+    }
     var exportText = exportset(set);
     Clipboard_CopyTo(exportText);
     //tempCSV();
