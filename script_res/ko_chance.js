@@ -1,4 +1,4 @@
-function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
+function getKOChanceText(damageIn, move, defender, field, isBadDreams, isItemlessAttacker = false) {
     if (isNaN(damageIn[0]) && !Array.isArray(damageIn[0])) {
         return 'something broke; please tell nerd of now';
     }
@@ -16,7 +16,10 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         }
         return 'No damage for you';
     }
-    var restoreHP = getRestoreHP(defender.item, defender.maxHP);
+    let preventsHeal = move.name == 'Psychic Noise';
+    let preventsHealItem = ['Knock Off', 'Psychic Noise'].includes(move.name) || (['Thief', 'Covet'].includes(move.name) && isItemlessAttacker);
+    let preventsRestoreHP = preventsHealItem || (defender.item.includes(' Berry') && ['Bug Bite', 'Pluck', 'Incinerate'].includes(move.name));
+    var restoreHP = getRestoreHP(defender.item, defender.maxHP, preventsRestoreHP);
     var isRipen = applyRipen(defender.ability == "Ripen", defender.item, restoreHP);
     if (isRipen) {
         restoreHP *= 2;
@@ -36,7 +39,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     var multihit = move.hits > 1 || (damageIn.length > 1 && Array.isArray(damageIn[0]));
 
     //convert each array to a dictionary here
-    var damage = damageArrToDict(damageIn, move.hits), damageNums = [];
+    var damage = damageArrToDict(damageIn, move.hits, defender.curHP, restoreHP, restoreThreshold), damageNums = [];
     if (tempHits) {
         move.hits = tempHits;
     }
@@ -57,6 +60,11 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         var effectiveness = typeChart['Rock'][defender.type1] * (defender.type2 ? typeChart['Rock'][defender.type2] : 1);
         hazards += Math.max(1, Math.floor(effectiveness * defender.maxHP / 8));
         hazardText.push('Stealth Rock');
+    }
+    if (field.isSteelsurge && defender.ability !== 'Magic Guard' && defender.item !== "Heavy-Duty Boots") {
+        var effectiveness = typeChart['Steel'][defender.type1] * (defender.type2 ? typeChart['Steel'][defender.type2] : 1);
+        hazards += Math.max(1, Math.floor(effectiveness * defender.maxHP / 8));
+        hazardText.push('Steelsurge');
     }
     if (pIsGrounded(defender, field) && defender.ability !== 'Magic Guard' && defender.item !== "Heavy-Duty Boots") {
         if (field.spikes === 1) {
@@ -80,111 +88,19 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
 
     var eot = 0;
     var eotText = [];
-    var maxChip = defender.isDynamax ? 0.5 : 1;
-    if (field.weather === 'Sun') {
-        if (defender.ability === 'Dry Skin' || defender.ability === 'Solar Power') {
-            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-            eotText.push(defender.ability + ' damage');
-        }
-    } else if (field.weather === 'Rain') {
-        if (defender.ability === 'Dry Skin') {
-            eot += Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-            eotText.push('Dry Skin recovery');
-        } else if (defender.ability === 'Rain Dish') {
-            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-            eotText.push('Rain Dish recovery');
-        }
-    } else if (field.weather === 'Sand') {
-        if (!(defender.hasType("Rock", "Ground", "Steel")) &&
-            ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].indexOf(defender.ability) === -1 &&
-            defender.item !== 'Safety Goggles') {
-            eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-            eotText.push('sandstorm damage');
-        }
-    } else if (field.weather === 'Hail') {
-        if (defender.ability === 'Ice Body') {
-            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-            eotText.push('Ice Body recovery');
-        } else if (!(defender.hasType('Ice')) &&
-            ['Magic Guard', 'Overcoat', 'Snow Cloak'].indexOf(defender.ability) === -1 &&
-            defender.item !== 'Safety Goggles') {
-            eot -= Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-            eotText.push('hail damage');
-        }
-    }
-    else if (field.weather === 'Snow' && defender.ability === 'Ice Body') {
-        eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-        eotText.push('Ice Body recovery');
-    }
-    if (defender.item === 'Leftovers') {
-        eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-        eotText.push('Leftovers recovery');
-    } else if (defender.item === 'Black Sludge') {
-        if (defender.hasType('Poison')) {
-            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-            eotText.push('Black Sludge recovery');
-        } else if (defender.ability !== 'Magic Guard' && defender.ability !== 'Klutz') {
-            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-            eotText.push('Black Sludge damage');
-        }
-    }
-    if (field.terrain === "Grassy") {
-        if (pIsGrounded(defender, field)) {
-            eot += Math.floor(Math.floor(defender.maxHP / 16) * maxChip);
-            eotText.push('Grassy Terrain recovery');
-        }
-    }
     var toxicCounter = 0;
-    if (defender.status === 'Poisoned') {
-        if (defender.ability === 'Poison Heal') {
-            eot += Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-            eotText.push('Poison Heal');
-        } else if (defender.ability !== 'Magic Guard') {
-            eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-            eotText.push('poison damage');
-        }
-    } else if (defender.status === 'Badly Poisoned') {
-        if (defender.ability === 'Poison Heal') {
-            eot += Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-            eotText.push('Poison Heal');
-        } else if (defender.ability !== 'Magic Guard') {
-            eotText.push('toxic damage');
-            toxicCounter = defender.toxicCounter;
-        }
-    } else if (defender.status === 'Burned') {
-        var burnDmgDivider = (gen >= 7) ? 16 : 8;
-        if (defender.ability === 'Heatproof') {
-            eot -= Math.floor(Math.floor(defender.maxHP / burnDmgDivider / 2) * maxChip);
-            eotText.push('reduced burn damage');
-        } else if (defender.ability !== 'Magic Guard') {
-            eot -= Math.floor(Math.floor(defender.maxHP / burnDmgDivider) * maxChip);
-            eotText.push('burn damage');
-        }
-    } else if ((defender.status === 'Asleep' || defender.ability === 'Comatose') && isBadDreams && defender.ability !== 'Magic Guard') {
-        eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-        eotText.push('Bad Dreams');
-    }
-
-    if (field.isSeaFire && defender.ability !== 'Magic Guard' && !(defender.hasType("Fire"))) {
-        eot -= Math.floor(Math.floor(defender.maxHP / 8) * maxChip);
-        eotText.push('Sea of Fire damage');
-    }
-
-    if (field.isGMaxField && defender.ability !== 'Magic Guard') {
-        eot -= Math.floor(Math.floor(defender.maxHP / 6) * maxChip);
-        eotText.push('G-Max field damage');
-    }
-
-    if (field.isSaltCure && defender.ability !== 'Magic Guard') {
-        if (!(defender.hasType("Water", "Steel"))) {
-            let saltMult = gen == 10 ? 16 : 8;
-            eot -= Math.floor(Math.floor(defender.maxHP / saltMult) * maxChip);
-            eotText.push('Salt Cure damage');
-        }
-        else {
-            let saltMult = gen == 10 ? 8 : 4;
-            eot -= Math.floor(Math.floor(defender.maxHP / saltMult) * maxChip);
-            eotText.push('extra Salt Cure damage');
+    var eotDict = getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, preventsHealItem, preventsRestoreHP);
+    let maxChip = defender.isDynamax ? 0.5 : 1;
+    for (eotType in eotDict) {
+        if (eotDict[eotType].val != 0) {
+            if (eotDict[eotType].isToxic) {
+                toxicCounter = eotDict[eotType].val;
+                eot -= Math.floor(Math.floor(toxicCounter * defender.maxHP / 16) * maxChip);
+            }
+            else {
+                eot += eotDict[eotType].val;
+            }
+            eotText.push(eotDict[eotType].text);
         }
     }
 
@@ -204,7 +120,7 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         return percNumText + '% chance to OHKO' + afterText;
     }
 
-    if (restoreHP && move.name !== 'Knock Off' && !(defender.item.includes(' Berry') && ['Bug Bite', 'Pluck', 'Incinerate'].includes(move.name))) {
+    if (restoreHP) {
         let eotTemp = '';
         if (isRipen) eotTemp += 'Ripen ';
         else if (isGluttony) eotTemp += 'Gluttony ';
@@ -212,11 +128,12 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
         eotText.push(eotTemp);
     }
 
-    c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, 1, defender.maxHP, toxicCounter, restoreHP, restoreThreshold);
+    c = getKOChance(damage, multihit, defender.curHP - hazards, eot, 1, defender.maxHP, toxicCounter, restoreHP, restoreThreshold, maxChip, eotDict);
     afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
     if (c === 1) {
         return 'guaranteed OHKO' + afterText;
-    } else if (c > 0) {
+    }
+    else if (c > 0) {
         if (c < 0.0001)
             percNumText = '<0.01';
         else if (c > 0.9999)
@@ -228,10 +145,11 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
 
     var i;
     for (i = 2; i <= 4; i++) {
-        c = getKOChance(damage, multihit, defender.curHP - hazards + eot, eot, i, defender.maxHP, toxicCounter, restoreHP, restoreThreshold);
+        c = getKOChance(damage, multihit, defender.curHP - hazards, eot, i, defender.maxHP, toxicCounter, restoreHP, restoreThreshold, maxChip, eotDict);
         if (c === 1) {
             return 'guaranteed ' + i + 'HKO' + afterText;
-        } else if (c > 0) {
+        }
+        else if (c > 0) {
             if (c < 0.0001)
                 percNumText = '<0.01';
             else if (c > 0.9999)
@@ -245,7 +163,8 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     for (i = 5; i <= 9; i++) {
         if (predictTotal(damageNums[0], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, restoreHP, restoreThreshold) >= defender.curHP - hazards) {
             return 'guaranteed ' + i + 'HKO' + afterText;
-        } else if (predictTotal(damageNums[damageNums.length - 1], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, restoreHP, restoreThreshold) >= defender.curHP - hazards) {
+        }
+        else if (predictTotal(damageNums[damageNums.length - 1], eot, i, toxicCounter, defender.curHP - hazards, defender.maxHP, restoreHP, restoreThreshold) >= defender.curHP - hazards) {
             return 'possible ' + i + 'HKO' + afterText;
         }
     }
@@ -253,29 +172,33 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams) {
     return 'possibly the worst move ever';
 }
 
-function damageArrToDict(damageArr, hits) {
-    var pivotSpread = {}, addedSpread = {}, tempSpread = {}, totalSpread = {};
+function damageArrToDict(damageArr, hits, currHP, restoreHP, restoreThreshold) {
+    var pivotSpread = {}, addedSpread = {}, tempSpread = {};
     var tempKey = 0, is2dArr = Array.isArray(damageArr[0]), damageArrL = damageArr.length;
-    var divisor = Math.pow(gen >= 3 ? 16 : 39, hits);
     if (!(is2dArr && damageArrL > 1)) {
-        pivotSpread = arrayToInstanceDict(damageArr);
+        pivotSpread = arrayToProbabilityDict(damageArr, currHP, restoreHP, restoreThreshold);
         addedSpread = pivotSpread;
     }
     else {
-        pivotSpread = arrayToInstanceDict(damageArr[1]);
-        addedSpread = arrayToInstanceDict(damageArr[0]);
+        pivotSpread = arrayToProbabilityDict(damageArr[1], currHP, restoreHP, restoreThreshold);
+        addedSpread = arrayToProbabilityDict(damageArr[0], currHP, restoreHP, restoreThreshold);
     }
     for (var i = 0; i < hits - 1; i++) {
         if (is2dArr && i != 0) {
             //this if-else statement assumes that, if the number of 2D arrays is less than the number of hits, all of the remaining hits use the last array calculated
             if (damageArrL - 1 >= i + 1)
-                pivotSpread = arrayToInstanceDict(damageArr[i + 1]);
+                pivotSpread = arrayToProbabilityDict(damageArr[i + 1], currHP, restoreHP, restoreThreshold);
             else
-                pivotSpread = arrayToInstanceDict(damageArr[damageArrL - 1]);
+                pivotSpread = arrayToProbabilityDict(damageArr[damageArrL - 1], currHP, restoreHP, restoreThreshold);
         }
-        for (pivotNum in pivotSpread) {
-            for (addedNum in addedSpread) {
-                tempKey = parseInt(pivotNum) + parseInt(addedNum);
+        for (addedNum in addedSpread) {
+            let tempAddedNum = parseInt(addedNum);
+            for (pivotNum in pivotSpread) {
+                let tempPivotNum = parseInt(pivotNum);
+                tempKey = tempPivotNum + tempAddedNum;
+                if (checkThresholdCriteria(currHP, tempPivotNum, restoreHP, restoreThreshold, addedNum)) {
+                    tempKey = tempKey + '*';
+                }
                 if (tempKey in tempSpread)
                     tempSpread[tempKey] = tempSpread[tempKey] + (pivotSpread[pivotNum] * addedSpread[addedNum]);
                 else
@@ -285,80 +208,136 @@ function damageArrToDict(damageArr, hits) {
         addedSpread = sortByKeys(tempSpread);
         tempSpread = {};
     }
-    for (finalNum in addedSpread) {
-        totalSpread[finalNum] = addedSpread[finalNum] / divisor;
-    }
-    return totalSpread;
+    return addedSpread;
 }
 
-function arrayToInstanceDict(arr) {
-    var returnArr = {};
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] in returnArr)
-            returnArr[arr[i]] = returnArr[arr[i]] + 1;
+function arrayToProbabilityDict(arr, currHP, restoreHP, restoreThreshold) {
+    let returnArr = {};
+    let instanceUnit = 1 / (gen >= 3 ? 16 : 39);
+    for (let i = 0; i < arr.length; i++) {
+        let returnArrKey = arr[i];
+        if (checkThresholdCriteria(currHP, returnArrKey, restoreHP, restoreThreshold)) {
+            returnArrKey = returnArrKey + '*';
+        }
+        if (returnArrKey in returnArr)
+            returnArr[returnArrKey] = returnArr[returnArrKey] + instanceUnit;
         else
-            returnArr[arr[i]] = 1;
+            returnArr[returnArrKey] = instanceUnit;
     }
     return returnArr;
+}
+
+function numericSortParseInt(a, b) {
+    return parseInt(a) - parseInt(b);
 }
 
 function sortByKeys(dict) {
     var sorted = [], tempDict = {};
 
-    for (key in dict)
-        sorted[sorted.length] = key;
-    sorted.sort(numericSort);
-
-    for (var i = 0; i < sorted.length; i++)
+    sorted = Object.keys(dict).sort(numericSortParseInt);
+    for (let i = 0; i < sorted.length; i++)
         tempDict[sorted[i]] = dict[sorted[i]];
 
     return tempDict;
 }
 
-function getKOChance(damage, multihit, hp, eot, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold) {
-    var damageKeys = Object.keys(damage);
-    var minDamage = parseInt(damageKeys[0]);
-    var maxDamage = parseInt(damageKeys[damageKeys.length - 1]);
+function getKOChance(damage, multihit, hp, eotSum, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold, maxChip = 1, eotDict = {}) {
+    var damageKeys = Object.keys(damage).sort(numericSortParseInt);
+    let firstDamage = damageKeys[0];
+    let lastDamage = damageKeys[damageKeys.length - 1];
+    var minDamage = parseInt(firstDamage);
+    var maxDamage = parseInt(lastDamage);
+    var activateHealItem = false;
+    let tempSpread = {};
     if (timesUsed === 1) {
-        if ((!multihit || !restoreHP) && maxDamage < hp) {
+        if (((!multihit && lastDamage[lastDamage.length - 1] != '*') || !restoreHP) && maxDamage - eotSum < hp) {
             return 0;
         }
-        else if (multihit && restoreHP && maxDamage < hp + restoreHP) {
+        else if ((multihit || lastDamage[lastDamage.length - 1] == '*') && restoreHP && maxDamage - eotSum < hp + restoreHP) {
             return 0;
         }
-
-        var returnChance = 1;
-        for (damageNum in damage) {
-            damageNum = parseInt(damageNum);
-            if ((!multihit || !restoreHP) && damageNum >= hp) {
-                return returnChance;
-            }
-            else if (multihit && restoreHP && damageNum >= hp + restoreHP) {
-                return returnChance;
-            }
-            returnChance -= damage[damageNum];
+        else if (((!multihit && firstDamage[firstDamage.length - 1] != '*') || !restoreHP) && minDamage - eotSum >= hp) {
+            return 1;
+        }
+        else if ((multihit || firstDamage[firstDamage.length - 1] == '*') && restoreHP && minDamage - eotSum >= hp + restoreHP) {
+            return 1;
         }
     }
-    var sum = verifyKOChance(damage, hp, eot, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold);
+    for (damageNum of damageKeys) {
+        let tempDamageNum = parseInt(damageNum);
+        activateHealItem = damageNum[damageNum.length - 1] == '*';
+        if (eotSum) {
+            [tempDamageNum, activateHealItem] = eotProcess(eotDict, tempDamageNum, toxicCounter, hp, restoreHP, restoreThreshold, maxHP, activateHealItem, maxChip);
+        }
+        if (activateHealItem) {
+            tempDamageNum = tempDamageNum + '*';
+        }
+        if (tempDamageNum in tempSpread)
+            tempSpread[tempDamageNum] = tempSpread[tempDamageNum] + damage[damageNum];
+        else
+            tempSpread[tempDamageNum] = damage[damageNum];
+    }
+    toxicCounter++;
+    if (timesUsed == 1) {
+        let tempSpreadKeysSorted = Object.keys(tempSpread).sort(numericSortParseInt);
+        if (parseInt(tempSpreadKeysSorted[tempSpreadKeysSorted.length - 1]) >= hp) {
+            let earlyTotalSpread = {};
+            let returnSum = 0, probabilitySum = 0;
+            for (spreadNum of tempSpreadKeysSorted) {
+                let earlyItemConsumed = spreadNum[spreadNum.length - 1] == '*';
+                let earlyFinalNum = parseInt(spreadNum);
+                if (earlyItemConsumed) {
+                    earlyFinalNum -= restoreHP;
+                    if (hp - earlyFinalNum > maxHP) {
+                        earlyFinalNum = hp - maxHP;    //conditional always fails if earlyFinalNum >= 0
+                    }
+                }
+                if (earlyItemConsumed && earlyFinalNum in earlyTotalSpread) {
+                    earlyTotalSpread[earlyFinalNum] += tempSpread[spreadNum];
+                }
+                else {
+                    earlyTotalSpread[earlyFinalNum] = tempSpread[spreadNum];
+                }
+            }
+            for (finalNum in earlyTotalSpread) {
+                if (parseInt(finalNum) >= hp)
+                    returnSum += earlyTotalSpread[finalNum];
+                probabilitySum += earlyTotalSpread[finalNum];
+            }
+            if (returnSum === probabilitySum)
+                returnSum = 1;
+            return returnSum;
+        }
+        return 0;
+    }
+    tempSpread = sortByKeys(tempSpread);
+    var sum = verifyKOChance(damage, hp, eotSum, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold, eotDict, maxChip, tempSpread);
     return sum;
 }
 
-function verifyKOChance(damage, targetHP, eot, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold) {
+function verifyKOChance(damage, targetHP, eotSum, timesUsed, maxHP, toxicCounter, restoreHP, restoreThreshold, eotDict, maxChip, inSpread = damage) {
     var pivotSpread = {}, addedSpread = {}, tempSpread = {}, totalSpread = {};
     var tempKey = 0, finalNum = 0;
+    var returnSum = 0, probabilitySum = 0;
+    let activateHealItem = false;
     pivotSpread = damage;
-    addedSpread = pivotSpread;
-    toxicCounter++;
+    addedSpread = inSpread;
     for (var i = 0; i < timesUsed - 1; i++) {
-        for (pivotNum in pivotSpread) {
-            for (addedNum in addedSpread) {
-                tempKey = parseInt(pivotNum) + parseInt(addedNum) - eot;
-                if (toxicCounter > 1) {
-                    tempKey += Math.floor(toxicCounter * maxHP / 16);
-                    if (i == 0)
-                        tempKey += Math.floor((toxicCounter - 1) * maxHP / 16);
-                    toxicCounter++;
+        for (addedNum in addedSpread) {
+            let tempAddedNum = parseInt(addedNum);
+            for (pivotNum in pivotSpread) {
+                let tempPivotNum = parseInt(pivotNum);
+                tempKey = tempPivotNum + tempAddedNum;
+                if (checkThresholdCriteria(targetHP, tempPivotNum, restoreHP, restoreThreshold, addedNum)) {
+                    activateHealItem = true;
                 }
+                if (eotSum) {
+                    [tempKey, activateHealItem] = eotProcess(eotDict, tempKey, toxicCounter, targetHP, restoreHP, restoreThreshold, maxHP, activateHealItem, maxChip);
+                }
+                if (activateHealItem) {
+                    tempKey = tempKey + '*';
+                }
+                activateHealItem = false;
 
                 if (tempKey in tempSpread)
                     tempSpread[tempKey] = tempSpread[tempKey] + (pivotSpread[pivotNum] * addedSpread[addedNum]);
@@ -370,16 +349,21 @@ function verifyKOChance(damage, targetHP, eot, timesUsed, maxHP, toxicCounter, r
         tempSpread = {};
     }
     for (spreadNum in addedSpread) {
+        let itemConsumed = spreadNum[spreadNum.length - 1] == '*';
         finalNum = parseInt(spreadNum);
-        if (timesUsed > 1) {
-            if (restoreHP && (finalNum >= restoreThreshold)) {
-                //finalNum = Math.min(maxHP, finalNum - restoreHP);     //unsure why Math.min was used
-                finalNum -= restoreHP;
+        if (itemConsumed && timesUsed > 1) {
+            finalNum -= restoreHP;
+            if (targetHP - finalNum > maxHP) {
+                finalNum = targetHP - maxHP;    //conditional always fails if finalNum >= 0
             }
         }
-        totalSpread[finalNum] = addedSpread[spreadNum];
+        if (itemConsumed && finalNum in totalSpread) {
+            totalSpread[finalNum] += addedSpread[spreadNum];
+        }
+        else {
+            totalSpread[finalNum] = addedSpread[spreadNum];
+        }
     }
-    var returnSum = 0, probabilitySum = 0;
     for (finalNum in totalSpread) {
         if (finalNum >= targetHP)
             returnSum += totalSpread[finalNum];
@@ -395,8 +379,10 @@ function predictTotal(damage, eot, timesUsed, toxicCounter, hp, maxHP, restoreHP
     for (var i = 0; i < timesUsed; i++) {
         total += damage;
         if ((hp - total <= restoreThreshold) && restoreHP) {
-            //total = Math.min(maxHP, total - restoreHP);       //unsure why Math.min was used
             total -= restoreHP;
+            if (hp - total > maxHP) {
+                total = hp - maxHP;
+            }
             restoreHP = 0;
         }
         if (i < timesUsed - 1) {
@@ -428,13 +414,14 @@ function serializeText(arr) {
     }
 }
 
-function getRestoreHP(item, maxHP) {
-    return ["Berry", "Oran Berry"].includes(item) ? 10 :
-        item == "Berry Juice" ? 20 :
-            ["Gold Berry", "Sitrus Berry"].includes(item) && gen <= 3 ? 30 :
-                item == "Sitrus Berry" ? Math.floor(maxHP / 4) :    //Enigma Berry can also apply if the attack is super effective
-                    ["Figy Berry", "Iapapa Berry", "Wiki Berry", "Aguav Berry", "Mago Berry"].includes(item) ? Math.floor(maxHP / (gen <= 6 ? 8 : gen == 7 ? 2 : 3)) :
-                        0;
+function getRestoreHP(item, maxHP, preventsRestoreHP) {
+    return preventsRestoreHP ? 0 :
+        ["Berry", "Oran Berry"].includes(item) ? 10 :
+            item == "Berry Juice" ? 20 :
+                ["Gold Berry", "Sitrus Berry"].includes(item) && gen <= 3 ? 30 :
+                    item == "Sitrus Berry" ? Math.floor(maxHP / 4) :    //Enigma Berry can also apply if the attack is super effective
+                        ["Figy Berry", "Iapapa Berry", "Wiki Berry", "Aguav Berry", "Mago Berry"].includes(item) ? Math.floor(maxHP / (gen <= 6 ? 8 : gen == 7 ? 2 : 3)) :
+                            0;
 }
 
 function applyRipen(isRipen, item, restoreHP) {
@@ -473,4 +460,239 @@ function handleMultiHitGen1(damage, hits) {
         allHitsDamage.push(firstHit[randIndex] + laterHits[randIndex] * (hits - 1));
     }
     return allHitsDamage;
+}
+
+function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, preventsHealItem, preventsRestoreHP) {
+        //IMPORTANT: THIS ISN'T THE ORDER FOR GEN 3 AND BEFORE. THIS IS WHAT I FOUND TO BE GEN 3 ORDER:
+        //Wish, Weather, Ingrain, Sitrus/Oran/Berry Juice healing, Leftovers, burn, Leech Seed, Nightmare, Curse
+        //THE SITRUS/ORAN/BERRY JUICE HEALING IS WHY preventsRestoreHP IS PASSED IN
+    let weatherEffects = 0,
+        //wish = 0,
+        seaOfFire = 0,
+        gMaxField = 0,
+        grassyTerrain = 0,
+        leftoversBlackSludge = 0,
+        //aquaRing = 0,
+        //ingrain = 0,
+        //leechSeed = 0,
+        poisonedPoisonHeal = 0,
+        toxicCounter = 0,
+        burn = 0,
+        //nightmare = 0,
+        //ghostCurse = 0,
+        saltCure = 0,
+        //bindingMove = 0,
+        badDreams = 0;
+        //stickyBarb = 0,
+        //harvest = 0;
+    let weatherEffectsText = '',
+        leftoversBlackSludgeText = '',
+        poisonedPoisonHealText = '',
+        burnedText = '',
+        saltCureText = '';
+    let isToxicDamage = false;
+
+    //EOT Order
+    //1. Weather Effects
+    if (field.weather == 'Sun') {
+        if (['Dry Skin', 'Solar Power'].includes(defender.ability)) {
+            weatherEffects -= Math.floor(defender.maxHP / 8);
+            weatherEffectsText = defender.ability + ' damage';
+        }
+    }
+    else if (field.weather == 'Rain') {
+        if (!preventsHeal) {
+            if (defender.ability === 'Dry Skin') {
+                weatherEffects += Math.floor(defender.maxHP / 8);
+                weatherEffectsText = 'Dry Skin recovery';
+            }
+            else if (defender.ability === 'Rain Dish') {
+                weatherEffects += Math.floor(defender.maxHP / 16);
+                weatherEffectsText = 'Rain Dish recovery';
+            }
+        }
+    }
+    else if (field.weather == 'Sand') {
+        if (!(defender.hasType("Rock", "Ground", "Steel")) && !(['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].includes(defender.ability)) && defender.item !== 'Safety Goggles') {
+            weatherEffects -= Math.floor(defender.maxHP / 16);
+            weatherEffectsText = 'sandstorm damage';
+        }
+    }
+    else if (field.weather == 'Hail') {
+        if (defender.ability === 'Ice Body' && !preventsHeal) {
+            weatherEffects += Math.floor(defender.maxHP / 16);
+            weatherEffectsText = 'Ice Body recovery';
+        }
+        else if (!(defender.hasType('Ice')) && !(['Magic Guard', 'Overcoat', 'Snow Cloak'].includes(defender.ability)) && defender.item !== 'Safety Goggles') {
+            weatherEffects -= Math.floor(defender.maxHP / 16);
+            weatherEffectsText = 'hail damage';
+        }
+    }
+    else if (field.weather === 'Snow' && defender.ability === 'Ice Body' && !preventsHeal) {
+        weatherEffects += Math.floor(defender.maxHP / 16);
+        weatherEffectsText = 'Ice Body recovery';
+    }
+
+    //2. Future Sight / Doom Desire (not yet implemented as such)
+    //3. Wish (no plans for implementation)
+    //4. Speed dependant block
+    //a. Sea of Fire, G-Max Vinelash / Wildfire / Cannonade / Volcalith
+    if (field.isSeaFire && defender.ability !== 'Magic Guard' && !(defender.hasType("Fire"))) {
+        seaOfFire -= Math.floor(defender.maxHP / 8);
+    }
+    if (field.isGMaxField && defender.ability !== 'Magic Guard') {
+        gMaxField -= Math.floor(defender.maxHP / 6);
+    }
+    //b. Grassy Terrain
+    if (field.terrain === "Grassy") {
+        if (!preventsHeal && pIsGrounded(defender, field)) {
+            grassyTerrain += Math.floor(defender.maxHP / 16);
+        }
+    }
+    //c. Hydration (not implemented, not that it's relevant within this block)
+    //d. Leftovers / Black Sludge
+    if (defender.item === 'Leftovers' && !preventsHealItem) {
+        leftoversBlackSludge += Math.floor(defender.maxHP / 16);
+        leftoversBlackSludgeText = 'Leftovers recovery';
+    }
+    else if (defender.item === 'Black Sludge') {
+        if (defender.hasType('Poison') && !preventsHealItem) {
+            leftoversBlackSludge += Math.floor(defender.maxHP / 16);
+            leftoversBlackSludgeText = 'Black Sludge recovery';
+        }
+        else if (defender.ability !== 'Magic Guard' && defender.ability !== 'Klutz') {
+            leftoversBlackSludge -= Math.floor(defender.maxHP / 8);
+            leftoversBlackSludgeText = 'Black Sludge damage';
+        }
+    }
+
+    //5. Aqua Ring (not implemented)
+    //6. Ingrain (not implemented)
+    //7. Leech Seed (not implemented)
+    //8. Poisoned / Badly Poisoned / Poison Heal
+    if (defender.status === 'Poisoned') {
+        if (defender.ability === 'Poison Heal' && !preventsHeal) {
+            poisonedPoisonHeal += Math.floor(defender.maxHP / 8);
+            poisonedPoisonHealText = 'Poison Heal';
+        }
+        else if (defender.ability !== 'Magic Guard') {
+            poisonedPoisonHeal -= Math.floor(defender.maxHP / 8);
+            poisonedPoisonHealText = 'poison damage';
+        }
+    }
+    else if (defender.status === 'Badly Poisoned') {
+        if (defender.ability === 'Poison Heal' && !preventsHeal) {
+            poisonedPoisonHeal += Math.floor(defender.maxHP / 8);
+            poisonedPoisonHealText = 'Poison Heal';
+        }
+        else if (defender.ability !== 'Magic Guard') {
+            toxicCounter = defender.toxicCounter;
+            poisonedPoisonHealText = 'toxic damage';
+            isToxicDamage = true;
+        }
+    }
+    //9. Burned
+    else if (defender.status === 'Burned') {
+        var burnDmgDivider = (gen >= 7) ? 16 : 8;
+        if (defender.ability === 'Heatproof') {
+            burn -= Math.floor(defender.maxHP / burnDmgDivider / 2);
+            burnedText = 'reduced burn damage';
+        }
+        else if (defender.ability !== 'Magic Guard') {
+            burn -= Math.floor(defender.maxHP / burnDmgDivider);
+            burnedText = 'burn damage';
+        }
+    }
+
+    //10. Nightmare (not implemented)
+    //11. Curse (not implemented)
+    //12. Salt Cure
+    if (field.isSaltCure && defender.ability !== 'Magic Guard') {
+        if (!(defender.hasType("Water", "Steel"))) {
+            let saltMult = gen == 10 ? 16 : 8;
+            saltCure -= Math.floor(defender.maxHP / saltMult);
+            saltCureText = 'Salt Cure damage';
+        }
+        else {
+            let saltMult = gen == 10 ? 8 : 4;
+            saltCure -= Math.floor(defender.maxHP / saltMult);
+            saltCureText = 'extra Salt Cure damage';
+        }
+    }
+
+    //13. Binding moves (not implemented)
+    //14. Bad Dreams
+    if ((defender.status === 'Asleep' || defender.ability === 'Comatose') && isBadDreams && defender.ability !== 'Magic Guard') {
+        badDreams -= Math.floor(defender.maxHP / 8);
+    }
+
+    //15. Sticky Barb (not implemented)
+    //16. Harvest (not implemented)
+
+    let maxChip = defender.isDynamax ? 0.5 : 1;
+    return {
+        weatherEffects: {
+            val: Math.floor(weatherEffects * maxChip),
+            text: weatherEffectsText
+        },
+        seaOfFire: {
+            val: Math.floor(seaOfFire * maxChip),
+            text: 'Sea of Fire damage'
+        },
+        gMaxField: {
+            val: Math.floor(gMaxField * maxChip),
+            text: 'G-Max field damage'
+        },
+        grassyTerrain: {
+            val: Math.floor(grassyTerrain * maxChip),
+            text: 'Grassy Terrain recovery'
+        },
+        leftoversBlackSludge: {
+            val: Math.floor(leftoversBlackSludge * maxChip),
+            text: leftoversBlackSludgeText
+        },
+        poisonedToxicPoisonHeal: {
+            val: isToxicDamage ? toxicCounter : Math.floor(poisonedPoisonHeal * maxChip),
+            text: poisonedPoisonHealText,
+            isToxic: isToxicDamage
+        },
+        burned: {
+            val: Math.floor(burn * maxChip),
+            text: burnedText
+        },
+        saltCure: {
+            val: Math.floor(saltCure * maxChip),
+            text: saltCureText
+        },
+        badDreams: {
+            val: Math.floor(badDreams * maxChip),
+            text: 'Bad Dreams'
+        },
+    };
+}
+
+function checkThresholdCriteria(currHP, roll, restoreHP, restoreThreshold, prevCalcRolls = 0) {
+    let usedPrevCalcRolls = parseInt(prevCalcRolls);
+    return isNaN(prevCalcRolls) || (restoreHP && currHP - usedPrevCalcRolls - roll <= restoreThreshold && currHP - usedPrevCalcRolls - roll > 0);
+}
+
+function eotProcess(eotDict, damageRoll, toxicCounter, targetHP, restoreHP, restoreThreshold, maxHP, activateHealItem, maxChip) {
+    for (eotType in eotDict) {
+        if (eotDict[eotType].val != 0) {
+            let eotApply = 0;
+            if (!eotDict[eotType].isToxic) {
+                eotApply = eotDict[eotType].val;
+            }
+            else {
+                eotApply = Math.floor(Math.floor(toxicCounter * maxHP / 16) * maxChip) * -1;
+            }
+            if (!activateHealItem && checkThresholdCriteria(targetHP, eotApply * -1, restoreHP, restoreThreshold, damageRoll)) {
+                activateHealItem = true;
+            }
+            if ((activateHealItem && targetHP - damageRoll + restoreHP > 0) || (!activateHealItem && targetHP - damageRoll > 0)) {
+                damageRoll -= eotApply;     //Currently assumes to always check for a KO before applying the eot damage/healing, consider changing to allow for more lefties healing turns
+            }
+        }
+    }
+    return [damageRoll, activateHealItem];
 }
