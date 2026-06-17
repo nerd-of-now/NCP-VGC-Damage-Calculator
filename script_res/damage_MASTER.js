@@ -1951,7 +1951,8 @@ function calcAtMods(move, attacker, defAbility, description, field) {
         || (attacker.ability === "Gorilla Tactics" && move.category === "Physical" && !attacker.isDynamax)
         || (["Plus", "Minus"].indexOf(attacker.ability) !== -1 && attacker.abilityOn)
         || (attacker.ability === "Sharpness" && move.isSlice)
-        || (attacker.ability === "Rocky Payload" && move.type === "Rock")) {
+        || (attacker.ability === "Rocky Payload" && move.type === "Rock")
+        || (attacker.ability === "Fire Mane" && move.type === "Fire")) {
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
     }

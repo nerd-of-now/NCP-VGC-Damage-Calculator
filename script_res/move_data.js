@@ -5764,7 +5764,7 @@ var MOVES_CHAMPIONS = {};
     'Aqua Step', 'Aqua Tail', 'Armor Cannon', 'Aromatic Mist', 'Assurance', 'Attract', 'Aura Sphere', 'Aura Wheel', 'Aurora Veil',
     'Avalanche', 'Axe Kick', 'Baby-Doll Eyes', 'Baneful Bunker', 'Baton Pass', 'Beak Blast', 'Beat Up', 'Belch',
     'Belly Drum', 'Bind', 'Bite', 'Bitter Blade', 'Bitter Malice', 'Blast Burn', 'Blaze Kick', 'Blizzard',
-    'Block', 'Body Press', 'Body Slam', 'Bone Rush', 'Boomburst', 'Bounce', 'Brave Bird', 'Breaking Swipe', 'Brick Break',
+    'Block', 'Body Press', 'Body Slam', 'Bone Rush', 'Boomburst', 'Bounce', 'Brave Bird', 'Breaking Swipe', 'Brick Break', 'Brutal Swing',
     'Bug Bite', 'Bug Buzz', 'Bulk Up', 'Bulldoze', 'Bullet Punch', 'Bullet Seed', 'Burn Up', 'Burning Jealousy', 'Calm Mind',
     'Ceaseless Edge', 'Charge', 'Charge Beam', 'Charm', 'Chilling Water', 'Chilly Reception', 'Circle Throw', 'Clanging Scales',
     'Clangorous Soul', 'Clear Smog', 'Close Combat', 'Coaching', 'Coil', 'Comeuppance', 'Confuse Ray', 'Copycat',
@@ -5819,5 +5819,7 @@ var MOVES_CHAMPIONS = {};
     'Wide Guard', 'Wild Charge', 'Will-O-Wisp', 'Wish', 'Wonder Room', 'Wood Hammer', 'Worry Seed', 'Wrap', 'X-Scissor', 'Yawn', 'Zap Cannon', 'Zen Headbutt',
     //Has move descriptions but isn't learned by any Pokemon at launch
     //'Double Shock', 'Milk Drink', 'Power Shift', 'Revival Blessing', 'Soft-Boiled', 'Spore',
+    //Moves available starting Regulation M-B
+    'Barb Barrage', 'Make It Rain', 'No Retreat', 'Rage Fist', 'Spirit Break', 'Topsy-Turvy',
 ].forEach(e => MOVES_CHAMPIONS[e] = MOVES_CHAMPIONS_NATDEX[e]);
 //Spit Up is commented out because it hasn't been implemented

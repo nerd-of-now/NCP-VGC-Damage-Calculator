@@ -468,7 +468,7 @@ var ITEMS_ZA = [
     'Latiasite', 'Latiosite', 'Roseli Berry', 'Swampertite', 'Sceptilite', 'Sablenite', 'Altarianite', 'Galladite', 'Audinite', 'Metagrossite', 'Sharpedonite', 'Slowbronite',
     'Steelixite', 'Pidgeotite', 'Glalitite', 'Diancite', 'Cameruptite', 'Lopunnite', 'Salamencite', 'Beedrillite', 'Fairy Feather', 'Clefablite', 'Victreebelite', 'Starminite',
     'Dragoninite', 'Meganiumite', 'Feraligite', 'Skarmorite', 'Froslassite', 'Heatranite', 'Darkranite', 'Emboarite', 'Excadrite', 'Scolipite', 'Scraftinite', 'Eelektrossite',
-    'Chandelurite', 'Chesnaughtite', 'Delphoxite', 'Greninjite', 'Pyroarite', 'Floettite', 'Malamarite', 'Barbarcite', 'Dragalgite', 'Hawluchanite', 'Zygardite', 'Drampanite',
+    'Chandelurite', 'Chesnaughtite', 'Delphoxite', 'Greninjite', 'Pyroarite', 'Floettite', 'Malamarite', 'Barbaracite', 'Dragalgite', 'Hawluchanite', 'Zygardite', 'Drampanite',
     'Zeraorite', 'Falinksite', 'Raichunite X', 'Raichunite Y', 'Chimechite', 'Absolite Z', 'Staraptite', 'Garchompite Z', 'Lucarionite Z', 'Golurkite', 'Meowsticite',
     'Crabominite', 'Golisopite', 'Magearnite', 'Scovillainite', 'Baxcalibrite', 'Tatsugirinite', 'Glimmoranite'
 ];
@@ -485,7 +485,12 @@ var ITEMS_CHAMPIONS = [
     'Roseli Berry', 'Steelixite', 'Pidgeotite', 'Glalitite',
     'Sablenite', 'Altarianite', 'Galladite', 'Audinite', 'Sharpedonite', 'Slowbronite', 'Cameruptite', 'Lopunnite', 'Beedrillite', 'Fairy Feather', 'Clefablite', 'Victreebelite', 'Starminite',
     'Dragoninite', 'Meganiumite', 'Feraligite', 'Skarmorite', 'Froslassite', 'Emboarite', 'Excadrite', 'Chandelurite', 'Chesnaughtite', 'Delphoxite', 'Greninjite', 'Floettite', 'Hawluchanite',
-    'Drampanite', 'Chimechite', 'Golurkite', 'Meowsticite', 'Crabominite', 'Scovillainite', 'Glimmoranite'
+    'Drampanite', 'Chimechite', 'Golurkite', 'Meowsticite', 'Crabominite', 'Scovillainite', 'Glimmoranite',
+    //Regulation M-B additions
+    'Big Root', 'Damp Rock', 'Expert Belt', 'Heat Rock', 'Icy Rock', 'Iron Ball', 'Life Orb', 'Light Clay', 'Metronome', 'Muscle Band',
+    'Shed Shell', 'Smooth Rock', 'Wide Lens', 'Wise Glasses', 'Zoom Lens',
+    'Raichunite X', 'Raichunite Y', 'Falinksite', 'Staraptite', 'Blazikenite', 'Mawilite', 'Swampertite', 'Sceptilite', 'Metagrossite',
+    'Scolipite', 'Scraftinite', 'Eelektrossite', 'Pyroarite', 'Malamarite', 'Barbaracite', 'Dragalgite',
 ];
 
 function getItemBoostType(item) {
@@ -855,7 +860,7 @@ var MEGA_STONE_USER_LOOKUP = {
     'Raichunite Y': 'Raichu',
     'Chimechite': 'Chimecho',
     'Absolite Z': 'Absol',
-    'Staraptite': 'Staraptite',
+    'Staraptite': 'Staraptor',
     'Garchompite Z': 'Garchomp',
     'Lucarionite Z': 'Lucario',
     'Golurkite': 'Golurk',

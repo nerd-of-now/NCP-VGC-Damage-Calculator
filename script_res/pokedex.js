@@ -17788,6 +17788,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 62,
         },
         "w": 230.5,
+        "ab": "Shell Armor",
         "isAlternateForme": true,
     },
     "Mega Scrafty": {
@@ -17802,6 +17803,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 68,
         },
         "w": 31,
+        "ab": "Intimidate",
         "isAlternateForme": true,
     },
     "Mega Eelektross": {
@@ -17815,6 +17817,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 80,
         },
         "w": 180,
+        "ab": "Levitate",
         "isAlternateForme": true,
     },
     "Mega Chandelure": {
@@ -17889,6 +17892,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 126,
         },
         "w": 93.3,
+        "ab": "Fire Mane",
         "isAlternateForme": true,
     },
     "Floette-Eternal": {
@@ -17931,6 +17935,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 88,
         },
         "w": 69.8,
+        "ab": "Contrary",
         "isAlternateForme": true,
     },
     "Mega Barbaracle": {
@@ -17945,6 +17950,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 88,
         },
         "w": 100,
+        "ab": "Tough Claws",
         "isAlternateForme": true,
     },
     "Mega Dragalge": {
@@ -17959,6 +17965,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 44,
         },
         "w": 100.3,
+        "ab": "Regenerator",
         "isAlternateForme": true,
     },
     "Mega Hawlucha": {
@@ -18016,6 +18023,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 100,
         },
         "w": 99,
+        "ab": "Defiant",
         "isAlternateForme": true,
     },
 
@@ -18052,6 +18060,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 110,
         },
         "w": 38,
+        "ab":"Electric Surge",
         "isAlternateForme": true,
     },
     "Mega Raichu Y": {
@@ -18065,6 +18074,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 130,
         },
         "w": 26,
+        "ab":"No Guard",
         "isAlternateForme": true,
     },
     "Mega Chimecho": {
@@ -18108,6 +18118,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 110,
         },
         "w": 50,
+        "ab": "Contrary",
         "isAlternateForme": true,
     },
     "Mega Garchomp Z": {
@@ -18364,13 +18375,13 @@ var POKEDEX_ZA = {};
 ].forEach(e => POKEDEX_ZA[e] = POKEDEX_ZA_NATDEX[e]);
 
 //performs deep copy; necessary to preserve stat data for nat dex
-POKEDEX_ZA = $.extend(true, {}, POKEDEX_ZA);
-
-POKEDEX_ZA['Meditite'].bs.at = 56;
-POKEDEX_ZA['Medicham'].bs.at = 84;
-POKEDEX_ZA['Mega Mawile'].bs.at = 147;
-POKEDEX_ZA['Mega Medicham'].bs.at = 140;
-POKEDEX_ZA['Mega Starmie'].bs.at = 140;
+POKEDEX_ZA = $.extend(true, {}, POKEDEX_ZA, {
+    'Meditite': { 'bs': { 'at': 56 } },
+    'Medicham': { 'bs': { 'at': 84 } },
+    'Mega Mawile': { 'bs': { 'at': 147 } },
+    'Mega Medicham': { 'bs': { 'at': 140 } },
+    'Mega Starmie': { 'bs': { 'at': 140 } },
+});
 
 var POKEDEX_CHAMPIONS = {};
 [
@@ -18407,12 +18418,17 @@ var POKEDEX_CHAMPIONS = {};
     'Mega Greninja', 'Mega Floette', 'Meowstic-F', 'Mega Meowstic', 'Aegislash-Shield', 'Aegislash-Blade',
     'Mega Hawlucha', 'Goodra-Hisui', 'Gourgeist-Small', 'Gourgeist-Large', 'Gourgeist-Super', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Mega Crabominable', 'Lycanroc-Midnight',
     'Lycanroc-Dusk', 'Mega Drampa', 'Morpeko-Hangry', 'Basculegion-F', 'Maushold-Four', 'Mega Scovillain', 'Palafin-Hero', 'Mega Glimmora',
+    //Regulation M-B additions
+    'Vileplume', 'Qwilfish', 'Sceptile', 'Blaziken', 'Swampert', 'Mawile', 'Metagross', 'Staraptor', 'Musharna', 'Scolipede', 'Scrafty', 'Eelektross',
+    'Pyroar', 'Malamar', 'Barbaracle', 'Dragalge', 'Grimmsnarl', 'Falinks', 'Overqwil', 'Houndstone', 'Annihilape', 'Gholdengo',
+    //Forms of Regulation M-B additions
+    'Mega Raichu X', 'Mega Raichu Y', 'Mega Sceptile', 'Mega Blaziken', 'Mega Swampert', 'Mega Mawile', 'Mega Metagross', 'Mega Staraptor', 'Mega Scolipede',
+    'Mega Scrafty', 'Meta Eelekross', 'Mega Pyroar', 'Mega Malamar', 'Mega Barbaracle', 'Mega Dragalge', 'Mega Falinks',
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex
 POKEDEX_CHAMPIONS = $.extend(true, {}, POKEDEX_CHAMPIONS);
 
-POKEDEX_CHAMPIONS['Raichu'].formes = null;
 POKEDEX_CHAMPIONS['Absol'].formes = ["Absol", "Mega Absol"];
 POKEDEX_CHAMPIONS['Garchomp'].formes = ["Garchomp", "Mega Garchomp"];
 POKEDEX_CHAMPIONS['Lucario'].formes = ["Lucario", "Mega Lucario"];
