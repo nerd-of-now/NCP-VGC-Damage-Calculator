@@ -17817,7 +17817,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 80,
         },
         "w": 180,
-        "ab": "Levitate",
+        "ab": "Eelevate",
         "isAlternateForme": true,
     },
     "Mega Chandelure": {
@@ -18423,7 +18423,7 @@ var POKEDEX_CHAMPIONS = {};
     'Pyroar', 'Malamar', 'Barbaracle', 'Dragalge', 'Grimmsnarl', 'Falinks', 'Overqwil', 'Houndstone', 'Annihilape', 'Gholdengo',
     //Forms of Regulation M-B additions
     'Mega Raichu X', 'Mega Raichu Y', 'Mega Sceptile', 'Mega Blaziken', 'Mega Swampert', 'Mega Mawile', 'Mega Metagross', 'Mega Staraptor', 'Mega Scolipede',
-    'Mega Scrafty', 'Meta Eelekross', 'Mega Pyroar', 'Mega Malamar', 'Mega Barbaracle', 'Mega Dragalge', 'Mega Falinks',
+    'Mega Scrafty', 'Mega Eelektross', 'Mega Pyroar', 'Mega Malamar', 'Mega Barbaracle', 'Mega Dragalge', 'Mega Falinks',
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex

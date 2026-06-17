@@ -773,7 +773,10 @@ $(".move-selector").change(function() {
     if (move.canDouble) moveGroupObj.children(".double-btn").show();
     else moveGroupObj.children(".double-btn").hide();
 
-    if (move.linearAddBP) moveGroupObj.children(".move-linearAddedBP").show();
+    if (move.linearAddBP){ 
+        moveGroupObj.children(".move-linearAddedBP").show();
+        moveGroupObj.children(".move-linearAddedBP").val(0);
+    }
     else moveGroupObj.children(".move-linearAddedBP").hide();
 
     if (move.usesOppMoves) {    //for when the attacker's moves change
@@ -1535,7 +1538,7 @@ function getTerrainEffects() {
 
 function isGrounded(pokeInfo) {
     return $("#gravity").prop("checked") || (pokeInfo.find(".type1").val() !== "Flying" && pokeInfo.find(".type2").val() !== "Flying" &&
-            pokeInfo.find("select.ability").val() !== "Levitate" && pokeInfo.find("select.item").val() !== "Air Balloon");
+        !(["Levitate", "Eelevate"].includes(pokeInfo.find("select.ability").val())) && pokeInfo.find("select.item").val() !== "Air Balloon");
 }
 
 var resultLocations = [[],[]];

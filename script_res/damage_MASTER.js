@@ -1109,7 +1109,7 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
         (move.type === "Fire" && ["Flash Fire", "Well-Baked Body"].indexOf(defAbility) !== -1) ||
         (move.type === "Water" && (["Dry Skin", "Water Absorb"].indexOf(defAbility) !== -1 || (defAbility === 'Storm Drain' && gen !== 4))) ||
         (move.type === "Electric" && (["Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1 || (defAbility === 'Lightning Rod' && gen > 4))) ||
-        (move.type === "Ground" && ((!field.isGravity && defender.item !== "Iron Ball" && defAbility === "Levitate") || defAbility === "Earth Eater")) ||
+        (move.type === "Ground" && ((!field.isGravity && defender.item !== "Iron Ball" && ['Levitate','Eelevate'].includes(defAbility)) || defAbility === "Earth Eater")) ||
         (move.isBullet && defAbility === "Bulletproof") ||
         (move.isSound && defAbility === "Soundproof") ||
         (move.isWind && defAbility === "Wind Rider")) {
@@ -1296,7 +1296,7 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
  * - Flying type + Roost (not implemented, not planning on implementing, wouldn't be handled here anyway)
  */
 function pIsGrounded(mon, field) {
-    return field.isGravity || mon.item == "Iron Ball" || (mon.item != "Air Balloon" && mon.ability != "Levitate" && !(mon.hasType("Flying")));
+    return field.isGravity || mon.item == "Iron Ball" || (mon.item != "Air Balloon" && !(["Levitate", "Eelevate"].includes(mon.ability)) && !(mon.hasType("Flying")));
 }
 
 //1. Custom BP

@@ -342,6 +342,7 @@ var ABILITIES_CHAMPIONS_NATDEX = ABILITIES_SV.concat([
     'Dragonize',    //Dragon type Pixilate
     'Mega Sol',     //The user's attacks act like Sun is always up regardless of the actual weather
     'Spicy Spray',  //Burns attacker (assuming it's guaranteed and any attacker)
+    'Eelevate',     //Levitate + Beast Boost
     'Fire Mane',    //Fire type Dragon's Maw
 ]);
 
@@ -394,5 +395,5 @@ var ABILITIES_CHAMPIONS = [
     'Volt Absorb', 'Wandering Spirit', 'Water Absorb',
     'Water Bubble', 'Weak Armor', 'White Smoke', 'Zero to Hero',
     //Regulation M-B additions
-    'Effect Spore', 'Electric Surge', 'Fire Mane', 'Fluffy', 'Forewarn', 'Good as Gold', 'Huge Power',
+    'Eelevate', 'Effect Spore', 'Electric Surge', 'Fire Mane', 'Fluffy', 'Forewarn', 'Good as Gold', 'Huge Power',
 ];
