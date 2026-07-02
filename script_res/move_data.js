@@ -5740,6 +5740,8 @@ var MOVES_CHAMPIONS_NATDEX = $.extend(true, {}, MOVES_ZA_NATDEX, {
     'Dire Claw': { isSlice: true },
     'Crush Claw': { isSlice: true },
     'Dragon Cheer': { isSound: true },
+    //Reg M-B changes
+    'Make It Rain': { statChange: ['special attack', -2, 'user'] },
 
     //THE FOLLOWING IS SUBJECT TO CHANGE SINCE THEY ARE CHANGED IN THE CODE BUT NOT IN THE GAME
     'Gear Grind': { bp: 60 },
@@ -5748,7 +5750,7 @@ var MOVES_CHAMPIONS_NATDEX = $.extend(true, {}, MOVES_ZA_NATDEX, {
     'Dragon Hammer': { bp: 100 },
     'Snipe Shot': { bp: 85 },
     'Bolt Beak': { bp: 80 },
-    'Fisheous Rend': { bp: 80 },
+    'Fishious Rend': { bp: 80 },
     'Astral Barrage': { bp: 110 },
     'Triple Dive': { bp: 35 },
     'Hyper Drill': { bp: 120 },
