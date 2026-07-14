@@ -2338,48 +2338,29 @@ $(".gen").change(function () {
     }
     if (gen >= 8) {
         if (localStorage.getItem("dex") == "natdex") {
-            for (i = 1; i <= 4; i++) {
-                $('label[for="zL' + i + '"]').show();
-                $('label[for="zR' + i + '"]').show();
+            $(".natdex-specific.n" + gen).show();
+            if (gen == 10) {
+                $('div #temp-fairyaura').hide();
             }
-            $('div #primal-weather').show();
         }
         else {
-            for (i = 1; i <= 4; i++) {
-                $('label[for="zL' + i + '"]').hide();
-                $('label[for="zR' + i + '"]').hide();
+            $(".natdex-specific.n" + gen).hide();
+            if (gen == 10) {
+                $('div #temp-fairyaura').show();
             }
-            $('div #primal-weather').hide();
         }
     }
-    if (gen == 9) {
-        if (localStorage.getItem("dex") == "natdex") {
-            $('div #auras').show();
-            $('div #protect-field').show();
-            $('div #flower-gift').show();
-        }
-        else {
-            $('div #auras').hide();
-            $('div #protect-field').hide();
-            $('div #flower-gift').hide();
-        }
+    if ($('div #temp-fairyaura').is(':visible')) {
+        $('label[for="fairy-aura"]').removeClass('btn-mid');
+        $('label[for="aura-break"]').hide();
+        $('label[for="dark-aura"]').hide();
     }
-    if (gen == 10) {
-        if (localStorage.getItem("dex") == "natdex") {
-            $('div #temp-fairyaura').hide();
-            $('label[for="aura-break"]').show();
-            $('label[for="dark-aura"]').show();
-            $('label[for="fairy-aura"]').addClass('btn-mid');
-            $('div #flower-gift').show();
-        }
-        else {
-            $('div #temp-fairyaura').show();
-            $('label[for="aura-break"]').hide();
-            $('label[for="dark-aura"]').hide();
-            $('label[for="fairy-aura"]').removeClass('btn-mid');
-            $('div #flower-gift').hide();
-        }
+    else {
+        $('label[for="fairy-aura"]').addClass('btn-mid');
+        $('label[for="aura-break"]').show();
+        $('label[for="dark-aura"]').show();
     }
+
     var types = Object.keys(typeChart);
     if (types.includes('Typeless'))
         types.splice(types.indexOf('Typeless'), 1);
