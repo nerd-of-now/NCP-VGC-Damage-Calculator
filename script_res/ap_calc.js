@@ -1580,7 +1580,7 @@ function calcMinMaxDamage(damage, hits) {
 }
 
 //NOTE: returning a negative number indicates that the move heals more damage overall for the user
-function calcUserHP(move, user, target, minDamage, maxDamage) {
+function calcUserHP(move, user, target, minDamage, maxDamage, isLeechSeed) {
     var userMinDamage = 0, userMaxDamage = 0;
     var targetMax = target.curHP;   //done because the user cannot heal/take more HP than what they can get from the target
     var usedMin = Math.min(minDamage, targetMax), usedMax = Math.min(maxDamage, targetMax);
@@ -1688,11 +1688,21 @@ function calcUserHP(move, user, target, minDamage, maxDamage) {
         }
     }
 
+    //Leech Seed check
+    if (isLeechSeed) {
+        let drainMod = Math.floor(target.maxHP / 8);
+        let doesHeal = target.ability != "Liquid Ooze" ? -1 : user.ability == "Magic Guard" ? 0 : 1;
+        let bigRootMod = user.item != 'Big Root' ? 1 : gen >= 5 ? 5324 / 4096 : 1.3;
+
+        userMinDamage += doesHeal * Math.floor(Math.min(target.curHP, drainMod) * bigRootMod);
+        userMaxDamage += doesHeal * Math.floor(Math.min(target.curHP, drainMod) * bigRootMod);
+    }
+
     return [Math.round(userMinDamage / user.maxHP * 1000) / 10, Math.round(userMaxDamage / user.maxHP * 1000) / 10];
 }
 
-function userHPResultText(move, user, target, minDamage, maxDamage) {
-    var userHPResult = calcUserHP(move, user, target, minDamage, maxDamage);
+function userHPResultText(move, user, target, minDamage, maxDamage, isLeechSeed) {
+    var userHPResult = calcUserHP(move, user, target, minDamage, maxDamage, isLeechSeed);
     var healOrRecoil;
     if (userHPResult[0] < 0 && userHPResult[1] < 0) {
         healOrRecoil = "healed)";
@@ -1737,14 +1747,14 @@ function calculate() {
         else
             result.damageText = minDamage + " (" + maxPercent + "%)";
         result.koChanceText = p1.moves[i].bp === 0 && p1.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
-                  : getKOChanceText(result.damage, p1.moves[i], p2, field.getSide(1), p1.ability === 'Bad Dreams');
+            : getKOChanceText(result.damage, p1.moves[i], p2, field.getSide(1), p1.ability === 'Bad Dreams', p1.item === '');
         //result.crit = p1.moves[i].isCrit
         result.hits = p1.moves[i].hits;
         if(p1.moves[i].isOHKO && !($("#p1").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p1").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>"; //dank memes
         }
         $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power ", "HP "));
-        $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%" + userHPResultText(p1.moves[i], p1, p2, minDamage, maxDamage));
+        $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%" + userHPResultText(p1.moves[i], p1, p2, minDamage, maxDamage, field.getSide(1).isLeechSeed));
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
             bestResult = $(resultLocations[0][i].move);
@@ -1757,14 +1767,14 @@ function calculate() {
         maxPercent = Math.floor(maxDamage * 1000 / p1.maxHP) / 10;
         result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
         result.koChanceText = p2.moves[i].bp === 0 && p2.moves[i].category !== "Status" ? '<a href="https://www.youtube.com/watch?v=NFZjEgXIl1E&t=21s">how</a>'
-                : getKOChanceText(result.damage, p2.moves[i], p1, field.getSide(0), p2.ability === 'Bad Dreams');
+            : getKOChanceText(result.damage, p2.moves[i], p1, field.getSide(0), p2.ability === 'Bad Dreams', p2.item === '');
         //result.crit = p2.moves[i].isCrit
         result.hits = p2.moves[i].hits;
         if (p2.moves[i].isOHKO && !($("#p2").find(".move" + (i + 1)).find(".move-z").prop("checked")) && !($("#p2").find(".max").prop("checked"))){
             result.koChanceText = "<a href = 'https://www.youtube.com/watch?v=KGzH7ZR4BXs&t=19s'>is it a one-hit KO?!</a>";
         }
         $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power ", "HP "));
-        $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%" + userHPResultText(p2.moves[i], p2, p1, minDamage, maxDamage));
+        $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%" + userHPResultText(p2.moves[i], p2, p1, minDamage, maxDamage, field.getSide(0).isLeechSeed));
         if (maxPercent > highestMaxPercent) {
             highestMaxPercent = maxPercent;
             bestResult = $(resultLocations[1][i].move);
@@ -2118,6 +2128,12 @@ function Field() {
     var isRedItem = [$("#redItemR").prop("checked"), $("#redItemL").prop("checked")]; // affects attacks against opposite side
     var isBlueItem = [$("#blueItemL").prop("checked"), $("#blueItemR").prop("checked")];
     var isCharge = [$("#chargeR").prop("checked"), $("#chargeL").prop("checked")]; // affects attacks against opposite side
+    var isLeechSeed = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
+    var isIngrain = [$("#ingrainL").prop("checked"), $("#ingrainR").prop("checked")];
+    var isCurse = [$("#curseL").prop("checked"), $("#curseR").prop("checked")];
+    var isBinding = [$("#bindingL").prop("checked"), $("#bindingR").prop("checked")];
+    var isAquaRing = [$("#aquaRingL").prop("checked"), $("#aquaRingR").prop("checked")];
+    var isNightmare = [$("#nightmareL").prop("checked"), $("#nightmareR").prop("checked")];
 
     this.getNeutralGas = function () {
         return isNeutralizingGas;
@@ -2141,11 +2157,11 @@ function Field() {
         terrain = "";
     };
     this.getSide = function (i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i], isSwamp[i], isSeaFire[i], isRedItem[i], isBlueItem[i], isCharge[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isBattery[i], isProtect[i], isPowerSpot[i], isSteelySpirit[i], isNeutralizingGas, isGMaxField[i], isFlowerGiftSpD[i], isFlowerGiftAtk[i], isTailwind[i], isSaltCure[i], isAuroraVeil[i], isSwamp[i], isSeaFire[i], isRedItem[i], isBlueItem[i], isCharge[i], isLeechSeed[i], isIngrain[i], isCurse[i], isBinding[i], isAquaRing[i], isNightmare[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure, isAuroraVeil, isSwamp, isSeaFire, isRedItem, isBlueItem, isCharge) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isBattery, isProtect, isPowerSpot, isSteelySpirit, isNeutralizingGas, isGmaxField, isFlowerGiftSpD, isFlowerGiftAtk, isTailwind, isSaltCure, isAuroraVeil, isSwamp, isSeaFire, isRedItem, isBlueItem, isCharge, isLeechSeed, isIngrain, isCurse, isBinding, isAquaRing, isNightmare) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -2173,6 +2189,12 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isRedItem = isRedItem;
     this.isBlueItem = isBlueItem;
     this.isCharge = isCharge;
+    this.isLeechSeed = isLeechSeed;
+    this.isIngrain = isIngrain;
+    this.isCurse = isCurse;
+    this.isBinding = isBinding;
+    this.isAquaRing = isAquaRing;
+    this.isNightmare = isNightmare;
 }
 
 var gen, pokedex, setdex, setdexCustom, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
@@ -2446,6 +2468,18 @@ function clearField() {
     //$("#redItemR").prop("checked", false);
     //$("#blueItemL").prop("checked", false);
     //$("#blueItemR").prop("checked", false);
+    $("#leechSeedL").prop("checked", false);
+    $("#leechSeedR").prop("checked", false);
+    $("#ingrainL").prop("checked", false);
+    $("#ingrainR").prop("checked", false);
+    $("#curseL").prop("checked", false);
+    $("#curseR").prop("checked", false);
+    $("#bindingL").prop("checked", false);
+    $("#bindingR").prop("checked", false);
+    $("#aquaRingL").prop("checked", false);
+    $("#aquaRingR").prop("checked", false);
+    $("#nightmareL").prop("checked", false);
+    $("#nightmareR").prop("checked", false);
     if (gen == 7.5) {
         $("#singles").prop("checked", true);
     }

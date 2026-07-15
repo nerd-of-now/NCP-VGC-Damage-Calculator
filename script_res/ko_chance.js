@@ -90,8 +90,10 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams, isItemles
     var eotText = [];
     var toxicCounter = 0;
     var eotDict = getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, preventsHealItem, preventsRestoreHP);
+    let eotOrder = gen <= 3 ? END_TURN_ORDER_GEN_3 : gen == 4 ? END_TURN_ORDER_GEN_4 : END_TURN_ORDER_GEN_5_ONWARDS;
     let maxChip = defender.isDynamax ? 0.5 : 1;
-    for (eotType in eotDict) {
+    for (eotType of eotOrder) {
+        console.log(eotType);
         if (eotDict[eotType].val != 0) {
             if (eotDict[eotType].isToxic) {
                 toxicCounter = eotDict[eotType].val;
@@ -462,7 +464,7 @@ function handleMultiHitGen1(damage, hits) {
     return allHitsDamage;
 }
 
-function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, preventsHealItem, preventsRestoreHP) {
+function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, preventsHealItem/*, preventsRestoreHP, restoreHP*/) {
         //IMPORTANT: THIS ISN'T THE ORDER FOR GEN 3 AND BEFORE. THIS IS WHAT I FOUND TO BE GEN 3 ORDER:
         //Wish, Weather, Ingrain, Sitrus/Oran/Berry Juice healing, Leftovers, burn, Leech Seed, Nightmare, Curse
         //THE SITRUS/ORAN/BERRY JUICE HEALING IS WHY preventsRestoreHP IS PASSED IN
@@ -472,25 +474,27 @@ function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, prev
         gMaxField = 0,
         grassyTerrain = 0,
         leftoversBlackSludge = 0,
-        //aquaRing = 0,
-        //ingrain = 0,
-        //leechSeed = 0,
+        aquaRing = 0,
+        ingrain = 0,
+        leechSeed = 0,
         poisonedPoisonHeal = 0,
         toxicCounter = 0,
         burn = 0,
-        //nightmare = 0,
-        //ghostCurse = 0,
+        nightmare = 0,
+        ghostCurse = 0,
         saltCure = 0,
-        //bindingMove = 0,
-        badDreams = 0;
-        //stickyBarb = 0,
+        bindingMove = 0,
+        badDreams = 0,
+        stickyBarb = 0;
         //harvest = 0;
+    let rainDishGen3 = 0;
     let weatherEffectsText = '',
         leftoversBlackSludgeText = '',
         poisonedPoisonHealText = '',
         burnedText = '',
         saltCureText = '';
     let isToxicDamage = false;
+    let bigRootMod = defender.item === 'Big Root' ? 1.3 : 1;
 
     //EOT Order
     //1. Weather Effects
@@ -506,7 +510,7 @@ function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, prev
                 weatherEffects += Math.floor(defender.maxHP / 8);
                 weatherEffectsText = 'Dry Skin recovery';
             }
-            else if (defender.ability === 'Rain Dish') {
+            else if (defender.ability === 'Rain Dish' && gen >= 4) {
                 weatherEffects += Math.floor(defender.maxHP / 16);
                 weatherEffectsText = 'Rain Dish recovery';
             }
@@ -566,9 +570,18 @@ function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, prev
         }
     }
 
-    //5. Aqua Ring (not implemented)
-    //6. Ingrain (not implemented)
-    //7. Leech Seed (not implemented)
+    //5. Aqua Ring
+    if (field.isAquaRing && !preventsHeal) {
+        aquaRing += Math.floor(Math.floor(defender.maxHP / 16) * bigRootMod);
+    }
+    //6. Ingrain
+    if (field.isIngrain && !preventsHeal) {
+        ingrain += Math.floor(Math.floor(defender.maxHP / 16) * bigRootMod);
+    }
+    //7. Leech Seed
+    if (field.isLeechSeed && defender.ability !== 'Magic Guard') {
+        leechSeed -= Math.floor(defender.maxHP / 8);
+    }
     //8. Poisoned / Badly Poisoned / Poison Heal
     if (defender.status === 'Poisoned') {
         if (defender.ability === 'Poison Heal' && !preventsHeal) {
@@ -604,8 +617,14 @@ function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, prev
         }
     }
 
-    //10. Nightmare (not implemented)
-    //11. Curse (not implemented)
+    //10. Nightmare
+    if (field.isNightmare && defender.ability !== 'Magic Guard') {
+        nightmare -= Math.floor(defender.maxHP / 4);
+    }
+    //11. Curse
+    if (field.isCurse && defender.ability !== 'Magic Guard') {
+        ghostCurse -= Math.floor(defender.maxHP / 4);
+    }
     //12. Salt Cure
     if (field.isSaltCure && defender.ability !== 'Magic Guard') {
         if (!(defender.hasType("Water", "Steel"))) {
@@ -620,14 +639,27 @@ function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, prev
         }
     }
 
-    //13. Binding moves (not implemented)
+    //13. Binding moves
+    if (field.isBinding && defender.ability !== 'Magic Guard') {
+        let bindMod = gen <= 5 ? (defender.item == 'Binding Band' ? 8 : 16) : (defender.item == 'Binding Band' ? 6 : 8);
+        bindingMove -= Math.floor(defender.maxHP / bindMod);
+    }
     //14. Bad Dreams
     if ((defender.status === 'Asleep' || defender.ability === 'Comatose') && isBadDreams && defender.ability !== 'Magic Guard') {
         badDreams -= Math.floor(defender.maxHP / 8);
     }
 
-    //15. Sticky Barb (not implemented)
-    //16. Harvest (not implemented)
+    //15. Sticky Barb
+    if (defender.item === 'Sticky Barb' && defender.ability !== 'Magic Guard' && !(move.makesContact && isItemlessAttacker)) {
+        stickyBarb -= Math.floor(defender.maxHP / 8);
+    }
+    //16. Harvest (not likely to be implemented)
+
+    //Exclusive to earlier gens:
+    //Rain Dish (Gen 3, comes after ingrain)
+    if (gen == 3 && field.weather == 'Rain' && defender.ability == 'Rain Dish') {
+        rainDishGen3 += Math.floor(defender.maxHP / 16);
+    }
 
     let maxChip = defender.isDynamax ? 0.5 : 1;
     return {
@@ -651,6 +683,18 @@ function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, prev
             val: Math.floor(leftoversBlackSludge * maxChip),
             text: leftoversBlackSludgeText
         },
+        aquaRing: {
+            val: Math.floor(aquaRing * maxChip),
+            text: 'Aqua Ring recovery'
+        },
+        ingrain: {
+            val: Math.floor(ingrain * maxChip),
+            text: 'Ingrain recovery'
+        },
+        leechSeed: {
+            val: Math.floor(leechSeed * maxChip),
+            text: 'Leech Seed damage'
+        },
         poisonedToxicPoisonHeal: {
             val: isToxicDamage ? toxicCounter : Math.floor(poisonedPoisonHeal * maxChip),
             text: poisonedPoisonHealText,
@@ -660,14 +704,34 @@ function getAllEndOfTurnEffects(defender, field, isBadDreams, preventsHeal, prev
             val: Math.floor(burn * maxChip),
             text: burnedText
         },
+        nightmare: {
+            val: Math.floor(nightmare * maxChip),
+            text: 'Nightmare'
+        },
+        ghostCurse: {
+            val: Math.floor(ghostCurse * maxChip),
+            text: 'ghost Curse'
+        },
         saltCure: {
             val: Math.floor(saltCure * maxChip),
             text: saltCureText
+        },
+        bindingMove: {
+            val: Math.floor(bindingMove * maxChip),
+            text:'binding damage'
         },
         badDreams: {
             val: Math.floor(badDreams * maxChip),
             text: 'Bad Dreams'
         },
+        stickyBarb: {
+            val: Math.floor(stickyBarb * maxChip),
+            text: 'Sticky Barb damage'
+        },
+        rainDishGen3: {
+            val: rainDishGen3,
+            text: 'Rain Dish recovery'
+        }
     };
 }
 
@@ -676,8 +740,13 @@ function checkThresholdCriteria(currHP, roll, restoreHP, restoreThreshold, prevC
     return isNaN(prevCalcRolls) || (restoreHP && currHP - usedPrevCalcRolls - roll <= restoreThreshold && currHP - usedPrevCalcRolls - roll > 0);
 }
 
+const END_TURN_ORDER_GEN_3 = [/*'wish',*/ 'weatherEffects', 'ingrain', 'rainDishGen3',/*'hpRestoreGen3',*/ 'leftoversBlackSludge', 'leechSeed', 'poisonedToxicPoisonHeal', 'burned', 'nightmare', 'ghostCurse', 'bindingMove'];    //Future Sight at the very end
+const END_TURN_ORDER_GEN_4 = [/*'wish',*/ 'weatherEffects', 'ingrain', 'aquaRing', 'leftoversBlackSludge', 'leechSeed', 'poisonedToxicPoisonHeal', 'burned', 'nightmare', 'ghostCurse', 'bindingMove', 'badDreams', 'stickyBarb']; //Future Sight at the very end
+const END_TURN_ORDER_GEN_5_ONWARDS = ['weatherEffects',/*'wish',*/'seaOfFire', 'gMaxField', 'grassyTerrain', 'leftoversBlackSludge', 'aquaRing', 'ingrain', 'leechSeed', 'poisonedToxicPoisonHeal', 'burned', 'nightmare', 'ghostCurse', 'saltCure', 'bindingMove', 'badDreams', 'stickyBarb', /*'harvest'*/];  //Future Sight is after weatherEffects and before wish
+
 function eotProcess(eotDict, damageRoll, toxicCounter, targetHP, restoreHP, restoreThreshold, maxHP, activateHealItem, maxChip) {
-    for (eotType in eotDict) {
+    let eotOrder = gen <= 3 ? END_TURN_ORDER_GEN_3 : gen == 4 ? END_TURN_ORDER_GEN_4 : END_TURN_ORDER_GEN_5_ONWARDS;
+    for (eotType of eotOrder) {
         if (eotDict[eotType].val != 0) {
             let eotApply = 0;
             if (!eotDict[eotType].isToxic) {

@@ -1292,11 +1292,10 @@ function setDamage(move, attacker, defender, description, isQuarteredByProtect, 
  * - Levitate + ignoring/negating abilities (handled before; ability should be blank by the time this function is called)
  * - Flying type + Ring Target (handled in function getMoveEffectiveness)
  * - Thousand Arrows (handled in function getMoveEffectiveness)
- * - Ingrain (not implemented currently)
  * - Flying type + Roost (not implemented, not planning on implementing, wouldn't be handled here anyway)
  */
 function pIsGrounded(mon, field) {
-    return field.isGravity || mon.item == "Iron Ball" || (mon.item != "Air Balloon" && !(["Levitate", "Eelevate"].includes(mon.ability)) && !(mon.hasType("Flying")));
+    return field.isGravity || mon.item == "Iron Ball" || (mon.item != "Air Balloon" && !(["Levitate", "Eelevate"].includes(mon.ability)) && !(mon.hasType("Flying"))) || field.isIngrain;
 }
 
 //1. Custom BP
