@@ -5740,6 +5740,8 @@ var MOVES_CHAMPIONS_NATDEX = $.extend(true, {}, MOVES_ZA_NATDEX, {
     'Dire Claw': { isSlice: true },
     'Crush Claw': { isSlice: true },
     'Dragon Cheer': { isSound: true },
+    'Freeze-Dry': { hasSecondaryEffect: false },
+    'Electro Shot': { hasSecondaryEffect: false },
     //Reg M-B changes
     'Make It Rain': { statChange: ['special attack', -2, 'user'] },
 
@@ -5756,6 +5758,8 @@ var MOVES_CHAMPIONS_NATDEX = $.extend(true, {}, MOVES_ZA_NATDEX, {
     'Hyper Drill': { bp: 120 },
     'Blood Moon': { bp: 130 },
     'Metal Claw': { isSlice: true },
+
+    //CHECK IF SPIRIT SHACKLE IS BOOSTED BY SHEER FORCE
 });
 
 var MOVES_CHAMPIONS = {};

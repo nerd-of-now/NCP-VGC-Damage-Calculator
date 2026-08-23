@@ -93,7 +93,6 @@ function getKOChanceText(damageIn, move, defender, field, isBadDreams, isItemles
     let eotOrder = gen <= 3 ? END_TURN_ORDER_GEN_3 : gen == 4 ? END_TURN_ORDER_GEN_4 : END_TURN_ORDER_GEN_5_ONWARDS;
     let maxChip = defender.isDynamax ? 0.5 : 1;
     for (eotType of eotOrder) {
-        console.log(eotType);
         if (eotDict[eotType].val != 0) {
             if (eotDict[eotType].isToxic) {
                 toxicCounter = eotDict[eotType].val;

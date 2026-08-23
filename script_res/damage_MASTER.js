@@ -1874,7 +1874,13 @@ function calcAttack(move, attacker, defender, description, isCritical, defAbilit
     }
     else if (isMidMoveAtkBoost) {
         description.attackBoost = attacker.boosts[attackStat];
-        attack = getModifiedStat(attackSource.rawStats[attackStat], attacker.boosts[attackStat]);
+        //explore a possible better implementation
+        if (attackSource.boosts[attackStat] === 0 || (isCritical && attackSource.boosts[attackStat] < 0)) {
+            attack = attackSource.rawStats[attackStat];
+        }
+        else {
+            attack = getModifiedStat(attackSource.rawStats[attackStat], attacker.boosts[attackStat]);
+        }
         attacker.boosts[attackStat] -= (1 * isContrary);
     }
     //c. Crit
