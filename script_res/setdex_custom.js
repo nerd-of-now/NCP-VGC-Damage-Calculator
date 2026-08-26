@@ -244,7 +244,15 @@ function processSave(string, spreadName, sidebarUsed, setGen = gen) {
             }
             if (checkPrimal != -1)
                 species = species.substring(0, checkPrimal);
-            if (species in showdownToCalcFormes) {
+
+            //will assume that Arceus/Silvally is holding the corresponding Plate/Z-Crystal/Memory; Hackmons is just outta luck
+            if (species.includes('Arceus-')) {
+                species = 'Arceus';
+            }
+            else if (species.includes('Silvally-')) {
+                species = 'Silvally';
+            }
+            else if (species in showdownToCalcFormes) {
                 species = showdownToCalcFormes[species];
             }
 
