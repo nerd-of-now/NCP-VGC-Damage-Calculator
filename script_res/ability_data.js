@@ -344,6 +344,7 @@ var ABILITIES_CHAMPIONS_NATDEX = ABILITIES_SV.concat([
     'Spicy Spray',  //Burns attacker (assuming it's guaranteed and any attacker)
     'Eelevate',     //Levitate + Beast Boost
     'Fire Mane',    //Fire type Dragon's Maw
+    'Aura Guard',   //Fluffy without the Fire weakness
 ]);
 
 var ABILITIES_CHAMPIONS = [
@@ -396,4 +397,7 @@ var ABILITIES_CHAMPIONS = [
     'Water Bubble', 'Weak Armor', 'White Smoke', 'Zero to Hero',
     //Regulation M-B additions
     'Eelevate', 'Effect Spore', 'Electric Surge', 'Fire Mane', 'Fluffy', 'Forewarn', 'Good as Gold', 'Huge Power',
+    //Regulation M-C additions
+    'Run Away', 'Liquid Ooze', 'Rattled', 'Grass Pelt', 'Emergency Exit', 'Stakeout', 'Psychic Surge', 'Grassy Surge',
+    'Libero', 'Punk Rock', 'Steely Spirit', 'Seed Sower', 'Thermal Exchange', 'Guard Dog', 'Aura Guard',
 ];

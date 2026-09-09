@@ -491,6 +491,9 @@ var ITEMS_CHAMPIONS = [
     'Shed Shell', 'Smooth Rock', 'Wide Lens', 'Wise Glasses', 'Zoom Lens',
     'Raichunite X', 'Raichunite Y', 'Falinksite', 'Staraptite', 'Blazikenite', 'Mawilite', 'Swampertite', 'Sceptilite', 'Metagrossite',
     'Scolipite', 'Scraftinite', 'Eelektrossite', 'Pyroarite', 'Malamarite', 'Barbaracite', 'Dragalgite',
+    //Regulation M-C additions
+    'Leek', 'Rocky Helmet', 'Air Balloon', 'Red Card', 'Binding Band', 'Eject Button', 'Normal Gem', 'Salamencite', 'Terrain Extender',
+    'Electric Seed', 'Psychic Seed', 'Misty Seed', 'Grassy Seed', 'Absolite Z', 'Garchompite Z', 'Lucarionite Z', 'Golisopite', 'Baxcalibrite',
 ];
 
 function getItemBoostType(item) {

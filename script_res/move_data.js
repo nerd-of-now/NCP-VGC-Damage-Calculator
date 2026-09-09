@@ -5824,8 +5824,11 @@ var MOVES_CHAMPIONS = {};
     'Water Pulse', 'Water Shuriken', 'Water Spout', 'Waterfall', 'Wave Crash', 'Weather Ball', 'Whirlpool', 'Whirlwind',
     'Wide Guard', 'Wild Charge', 'Will-O-Wisp', 'Wish', 'Wonder Room', 'Wood Hammer', 'Worry Seed', 'Wrap', 'X-Scissor', 'Yawn', 'Zap Cannon', 'Zen Headbutt',
     //Has move descriptions but isn't learned by any Pokemon at launch
-    //'Double Shock', 'Milk Drink', 'Power Shift', 'Revival Blessing', 'Soft-Boiled', 'Spore',
+    //Power Shift', 'Soft-Boiled', 'Spore',
     //Moves available starting Regulation M-B
     'Barb Barrage', 'Make It Rain', 'No Retreat', 'Rage Fist', 'Spirit Break', 'Topsy-Turvy',
+    //Moves available starting Regulation M-C
+    'Slash', 'Octazooka', 'Milk Drink', 'Shift Gear', 'Zing Zap', 'Snipe Shot', 'Jaw Lock', 'Octolock', 'Court Change', 'Drum Beating', 'Pyro Ball',
+    'Meteor Assault', 'Glaive Rush', 'Revival Blessing', 'Double Shock',
 ].forEach(e => MOVES_CHAMPIONS[e] = MOVES_CHAMPIONS_NATDEX[e]);
 //Spit Up is commented out because it hasn't been implemented

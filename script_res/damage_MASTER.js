@@ -2367,8 +2367,8 @@ function calcFinalMods(move, attacker, defender, field, description, isCritical,
         finalMods.push(0x800);
         description.defenderAbility = defAbility;
     }
-    //h. Fluffy (contact)
-    if (defAbility === "Fluffy" && move.makesContact) {
+    //h. Fluffy (contact)/Aura Guard
+    if (["Fluffy", "Aura Guard"].includes(defAbility) && move.makesContact) {
         finalMods.push(0x800);
         description.defenderAbility = defAbility;
     }

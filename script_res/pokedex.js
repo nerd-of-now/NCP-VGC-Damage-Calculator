@@ -18104,6 +18104,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 151,
         },
         "w": 49,
+        "ab": "Sharpness",
         "isAlternateForme": true,
     },
     "Mega Staraptor": {
@@ -18132,6 +18133,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 151,
         },
         "w": 99,
+        "ab": "Levitate",
         "isAlternateForme": true,
     },
     "Mega Lucario Z": {
@@ -18146,6 +18148,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 151,
         },
         "w": 49.4,
+        "ab": "Aura Guard",
         "isAlternateForme": true,
     },
     "Mega Heatran": {
@@ -18231,6 +18234,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 40,
         },
         "w": 148,
+        "ab": "Tough Claws",
         "isAlternateForme": true,
     },
     "Mega Magearna": {
@@ -18316,6 +18320,7 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
             "sp": 87,
         },
         "w": 315,
+        "ab": "Thermal Exchange",
         "isAlternateForme": true,
     },
 });
@@ -18424,11 +18429,12 @@ var POKEDEX_CHAMPIONS = {};
     //Forms of Regulation M-B additions
     'Mega Raichu X', 'Mega Raichu Y', 'Mega Sceptile', 'Mega Blaziken', 'Mega Swampert', 'Mega Mawile', 'Mega Metagross', 'Mega Staraptor', 'Mega Scolipede',
     'Mega Scrafty', 'Mega Eelektross', 'Mega Pyroar', 'Mega Malamar', 'Mega Barbaracle', 'Mega Dragalge', 'Mega Falinks',
+    //Regulation M-C additions
+    'Wigglytuff', 'Persian', "Farfetch'd", 'Mr. Mime', 'Swalot', 'Salamence', 'Gogoat', 'Golisopod', 'Rillaboom', 'Cinderace', 'Inteleon', 'Thievul', 'Toxtricity',
+    'Graploct', 'Perrserker', "Sirfetch'd", 'Pincurchin', 'Indeedee', 'Pawmot', 'Arboliva', 'Squawkabilly', 'Mabosstiff', 'Baxcalibur',
+    //Forms of Regulation M-C additions
+    'Persian-Alola', 'Mega Absol Z', 'Mega Salamence', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Golisopod', 'Indeedee-F', 'Mega Baxcalibur',
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex
 POKEDEX_CHAMPIONS = $.extend(true, {}, POKEDEX_CHAMPIONS);
-
-POKEDEX_CHAMPIONS['Absol'].formes = ["Absol", "Mega Absol"];
-POKEDEX_CHAMPIONS['Garchomp'].formes = ["Garchomp", "Mega Garchomp"];
-POKEDEX_CHAMPIONS['Lucario'].formes = ["Lucario", "Mega Lucario"];
