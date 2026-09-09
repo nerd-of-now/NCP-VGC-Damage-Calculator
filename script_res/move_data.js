@@ -5746,6 +5746,9 @@ var MOVES_CHAMPIONS_NATDEX = $.extend(true, {}, MOVES_ZA_NATDEX, {
     'Make It Rain': { statChange: ['special attack', -2, 'user'] },
     //Reg M-C changes
     'Slash': { bp: 80 },
+    'Snipe Shot': { bp: 85 },
+    'Meteor Assault': { bp: 170 },
+    'Double Shock': { isPunch: true },
 
     //THE FOLLOWING IS SUBJECT TO CHANGE SINCE THEY ARE CHANGED IN THE CODE BUT NOT IN THE GAME
     'Gear Grind': { bp: 60 },
