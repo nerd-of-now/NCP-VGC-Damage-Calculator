@@ -830,7 +830,7 @@ function checkContactOverride(move, attacker) {
 }
 
 function setIsQuarteredByProtect(attacker, defender, field, move, description) {
-    let qualifiedQuartered = field.isProtect && (move.isZ || move.isSignatureZ || attacker.isDynamax || attacker.ability === 'Piercing Drill' || (attacker.ability === 'Unseen Fist' && gen >= 10));
+    let qualifiedQuartered = field.isProtect && (move.isZ || move.isSignatureZ || attacker.isDynamax || attacker.ability === 'Piercing Drill' || (attacker.ability === 'Unseen Fist' && gen >= 10 && move.makesContact));
     if (qualifiedQuartered && attacker.ability === 'Piercing Drill') description.attackerAbility = attacker.ability;
     return qualifiedQuartered;
 }
@@ -1170,6 +1170,9 @@ function immunityChecks(move, attacker, defender, field, description, defAbility
 //Special Cases
 function setDamage(move, attacker, defender, description, isQuarteredByProtect, field) {
     var isParentBond = attacker.ability === "Parental Bond";
+    if (move.name === "Spit Up" && !move.stockpiles) {
+        return { "damage": [0], "description": buildDescription(description) };
+    }
     //a. Counterattacks (Counter, Mirror Coat, Metal Burst, Comeuppance, Bide)
     if (['Counter', 'Mirror Coat', 'Metal Burst', 'Comeuppance'].indexOf(move.name) !== -1) {
         var counteredMove = defender.moves[move.usedOppMoveIndex];
@@ -1380,6 +1383,10 @@ function basePowerFunc(move, description, turnOrder, attacker, defender, field, 
         //e.i. Fury Cutter
         //e.ii. Rollout, Ice Ball
         //e.iii. Spit Up
+        case "Spit Up":
+            basePower = 100 * move.stockpiles;
+            description.moveBP = basePower;
+            break;
 
         //f. Boost based
         //f.i. Stored Power, Power Trip

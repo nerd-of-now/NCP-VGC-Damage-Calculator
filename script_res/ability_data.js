@@ -396,7 +396,7 @@ var ABILITIES_CHAMPIONS = [
     'Volt Absorb', 'Wandering Spirit', 'Water Absorb',
     'Water Bubble', 'Weak Armor', 'White Smoke', 'Zero to Hero',
     //Regulation M-B additions
-    'Eelevate', 'Effect Spore', 'Electric Surge', 'Fire Mane', 'Fluffy', 'Forewarn', 'Good as Gold', 'Huge Power',
+    'Eelevate', 'Effect Spore', 'Electric Surge', 'Fire Mane', 'Fluffy', 'Forewarn', 'Good as Gold',
     //Regulation M-C additions
     'Run Away', 'Liquid Ooze', 'Rattled', 'Grass Pelt', 'Emergency Exit', 'Stakeout', 'Psychic Surge', 'Grassy Surge',
     'Libero', 'Punk Rock', 'Steely Spirit', 'Seed Sower', 'Thermal Exchange', 'Guard Dog', 'Aura Guard',

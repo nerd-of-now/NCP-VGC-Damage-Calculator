@@ -17821,8 +17821,8 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
         "isAlternateForme": true,
     },
     "Mega Chandelure": {
-        "t1": "Fire",
-        "t2": "Ghost",
+        "t1": "Ghost",
+        "t2": "Fire",
         "bs": {
             "hp": 60,
             "at": 75,
@@ -18431,7 +18431,7 @@ var POKEDEX_CHAMPIONS = {};
     'Mega Scrafty', 'Mega Eelektross', 'Mega Pyroar', 'Mega Malamar', 'Mega Barbaracle', 'Mega Dragalge', 'Mega Falinks',
     //Regulation M-C additions
     'Wigglytuff', 'Persian', "Farfetch'd", 'Mr. Mime', 'Swalot', 'Salamence', 'Gogoat', 'Golisopod', 'Rillaboom', 'Cinderace', 'Inteleon', 'Thievul', 'Toxtricity',
-    'Graploct', 'Perrserker', "Sirfetch'd", 'Pincurchin', 'Indeedee', 'Pawmot', 'Arboliva', 'Squawkabilly', 'Mabosstiff', 'Baxcalibur',
+    'Grapploct', 'Perrserker', "Sirfetch'd", 'Pincurchin', 'Indeedee', 'Pawmot', 'Arboliva', 'Squawkabilly', 'Mabosstiff', 'Baxcalibur',
     //Forms of Regulation M-C additions
     'Persian-Alola', 'Mega Absol Z', 'Mega Salamence', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Golisopod', 'Indeedee-F', 'Mega Baxcalibur',
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);

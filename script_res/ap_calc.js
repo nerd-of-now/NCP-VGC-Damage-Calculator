@@ -779,6 +779,12 @@ $(".move-selector").change(function() {
     }
     else moveGroupObj.children(".move-linearAddedBP").hide();
 
+    if (move.stockpileBP) {
+        moveGroupObj.children(".move-stockpiles").show();
+        moveGroupObj.children(".move-stockpiles").val(0);
+    }
+    else moveGroupObj.children(".move-stockpiles").hide();
+
     if (move.usesOppMoves) {    //for when the attacker's moves change
         getOppMoves($(this).closest(".poke-info").attr("id"), moveGroupObj);
         moveGroupObj.children(".move-opponent").show();
@@ -2083,6 +2089,7 @@ function getMoveDetails(moveInfo, maxMon) {
         isDouble: (defaultDetails.canDouble && !moveInfo.find(".move-z").prop("checked") && !maxMon && moveInfo.find(".move-double").prop("checked")) ? 1 : 0,
         combinePledge: (defaultDetails.isPledge && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? moveInfo.find(".move-pledge").val() : 0,
         timesAffected: (defaultDetails.linearAddBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-linearAddedBP").val() : 0,
+        stockpiles: (defaultDetails.stockpileBP && !moveInfo.find(".move-z").prop("checked") && !maxMon) ? ~~moveInfo.find(".move-stockpiles").val() : 0,
         usedOppMoveIndex: moveInfo.find(".move-opponent").prop("selectedIndex"),
         getsStellarBoost: moveInfo.find(".move-stellar").prop("checked"),
         isPlusMove: moveInfo.find(".move-plus").prop("checked"),
