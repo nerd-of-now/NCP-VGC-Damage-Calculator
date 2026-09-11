@@ -446,7 +446,7 @@ var MOVES_RBY = {
         costHP: [1, 4, 'roundDown']
     },
     'Pound': {
-        bp: 35,
+        bp: 40,
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
@@ -4894,6 +4894,7 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         bp: 80,
         type: 'Psychic',
         category: 'Special',
+        isSound: true,
         hasSecondaryEffect: true,
     },
     'Fiery Wrath': {

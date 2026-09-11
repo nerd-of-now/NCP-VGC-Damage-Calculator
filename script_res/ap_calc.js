@@ -1625,8 +1625,8 @@ function calcUserHP(move, user, target, minDamage, maxDamage, isLeechSeed) {
             }
         }
         else if (move.name == "Pain Split") {
-            userMinDamage = -1 * minDamage;
-            userMaxDamage = -1 * maxDamage;
+            userMinDamage = user.curHP - Math.floor((user.curHP + targetMax) / 2);
+            userMaxDamage = userMinDamage;
         }
         else if (move.name == "Strength Sap") {
             if (target.boosts[AT] > -6) {
