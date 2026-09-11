@@ -47,7 +47,7 @@ const context = vm.createContext({
     JSON,
     gen: 10,
     move: { makesContact: false },
-    $: { extend: deepExtend },
+    $: Object.assign(function () { return { val() { return undefined; }, is() { return false; }, prop() { return undefined; }, text() {}, find() { return this; } }; }, { extend: deepExtend }),
 });
 
 function load(relativePath) {
@@ -56,6 +56,7 @@ function load(relativePath) {
     return source;
 }
 
+load('script_res/stat_data.js');
 load('script_res/pokedex.js');
 const moveDataSource = load('script_res/move_data.js');
 load('script_res/ability_data.js');
@@ -175,5 +176,72 @@ for (const filename of ['index.html', 'za-calc.html']) {
     const html = fs.readFileSync(path.join(repo, filename), 'utf8');
     assert.equal((html.match(/class="move-stockpiles calc-trigger hide"/g) || []).length, 8);
 }
+
+
+// --- Champions damage-engine fixes -------------------------------------------------
+
+// Gyro Ball's BP is 25 * targetSpeed / userSpeed + 1, capped at 150.
+function gyroBallBP(userSpeed, targetSpeed) {
+    const [bp] = context.basePowerFunc(
+        { name: 'Gyro Ball', bp: 1 }, {}, '',
+        { stats: { sp: userSpeed } }, { stats: { sp: targetSpeed } }, {}, true, true, '',
+    );
+    return bp;
+}
+assert.equal(gyroBallBP(100, 200), 51);
+assert.equal(gyroBallBP(100, 100), 26);
+assert.equal(gyroBallBP(200, 100), 13);
+assert.equal(gyroBallBP(10, 1000), 150);
+
+// Plus and Minus raise Sp. Atk only, so a physical move gets no 1.5x.
+function plusMinusMods(ability, category) {
+    const attacker = {
+        ability, abilityOn: true, item: '', name: '', status: 'Healthy',
+        curHP: 100, maxHP: 100, boosts: {}, hasCustomModifiers: false,
+    };
+    const [mods] = context.calcAtMods(
+        { name: 'Probe', category, type: 'Normal' },
+        attacker, '', {},
+        { weather: '', terrain: '', isNeutralizingGas: false, isRedItem: false, isFlowerGiftAtk: false },
+    );
+    return Array.from(mods);
+}
+for (const ability of ['Plus', 'Minus']) {
+    assert.ok(plusMinusMods(ability, 'Special').includes(0x1800));
+    assert.equal(plusMinusMods(ability, 'Physical').includes(0x1800), false);
+}
+
+// Pain Split drops the target to the average HP and never reports negative damage.
+function painSplit(attackerHP, defenderHP) {
+    return context.statusMoves(
+        { name: 'Pain Split', bp: 0, category: 'Status' },
+        { item: '', curHP: attackerHP }, { curHP: defenderHP }, {},
+    ).damage[0];
+}
+assert.equal(painSplit(100, 160), 30);
+assert.equal(painSplit(100, 101), 1);
+assert.equal(painSplit(150, 100), 0);
+assert.equal(painSplit(100, 100), 0);
+
+// Terrain Pulse only takes the terrain's type while the user is grounded.
+function terrainPulseType(attacker) {
+    const move = { name: 'Terrain Pulse', type: 'Normal' };
+    context.checkMoveTypeChange(move, { terrain: 'Grassy', weather: '' }, {
+        item: '', ability: '', hasType() { return false; }, ...attacker,
+    });
+    return move.type;
+}
+assert.equal(terrainPulseType({}), 'Grass');
+assert.equal(terrainPulseType({ ability: 'Levitate' }), 'Normal');
+assert.equal(terrainPulseType({ item: 'Air Balloon' }), 'Normal');
+assert.equal(terrainPulseType({ hasType(type) { return type === 'Flying'; } }), 'Normal');
+
+// Steel Roller fails when no terrain is active.
+const steelRoller = { name: 'Steel Roller', bp: 130, category: 'Physical' };
+assert.deepEqual(
+    Array.from(context.setDamage(steelRoller, { ability: '' }, {}, {}, false, { terrain: '' }).damage),
+    [0],
+);
+assert.equal(context.setDamage(steelRoller, { ability: '' }, {}, {}, false, { terrain: 'Grassy' }), -1);
 
 process.stdout.write('Champions PR acceptance checks passed.\n');
