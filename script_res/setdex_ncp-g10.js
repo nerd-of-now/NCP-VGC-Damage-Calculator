@@ -766,7 +766,7 @@ var SETDEX_GEN10 = {
             "moves": [
                 "Hyper Voice",
                 "Psyshock",
-                "Psychic",
+                "Expanding Force",
                 "Trick Room",
             ],
         },
@@ -869,6 +869,27 @@ var SETDEX_GEN10 = {
             ],
         },
     },
+    "Absol": {
+        "Mega Z Offense": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "ability": "Justified",
+            "item": "Absolite Z",
+            "moves": [
+                "Night Slash",
+                "Shadow Claw",
+                "Close Combat",
+                "Psycho Cut",
+            ],
+        },
+    },
     "Garchomp": {
         "Scarf Offense": {
             "sps": {
@@ -940,6 +961,44 @@ var SETDEX_GEN10 = {
                 "Dragon Claw",
                 "Rock Slide",
                 "Stomping Tantrum",
+            ],
+        },
+        "Mega Z Draco + Pulse + Coverage": {
+            "sps": {
+                "hp": 2,
+                "at": 0,
+                "df": 0,
+                "sa": 32,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Modest",
+            "item": "Garchompite Z",
+            "moves": [
+                "Draco Meteor",
+                "Dragon Pulse",
+                "Flamethrower",
+                "Power Gem",
+            ],
+        },
+    },
+    "Lucario": {
+        "Mega Z Calm Mind Bulk": {
+            "sps": {
+                "hp": 31,
+                "at": 0,
+                "df": 2,
+                "sa": 8,
+                "sd": 6,
+                "sp": 19,
+            },
+            "nature": "Timid",
+            "item": "Lucarionite Z",
+            "moves": [
+                "Dark Pulse",
+                "Aura Sphere",
+                "Flash Cannon",
+                "Calm Mind",
             ],
         },
     },
@@ -1217,6 +1276,44 @@ var SETDEX_GEN10 = {
                 "Draco Meteor",
                 "Earth Power",
                 "Flamethrower",
+            ],
+        },
+    },
+    "Volcarona": {
+        "Grassy Seed Quiver Dance": {
+            "sps": {
+                "hp": 19,
+                "at": 0,
+                "df": 13,
+                "sa": 5,
+                "sd": 1,
+                "sp": 28,
+            },
+            "nature": "Modest",
+            "item": "Grassy Seed",
+            "moves": [
+                "Heat Wave",
+                "Giga Drain",
+                "Fiery Dance",
+                "Quiver Dance",
+            ],
+        },
+        "Rocky Helmet Support": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 0,
+                "sd": 2,
+                "sp": 0,
+            },
+            "nature": "Bold",
+            "item": "Rocky Helmet",
+            "moves": [
+                "Overheat",
+                "Struggle Bug",
+                "Rage Powder",
+                "Tailwind",
             ],
         },
     },
@@ -1567,7 +1664,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Hatterene": {
-        "Fairy Feather Trick Room": {
+        "Life Orb Trick Room": {
             "sps": {
                 "hp": 32,
                 "at": 0,
@@ -1577,11 +1674,11 @@ var SETDEX_GEN10 = {
                 "sp": 0,
             },
             "nature": "Quiet",
-            "item": "Fairy Feather",
+            "item": "Life Orb",
             "moves": [
-                "Psychic",
+                "Psyshock",
                 "Dazzling Gleam",
-                "Mystical Fire",
+                "Expanding Force",
                 "Trick Room",
             ],
         },
@@ -1759,6 +1856,24 @@ var SETDEX_GEN10 = {
                 "Rock Slide",
             ],
         },
+        "Psychic Seed Offense": {
+            "sps": {
+                "hp": 0,
+                "at": 27,
+                "df": 0,
+                "sa": 0,
+                "sd": 7,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "item": "Psychic Seed",
+            "moves": [
+                "Dire Claw",
+                "Close Combat",
+                "Throat Chop",
+                "Rock Slide",
+            ],
+        },
         "Poison Touch Sash": {
             "sps": {
                 "hp": 2,
@@ -1854,6 +1969,26 @@ var SETDEX_GEN10 = {
                 "Bite",
                 "Feint",
                 "Follow Me",
+            ],
+        },
+    },
+    "Armarouge": {
+        "Psyspam Trick Room": {
+            "sps": {
+                "hp": 29,
+                "at": 0,
+                "df": 0,
+                "sa": 32,
+                "sd": 5,
+                "sp": 0,
+            },
+            "nature": "Quiet",
+            "item": "Life Orb",
+            "moves": [
+                "Armor Cannon",
+                "Expanding Force",
+                "Heat Wave",
+                "Trick Room",
             ],
         },
     },
@@ -2593,6 +2728,202 @@ var SETDEX_GEN10 = {
                 "Shadow Ball",
                 "Power Gem",
                 "Steel Beam",
+            ],
+        },
+    },
+
+    //M-C
+    "Salamence": {
+        "Mixed Offense Mega": {
+            "sps": {
+                "hp": 2,
+                "at": 0,
+                "df": 0,
+                "sa": 32,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Timid",
+            "item": "Salamencite",
+            "moves": [
+                "Double-Edge",
+                "Hyper Voice",
+                "Draco Meteor",
+                "Flamethrower",
+            ],
+        },
+    },
+    "Golisopod": {
+        "TR Offense Mega": {
+            "sps": {
+                "hp": 32,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 2,
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Golisopite",
+            "moves": [
+                "Leech Life",
+                "Iron Head",
+                "First Impression",
+                "Sucker Punch",
+            ],
+        },
+    },
+    "Rillaboom": {
+        "Basic Miracle Seed": {
+            "sps": {
+                "hp": 32,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 2,
+                "sp": 0,
+            },
+            "nature": "Adamant",
+            "item": "Miracle Seed",
+            "moves": [
+                "Wood Hammer",
+                "Grassy Glide",
+                "High Horsepower",
+                "Fake Out",
+            ],
+        },
+        "Bulkier Sitrus Berry": {
+            "sps": {
+                "hp": 32,
+                "at": 15,
+                "df": 0,
+                "sa": 0,
+                "sd": 19,
+                "sp": 0,
+            },
+            "nature": "Adamant",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Wood Hammer",
+                "Grassy Glide",
+                "U-turn",
+                "Fake Out",
+            ],
+        },
+    },
+    "Indeedee": {
+        "Scarf Offense": {
+            "sps": {
+                "hp": 0,
+                "at": 0,
+                "df": 2,
+                "sa": 32,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Modest",
+            "item": "Choice Scarf",
+            "moves": [
+                "Expanding Force",
+                "Dazzling Gleam",
+                "Mystical Fire",
+                "Trick",
+            ],
+        },
+        "Sash Imprison Trick Room": {
+            "sps": {
+                "hp": 0,
+                "at": 0,
+                "df": 2,
+                "sa": 32,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Modest",
+            "item": "Focus Sash",
+            "moves": [
+                "Expanding Force",
+                "Hyper Voice",
+                "Imprison",
+                "Trick Room",
+            ],
+        },
+    },
+    "Indeedee-F": {
+        "Psychic Seed Support": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 0,
+                "sd": 2,
+                "sp": 0,
+            },
+            "nature": "Relaxed",
+            "item": "Psychic Seed",
+            "moves": [
+                "Psychic",
+                "Terrain Pulse",
+                "Mystical Fire",
+                "Follow Me",
+            ],
+        },
+    },
+    "Pawmot": {
+        "Life Orb Offense": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "item": "Life Orb",
+            "moves": [
+                "Double Shock",
+                "Close Combat",
+                "Ice Punch",
+                "Fake Out",
+            ],
+        },
+        "Sash Revival Blessing": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "item": "Focus Sash",
+            "moves": [
+                "Double Shock",
+                "Close Combat",
+                "Revival Blessing",
+                "Fake Out",
+            ],
+        },
+    },
+    "Baxcalibur": {
+        "Basic Mega Offense": {
+            "sps": {
+                "hp": 32,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 2,
+                "sp": 0,
+            },
+            "nature": "Adamant",
+            "item": "Baxcalibrite",
+            "moves": [
+                "Glaive Rush",
+                "Icicle Crash",
+                "Ice Shard",
+                "High Horsepower",
             ],
         },
     },
