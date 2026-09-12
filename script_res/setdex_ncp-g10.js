@@ -56,8 +56,26 @@ var SETDEX_GEN10 = {
                 "Heat Wave",
                 "Weather Ball",
                 "Solar Beam",
-                "Air Slash"
+                "Ancient Power"
             ]
+        },
+        "Physically Bulky Mega Y": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 32,
+                "sa": 1,
+                "sd": 0,
+                "sp": 1,
+            },
+            "nature": "Modest",
+            "item": "Charizardite Y",
+            "moves": [
+                "Heat Wave",
+                "Weather Ball",
+                "Solar Beam",
+                "Air Slash",
+            ],
         },
         "DD Mega X": {
             "sps": {
@@ -80,7 +98,7 @@ var SETDEX_GEN10 = {
         },
     },
     "Blastoise": {
-        "Mega Attacker under Tailwind": {
+        "Fast Mega Attacker": {
             "sps": {
                 "hp": 2,
                 "at": 0,
@@ -94,10 +112,69 @@ var SETDEX_GEN10 = {
             "item": "Blastoisinite",
             "moves": [
                 "Water Spout",
-                "Aura Sphere",
                 "Dark Pulse",
+                "Aura Sphere",
                 "Ice Beam"
             ]
+        },
+        "Trick Room Mega Offense": {
+            "sps": {
+                "hp": 32,
+                "at": 0,
+                "df": 0,
+                "sa": 32,
+                "sd": 2,
+                "sp": 0,
+            },
+            "nature": "Quiet",
+            "ability": "Rain Dish",
+            "item": "Blastoisinite",
+            "moves": [
+                "Water Spout",
+                "Dark Pulse",
+                "Ice Beam",
+                "Fake Out",
+            ],
+        },
+    },
+    "Beedrill": {
+        "Adamant Coverage Mega": {
+            "sps": {
+                "hp": 0,
+                "at": 30,
+                "df": 5,
+                "sa": 0,
+                "sd": 0,
+                "sp": 31,
+            },
+            "nature": "Adamant",
+            "item": "Beedrillite",
+            "moves": [
+                "Poison Jab",
+                "U-turn",
+                "Drill Run",
+                "Knock Off",
+            ],
+        },
+    },
+    "Pidgeot": {
+        "Offense Tailwind Mega": {
+            "sps": {
+                "hp": 1,
+                "at": 0,
+                "df": 0,
+                "sa": 32,
+                "sd": 1,
+                "sp": 32,
+            },
+            "nature": "Timid",
+            "item": "Pidgeotite",
+            "moves": [
+                "Hurricane",
+                "Heat Wave",
+                "Hyper Beam",
+                "Tailwind",
+            ],
         },
     },
     "Raichu": {
@@ -270,22 +347,22 @@ var SETDEX_GEN10 = {
                 "Drain Punch"
             ]
         },
-        "Bulky Max Attack Mega": {
+        "Trick Room Max Attack Mega": {
             "sps": {
                 "hp": 32,
                 "at": 32,
                 "df": 0,
                 "sa": 0,
-                "sd": 0,
-                "sp": 2
+                "sd": 2,
+                "sp": 0
             },
-            "nature": "Adamant",
+            "nature": "Brave",
             "item": "Kangaskhanite",
             "moves": [
                 "Fake Out",
                 "Double-Edge",
-                "Sucker Punch",
-                "Drain Punch"
+                "Hammer Arm",
+                "Ice Punch"
             ]
         },
     },
@@ -829,6 +906,42 @@ var SETDEX_GEN10 = {
                 "Stomping Tantrum",
             ],
         },
+        "cona's Worlds 2nd Max Speed Sitrus": {
+            "sps": {
+                "hp": 21,
+                "at": 7,
+                "df": 6,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "item": "Sitrus Berry",
+            "moves": [
+                "Earthquake",
+                "Dragon Claw",
+                "Rock Slide",
+                "Protect",
+            ],
+        },
+        "Mega for Both Offense and Bulk": {
+            "sps": {
+                "hp": 22,
+                "at": 21,
+                "df": 3,
+                "sa": 0,
+                "sd": 1,
+                "sp": 19,
+            },
+            "nature": "Adamant",
+            "item": "Garchompite",
+            "moves": [
+                "Earthquake",
+                "Dragon Claw",
+                "Rock Slide",
+                "Stomping Tantrum",
+            ],
+        },
     },
     "Mamoswine": {
         "Sash Oblivious Offense": {
@@ -1338,6 +1451,24 @@ var SETDEX_GEN10 = {
                 "Parting Shot",
             ],
         },
+        "Trick Room Offense": {
+            "sps": {
+                "hp": 29,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 5,
+                "sp": 0,
+            },
+            "nature": "Brave",
+            "item": "Life Orb",
+            "moves": [
+                "Flare Blitz",
+                "Darkest Lariat",
+                "Close Combat",
+                "Fake Out",
+            ],
+        },
     },
     "Primarina": {
         "Mystic Water Offense": {
@@ -1628,6 +1759,25 @@ var SETDEX_GEN10 = {
                 "Rock Slide",
             ],
         },
+        "Poison Touch Sash": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+                "Close Combat",
+                "Poison Jab",
+                "Fake Out",
+                "Feint",
+            ],
+        },
     },
     "Maushold": {
         "Chople Support": {
@@ -1649,6 +1799,24 @@ var SETDEX_GEN10 = {
                 "Taunt",
             ],
         },
+        "Technician Offense": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "item": "Wide Lens",
+            "moves": [
+                "Population Bomb",
+                "Bite",
+                "Feint",
+                "Follow Me",
+            ],
+        },
     },
     "Maushold-Four": {
         "Chople Support": {
@@ -1668,6 +1836,24 @@ var SETDEX_GEN10 = {
                 "Feint",
                 "Follow Me",
                 "Taunt",
+            ],
+        },
+        "Technician Offense": {
+            "sps": {
+                "hp": 2,
+                "at": 32,
+                "df": 0,
+                "sa": 0,
+                "sd": 0,
+                "sp": 32,
+            },
+            "nature": "Jolly",
+            "item": "Wide Lens",
+            "moves": [
+                "Population Bomb",
+                "Bite",
+                "Feint",
+                "Follow Me",
             ],
         },
     },
@@ -1858,6 +2044,24 @@ var SETDEX_GEN10 = {
             },
             "nature": "Adamant",
             "item": "Focus Sash",
+            "moves": [
+                "Kowtow Cleave",
+                "Iron Head",
+                "Sucker Punch",
+                "Low Kick",
+            ],
+        },
+        "natsumewato's Worlds 1st Chople": {
+            "sps": {
+                "hp": 32,
+                "at": 15,
+                "df": 0,
+                "sa": 0,
+                "sd": 19,
+                "sp": 0,
+            },
+            "nature": "Adamant",
+            "item": "Chople Berry",
             "moves": [
                 "Kowtow Cleave",
                 "Iron Head",
