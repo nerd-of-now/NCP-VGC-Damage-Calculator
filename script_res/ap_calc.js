@@ -83,6 +83,14 @@ function checkCustomMods() {
         }
     }
 }
+var turnOffOverflow = false;
+function toggleOverflowCustomMods(calledByCustModToggle = false) {
+    let checkPrev = turnOffOverflow;
+    turnOffOverflow = isCustomMods && $('#overflow').prop("checked");
+    if (checkPrev !== turnOffOverflow && !calledByCustModToggle) {
+        calculate();
+    }
+}
 
 // auto-calc stats and current HP on change
 $(".level").keyup(function() {
@@ -1839,9 +1847,9 @@ $(".result-move").change(function() {
             else {
                 $("#damageValues").text("(" + result.damage.join(", ") + ")");
             }
+            let custModText = "";
             if (!$.isEmptyObject(mechanicsTests)) {
                 const modsInEnglish = { "bpMods": "Base Power", "atMods": "Attack", "dfMods": "Defense", "fnMods": "Final" };
-                var custModText = "";
                 for (let modifierType in mechanicsTests) {
                     if (custModText != "") {
                         custModText += "; ";
@@ -1858,9 +1866,18 @@ $(".result-move").change(function() {
                         }
                     }
                 }
+            }
+            if (turnOffOverflow) {
+                if (custModText != "") {
+                    custModText += "; ";
+                }
+                custModText += "OVERFLOW OFF";
+            }
+            if (custModText != "") {
                 //console.log(custModText);
                 $("#customModValues").text(custModText);
             }
+
             if (result.cooldown) {
                 $("#cooldownText").text(result.cooldown);
             }
@@ -2053,7 +2070,7 @@ function Pokemon(pokeInfo) {
     this.canEvolve = pokedex[pokemonName] ? pokedex[pokemonName].canEvolve : false;
     this.isTransformed = pokeInfo.find(".transform").prop("checked");
     if (this.isTransformed) this.name = this.name + " (" + transformSpecies[pokeInfo.attr("id")] + ")";
-    if (!$.isEmptyObject(mechanicsTests) && isCustomMods) {
+    if ((!$.isEmptyObject(mechanicsTests) || turnOffOverflow) && isCustomMods) {
         this.customModifiers = mechanicsTests;
         this.hasCustomModifiers = true;
         $("#customModValues").show();

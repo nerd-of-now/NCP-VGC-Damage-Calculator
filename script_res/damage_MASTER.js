@@ -2275,9 +2275,11 @@ function calcGeneralMods(baseDamage, move, attacker, defender, defAbility, field
             damage[i] = Math.floor(Math.floor(damage[i] * 70) / 100);
         }
         //l. Min Damage Check
-        damage[i] = Math.max(1, damage[i]);
+        if (gen <= 9) {
+            damage[i] = Math.max(1, damage[i]);
+        }
         //m. Max Damage Check
-        if (damage[i] > 65535) {
+        if (gen <= 9 && damage[i] > 65535 && !turnOffOverflow) {
             damage[i] %= 65536;
             reSortDamage = true;
         }

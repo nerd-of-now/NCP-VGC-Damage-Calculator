@@ -134,7 +134,8 @@ function toggleCustomModifiers(custModsOn) {
 		$(".custom-mods-group").hide();
 		isCustomMods = false;
 	}
-	if (!$.isEmptyObject(mechanicsTests)) {
+	toggleOverflowCustomMods(true);
+	if (!$.isEmptyObject(mechanicsTests) || turnOffOverflow) {
 		calculate();
 	}
 }
