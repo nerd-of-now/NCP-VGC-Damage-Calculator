@@ -1014,7 +1014,7 @@ var LOCK_ITEM_LOOKUP = {
 };
 
 function cantRemoveItem(defItem, defSpecies, terrain) {
-    return defItem === null || defItem === "" || defItem.indexOf("ium Z") !== -1
+    return defItem === null || defItem === "" || defItem.indexOf("ium Z") !== -1 || canMega(defItem, defSpecies)
         || LOCK_ITEM_LOOKUP[defSpecies] === defItem
         || (defSpecies === "Arceus" && defItem.indexOf(" Plate") !== -1)
         || (defSpecies === "Genesect" && defItem.indexOf(" Drive") !== -1)
