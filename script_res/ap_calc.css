@@ -406,3 +406,76 @@ button.pkmnsc, button.trashsc, button.editsc, button.addsc{
     visibility: visible;
     cursor: pointer;
 }
+#mainResult:hover {
+    color:#6a6a6a;
+}
+.dark #mainResult:hover {
+    color:#9f9f9f;
+}
+
+#toast {
+    left: 50%;
+    top: 20px;
+    min-width: 200px;
+    margin-left: -100px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    font-size: 15px;
+    border-radius: 15px;
+    padding: 16px;
+    visibility: hidden;
+    z-index: 11;
+}
+
+#toast.toastActive {
+  animation: fadeIn 0.5s, fadeOut 0.5s 2s;
+  -webkit-animation: fadeIn 0.5s, fadeOut 0.5s 2s;
+  visibility: visible;
+}
+
+@keyframes fadeIn {
+    from {
+        /*top: 0;*/
+        opacity: 0;
+    }
+    to {
+        /*top: 20px;*/
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        /*top: 20px;*/
+        opacity: 1;
+    }
+    to {
+        /*top: 0;*/
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        /*top: 0;*/
+        opacity: 0;
+    }
+    to {
+        /*top: 20px;*/
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        /*top: 20px;*/
+        opacity: 1;
+    }
+    to {
+        /*top: 0;*/
+        opacity: 0;
+    }
+}
+

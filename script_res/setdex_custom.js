@@ -587,14 +587,36 @@ function runSaveCalc(pnum) {
         savecalc(monSet, document.getElementById('setName' + pnum).value, "#p" + pnum, actualName);
 }
 
-//Looked this up online, copies to clipboard without any input
-function Clipboard_CopyTo(value) {
-    var tempText = document.createElement("textarea");
-    tempText.value = value;
-    document.body.appendChild(tempText);
-    tempText.select();
-    document.execCommand("copy");   //technically deprecated but everything still supports it and not everything supports the new function that copies
-    document.body.removeChild(tempText);
+async function Clipboard_CopyTo(value) {
+    try {
+        await navigator.clipboard.writeText(value);
+        toastHandle();
+    }
+    catch (error) {
+        if (error instanceof TypeError) {
+            console.warn('navigator.clipboard.writeText() failed. Attempting document.execCommand("copy")...');
+            let tempText = document.createElement("textarea");
+            tempText.value = value;
+            document.body.appendChild(tempText);
+            tempText.select();
+            let successfulCopy = true;
+            try {
+                document.execCommand("copy");   //technically deprecated but everything still supports it and not everything supports the new function that copies
+                console.log('document.execCommand("copy") successful.');
+            }
+            catch (fallbackError) {
+                alert('Copying to clipboard failed. (Fallback has thrown an error)');
+                successfulCopy = false;
+            }
+            document.body.removeChild(tempText);
+            if (successfulCopy) {
+                toastHandle();
+            }
+        }
+        else {
+            alert('Copying to clipboard failed. (non-TypeError thrown)');
+        }
+    }
 }
 
 //Exports sets by copying them to clipboard. Might adjust later depending on how successful it is

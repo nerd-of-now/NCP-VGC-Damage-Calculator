@@ -11,6 +11,14 @@ var bounds = {
     "sps": [0, 32],
 };
 
+function toastHandle() {
+    let toastElem = $('#toast');
+    if (toastElem.css('visibility') == 'hidden') {
+        toastElem.addClass('toastActive');
+        setTimeout(function () { toastElem.removeClass('toastActive'); }, 2400);
+    }
+}
+
 //increments and decrements at specific places to prevent calculate() from running more than once from a single user input
 var calcQueue = 0;
 
