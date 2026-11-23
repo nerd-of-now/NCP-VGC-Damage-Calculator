@@ -8077,6 +8077,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
         "w": 18.0,
         "ab": "Adaptability",
     },
+    "Basculin-Blue-Striped": {
+        "t1": "Water",
+        "bs": {
+            "hp": 70,
+            "at": 92,
+            "df": 65,
+            "sa": 80,
+            "sd": 55,
+            "sp": 98
+        },
+        "w": 18.0,
+        "ab": "Adaptability",
+    },
     "Sandile": {
         "t1": "Ground",
         "t2": "Dark",
@@ -11269,6 +11282,76 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
         "ab": "No Guard",
         "isAlternateForme": true
     },
+    "Pikachu-Rock Star": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 6.0,
+        "ab": "Lightning Rod",
+    },
+    "Pikachu-Belle": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 6.0,
+        "ab": "Lightning Rod",
+    },
+    "Pikachu-Pop Star": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 6.0,
+        "ab": "Lightning Rod",
+    },
+    "Pikachu-Ph.D.": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 6.0,
+        "ab": "Lightning Rod",
+    },
+    "Pikachu-Libre": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 6.0,
+        "ab": "Lightning Rod",
+    },
     "Mega Slowbro": {
         "t1": "Water",
         "t2": "Psychic",
@@ -11638,6 +11721,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     "Mega Alakazam": { "bs": { "sd": 105 } },
 
     //SM Pokemon
+    "Pikachu-Cap": {
+        "t1": "Electric",
+        "bs": {
+            "hp": 35,
+            "at": 55,
+            "df": 40,
+            "sa": 50,
+            "sd": 50,
+            "sp": 90,
+            "sl": 50
+        },
+        "w": 6.0,
+        "ab": "Static",
+    },
     "Ash-Greninja": {
         "t1": "Water",
         "t2": "Dark",
@@ -13321,6 +13418,8 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 
 });
 
+["Pikachu-Rock Star", "Pikachu-Belle", "Pikachu-Pop Star", "Pikachu-Ph.D.", "Pikachu-Libre"].forEach(e => delete POKEDEX_SM[e]);
+
 var POKEDEX_LGPE = {
     "Pikachu-Starter": {
         "t1": "Electric",
@@ -14166,6 +14265,20 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
         "canEvolve": true,
     },
     "Toxtricity": {
+        "t1": "Electric",
+        "t2": "Poison",
+        "bs": {
+            "hp": 75,
+            "at": 98,
+            "df": 70,
+            "sa": 114,
+            "sd": 70,
+            "sp": 75
+        },
+        "w": 40,
+        "ab": "Punk Rock",
+    },
+    "Toxtricity-Low-Key": {
         "t1": "Electric",
         "t2": "Poison",
         "bs": {
@@ -15081,7 +15194,7 @@ var POKEDEX_SS_NATDEX = $.extend(true, {}, POKEDEX_SM, {
 });
 
 var GMAX_LIST = ['Charizard', 'Butterfree', 'Pikachu', 'Meowth', 'Machamp', 'Gengar', 'Kingler', 'Lapras', 'Eevee', 'Snorlax',
-    'Garbodor', 'Melmetal', 'Corviknight', 'Orbeetle', 'Drednaw', 'Coalossal', 'Flapple', 'Appletun', 'Sandaconda', 'Toxtricity',
+    'Garbodor', 'Melmetal', 'Corviknight', 'Orbeetle', 'Drednaw', 'Coalossal', 'Flapple', 'Appletun', 'Sandaconda', 'Toxtricity', 'Toxtricity-Low-Key',
     'Centiskorch', 'Hatterene', 'Grimmsnarl', 'Alcremie', 'Copperajah', 'Duraludon',
     'Venusaur', 'Blastoise', 'Rillaboom', 'Cinderace', 'Inteleon', 'Urshifu-Single Strike', 'Urshifu-Rapid Strike',
 ];
@@ -16021,6 +16134,48 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "w": 2.4,
         "ab": "Intimidate",
     },
+    "Squawkabilly-Blue": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 82,
+            "at": 96,
+            "df": 51,
+            "sa": 45,
+            "sd": 51,
+            "sp": 92,
+        },
+        "w": 2.4,
+        "ab": "Intimidate",
+    },
+    "Squawkabilly-Yellow": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 82,
+            "at": 96,
+            "df": 51,
+            "sa": 45,
+            "sd": 51,
+            "sp": 92,
+        },
+        "w": 2.4,
+        "ab": "Intimidate",
+    },
+    "Squawkabilly-White": {
+        "t1": "Normal",
+        "t2": "Flying",
+        "bs": {
+            "hp": 82,
+            "at": 96,
+            "df": 51,
+            "sa": 45,
+            "sd": 51,
+            "sp": 92,
+        },
+        "w": 2.4,
+        "ab": "Intimidate",
+    },
     "Nacli": {
         "t1": "Rock",
         "bs": {
@@ -16681,7 +16836,35 @@ var POKEDEX_SV_NATDEX = $.extend(true, {}, POKEDEX_SS_NATDEX, {
         "w": 220.0,
         "ab": "Unaware",
     },
-    "Tatsugiri": {
+    "Tatsugiri-Curly": {
+        "t1": "Dragon",
+        "t2": "Water",
+        "bs": {
+            "hp": 68,
+            "at": 50,
+            "df": 60,
+            "sa": 120,
+            "sd": 95,
+            "sp": 82,
+        },
+        "w": 8.0,
+        "ab": "Commander",
+    },
+    "Tatsugiri-Droopy": {
+        "t1": "Dragon",
+        "t2": "Water",
+        "bs": {
+            "hp": 68,
+            "at": 50,
+            "df": 60,
+            "sa": 120,
+            "sd": 95,
+            "sp": 82,
+        },
+        "w": 8.0,
+        "ab": "Commander",
+    },
+    "Tatsugiri-Stretchy": {
         "t1": "Dragon",
         "t2": "Water",
         "bs": {
@@ -17524,20 +17707,20 @@ var POKEDEX_SV = {};
     'Rellor', 'Rabsca', 'Greavard', 'Houndstone', 'Flittle', 'Espathra', 'Farigiraf', 'Wiglett', 'Wugtrio', 'Dondozo',
     'Veluza', 'Finizen', 'Palafin', 'Smoliv', 'Dolliv', 'Arboliva', 'Capsakid', 'Scovillain', 'Tadbulb', 'Bellibolt',
     'Varoom', 'Revavroom', 'Orthworm', 'Tandemaus', 'Maushold', 'Cetoddle', 'Cetitan', 'Frigibax', 'Arctibax', 'Baxcalibur',
-    'Tatsugiri', 'Cyclizar', 'Pawmi', 'Pawmo', 'Pawmot', 'Wattrel', 'Kilowattrel', 'Bombirdier', 'Squawkabilly', 'Flamigo',
+    'Tatsugiri-Curly', 'Cyclizar', 'Pawmi', 'Pawmo', 'Pawmot', 'Wattrel', 'Kilowattrel', 'Bombirdier', 'Squawkabilly', 'Flamigo',
     'Klawf', 'Nacli', 'Naclstack', 'Garganacl', 'Glimmet', 'Glimmora', 'Shroodle', 'Grafaiai', 'Fidough', 'Dachsbun',
     'Maschiff', 'Mabosstiff', 'Bramblin', 'Brambleghast', 'Gimmighoul', 'Gholdengo', 'Ting-Lu', 'Chien-Pao', 'Wo-Chien', 'Chi-Yu',
     'Tinkatink', 'Tinkatuff', 'Tinkaton', 'Charcadet', 'Armarouge', 'Ceruledge', 'Toedscool', 'Toedscruel', 'Kingambit', 'Clodsire',
     'Annihilape', 'Great Tusk', 'Brute Bonnet', 'Sandy Shocks', 'Scream Tail', 'Flutter Mane', 'Slither Wing', 'Roaring Moon', 'Iron Treads', 'Iron Moth',
     'Iron Hands', 'Iron Jugulis', 'Iron Thorns', 'Iron Bundle', 'Iron Valiant', 'Koraidon', 'Miraidon', 'Walking Wake', 'Iron Leaves',
     //Forms for Initial Pokemon
-    'Raichu-Alola', 'Diglett-Alola', 'Dugtrio-Alola', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', 'Growlithe-Hisui', 'Arcanine-Hisui', 'Slowpoke-Galar', 'Slowbro-Galar',
+    'Pikachu-Cap', 'Raichu-Alola', 'Diglett-Alola', 'Dugtrio-Alola', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', 'Growlithe-Hisui', 'Arcanine-Hisui', 'Slowpoke-Galar', 'Slowbro-Galar',
     'Grimer-Alola', 'Muk-Alola', 'Voltorb-Hisui', 'Electrode-Hisui', 'Tauros-Paldea-Combat', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Aqua', 'Articuno-Galar', 'Zapdos-Galar', 'Moltres-Galar',
     'Typhlosion-Hisui', 'Slowking-Galar', 'Qwilfish-Hisui', 'Sneasel-Hisui', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Dialga-Origin',
-    'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Basculin-White-Striped', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
+    'Palkia-Origin', 'Giratina-Origin', 'Samurott-Hisui', 'Lilligant-Hisui', 'Basculin-Blue-Striped', 'Basculin-White-Striped', 'Zorua-Hisui', 'Zoroark-Hisui', 'Braviary-Hisui', 'Tornadus-Therian', 'Thundurus-Therian', 'Landorus-Therian',
     'Meloetta-Pirouette', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Avalugg-Hisui', 'Decidueye-Hisui', 'Oricorio-Pom-Pom', "Oricorio-Pa'u", 'Oricorio-Sensu', 'Lycanroc-Midnight', 'Lycanroc-Dusk',
-    'Eiscue-Noice', 'Indeedee-F', 'Zacian-Crowned', 'Zamazenta-Crowned', 'Urshifu-Rapid Strike', 'Calyrex-Ice Rider', 'Calyrex-Shadow Rider', 'Basculegion-F', 'Enamorus-Therian', 'Oinkologne-F',
-    'Dudunsparce-Three-Segment', 'Palafin-Hero', 'Maushold-Four', 'Gimmighoul-Roaming', 'Hoopa-Unbound', 'Wooper-Paldea',
+    'Toxtricity-Low-Key', 'Eiscue-Noice', 'Indeedee-F', 'Zacian-Crowned', 'Zamazenta-Crowned', 'Urshifu-Rapid Strike', 'Calyrex-Ice Rider', 'Calyrex-Shadow Rider', 'Basculegion-F', 'Enamorus-Therian', 'Oinkologne-F',
+    'Dudunsparce-Three-Segment', 'Palafin-Hero', 'Maushold-Four', 'Squawkabilly-Blue', 'Squawkabilly-Yellow', 'Squawkabilly-White', 'Tatsugiri-Droopy', 'Tatsugiri-Stretchy', 'Gimmighoul-Roaming', 'Hoopa-Unbound', 'Wooper-Paldea',
     //Teal Mask DLC Pokemon
     'Ekans', 'Arbok', 'Sandshrew', 'Sandslash', 'Clefairy', 'Clefable', 'Vulpix', 'Ninetales', 'Poliwag', 'Poliwhirl', 'Poliwrath', 'Bellsprout', 'Weepinbell', 'Victreebel',
     'Geodude', 'Graveler', 'Golem', 'Koffing', 'Weezing', 'Snorlax', 'Sentret', 'Furret', 'Hoothoot', 'Noctowl', 'Spinarak', 'Ariados', 'Cleffa', 'Politoed', 'Aipom',
@@ -18046,7 +18229,9 @@ var POKEDEX_ZA_NATDEX = $.extend(true, {}, POKEDEX_SV_NATDEX, {
     "Zeraora": { "formes": ["Zeraora", "Mega Zeraora"] },
     "Scovillain": { "formes": ["Scovillain", "Mega Scovillain"] },
     "Glimmora": { "formes": ["Glimmora", "Mega Glimmora"] },
-    "Tatsugiri": { "formes": ["Tatsugiri", "Mega Tatsugiri"] },
+    "Tatsugiri-Curly": { "formes": ["Tatsugiri-Curly", "Mega Tatsugiri"] },
+    "Tatsugiri-Droopy": { "formes": ["Tatsugiri-Droopy", "Mega Tatsugiri"] },
+    "Tatsugiri-Stretchy": { "formes": ["Tatsugiri-Stretchy", "Mega Tatsugiri"] },
     "Baxcalibur": { "formes": ["Baxcalibur", "Mega Baxcalibur"] },
     //new Pokemon
     "Mega Raichu X": {
@@ -18362,7 +18547,7 @@ var POKEDEX_ZA = {};
     //Mega Dimension DLC Pokemon
     'Mankey', 'Primeape', 'Annihilape', 'Meowth', 'Persian', 'Perrserker', "Farfetch'd", "Sirfetch'd", 'Cubone', 'Marowak', 'Porygon', 'Porygon2',
     'Porygon-Z', 'Capsakid', 'Scovillain', 'Tinkatink', 'Tinkatuff', 'Tinkaton', 'Cyclizar', 'Glimmet', 'Glimmora', 'Rotom', 'Greavard', 'Houndstone',
-    'Sandygast', 'Palossand', 'Kecleon', 'Flamigo', 'Cryogonal', 'Dondozo', 'Tatsugiri', 'Frigibax', 'Arctibax', 'Baxcalibur', 'Gimmighoul', 'Gholdengo',
+    'Sandygast', 'Palossand', 'Kecleon', 'Flamigo', 'Cryogonal', 'Dondozo', 'Tatsugiri-Curly', 'Frigibax', 'Arctibax', 'Baxcalibur', 'Gimmighoul', 'Gholdengo',
     'Qwilfish', 'Overqwil', 'Treecko', 'Grovyle', 'Sceptile', 'Torchic', 'Combusken', 'Blaziken', 'Mudkip', 'Marshtomp', 'Swampert', 'Feebas',
     'Milotic', 'Chingling', 'Chimecho', 'Indeedee', 'Purrloin', 'Liepard', 'Munna', 'Musharna', 'Throh', 'Sawk', 'Yamask', 'Cofagrigus',
     'Runerigus', 'Wimpod', 'Golisopod', 'Nickit', 'Thievul', 'Clobbopus', 'Grapploct', 'Mimikyu', 'Kleavor', 'Morpeko', 'Golett', 'Golurk',
@@ -18373,9 +18558,9 @@ var POKEDEX_ZA = {};
     'Hoopa', 'Marshadow', 'Meltan', 'Melmetal', 'Darkrai', 'Latias', 'Latios', 'Kyogre', 'Groudon', 'Rayquaza', 'Magearna', 'Zeraora',
     //Forms for Mega Dimension Pokemon
     'Mega Raichu X', 'Mega Raichu Y', 'Mega Absol Z', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Meowstic', 'Meowth-Alola', 'Meowth-Galar', 'Persian-Alola', "Farfetch'd-Galar",
-    'Marowak-Alola', 'Mega Scovillain', 'Mega Glimmora', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Mega Tatsugiri', 'Mega Baxcalibur', 'Gimmighoul-Roaming', 
+    'Marowak-Alola', 'Mega Scovillain', 'Mega Glimmora', 'Rotom-Heat', 'Rotom-Wash', 'Rotom-Frost', 'Rotom-Fan', 'Rotom-Mow', 'Tatsugiri-Droopy', 'Tatsugiri-Stretchy', 'Mega Tatsugiri', 'Mega Baxcalibur', 'Gimmighoul-Roaming', 
     'Qwilfish-Hisui', 'Mega Sceptile', 'Mega Blaziken', 'Mega Swampert', 'Mega Chimecho', 'Indeedee-F', 'Yamask-Galar', 'Mega Golisopod', 'Morpeko-Hangry', 'Mega Golurk',
-    'Mega Staraptor', 'Mega Crabominable', 'Mr. Mime-Galar', 'Mega Heatran', 'Meloetta-Pirouette', 'Hoopa-Unbound', 'Mega Darkrai', 'Mega Latias', 'Mega Latios',
+    'Mega Staraptor', 'Squawkabilly-Blue', 'Squawkabilly-Yellow', 'Squawkabilly-White', 'Mega Crabominable', 'Toxtricity-Low-Key', 'Mr. Mime-Galar', 'Mega Heatran', 'Meloetta-Pirouette', 'Hoopa-Unbound', 'Mega Darkrai', 'Mega Latias', 'Mega Latios',
     'Primal Kyogre', 'Primal Groudon', 'Mega Rayquaza', 'Mega Magearna', 'Mega Zeraora',
 ].forEach(e => POKEDEX_ZA[e] = POKEDEX_ZA_NATDEX[e]);
 
@@ -18433,7 +18618,7 @@ var POKEDEX_CHAMPIONS = {};
     'Wigglytuff', 'Persian', "Farfetch'd", 'Mr. Mime', 'Swalot', 'Salamence', 'Gogoat', 'Golisopod', 'Rillaboom', 'Cinderace', 'Inteleon', 'Thievul', 'Toxtricity',
     'Grapploct', 'Perrserker', "Sirfetch'd", 'Pincurchin', 'Indeedee', 'Pawmot', 'Arboliva', 'Squawkabilly', 'Mabosstiff', 'Baxcalibur',
     //Forms of Regulation M-C additions
-    'Persian-Alola', 'Mega Absol Z', 'Mega Salamence', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Golisopod', 'Indeedee-F', 'Mega Baxcalibur',
+    'Persian-Alola', 'Mega Absol Z', 'Mega Salamence', 'Mega Garchomp Z', 'Mega Lucario Z', 'Mega Golisopod', 'Toxtricity-Low-Key', 'Indeedee-F', 'Squawkabilly-Blue', 'Squawkabilly-Yellow', 'Squawkabilly-White', 'Mega Baxcalibur',
 ].forEach(e => POKEDEX_CHAMPIONS[e] = POKEDEX_ZA_NATDEX[e]);
 
 //performs deep copy; necessary to preserve form data for nat dex

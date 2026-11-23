@@ -7325,6 +7325,31 @@ var SETDEX_VGC2021 = {
             ]
         },
     },
+    "Toxtricity-Low-Key": {
+        "Default Set": {
+            "level": 50,
+            "evs": {
+                "hp": 4,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 0,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Modest",
+            "ability": "Punk Rock",
+            "item": "Choice Specs",
+            "moves": [
+                "Overdrive",
+                "Sludge Bomb",
+                "Boomburst",
+                "Volt Switch"
+            ]
+        },
+    },
     "Corviknight": {
         "Default Set": {
             "level": 50,

@@ -10,14 +10,19 @@ var showdownToCalcFormes = {
     "Urshifu-Rapid-Strike": "Urshifu-Rapid Strike",
     "Calyrex-Ice": "Calyrex-Ice Rider",
     "Calyrex-Shadow": "Calyrex-Shadow Rider",
-    "Pikachu-Rock-Star": "Pikachu",
-    "Pikachu-Belle": "Pikachu",
-    "Pikachu-Pop-Star": "Pikachu",
-    "Pikachu-PhD": "Pikachu",
-    "Pikachu-Libre": "Pikachu",
+    "Pikachu-Rock-Star": "Pikachu-Rock Star",
+    "Pikachu-Pop-Star": "Pikachu-Pop Star",
+    "Pikachu-PhD": "Pikachu-Ph.D.",
+    "Pikachu-Original": "Pikachu-Cap",
+    "Pikachu-Hoenn": "Pikachu-Cap",
+    "Pikachu-Sinnoh": "Pikachu-Cap",
+    "Pikachu-Unova": "Pikachu-Cap",
+    "Pikachu-Kalos": "Pikachu-Cap",
+    "Pikachu-Alola": "Pikachu-Cap",
+    "Pikachu-Partner": "Pikachu-Cap",
+    "Pikachu-World": "Pikachu-Cap",
     "Shellos-East": "Shellos",
     "Gastrodon-East": "Gastrodon",
-    "Basculin-Blue-Striped": "Basculin",
     "Deerling-Summer": "Deerling",
     "Deerling-Autumn": "Deerling",
     "Deerling-Winter": "Deerling",
@@ -31,12 +36,10 @@ var showdownToCalcFormes = {
     "Genesect-Shock": "Genesect",
     "Oricorio": "Oricorio-Baile",
     "Magearna-Original": "Magearna",
-    "Toxtricity-Low-Key": "Toxtricity",
     "Sinistea-Antique": "Sinistea",
     "Polteageist-Antique": "Polteageist",
     "Zarude-Dada": "Zarude",
-    "Tatsugiri-Droopy": "Tatsugiri",
-    "Tatsugiri-Stretchy": "Tatsugiri",
+    "Tatsugiri": "Tatsugiri-Curly",
     "Poltchageist-Artisan": "Poltchageist",
     'Sinistcha-Masterpiece': 'Sinistcha',
     'Terapagos-Terastal': 'Terapagos',
@@ -44,8 +47,10 @@ var showdownToCalcFormes = {
 };
 
 var calcToShowdownFormes = {
-    //"Shellos": "Shellos-East",
-    //"Gastrodon": "Gastrodon-East",
+    "Pikachu-Rock Star": "Pikachu-Rock-Star",
+    "Pikachu-Pop Star": "Pikachu-Pop-Star",
+    "Pikachu-Ph.D.": "Pikachu-PhD",
+    "Pikachu-Cap": "Pikachu-Partner",
     "Pumpkaboo-Average": "Pumpkaboo",
     "Gourgeist-Average": "Gourgeist",
     "Zygarde-10%": "Zygarde-10",
@@ -56,6 +61,7 @@ var calcToShowdownFormes = {
     "Calyrex-Ice Rider": "Calyrex-Ice",
     "Calyrex-Shadow Rider": "Calyrex-Shadow",
     "Palafin": "Palafin-Hero",
+    "Tatsugiri-Curly": "Tatsugiri",
     "Terapagos":"Terapagos-Terastal",
 };
 
@@ -829,6 +835,7 @@ function storedSetFixes() {
         'Indeedee-M': 'Indeedee',
         'Dudunsparce-Big': 'Dudunsparce-Three-Segment',
         'Gimmighoul-Roam': 'Gimmighoul-Roaming',
+        'Tatsugiri': 'Tatsugiri-Curly',
     };
     var nameChangeItemRequired = {
         'Zacian': {
@@ -842,7 +849,7 @@ function storedSetFixes() {
     };
     var needsNameChangeItem = false;
     var mustLoadSidebar = false;
-    for (var i = 9; i >= 1; i--) {
+    for (var i = 10; i >= 1; i--) {
         if (localStorage["custom_gen_" + i] != null) {
             tempCustom = JSON.parse(localStorage["custom_gen_" + i]);
             for (mon in tempCustom) {

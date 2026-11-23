@@ -87,6 +87,7 @@ function reloadSidebar(pnum) {
 }
 
 function getSidebarImg(teamslotI, displayName) {
+    let displayNameExceptions = ['Urshifu', 'Urshifu-Rapid-Strike', 'Meowstic-M-Mega', 'Meowstic-F-Mega'];
     let fallbackName = displayName;
     let pIndex = teamslotI[5] == 'L' ? 0 : teamslotI[5] == 'R' ? 1 : -1;
     let slotIndex = parseInt(teamslotI[6]) - 1;
@@ -103,6 +104,12 @@ function getSidebarImg(teamslotI, displayName) {
         }
         else if (displayName == "Floette-Eternal") {
             displayName = "Floette-Mega";
+        }
+        else if (displayName == "Tatsugiri") {
+            displayName = "Tatsugiri-Curly-Mega";
+        }
+        else if (displayName == "Meowstic") {
+            displayName = "Meowstic-M-Mega";
         }
         else if (!(displayName.includes("Zygarde"))) {
             displayName = displayName + '-Mega';
@@ -124,14 +131,14 @@ function getSidebarImg(teamslotI, displayName) {
     else if (displayName.includes("Darmanitan") && setDetails.ability == "Zen Mode") {
         displayName = displayName + "-Zen";
     }
-    else if (displayName == "Greninja" && setDetails.ability == "Battle Bond" &&  "Ash-Greninja" in pokedex) {
+    else if (displayName == "Greninja" && setDetails.ability == "Battle Bond" && "Ash-Greninja" in pokedex) {
         displayName = 'Greninja-Ash';
     }
     else if (setDetails.gmax_factor) {
         displayName = displayName + '-Gmax';
     }
 
-    if (!(['Urshifu', 'Urshifu-Rapid-Strike'].includes(displayName))) {
+    if (!(displayNameExceptions.includes(displayName))) {
         displayName = displayName.replace(' ', '-').replace(/\.|'/g, '').toLowerCase();
         $(teamslotI).prop('src', 'https://www.smogon.com/forums/media/minisprites/' + displayName + '.png')
             .on('error', function () {
@@ -142,11 +149,9 @@ function getSidebarImg(teamslotI, displayName) {
                     });
             });
     }
-    else if (displayName == 'Urshifu') {
-        $(teamslotI).prop('src', 'image_res/urshifu-single.png');
-    }
-    else if (displayName == 'Urshifu-Rapid-Strike') {
-        $(teamslotI).prop('src', 'image_res/urshifu-rapid.png');
+    else {
+        let exceptionImgLinks = ['image_res/urshifu-single.png', 'image_res/urshifu-rapid.png', 'image_res/meowstic-mega-m.png', 'image_res/meowstic-mega-f.png',];
+        $(teamslotI).prop('src', exceptionImgLinks[displayNameExceptions.indexOf(displayName)]);
     }
 }
 

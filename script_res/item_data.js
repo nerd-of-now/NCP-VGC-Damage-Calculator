@@ -873,7 +873,7 @@ var MEGA_STONE_USER_LOOKUP = {
     'Magearnite': 'Magearna',
     'Scovillainite': 'Scovillain',
     'Baxcalibrite': 'Baxcalibur',
-    'Tatsugirinite': 'Tatsugiri',
+    'Tatsugirinite': ['Tatsugiri-Curly', 'Tatsugiri-Droopy', 'Tatsugiri-Stretchy', 'Tatsugiri'],
     'Glimmoranite': 'Glimmora',
 };
 
@@ -881,7 +881,7 @@ function canMega(item, species) {
     return item in MEGA_STONE_USER_LOOKUP && MEGA_STONE_USER_LOOKUP[item].includes(species);
 }
 
-var SIGNATURE_Z_MOVE_LOOKUP = {
+const SIGNATURE_Z_MOVE_LOOKUP = {
     'Pikanium Z': { 'user': 'Pikachu', 'move': 'Volt Tackle', 'zMove': 'Catastropika' },
     'Decidium Z': { 'user': 'Decidueye', 'move': 'Spirit Shackle', 'zMove': 'Sinister Arrow Raid' },
     'Incinium Z': { 'user': 'Incineroar', 'move': 'Darkest Lariat', 'zMove': 'Malicious Moonsault' },
@@ -892,7 +892,8 @@ var SIGNATURE_Z_MOVE_LOOKUP = {
     'Snorlium Z': { 'user': 'Snorlax', 'move': 'Giga Impact', 'zMove': 'Pulverizing Pancake' },
     'Eevium Z': { 'user': 'Eevee', 'move': 'Last Resort', 'zMove': 'Extreme Evoboost' },
     'Mewnium Z': { 'user': 'Mew', 'move': 'Psychic', 'zMove': 'Genesis Supernova' },
-    'Pikashunium Z': { 'user': 'Pikachu', 'move': 'Thunderbolt', 'zMove': '10,000,000 Volt Thunderbolt' },
+    //'Pikashunium Z': { 'user': 'Pikachu', 'move': 'Thunderbolt', 'zMove': '10,000,000 Volt Thunderbolt' },
+    'Pikashunium Z': { 'user': 'Pikachu-Cap', 'move': 'Thunderbolt', 'zMove': '10,000,000 Volt Thunderbolt' },
     'Solganium Z': { 'user': ['Solgaleo', 'Necrozma-Dusk-Mane'], 'move': 'Sunsteel Strike', 'zMove': 'Searing Sunraze Smash' },
     'Lunalium Z': { 'user': ['Lunala', 'Necrozma-Dawn-Wings'], 'move': 'Moongeist Beam', 'zMove': 'Menacing Moonraze Maelstrom' },
     'Ultranecrozium Z': { 'user': 'Ultra Necrozma', 'move': 'Photon Geyser', 'zMove': 'Light That Burns the Sky' },

@@ -2000,7 +2000,7 @@ function calcAtMods(move, attacker, defAbility, description, field) {
     //i. 2.0x Items
     if ((attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak" || attacker.name === "Marowak-Alola") && move.category === "Physical") ||
         (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special") ||
-        (attacker.item === "Light Ball" && (attacker.name === "Pikachu" || attacker.name === "Pikachu-Gmax"))) {
+        (attacker.item === "Light Ball" && attacker.name.includes('Pikachu'))) {
         atMods.push(0x2000);
         description.attackerItem = attacker.item;
     } //j. 1.5x Items

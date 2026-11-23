@@ -3259,6 +3259,32 @@ var SETDEX_GEN9 = {
             ]
         },
     },
+    "Toxtricity-Low-Key": {
+        "Tera Normal Specs": {
+            "level": 50,
+            "evs": {
+                "hp": 36,
+                "at": 0,
+                "df": 4,
+                "sa": 204,
+                "sd": 12,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Punk Rock",
+            "tera_type": "Normal",
+            "item": "Choice Specs",
+            "moves": [
+                "Overdrive",
+                "Sludge Bomb",
+                "Boomburst",
+                "Volt Switch"
+            ]
+        },
+    },
     //"Dedenne": {
     //    "": {
     //        "level": 50,
@@ -6752,7 +6778,107 @@ var SETDEX_GEN9 = {
             ]
         },
     },
-    "Tatsugiri": {
+    "Tatsugiri-Curly": {
+        "Standard Choice Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Commander",
+            "tera_type": "Steel",
+            "item": "Choice Scarf",
+            "moves": [
+                "Muddy Water",
+                "Draco Meteor",
+                "Icy Wind",
+                "Dragon Pulse"
+            ]
+        },
+        "Standard Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Commander",
+            "tera_type": "Water",
+            "item": "Focus Sash",
+            "moves": [
+                "Muddy Water",
+                "Draco Meteor",
+                "Taunt",
+                "Protect"
+            ]
+        },
+    },
+    "Tatsugiri-Droopy": {
+        "Standard Choice Scarf": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Commander",
+            "tera_type": "Steel",
+            "item": "Choice Scarf",
+            "moves": [
+                "Muddy Water",
+                "Draco Meteor",
+                "Icy Wind",
+                "Dragon Pulse"
+            ]
+        },
+        "Standard Sash": {
+            "level": 50,
+            "evs": {
+                "hp": 0,
+                "at": 0,
+                "df": 0,
+                "sa": 252,
+                "sd": 4,
+                "sp": 252
+            },
+            "ivs": {
+                "at": 0,
+            },
+            "nature": "Timid",
+            "ability": "Commander",
+            "tera_type": "Water",
+            "item": "Focus Sash",
+            "moves": [
+                "Muddy Water",
+                "Draco Meteor",
+                "Taunt",
+                "Protect"
+            ]
+        },
+    },
+    "Tatsugiri-Stretchy": {
         "Standard Choice Scarf": {
             "level": 50,
             "evs": {
